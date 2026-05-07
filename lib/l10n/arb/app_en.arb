@@ -1760,6 +1760,38 @@
   "@bookingsMenuShowDetails": {
     "description": "Menu action for showing booking details"
   },
+  "washerBookingViewDetails": "View details",
+  "@washerBookingViewDetails": {
+    "description": "Washer booking card: full-width CTA"
+  },
+  "washerBookingAccept": "Accept",
+  "@washerBookingAccept": {
+    "description": "Washer booking card: quick action"
+  },
+  "washerBookingReject": "Reject",
+  "@washerBookingReject": {
+    "description": "Washer booking card: quick action"
+  },
+  "washerBookingStartExecution": "Start execution",
+  "@washerBookingStartExecution": {
+    "description": "Washer booking card: quick action"
+  },
+  "washerBookingCompleted": "Completed",
+  "@washerBookingCompleted": {
+    "description": "Washer booking card: quick action"
+  },
+  "washerBookingCustomerNameLabel": "Customer name:",
+  "@washerBookingCustomerNameLabel": {
+    "description": "Washer booking card: info row label"
+  },
+  "washerBookingRequestedServiceLabel": "Requested service:",
+  "@washerBookingRequestedServiceLabel": {
+    "description": "Washer booking card: info row label"
+  },
+  "washerBookingAppointmentLabel": "Appointment:",
+  "@washerBookingAppointmentLabel": {
+    "description": "Washer booking card: info row label"
+  },
   "bookingsMenuCancelBooking": "Cancel booking",
   "@bookingsMenuCancelBooking": {
     "description": "Menu action for cancelling booking"

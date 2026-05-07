@@ -1163,6 +1163,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bookingsMenuShowDetails => 'Show details';
 
   @override
+  String get washerBookingViewDetails => 'View details';
+
+  @override
+  String get washerBookingAccept => 'Accept';
+
+  @override
+  String get washerBookingReject => 'Reject';
+
+  @override
+  String get washerBookingStartExecution => 'Start execution';
+
+  @override
+  String get washerBookingCompleted => 'Completed';
+
+  @override
+  String get washerBookingCustomerNameLabel => 'Customer name:';
+
+  @override
+  String get washerBookingRequestedServiceLabel => 'Requested service:';
+
+  @override
+  String get washerBookingAppointmentLabel => 'Appointment:';
+
+  @override
   String get bookingsMenuCancelBooking => 'Cancel booking';
 
   @override

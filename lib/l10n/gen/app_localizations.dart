@@ -2371,6 +2371,54 @@ abstract class AppLocalizations {
   /// **'Show details'**
   String get bookingsMenuShowDetails;
 
+  /// Washer booking card: full-width CTA
+  ///
+  /// In en, this message translates to:
+  /// **'View details'**
+  String get washerBookingViewDetails;
+
+  /// Washer booking card: quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get washerBookingAccept;
+
+  /// Washer booking card: quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Reject'**
+  String get washerBookingReject;
+
+  /// Washer booking card: quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Start execution'**
+  String get washerBookingStartExecution;
+
+  /// Washer booking card: quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get washerBookingCompleted;
+
+  /// Washer booking card: info row label
+  ///
+  /// In en, this message translates to:
+  /// **'Customer name:'**
+  String get washerBookingCustomerNameLabel;
+
+  /// Washer booking card: info row label
+  ///
+  /// In en, this message translates to:
+  /// **'Requested service:'**
+  String get washerBookingRequestedServiceLabel;
+
+  /// Washer booking card: info row label
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment:'**
+  String get washerBookingAppointmentLabel;
+
   /// Menu action for cancelling booking
   ///
   /// In en, this message translates to:

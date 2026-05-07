@@ -1163,6 +1163,30 @@ class AppLocalizationsAr extends AppLocalizations {
   String get bookingsMenuShowDetails => 'عرض تفاصيل';
 
   @override
+  String get washerBookingViewDetails => 'عرض التفاصيل';
+
+  @override
+  String get washerBookingAccept => 'قبول';
+
+  @override
+  String get washerBookingReject => 'رفض';
+
+  @override
+  String get washerBookingStartExecution => 'بدأ التنفيذ';
+
+  @override
+  String get washerBookingCompleted => 'اكتمل';
+
+  @override
+  String get washerBookingCustomerNameLabel => 'اسم العميل :';
+
+  @override
+  String get washerBookingRequestedServiceLabel => 'الخدمة المطلوبة :';
+
+  @override
+  String get washerBookingAppointmentLabel => 'الموعد :';
+
+  @override
   String get bookingsMenuCancelBooking => 'إلغاء الحجز';
 
   @override

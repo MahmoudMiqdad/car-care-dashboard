@@ -1763,6 +1763,38 @@
   "@bookingsMenuShowDetails": {
     "description": "إجراء قائمة: عرض تفاصيل"
   },
+  "washerBookingViewDetails": "عرض التفاصيل",
+  "@washerBookingViewDetails": {
+    "description": "زر بطاقة الحجز عند المغسل: عرض التفاصيل"
+  },
+  "washerBookingAccept": "قبول",
+  "@washerBookingAccept": {
+    "description": "إجراء سريع في بطاقة الحجز للمغسل"
+  },
+  "washerBookingReject": "رفض",
+  "@washerBookingReject": {
+    "description": "إجراء سريع في بطاقة الحجز للمغسل"
+  },
+  "washerBookingStartExecution": "بدأ التنفيذ",
+  "@washerBookingStartExecution": {
+    "description": "إجراء سريع في بطاقة الحجز للمغسل"
+  },
+  "washerBookingCompleted": "اكتمل",
+  "@washerBookingCompleted": {
+    "description": "إجراء سريع في بطاقة الحجز للمغسل"
+  },
+  "washerBookingCustomerNameLabel": "اسم العميل :",
+  "@washerBookingCustomerNameLabel": {
+    "description": "عنوان سطر في بطاقة الحجز للمغسل"
+  },
+  "washerBookingRequestedServiceLabel": "الخدمة المطلوبة :",
+  "@washerBookingRequestedServiceLabel": {
+    "description": "عنوان سطر في بطاقة الحجز للمغسل"
+  },
+  "washerBookingAppointmentLabel": "الموعد :",
+  "@washerBookingAppointmentLabel": {
+    "description": "عنوان سطر في بطاقة الحجز للمغسل"
+  },
   "bookingsMenuCancelBooking": "إلغاء الحجز",
   "@bookingsMenuCancelBooking": {
     "description": "إجراء قائمة: إلغاء الحجز"

@@ -1,3 +1,4 @@
+import 'package:car_care/features/car_washer/bookings/presentation/pages/washer_bookings_page.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/edit_profile_washer_page.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
 import 'package:car_care/features/car_washer/availability/presentation/pages/availability_page.dart';
@@ -52,7 +53,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.show_ratings,
+    initialLocation: Routes.bookings,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -143,7 +144,7 @@ class AppRouter {
           GoRoute(
             path: Routes.bookings,
             name: '/bookings',
-            builder: (context, state) => const BookingsPage(),
+            builder: (context, state) => const WasherBookingsPage(),
           ),
           GoRoute(
             path: Routes.bookingDetails,
