@@ -7,13 +7,13 @@ import 'package:car_care/features/car_washer/bookings/presentation/widgets/booki
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class BookingDetailsPage extends StatelessWidget {
   const BookingDetailsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
     final serviceLines = [
       '${context.l10n.bookingDetailsWasherNameLabel}:  المقداد',
       '${context.l10n.bookingsServiceLabel}:  Vip',
@@ -26,10 +26,8 @@ class BookingDetailsPage extends StatelessWidget {
       '${context.l10n.bookingDetailsOrderDateLabel}: 4/10',
       '${context.l10n.bookingDetailsVehicleLabel}: هوندا سيتي',
     ];
-    
-    final userNotesLines = [
-      '${context.l10n.notes}: هوندا سيتي sedans.',
-    ];
+
+    final userNotesLines = ['${context.l10n.notes}: هوندا سيتي sedans.'];
 
     return Directionality(
       textDirection: TextDirection.rtl,
@@ -38,6 +36,7 @@ class BookingDetailsPage extends StatelessWidget {
         appBar: CustomAppBar(
           title: context.l10n.bookingDetailsPageTitle,
           showBackButton: true,
+          onBackTapped: () => context.pop(),
         ),
         body: ImageBackground(
           child: SafeArea(
@@ -59,9 +58,7 @@ class BookingDetailsPage extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                   SizedBox(height: 6.h),
-                  DetailsCard(
-                    lines: serviceLines,
-                  ),
+                  DetailsCard(lines: serviceLines),
                   SizedBox(height: 12.h),
                   AppText.sectionTitle(
                     context.l10n.bookingDetailsAppointmentSectionTitle,
@@ -69,9 +66,7 @@ class BookingDetailsPage extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                   SizedBox(height: 6.h),
-                  DetailsCard(
-                    lines: appointmentLines,
-                  ),
+                  DetailsCard(lines: appointmentLines),
                   SizedBox(height: 12.h),
                   AppText.sectionTitle(
                     context.l10n.bookingDetailsUserNotesSectionTitle,
@@ -79,9 +74,7 @@ class BookingDetailsPage extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                   SizedBox(height: 6.h),
-                  DetailsCard(
-                    lines: userNotesLines,
-                  ),
+                  DetailsCard(lines: userNotesLines),
                   SizedBox(height: 25.h),
                   const ActionButtons(),
                 ],
