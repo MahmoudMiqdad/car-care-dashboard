@@ -42,6 +42,8 @@ class Routes {
   static const String technicianquotationspage = '/technician_quotations_page';
   static const String washers = '/washers';
   static const String bookings = '/bookings';
+  static const String washerBookings = '/washer_bookings';
+  static const String washerBookingsDetails = '/washer_bookings_details';
   static const String bookingDetails = '/booking_details';
   static const String ratings = '/ratings';
     static const String show_ratings = '/show_ratings';

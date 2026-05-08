@@ -1,3 +1,4 @@
+import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/const.dart';
 import 'package:car_care/core/widgets/image_background.dart';
@@ -33,7 +34,10 @@ class WasherBookingsPage extends StatelessWidget {
                 if (index == 0) {
                   return const WasherBookingFilter();
                 }
-                return WasherBookingCard(data: bookings[index - 1]);
+                return WasherBookingCard(
+                  data: bookings[index - 1],
+                  onViewDetails: () => context.push(Routes.bookingDetails),
+                );
               },
             ),
           ),
