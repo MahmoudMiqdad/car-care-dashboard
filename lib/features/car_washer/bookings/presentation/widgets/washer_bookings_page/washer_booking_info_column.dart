@@ -1,13 +1,13 @@
 import 'package:car_care/core/theme/app_colors.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/widgets/washer_bookings_page/washer_booking_model.dart';
+import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WasherBookingInfoColumn extends StatelessWidget {
-  const WasherBookingInfoColumn({super.key, required this.data});
+  const WasherBookingInfoColumn({super.key, required this.booking});
 
-  final WasherBookingData data;
+  final BookingsEntity booking;
 
   @override
   Widget build(BuildContext context) {
@@ -17,37 +17,36 @@ class WasherBookingInfoColumn extends StatelessWidget {
       children: [
         WasherBookingInfoLine(
           label: l10n.washerBookingCustomerNameLabel,
-          value: data.customerName,
+          value: booking.vehicle.ownerName ?? '---', // اسم صاحب السيارة
           boldValue: true,
         ),
         WasherBookingInfoLine(
           label: l10n.washerBookingRequestedServiceLabel,
-          value: data.serviceName,
+          value: booking.serviceType,
           boldValue: true,
         ),
         WasherBookingInfoLine(
           label: l10n.washerBookingAppointmentLabel,
-          value: data.dateTime,
+          value: booking.scheduledAt,
           boldValue: true,
         ),
         WasherBookingInfoLine(
           label: '${l10n.bookingsPriceLabel} :',
-          value: data.price,
+          value: '\$${booking.price ?? '0'}',
           boldValue: true,
         ),
         WasherBookingInfoLine(
           label: '${l10n.bookingDetailsVehicleLabel} :',
-          value: data.vehicle,
+          value: '${booking.vehicle.brand} ${booking.vehicle.model}',
         ),
         WasherBookingInfoLine(
           label: '${l10n.plate} :',
-          value: data.plateNumber,
+          value: booking.vehicle.plateNumber,
         ),
       ],
     );
   }
 }
-
 class WasherBookingInfoLine extends StatelessWidget {
   const WasherBookingInfoLine({
     super.key,

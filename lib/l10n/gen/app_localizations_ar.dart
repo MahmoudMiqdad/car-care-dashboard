@@ -1136,7 +1136,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get bookingStatusProgress => 'قيد التنفيذ';
 
   @override
-  String get bookingStatusAccepted => 'مقبول';
+  String get bookingStatusAccepted => 'تم القبول';
 
   @override
   String get bookingStatusPinding => 'انتظار';
@@ -1321,7 +1321,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get showRatingAllReserved => 'إجمالي الحجوزات';
 
   @override
-  String get showRatingInProgress => 'قيد المعالجة';
+  String get bookingStatusPending => 'قيد الانتظار';
+
+  @override
+  String get bookingStatusCompleted => 'مكتمل';
+
+  @override
+  String get bookingStatusCanceled => 'ملغي';
 
   @override
   String get showRatingAverageRatings => 'متوسط التقييمات';

@@ -17,7 +17,7 @@ class BookingsPage extends StatelessWidget {
     final statusChips = [
       context.l10n.bookingStatusProgress,
       context.l10n.bookingStatusAccepted,
-      context.l10n.bookingStatusPinding,
+      context.l10n.bookingStatusPending,
     ];
     final bookings = [false, true];
 

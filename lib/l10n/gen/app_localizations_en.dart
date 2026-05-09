@@ -1133,10 +1133,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get bookingsFilterByStatus => 'By status';
 
   @override
-  String get bookingStatusProgress => 'progress';
+  String get bookingStatusProgress => 'In Progress';
 
   @override
-  String get bookingStatusAccepted => 'accepted';
+  String get bookingStatusAccepted => 'Accepted';
 
   @override
   String get bookingStatusPinding => 'pinding';
@@ -1321,7 +1321,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get showRatingAllReserved => 'All Reserved';
 
   @override
-  String get showRatingInProgress => 'in_progress';
+  String get bookingStatusPending => 'Pending';
+
+  @override
+  String get bookingStatusCompleted => 'Completed';
+
+  @override
+  String get bookingStatusCanceled => 'Canceled';
 
   @override
   String get showRatingAverageRatings => 'Average ratings';

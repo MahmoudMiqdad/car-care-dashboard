@@ -1969,10 +1969,30 @@
   "@showRatingAllReserved": {
     "description": "All reserved count label on ratings screen"
   },
-  "showRatingInProgress": "in_progress",
-  "@showRatingInProgress": {
-    "description": "In progress count label on ratings screen"
-  },
+ "bookingStatusPending": "Pending",
+"@bookingStatusPending": {
+  "description": "Status label for a booking waiting for review"
+},
+
+"bookingStatusAccepted": "Accepted",
+"@bookingStatusAccepted": {
+  "description": "Status label when a booking is accepted by the washer"
+},
+
+"bookingStatusProgress": "In Progress",
+"@bookingStatusProgress": {
+  "description": "Status label when the service has started"
+},
+
+"bookingStatusCompleted": "Completed",
+"@bookingStatusCompleted": {
+  "description": "Status label when the service is finished"
+},
+
+"bookingStatusCanceled": "Canceled",
+"@bookingStatusCanceled": {
+  "description": "Status label when a booking is canceled"
+},
   "showRatingAverageRatings": "Average ratings",
   "@showRatingAverageRatings": {
     "description": "Title of average ratings section"
