@@ -1,4 +1,6 @@
 import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
+import 'package:car_care/features/car_washer/bookings/presentation/pages/booking_details_page.dart';
+import 'package:car_care/features/car_washer/bookings/presentation/pages/bookings_page.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/washer_bookings_page.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/edit_profile_washer_page.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
@@ -6,6 +8,7 @@ import 'package:car_care/features/car_washer/availability/presentation/pages/ava
 import 'package:car_care/features/car_washer/ratings/presentation/pages/ratings_page.dart';
 import 'package:car_care/features/car_washer/ratings/presentation/pages/show_rating.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/booking_details_page.dart';
+import 'package:car_care/features/car_washer/bookings/presentation/pages/washer_bookings_details.dart';
 import 'package:car_care/features/car_washer/washers/domain/entities/washers_entity.dart';
 import 'package:car_care/features/car_washer/washers/presentation/pages/washer_details_page.dart';
 import 'package:car_care/features/car_washer/washers/presentation/pages/washer_reservation_page.dart';
@@ -53,7 +56,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.bookings,
+    initialLocation: Routes.washerBookings,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -144,6 +147,11 @@ class AppRouter {
           GoRoute(
             path: Routes.bookings,
             name: '/bookings',
+            builder: (context, state) => const BookingsPage(),
+          ),
+           GoRoute(
+            path: Routes.washerBookings,
+            name: '/washer_bookings',
             builder: (context, state) => const WasherBookingsPage(),
           ),
           GoRoute(
@@ -153,6 +161,11 @@ class AppRouter {
               final booking = state.extra as BookingsEntity;
               return BookingDetailsPage(booking: booking);
             },
+          ),
+           GoRoute(
+            path: Routes.washerBookingsDetails,
+            name: '/washer_bookings_details',
+            builder: (context, state) => const WasherBookingsDetails(),
           ),
           GoRoute(
             path: Routes.availability,

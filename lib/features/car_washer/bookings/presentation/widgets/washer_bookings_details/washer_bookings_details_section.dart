@@ -1,0 +1,62 @@
+import 'package:car_care/core/widgets/app_headline.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class WasherBookingsDetailsSection extends StatelessWidget {
+  const WasherBookingsDetailsSection({
+    super.key,
+    required this.title,
+    required this.lines,
+    this.textAlign = TextAlign.right,
+    this.contentFontWeight = FontWeight.w700,
+  });
+
+  final String title;
+  final List<String> lines;
+  final TextAlign textAlign;
+  final FontWeight contentFontWeight;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AppText.sectionTitle(
+          title,
+          fontSize: 19.sp,
+          fontWeight: FontWeight.w800,
+        ),
+        SizedBox(height: 6.h),
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            color: Colors.white.withValues(alpha: 0.88),
+            borderRadius: BorderRadius.circular(14.r),
+            border: Border.all(color: const Color(0xFFD7DDE3)),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: lines
+                .map(
+                  (line) => Padding(
+                    padding: EdgeInsets.symmetric(vertical: 1.h),
+                    child: Text(
+                      line,
+                      textAlign: textAlign,
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16.sp,
+                        fontWeight: contentFontWeight,
+                        height: 1.35,
+                      ),
+                    ),
+                  ),
+                )
+                .toList(),
+          ),
+        ),
+      ],
+    );
+  }
+}

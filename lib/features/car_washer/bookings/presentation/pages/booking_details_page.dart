@@ -8,6 +8,7 @@ import 'package:car_care/features/car_washer/bookings/presentation/widgets/booki
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class BookingDetailsPage extends StatelessWidget {
   const BookingDetailsPage({super.key, required this.booking});
@@ -36,6 +37,7 @@ class BookingDetailsPage extends StatelessWidget {
         appBar: CustomAppBar(
           title: context.l10n.bookingDetailsPageTitle,
           showBackButton: true,
+          onBackTapped: () => context.pop(),
         ),
         body: ImageBackground(
           child: SafeArea(
