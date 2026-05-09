@@ -3,7 +3,5 @@ import 'package:car_care/core/errors/filuar.dart';
 import '../entities/bookings_entity.dart';
 
 abstract class IBookingsRepository {
-
-  Future<Either<Failure, BookingsEntity>> bookings(Map<String, dynamic> params);
-
+  Future<Either<Failure, List<BookingsEntity>>> getBookings({String? status});
 }

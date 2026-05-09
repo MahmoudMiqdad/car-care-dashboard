@@ -2311,16 +2311,16 @@ abstract class AppLocalizations {
   /// **'By status'**
   String get bookingsFilterByStatus;
 
-  /// Booking status chip: progress
+  /// Status label when the service has started
   ///
   /// In en, this message translates to:
-  /// **'progress'**
+  /// **'In Progress'**
   String get bookingStatusProgress;
 
-  /// Booking status chip: accepted
+  /// Status label when a booking is accepted by the washer
   ///
   /// In en, this message translates to:
-  /// **'accepted'**
+  /// **'Accepted'**
   String get bookingStatusAccepted;
 
   /// Booking status chip: pinding
@@ -2683,11 +2683,23 @@ abstract class AppLocalizations {
   /// **'All Reserved'**
   String get showRatingAllReserved;
 
-  /// In progress count label on ratings screen
+  /// Status label for a booking waiting for review
   ///
   /// In en, this message translates to:
-  /// **'in_progress'**
-  String get showRatingInProgress;
+  /// **'Pending'**
+  String get bookingStatusPending;
+
+  /// Status label when the service is finished
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get bookingStatusCompleted;
+
+  /// Status label when a booking is canceled
+  ///
+  /// In en, this message translates to:
+  /// **'Canceled'**
+  String get bookingStatusCanceled;
 
   /// Title of average ratings section
   ///

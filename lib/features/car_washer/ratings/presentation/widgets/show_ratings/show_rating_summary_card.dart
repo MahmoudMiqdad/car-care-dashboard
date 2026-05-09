@@ -49,7 +49,7 @@ class ShowRatingSummaryCard extends StatelessWidget {
                 Expanded(
                   child: SummaryColumn(
                     items: [
-                      SummaryItem(strings.showRatingInProgress, '20'),
+                    //  SummaryItem(strings.showRatingInProgress, '20'),
                       SummaryItem(strings.completed, '80'),
                       SummaryItem(strings.cancelled, '40'),
                     ],

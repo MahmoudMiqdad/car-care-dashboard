@@ -37,10 +37,9 @@ class WasherBookingStatusChipsRow extends StatelessWidget {
   }
 
   Color chipColor(String label) {
-    return switch (label) {
-      'accepted' => AppColors.serviceTierSelectedBackground,
-      'canceled' => const Color(0xFFDCECF5),
-      _ => const Color(0xFFDCECF5),
-    };
+    if (label.toLowerCase().contains('accept')) return AppColors.serviceTierSelectedBackground;
+    if (label.toLowerCase().contains('cancel')) return const Color(0xFFF8D7DA); // أحمر خفيف
+    if (label.toLowerCase().contains('progress')) return const Color(0xFFBCE5F8); // أزرق خفيف
+    return const Color(0xFFDCECF5); // اللون الافتراضي
   }
 }

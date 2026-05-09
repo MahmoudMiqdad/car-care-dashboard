@@ -1972,10 +1972,30 @@
   "@showRatingAllReserved": {
     "description": "إجمالي الحجوزات المحجوزة"
   },
-  "showRatingInProgress": "قيد المعالجة",
-  "@showRatingInProgress": {
-    "description": "عدد الحجوزات قيد التنفيذ في شاشة عرض التقييمات"
-  },
+ "bookingStatusPending": "قيد الانتظار",
+"@bookingStatusPending": {
+  "description": "حالة الحجز عندما يكون في انتظار المراجعة"
+},
+
+"bookingStatusAccepted": "تم القبول",
+"@bookingStatusAccepted": {
+  "description": "حالة الحجز عندما يتم قبوله من قبل المغسلة"
+},
+
+"bookingStatusProgress": "قيد التنفيذ",
+"@bookingStatusProgress": {
+  "description": "حالة الحجز عندما يبدأ العمل على السيارة"
+},
+
+"bookingStatusCompleted": "مكتمل",
+"@bookingStatusCompleted": {
+  "description": "حالة الحجز بعد انتهاء الخدمة بنجاح"
+},
+
+"bookingStatusCanceled": "ملغي",
+"@bookingStatusCanceled": {
+  "description": "حالة الحجز عندما يتم إلغاؤه"
+},
   "showRatingAverageRatings": "متوسط التقييمات",
   "@showRatingAverageRatings": {
     "description": "عنوان قسم متوسط التقييمات"

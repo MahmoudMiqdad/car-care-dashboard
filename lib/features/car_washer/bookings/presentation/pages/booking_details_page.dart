@@ -2,6 +2,7 @@ import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/app_headline.dart';
 import 'package:car_care/core/widgets/const.dart';
 import 'package:car_care/core/widgets/image_background.dart';
+import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/widgets/booking_details_page/action_buttons.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/widgets/booking_details_page/details_card.dart';
 import 'package:car_care/l10n.dart';
@@ -9,28 +10,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookingDetailsPage extends StatelessWidget {
-  const BookingDetailsPage({super.key});
+  const BookingDetailsPage({super.key, required this.booking});
+  final BookingsEntity? booking;
 
   @override
   Widget build(BuildContext context) {
-
     final serviceLines = [
-      '${context.l10n.bookingDetailsWasherNameLabel}:  المقداد',
-      '${context.l10n.bookingsServiceLabel}:  Vip',
-      '${context.l10n.bookingsPriceLabel}:  \$20',
-      '${context.l10n.status}:  مقبول ',
+      '${context.l10n.bookingDetailsWasherNameLabel}:  ${booking!.vehicle.ownerName ?? '---'}',
+      '${context.l10n.bookingsServiceLabel}:  ${booking!.serviceType}',
+      '${context.l10n.bookingsPriceLabel}:  \$${booking!.price}',
+      '${context.l10n.status}:  ${booking!.statusText}',
     ];
 
     final appointmentLines = [
-      '${context.l10n.bookingsDateTimeLabel}: 4 / 15 ${context.l10n.bookingsAtLabel} 4:00',
-      '${context.l10n.bookingDetailsOrderDateLabel}: 4/10',
-      '${context.l10n.bookingDetailsVehicleLabel}: هوندا سيتي',
-    ];
-    
-    final userNotesLines = [
-      '${context.l10n.notes}: هوندا سيتي sedans.',
+      '${context.l10n.bookingsDateTimeLabel}: ${booking!.scheduledAt}',
+      '${context.l10n.bookingDetailsVehicleLabel}: ${booking!.vehicle.brand} ${booking!.vehicle.model}',
+      '${context.l10n.plate}: ${booking!.vehicle.plateNumber}',
     ];
 
+    final userNotesLines = ['${context.l10n.notes}: ${booking!.notes}'];
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
@@ -59,9 +57,7 @@ class BookingDetailsPage extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                   SizedBox(height: 6.h),
-                  DetailsCard(
-                    lines: serviceLines,
-                  ),
+                  DetailsCard(lines: serviceLines),
                   SizedBox(height: 12.h),
                   AppText.sectionTitle(
                     context.l10n.bookingDetailsAppointmentSectionTitle,
@@ -69,9 +65,7 @@ class BookingDetailsPage extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                   SizedBox(height: 6.h),
-                  DetailsCard(
-                    lines: appointmentLines,
-                  ),
+                  DetailsCard(lines: appointmentLines),
                   SizedBox(height: 12.h),
                   AppText.sectionTitle(
                     context.l10n.bookingDetailsUserNotesSectionTitle,
@@ -79,9 +73,7 @@ class BookingDetailsPage extends StatelessWidget {
                     fontWeight: FontWeight.w800,
                   ),
                   SizedBox(height: 6.h),
-                  DetailsCard(
-                    lines: userNotesLines,
-                  ),
+                  DetailsCard(lines: userNotesLines),
                   SizedBox(height: 25.h),
                   const ActionButtons(),
                 ],
