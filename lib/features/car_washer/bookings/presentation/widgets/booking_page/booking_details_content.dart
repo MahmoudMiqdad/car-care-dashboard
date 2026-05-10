@@ -1,16 +1,30 @@
+import 'package:car_care/core/theme/buttons/app_button_widget.dart';
+import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../../core/theme/buttons/app_button_widget.dart';
 import '../../../../../../core/theme/app_colors.dart';
 import '../../../../../../l10n.dart';
 
 class BookingDetailsContent extends StatelessWidget {
-  const BookingDetailsContent({required this.onShowDetails, super.key});
+  const BookingDetailsContent({
+    super.key,
+    required this.booking,
+    required this.onShowDetails,
+  });
 
+  final BookingsEntity booking;
   final VoidCallback onShowDetails;
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+
+    // بيانات المغسلة (للمستخدم عادة موجودة بالريسبونس)
+    final washerName = booking.carWasher?.shopName ?? l10n.bookingsWasherName;
+    final washerLogoUrl = booking.carWasher?.logoUrl; // غالباً موجودة عندكم
+    // السعر
+    final priceText = booking.price ?? '0';
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -19,7 +33,9 @@ class BookingDetailsContent extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                context.l10n.bookingsWasherName,
+                washerName,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 23.sp,
                   fontWeight: FontWeight.w700,
@@ -27,7 +43,7 @@ class BookingDetailsContent extends StatelessWidget {
                 ),
               ),
               Text(
-                '${context.l10n.bookingsServiceLabel}: ${context.l10n.bookingsServiceVip}',
+                '${l10n.bookingsServiceLabel}: ${booking.serviceType}',
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w700,
@@ -35,7 +51,7 @@ class BookingDetailsContent extends StatelessWidget {
                 ),
               ),
               Text(
-                '${context.l10n.bookingsDateTimeLabel}: 4 / 15 ${context.l10n.bookingsAtLabel} 4:00',
+                '${l10n.bookingsDateTimeLabel}: ${booking.scheduledAt}',
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w700,
@@ -43,7 +59,7 @@ class BookingDetailsContent extends StatelessWidget {
                 ),
               ),
               Text(
-                '${context.l10n.bookingsPriceLabel}: \$20',
+                '${l10n.bookingsPriceLabel}: \$$priceText',
                 style: TextStyle(
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w700,
@@ -52,27 +68,39 @@ class BookingDetailsContent extends StatelessWidget {
               ),
               SizedBox(height: 6.h),
               SizedBox(
-                  width: 130,
-                  height: 36.h,
-                  child: AppButton(
-                    onPressed: onShowDetails,
-                    text: context.l10n.bookingsMenuShowDetails,
-                    backgroundColor: AppColors.primary,
-                    textColor: AppColors.white,
-                    fontSize: 16,
-                  
+                width: 130,
+                height: 36.h,
+                child: AppButton(
+                  onPressed: onShowDetails,
+                  text: l10n.bookingsMenuShowDetails,
+                  backgroundColor: AppColors.primary,
+                  textColor: AppColors.white,
+                  fontSize: 16,
                 ),
               ),
             ],
           ),
         ),
         SizedBox(width: 5.w),
+
+        // صورة (لو شعار المغسلة موجود، نعرضه، وإلا نعرض صورة افتراضية)
         ClipOval(
-          child: Image.asset(
-            'assets/images/1212s.png',
+          child: SizedBox(
             height: 88.h,
             width: 88.w,
-            fit: BoxFit.cover,
+            child: (washerLogoUrl != null && washerLogoUrl.isNotEmpty)
+                ? Image.network(
+                    washerLogoUrl,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) => Image.asset(
+                      'assets/images/1212s.png',
+                      fit: BoxFit.cover,
+                    ),
+                  )
+                : Image.asset(
+                    'assets/images/1212s.png',
+                    fit: BoxFit.cover,
+                  ),
           ),
         ),
       ],

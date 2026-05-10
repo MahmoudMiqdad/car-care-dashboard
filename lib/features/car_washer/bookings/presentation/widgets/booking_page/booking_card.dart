@@ -1,3 +1,4 @@
+import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../../core/theme/app_colors.dart';
@@ -8,11 +9,13 @@ import 'booking_status_chips.dart';
 class BookingCard extends StatelessWidget {
   const BookingCard({
     super.key,
+    required this.booking,
     required this.statusChips,
     required this.onShowDetails,
     this.showMenuByDefault = false,
   });
 
+  final BookingsEntity booking;
   final List<String> statusChips;
   final VoidCallback onShowDetails;
   final bool showMenuByDefault;
@@ -35,7 +38,10 @@ class BookingCard extends StatelessWidget {
             children: [
               BookingStatusChips(statusChips: statusChips),
               SizedBox(height: 8.h),
-              BookingDetailsContent(onShowDetails: onShowDetails),
+              BookingDetailsContent(
+                booking: booking,
+                onShowDetails: onShowDetails,
+              ),
             ],
           ),
         ),

@@ -23,7 +23,6 @@ class BookingDetailsBody extends StatelessWidget {
       '${l10n.bookingDetailsVehicleLabel}: هوندا سيتي',
     ];
 
-    final userNotes = <String>['${l10n.notes}: هوندا سيتي sedans.'];
 
     return SafeArea(
       child: SingleChildScrollView(
@@ -47,11 +46,7 @@ class BookingDetailsBody extends StatelessWidget {
               title: l10n.bookingDetailsAppointmentSectionTitle,
               lines: appointmentDetails,
             ),
-            SizedBox(height: 12.h),
-            BookingDetailsSection(
-              title: l10n.bookingDetailsUserNotesSectionTitle,
-              lines: userNotes,
-            ),
+           
             SizedBox(height: 25.h),
             const ActionButtons(),
           ],

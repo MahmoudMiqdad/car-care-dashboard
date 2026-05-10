@@ -49,4 +49,5 @@ class ApiEndpoints {
   static const String carwashBookings = '/customer/carwash_bookings';
   // car-washer (washer side)
   static const String washerMyBookings = '/car_washer/my_bookings';
+  static const String customerCarwashBookings = '/customer/carwash_bookings';
 }

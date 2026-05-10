@@ -1,4 +1,5 @@
 import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
+import 'package:car_care/features/car_washer/washers/data/models/washers_model.dart';
 import 'package:car_care/features/vehicle/data/model/vehicle_model.dart'
     show VehicleModel;
 
@@ -13,9 +14,11 @@ class BookingModel extends BookingsEntity {
     required super.notes,
     required super.canCancel,
     required super.vehicle,
+    super.carWasher,
   });
 
   factory BookingModel.fromJson(Map<String, dynamic> json) {
+    final carWasherJson = json['car_washer'];
     return BookingModel(
       id: json['id'],
       serviceType: json['service_type']?.toString() ?? '',
@@ -26,11 +29,17 @@ class BookingModel extends BookingsEntity {
       notes: json['notes']?.toString() ?? '',
       canCancel: json['can_cancel'] == true,
       vehicle: VehicleModel.fromJson(json['vehicle'] as Map<String, dynamic>),
+      carWasher: carWasherJson is Map<String, dynamic>
+          ? WasherModel.fromJson(carWasherJson)
+          : null,
     );
   }
 
   static List<BookingModel> listFromResponse(Map<String, dynamic> response) {
-    final List<dynamic> data = response['data'] ?? [];
-    return data.map((json) => BookingModel.fromJson(json)).toList();
+    final List<dynamic> data = (response['data'] as List<dynamic>?) ?? const [];
+    return data
+        .whereType<Map<String, dynamic>>()
+        .map(BookingModel.fromJson)
+        .toList(growable: false);
   }
 }
