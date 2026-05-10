@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:car_care/features/car_washer/bookings/domain/repositories/i_bookings_repository.dart';
-import 'bookings_state.dart';
+import '../bookings_state.dart';
 
 class BookingsCubit extends Cubit<BookingsState> {
   BookingsCubit(this._repository) : super(BookingsInitial());

@@ -1,5 +1,5 @@
 import 'package:car_care/core/theme/app_colors.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/cubit/bookings_cubit.dart';
+import 'package:car_care/features/car_washer/bookings/presentation/cubit/washer_bookings/bookings_cubit.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

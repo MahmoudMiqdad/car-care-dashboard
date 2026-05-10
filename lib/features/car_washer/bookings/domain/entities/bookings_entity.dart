@@ -1,3 +1,4 @@
+import 'package:car_care/features/car_washer/washers/domain/entities/washers_entity.dart';
 import 'package:equatable/equatable.dart';
 import 'package:car_care/features/vehicle/domain/entities/vehicle_entity.dart';
 
@@ -11,7 +12,7 @@ class BookingsEntity extends Equatable {
   final String notes;
   final bool canCancel;
   final VehicleEntity vehicle;
-
+  final WasherEntity? carWasher;
 
   const BookingsEntity({
     required this.id,
@@ -23,6 +24,7 @@ class BookingsEntity extends Equatable {
     required this.notes,
     required this.canCancel,
     required this.vehicle,
+      this.carWasher,
   });
 
   @override

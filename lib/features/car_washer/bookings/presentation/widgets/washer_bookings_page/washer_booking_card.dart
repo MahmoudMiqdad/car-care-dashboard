@@ -52,8 +52,8 @@ class WasherBookingCard extends StatelessWidget {
           // داخل ملف WasherBookingCard
           WasherBookingViewDetailsButton(
             onPressed: () {
-              // الانتقال وتمرير الكيان بالكامل
-              context.push(Routes.bookingDetails, extra: booking);
+             
+              context.push(Routes.washerBookingsDetails, extra: booking);
             },
           ),
         ],

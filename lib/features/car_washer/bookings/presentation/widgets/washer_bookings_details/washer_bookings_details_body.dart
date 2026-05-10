@@ -1,27 +1,38 @@
 import 'package:car_care/core/theme/app_colors.dart';
+import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/widgets/washer_bookings_details/washer_bookings_details_section.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WasherBookingsDetailsBody extends StatelessWidget {
-  const WasherBookingsDetailsBody({super.key});
+  const WasherBookingsDetailsBody({
+    super.key,
+    required this.booking,
+  });
+
+  final BookingsEntity booking;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    final serviceLines = [
-      '${l10n.washerBookingCustomerNameLabel} محمود المقداد',
-      '${l10n.bookingsServiceLabel}: Vip',
-      '${l10n.bookingsPriceLabel}: \$20',
-      '${l10n.bookingsDateTimeLabel}: 4 / 15 ${l10n.bookingsAtLabel} 4:00',
-      '${l10n.bookingDetailsVehicleLabel}: هوندا سيتي',
-      '${l10n.plate}: 456789',
+    final ownerName = booking.vehicle.ownerName ?? '---';
+    final vehicleName = '${booking.vehicle.brand} ${booking.vehicle.model}'.trim();
+    final plate = booking.vehicle.plateNumber;
+    final priceText = booking.price ?? '0';
+
+    final serviceLines = <String>[
+      '${l10n.washerBookingCustomerNameLabel} $ownerName',
+      '${l10n.bookingsServiceLabel}: ${booking.serviceType}',
+      '${l10n.bookingsPriceLabel}: \$$priceText',
+      '${l10n.bookingsDateTimeLabel}: ${booking.scheduledAt}',
+      '${l10n.bookingDetailsVehicleLabel}: $vehicleName',
+      '${l10n.plate}: $plate',
     ];
 
-    final userNotesLines = [
-      'السيارة من نوع نيسان التيما وهي من فئة السيارات السيدان الرياضية باللون الأحمر',
+    final userNotesLines = <String>[
+      booking.notes.isNotEmpty ? booking.notes : '---',
     ];
 
     return Column(
