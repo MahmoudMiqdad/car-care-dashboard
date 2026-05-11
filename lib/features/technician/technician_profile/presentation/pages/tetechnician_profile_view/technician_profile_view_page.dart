@@ -1,7 +1,9 @@
 import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
+import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/pages/widgets/technician_profile_view_body.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/widgets/technician_profile_view_body%20.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,8 +12,17 @@ class TechnicianProfileViewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-           create: (_) => getIt<TechnicianProfileCubit>()..getTechnicianProfile(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => getIt<TechnicianProfileCubit>()
+            ..getTechnicianProfile(),
+        ),
+       
+        BlocProvider(
+          create: (_) => getIt<TechnicianAvailabilityCubit>(), // ← جديد
+        ),
+      ],
       child: Scaffold(
         backgroundColor: AppColors.lightScaffold,
         appBar: AppBar(

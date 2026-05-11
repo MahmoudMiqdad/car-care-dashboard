@@ -4,25 +4,23 @@ import 'package:car_care/core/constants/app_constants.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
 import 'package:car_care/features/auth/presentation/widgets/login/login_text_field.dart';
-
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_state.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/widgets/technician_location_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
 import 'package:image_picker/image_picker.dart';
 
-class TechnicianProfileEditBodyContent extends StatefulWidget {
-  const TechnicianProfileEditBodyContent({super.key});
+class InsertTechnicianProfileBody extends StatefulWidget {
+  const InsertTechnicianProfileBody({super.key});
 
   @override
-  State<TechnicianProfileEditBodyContent> createState() =>
-      _TechnicianProfileEditBodyState();
+  State<InsertTechnicianProfileBody> createState() => _TechnicianProfileBodyState();
 }
 
-class _TechnicianProfileEditBodyState
-    extends State<TechnicianProfileEditBodyContent> {
+class _TechnicianProfileBodyState extends State<InsertTechnicianProfileBody> {
   final TextEditingController _specializationController =
       TextEditingController();
   final TextEditingController _experienceController = TextEditingController();
@@ -45,11 +43,9 @@ class _TechnicianProfileEditBodyState
 
   Future<void> _pickCertificationImages() async {
     final List<XFile> images = await _picker.pickMultiImage(imageQuality: 80);
-
     if (images.isEmpty) return;
 
     if (images.length + _certificationImages.length > 3) {
-      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('يمكنك اختيار 3 صور كحد أقصى'),
@@ -59,9 +55,23 @@ class _TechnicianProfileEditBodyState
       return;
     }
 
-    setState(() {
-      _certificationImages.addAll(images);
-    });
+    setState(() => _certificationImages.addAll(images));
+  }
+
+  void _submit() {
+    final params = <String, dynamic>{
+      "specialization": _specializationController.text.trim(),
+      "experience_years": _experienceController.text.trim(),
+      "phone": _phoneController.text.trim(),
+      "city": _cityController.text.trim(),
+      "hourly_rate": _hourlyRateController.text.trim(),
+    };
+
+    for (int i = 0; i < _certificationImages.length; i++) {
+      params["certifications[$i]"] = File(_certificationImages[i].path).path;
+    }
+
+    context.read<TechnicianProfileCubit>().insertTechnicianProfile(params);
   }
 
   @override
@@ -71,15 +81,17 @@ class _TechnicianProfileEditBodyState
         if (state is TechnicianProfileLoaded) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text("تم تحديث الملف الشخصي بنجاح"),
+              content: Text('تم تحديث الملف الشخصي بنجاح'),
               backgroundColor: Colors.green,
             ),
           );
         }
-
         if (state is TechnicianProfileError) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.message), backgroundColor: Colors.red),
+            SnackBar(
+              content: Text(state.message),
+              backgroundColor: Colors.red,
+            ),
           );
         }
       },
@@ -93,43 +105,35 @@ class _TechnicianProfileEditBodyState
             children: [
               SizedBox(height: 10.h),
 
-              /// التخصص
               LoginTextField(
                 controller: _specializationController,
                 hintText: 'التخصص',
                 iconPath: 'assets/images/icons8-work-50.png',
               ),
+              SizedBox(height: 12.h),
 
-              SizedBox(height: 10.h),
-
-              /// الخبرة
               LoginTextField(
                 controller: _experienceController,
                 hintText: 'سنوات الخبرة',
                 iconPath: 'assets/images/icons8-certificate-72.png',
                 keyboardType: TextInputType.number,
               ),
+              SizedBox(height: 12.h),
 
-              SizedBox(height: 10.h),
-
-              /// الهاتف
               LoginTextField(
                 controller: _phoneController,
                 hintText: 'رقم الهاتف',
                 icon: IconsaxPlusLinear.call,
                 keyboardType: TextInputType.phone,
               ),
+              SizedBox(height: 12.h),
 
-              SizedBox(height: 10.h),
-
-           
               LoginTextField(
                 controller: _cityController,
                 hintText: 'المدينة',
                 iconPath: 'assets/images/icons8-location-50.png',
               ),
-
-              SizedBox(height: 10.h),
+              SizedBox(height: 12.h),
 
               LoginTextField(
                 controller: _hourlyRateController,
@@ -139,14 +143,18 @@ class _TechnicianProfileEditBodyState
                   decimal: true,
                 ),
               ),
-
               SizedBox(height: 16.h),
+
+              const LocationUpdateCard(),
+              SizedBox(height: 20.h),
 
               Text(
                 'الشهادات (حد أقصى 3 صور)',
-                style: TextStyle(fontSize: 14.sp),
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
-
               SizedBox(height: 10.h),
 
               Wrap(
@@ -156,22 +164,33 @@ class _TechnicianProfileEditBodyState
                   ..._certificationImages.map((image) {
                     return Stack(
                       children: [
-                        Image.file(
-                          File(image.path),
-                          width: 80.w,
-                          height: 80.h,
-                          fit: BoxFit.cover,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8.r),
+                          child: Image.file(
+                            File(image.path),
+                            width: 80.w,
+                            height: 80.h,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         Positioned(
                           top: 0,
                           right: 0,
                           child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                _certificationImages.remove(image);
-                              });
-                            },
-                            child: const Icon(Icons.close, color: Colors.red),
+                            onTap: () => setState(
+                              () => _certificationImages.remove(image),
+                            ),
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                color: Colors.red,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(
+                                Icons.close,
+                                color: Colors.white,
+                                size: 16.r,
+                              ),
+                            ),
                           ),
                         ),
                       ],
@@ -185,49 +204,45 @@ class _TechnicianProfileEditBodyState
                         width: 80.w,
                         height: 80.h,
                         decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          color: Colors.grey.shade100,
+                          borderRadius: BorderRadius.circular(8.r),
+                          border: Border.all(color: Colors.grey.shade300),
                         ),
-                        child: const Icon(Icons.add),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.add_photo_alternate_outlined,
+                              color: Colors.grey.shade500,
+                              size: 24.r,
+                            ),
+                            SizedBox(height: 4.h),
+                            Text(
+                              'إضافة',
+                              style: TextStyle(
+                                fontSize: 10.sp,
+                                color: Colors.grey.shade500,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                 ],
               ),
+              SizedBox(height: 24.h),
 
-              SizedBox(height: 20.h),
-
+              // ─── زر الإضافة ───────────────────────────────────────────
               SizedBox(
                 height: AppConstants.buttonHeight.h,
                 child: AppButton(
-                  text: isLoading ? 'جارٍ الحفظ...' : 'تحديث ',
+                  text: isLoading ? 'جارٍ الحفظ...' : 'إضافة فني',
                   backgroundColor: AppColors.orange,
                   borderRadius: 20.r,
-                  onPressed: isLoading
-                      ? null
-                      : () {
-                          final params = {
-                            "specialization": _specializationController.text,
-                            "experience_years": _experienceController.text,
-                            "phone": _phoneController.text,
-                            "city": _cityController.text,
-                            "hourly_rate": _hourlyRateController.text,
-                          };
-
-                          for (
-                            int i = 0;
-                            i < _certificationImages.length;
-                            i++
-                          ) {
-                            params["certifications[$i]"] = File(
-                              _certificationImages[i].path,
-                            ).path;
-                          }
-
-                          context
-                              .read<TechnicianProfileCubit>()
-                              .updateTechnicianProfile(params);
-                        },
+                  onPressed: isLoading ? null : _submit,
                 ),
               ),
+              SizedBox(height: 16.h),
             ],
           ),
         );

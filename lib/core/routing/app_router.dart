@@ -1,3 +1,9 @@
+import 'package:car_care/features/technician/technician_location/presentation/pages/technician_location_page.dart';
+import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
+import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart';
+import 'package:car_care/features/technician_sos/presentation/pages/technician_sos_page.dart';
+import 'package:car_care/features/sos/presentation/pages/sos_page.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
 import 'package:car_care/features/car_washer/availability/presentation/pages/availability_page.dart';
 import 'package:car_care/features/car_washer/ratings/presentation/pages/ratings_page.dart';
@@ -22,7 +28,6 @@ import 'package:car_care/features/user_profile/presentation/pages/profile_page.d
 import 'package:car_care/features/user_profile/presentation/widgets/delete_confirmation_dialog.dart';
 import 'package:car_care/features/vehicle/presentation/pages/maintenance_history_page.dart';
 import 'package:car_care/features/user_profile/presentation/pages/change_password_page.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
 import 'package:car_care/features/vehicle/presentation/pages/vehicle_details_page.dart';
 import 'package:car_care/features/vehicle/presentation/pages/add_vehicle_page.dart';
 import 'package:car_care/features/vehicle/presentation/pages/my_vehicles_page_page.dart';
@@ -49,7 +54,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.my_vehicles_page,
+    initialLocation: Routes.technicianProfileViewBody,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -152,7 +157,27 @@ class AppRouter {
             name: '/profile_washer',
             builder: (context, state) => const ProfileWasherPage(),
           ),
-        ],
+              GoRoute(
+        path: Routes.sos,
+        name: '/sos',
+        builder: (context, state) => const SosPage(),
+      ),
+            GoRoute(
+        path: Routes.technician_sos,
+        name: '/technician_sos',
+        builder: (context, state) => const TechnicianSosPage(),
+      ),
+            GoRoute(
+        path: Routes.tracking,
+        name: '/tracking',
+        builder: (context, state) => const TrackingPage(),
+      ),
+            GoRoute(
+        path: Routes.technician_location,
+        name: '/technician_location',
+        builder: (context, state) => const TechnicianLocationPage(),
+      ),
+      ],
       ),
       GoRoute(
         path: Routes.profile_setup,
@@ -208,15 +233,17 @@ class AppRouter {
         },
       ),
       GoRoute(
-        path: Routes.technicianprofile,
-        name: '/technician_profile',
+        path: Routes.inserttechnicianprofile,
+        name: '/insert_technician_profile',
         builder: (context, state) => const InsertTechnicianProfile(),
       ),
       GoRoute(
-        path: Routes.updateTechnicianProfile,
-        name: '/update_technician_profile',
-        builder: (context, state) => const TechnicianProfileEditBody(),
-      ),
+  path: Routes.updateTechnicianProfile,
+  name: '/update_technician_profile',
+  builder: (context, state) => TechnicianProfileEditPage(
+    initialData: state.extra as TechnicianDataEntity?, // ← هون
+  ),
+),
       GoRoute(
         path: Routes.technicianProfileViewBody,
         name: '/technician_profile_view_page',
