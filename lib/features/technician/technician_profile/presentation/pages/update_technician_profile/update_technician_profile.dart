@@ -1,47 +1,38 @@
-import 'package:car_care/core/constants/app_assets.dart';
-import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
-import 'package:car_care/core/widgets/const.dart';
-import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.dart';
+import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/pages/widgets/update_technician_profile.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/widgets/update_technician_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 
-class TechnicianProfileEditBody extends StatelessWidget {
-  const TechnicianProfileEditBody({super.key});
+class TechnicianProfileEditPage extends StatelessWidget {
+  final TechnicianDataEntity? initialData;
+
+  const TechnicianProfileEditPage({
+    super.key,
+    this.initialData,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => TechnicianProfileCubit(getIt()),
-      child: Directionality(
-        textDirection: TextDirection.rtl,
-        child: Scaffold(
-          backgroundColor: AppColors.lightScaffold,
-          appBar: const CustomAppBar(
-            title: 'تعديل الملف الشخصي ',
-            showBackButton: true,
-          ),
-          bottomNavigationBar: HomeBottomNavBar(
-            onItemSelected: (index) {
-              if (index == 0) context.go(Routes.home);
-            },
-          ),
-          body: Stack(
-            fit: StackFit.expand,
-            children: [
-              Image.asset(
-                AppAssets.artboardBackground,
-                fit: BoxFit.cover,
-                errorBuilder: (_, _, _) => const SizedBox.shrink(),
-              ),
-              const TechnicianProfileEditBodyContent (),
-            ],
-          ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => getIt<TechnicianProfileCubit>(),
         ),
+        BlocProvider(
+          create: (_) => getIt<TechnicianLocationCubit>(),
+        ),
+      ],
+      child: Scaffold(
+        backgroundColor: AppColors.lightScaffold,
+        appBar: AppBar(
+          title: const Text('تعديل الملف الفني'),
+          centerTitle: true,
+        ),
+        body: TechnicianProfileEditBodyContent(initialData: initialData),
       ),
     );
   }

@@ -30,6 +30,11 @@ import 'package:car_care/features/maintenance/user_statistics/data/data_sources/
 import 'package:car_care/features/maintenance/user_statistics/data/repositories/statistics_impl.dart';
 import 'package:car_care/features/maintenance/user_statistics/domain/repositories/i_statistics.dart';
 import 'package:car_care/features/maintenance/user_statistics/presentation/cubit/statistics_cubit.dart';
+import 'package:car_care/features/technician/technician_location/data/data_sources/technician_location_remote_data_source.dart';
+import 'package:car_care/features/technician/technician_location/data/repositories/technician_location_repository_impl.dart';
+import 'package:car_care/features/technician/technician_location/domain/repositories/i_technician_location_repository.dart';
+import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_cubit.dart';
 import 'package:car_care/features/technician/technician_statistics/data/data_sources/technician_statistics_remote_data_source.dart';
 import 'package:car_care/features/technician/technician_statistics/data/repositories/technician_statistics_repository_impl.dart';
 import 'package:car_care/features/technician/technician_statistics/domain/repositories/i_technician_statistics_repository.dart';
@@ -172,6 +177,9 @@ Future<void> setupServiceLocator() async {
     ..registerFactory<TechnicianProfileCubit>(
       () => TechnicianProfileCubit(getIt<ITechnicianProfileRepository>()),
     )
+       ..registerFactory<TechnicianAvailabilityCubit>(
+      () => TechnicianAvailabilityCubit(getIt<ITechnicianProfileRepository>()),
+    )
     //TechnicianQuotations
     ..registerLazySingleton<TechnicianQuotationsRemoteDataSource>(
       () => TechnicianQuotationsRemoteDataSource(getIt<ApiService>()),
@@ -181,8 +189,17 @@ Future<void> setupServiceLocator() async {
         getIt<TechnicianQuotationsRemoteDataSource>(),
       ),
     )
-    ..registerFactory<SubmitQuotationCubit>(
-      () => SubmitQuotationCubit(getIt<ITechnicianQuotationsRepository>()),
+    //Technicianlocation 
+        ..registerLazySingleton<TechnicianLocationRemoteDataSource>(
+      () => TechnicianLocationRemoteDataSource(getIt<ApiService>()),
+    )
+    ..registerLazySingleton<ITechnicianLocationRepository>(
+      () => TechnicianLocationRepositoryImpl(
+        getIt<TechnicianLocationRemoteDataSource>(),
+      ),
+    )
+    ..registerFactory<TechnicianLocationCubit>(
+      () => TechnicianLocationCubit(getIt<ITechnicianLocationRepository>()),
     )
     //TechnicianOrder
     ..registerLazySingleton<TechnicianOrderRemoteDataSource>(
