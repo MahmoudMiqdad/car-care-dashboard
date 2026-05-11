@@ -20,4 +20,28 @@ class BookingsRepositoryImpl implements IBookingsRepository {
       return const Left(Failure(message: 'حدث خطأ أثناء جلب الحجوزات'));
     }
   }
+
+ @override
+Future<Either<Failure, Map<String, dynamic>>> acceptBooking(int bookingId) async {
+  try {
+    final res = await _remote.acceptBooking(bookingId);
+    return Right(res);
+  } on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ أثناء قبول الحجز'));
+  }
+}
+
+@override
+Future<Either<Failure, Map<String, dynamic>>> rejectBooking(int bookingId, String reason) async {
+  try {
+    final res = await _remote.rejectBooking(bookingId, reason);
+    return Right(res);
+  } on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ أثناء رفض الحجز'));
+  }
+}
 }

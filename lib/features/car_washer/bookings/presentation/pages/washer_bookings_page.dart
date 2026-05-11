@@ -10,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
 import 'package:car_care/features/car_washer/bookings/presentation/cubit/washer_bookings/bookings_cubit.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/cubit/bookings_state.dart';
+import 'package:car_care/features/car_washer/bookings/presentation/cubit/washer_bookings/bookings_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:car_care/core/service_locator/service_locator.dart';
@@ -33,7 +33,27 @@ class WasherBookingsPage extends StatelessWidget {
           backgroundColor: AppColors.lightScaffold,
           body: ImageBackground(
             child: SafeArea(
-              child: BlocBuilder<BookingsCubit, BookingsState>(
+              child: BlocConsumer<BookingsCubit, BookingsState>(
+                listener: (context, state) {
+                  if (state is BookingActionSuccessMessage) {
+                    ScaffoldMessenger.of(context).clearSnackBars();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(state.message),
+                        behavior: SnackBarBehavior.floating,
+                      ),
+                    );
+                  }
+                  if (state is BookingActionError) {
+                    ScaffoldMessenger.of(context).clearSnackBars();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(state.message),
+                        behavior: SnackBarBehavior.floating,
+                      ),
+                    );
+                  }
+                },
                 builder: (context, state) {
                   if (state is BookingsLoading) {
                     return const Center(child: AppLoadingWidget());
@@ -47,9 +67,7 @@ class WasherBookingsPage extends StatelessWidget {
                       itemCount: realBookings.length + 1,
                       separatorBuilder: (_, index) => SizedBox(height: 14.h),
                       itemBuilder: (context, index) {
-                        if (index == 0) {
-                          return const WasherBookingFilter();
-                        }
+                        if (index == 0) return const WasherBookingFilter();
                         return WasherBookingCard(
                           booking: realBookings[index - 1],
                         );

@@ -50,4 +50,12 @@ class ApiEndpoints {
   // car-washer (washer side)
   static const String washerMyBookings = '/car_washer/my_bookings';
   static const String customerCarwashBookings = '/customer/carwash_bookings';
+  static String washerAcceptBooking(int id) =>
+      '/car_washer/bookings/$id/accept';
+  static String washerRejectBooking(int id) =>
+      '/car_washer/bookings/$id/reject';
+  // Profile (Car Washer Owner)
+  static const String washerMyProfile = '/car_washer/my_profile';
+  static const String washerAddOrUpdateProfile = '/car_washer/profile';
+  static const String washerProfileLogo = '/car_washer/profile/logo';
 }
