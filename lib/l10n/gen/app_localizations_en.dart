@@ -1334,4 +1334,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get showRatingUsersComments => 'Users comments';
+
+  @override
+  String get createSosTitle => 'Create SOS';
+
+  @override
+  String get createSosChooseVehicle => 'Choose the vehicle';
+
+  @override
+  String get createSosChooseProvince => 'Choose the province';
+
+  @override
+  String get createSosLocationAutoHint => '* Your current location will be sent automatically';
+
+  @override
+  String get createSosProblemDescription => 'Enter a description of the problem';
+
+  @override
+  String get createSosSendRequest => 'Send request';
+
+  @override
+  String get createSosSampleProblemText => 'Enter the description here';
 }

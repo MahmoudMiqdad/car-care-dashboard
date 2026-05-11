@@ -19,7 +19,7 @@ class Routes {
   static const String deleteconfirmationdialog = '/delete_confirmation_dialog';
 
   static const String maintenanceHistory = '/maintenanceHistory';
-  static const String technicianprofile = '/technician_profile';
+  static const String inserttechnicianprofile = '/insert_technician_profile';
   static const String availability = '/availability';
   static const String quotations = '/quotations';
   static const String jobs = '/jobs';
@@ -36,8 +36,8 @@ class Routes {
   static const String technicianProfileViewBody =
       '/technician_profile_view_page';
   static const String updateTechnicianProfile = '/update_technician_profile';
-
   static const String orders = '/orders_page';
+  static const String washer_statistics = '/washer_statistics';
   static const String orderdetails = '/order_details_page';
   static const String technicianquotationspage = '/technician_quotations_page';
   static const String washers = '/washers';
@@ -51,4 +51,9 @@ class Routes {
   static const String editProfileWasher = '/edit_profile_washer';
   static const String washerDetails = '/washer_details';
   static const String washerReservation = '/washer_reservation';
+  static const String sos = '/sos';
+  static const String create_sos = '/create_sos';
+  static const String technician_sos = '/technician_sos';
+  static const String tracking = '/tracking';
+  static const String technician_location = '/technician_location';
 }

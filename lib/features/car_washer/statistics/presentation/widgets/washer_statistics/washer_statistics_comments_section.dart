@@ -5,8 +5,8 @@ import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ShowRatingCommentsSection extends StatelessWidget {
-  const ShowRatingCommentsSection({super.key});
+class WasherStatisticsCommentsSection extends StatelessWidget {
+  const WasherStatisticsCommentsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +103,6 @@ class CommentTile extends StatelessWidget {
               ],
             ),
           ),
-         
         ],
       ),
     );

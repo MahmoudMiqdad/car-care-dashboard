@@ -4,8 +4,9 @@ import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/const.dart';
 import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/pages/widgets/insert_technician_profile.dart';
+import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/widgets/insert_technician_profile_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -15,8 +16,15 @@ class InsertTechnicianProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (_) => TechnicianProfileCubit(getIt()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => TechnicianProfileCubit(getIt()),
+        ),
+        BlocProvider(
+          create: (_) => getIt<TechnicianLocationCubit>(), 
+        ),
+      ],
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
@@ -38,7 +46,7 @@ class InsertTechnicianProfile extends StatelessWidget {
                 fit: BoxFit.cover,
                 errorBuilder: (_, _, _) => const SizedBox.shrink(),
               ),
-              const TechnicianProfileBody(),
+              const InsertTechnicianProfileBody(),
             ],
           ),
         ),

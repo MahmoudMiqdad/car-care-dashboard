@@ -12,6 +12,7 @@ class BookingsRemoteDataSource {
       endPoint: ApiEndpoints.washerMyBookings,
       queryParameters: {
         if (status != null && status.isNotEmpty) 'status': status,
+        'status': ?status,
       },
     );
 

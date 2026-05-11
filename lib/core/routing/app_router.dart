@@ -1,3 +1,10 @@
+import 'package:car_care/features/technician/technician_location/presentation/pages/technician_location_page.dart';
+import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
+import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart';
+import 'package:car_care/features/technician_sos/presentation/pages/technician_sos_page.dart';
+import 'package:car_care/features/sos/presentation/pages/create_sos_page.dart';
+import 'package:car_care/features/sos/presentation/pages/sos_page.dart';
 import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/booking_details_page.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/bookings_page.dart';
@@ -8,7 +15,7 @@ import 'package:car_care/features/car_washer/profile_washer/presentation/pages/e
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
 import 'package:car_care/features/car_washer/availability/presentation/pages/availability_page.dart';
 import 'package:car_care/features/car_washer/ratings/presentation/pages/ratings_page.dart';
-import 'package:car_care/features/car_washer/ratings/presentation/pages/show_rating.dart';
+import 'package:car_care/features/car_washer/statistics/presentation/pages/statistics_page.dart';
 import 'package:car_care/features/car_washer/washers/domain/entities/washers_entity.dart';
 import 'package:car_care/features/car_washer/washers/presentation/pages/washer_details_page.dart';
 import 'package:car_care/features/car_washer/washers/presentation/pages/washer_reservation_page.dart';
@@ -29,7 +36,6 @@ import 'package:car_care/features/user_profile/presentation/pages/profile_page.d
 import 'package:car_care/features/user_profile/presentation/widgets/delete_confirmation_dialog.dart';
 import 'package:car_care/features/vehicle/presentation/pages/maintenance_history_page.dart';
 import 'package:car_care/features/user_profile/presentation/pages/change_password_page.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
 import 'package:car_care/features/vehicle/presentation/pages/vehicle_details_page.dart';
 import 'package:car_care/features/vehicle/presentation/pages/add_vehicle_page.dart';
 import 'package:car_care/features/vehicle/presentation/pages/my_vehicles_page_page.dart';
@@ -56,7 +62,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.profile_washer,
+    initialLocation: Routes.create_sos,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -182,6 +188,27 @@ class AppRouter {
             name: '/profile_washer',
             builder: (context, state) => const ProfileWasherPage(),
           ),
+              GoRoute(
+        path: Routes.sos,
+        name: '/sos',
+        builder: (context, state) => const SosPage(),
+      ),
+            GoRoute(
+        path: Routes.technician_sos,
+        name: '/technician_sos',
+        builder: (context, state) => const TechnicianSosPage(),
+      ),
+            GoRoute(
+        path: Routes.tracking,
+        name: '/tracking',
+        builder: (context, state) => const TrackingPage(),
+      ),
+            GoRoute(
+        path: Routes.technician_location,
+        name: '/technician_location',
+        builder: (context, state) => const TechnicianLocationPage(),
+      ),
+      
           GoRoute(
             path: Routes.editProfileWasher,
             name: 'editProfileWasher',
@@ -245,15 +272,22 @@ class AppRouter {
         },
       ),
       GoRoute(
-        path: Routes.technicianprofile,
-        name: '/technician_profile',
+        path: Routes.inserttechnicianprofile,
+        name: '/insert_technician_profile',
         builder: (context, state) => const InsertTechnicianProfile(),
       ),
       GoRoute(
-        path: Routes.updateTechnicianProfile,
-        name: '/update_technician_profile',
-        builder: (context, state) => const TechnicianProfileEditBody(),
+        path: Routes.create_sos,
+        name: '/create_sos',
+        builder: (context, state) => const CreateSosPage(),
       ),
+      GoRoute(
+  path: Routes.updateTechnicianProfile,
+  name: '/update_technician_profile',
+  builder: (context, state) => TechnicianProfileEditPage(
+    initialData: state.extra as TechnicianDataEntity?, // ← هون
+  ),
+),
       GoRoute(
         path: Routes.technicianProfileViewBody,
         name: '/technician_profile_view_page',
@@ -276,12 +310,7 @@ class AppRouter {
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const RatingsPage(),
       ),
-      GoRoute(
-        path: Routes.show_ratings,
-        name: '/show_ratings',
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) => const ShowRatingPage(),
-      ),
+  
       GoRoute(
         path: Routes.statistics,
         builder: (context, state) => const UserStatisticsPage(),
@@ -329,12 +358,6 @@ class AppRouter {
         name: '/rate_job',
         builder: (context, state) => const RateJobPage(),
       ),
-
-      // GoRoute(
-      //   path: Routes.technician_requests,
-      //   name: '/technician_requests',
-      //   builder: (context, state) => const TechnicianRequestsPage(),
-      // ),
       GoRoute(
         path: Routes.technician_jobs,
         name: '/technician_jobs',
@@ -344,6 +367,11 @@ class AppRouter {
         path: Routes.technician_statistics,
         name: '/technician_statistics',
         builder: (context, state) => const TechnicianStatisticsPage(),
+      ),
+      GoRoute(
+        path: Routes.washer_statistics,
+        name: '/washer_statistics',
+        builder: (context, state) => const StatisticsPage(),
       ),
     ],
   );

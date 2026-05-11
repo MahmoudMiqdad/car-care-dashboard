@@ -10,7 +10,7 @@ class CustomerBookingsRemoteDataSource {
     final response = await _apiService.get(
       endPoint: ApiEndpoints.customerCarwashBookings,
       queryParameters: {
-        if (status != null) 'status': status,
+        'status': ?status,
       },
     );
 
