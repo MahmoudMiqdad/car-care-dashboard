@@ -4,7 +4,7 @@ class Routes {
   static const String splash = '/';
   static const String login = '/login';
   static const String signup = '/signup';
-  static const String  user_profile = '/user_profile_page.dart';
+  static const String user_profile = '/user_profile_page.dart';
   static const String profile_setup = '/profile_setup';
   static const String forget_password = '/forget_password';
   static const String changepasswordpage = '/change_password_page';
@@ -46,7 +46,7 @@ class Routes {
   static const String washerBookingsDetails = '/washer_bookings_details';
   static const String bookingDetails = '/booking_details';
   static const String ratings = '/ratings';
-    static const String show_ratings = '/show_ratings';
+  static const String show_ratings = '/show_ratings';
   static const String profile_washer = '/profile_washer';
   static const String editProfileWasher = '/edit_profile_washer';
   static const String washerDetails = '/washer_details';

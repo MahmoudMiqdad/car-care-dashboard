@@ -12,6 +12,10 @@ import 'package:car_care/features/car_washer/bookings/domain/repositories/i_book
 import 'package:car_care/features/car_washer/bookings/domain/repositories/i_customer_bookings_repository.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/cubit/customer_bookings/customer_bookings_cubit.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/cubit/washer_bookings/bookings_cubit.dart';
+import 'package:car_care/features/car_washer/profile_washer/data/data_sources/profile_washer_remote_data_source.dart';
+import 'package:car_care/features/car_washer/profile_washer/data/repositories/profile_washer_repository_impl.dart';
+import 'package:car_care/features/car_washer/profile_washer/domain/repositories/i_profile_washer_repository.dart';
+import 'package:car_care/features/car_washer/profile_washer/presentation/cubit/profile_washer_cubit.dart';
 import 'package:car_care/features/car_washer/washers/data/data_sources/washers_remote_data_source.dart';
 import 'package:car_care/features/car_washer/washers/data/repositories/washers_repository_impl.dart';
 import 'package:car_care/features/car_washer/washers/domain/repositories/i_washers_repository.dart';
@@ -271,5 +275,15 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<CustomerBookingsCubit>(
   () => CustomerBookingsCubit(getIt<ICustomerBookingsRepository>()),
+)
+
+..registerLazySingleton<ProfileWasherRemoteDataSource>(
+  () => ProfileWasherRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IProfileWasherRepository>(
+  () => ProfileWasherRepositoryImpl(getIt<ProfileWasherRemoteDataSource>()),
+)
+..registerFactory<ProfileWasherCubit>(
+  () => ProfileWasherCubit(getIt<IProfileWasherRepository>()),
 );
 }
