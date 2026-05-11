@@ -29,7 +29,7 @@ void showTechnicianEntrySheet(BuildContext context) {
             child: InkWell(
               onTap: () {
                 Navigator.of(sheetContext).pop();
-                context.push(Routes.technicianprofile);
+                context.push(Routes.inserttechnicianprofile);
               },
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
