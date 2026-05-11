@@ -2003,7 +2003,34 @@
   "showRatingUsersComments": "تعليقات المستخدمين",
   "@showRatingUsersComments": {
     "description": "عنوان قسم تعليقات المستخدمين"
+  },
+  "createSosTitle": "إنشاء طلب نجدة",
+  "@createSosTitle": {
+    "description": "عنوان شريط التطبيق لصفحة إنشاء طلب نجدة"
+  },
+  "createSosChooseVehicle": "اختر المركبة",
+  "@createSosChooseVehicle": {
+    "description": "عنوان قائمة اختيار المركبة"
+  },
+  "createSosChooseProvince": "اختر المحافظة",
+  "@createSosChooseProvince": {
+    "description": "عنوان قائمة اختيار المحافظة"
+  },
+  "createSosLocationAutoHint": "* سيتم إرسال موقعك الحالي تلقائياً",
+  "@createSosLocationAutoHint": {
+    "description": "نص توضيحي تحت حقل المحافظة"
+  },
+  "createSosProblemDescription": "أدخل وصفاً للمشكلة",
+  "@createSosProblemDescription": {
+    "description": "عنوان حقل وصف المشكلة"
+  },
+  "createSosSendRequest": "إرسال الطلب",
+  "@createSosSendRequest": {
+    "description": "زر إرسال طلب النجدة"
+  },
+  "createSosSampleProblemText": "ادخل الوصف هنا",
+  "@createSosSampleProblemText": {
+    "description": "نص أولي أو تلميح لحقل الوصف (لا يتضمن أسماء مركبات أو محافظات)"
   }
-
 }
 

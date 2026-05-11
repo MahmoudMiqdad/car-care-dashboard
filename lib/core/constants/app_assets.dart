@@ -19,6 +19,9 @@ static const String deleteIcon = '$_imagesPath/delete.png';
   /// Car wash directory / washers list (pattern background)
   static const String washersPatternBackground = '$_imagesPath/1212s.png';
 
+  /// Create SOS flow (warning illustration)
+  static const String sosWarningRafiki = '$_imagesPath/Warning-rafiki.png';
+
   /// Price offer / financing illustration (orders flow)
   static const String carFinanceAmico = '$_imagesPath/Carfinance-amico.png';
   static const String calendarIcon = '$_imagesPath/calendar.png';

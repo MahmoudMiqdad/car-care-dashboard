@@ -10,7 +10,7 @@ class BookingsRemoteDataSource {
     final response = await _apiService.get(
       endPoint: ApiEndpoints.washerMyBookings,
       queryParameters: {
-        if (status != null) 'status': status,
+        'status': ?status,
       },
     );
 

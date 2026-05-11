@@ -5,6 +5,5 @@ class TechnicianSosCubit extends Cubit<TechnicianSosState> {
 
   TechnicianSosCubit() : super(TechnicianSosInitial());
 
-  // TODO: Add business logic methods here
 
 }

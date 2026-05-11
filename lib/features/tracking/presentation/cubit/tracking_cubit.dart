@@ -5,6 +5,5 @@ class TrackingCubit extends Cubit<TrackingState> {
 
   TrackingCubit() : super(TrackingInitial());
 
-  // TODO: Add business logic methods here
 
 }

@@ -2000,6 +2000,34 @@
   "showRatingUsersComments": "Users comments",
   "@showRatingUsersComments": {
     "description": "Title of users comments section"
+  },
+  "createSosTitle": "Create SOS",
+  "@createSosTitle": {
+    "description": "App bar title for create SOS screen"
+  },
+  "createSosChooseVehicle": "Choose the vehicle",
+  "@createSosChooseVehicle": {
+    "description": "Label for vehicle dropdown on create SOS"
+  },
+  "createSosChooseProvince": "Choose the province",
+  "@createSosChooseProvince": {
+    "description": "Label for province dropdown on create SOS"
+  },
+  "createSosLocationAutoHint": "* Your current location will be sent automatically",
+  "@createSosLocationAutoHint": {
+    "description": "Hint under province field on create SOS"
+  },
+  "createSosProblemDescription": "Enter a description of the problem",
+  "@createSosProblemDescription": {
+    "description": "Title for problem description field on create SOS (two lines: heading and hint)"
+  },
+  "createSosSendRequest": "Send request",
+  "@createSosSendRequest": {
+    "description": "Primary submit button on create SOS"
+  },
+  "createSosSampleProblemText": "Enter the description here",
+  "@createSosSampleProblemText": {
+    "description": "Initial or hint text for problem field (not vehicle or province names)"
   }
 }
 

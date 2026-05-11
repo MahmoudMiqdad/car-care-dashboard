@@ -2712,6 +2712,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Users comments'**
   String get showRatingUsersComments;
+
+  /// App bar title for create SOS screen
+  ///
+  /// In en, this message translates to:
+  /// **'Create SOS'**
+  String get createSosTitle;
+
+  /// Label for vehicle dropdown on create SOS
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the vehicle'**
+  String get createSosChooseVehicle;
+
+  /// Label for province dropdown on create SOS
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the province'**
+  String get createSosChooseProvince;
+
+  /// Hint under province field on create SOS
+  ///
+  /// In en, this message translates to:
+  /// **'* Your current location will be sent automatically'**
+  String get createSosLocationAutoHint;
+
+  /// Title for problem description field on create SOS (two lines: heading and hint)
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a description of the problem'**
+  String get createSosProblemDescription;
+
+  /// Primary submit button on create SOS
+  ///
+  /// In en, this message translates to:
+  /// **'Send request'**
+  String get createSosSendRequest;
+
+  /// Initial or hint text for problem field (not vehicle or province names)
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the description here'**
+  String get createSosSampleProblemText;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

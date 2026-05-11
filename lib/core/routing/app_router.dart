@@ -3,6 +3,7 @@ import 'package:car_care/features/technician/technician_profile/domain/entities/
 import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
 import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart';
 import 'package:car_care/features/technician_sos/presentation/pages/technician_sos_page.dart';
+import 'package:car_care/features/sos/presentation/pages/create_sos_page.dart';
 import 'package:car_care/features/sos/presentation/pages/sos_page.dart';
 import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/booking_details_page.dart';
@@ -59,7 +60,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.washer_statistics,
+    initialLocation: Routes.create_sos,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -266,6 +267,11 @@ class AppRouter {
         path: Routes.inserttechnicianprofile,
         name: '/insert_technician_profile',
         builder: (context, state) => const InsertTechnicianProfile(),
+      ),
+      GoRoute(
+        path: Routes.create_sos,
+        name: '/create_sos',
+        builder: (context, state) => const CreateSosPage(),
       ),
       GoRoute(
   path: Routes.updateTechnicianProfile,
