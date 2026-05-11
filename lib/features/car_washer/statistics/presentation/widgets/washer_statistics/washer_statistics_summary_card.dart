@@ -4,8 +4,8 @@ import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ShowRatingSummaryCard extends StatelessWidget {
-  const ShowRatingSummaryCard({super.key});
+class WasherStatisticsSummaryCard extends StatelessWidget {
+  const WasherStatisticsSummaryCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,6 @@ class ShowRatingSummaryCard extends StatelessWidget {
                 Expanded(
                   child: SummaryColumn(
                     items: [
-                    //  SummaryItem(strings.showRatingInProgress, '20'),
                       SummaryItem(strings.completed, '80'),
                       SummaryItem(strings.cancelled, '40'),
                     ],

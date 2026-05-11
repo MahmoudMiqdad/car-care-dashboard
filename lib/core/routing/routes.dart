@@ -36,8 +36,8 @@ class Routes {
   static const String technicianProfileViewBody =
       '/technician_profile_view_page';
   static const String updateTechnicianProfile = '/update_technician_profile';
-
   static const String orders = '/orders_page';
+  static const String washer_statistics = '/washer_statistics';
   static const String orderdetails = '/order_details_page';
   static const String technicianquotationspage = '/technician_quotations_page';
   static const String washers = '/washers';

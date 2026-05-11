@@ -12,7 +12,7 @@ import 'package:car_care/features/car_washer/profile_washer/presentation/pages/e
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
 import 'package:car_care/features/car_washer/availability/presentation/pages/availability_page.dart';
 import 'package:car_care/features/car_washer/ratings/presentation/pages/ratings_page.dart';
-import 'package:car_care/features/car_washer/ratings/presentation/pages/show_rating.dart';
+import 'package:car_care/features/car_washer/statistics/presentation/pages/statistics_page.dart';
 import 'package:car_care/features/car_washer/washers/domain/entities/washers_entity.dart';
 import 'package:car_care/features/car_washer/washers/presentation/pages/washer_details_page.dart';
 import 'package:car_care/features/car_washer/washers/presentation/pages/washer_reservation_page.dart';
@@ -59,7 +59,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.technicianProfileViewBody,
+    initialLocation: Routes.washer_statistics,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -296,12 +296,7 @@ class AppRouter {
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const RatingsPage(),
       ),
-      GoRoute(
-        path: Routes.show_ratings,
-        name: '/show_ratings',
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) => const ShowRatingPage(),
-      ),
+  
       GoRoute(
         path: Routes.statistics,
         builder: (context, state) => const UserStatisticsPage(),
@@ -349,12 +344,6 @@ class AppRouter {
         name: '/rate_job',
         builder: (context, state) => const RateJobPage(),
       ),
-
-      // GoRoute(
-      //   path: Routes.technician_requests,
-      //   name: '/technician_requests',
-      //   builder: (context, state) => const TechnicianRequestsPage(),
-      // ),
       GoRoute(
         path: Routes.technician_jobs,
         name: '/technician_jobs',
@@ -364,6 +353,11 @@ class AppRouter {
         path: Routes.technician_statistics,
         name: '/technician_statistics',
         builder: (context, state) => const TechnicianStatisticsPage(),
+      ),
+      GoRoute(
+        path: Routes.washer_statistics,
+        name: '/washer_statistics',
+        builder: (context, state) => const StatisticsPage(),
       ),
     ],
   );
