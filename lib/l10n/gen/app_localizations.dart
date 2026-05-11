@@ -2311,16 +2311,16 @@ abstract class AppLocalizations {
   /// **'By status'**
   String get bookingsFilterByStatus;
 
-  /// Booking status chip: progress
+  /// Status label when the service has started
   ///
   /// In en, this message translates to:
-  /// **'progress'**
+  /// **'In Progress'**
   String get bookingStatusProgress;
 
-  /// Booking status chip: accepted
+  /// Status label when a booking is accepted by the washer
   ///
   /// In en, this message translates to:
-  /// **'accepted'**
+  /// **'Accepted'**
   String get bookingStatusAccepted;
 
   /// Booking status chip: pinding
@@ -2371,6 +2371,54 @@ abstract class AppLocalizations {
   /// **'Show details'**
   String get bookingsMenuShowDetails;
 
+  /// Washer booking card: full-width CTA
+  ///
+  /// In en, this message translates to:
+  /// **'View details'**
+  String get washerBookingViewDetails;
+
+  /// Washer booking card: quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get washerBookingAccept;
+
+  /// Washer booking card: quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Reject'**
+  String get washerBookingReject;
+
+  /// Washer booking card: quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Start execution'**
+  String get washerBookingStartExecution;
+
+  /// Washer booking card: quick action
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get washerBookingCompleted;
+
+  /// Washer booking card: info row label
+  ///
+  /// In en, this message translates to:
+  /// **'Customer name:'**
+  String get washerBookingCustomerNameLabel;
+
+  /// Washer booking card: info row label
+  ///
+  /// In en, this message translates to:
+  /// **'Requested service:'**
+  String get washerBookingRequestedServiceLabel;
+
+  /// Washer booking card: info row label
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment:'**
+  String get washerBookingAppointmentLabel;
+
   /// Menu action for cancelling booking
   ///
   /// In en, this message translates to:
@@ -2382,6 +2430,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Rate service'**
   String get bookingsMenuRateService;
+
+  /// App bar title for booking details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Booking details'**
+  String get bookingDetailsPageTitle;
+
+  /// First section title on booking details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Service details'**
+  String get bookingDetailsServiceSectionTitle;
+
+  /// Appointment section title on booking details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Appointment details'**
+  String get bookingDetailsAppointmentSectionTitle;
+
+  /// User notes section title on booking details screen
+  ///
+  /// In en, this message translates to:
+  /// **'User notes'**
+  String get bookingDetailsUserNotesSectionTitle;
+
+  /// Washer name row label in first card on booking details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Car wash name'**
+  String get bookingDetailsWasherNameLabel;
+
+  /// Order date row label in appointment card
+  ///
+  /// In en, this message translates to:
+  /// **'Order date'**
+  String get bookingDetailsOrderDateLabel;
+
+  /// Vehicle row label in appointment card
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle'**
+  String get bookingDetailsVehicleLabel;
 
   /// First section title on car wash rating screen
   ///
@@ -2412,6 +2502,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Send rating'**
   String get ratingsSendRating;
+
+  /// App bar title for washer owner profile screen
+  ///
+  /// In en, this message translates to:
+  /// **'Washer Profile'**
+  String get profileWasherPageTitle;
+
+  /// Primary button on washer profile screen
+  ///
+  /// In en, this message translates to:
+  /// **'Edit profile'**
+  String get profileWasherEditProfile;
+
+  /// Placeholder shop name until API data exists
+  ///
+  /// In en, this message translates to:
+  /// **'Mahaba Car Wash'**
+  String get profileWasherSampleShopName;
+
+  /// Rating count subtitle under stars on washer profile
+  ///
+  /// In en, this message translates to:
+  /// **'{count} ratings'**
+  String profileWasherRatingsCountLine(int count);
+
+  /// Placeholder full address until API data exists
+  ///
+  /// In en, this message translates to:
+  /// **'Damascus - Abbasiyyin Square - Entrance to Al-Qusour Square'**
+  String get profileWasherSampleFullAddress;
+
+  /// Placeholder phone displayed on washer profile card
+  ///
+  /// In en, this message translates to:
+  /// **'0987654321'**
+  String get profileWasherSamplePhone;
+
+  /// Section title for washer description on profile screen
+  ///
+  /// In en, this message translates to:
+  /// **'About the wash'**
+  String get profileWasherAboutTitle;
+
+  /// Placeholder washer description until API provides copy
+  ///
+  /// In en, this message translates to:
+  /// **'At Mahaba Car Wash we deliver professional cleaning with safe, eco-friendly products and a crew that cares about every detail, inside and out. We strive to serve you day after day with clear pricing and a comfortable wait—because your car deserves spotless care from people who love doing the job right.'**
+  String get profileWasherDescriptionSample;
+
+  /// App bar title for edit washer profile screen
+  ///
+  /// In en, this message translates to:
+  /// **'Edit washer profile'**
+  String get profileWasherEditPageTitle;
+
+  /// Label for wash name field on edit profile
+  ///
+  /// In en, this message translates to:
+  /// **'Washer name'**
+  String get profileWasherFieldWasherName;
+
+  /// Hint for wash name field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter wash name'**
+  String get profileWasherHintWasherName;
+
+  /// Label for phone field on edit washer profile
+  ///
+  /// In en, this message translates to:
+  /// **'Phone number'**
+  String get profileWasherFieldPhone;
+
+  /// Hint for phone field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter contact phone number'**
+  String get profileWasherHintPhone;
+
+  /// Label for address field
+  ///
+  /// In en, this message translates to:
+  /// **'City and address'**
+  String get profileWasherFieldAddress;
+
+  /// Hint for address field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter full wash address'**
+  String get profileWasherHintAddress;
+
+  /// Label for work start time
+  ///
+  /// In en, this message translates to:
+  /// **'Opening time'**
+  String get profileWasherFieldWorkStart;
+
+  /// Hint for opening time
+  ///
+  /// In en, this message translates to:
+  /// **'Enter opening time'**
+  String get profileWasherHintWorkStart;
+
+  /// Label for work end time
+  ///
+  /// In en, this message translates to:
+  /// **'Closing time'**
+  String get profileWasherFieldWorkEnd;
+
+  /// Hint for closing time
+  ///
+  /// In en, this message translates to:
+  /// **'Enter closing time'**
+  String get profileWasherHintWorkEnd;
+
+  /// Section title on edit washer profile
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the services you offer'**
+  String get profileWasherChooseServicesTitle;
+
+  /// Label for description field
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get profileWasherFieldDescription;
+
+  /// Hint for description field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter wash description'**
+  String get profileWasherHintDescription;
+
+  /// Basic tier name
+  ///
+  /// In en, this message translates to:
+  /// **'Basic'**
+  String get profileWasherTierBasic;
+
+  /// VIP tier name
+  ///
+  /// In en, this message translates to:
+  /// **'Vip'**
+  String get profileWasherTierVip;
+
+  /// Premium tier name
+  ///
+  /// In en, this message translates to:
+  /// **'Premium'**
+  String get profileWasherTierPremium;
+
+  /// Price field label under tier
+  ///
+  /// In en, this message translates to:
+  /// **'Price'**
+  String get profileWasherFieldPrice;
+
+  /// Hint for tier price field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter price'**
+  String get profileWasherHintPrice;
+
+  /// Primary save button on edit washer profile
+  ///
+  /// In en, this message translates to:
+  /// **'Save changes'**
+  String get profileWasherSaveChanges;
+
+  /// Title of total bookings section on ratings screen
+  ///
+  /// In en, this message translates to:
+  /// **'Total bookings'**
+  String get showRatingTotalBookings;
+
+  /// All reserved count label on ratings screen
+  ///
+  /// In en, this message translates to:
+  /// **'All Reserved'**
+  String get showRatingAllReserved;
+
+  /// Status label for a booking waiting for review
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get bookingStatusPending;
+
+  /// Status label when the service is finished
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get bookingStatusCompleted;
+
+  /// Status label when a booking is canceled
+  ///
+  /// In en, this message translates to:
+  /// **'Canceled'**
+  String get bookingStatusCanceled;
+
+  /// Title of average ratings section
+  ///
+  /// In en, this message translates to:
+  /// **'Average ratings'**
+  String get showRatingAverageRatings;
+
+  /// Title of users comments section
+  ///
+  /// In en, this message translates to:
+  /// **'Users comments'**
+  String get showRatingUsersComments;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
