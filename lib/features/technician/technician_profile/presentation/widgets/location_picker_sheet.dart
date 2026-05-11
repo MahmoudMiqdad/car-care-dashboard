@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_cubit.dart';
 import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_state.dart';
@@ -188,8 +190,9 @@ class _LocationPickerSheetState extends State<LocationPickerSheet> {
                       initialZoom: 15,
                       // لما يتحرك الخريطة يتحدث الموقع
                       onPositionChanged: (position, hasGesture) {
+                        // ignore: unnecessary_null_comparison
                         if (hasGesture && position.center != null) {
-                          setState(() => _pickedLocation = position.center!);
+                          setState(() => _pickedLocation = position.center);
                         }
                       },
                     ),

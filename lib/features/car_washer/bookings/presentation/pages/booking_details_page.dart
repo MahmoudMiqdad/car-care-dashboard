@@ -29,7 +29,6 @@ class BookingDetailsPage extends StatelessWidget {
       '${context.l10n.plate}: ${booking!.vehicle.plateNumber}',
     ];
 
-    final userNotesLines = ['${context.l10n.notes}: ${booking!.notes}'];
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(

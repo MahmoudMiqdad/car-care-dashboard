@@ -1,4 +1,5 @@
-import 'package:car_care/features/sos/data/models/tracking_techniciain_model.dart';
+// ignore_for_file: deprecated_member_use
+
 import 'package:car_care/features/sos/presentation/cubit/tracking_cubit/tracking_cubit.dart';
 import 'package:car_care/features/sos/presentation/cubit/tracking_cubit/tracking_state.dart';
 import 'package:flutter/material.dart';

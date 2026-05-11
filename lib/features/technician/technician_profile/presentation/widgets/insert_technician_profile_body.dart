@@ -46,6 +46,7 @@ class _TechnicianProfileBodyState extends State<InsertTechnicianProfileBody> {
     if (images.isEmpty) return;
 
     if (images.length + _certificationImages.length > 3) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           content: Text('يمكنك اختيار 3 صور كحد أقصى'),

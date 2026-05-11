@@ -51,7 +51,6 @@ import 'package:car_care/features/technician/technician_profile/presentation/cub
 import 'package:car_care/features/technician/technician_quotations/data/data_sources/technician_quotations_remote_data_source.dart';
 import 'package:car_care/features/technician/technician_quotations/data/repositories/technician_quotations_repository_impl.dart';
 import 'package:car_care/features/technician/technician_quotations/domain/repositories/i_technician_quotations_repository.dart';
-import 'package:car_care/features/technician/technician_quotations/presentation/cubit/technician_quotations_cubit.dart';
 import 'package:car_care/features/user_profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:car_care/features/user_profile/domain/repositories/i_profile_repository.dart';
 import 'package:car_care/features/user_profile/data/repositories/profile_repo_impl.dart';

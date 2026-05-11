@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
@@ -125,7 +127,7 @@ class TechnicianProfileViewBody extends StatelessWidget {
                                     child: Image.network(
                                       url,
                                       fit: BoxFit.contain,
-                                      errorBuilder: (_, __, ___) =>
+                                      errorBuilder: (_, _, _) =>
                                           Container(color: Colors.grey[300]),
                                     ),
                                   ),
@@ -137,7 +139,7 @@ class TechnicianProfileViewBody extends StatelessWidget {
                               child: Image.network(
                                 url,
                                 fit: BoxFit.cover,
-                                errorBuilder: (_, __, ___) =>
+                                errorBuilder: (_, _, _) =>
                                     Container(color: Colors.grey[300]),
                               ),
                             ),
@@ -275,7 +277,7 @@ class _AvailabilityToggle extends StatelessWidget {
                     )
                   : Switch(
                       value: isAvailable,
-                      activeColor: Colors.green.shade600,
+                      activeThumbColor: Colors.green.shade600,
                       inactiveThumbColor: Colors.red.shade400,
                       inactiveTrackColor: Colors.red.shade100,
                       onChanged: (val) {

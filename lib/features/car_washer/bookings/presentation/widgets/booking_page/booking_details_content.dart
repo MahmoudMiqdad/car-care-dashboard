@@ -92,7 +92,7 @@ class BookingDetailsContent extends StatelessWidget {
                 ? Image.network(
                     washerLogoUrl,
                     fit: BoxFit.cover,
-                    errorBuilder: (_, __, ___) => Image.asset(
+                    errorBuilder: (_, _, _) => Image.asset(
                       'assets/images/1212s.png',
                       fit: BoxFit.cover,
                     ),

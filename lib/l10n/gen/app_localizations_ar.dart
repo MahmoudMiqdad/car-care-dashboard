@@ -1334,4 +1334,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get showRatingUsersComments => 'تعليقات المستخدمين';
+
+  @override
+  String get createSosTitle => 'إنشاء طلب نجدة';
+
+  @override
+  String get createSosChooseVehicle => 'اختر المركبة';
+
+  @override
+  String get createSosChooseProvince => 'اختر المحافظة';
+
+  @override
+  String get createSosLocationAutoHint => '* سيتم إرسال موقعك الحالي تلقائياً';
+
+  @override
+  String get createSosProblemDescription => 'أدخل وصفاً للمشكلة';
+
+  @override
+  String get createSosSendRequest => 'إرسال الطلب';
+
+  @override
+  String get createSosSampleProblemText => 'ادخل الوصف هنا';
 }
