@@ -201,7 +201,7 @@ class AppRouter {
         name: '/technician_location',
         builder: (context, state) => const TechnicianLocationPage(),
       ),
-      ],
+      
           GoRoute(
             path: Routes.editProfileWasher,
             name: '/edit_profile_washer',
