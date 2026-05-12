@@ -2754,6 +2754,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter the description here'**
   String get createSosSampleProblemText;
+
+  /// App bar title for SOS requests list screen
+  ///
+  /// In en, this message translates to:
+  /// **'SOS Requests List'**
+  String get sosRequestsListTitle;
+
+  /// Label before SOS request id (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'ID Number'**
+  String get sosRequestIdLabel;
+
+  /// Label before vehicle name (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle'**
+  String get sosRequestVehicleLabel;
+
+  /// Label for short problem description (body text is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Short description'**
+  String get sosRequestShortDescriptionLabel;
+
+  /// SOS request status badge: finished
+  ///
+  /// In en, this message translates to:
+  /// **'Finished'**
+  String get sosStatusFinished;
+
+  /// SOS request status badge: in progress
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get sosStatusInProgress;
+
+  /// SOS request status badge: waiting
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting'**
+  String get sosStatusWaiting;
+
+  /// Outlined accept button on SOS request card
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get sosRequestAccept;
+
+  /// Primary button to open SOS request details
+  ///
+  /// In en, this message translates to:
+  /// **'View details'**
+  String get sosRequestViewDetails;
+
+  /// SOS card footer relative time in hours
+  ///
+  /// In en, this message translates to:
+  /// **'Created {hours} hours ago'**
+  String sosRequestCreatedAtHours(int hours);
+
+  /// SOS card footer relative time in minutes
+  ///
+  /// In en, this message translates to:
+  /// **'Created {minutes} min ago'**
+  String sosRequestCreatedAtMinutes(int minutes);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

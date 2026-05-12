@@ -6,8 +6,8 @@ class AppAssets {
   static const String splashBackgroundImg =
       '$_imagesPath/splash_background.png';
 
-   static const String plateNumberIcon = '$_imagesPath/number.png';
-static const String deleteIcon = '$_imagesPath/delete.png';
+  static const String plateNumberIcon = '$_imagesPath/number.png';
+  static const String deleteIcon = '$_imagesPath/delete.png';
   static const String editIcon = '$_imagesPath/edit.png';
   static const String maintenanceActionIcon = '$_imagesPath/2.png';
 
@@ -26,7 +26,8 @@ static const String deleteIcon = '$_imagesPath/delete.png';
   static const String carFinanceAmico = '$_imagesPath/Carfinance-amico.png';
   static const String calendarIcon = '$_imagesPath/calendar.png';
 
-  static const String technicianJobNotesIcon = '$_imagesPath/icons8-notes-48.png';
+  static const String technicianJobNotesIcon =
+      '$_imagesPath/icons8-notes-48.png';
   static const String technicianJobProfileIcon =
       '$_imagesPath/icons8-profile-picture-50.png';
   static const String reviewerProfilePicture100 =
@@ -34,7 +35,8 @@ static const String deleteIcon = '$_imagesPath/delete.png';
   static const String technicianJobVehicleIcon = '$_imagesPath/car.png';
   static const String technicianJobRateIcon = '$_imagesPath/icons8-rate-50.png';
   static const String technicianJobTimeIcon = '$_imagesPath/icons8-time-51.png';
-  static const String technicianJobRejectedIcon = '$_imagesPath/icons8-x-50.png';
+  static const String technicianJobRejectedIcon =
+      '$_imagesPath/icons8-x-50.png';
 
   /// App bar logo (CAR CARE)
   static const String homeAppBarLogo = '$_imagesPath/logo 1 .png';
@@ -47,7 +49,6 @@ static const String deleteIcon = '$_imagesPath/delete.png';
   static const String serviceMaintenance = '$_imagesPath/3.png';
   static const String serviceCarWash = '$_imagesPath/7.png';
 
-
   static const String iconPhoneCall = '$_imagesPath/icons8-call_50.png';
   static const String iconLocationPin = '$_imagesPath/icons8-location-50.png';
   static const String iconTime = '$_imagesPath/icons8-time-50.png';
@@ -56,9 +57,12 @@ static const String deleteIcon = '$_imagesPath/delete.png';
   static const String serviceMarketplace = '$_imagesPath/8.png';
   static const String serviceFuel = '$_imagesPath/5.png';
 
+  /// SOS request card: vehicle row (line-art car).
+  static const String sosRequestVehicleRowIcon =
+      '$_imagesPath/icons8-car-50.png';
+
   // icons
   static const String syrianLogoGoldIcon = '$_iconsPath/syrian_logo_gold.svg';
-
 
   // loading
   static const String loadingImage = '$_imagesPath/cars.json';
