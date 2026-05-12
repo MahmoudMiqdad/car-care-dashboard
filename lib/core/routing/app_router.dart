@@ -10,7 +10,6 @@ import 'package:car_care/features/car_washer/bookings/presentation/pages/booking
 import 'package:car_care/features/car_washer/bookings/presentation/pages/bookings_page.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/washer_bookings_details.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/washer_bookings_page.dart';
-import 'package:car_care/features/car_washer/profile_washer/domain/entities/washer_profile_entity.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/edit_profile_washer_page.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
 import 'package:car_care/features/car_washer/availability/presentation/pages/availability_page.dart';
@@ -62,7 +61,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.create_sos,
+    initialLocation: Routes.sos,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -115,6 +114,11 @@ class AppRouter {
             path: Routes.home,
             name: '/home',
             builder: (context, state) => const HomePage(),
+          ),
+          GoRoute(
+            path: Routes.sos,
+            name: '/sos',
+            builder: (context, state) => const SosPage(),
           ),
           GoRoute(
             path: Routes.notifications,
@@ -188,27 +192,22 @@ class AppRouter {
             name: '/profile_washer',
             builder: (context, state) => const ProfileWasherPage(),
           ),
-              GoRoute(
-        path: Routes.sos,
-        name: '/sos',
-        builder: (context, state) => const SosPage(),
-      ),
-            GoRoute(
-        path: Routes.technician_sos,
-        name: '/technician_sos',
-        builder: (context, state) => const TechnicianSosPage(),
-      ),
-            GoRoute(
-        path: Routes.tracking,
-        name: '/tracking',
-        builder: (context, state) => const TrackingPage(),
-      ),
-            GoRoute(
-        path: Routes.technician_location,
-        name: '/technician_location',
-        builder: (context, state) => const TechnicianLocationPage(),
-      ),
-      
+          GoRoute(
+            path: Routes.technician_sos,
+            name: '/technician_sos',
+            builder: (context, state) => const TechnicianSosPage(),
+          ),
+          GoRoute(
+            path: Routes.tracking,
+            name: '/tracking',
+            builder: (context, state) => const TrackingPage(),
+          ),
+          GoRoute(
+            path: Routes.technician_location,
+            name: '/technician_location',
+            builder: (context, state) => const TechnicianLocationPage(),
+          ),
+
           GoRoute(
             path: Routes.editProfileWasher,
             name: 'editProfileWasher',
@@ -282,12 +281,12 @@ class AppRouter {
         builder: (context, state) => const CreateSosPage(),
       ),
       GoRoute(
-  path: Routes.updateTechnicianProfile,
-  name: '/update_technician_profile',
-  builder: (context, state) => TechnicianProfileEditPage(
-    initialData: state.extra as TechnicianDataEntity?, // ← هون
-  ),
-),
+        path: Routes.updateTechnicianProfile,
+        name: '/update_technician_profile',
+        builder: (context, state) => TechnicianProfileEditPage(
+          initialData: state.extra as TechnicianDataEntity?, // ← هون
+        ),
+      ),
       GoRoute(
         path: Routes.technicianProfileViewBody,
         name: '/technician_profile_view_page',
@@ -310,7 +309,7 @@ class AppRouter {
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const RatingsPage(),
       ),
-  
+
       GoRoute(
         path: Routes.statistics,
         builder: (context, state) => const UserStatisticsPage(),

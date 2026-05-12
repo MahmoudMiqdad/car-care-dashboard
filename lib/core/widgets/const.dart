@@ -35,7 +35,8 @@ class _MainAppShellState extends State<MainAppShell> {
         location == Routes.profile_washer ||
         location == Routes.editProfileWasher ||
         location == Routes.bookings ||
-        location == Routes.bookingDetails;
+        location == Routes.bookingDetails ||
+        location == Routes.sos;
 
     final menuAction = IconButton(
       onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),

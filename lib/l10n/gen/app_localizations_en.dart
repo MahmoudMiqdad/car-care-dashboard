@@ -1355,4 +1355,41 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get createSosSampleProblemText => 'Enter the description here';
+
+  @override
+  String get sosRequestsListTitle => 'SOS Requests List';
+
+  @override
+  String get sosRequestIdLabel => 'ID Number';
+
+  @override
+  String get sosRequestVehicleLabel => 'Vehicle';
+
+  @override
+  String get sosRequestShortDescriptionLabel => 'Short description';
+
+  @override
+  String get sosStatusFinished => 'Finished';
+
+  @override
+  String get sosStatusInProgress => 'In progress';
+
+  @override
+  String get sosStatusWaiting => 'Waiting';
+
+  @override
+  String get sosRequestAccept => 'Accept';
+
+  @override
+  String get sosRequestViewDetails => 'View details';
+
+  @override
+  String sosRequestCreatedAtHours(int hours) {
+    return 'Created $hours hours ago';
+  }
+
+  @override
+  String sosRequestCreatedAtMinutes(int minutes) {
+    return 'Created $minutes min ago';
+  }
 }
