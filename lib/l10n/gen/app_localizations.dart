@@ -2820,6 +2820,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Created {minutes} min ago'**
   String sosRequestCreatedAtMinutes(int minutes);
+
+  /// App bar title for SOS request details screen
+  ///
+  /// In en, this message translates to:
+  /// **'SOS Details'**
+  String get sosDetailsTitle;
+
+  /// Top status banner shown when the SOS request has been accepted
+  ///
+  /// In en, this message translates to:
+  /// **'Request accepted'**
+  String get sosDetailsRequestAccepted;
+
+  /// Header label for the request data card on the SOS details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Request data'**
+  String get sosDetailsRequestData;
+
+  /// Label before the plate number value (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Plate number'**
+  String get sosDetailsPlateNumberLabel;
+
+  /// Label before the technician name (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Technician'**
+  String get sosDetailsTechnicianLabel;
+
+  /// Label before the request description text (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get sosDetailsDescriptionLabel;
+
+  /// Header label for the location card on the SOS details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Current location'**
+  String get sosDetailsCurrentLocation;
+
+  /// Label of the track chip on top of the SOS details map
+  ///
+  /// In en, this message translates to:
+  /// **'Track'**
+  String get sosDetailsTrack;
+
+  /// Primary destructive button to cancel the SOS request
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel request'**
+  String get sosDetailsCancelRequest;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -1,5 +1,6 @@
 import 'package:car_care/core/constants/app_constants.dart';
 import 'package:car_care/core/constants/app_assets.dart';
+import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
 import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_request_list_dummy_data.dart';
@@ -8,6 +9,7 @@ import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class SosRequestCard extends StatelessWidget {
   const SosRequestCard({super.key, required this.item});
@@ -118,7 +120,7 @@ class SosRequestCard extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 AppButton(
-                  onPressed: () {},
+                  onPressed: () => context.push(Routes.sos_details),
                   text: l10n.sosRequestViewDetails,
                   backgroundColor: AppColors.accent,
                   textColor: AppColors.white,
