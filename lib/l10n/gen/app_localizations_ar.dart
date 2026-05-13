@@ -1392,4 +1392,31 @@ class AppLocalizationsAr extends AppLocalizations {
   String sosRequestCreatedAtMinutes(int minutes) {
     return 'تم الإنشاء منذ $minutes دقيقة';
   }
+
+  @override
+  String get sosDetailsTitle => 'تفاصيل النجدة';
+
+  @override
+  String get sosDetailsRequestAccepted => 'تم قبول الطلب';
+
+  @override
+  String get sosDetailsRequestData => 'بيانات الطلب';
+
+  @override
+  String get sosDetailsPlateNumberLabel => 'رقم اللوحة';
+
+  @override
+  String get sosDetailsTechnicianLabel => 'الفني';
+
+  @override
+  String get sosDetailsDescriptionLabel => 'وصف';
+
+  @override
+  String get sosDetailsCurrentLocation => 'الموقع الحالي';
+
+  @override
+  String get sosDetailsTrack => 'تتبع';
+
+  @override
+  String get sosDetailsCancelRequest => 'إلغاء الطلب';
 }
