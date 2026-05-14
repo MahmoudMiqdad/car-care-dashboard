@@ -9,4 +9,8 @@ abstract class IBookingsRepository {
     int bookingId,
     String reason,
   );
+  Future<Either<Failure, Map<String, dynamic>>> updateBookingStatus(
+    int bookingId,
+    String status,
+  );
 }

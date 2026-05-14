@@ -1,11 +1,14 @@
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/app_headline.dart';
+import 'package:car_care/features/car_washer/statistics/domain/entities/statistics_entity.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WasherStatisticsSummaryCard extends StatelessWidget {
-  const WasherStatisticsSummaryCard({super.key});
+  const WasherStatisticsSummaryCard({super.key, required this.statistics});
+
+  final StatisticsEntity statistics;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +36,20 @@ class WasherStatisticsSummaryCard extends StatelessWidget {
             child: Row(
               children: [
                 Expanded(
-                  child: SummaryColumn(
+                  child: _SummaryColumn(
                     items: [
-                      SummaryItem(strings.showRatingAllReserved, '240'),
-                      SummaryItem(strings.pending, '40'),
-                      SummaryItem(strings.bookingStatusAccepted, '60'),
+                      _SummaryItem(
+                        strings.showRatingAllReserved,
+                        statistics.totalBookings.toString(),
+                      ),
+                      _SummaryItem(
+                        strings.pending,
+                        statistics.pendingBookings.toString(),
+                      ),
+                      _SummaryItem(
+                        strings.bookingStatusAccepted,
+                        statistics.acceptedBookings.toString(),
+                      ),
                     ],
                   ),
                 ),
@@ -47,10 +59,20 @@ class WasherStatisticsSummaryCard extends StatelessWidget {
                   color: AppColors.lightTextSecondary,
                 ),
                 Expanded(
-                  child: SummaryColumn(
+                  child: _SummaryColumn(
                     items: [
-                      SummaryItem(strings.completed, '80'),
-                      SummaryItem(strings.cancelled, '40'),
+                       _SummaryItem(
+                        strings.bookingStatusProgress, 
+                        statistics.inProgressBookings.toString(),
+                      ),
+                      _SummaryItem(
+                        strings.completed,
+                        statistics.completedBookings.toString(),
+                      ),
+                      _SummaryItem(
+                        strings.cancelled,
+                        statistics.cancelledBookings.toString(),
+                      ),
                     ],
                   ),
                 ),
@@ -63,10 +85,10 @@ class WasherStatisticsSummaryCard extends StatelessWidget {
   }
 }
 
-class SummaryColumn extends StatelessWidget {
-  const SummaryColumn({super.key, required this.items});
 
-  final List<SummaryItem> items;
+class _SummaryColumn extends StatelessWidget {
+  const _SummaryColumn({required this.items});
+  final List<_SummaryItem> items;
 
   @override
   Widget build(BuildContext context) {
@@ -100,9 +122,8 @@ class SummaryColumn extends StatelessWidget {
   }
 }
 
-class SummaryItem {
-  const SummaryItem(this.label, this.value);
-
+class _SummaryItem {
+  const _SummaryItem(this.label, this.value);
   final String label;
   final String value;
 }

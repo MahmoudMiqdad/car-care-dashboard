@@ -8,11 +8,10 @@ class BookingsCubit extends Cubit<BookingsState> {
 
   final IBookingsRepository _repository;
 
-  String? _currentStatus; // ✅ null = all statuses
+  String? _currentStatus; 
   List<BookingsEntity> _currentItems = [];
 
   Future<void> fetchBookings({String? status}) async {
-    // ✅ إذا null => يرجع كل الحالات (بدون status query)
     _currentStatus = status;
 
     emit(BookingsLoading());
@@ -62,7 +61,49 @@ class BookingsCubit extends Cubit<BookingsState> {
       (res) async {
         final msg = (res['message'] ?? 'تم رفض الحجز').toString();
         emit(BookingActionSuccessMessage(msg));
-        await fetchBookings(status: _currentStatus); // null => all
+        await fetchBookings(status: _currentStatus);
+      },
+    );
+  }
+
+  Future<void> startExecution(int bookingId) async {
+    emit(BookingActionLoading(bookingId));
+
+    final result = await _repository.updateBookingStatus(bookingId, 'in_progress');
+
+    result.fold(
+      (failure) => emit(
+        BookingActionError(
+          failure.message,
+          currentItems: _currentItems,
+          currentStatus: _currentStatus ?? 'all',
+        ),
+      ),
+      (res) async {
+        final msg = (res['message'] ?? 'تم بدء التنفيذ بنجاح').toString();
+        emit(BookingActionSuccessMessage(msg));
+        await fetchBookings(status: _currentStatus);
+      },
+    );
+  }
+
+  Future<void> completeBooking(int bookingId) async {
+    emit(BookingActionLoading(bookingId));
+
+    final result = await _repository.updateBookingStatus(bookingId, 'completed');
+
+    result.fold(
+      (failure) => emit(
+        BookingActionError(
+          failure.message,
+          currentItems: _currentItems,
+          currentStatus: _currentStatus ?? 'all',
+        ),
+      ),
+      (res) async {
+        final msg = (res['message'] ?? 'تم إتمام الحجز بنجاح').toString();
+        emit(BookingActionSuccessMessage(msg));
+        await fetchBookings(status: _currentStatus);
       },
     );
   }

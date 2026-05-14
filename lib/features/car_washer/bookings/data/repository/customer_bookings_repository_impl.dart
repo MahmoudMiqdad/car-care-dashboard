@@ -20,4 +20,16 @@ class CustomerBookingsRepositoryImpl implements ICustomerBookingsRepository {
       return const Left(Failure(message: 'حدث خطأ أثناء جلب حجوزاتي'));
     }
   }
+
+  @override
+  Future<Either<Failure, Map<String, dynamic>>> cancelBooking(int bookingId, String reason) async {
+    try {
+      final res = await _remote.cancelBooking(bookingId, reason);
+      return Right(res);
+    } on ServerExpcptions catch (e) {
+      return Left(e.error);
+    } catch (_) {
+      return const Left(Failure(message: 'حدث خطأ أثناء إلغاء الحجز'));
+    }
+  }
 }

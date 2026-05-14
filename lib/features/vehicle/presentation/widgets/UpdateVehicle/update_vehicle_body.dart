@@ -60,14 +60,6 @@ class _UpdateVehicleBodyState extends State<UpdateVehicleBody> {
     if (xFile != null) setState(() => _pickedImage = xFile);
   }
 
-  bool _isAnyFieldEmpty() {
-    return brandController.text.trim().isEmpty ||
-        modelController.text.trim().isEmpty ||
-        yearController.text.trim().isEmpty ||
-        plateController.text.trim().isEmpty ||
-        kmController.text.trim().isEmpty;
-  }
-
   @override
   Widget build(BuildContext context) {
           final strings = context.l10n;
@@ -139,13 +131,6 @@ class _UpdateVehicleBodyState extends State<UpdateVehicleBody> {
                   fontSize: 20.sp,
                   onPressed: () async {
                     if (isLoading) return;
-                    if (_isAnyFieldEmpty()) {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                         SnackBar(content: Text(strings.fillAllFields)),
-                      );
-                      return;
-                    }
-
                     Uint8List? bytes;
                     String? name;
                     if (_pickedImage != null) {

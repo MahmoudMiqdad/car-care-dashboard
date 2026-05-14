@@ -62,7 +62,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.create_sos,
+    initialLocation: Routes.login,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -153,7 +153,7 @@ class AppRouter {
           GoRoute(
             path: Routes.bookings,
             name: '/bookings',
-            builder: (context, state) => const BookingsPage(),
+            builder: (context, state) => const CustomerBookingsPage(),
           ),
           GoRoute(
             path: Routes.washerBookings,
@@ -179,6 +179,14 @@ class AppRouter {
             },
           ),
           GoRoute(
+            path: Routes.ratings,
+            name: 'ratings',
+            builder: (context, state) {
+              final booking = state.extra as BookingsEntity;
+              return RatingsPage(booking: booking);
+            },
+          ),
+          GoRoute(
             path: Routes.availability,
             name: '/availability',
             builder: (context, state) => const AvailabilityPage(),
@@ -188,27 +196,27 @@ class AppRouter {
             name: '/profile_washer',
             builder: (context, state) => const ProfileWasherPage(),
           ),
-              GoRoute(
-        path: Routes.sos,
-        name: '/sos',
-        builder: (context, state) => const SosPage(),
-      ),
-            GoRoute(
-        path: Routes.technician_sos,
-        name: '/technician_sos',
-        builder: (context, state) => const TechnicianSosPage(),
-      ),
-            GoRoute(
-        path: Routes.tracking,
-        name: '/tracking',
-        builder: (context, state) => const TrackingPage(),
-      ),
-            GoRoute(
-        path: Routes.technician_location,
-        name: '/technician_location',
-        builder: (context, state) => const TechnicianLocationPage(),
-      ),
-      
+          GoRoute(
+            path: Routes.sos,
+            name: '/sos',
+            builder: (context, state) => const SosPage(),
+          ),
+          GoRoute(
+            path: Routes.technician_sos,
+            name: '/technician_sos',
+            builder: (context, state) => const TechnicianSosPage(),
+          ),
+          GoRoute(
+            path: Routes.tracking,
+            name: '/tracking',
+            builder: (context, state) => const TrackingPage(),
+          ),
+          GoRoute(
+            path: Routes.technician_location,
+            name: '/technician_location',
+            builder: (context, state) => const TechnicianLocationPage(),
+          ),
+
           GoRoute(
             path: Routes.editProfileWasher,
             name: 'editProfileWasher',
@@ -282,12 +290,12 @@ class AppRouter {
         builder: (context, state) => const CreateSosPage(),
       ),
       GoRoute(
-  path: Routes.updateTechnicianProfile,
-  name: '/update_technician_profile',
-  builder: (context, state) => TechnicianProfileEditPage(
-    initialData: state.extra as TechnicianDataEntity?, // ← هون
-  ),
-),
+        path: Routes.updateTechnicianProfile,
+        name: '/update_technician_profile',
+        builder: (context, state) => TechnicianProfileEditPage(
+          initialData: state.extra as TechnicianDataEntity?, // ← هون
+        ),
+      ),
       GoRoute(
         path: Routes.technicianProfileViewBody,
         name: '/technician_profile_view_page',
@@ -304,13 +312,7 @@ class AppRouter {
         name: '/deleteconfirmationdialog',
         builder: (context, state) => const DeleteProfileDialog(),
       ),
-      GoRoute(
-        path: Routes.ratings,
-        name: '/ratings',
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) => const RatingsPage(),
-      ),
-  
+
       GoRoute(
         path: Routes.statistics,
         builder: (context, state) => const UserStatisticsPage(),
@@ -371,7 +373,7 @@ class AppRouter {
       GoRoute(
         path: Routes.washer_statistics,
         name: '/washer_statistics',
-        builder: (context, state) => const StatisticsPage(),
+        builder: (context, state) => const CarWasherStatisticsPage(),
       ),
     ],
   );

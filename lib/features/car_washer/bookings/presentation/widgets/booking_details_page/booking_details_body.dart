@@ -1,3 +1,4 @@
+import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/widgets/booking_details_page/action_buttons.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/widgets/booking_details_page/booking_details_section.dart';
 import 'package:car_care/l10n.dart';
@@ -5,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BookingDetailsBody extends StatelessWidget {
-  const BookingDetailsBody({super.key});
+  final BookingsEntity? booking;
+
+  BookingDetailsBody({super.key, required this.booking});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,6 @@ class BookingDetailsBody extends StatelessWidget {
       '${l10n.bookingDetailsOrderDateLabel}: 4/10',
       '${l10n.bookingDetailsVehicleLabel}: هوندا سيتي',
     ];
-
 
     return SafeArea(
       child: SingleChildScrollView(
@@ -46,9 +48,9 @@ class BookingDetailsBody extends StatelessWidget {
               title: l10n.bookingDetailsAppointmentSectionTitle,
               lines: appointmentDetails,
             ),
-           
+
             SizedBox(height: 25.h),
-            const ActionButtons(),
+            ActionButtons(booking: booking!),
           ],
         ),
       ),

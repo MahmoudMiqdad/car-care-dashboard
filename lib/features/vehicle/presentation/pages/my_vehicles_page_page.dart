@@ -13,14 +13,33 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-class MyVehiclesPagePage extends StatelessWidget {
+class MyVehiclesPagePage extends StatefulWidget {
   const MyVehiclesPagePage({super.key});
 
   @override
+  State<MyVehiclesPagePage> createState() => _MyVehiclesPagePageState();
+}
+
+class _MyVehiclesPagePageState extends State<MyVehiclesPagePage> {
+  late final VehicleCubit _vehicleCubit;
+
+  @override
+  void initState() {
+    super.initState();
+    _vehicleCubit = getIt<VehicleCubit>()..getAllVehicles();
+  }
+
+  @override
+  void dispose() {
+    _vehicleCubit.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-         final strings = context.l10n;
-    return BlocProvider(
-      create: (_) => getIt<VehicleCubit>()..getAllVehicles(),
+    final strings = context.l10n;
+    return BlocProvider.value(
+      value: _vehicleCubit,
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
@@ -35,9 +54,9 @@ class MyVehiclesPagePage extends StatelessWidget {
               child: IconButton(
                 padding: EdgeInsets.zero,
                 onPressed: () async {
-                  final added = await context.push<bool>(Routes.add_vehicle);
-                  if (added == true && context.mounted) {
-                    context.read<VehicleCubit>().getAllVehicles();
+                  await context.push(Routes.add_vehicle);
+                  if (mounted) {
+                    _vehicleCubit.getAllVehicles();
                   }
                 },
                 icon: const Icon(Icons.add, color: AppColors.primary, size: 24),
