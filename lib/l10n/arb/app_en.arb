@@ -2028,6 +2028,96 @@
   "createSosSampleProblemText": "Enter the description here",
   "@createSosSampleProblemText": {
     "description": "Initial or hint text for problem field (not vehicle or province names)"
+  },
+  "sosRequestsListTitle": "SOS Requests List",
+  "@sosRequestsListTitle": {
+    "description": "App bar title for SOS requests list screen"
+  },
+  "sosRequestIdLabel": "ID Number",
+  "@sosRequestIdLabel": {
+    "description": "Label before SOS request id (value is not translated)"
+  },
+  "sosRequestVehicleLabel": "Vehicle",
+  "@sosRequestVehicleLabel": {
+    "description": "Label before vehicle name (value is not translated)"
+  },
+  "sosRequestShortDescriptionLabel": "Short description",
+  "@sosRequestShortDescriptionLabel": {
+    "description": "Label for short problem description (body text is not translated)"
+  },
+  "sosStatusFinished": "Finished",
+  "@sosStatusFinished": {
+    "description": "SOS request status badge: finished"
+  },
+  "sosStatusInProgress": "In progress",
+  "@sosStatusInProgress": {
+    "description": "SOS request status badge: in progress"
+  },
+  "sosStatusWaiting": "Waiting",
+  "@sosStatusWaiting": {
+    "description": "SOS request status badge: waiting"
+  },
+  "sosRequestAccept": "Accept",
+  "@sosRequestAccept": {
+    "description": "Outlined accept button on SOS request card"
+  },
+  "sosRequestViewDetails": "View details",
+  "@sosRequestViewDetails": {
+    "description": "Primary button to open SOS request details"
+  },
+  "sosRequestCreatedAtHours": "Created {hours} hours ago",
+  "@sosRequestCreatedAtHours": {
+    "description": "SOS card footer relative time in hours",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "sosRequestCreatedAtMinutes": "Created {minutes} min ago",
+  "@sosRequestCreatedAtMinutes": {
+    "description": "SOS card footer relative time in minutes",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "sosDetailsTitle": "SOS Details",
+  "@sosDetailsTitle": {
+    "description": "App bar title for SOS request details screen"
+  },
+  "sosDetailsRequestAccepted": "Request accepted",
+  "@sosDetailsRequestAccepted": {
+    "description": "Top status banner shown when the SOS request has been accepted"
+  },
+  "sosDetailsRequestData": "Request data",
+  "@sosDetailsRequestData": {
+    "description": "Header label for the request data card on the SOS details screen"
+  },
+  "sosDetailsPlateNumberLabel": "Plate number",
+  "@sosDetailsPlateNumberLabel": {
+    "description": "Label before the plate number value (value is not translated)"
+  },
+  "sosDetailsTechnicianLabel": "Technician",
+  "@sosDetailsTechnicianLabel": {
+    "description": "Label before the technician name (value is not translated)"
+  },
+  "sosDetailsDescriptionLabel": "Description",
+  "@sosDetailsDescriptionLabel": {
+    "description": "Label before the request description text (value is not translated)"
+  },
+  "sosDetailsCurrentLocation": "Current location",
+  "@sosDetailsCurrentLocation": {
+    "description": "Header label for the location card on the SOS details screen"
+  },
+  "sosDetailsTrack": "Track",
+  "@sosDetailsTrack": {
+    "description": "Label of the track chip on top of the SOS details map"
+  },
+  "sosDetailsCancelRequest": "Cancel request",
+  "@sosDetailsCancelRequest": {
+    "description": "Primary destructive button to cancel the SOS request"
   }
 }
 

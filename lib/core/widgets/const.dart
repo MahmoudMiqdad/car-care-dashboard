@@ -35,7 +35,10 @@ class _MainAppShellState extends State<MainAppShell> {
         location == Routes.profile_washer ||
         location == Routes.editProfileWasher ||
         location == Routes.bookings ||
-        location == Routes.bookingDetails;
+        location == Routes.bookingDetails ||
+        location == Routes.sos ||
+        location == Routes.sos_details;
+    final hideShellBottomNav = location == Routes.sos_details;
 
     final menuAction = IconButton(
       onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
@@ -69,7 +72,9 @@ class _MainAppShellState extends State<MainAppShell> {
                       actionWidget: menuAction,
                     )),
         body: widget.child,
-        bottomNavigationBar: widget.bottomNavigationBar,
+        bottomNavigationBar: hideShellBottomNav
+            ? null
+            : widget.bottomNavigationBar,
       ),
     );
   }

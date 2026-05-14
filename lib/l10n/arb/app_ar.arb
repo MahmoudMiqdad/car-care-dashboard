@@ -2031,6 +2031,96 @@
   "createSosSampleProblemText": "ادخل الوصف هنا",
   "@createSosSampleProblemText": {
     "description": "نص أولي أو تلميح لحقل الوصف (لا يتضمن أسماء مركبات أو محافظات)"
+  },
+  "sosRequestsListTitle": "قائمة طلبات النجدة",
+  "@sosRequestsListTitle": {
+    "description": "عنوان شريط التطبيق لقائمة طلبات SOS"
+  },
+  "sosRequestIdLabel": "رقم المعرف",
+  "@sosRequestIdLabel": {
+    "description": "عنوان قبل رقم الطلب (القيمة لا تُترجم)"
+  },
+  "sosRequestVehicleLabel": "المركبة",
+  "@sosRequestVehicleLabel": {
+    "description": "عنوان قبل اسم المركبة (القيمة لا تُترجم)"
+  },
+  "sosRequestShortDescriptionLabel": "وصف مختصر",
+  "@sosRequestShortDescriptionLabel": {
+    "description": "عنوان الوصف المختصر (نص الوصف لا يُترجم)"
+  },
+  "sosStatusFinished": "منتهية",
+  "@sosStatusFinished": {
+    "description": "شارة حالة الطلب: منتهية"
+  },
+  "sosStatusInProgress": "قيد التنفيذ",
+  "@sosStatusInProgress": {
+    "description": "شارة حالة الطلب: قيد التنفيذ"
+  },
+  "sosStatusWaiting": "انتظار",
+  "@sosStatusWaiting": {
+    "description": "شارة حالة الطلب: في الانتظار"
+  },
+  "sosRequestAccept": "قبول",
+  "@sosRequestAccept": {
+    "description": "زر قبول طلب النجدة"
+  },
+  "sosRequestViewDetails": "عرض التفاصيل",
+  "@sosRequestViewDetails": {
+    "description": "زر عرض تفاصيل طلب النجدة"
+  },
+  "sosRequestCreatedAtHours": "تم الإنشاء منذ {hours} ساعة",
+  "@sosRequestCreatedAtHours": {
+    "description": "تذييل البطاقة بالوقت النسبي بالساعات",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "sosRequestCreatedAtMinutes": "تم الإنشاء منذ {minutes} دقيقة",
+  "@sosRequestCreatedAtMinutes": {
+    "description": "تذييل البطاقة بالوقت النسبي بالدقائق",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "sosDetailsTitle": "تفاصيل النجدة",
+  "@sosDetailsTitle": {
+    "description": "عنوان شريط التطبيق لشاشة تفاصيل طلب النجدة"
+  },
+  "sosDetailsRequestAccepted": "تم قبول الطلب",
+  "@sosDetailsRequestAccepted": {
+    "description": "شريط الحالة العلوي عند قبول طلب النجدة"
+  },
+  "sosDetailsRequestData": "بيانات الطلب",
+  "@sosDetailsRequestData": {
+    "description": "عنوان بطاقة بيانات الطلب في شاشة تفاصيل النجدة"
+  },
+  "sosDetailsPlateNumberLabel": "رقم اللوحة",
+  "@sosDetailsPlateNumberLabel": {
+    "description": "عنوان قبل قيمة رقم اللوحة (القيمة لا تُترجم)"
+  },
+  "sosDetailsTechnicianLabel": "الفني",
+  "@sosDetailsTechnicianLabel": {
+    "description": "عنوان قبل اسم الفني (القيمة لا تُترجم)"
+  },
+  "sosDetailsDescriptionLabel": "وصف",
+  "@sosDetailsDescriptionLabel": {
+    "description": "عنوان قبل نص وصف الطلب (القيمة لا تُترجم)"
+  },
+  "sosDetailsCurrentLocation": "الموقع الحالي",
+  "@sosDetailsCurrentLocation": {
+    "description": "عنوان بطاقة الموقع في شاشة تفاصيل النجدة"
+  },
+  "sosDetailsTrack": "تتبع",
+  "@sosDetailsTrack": {
+    "description": "تسمية شريحة التتبع فوق خريطة تفاصيل النجدة"
+  },
+  "sosDetailsCancelRequest": "إلغاء الطلب",
+  "@sosDetailsCancelRequest": {
+    "description": "زر إلغاء طلب النجدة"
   }
 }
 
