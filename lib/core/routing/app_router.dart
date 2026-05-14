@@ -61,7 +61,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.sos,
+    initialLocation: Routes.login,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -162,7 +162,7 @@ class AppRouter {
           GoRoute(
             path: Routes.bookings,
             name: '/bookings',
-            builder: (context, state) => const BookingsPage(),
+            builder: (context, state) => const CustomerBookingsPage(),
           ),
           GoRoute(
             path: Routes.washerBookings,
@@ -188,6 +188,14 @@ class AppRouter {
             },
           ),
           GoRoute(
+            path: Routes.ratings,
+            name: 'ratings',
+            builder: (context, state) {
+              final booking = state.extra as BookingsEntity;
+              return RatingsPage(booking: booking);
+            },
+          ),
+          GoRoute(
             path: Routes.availability,
             name: '/availability',
             builder: (context, state) => const AvailabilityPage(),
@@ -196,6 +204,11 @@ class AppRouter {
             path: Routes.profile_washer,
             name: '/profile_washer',
             builder: (context, state) => const ProfileWasherPage(),
+          ),
+          GoRoute(
+            path: Routes.sos,
+            name: '/sos',
+            builder: (context, state) => const SosPage(),
           ),
           GoRoute(
             path: Routes.technician_sos,
@@ -375,7 +388,7 @@ class AppRouter {
       GoRoute(
         path: Routes.washer_statistics,
         name: '/washer_statistics',
-        builder: (context, state) => const StatisticsPage(),
+        builder: (context, state) => const CarWasherStatisticsPage(),
       ),
     ],
   );

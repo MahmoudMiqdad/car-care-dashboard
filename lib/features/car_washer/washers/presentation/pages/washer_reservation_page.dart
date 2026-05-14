@@ -1,9 +1,13 @@
+import 'package:car_care/core/routing/routes.dart';
+import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/app_typography.dart';
 import 'package:car_care/core/widgets/app_date_time_picker_row.dart';
 import 'package:car_care/core/widgets/const.dart';
 import 'package:car_care/core/widgets/image_background.dart';
 import 'package:car_care/features/car_washer/washers/domain/entities/washers_entity.dart';
+import 'package:car_care/features/car_washer/washers/presentation/cubit/reservation/car_wash_booking_cubit.dart';
+import 'package:car_care/features/car_washer/washers/presentation/cubit/reservation/car_wash_booking_state.dart';
 import 'package:car_care/features/car_washer/washers/presentation/widgets/washer_service_tier.dart';
 import 'package:car_care/features/car_washer/washers/presentation/widgets/reservation/reservation_action_buttons_row.dart';
 import 'package:car_care/features/car_washer/washers/presentation/widgets/reservation/reservation_header_info.dart';
@@ -13,6 +17,7 @@ import 'package:car_care/features/car_washer/washers/presentation/widgets/reserv
 import 'package:car_care/l10n.dart';
 import 'package:car_care/l10n/gen/app_localizations.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconsax_plus/iconsax_plus.dart';
@@ -89,96 +94,158 @@ class _WasherReservationPageState extends State<WasherReservationPage> {
     if (picked != null) setState(() => _time = picked);
   }
 
+  void _onConfirm(BuildContext ctx) {
+    final vehicleIdRaw = _vehicleController.text.trim();
+    final vehicleId = int.tryParse(vehicleIdRaw);
+
+    if (_date == null || _time == null) {
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        const SnackBar(content: Text('الرجاء اختيار التاريخ والوقت')),
+      );
+      return;
+    }
+    if (vehicleId == null) {
+      ScaffoldMessenger.of(ctx).showSnackBar(
+        const SnackBar(content: Text('الرجاء إدخال رقم المركبة')),
+      );
+      return;
+    }
+
+    final scheduledDateTime = DateTime(
+      _date!.year,
+      _date!.month,
+      _date!.day,
+      _time!.hour,
+      _time!.minute,
+    );
+    final scheduledAt = DateFormat('yyyy-MM-dd HH:mm:ss').format(scheduledDateTime);
+
+    ctx.read<CarWashBookingCubit>().createBooking(
+          vehicleId: vehicleId,
+          carWasherId: widget.washer.id,
+          scheduledAt: scheduledAt,
+          serviceType: _selectedTier.name,
+          notes: _notesController.text.trim().isEmpty ? null : _notesController.text.trim(),
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final washer = widget.washer;
     final tiers = reservationTiersToShow(washer);
 
-    return Scaffold(
-      appBar: CustomAppBar(
-        title: l10n.washerReservationTitle,
-        showBackButton: true,
-        onBackTapped: () => context.pop(),
-        backgroundColor: AppColors.carWashTeal,
-      ),
-      body: ImageBackground(
-        child: SingleChildScrollView(
-          padding: EdgeInsets.fromLTRB(16.w, 12.h, 16.w, 24.h),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              ReservationHeaderInfo(washer: washer),
-              SizedBox(height: 10.h),
-              AppDateTimePickerRow(
-                dateText: _dateLabel(context),
-                timeText: _timeLabel(context),
-                onDateTap: _pickDate,
-                onTimeTap: _pickTime,
+    return BlocProvider(
+      create: (_) => getIt<CarWashBookingCubit>(),
+      child: BlocConsumer<CarWashBookingCubit, CarWashBookingState>(
+        listener: (ctx, state) {
+          if (state is CarWashBookingSuccess) {
+            ScaffoldMessenger.of(ctx).showSnackBar(
+              SnackBar(
+                content: const Text('تم الحجز بنجاح'),
+                backgroundColor: Colors.green.shade600,
               ),
-              SizedBox(height: 10.h),
-              ReservationInlineInputCard(
-                leading: Image.asset(
-                  'assets/images/icons8-car-50.png',
-                  width: 22.w,
-                  height: 22.w,
-                  fit: BoxFit.contain,
-                ),
-                label: l10n.washerReservationFieldVehicleLabel,
-                controller: _vehicleController,
-                hintText: l10n.washerReservationFieldVehicleHint,
-                keyboardType: TextInputType.text,
+            );
+            ctx.go(Routes.bookings);
+          } else if (state is CarWashBookingError) {
+            ScaffoldMessenger.of(ctx).showSnackBar(
+              SnackBar(
+                content: Text(state.message),
+                backgroundColor: Colors.red.shade600,
               ),
-              SizedBox(height: 14.h),
-              ReservationInlineInputCard(
-                leading: Icon(
-                  IconsaxPlusLinear.document_text_1,
-                  size: 20.sp,
-                  color: AppColors.carWashTeal,
-                ),
-                label: l10n.washerReservationFieldNotesLabel,
-                controller: _notesController,
-                hintText: l10n.washerReservationFieldNotesHint,
-                keyboardType: TextInputType.multiline,
-                minLines: 1,
-                maxLines: 2,
-              ),
-              SizedBox(height: 15.h),
-              Text(
-                l10n.washerReservationChooseService,
-                textAlign: TextAlign.right,
-                style: AppTypography.bodyLarge.copyWith(
-                  color: AppColors.black,
-                  fontWeight: FontWeight.w800,
-                  fontSize: 19.sp,
-                ),
-              ),
-              SizedBox(height: 8.h),
-              Row(
-                children: <Widget>[
-                  for (int i = 0; i < tiers.length; i++) ...<Widget>[
-                    if (i > 0) SizedBox(width: 8.w),
-                    ReservationServiceTierCard(
-                      title: _tierTitle(l10n, tiers[i]),
-                      priceAmount: reservationTierPriceUsd(washer, tiers[i]),
-                      isSelected: _selectedTier == tiers[i],
-                      onTap: () => setState(() => _selectedTier = tiers[i]),
+            );
+          }
+        },
+        builder: (ctx, state) {
+          final isLoading = state is CarWashBookingSubmitting;
+          return Scaffold(
+            appBar: CustomAppBar(
+              title: l10n.washerReservationTitle,
+              showBackButton: true,
+              onBackTapped: () => context.pop(),
+              backgroundColor: AppColors.carWashTeal,
+            ),
+            body: ImageBackground(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.fromLTRB(16.w, 12.h, 16.w, 24.h),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    ReservationHeaderInfo(washer: washer),
+                    SizedBox(height: 10.h),
+                    AppDateTimePickerRow(
+                      dateText: _dateLabel(context),
+                      timeText: _timeLabel(context),
+                      onDateTap: _pickDate,
+                      onTimeTap: _pickTime,
                     ),
+                    SizedBox(height: 10.h),
+                    ReservationInlineInputCard(
+                      leading: Image.asset(
+                        'assets/images/icons8-car-50.png',
+                        width: 22.w,
+                        height: 22.w,
+                        fit: BoxFit.contain,
+                      ),
+                      label: l10n.washerReservationFieldVehicleLabel,
+                      controller: _vehicleController,
+                      hintText: l10n.washerReservationFieldVehicleHint,
+                      keyboardType: TextInputType.number,
+                    ),
+                    SizedBox(height: 14.h),
+                    ReservationInlineInputCard(
+                      leading: Icon(
+                        IconsaxPlusLinear.document_text_1,
+                        size: 20.sp,
+                        color: AppColors.carWashTeal,
+                      ),
+                      label: l10n.washerReservationFieldNotesLabel,
+                      controller: _notesController,
+                      hintText: l10n.washerReservationFieldNotesHint,
+                      keyboardType: TextInputType.multiline,
+                      minLines: 1,
+                      maxLines: 2,
+                    ),
+                    SizedBox(height: 15.h),
+                    Text(
+                      l10n.washerReservationChooseService,
+                      textAlign: TextAlign.right,
+                      style: AppTypography.bodyLarge.copyWith(
+                        color: AppColors.black,
+                        fontWeight: FontWeight.w800,
+                        fontSize: 19.sp,
+                      ),
+                    ),
+                    SizedBox(height: 8.h),
+                    Row(
+                      children: <Widget>[
+                        for (int i = 0; i < tiers.length; i++) ...<Widget>[
+                          if (i > 0) SizedBox(width: 8.w),
+                          ReservationServiceTierCard(
+                            title: _tierTitle(l10n, tiers[i]),
+                            priceAmount: reservationTierPriceUsd(washer, tiers[i]),
+                            isSelected: _selectedTier == tiers[i],
+                            onTap: isLoading ? () {} : () => setState(() => _selectedTier = tiers[i]),
+                          ),
+                        ],
+                      ],
+                    ),
+                    SizedBox(height: 20.h),
+                    if (isLoading)
+                      const Center(child: CircularProgressIndicator())
+                    else
+                      ReservationActionButtonsRow(
+                        confirmText: l10n.washerReservationConfirm,
+                        cancelText: l10n.washerReservationCancel,
+                        onConfirm: () => _onConfirm(ctx),
+                        onCancel: () => context.pop(),
+                      ),
                   ],
-                ],
+                ),
               ),
-              SizedBox(height: 20.h),
-              ReservationActionButtonsRow(
-                confirmText: l10n.washerReservationConfirm,
-                cancelText: l10n.washerReservationCancel,
-                onConfirm: () {
-                  context.pop();
-                },
-                onCancel: () => context.pop(),
-              ),
-            ],
-          ),
-        ),
+            ),
+          );
+        },
       ),
     );
   }

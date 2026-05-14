@@ -71,7 +71,7 @@ class VehicleRemoteDataSource {
 
     if (hasImage) {
       final formData = FormData.fromMap({
-        '_method': 'PUT', // ✅ مهم جداً
+        '_method': 'PUT', 
         'brand': data['brand'],
         'model': data['model'],
         'year': data['year'],
@@ -81,24 +81,23 @@ class VehicleRemoteDataSource {
       });
 
       final response = await _apiService.post(
-        endPoint: '${ApiEndpoints.vehicles}/$id', // ✅ /vehicles/{id}
+        endPoint: '${ApiEndpoints.vehicles}/$id', 
         data: formData,
       );
 
       return VehicleModel.fromJson(response['data'] as Map<String, dynamic>);
     }
 
-    // بدون صورة → PUT عادي JSON
+    
+    final body = <String, dynamic>{};
+    for (final key in ['brand', 'model', 'year', 'plate_number', 'current_km']) {
+      final val = data[key];
+      if (val != null && (val as String).isNotEmpty) body[key] = val;
+    }
+
     final response = await _apiService.put(
-      endPoint: ApiEndpoints.vehicles,
-      id: id.toString(),
-      data: {
-        'brand': data['brand'],
-        'model': data['model'],
-        'year': data['year'],
-        'plate_number': data['plate_number'],
-        'current_km': data['current_km'],
-      },
+      endPoint: '${ApiEndpoints.vehicles}/$id',
+      data: body,
     );
 
     return VehicleModel.fromJson(response['data'] as Map<String, dynamic>);
@@ -107,8 +106,7 @@ class VehicleRemoteDataSource {
   //deletevehicle
   Future<void> deleteVehicle(int id) async {
     await _apiService.delete(
-      endPoint: ApiEndpoints.vehicles,
-      id: id.toString(),
+      endPoint: '${ApiEndpoints.vehicles}/$id',
     );
   }
 

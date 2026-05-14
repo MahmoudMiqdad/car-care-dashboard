@@ -44,4 +44,19 @@ Future<Either<Failure, Map<String, dynamic>>> rejectBooking(int bookingId, Strin
     return const Left(Failure(message: 'حدث خطأ أثناء رفض الحجز'));
   }
 }
+
+@override
+Future<Either<Failure, Map<String, dynamic>>> updateBookingStatus(
+  int bookingId,
+  String status,
+) async {
+  try {
+    final res = await _remote.updateBookingStatus(bookingId, status);
+    return Right(res);
+  } on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ أثناء تحديث حالة الحجز'));
+  }
+}
 }

@@ -14,7 +14,7 @@ class CarWashBookingRemoteDataSource {
     String? notes,
   }) async {
     final response = await _apiService.post(
-      endPoint: ApiEndpoints.carwashBookings,
+      endPoint: ApiEndpoints.washerMyBookings,
       data: {
         'vehicle_id': vehicleId,
         'car_washer_id': carWasherId,

@@ -4,4 +4,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class ICustomerBookingsRepository {
   Future<Either<Failure, List<BookingsEntity>>> getBookings({String? status});
+  Future<Either<Failure, Map<String, dynamic>>> cancelBooking(int bookingId, String reason);
 }

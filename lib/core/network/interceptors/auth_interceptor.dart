@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:car_care/core/constants/app_token.dart';
 import 'package:car_care/core/local_storage/secure_storage.dart';
 import 'package:car_care/core/network/api_client.dart';
 import 'package:car_care/core/network/api_endpoints.dart';
@@ -48,8 +47,7 @@ class AuthInterceptor extends Interceptor {
   ) async {
     try {
       if (!_isAuthEndpoint(options.path)) {
-          final token = AppToken.token;
-          // final token = await _secureStorage.getToken();
+          final token = await _secureStorage.getToken() ?? '';
 
         if (kDebugMode) {
           debugPrint(
