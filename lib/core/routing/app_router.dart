@@ -322,12 +322,12 @@ class AppRouter {
         name: '/deleteconfirmationdialog',
         builder: (context, state) => const DeleteProfileDialog(),
       ),
-      GoRoute(
-        path: Routes.ratings,
-        name: '/ratings',
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) => const RatingsPage(),
-      ),
+      // GoRoute(
+      //   path: Routes.ratings,
+      //   name: '/ratings',
+      //   parentNavigatorKey: rootNavigatorKey,
+      //   builder: (context, state) => const RatingsPage(booking: null,),
+      // ),
 
       GoRoute(
         path: Routes.statistics,

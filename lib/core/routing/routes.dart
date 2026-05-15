@@ -55,7 +55,6 @@ class Routes {
   static const String sos = '/sos';
   static const String create_sos = '/Create_sos_page_wrapper';
   static const String sos_details = '/sos_details';
-  static const String create_sos = '/create_sos';
   static const String technician_sos = '/technician_sos';
   static const String tracking = '/tracking';
   static const String technician_location = '/technician_location';
