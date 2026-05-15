@@ -1,3 +1,4 @@
+import 'package:car_care/features/sos/presentation/pages/Create_sos_page_wrapper.dart';
 import 'package:car_care/features/technician/technician_location/presentation/pages/technician_location_page.dart';
 import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
@@ -61,7 +62,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.login,
+    initialLocation: Routes.create_sos,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -295,14 +296,14 @@ class AppRouter {
       ),
       GoRoute(
         path: Routes.create_sos,
-        name: '/create_sos',
-        builder: (context, state) => const CreateSosPage(),
+        name: '/Create_sos_page_wrapper',
+        builder: (context, state) => const CreateSosPageWrapper(),
       ),
       GoRoute(
         path: Routes.updateTechnicianProfile,
         name: '/update_technician_profile',
         builder: (context, state) => TechnicianProfileEditPage(
-          initialData: state.extra as TechnicianDataEntity?, // ← هون
+          initialData: state.extra as TechnicianDataEntity?,
         ),
       ),
       GoRoute(

@@ -24,7 +24,6 @@ class _SosMapWidgetState extends State<SosMapWidget> {
   @override
   void initState() {
     super.initState();
-    // حمّل التراكينج لما الويدجت يفتح
     context.read<TrackingCubit>().loadTracking(widget.sosId);
   }
 
@@ -66,29 +65,24 @@ class _SosMapWidgetState extends State<SosMapWidget> {
   Widget _buildMap(TrackingLoaded state) {
     final data = state.data;
 
-    // موقع اليوزر (من الـ SOS الأصلي)
     final userLocation = (data.lat != null && data.lng != null)
         ? LatLng(data.lat!, data.lng!)
         : null;
 
-    // موقع الفني اللحظي (من Pusher) أو الأخير من API
     final techLocation = state.liveLocation;
 
-    // نقاط مسار الفني
     final path = data.path
             ?.map((p) => LatLng(p.lat, p.lng))
             .toList() ??
         [];
 
-    // إضافة الموقع اللحظي لآخر المسار
     if (techLocation != null) {
       path.add(techLocation);
     }
 
-    // المركز الأولي للخريطة
     final center = techLocation ?? userLocation ?? const LatLng(33.3, 44.4);
 
-    // حرّك الخريطة للموقع الجديد تلقائياً
+  
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (techLocation != null) {
         _mapController.move(techLocation, _mapController.camera.zoom);
@@ -97,7 +91,6 @@ class _SosMapWidgetState extends State<SosMapWidget> {
 
     return Stack(
       children: [
-        // ─── الخريطة ────────────────────────────────────────────────
         FlutterMap(
           mapController: _mapController,
           options: MapOptions(
@@ -111,7 +104,7 @@ class _SosMapWidgetState extends State<SosMapWidget> {
               userAgentPackageName: 'com.car_care.app',
             ),
 
-            // مسار الفني (خط أزرق)
+       
             if (path.length > 1)
               PolylineLayer(
                 polylines: [
@@ -123,10 +116,8 @@ class _SosMapWidgetState extends State<SosMapWidget> {
                 ],
               ),
 
-            // الماركرات
             MarkerLayer(
               markers: [
-                // 📍 موقع اليوزر (أحمر)
                 if (userLocation != null)
                   Marker(
                     point: userLocation,
@@ -135,7 +126,6 @@ class _SosMapWidgetState extends State<SosMapWidget> {
                     child: const _UserMarker(),
                   ),
 
-                // 🔧 موقع الفني (أزرق - يتحرك مع Pusher)
                 if (techLocation != null)
                   Marker(
                     point: techLocation,
@@ -148,7 +138,6 @@ class _SosMapWidgetState extends State<SosMapWidget> {
           ],
         ),
 
-        // ─── معلومات الفني (أعلى الخريطة) ──────────────────────────
         if (data.lat != null)
           Positioned(
             top: 12,
@@ -157,7 +146,6 @@ class _SosMapWidgetState extends State<SosMapWidget> {
             child: _TechnicianInfoCard(state: state),
           ),
 
-        // ─── زر تمركز ───────────────────────────────────────────────
         Positioned(
           bottom: 16,
           right: 16,
@@ -176,7 +164,6 @@ class _SosMapWidgetState extends State<SosMapWidget> {
   }
 }
 
-// ─── ماركر اليوزر ─────────────────────────────────────────────────────────
 
 class _UserMarker extends StatelessWidget {
   const _UserMarker();
@@ -218,7 +205,6 @@ class _UserMarker extends StatelessWidget {
   }
 }
 
-// ─── ماركر الفني ──────────────────────────────────────────────────────────
 
 class _TechnicianMarker extends StatefulWidget {
   const _TechnicianMarker();
@@ -291,7 +277,6 @@ class _TechnicianMarkerState extends State<_TechnicianMarker>
   }
 }
 
-// ─── كارد معلومات الفني ───────────────────────────────────────────────────
 
 class _TechnicianInfoCard extends StatelessWidget {
   final TrackingLoaded state;
@@ -309,7 +294,7 @@ class _TechnicianInfoCard extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         child: Row(
           children: [
-            // أيقونة حالة الـ live
+          
             Container(
               width: 10,
               height: 10,

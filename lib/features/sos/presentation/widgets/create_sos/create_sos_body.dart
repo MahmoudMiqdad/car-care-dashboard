@@ -17,6 +17,7 @@ class CreateSosBody extends StatelessWidget {
     required this.onPickVehicle,
     required this.onPickProvince,
     required this.onSubmit,
+    this.isLoading = false,
   });
 
   final TextEditingController descriptionController;
@@ -25,6 +26,7 @@ class CreateSosBody extends StatelessWidget {
   final VoidCallback onPickVehicle;
   final VoidCallback onPickProvince;
   final VoidCallback onSubmit;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -41,27 +43,27 @@ class CreateSosBody extends StatelessWidget {
               icon: Icons.directions_car_outlined,
               label: l10n.createSosChooseVehicle,
               value: vehicleValue,
-              onTap: onPickVehicle,
+              onTap: isLoading ? () {} : onPickVehicle,
             ),
             SizedBox(height: 8.h),
             CreateSosSelectRow(
               icon: Icons.location_on_outlined,
               label: l10n.createSosChooseProvince,
               value: provinceValue,
-              onTap: onPickProvince,
+              onTap: isLoading ? () {} : onPickProvince,
             ),
             CreateSosLocationHint(text: l10n.createSosLocationAutoHint),
             SizedBox(height: 8.h),
             CreateSosProblemField(
               title: l10n.createSosProblemDescription,
               controller: descriptionController,
-            hint: l10n.createSosSampleProblemText,
+              hint: l10n.createSosSampleProblemText,
             ),
             SizedBox(height: 30.h),
             AppButton(
-              text: l10n.createSosSendRequest,
-              onPressed: onSubmit,
-              backgroundColor: AppColors.accent,
+              text: isLoading ? 'جاري الإرسال...' : l10n.createSosSendRequest,
+              onPressed: isLoading ? null : onSubmit,
+              backgroundColor: isLoading ? AppColors.accent.withOpacity(0.6) : AppColors.accent,
               height: 52.h,
               borderRadius: 14.r,
             ),

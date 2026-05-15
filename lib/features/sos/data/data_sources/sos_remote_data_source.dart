@@ -10,7 +10,7 @@ class SosRemoteDataSource {
 
   Future<SosModel> createSos(Map<String, dynamic> data) async {
     final response = await _apiService.post(
-      endPoint: "/api/sos",
+      endPoint: "/sos",
       data: data,
     );
     return SosModel.fromJson(response);

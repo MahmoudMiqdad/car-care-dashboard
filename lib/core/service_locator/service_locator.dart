@@ -42,6 +42,10 @@ import 'package:car_care/features/maintenance/user_statistics/data/data_sources/
 import 'package:car_care/features/maintenance/user_statistics/data/repositories/statistics_impl.dart';
 import 'package:car_care/features/maintenance/user_statistics/domain/repositories/i_statistics.dart';
 import 'package:car_care/features/maintenance/user_statistics/presentation/cubit/statistics_cubit.dart';
+import 'package:car_care/features/sos/data/data_sources/sos_remote_data_source.dart';
+import 'package:car_care/features/sos/data/repositories/sos_repository_impl.dart';
+import 'package:car_care/features/sos/domain/repositories/i_sos_repository.dart';
+import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_cubit.dart';
 import 'package:car_care/features/technician/technician_location/data/data_sources/technician_location_remote_data_source.dart';
 import 'package:car_care/features/technician/technician_location/data/repositories/technician_location_repository_impl.dart';
 import 'package:car_care/features/technician/technician_location/domain/repositories/i_technician_location_repository.dart';
@@ -294,6 +298,14 @@ Future<void> setupServiceLocator() async {
 ..registerFactory<ProfileWasherCubit>(
   () => ProfileWasherCubit(getIt<IProfileWasherRepository>()),
 )
+..registerLazySingleton<SosRemoteDataSource>(
+  () => SosRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<ISosRepository>(
+  () => SosRepositoryImpl(getIt<SosRemoteDataSource>()),
+)
+..registerFactory<SosCubit>(
+  () => SosCubit(getIt<ISosRepository>()),
 
 // Car Washer Statistics
 ..registerLazySingleton<CarWasherStatisticsRemoteDataSource>(

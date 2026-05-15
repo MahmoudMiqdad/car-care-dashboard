@@ -1,22 +1,19 @@
+import 'package:car_care/core/constants/list_province.dart';
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/const.dart';
 import 'package:car_care/core/widgets/image_background.dart';
+import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_cubit.dart';
+import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_state.dart';
 import 'package:car_care/features/sos/presentation/widgets/create_sos/create_sos_body.dart';
+import 'package:car_care/features/vehicle/domain/entities/vehicle_entity.dart';
+import 'package:car_care/features/vehicle/presentation/cubit/vehicle_cubit/vehicle_cubit.dart';
+import 'package:car_care/features/vehicle/presentation/cubit/vehicle_cubit/vehicle_state.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
-const _kCreateSosVehicleOptions = <String>[
-  'كيا ري',
-  'هيونداي اكسنت ',
-];
-
-const _kCreateSosProvinceOptions = <String>[
-  'دمشق',
-  'حلب',
-];
+import 'package:geolocator/geolocator.dart';
 
 class CreateSosPage extends StatefulWidget {
   const CreateSosPage({super.key});
@@ -27,13 +24,20 @@ class CreateSosPage extends StatefulWidget {
 
 class _CreateSosPageState extends State<CreateSosPage> {
   late final TextEditingController _descriptionController;
+
   String _vehicleValue = '';
   String _provinceValue = '';
+  VehicleEntity? _selectedVehicle;
 
   @override
   void initState() {
     super.initState();
     _descriptionController = TextEditingController();
+
+    // تحميل السيارات بدون ما يعمل مشاكل context
+    Future.microtask(() {
+      context.read<VehicleCubit>().getAllVehicles();
+    });
   }
 
   @override
@@ -43,81 +47,219 @@ class _CreateSosPageState extends State<CreateSosPage> {
   }
 
   Future<void> _pickVehicle() async {
-    final choice = await _showStringPicker(options: _kCreateSosVehicleOptions);
-    if (choice != null && mounted) {
-      setState(() => _vehicleValue = choice);
-    }
-  }
+    final cubit = context.read<VehicleCubit>();
+    var state = cubit.state;
 
-  Future<void> _pickProvince() async {
-    final choice = await _showStringPicker(options: _kCreateSosProvinceOptions);
-    if (choice != null && mounted) {
-      setState(() => _provinceValue = choice);
+    if (state is VehicleLoading) {
+      await cubit.stream.firstWhere((s) => s is! VehicleLoading);
     }
-  }
 
-  Future<String?> _showStringPicker({required List<String> options}) {
-    return showModalBottomSheet<String>(
+    if (!mounted) return;
+
+    state = cubit.state;
+
+    if (state is VehicleError) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(state.message)),
+      );
+      return;
+    }
+
+    if (state is VehicleEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Colors.red,
+          content: Text('لا توجد سيارات'),
+        ),
+      );
+      return;
+    }
+
+    if (state is! VehicleLoaded) return;
+
+    final vehicles = state.vehicles;
+
+    final choice = await showModalBottomSheet<VehicleEntity>(
       context: context,
-      backgroundColor: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20.r)),
-      ),
-      builder: (sheetContext) {
-        return SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.h),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                for (final option in options)
-                  ListTile(
-                    title: Text(
-                      option,
-                      style: Theme.of(sheetContext).textTheme.titleMedium,
-                    ),
-                    onTap: () => Navigator.of(sheetContext).pop(option),
-                  ),
-              ],
-            ),
-          ),
+      builder: (context) {
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: vehicles.map((v) {
+             return ListTile(
+  leading: CircleAvatar(
+    radius: 20,
+    backgroundImage: v.image != null && v.image!.isNotEmpty
+        ? NetworkImage(v.image!)
+        : null,
+    child: v.image == null || v.image!.isEmpty
+        ? const Icon(Icons.directions_car, size: 18)
+        : null,
+  ),
+
+  title: Text('${v.brand} ${v.model}'),
+  subtitle: Text('${v.year} • ${v.plateNumber}'),
+  onTap: () => Navigator.pop(context, v),
+);
+          }).toList(),
         );
       },
     );
-  }
 
-  void _onSubmit() {
+    if (!mounted) return;
+
+    if (choice != null) {
+      setState(() {
+        _selectedVehicle = choice;
+        _vehicleValue = '${choice.brand} ${choice.model}';
+      });
+    }
+  }
+Future<void> _pickProvince() async {
+  final choice = await showModalBottomSheet<String>(
+    context: context,
+    builder: (context) {
+    return SafeArea(
+  child: DraggableScrollableSheet(
+    expand: false,
+    builder: (context, scrollController) {
+      return ListView(
+        controller: scrollController,
+        children: kCreateSosProvinceOptions.map((e) {
+          return ListTile(
+            title: Text(e),
+            onTap: () => Navigator.pop(context, e),
+          );
+        }).toList(),
+      );
+    },
+  ),
+);
+    },
+  );
+
+  if (!mounted) return;
+
+  if (choice != null) {
+    setState(() => _provinceValue = choice);
+  }
+}
+
+  Future<void> _onSubmit() async {
     FocusScope.of(context).unfocus();
+
+    if (_selectedVehicle == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('الرجاء اختيار السيارة')),
+      );
+      return;
+    }
+
+    if (_provinceValue.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('الرجاء اختيار المحافظة')),
+      );
+      return;
+    }
+
+    if (_descriptionController.text.trim().isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('الرجاء وصف المشكلة')),
+      );
+      return;
+    }
+
+    try {
+      LocationPermission permission = await Geolocator.checkPermission();
+
+      if (permission == LocationPermission.denied) {
+        permission = await Geolocator.requestPermission();
+      }
+
+      if (permission == LocationPermission.denied ||
+          permission == LocationPermission.deniedForever) {
+        if (!mounted) return;
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('يرجى تفعيل الموقع')),
+        );
+        return;
+      }
+
+      final position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high,
+      );
+
+      if (!mounted) return;
+
+      context.read<SosCubit>().createSos({
+        'vehicle_id': _selectedVehicle!.id,
+        'lat': position.latitude,
+        'lng': position.longitude,
+        'description': _descriptionController.text.trim(),
+        'city': _provinceValue,
+      });
+    } catch (e) {
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('خطأ بالموقع: $e')),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        backgroundColor: AppColors.lightScaffold,
-        appBar: CustomAppBar(
-          title: l10n.createSosTitle,
-          showBackButton: true,
-          onBackTapped: () {
-            if (context.canPop()) {
-              context.pop();
-            } else {
-              context.go(Routes.home);
-            }
-          },
-        ),
+    return BlocListener<SosCubit, SosState>(
+      listener: (context, state) {
+        if (state is SosCreated) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              backgroundColor: Colors.green,
+              content: Text('تم إرسال الطلب ✓'),
+            ),
+          );
 
-        body: ImageBackground(
-          child: CreateSosBody(
-            descriptionController: _descriptionController,
-            vehicleValue: _vehicleValue,
-            provinceValue: _provinceValue,
-            onPickVehicle: _pickVehicle,
-            onPickProvince: _pickProvince,
-            onSubmit: _onSubmit,
+          if (context.canPop()) {
+            context.pop();
+          } else {
+            context.go(Routes.home);
+          }
+        }
+
+        if (state is SosError) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.red,
+              content: Text(state.message),
+            ),
+          );
+        }
+      },
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: Scaffold(
+          backgroundColor: AppColors.lightScaffold,
+          appBar: CustomAppBar(
+            title: l10n.createSosTitle,
+            showBackButton: true,
+            onBackTapped: () => context.pop(),
+          ),
+          body: ImageBackground(
+            child: BlocBuilder<SosCubit, SosState>(
+              builder: (context, state) {
+                return CreateSosBody(
+                  descriptionController: _descriptionController,
+                  vehicleValue: _vehicleValue,
+                  provinceValue: _provinceValue,
+                  onPickVehicle: _pickVehicle,
+                  onPickProvince: _pickProvince,
+                  onSubmit: _onSubmit,
+                  isLoading: state is SosLoading,
+                );
+              },
+            ),
           ),
         ),
       ),
