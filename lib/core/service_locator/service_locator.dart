@@ -307,7 +307,7 @@ Future<void> setupServiceLocator() async {
 ..registerFactory<SosCubit>(
   () => SosCubit(getIt<ISosRepository>()),
 
-// Car Washer Statistics
+)
 ..registerLazySingleton<CarWasherStatisticsRemoteDataSource>(
   () => CarWasherStatisticsRemoteDataSource(getIt<ApiService>()),
 )
