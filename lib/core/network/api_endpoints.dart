@@ -46,16 +46,22 @@ class ApiEndpoints {
   static const String ratejob = '/rate-job';
   // car-washer (customer)
   static const String customerCarWashers = '/customer/car_washers';
-  static const String carwashBookings = '/customer/carwash_bookings';
+  static const String customerCarwashBookings = '/customer/carwash_bookings';
+  static String customerRateBooking(int bookingId) =>
+      '/customer/carwash_bookings/$bookingId/rate';
+static String customerCancelBooking(int bookingId) =>
+    '/customer/carwash_bookings/$bookingId/cancel';
   // car-washer (washer side)
   static const String washerMyBookings = '/car_washer/my_bookings';
-  static const String customerCarwashBookings = '/customer/carwash_bookings';
-  static String washerAcceptBooking(int id) =>
-      '/car_washer/bookings/$id/accept';
-  static String washerRejectBooking(int id) =>
-      '/car_washer/bookings/$id/reject';
+  static String washerAcceptBooking(int id) => '/car_washer/bookings/$id/accept';
+  static String washerRejectBooking(int id) => '/car_washer/bookings/$id/reject';
+  static String washerUpdateBookingStatus(int id) => '/car_washer/bookings/$id/status';
+
   // Profile (Car Washer Owner)
   static const String washerMyProfile = '/car_washer/my_profile';
   static const String washerAddOrUpdateProfile = '/car_washer/profile';
   static const String washerProfileLogo = '/car_washer/profile/logo';
+
+  // Statistics
+  static const String washerStatistics = '/car_washer/statistics';
 }

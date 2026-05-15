@@ -1,6 +1,10 @@
+import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
+import 'package:car_care/features/car_washer/bookings/presentation/cubit/customer_bookings/customer_bookings_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../../../core/theme/app_colors.dart';
 import 'booking_action_menu.dart';
 import 'booking_details_content.dart';
@@ -10,18 +14,16 @@ class BookingCard extends StatelessWidget {
   const BookingCard({
     super.key,
     required this.booking,
-    required this.statusChips,
-    required this.onShowDetails,
     this.showMenuByDefault = false,
   });
 
   final BookingsEntity booking;
-  final List<String> statusChips;
-  final VoidCallback onShowDetails;
   final bool showMenuByDefault;
 
   @override
   Widget build(BuildContext context) {
+    final statusChips = <String>[booking.statusText];
+
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -40,7 +42,17 @@ class BookingCard extends StatelessWidget {
               SizedBox(height: 8.h),
               BookingDetailsContent(
                 booking: booking,
-                onShowDetails: onShowDetails,
+                onShowDetails: () async {
+                  final changed = await context.push(
+                    Routes.bookingDetails,
+                    extra: booking,
+                  );
+                  if (changed == true && context.mounted) {
+                    context.read<CustomerBookingsCubit>().fetchBookings(
+                      status: null,
+                    );
+                  }
+                },
               ),
             ],
           ),

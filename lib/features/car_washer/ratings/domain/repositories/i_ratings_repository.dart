@@ -1,9 +1,11 @@
-import 'package:dartz/dartz.dart';
 import 'package:car_care/core/errors/filuar.dart';
-import '../entities/ratings_entity.dart';
+import 'package:car_care/features/car_washer/ratings/domain/entities/ratings_entity.dart';
+import 'package:dartz/dartz.dart';
 
 abstract class IRatingsRepository {
-
-  Future<Either<Failure, RatingsEntity>> ratings(Map<String, dynamic> params);
-
+  Future<Either<Failure, RatingEntity>> submitRating({
+    required int bookingId,
+    required int rating,
+    required String review,
+  });
 }

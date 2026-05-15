@@ -24,11 +24,11 @@ class VehicleUpdateCubit extends Cubit<VehicleUpdateState> {
     emit(const VehicleUpdateLoading());
 
     final params = <String, dynamic>{
-      'brand': brand.trim(),
-      'model': model.trim(),
-      'year': year.trim(),
-      'plate_number': plateNumber.trim(),
-      'current_km': currentKm.trim(),
+      if (brand.trim().isNotEmpty) 'brand': brand.trim(),
+      if (model.trim().isNotEmpty) 'model': model.trim(),
+      if (year.trim().isNotEmpty) 'year': year.trim(),
+      if (plateNumber.trim().isNotEmpty) 'plate_number': plateNumber.trim(),
+      if (currentKm.trim().isNotEmpty) 'current_km': currentKm.trim(),
     };
 
     if (imageBytes != null && imageName != null) {

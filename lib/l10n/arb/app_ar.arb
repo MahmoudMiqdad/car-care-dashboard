@@ -2085,6 +2085,42 @@
         "type": "int"
       }
     }
+  },
+  "sosDetailsTitle": "تفاصيل النجدة",
+  "@sosDetailsTitle": {
+    "description": "عنوان شريط التطبيق لشاشة تفاصيل طلب النجدة"
+  },
+  "sosDetailsRequestAccepted": "تم قبول الطلب",
+  "@sosDetailsRequestAccepted": {
+    "description": "شريط الحالة العلوي عند قبول طلب النجدة"
+  },
+  "sosDetailsRequestData": "بيانات الطلب",
+  "@sosDetailsRequestData": {
+    "description": "عنوان بطاقة بيانات الطلب في شاشة تفاصيل النجدة"
+  },
+  "sosDetailsPlateNumberLabel": "رقم اللوحة",
+  "@sosDetailsPlateNumberLabel": {
+    "description": "عنوان قبل قيمة رقم اللوحة (القيمة لا تُترجم)"
+  },
+  "sosDetailsTechnicianLabel": "الفني",
+  "@sosDetailsTechnicianLabel": {
+    "description": "عنوان قبل اسم الفني (القيمة لا تُترجم)"
+  },
+  "sosDetailsDescriptionLabel": "وصف",
+  "@sosDetailsDescriptionLabel": {
+    "description": "عنوان قبل نص وصف الطلب (القيمة لا تُترجم)"
+  },
+  "sosDetailsCurrentLocation": "الموقع الحالي",
+  "@sosDetailsCurrentLocation": {
+    "description": "عنوان بطاقة الموقع في شاشة تفاصيل النجدة"
+  },
+  "sosDetailsTrack": "تتبع",
+  "@sosDetailsTrack": {
+    "description": "تسمية شريحة التتبع فوق خريطة تفاصيل النجدة"
+  },
+  "sosDetailsCancelRequest": "إلغاء الطلب",
+  "@sosDetailsCancelRequest": {
+    "description": "زر إلغاء طلب النجدة"
   }
 }
 

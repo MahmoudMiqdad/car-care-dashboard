@@ -2082,6 +2082,42 @@
         "type": "int"
       }
     }
+  },
+  "sosDetailsTitle": "SOS Details",
+  "@sosDetailsTitle": {
+    "description": "App bar title for SOS request details screen"
+  },
+  "sosDetailsRequestAccepted": "Request accepted",
+  "@sosDetailsRequestAccepted": {
+    "description": "Top status banner shown when the SOS request has been accepted"
+  },
+  "sosDetailsRequestData": "Request data",
+  "@sosDetailsRequestData": {
+    "description": "Header label for the request data card on the SOS details screen"
+  },
+  "sosDetailsPlateNumberLabel": "Plate number",
+  "@sosDetailsPlateNumberLabel": {
+    "description": "Label before the plate number value (value is not translated)"
+  },
+  "sosDetailsTechnicianLabel": "Technician",
+  "@sosDetailsTechnicianLabel": {
+    "description": "Label before the technician name (value is not translated)"
+  },
+  "sosDetailsDescriptionLabel": "Description",
+  "@sosDetailsDescriptionLabel": {
+    "description": "Label before the request description text (value is not translated)"
+  },
+  "sosDetailsCurrentLocation": "Current location",
+  "@sosDetailsCurrentLocation": {
+    "description": "Header label for the location card on the SOS details screen"
+  },
+  "sosDetailsTrack": "Track",
+  "@sosDetailsTrack": {
+    "description": "Label of the track chip on top of the SOS details map"
+  },
+  "sosDetailsCancelRequest": "Cancel request",
+  "@sosDetailsCancelRequest": {
+    "description": "Primary destructive button to cancel the SOS request"
   }
 }
 

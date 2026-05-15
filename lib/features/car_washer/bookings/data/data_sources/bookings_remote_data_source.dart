@@ -36,4 +36,15 @@ class BookingsRemoteDataSource {
     );
     return response;
   }
+
+  Future<Map<String, dynamic>> updateBookingStatus(
+    int bookingId,
+    String status,
+  ) async {
+    final response = await _apiService.patch(
+      endPoint: ApiEndpoints.washerUpdateBookingStatus(bookingId),
+      data: {'status': status},
+    );
+    return response;
+  }
 }

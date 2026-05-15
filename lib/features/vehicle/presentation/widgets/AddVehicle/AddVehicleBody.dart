@@ -14,6 +14,7 @@ import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddVehicleBody extends StatefulWidget {
@@ -95,9 +96,9 @@ class _AddVehicleBodyState extends State<AddVehicleBody> {
         listener: (context, state) {
           if (state is VehicleAddSuccess) {
             ScaffoldMessenger.of(context).showSnackBar(
-               SnackBar(content: Text(strings.vehicleUpdatedSuccessfully)),
+               SnackBar(content: Text(strings.vehicleAddedSuccess)),
             );
-            Navigator.of(context).pop(true);
+            context.pop(true);
           }
           if (state is VehicleAddError) {
             ScaffoldMessenger.of(context).showSnackBar(

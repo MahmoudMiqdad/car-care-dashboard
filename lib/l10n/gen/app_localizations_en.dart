@@ -1392,4 +1392,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String sosRequestCreatedAtMinutes(int minutes) {
     return 'Created $minutes min ago';
   }
+
+  @override
+  String get sosDetailsTitle => 'SOS Details';
+
+  @override
+  String get sosDetailsRequestAccepted => 'Request accepted';
+
+  @override
+  String get sosDetailsRequestData => 'Request data';
+
+  @override
+  String get sosDetailsPlateNumberLabel => 'Plate number';
+
+  @override
+  String get sosDetailsTechnicianLabel => 'Technician';
+
+  @override
+  String get sosDetailsDescriptionLabel => 'Description';
+
+  @override
+  String get sosDetailsCurrentLocation => 'Current location';
+
+  @override
+  String get sosDetailsTrack => 'Track';
+
+  @override
+  String get sosDetailsCancelRequest => 'Cancel request';
 }

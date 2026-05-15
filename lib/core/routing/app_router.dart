@@ -6,6 +6,7 @@ import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart
 import 'package:car_care/features/technician_sos/presentation/pages/technician_sos_page.dart';
 import 'package:car_care/features/sos/presentation/pages/create_sos_page.dart';
 import 'package:car_care/features/sos/presentation/pages/sos_page.dart';
+import 'package:car_care/features/sos/presentation/pages/sos_details_page.dart';
 import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/booking_details_page.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/bookings_page.dart';
@@ -39,7 +40,6 @@ import 'package:car_care/features/user_profile/presentation/pages/change_passwor
 import 'package:car_care/features/vehicle/presentation/pages/vehicle_details_page.dart';
 import 'package:car_care/features/vehicle/presentation/pages/add_vehicle_page.dart';
 import 'package:car_care/features/vehicle/presentation/pages/my_vehicles_page_page.dart';
-
 import 'package:car_care/features/auth/presentation/pages/login_page.dart';
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/widgets/const.dart';
@@ -122,6 +122,11 @@ class AppRouter {
             builder: (context, state) => const SosPage(),
           ),
           GoRoute(
+            path: Routes.sos_details,
+            name: '/sos_details',
+            builder: (context, state) => const SosDetailsPage(),
+          ),
+          GoRoute(
             path: Routes.notifications,
             name: '/notifications',
             builder: (context, state) => const NotificationsPage(),
@@ -158,7 +163,7 @@ class AppRouter {
           GoRoute(
             path: Routes.bookings,
             name: '/bookings',
-            builder: (context, state) => const BookingsPage(),
+            builder: (context, state) => const CustomerBookingsPage(),
           ),
           GoRoute(
             path: Routes.washerBookings,
@@ -184,6 +189,14 @@ class AppRouter {
             },
           ),
           GoRoute(
+            path: Routes.ratings,
+            name: 'ratings',
+            builder: (context, state) {
+              final booking = state.extra as BookingsEntity;
+              return RatingsPage(booking: booking);
+            },
+          ),
+          GoRoute(
             path: Routes.availability,
             name: '/availability',
             builder: (context, state) => const AvailabilityPage(),
@@ -192,6 +205,11 @@ class AppRouter {
             path: Routes.profile_washer,
             name: '/profile_washer',
             builder: (context, state) => const ProfileWasherPage(),
+          ),
+          GoRoute(
+            path: Routes.sos,
+            name: '/sos',
+            builder: (context, state) => const SosPage(),
           ),
           GoRoute(
             path: Routes.technician_sos,
@@ -371,7 +389,7 @@ class AppRouter {
       GoRoute(
         path: Routes.washer_statistics,
         name: '/washer_statistics',
-        builder: (context, state) => const StatisticsPage(),
+        builder: (context, state) => const CarWasherStatisticsPage(),
       ),
     ],
   );

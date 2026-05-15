@@ -28,6 +28,9 @@ class AppAssets {
 
   static const String technicianJobNotesIcon =
       '$_imagesPath/icons8-notes-48.png';
+        // ignore: constant_identifier_names
+        static const String NotesIcon =
+      '$_imagesPath/icons8-notes-64.png';
   static const String technicianJobProfileIcon =
       '$_imagesPath/icons8-profile-picture-50.png';
   static const String reviewerProfilePicture100 =

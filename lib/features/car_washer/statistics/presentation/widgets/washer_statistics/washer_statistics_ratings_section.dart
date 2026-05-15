@@ -6,7 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WasherStatisticsRatingsSection extends StatelessWidget {
-  const WasherStatisticsRatingsSection({super.key});
+  const WasherStatisticsRatingsSection({
+    super.key,
+    required this.averageRating,
+    required this.ratingsCount,
+  });
+
+  final num averageRating;
+  final int ratingsCount;
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +29,23 @@ class WasherStatisticsRatingsSection extends StatelessWidget {
           color: AppColors.black,
           textAlign: TextAlign.start,
         ),
-        const RatingsStarSelector(rating: 3.0, onRatingChanged: _ignoreTap),
+        RatingsStarSelector(
+          rating: averageRating.toDouble(),
+          onRatingChanged: _ignore,
+        ),
+        SizedBox(height: 6.h),
+        Text(
+          '${strings.profileWasherRatingsCountLine(ratingsCount)}',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w600,
+            color: AppColors.lightTextSecondary,
+          ),
+        ),
       ],
     );
   }
 }
 
-void _ignoreTap(int _) {}
+void _ignore(int _) {}

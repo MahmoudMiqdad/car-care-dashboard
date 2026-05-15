@@ -2,7 +2,10 @@ import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/widgets/app_headline.dart';
 import 'package:car_care/features/home/presentation/widgets/ServicesGrid.dart';
 import 'package:car_care/features/home/presentation/widgets/active_orderCard.dart';
+import 'package:car_care/features/user_profile/presentation/cubit/show_profile_cubit/show_profile_cubit.dart';
+import 'package:car_care/features/user_profile/presentation/cubit/show_profile_cubit/show_profile_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,7 +20,12 @@ class HomeBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            AppText.headline(context, 'Hello, Sami ...'),
+            BlocBuilder<ShowProfileCubit, ShowProfileState>(
+              builder: (context, state) {
+                final name = state is ShowProfileLoaded ? state.profile.name : '...';
+                return AppText.headline(context, 'مرحباً، $name');
+              },
+            ),
             SizedBox(height: 16.h),
             const ActiveOrderCard(),
             SizedBox(height: 24.h),
@@ -38,6 +46,12 @@ class HomeBody extends StatelessWidget {
         break;
       case 1:
         context.go(Routes.addRequest);
+        break;
+      case 2:
+        context.go(Routes.washers);
+        break;
+      case 3:
+        context.go(Routes.sos);
         break;
       default:
         debugPrint("No route defined for index $index");

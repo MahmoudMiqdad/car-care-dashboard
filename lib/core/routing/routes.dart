@@ -45,6 +45,7 @@ class Routes {
   static const String washerBookings = '/washer_bookings';
   static const String washerBookingsDetails = '/washer_bookings_details';
   static const String bookingDetails = '/booking_details';
+
   static const String ratings = '/ratings';
   static const String show_ratings = '/show_ratings';
   static const String profile_washer = '/profile_washer';
@@ -53,6 +54,8 @@ class Routes {
   static const String washerReservation = '/washer_reservation';
   static const String sos = '/sos';
   static const String create_sos = '/Create_sos_page_wrapper';
+  static const String sos_details = '/sos_details';
+  static const String create_sos = '/create_sos';
   static const String technician_sos = '/technician_sos';
   static const String tracking = '/tracking';
   static const String technician_location = '/technician_location';

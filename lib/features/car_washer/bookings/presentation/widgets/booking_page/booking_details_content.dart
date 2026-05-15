@@ -19,10 +19,8 @@ class BookingDetailsContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
 
-    // بيانات المغسلة (للمستخدم عادة موجودة بالريسبونس)
     final washerName = booking.carWasher?.shopName ?? l10n.bookingsWasherName;
-    final washerLogoUrl = booking.carWasher?.logoUrl; // غالباً موجودة عندكم
-    // السعر
+    final washerLogoUrl = booking.carWasher?.logoUrl; 
     final priceText = booking.price ?? '0';
 
     return Row(
@@ -83,7 +81,6 @@ class BookingDetailsContent extends StatelessWidget {
         ),
         SizedBox(width: 5.w),
 
-        // صورة (لو شعار المغسلة موجود، نعرضه، وإلا نعرض صورة افتراضية)
         ClipOval(
           child: SizedBox(
             height: 88.h,

@@ -105,13 +105,6 @@ Widget build(BuildContext context) {
         ),
 
         SizedBox(height: 5.h),
-        ServiceRecordTile(
-          title: strings.alertsRecord,
-          icon: Icons.notifications_none_outlined,
-          onTap: () {},
-        ),
-
-        SizedBox(height: 5.h),
         AppText.sectionTitle(strings.quickActions),
 
         SizedBox(height: 5.h),

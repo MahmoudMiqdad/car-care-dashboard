@@ -104,8 +104,9 @@ class _WasherBookingCardState extends State<WasherBookingCard> {
                 },
 
                 onStartExecution: () =>
-                    _snack('TODO: ربط زر بدء التنفيذ بالباك'),
-                onComplete: () => _snack('TODO: ربط زر اكتمل بالباك'),
+                    context.read<BookingsCubit>().startExecution(booking.id),
+                onComplete: () =>
+                    context.read<BookingsCubit>().completeBooking(booking.id),
               ),
             ],
           ),

@@ -16,6 +16,14 @@ import 'package:car_care/features/car_washer/profile_washer/data/data_sources/pr
 import 'package:car_care/features/car_washer/profile_washer/data/repositories/profile_washer_repository_impl.dart';
 import 'package:car_care/features/car_washer/profile_washer/domain/repositories/i_profile_washer_repository.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/cubit/profile_washer_cubit.dart';
+import 'package:car_care/features/car_washer/ratings/data/data_sources/ratings_remote_data_source.dart';
+import 'package:car_care/features/car_washer/ratings/data/repositories/ratings_repository_impl.dart';
+import 'package:car_care/features/car_washer/ratings/domain/repositories/i_ratings_repository.dart';
+import 'package:car_care/features/car_washer/ratings/presentation/cubit/ratings_cubit.dart';
+import 'package:car_care/features/car_washer/statistics/data/data_sources/statistics_remote_data_source.dart';
+import 'package:car_care/features/car_washer/statistics/data/repositories/statistics_repository_impl.dart';
+import 'package:car_care/features/car_washer/statistics/domain/repositories/i_statistics_repository.dart';
+import 'package:car_care/features/car_washer/statistics/presentation/cubit/statistics_cubit.dart';
 import 'package:car_care/features/car_washer/washers/data/data_sources/washers_remote_data_source.dart';
 import 'package:car_care/features/car_washer/washers/data/repositories/washers_repository_impl.dart';
 import 'package:car_care/features/car_washer/washers/domain/repositories/i_washers_repository.dart';
@@ -298,5 +306,28 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<SosCubit>(
   () => SosCubit(getIt<ISosRepository>()),
+
+// Car Washer Statistics
+..registerLazySingleton<CarWasherStatisticsRemoteDataSource>(
+  () => CarWasherStatisticsRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<ICarWasherStatisticsRepository>(
+  () => CarWasherStatisticsRepositoryImpl(
+    getIt<CarWasherStatisticsRemoteDataSource>(),
+  ),
+)
+..registerFactory<CarWasherStatisticsCubit>(
+  () => CarWasherStatisticsCubit(getIt<ICarWasherStatisticsRepository>()),
+)
+
+..registerLazySingleton<RatingsRemoteDataSource>(
+  () => RatingsRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IRatingsRepository>(
+  () => RatingsRepositoryImpl(getIt<RatingsRemoteDataSource>()),
+)
+..registerFactory<RatingsCubit>(
+  () => RatingsCubit(getIt<IRatingsRepository>()),
 );
+ 
 }
