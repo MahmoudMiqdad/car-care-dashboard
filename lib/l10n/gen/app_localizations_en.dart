@@ -1358,4 +1358,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get createSosSampleProblemText => 'Enter the description here';
+
+  @override
+  String get sosRequestsListTitle => 'SOS Requests List';
+
+  @override
+  String get sosRequestIdLabel => 'ID Number';
+
+  @override
+  String get sosRequestVehicleLabel => 'Vehicle';
+
+  @override
+  String get sosRequestShortDescriptionLabel => 'Short description';
+
+  @override
+  String get sosStatusFinished => 'Finished';
+
+  @override
+  String get sosStatusInProgress => 'In progress';
+
+  @override
+  String get sosStatusWaiting => 'Waiting';
+
+  @override
+  String get sosRequestAccept => 'Accept';
+
+  @override
+  String get sosRequestViewDetails => 'View details';
+
+  @override
+  String sosRequestCreatedAtHours(int hours) {
+    return 'Created $hours hours ago';
+  }
+
+  @override
+  String sosRequestCreatedAtMinutes(int minutes) {
+    return 'Created $minutes min ago';
+  }
+
+  @override
+  String get sosDetailsTitle => 'SOS Details';
+
+  @override
+  String get sosDetailsRequestAccepted => 'Request accepted';
+
+  @override
+  String get sosDetailsRequestData => 'Request data';
+
+  @override
+  String get sosDetailsPlateNumberLabel => 'Plate number';
+
+  @override
+  String get sosDetailsTechnicianLabel => 'Technician';
+
+  @override
+  String get sosDetailsDescriptionLabel => 'Description';
+
+  @override
+  String get sosDetailsCurrentLocation => 'Current location';
+
+  @override
+  String get sosDetailsTrack => 'Track';
+
+  @override
+  String get sosDetailsCancelRequest => 'Cancel request';
 }

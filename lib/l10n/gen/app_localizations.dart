@@ -2760,6 +2760,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Enter the description here'**
   String get createSosSampleProblemText;
+
+  /// App bar title for SOS requests list screen
+  ///
+  /// In en, this message translates to:
+  /// **'SOS Requests List'**
+  String get sosRequestsListTitle;
+
+  /// Label before SOS request id (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'ID Number'**
+  String get sosRequestIdLabel;
+
+  /// Label before vehicle name (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle'**
+  String get sosRequestVehicleLabel;
+
+  /// Label for short problem description (body text is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Short description'**
+  String get sosRequestShortDescriptionLabel;
+
+  /// SOS request status badge: finished
+  ///
+  /// In en, this message translates to:
+  /// **'Finished'**
+  String get sosStatusFinished;
+
+  /// SOS request status badge: in progress
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get sosStatusInProgress;
+
+  /// SOS request status badge: waiting
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting'**
+  String get sosStatusWaiting;
+
+  /// Outlined accept button on SOS request card
+  ///
+  /// In en, this message translates to:
+  /// **'Accept'**
+  String get sosRequestAccept;
+
+  /// Primary button to open SOS request details
+  ///
+  /// In en, this message translates to:
+  /// **'View details'**
+  String get sosRequestViewDetails;
+
+  /// SOS card footer relative time in hours
+  ///
+  /// In en, this message translates to:
+  /// **'Created {hours} hours ago'**
+  String sosRequestCreatedAtHours(int hours);
+
+  /// SOS card footer relative time in minutes
+  ///
+  /// In en, this message translates to:
+  /// **'Created {minutes} min ago'**
+  String sosRequestCreatedAtMinutes(int minutes);
+
+  /// App bar title for SOS request details screen
+  ///
+  /// In en, this message translates to:
+  /// **'SOS Details'**
+  String get sosDetailsTitle;
+
+  /// Top status banner shown when the SOS request has been accepted
+  ///
+  /// In en, this message translates to:
+  /// **'Request accepted'**
+  String get sosDetailsRequestAccepted;
+
+  /// Header label for the request data card on the SOS details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Request data'**
+  String get sosDetailsRequestData;
+
+  /// Label before the plate number value (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Plate number'**
+  String get sosDetailsPlateNumberLabel;
+
+  /// Label before the technician name (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Technician'**
+  String get sosDetailsTechnicianLabel;
+
+  /// Label before the request description text (value is not translated)
+  ///
+  /// In en, this message translates to:
+  /// **'Description'**
+  String get sosDetailsDescriptionLabel;
+
+  /// Header label for the location card on the SOS details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Current location'**
+  String get sosDetailsCurrentLocation;
+
+  /// Label of the track chip on top of the SOS details map
+  ///
+  /// In en, this message translates to:
+  /// **'Track'**
+  String get sosDetailsTrack;
+
+  /// Primary destructive button to cancel the SOS request
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel request'**
+  String get sosDetailsCancelRequest;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

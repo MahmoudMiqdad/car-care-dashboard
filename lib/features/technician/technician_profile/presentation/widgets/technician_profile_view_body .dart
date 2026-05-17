@@ -49,11 +49,9 @@ class TechnicianProfileViewBody extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // ─── زر الـ Availability ──────────────────────────────
                     _AvailabilityToggle(isAvailable: isAvailable),
                     SizedBox(height: 20.h),
 
-                    // ─── بطاقات المعلومات ─────────────────────────────────
                     ProfileInfoCard(
                       title: 'التخصص',
                       value: profile.data?.specialization ?? '-',
@@ -89,7 +87,6 @@ class TechnicianProfileViewBody extends StatelessWidget {
                     ),
                     SizedBox(height: 24.h),
 
-                    // ─── الشهادات ─────────────────────────────────────────
                     if (certifications.isNotEmpty) ...[
                       Align(
                         alignment: Alignment.centerRight,
@@ -149,7 +146,6 @@ class TechnicianProfileViewBody extends StatelessWidget {
                       SizedBox(height: 24.h),
                     ],
 
-                    // ─── زر تعديل البيانات ────────────────────────────────
                     AppButton(
                       text: 'تعديل البيانات',
                       backgroundColor: AppColors.orange,
@@ -238,7 +234,6 @@ class _AvailabilityToggle extends StatelessWidget {
               ),
               SizedBox(width: 12.w),
 
-              // ─── النص ───────────────────────────────────────────────
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -265,7 +260,6 @@ class _AvailabilityToggle extends StatelessWidget {
                 ),
               ),
 
-              // ─── السويتش ────────────────────────────────────────────
               isLoading
                   ? SizedBox(
                       width: 24.r,

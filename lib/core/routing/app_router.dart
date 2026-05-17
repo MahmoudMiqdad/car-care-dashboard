@@ -1,10 +1,11 @@
-﻿import 'package:car_care/features/technician/technician_location/presentation/pages/technician_location_page.dart';
+﻿import 'package:car_care/features/sos/presentation/pages/Create_sos_page_wrapper.dart';
+import 'package:car_care/features/technician/technician_location/presentation/pages/technician_location_page.dart';
 import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
 import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart';
 import 'package:car_care/features/technician_sos/presentation/pages/technician_sos_page.dart';
-import 'package:car_care/features/sos/presentation/pages/create_sos_page.dart';
 import 'package:car_care/features/sos/presentation/pages/sos_page.dart';
+import 'package:car_care/features/sos/presentation/pages/sos_details_page.dart';
 import 'package:car_care/features/car_washer/car_wash/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/car_wash/bookings/presentation/pages/booking_details_page.dart';
 import 'package:car_care/features/car_washer/car_wash/bookings/presentation/pages/bookings_page.dart';
@@ -21,6 +22,7 @@ import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/enti
 import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/pages/washer_details_page.dart';
 import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/pages/washer_reservation_page.dart';
 import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/pages/washers_page.dart';
+
 import 'package:car_care/features/maintenance/user_requests/presentation/pages/show_requests/all_requests_stats_page.dart';
 import 'package:car_care/features/technician/technician_order/presentation/pages/order_details_page.dart';
 import 'package:car_care/features/technician/technician_order/presentation/pages/orders_page.dart';
@@ -40,7 +42,6 @@ import 'package:car_care/features/user_profile/presentation/pages/change_passwor
 import 'package:car_care/features/vehicle/presentation/pages/vehicle_details_page.dart';
 import 'package:car_care/features/vehicle/presentation/pages/add_vehicle_page.dart';
 import 'package:car_care/features/vehicle/presentation/pages/my_vehicles_page_page.dart';
-
 import 'package:car_care/features/auth/presentation/pages/login_page.dart';
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/widgets/const.dart';
@@ -63,7 +64,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.login,
+    initialLocation: Routes.create_sos,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -116,6 +117,16 @@ class AppRouter {
             path: Routes.home,
             name: '/home',
             builder: (context, state) => const HomePage(),
+          ),
+          GoRoute(
+            path: Routes.sos,
+            name: '/sos',
+            builder: (context, state) => const SosPage(),
+          ),
+          GoRoute(
+            path: Routes.sos_details,
+            name: '/sos_details',
+            builder: (context, state) => const SosDetailsPage(),
           ),
           GoRoute(
             path: Routes.notifications,
@@ -295,14 +306,14 @@ class AppRouter {
       ),
       GoRoute(
         path: Routes.create_sos,
-        name: '/create_sos',
-        builder: (context, state) => const CreateSosPage(),
+        name: '/Create_sos_page_wrapper',
+        builder: (context, state) => const CreateSosPageWrapper(),
       ),
       GoRoute(
         path: Routes.updateTechnicianProfile,
         name: '/update_technician_profile',
         builder: (context, state) => TechnicianProfileEditPage(
-          initialData: state.extra as TechnicianDataEntity?, // ← هون
+          initialData: state.extra as TechnicianDataEntity?,
         ),
       ),
       GoRoute(
@@ -322,6 +333,12 @@ class AppRouter {
         builder: (context, state) => const DeleteProfileDialog(),
       ),
 
+      // GoRoute(
+      //   path: Routes.ratings,
+      //   name: '/ratings',
+      //   parentNavigatorKey: rootNavigatorKey,
+      //   builder: (context, state) => const RatingsPage(booking: null,),
+      // ),
       GoRoute(
         path: Routes.statistics,
         builder: (context, state) => const UserStatisticsPage(),
