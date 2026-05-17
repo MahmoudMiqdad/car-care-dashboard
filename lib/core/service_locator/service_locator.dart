@@ -1,33 +1,41 @@
-import 'package:car_care/core/local_storage/secure_storage.dart';
+﻿import 'package:car_care/core/local_storage/secure_storage.dart';
 import 'package:car_care/core/locale/locale_cubit.dart';
 import 'package:car_care/core/network/api_client.dart';
 import 'package:car_care/core/network/api_service.dart';
 import 'package:car_care/features/auth/data/data_sources/auth_remote_data_source.dart';
 import 'package:car_care/features/auth/domain/repositories/i_auth_repository.dart';
 import 'package:car_care/features/auth/data/repositories/auth_repo_impl.dart';
-import 'package:car_care/features/car_washer/bookings/data/data_sources/bookings_remote_data_source.dart';
-import 'package:car_care/features/car_washer/bookings/data/data_sources/customer_bookings_remote_data_source.dart';
-import 'package:car_care/features/car_washer/bookings/data/repository/customer_bookings_repository_impl.dart';
-import 'package:car_care/features/car_washer/bookings/domain/repositories/i_bookings_repository.dart';
-import 'package:car_care/features/car_washer/bookings/domain/repositories/i_customer_bookings_repository.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/cubit/customer_bookings/customer_bookings_cubit.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/cubit/washer_bookings/bookings_cubit.dart';
-import 'package:car_care/features/car_washer/profile_washer/data/data_sources/profile_washer_remote_data_source.dart';
-import 'package:car_care/features/car_washer/profile_washer/data/repositories/profile_washer_repository_impl.dart';
-import 'package:car_care/features/car_washer/profile_washer/domain/repositories/i_profile_washer_repository.dart';
-import 'package:car_care/features/car_washer/profile_washer/presentation/cubit/profile_washer_cubit.dart';
-import 'package:car_care/features/car_washer/ratings/data/data_sources/ratings_remote_data_source.dart';
-import 'package:car_care/features/car_washer/ratings/data/repositories/ratings_repository_impl.dart';
-import 'package:car_care/features/car_washer/ratings/domain/repositories/i_ratings_repository.dart';
-import 'package:car_care/features/car_washer/ratings/presentation/cubit/ratings_cubit.dart';
-import 'package:car_care/features/car_washer/statistics/data/data_sources/statistics_remote_data_source.dart';
-import 'package:car_care/features/car_washer/statistics/data/repositories/statistics_repository_impl.dart';
-import 'package:car_care/features/car_washer/statistics/domain/repositories/i_statistics_repository.dart';
-import 'package:car_care/features/car_washer/statistics/presentation/cubit/statistics_cubit.dart';
-import 'package:car_care/features/car_washer/washers/data/data_sources/washers_remote_data_source.dart';
-import 'package:car_care/features/car_washer/washers/data/repositories/washers_repository_impl.dart';
-import 'package:car_care/features/car_washer/washers/domain/repositories/i_washers_repository.dart';
-import 'package:car_care/features/car_washer/washers/presentation/cubit/washers/washers_cubit.dart';
+import 'package:car_care/features/car_washer/washers/washers_bookings/data/data_sources/bookings_remote_data_source.dart';
+import 'package:car_care/features/car_washer/car_wash/bookings/data/data_sources/customer_bookings_remote_data_source.dart';
+import 'package:car_care/features/car_washer/car_wash/bookings/data/repository/customer_bookings_repository_impl.dart';
+import 'package:car_care/features/car_washer/washers/washers_bookings/domain/repositories/i_bookings_repository.dart';
+import 'package:car_care/features/car_washer/car_wash/bookings/domain/repositories/i_customer_bookings_repository.dart';
+import 'package:car_care/features/car_washer/car_wash/bookings/presentation/cubit/customer_bookings/customer_bookings_cubit.dart';
+import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/cubit/washer_bookings/bookings_cubit.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/data/data_sources/profile_washer_remote_data_source.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/data/repositories/profile_washer_repository_impl.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/domain/repositories/i_profile_washer_repository.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/cubit/profile_washer_cubit.dart';
+import 'package:car_care/features/car_washer/car_wash/ratings/data/data_sources/ratings_remote_data_source.dart';
+import 'package:car_care/features/car_washer/car_wash/ratings/data/repositories/ratings_repository_impl.dart';
+import 'package:car_care/features/car_washer/car_wash/ratings/domain/repositories/i_ratings_repository.dart';
+import 'package:car_care/features/car_washer/car_wash/ratings/presentation/cubit/ratings_cubit.dart';
+import 'package:car_care/features/car_washer/washers/washers_ratings/data/data_sources/car_washer_ratings_remote_data_source.dart';
+import 'package:car_care/features/car_washer/washers/washers_ratings/data/repository/car_washer_ratings_repo_impl.dart';
+import 'package:car_care/features/car_washer/washers/washers_ratings/domain/repositories/i_car_washer_ratings_repository.dart';
+import 'package:car_care/features/car_washer/washers/washers_ratings/presentation/cubit/car_washer_ratings_cubit.dart';
+import 'package:car_care/features/car_washer/washers/washers_statistics/data/data_sources/statistics_remote_data_source.dart';
+import 'package:car_care/features/car_washer/washers/washers_statistics/data/repositories/statistics_repository_impl.dart';
+import 'package:car_care/features/car_washer/washers/washers_statistics/domain/repositories/i_statistics_repository.dart';
+import 'package:car_care/features/car_washer/washers/washers_statistics/presentation/cubit/statistics_cubit.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/data/data_sources/car_wash_booking_remote_data_source.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/data/data_sources/washers_remote_data_source.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/data/repositories/car_wash_booking_repository_impl.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/data/repositories/washers_repository_impl.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/repositories/i_car_wash_booking_repository.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/repositories/i_washers_repository.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/cubit/reservation/car_wash_booking_cubit.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/cubit/washers/washers_cubit.dart';
 import 'package:car_care/features/maintenance/user_requests/data/data_sources/requests_remote_data_source.dart';
 import 'package:car_care/features/maintenance/user_requests/data/repositories/requests_repository.dart_impl.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/repositories/i_requests_repository.dart';
@@ -82,7 +90,7 @@ import 'package:car_care/features/vehicle/presentation/cubit/vehicle_cubit/vehic
 import 'package:car_care/features/vehicle/presentation/cubit/vehicle_details_cubit/vehicle_details_cubit.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
-import 'package:car_care/features/car_washer/bookings/data/repository/bookings_repo_impl.dart';
+import 'package:car_care/features/car_washer/washers/washers_bookings/data/repository/bookings_repo_impl.dart';
 final GetIt getIt = GetIt.instance;
 
 Future<void> setupServiceLocator() async {
@@ -264,6 +272,15 @@ Future<void> setupServiceLocator() async {
     ..registerFactory<WashersCubit>(
       () => WashersCubit(getIt<IWashersRepository>()),
     )
+    ..registerLazySingleton<CarWashBookingRemoteDataSource>(
+      () => CarWashBookingRemoteDataSource(getIt<ApiService>()),
+    )
+    ..registerLazySingleton<ICarWashBookingRepository>(
+      () => CarWashBookingRepositoryImpl(getIt<CarWashBookingRemoteDataSource>()),
+    )
+    ..registerFactory<CarWashBookingCubit>(
+      () => CarWashBookingCubit(getIt<ICarWashBookingRepository>()),
+    )
     // Bookings
     ..registerLazySingleton<BookingsRemoteDataSource>(
       () => BookingsRemoteDataSource(getIt<ApiService>()),
@@ -316,6 +333,17 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<RatingsCubit>(
   () => RatingsCubit(getIt<IRatingsRepository>()),
+)
+
+// CarWasherRatings (washer owner view)
+..registerLazySingleton<CarWasherRatingsRemoteDataSource>(
+  () => CarWasherRatingsRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<ICarWasherRatingsRepository>(
+  () => CarWasherRatingsRepoImpl(getIt<CarWasherRatingsRemoteDataSource>()),
+)
+..registerFactory<CarWasherRatingsCubit>(
+  () => CarWasherRatingsCubit(getIt<ICarWasherRatingsRepository>()),
 );
- 
+
 }

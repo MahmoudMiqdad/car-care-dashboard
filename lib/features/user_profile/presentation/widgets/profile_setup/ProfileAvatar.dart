@@ -66,8 +66,6 @@ class ProfileAvatarUser extends StatelessWidget {
         }
 
       
-        avatarImage ??= const AssetImage('assets/default_avatar.png');
-
         return Stack(
           alignment: Alignment.bottomRight,
           children: [
@@ -75,7 +73,7 @@ class ProfileAvatarUser extends StatelessWidget {
               radius: radius.r,
               backgroundColor: Colors.grey.shade300,
               backgroundImage: avatarImage,
-              child: avatarImage is AssetImage
+              child: avatarImage == null
                   ? Icon(Icons.person, size: 100.sp, color: Colors.grey.shade400)
                   : null,
             ),

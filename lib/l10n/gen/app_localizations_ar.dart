@@ -826,6 +826,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get editPassword => 'تعديل كلمة المرور';
 
   @override
+  String get savePassword => 'حفظ كلمة المرور';
+
+  @override
   String get deleteAccount => 'حذف الحساب';
 
   @override

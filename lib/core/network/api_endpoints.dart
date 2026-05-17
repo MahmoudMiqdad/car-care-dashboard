@@ -46,6 +46,7 @@ class ApiEndpoints {
   static const String ratejob = '/rate-job';
   // car-washer (customer)
   static const String customerCarWashers = '/customer/car_washers';
+  static String customerCarWasherRatings(int id) => '/customer/car_washers/$id/ratings';
   static const String customerCarwashBookings = '/customer/carwash_bookings';
   static String customerRateBooking(int bookingId) =>
       '/customer/carwash_bookings/$bookingId/rate';

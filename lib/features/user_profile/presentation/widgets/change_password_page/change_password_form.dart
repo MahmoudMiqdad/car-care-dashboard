@@ -56,6 +56,9 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
       listener: (context, state) {
         if (state is PasswordSuccess) {
           _showSnack(context, strings.changedpasswordsuccessfully);
+          Future.delayed(const Duration(milliseconds: 1500), () {
+            if (context.mounted) Navigator.of(context).pop();
+          });
         } else if (state is PasswordError) {
           _showSnack(context, state.message, isError: true);
         }
@@ -94,7 +97,7 @@ class _ChangePasswordFormState extends State<ChangePasswordForm> {
                     height: AppConstants.buttonHeight.h,
                     child: AppButton(
                       onPressed: isLoading ? null : _submit,
-                      text: strings.editPassword,
+                      text: strings.savePassword,
                       backgroundColor: AppColors.orange,
                       textColor: Colors.white,
                     ),

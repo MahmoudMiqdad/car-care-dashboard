@@ -52,6 +52,7 @@ class Routes {
   static const String editProfileWasher = '/edit_profile_washer';
   static const String washerDetails = '/washer_details';
   static const String washerReservation = '/washer_reservation';
+  static const String carWasherRatings = '/car_washer_ratings';
   static const String sos = '/sos';
   static const String create_sos = '/create_sos';
   static const String technician_sos = '/technician_sos';

@@ -1717,6 +1717,12 @@ abstract class AppLocalizations {
   /// **'Edit Password'**
   String get editPassword;
 
+  /// Save Password
+  ///
+  /// In en, this message translates to:
+  /// **'Save Password'**
+  String get savePassword;
+
   /// Delete Account
   ///
   /// In en, this message translates to:
