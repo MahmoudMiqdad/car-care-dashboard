@@ -1,3 +1,4 @@
+import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/const.dart';
@@ -9,6 +10,7 @@ import 'package:car_care/features/car_washer/washers/washers_statistics/presenta
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class CarWasherStatisticsPage extends StatelessWidget {
   const CarWasherStatisticsPage({super.key});
@@ -26,6 +28,13 @@ class CarWasherStatisticsPage extends StatelessWidget {
           appBar: CustomAppBar(
             title: strings.statistics,
             showBackButton: true,
+            onBackTapped: () {
+              if (context.canPop()) {
+                context.pop();
+              } else {
+                context.go(Routes.profile_washer);
+              }
+            },
           ),
           body: ImageBackground(
             child: BlocBuilder<CarWasherStatisticsCubit, StatisticsState>(

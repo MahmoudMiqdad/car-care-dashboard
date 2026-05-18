@@ -9,8 +9,6 @@ class ImageBackground extends StatelessWidget {
   });
 
   final Widget child;
-
-  /// Use [AppAssets] constants (e.g. [AppAssets.washersPatternBackground]).
   final String backgroundAsset;
 
   @override

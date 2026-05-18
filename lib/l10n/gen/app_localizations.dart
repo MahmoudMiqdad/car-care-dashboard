@@ -2677,6 +2677,90 @@ abstract class AppLocalizations {
   /// **'Save changes'**
   String get profileWasherSaveChanges;
 
+  /// Create washer profile screen title
+  ///
+  /// In en, this message translates to:
+  /// **'Create washer profile'**
+  String get profileWasherCreatePageTitle;
+
+  /// Washer logo upload label
+  ///
+  /// In en, this message translates to:
+  /// **'Upload logo'**
+  String get profileWasherUploadLogo;
+
+  /// City field label
+  ///
+  /// In en, this message translates to:
+  /// **'City'**
+  String get profileWasherFieldCity;
+
+  /// City field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Enter city'**
+  String get profileWasherHintCity;
+
+  /// Street address field label
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get profileWasherFieldStreetAddress;
+
+  /// Street address field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Enter address'**
+  String get profileWasherHintStreetAddress;
+
+  /// Services list field label
+  ///
+  /// In en, this message translates to:
+  /// **'Services'**
+  String get profileWasherFieldServicesList;
+
+  /// Services list field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Separate services with a comma'**
+  String get profileWasherHintServicesList;
+
+  /// Working hours section title
+  ///
+  /// In en, this message translates to:
+  /// **'Working hours'**
+  String get profileWasherWorkingHoursTitle;
+
+  /// Saturday hours field label
+  ///
+  /// In en, this message translates to:
+  /// **'Saturday'**
+  String get profileWasherFieldSaturdayHours;
+
+  /// Saturday hours field hint
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 11:00-15:00'**
+  String get profileWasherHintSaturdayHours;
+
+  /// Sunday hours field label
+  ///
+  /// In en, this message translates to:
+  /// **'Sunday'**
+  String get profileWasherFieldSundayHours;
+
+  /// Sunday hours field hint
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. 10:00-16:00'**
+  String get profileWasherHintSundayHours;
+
+  /// Create washer profile save button
+  ///
+  /// In en, this message translates to:
+  /// **'Save profile'**
+  String get profileWasherCreateSave;
+
   /// Title of total bookings section on ratings screen
   ///
   /// In en, this message translates to:

@@ -24,6 +24,10 @@ class HomeBottomNavBar extends StatelessWidget {
         location == Routes.washerDetails ||
         location == Routes.washerReservation ||
         location == Routes.profile_washer ||
+        location == Routes.create_profile_washer ||
+        location == Routes.washerBookings ||
+        location == Routes.washerBookingsDetails ||
+        location == Routes.washer_statistics ||
         location == Routes.editProfileWasher;
 
     return Container(

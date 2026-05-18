@@ -1965,6 +1965,62 @@
   "@profileWasherSaveChanges": {
     "description": "Primary save button on edit washer profile"
   },
+  "profileWasherCreatePageTitle": "Create washer profile",
+  "@profileWasherCreatePageTitle": {
+    "description": "Create washer profile screen title"
+  },
+  "profileWasherUploadLogo": "Upload logo",
+  "@profileWasherUploadLogo": {
+    "description": "Washer logo upload label"
+  },
+  "profileWasherFieldCity": "City",
+  "@profileWasherFieldCity": {
+    "description": "City field label"
+  },
+  "profileWasherHintCity": "Enter city",
+  "@profileWasherHintCity": {
+    "description": "City field hint"
+  },
+  "profileWasherFieldStreetAddress": "Address",
+  "@profileWasherFieldStreetAddress": {
+    "description": "Street address field label"
+  },
+  "profileWasherHintStreetAddress": "Enter address",
+  "@profileWasherHintStreetAddress": {
+    "description": "Street address field hint"
+  },
+  "profileWasherFieldServicesList": "Services",
+  "@profileWasherFieldServicesList": {
+    "description": "Services list field label"
+  },
+  "profileWasherHintServicesList": "Separate services with a comma",
+  "@profileWasherHintServicesList": {
+    "description": "Services list field hint"
+  },
+  "profileWasherWorkingHoursTitle": "Working hours",
+  "@profileWasherWorkingHoursTitle": {
+    "description": "Working hours section title"
+  },
+  "profileWasherFieldSaturdayHours": "Saturday",
+  "@profileWasherFieldSaturdayHours": {
+    "description": "Saturday hours field label"
+  },
+  "profileWasherHintSaturdayHours": "e.g. 11:00-15:00",
+  "@profileWasherHintSaturdayHours": {
+    "description": "Saturday hours field hint"
+  },
+  "profileWasherFieldSundayHours": "Sunday",
+  "@profileWasherFieldSundayHours": {
+    "description": "Sunday hours field label"
+  },
+  "profileWasherHintSundayHours": "e.g. 10:00-16:00",
+  "@profileWasherHintSundayHours": {
+    "description": "Sunday hours field hint"
+  },
+  "profileWasherCreateSave": "Save profile",
+  "@profileWasherCreateSave": {
+    "description": "Create washer profile save button"
+  },
   "showRatingTotalBookings": "Total bookings",
   "@showRatingTotalBookings": {
     "description": "Title of total bookings section on ratings screen"

@@ -82,7 +82,7 @@ void showTechnicianEntrySheet(BuildContext context) {
                 entryItem(
                   icon: Icons.local_car_wash_outlined,
                   label: 'الدخول كـ مغسلة',
-                  onTap: () => context.push(Routes.profile_washer),
+                  onTap: () => context.push(Routes.create_profile_washer),
                 ),
                 Divider(height: 1.h, indent: 16.w, endIndent: 16.w),
                 entryItem(

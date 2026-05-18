@@ -30,15 +30,19 @@ class _MainAppShellState extends State<MainAppShell> {
   Widget build(BuildContext context) {
     final location = GoRouterState.of(context).matchedLocation;
     final isProfile = location == Routes.user_profile;
+    final rootOverlayActive =
+        Navigator.of(context, rootNavigator: true).canPop();
     final hideShellChrome =
+        rootOverlayActive ||
         location == Routes.all_requests ||
-        location == Routes.profile_washer ||
         location == Routes.editProfileWasher ||
         location == Routes.bookings ||
         location == Routes.bookingDetails ||
         location == Routes.sos ||
-        location == Routes.sos_details;
-    final hideShellBottomNav = location == Routes.sos_details;
+        location == Routes.sos_details ||
+        location == Routes.carWasherRatings;
+    final hideShellBottomNav =
+        rootOverlayActive || location == Routes.sos_details;
 
     final menuAction = IconButton(
       onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
@@ -88,13 +92,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? titleWidget;
   final Widget? leadingWidget;
 
-  /// When true, shows main branding (centered logo; RTL-friendly).
   final bool useMainBranding;
-
   final double? toolbarHeight;
   final double elevation;
 
-  /// When set, used instead of [AppColors.primary] for the title/scaffold app bar.
   final Color? backgroundColor;
 
   const CustomAppBar({

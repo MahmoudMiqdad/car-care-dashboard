@@ -1,3 +1,4 @@
+import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/const.dart';
 import 'package:car_care/core/widgets/image_background.dart';
@@ -28,7 +29,13 @@ class WasherBookingsPage extends StatelessWidget {
           appBar: CustomAppBar(
             title: context.l10n.bookingsPageTitle,
             showBackButton: true,
-            onBackTapped: () => context.pop(),
+            onBackTapped: () {
+              if (context.canPop()) {
+                context.pop();
+              } else {
+                context.go(Routes.home);
+              }
+            },
           ),
           backgroundColor: AppColors.lightScaffold,
           body: ImageBackground(
