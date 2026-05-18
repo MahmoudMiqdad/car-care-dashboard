@@ -87,7 +87,12 @@ class ProfileBody extends StatelessWidget {
                       AppButton(
                         text: strings.editProfile,
                         backgroundColor: AppColors.orange,
-                        onPressed: () => context.push(Routes.profile_setup),
+                        onPressed: () async {
+                          await context.push(Routes.profile_setup);
+                          if (context.mounted) {
+                            context.read<ShowProfileCubit>().getProfile();
+                          }
+                        },
                       ),
                       SizedBox(height: 16.h),
                       AppButton(

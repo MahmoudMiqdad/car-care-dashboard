@@ -1356,6 +1356,10 @@
 "@editPassword": {
 "description": "تعديل كلمة المرور"
 },
+"savePassword": "حفظ كلمة المرور",
+"@savePassword": {
+"description": "حفظ كلمة المرور"
+},
 "deleteAccount": "حذف الحساب",
 "@deleteAccount": {
 "description": "حذف الحساب"

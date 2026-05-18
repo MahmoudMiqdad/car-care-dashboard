@@ -1,9 +1,7 @@
 // ignore_for_file: file_names
 import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
-import 'package:car_care/features/user_profile/presentation/cubit/avatar_cubit/avatar_cubit.dart';
 import 'package:car_care/features/user_profile/presentation/cubit/update_profile_cubit/update_profile_cubit.dart';
-import 'package:car_care/features/user_profile/presentation/widgets/profile_setup/ProfileAvatar.dart';
 import 'package:car_care/features/user_profile/presentation/widgets/profile_setup/ProfileSetupForm.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
@@ -15,15 +13,8 @@ class ProfileSetupContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      final strings = context.l10n;
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (_) => getIt<UpdateProfileCubit>(),
-        ),
-        BlocProvider(
-          create: (_) => getIt<AvatarCubit>(),
-        ),
-      ],
+    return BlocProvider(
+      create: (_) => getIt<UpdateProfileCubit>(),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -49,9 +40,13 @@ class ProfileSetupContent extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 22.h),
-                ProfileAvatarUser(image:image ),
+                CircleAvatar(
+                  radius: 60.r,
+                  backgroundColor: Colors.grey.shade300,
+                  child: Icon(Icons.person, size: 60.sp, color: Colors.grey.shade400),
+                ),
                 SizedBox(height: 40.h),
-                 ProfileSetupForm(),
+                const ProfileSetupForm(),
               ],
             ),
           ),

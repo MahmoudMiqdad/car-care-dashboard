@@ -52,6 +52,7 @@ class _ProfileSetupFormState extends State<ProfileSetupForm> {
               content: Text(strings.profileUpdated),
             ),
           );
+          Navigator.of(context).pop();
         }
         if (state is UpdateProfileError) {
           ScaffoldMessenger.of(context).showSnackBar(

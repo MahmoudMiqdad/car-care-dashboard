@@ -826,6 +826,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get editPassword => 'Edit Password';
 
   @override
+  String get savePassword => 'Save Password';
+
+  @override
   String get deleteAccount => 'Delete Account';
 
   @override

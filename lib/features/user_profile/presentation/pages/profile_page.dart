@@ -12,15 +12,21 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (_) => getIt<ShowProfileCubit>()..getProfile(),
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.asset(
-            AppAssets.artboardBackground,
-            fit: BoxFit.cover,
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Material(
+          color: Colors.transparent,
+          child: Stack(
+            fit: StackFit.expand,
+            children: [
+              Image.asset(
+                AppAssets.artboardBackground,
+                fit: BoxFit.cover,
+              ),
+              const ProfileBody(),
+            ],
           ),
-          const ProfileBody(),
-        ],
+        ),
       ),
     );
   }
