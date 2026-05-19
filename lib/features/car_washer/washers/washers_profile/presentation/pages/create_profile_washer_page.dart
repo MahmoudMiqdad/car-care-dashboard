@@ -1,24 +1,41 @@
-import 'dart:io';
-
+import 'package:car_care/core/routing/routes.dart';
+import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
-import 'package:car_care/core/theme/buttons/app_button_widget.dart';
+import 'package:car_care/core/widgets/const.dart';
+import 'package:car_care/core/widgets/image_background.dart';
+import 'package:car_care/core/widgets/loding.dart';
 import 'package:car_care/features/car_washer/washers/washers_profile/presentation/cubit/profile_washer_cubit.dart';
 import 'package:car_care/features/car_washer/washers/washers_profile/presentation/cubit/profile_washer_state.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/widgets/create_profile_page/create_profile_washer_form.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/profile_washer_page.dart'
+    show profileWasherBack;
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/widgets/create_profile_page/create_profile_washer_work_hours_section.dart';
+import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:image_picker/image_picker.dart';
 
-class CreateProfileWasherPage extends StatefulWidget {
+class CreateProfileWasherPage extends StatelessWidget {
   const CreateProfileWasherPage({super.key});
 
   @override
-  State<CreateProfileWasherPage> createState() =>
-      _CreateProfileWasherPageState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => getIt<ProfileWasherCubit>()..load(),
+      child: const _CreateProfileWasherView(),
+    );
+  }
 }
 
-class _CreateProfileWasherPageState extends State<CreateProfileWasherPage> {
+class _CreateProfileWasherView extends StatefulWidget {
+  const _CreateProfileWasherView();
+
+  @override
+  State<_CreateProfileWasherView> createState() => _CreateProfileWasherViewState();
+}
+
+class _CreateProfileWasherViewState extends State<_CreateProfileWasherView> {
   final _shop = TextEditingController();
   final _phone = TextEditingController();
   final _city = TextEditingController();
@@ -29,11 +46,10 @@ class _CreateProfileWasherPageState extends State<CreateProfileWasherPage> {
   final _premium = TextEditingController();
   final _services =
       TextEditingController(text: 'غسيل عادي, غسيل ممتاز, تلميع');
-  final _sat = TextEditingController(text: '11:00-15:00');
-  final _sun = TextEditingController(text: '10:00-16:00');
+  final _workStart = TextEditingController(text: '11:00');
+  final _workEnd = TextEditingController(text: '16:00');
 
   String? _logoPath;
-
   bool _waitingForSave = false;
 
   @override
@@ -47,17 +63,21 @@ class _CreateProfileWasherPageState extends State<CreateProfileWasherPage> {
     _vip.dispose();
     _premium.dispose();
     _services.dispose();
-    _sat.dispose();
-    _sun.dispose();
+    _workStart.dispose();
+    _workEnd.dispose();
     super.dispose();
   }
 
-  // ── Helpers ──
-
-  void _snack(String msg) {
+  void _snack(String msg, {Color? backgroundColor}) {
     ScaffoldMessenger.of(context)
       ..clearSnackBars()
-      ..showSnackBar(SnackBar(content: Text(msg)));
+      ..showSnackBar(
+        SnackBar(
+          content: Text(msg),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: backgroundColor,
+        ),
+      );
   }
 
   List<String> _parseServices() => _services.text
@@ -71,11 +91,21 @@ class _CreateProfileWasherPageState extends State<CreateProfileWasherPage> {
     return {'basic': p(_basic), 'vip': p(_vip), 'premium': p(_premium)};
   }
 
-  Map<String, String> _parseHours() => {
-        'sat': _sat.text.trim(),
-        'sun': _sun.text.trim(),
-      };
+  Map<String, String> _parseHours() {
+    final start = _workStart.text.trim();
+    final end = _workEnd.text.trim();
+    final range = (start.isEmpty || end.isEmpty) ? '' : '$start-$end';
+    return {'sat': range, 'sun': range};
+  }
 
+  Future<void> _pickWorkStart() =>
+      profileWasherPickWorkTime(context, controller: _workStart);
+
+  Future<void> _pickWorkEnd() => profileWasherPickWorkTime(
+        context,
+        controller: _workEnd,
+        initial: const TimeOfDay(hour: 16, minute: 0),
+      );
 
   Future<void> _pickLogo() async {
     final file = await ImagePicker().pickImage(source: ImageSource.gallery);
@@ -83,7 +113,6 @@ class _CreateProfileWasherPageState extends State<CreateProfileWasherPage> {
     setState(() => _logoPath = file.path);
   }
 
-  /// حفظ الـ profile
   void _save() {
     if (_shop.text.trim().isEmpty) {
       _snack('يرجى إدخال اسم المغسلة');
@@ -99,7 +128,6 @@ class _CreateProfileWasherPageState extends State<CreateProfileWasherPage> {
     }
 
     _waitingForSave = true;
-
     context.read<ProfileWasherCubit>().saveProfile(
           shopName: _shop.text.trim(),
           phone: _phone.text.trim(),
@@ -114,285 +142,80 @@ class _CreateProfileWasherPageState extends State<CreateProfileWasherPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<ProfileWasherCubit, ProfileWasherState>(
+    final l10n = context.l10n;
+
+    return BlocConsumer<ProfileWasherCubit, ProfileWasherState>(
       listener: (context, state) {
-        if (state is ProfileWasherLoaded && _waitingForSave) {
-          _waitingForSave = false;
-          ScaffoldMessenger.of(context)
-            ..clearSnackBars()
-            ..showSnackBar(
-              const SnackBar(
-                content: Text('تم إنشاء بروفايل المغسلة بنجاح'),
-                backgroundColor: Colors.green,
-              ),
+        if (state is ProfileWasherLoaded) {
+          if (_waitingForSave) {
+            _waitingForSave = false;
+            _snack(
+              'تم إنشاء بروفايل المغسلة بنجاح',
+              backgroundColor: Colors.green,
             );
-          if (_logoPath != null) {
-            context.read<ProfileWasherCubit>().uploadLogo(_logoPath!);
+            if (_logoPath != null) {
+              context.read<ProfileWasherCubit>().uploadLogo(_logoPath!);
+            }
           }
+          context.go(Routes.profile_washer);
+          return;
         }
 
         if (state is ProfileWasherError) {
           _waitingForSave = false;
-          ScaffoldMessenger.of(context)
-            ..clearSnackBars()
-            ..showSnackBar(
-              SnackBar(
-                content: Text(state.message),
-                backgroundColor: Colors.red,
-              ),
-            );
+          _snack(state.message, backgroundColor: Colors.red);
         }
       },
-      child: _buildForm(),
-    );
-  }
-
-  Widget _buildForm() {
-    final state = context.watch<ProfileWasherCubit>().state;
-    final loading =
-        state is ProfileWasherSaving || state is ProfileWasherLoading;
-
-    return Padding(
-      padding: EdgeInsets.fromLTRB(16.w, 12.h, 16.w, 20.h),
-      child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-    
-            Text(
-              'إنشاء بروفايل المغسلة',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 22.sp,
-                fontWeight: FontWeight.w700,
-                color: AppColors.black,
+      builder: (context, state) {
+        if (state is ProfileWasherLoading || state is ProfileWasherInitial) {
+          return Directionality(
+            textDirection: TextDirection.rtl,
+            child: Scaffold(
+              backgroundColor: AppColors.lightScaffold,
+              body: const ImageBackground(
+                child: Center(child: AppLoadingWidget()),
               ),
             ),
-            SizedBox(height: 16.h),
+          );
+        }
 
-            // ── الحقول ──
-            _Field(
-              controller: _shop,
-              hint: 'اسم المغسلة *',
-              enabled: !loading,
-            ),
-            SizedBox(height: 10.h),
-            _Field(
-              controller: _phone,
-              hint: 'رقم الهاتف *',
-              enabled: !loading,
-              keyboard: TextInputType.phone,
-            ),
-            SizedBox(height: 10.h),
-            Row(
-              children: [
-                Expanded(
-                  child: _Field(
-                    controller: _city,
-                    hint: 'المدينة *',
-                    enabled: !loading,
-                  ),
-                ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: _Field(
-                    controller: _address,
-                    hint: 'العنوان',
-                    enabled: !loading,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 10.h),
-            _Field(
-              controller: _desc,
-              hint: 'وصف المغسلة',
-              enabled: !loading,
-              maxLines: 2,
-            ),
-            SizedBox(height: 10.h),
-            _Field(
-              controller: _services,
-              hint: 'الخدمات (افصل بفاصلة ,)',
-              enabled: !loading,
-            ),
-            SizedBox(height: 10.h),
+        final loading = state is ProfileWasherSaving;
 
-            Row(
-              children: [
-                Expanded(
-                  child: _Field(
-                    controller: _basic,
-                    hint: 'Basic \$',
-                    enabled: !loading,
-                    keyboard: TextInputType.number,
-                  ),
-                ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: _Field(
-                    controller: _vip,
-                    hint: 'VIP \$',
-                    enabled: !loading,
-                    keyboard: TextInputType.number,
-                  ),
-                ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: _Field(
-                    controller: _premium,
-                    hint: 'Premium \$',
-                    enabled: !loading,
-                    keyboard: TextInputType.number,
-                  ),
-                ),
-              ],
+        return Directionality(
+          textDirection: TextDirection.rtl,
+          child: Scaffold(
+            backgroundColor: AppColors.lightScaffold,
+            appBar: CustomAppBar(
+              title: l10n.profileWasherCreatePageTitle,
+              showBackButton: true,
+              backgroundColor: AppColors.carWashTeal,
+              onBackTapped: () => profileWasherBack(context),
             ),
-            SizedBox(height: 10.h),
 
-            Row(
-              children: [
-                Expanded(
-                  child: _Field(
-                    controller: _sat,
-                    hint: 'السبت 11:00-15:00',
-                    enabled: !loading,
-                  ),
-                ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: _Field(
-                    controller: _sun,
-                    hint: 'الأحد 10:00-16:00',
-                    enabled: !loading,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 16.h),
-
-            GestureDetector(
-              onTap: loading ? null : _pickLogo,
-              child: Container(
-                height: 100.h,
-                decoration: BoxDecoration(
-                  color: Colors.white.withValues(alpha: 0.85),
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: _logoPath != null
-                        ? AppColors.carWashTeal
-                        : Colors.grey.shade400,
-                    width: 1.5,
-                  ),
-                ),
-                child: _logoPath != null
-                    ? ClipRRect(
-                        borderRadius: BorderRadius.circular(11.r),
-                        child: Image.file(
-                          File(_logoPath!),
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                        ),
-                      )
-                    : Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.cloud_upload_outlined,
-                            size: 36.sp,
-                            color: AppColors.carWashTeal,
-                          ),
-                          SizedBox(height: 6.h),
-                          Text(
-                            'رفع الشعار ',
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              color: AppColors.black,
-                            ),
-                          ),
-                        ],
-                      ),
+            body: ImageBackground(
+              child: CreateProfileWasherForm(
+                isLoading: loading,
+                logoPath: _logoPath,
+                shopController: _shop,
+                phoneController: _phone,
+                cityController: _city,
+                addressController: _address,
+                descriptionController: _desc,
+                servicesController: _services,
+                basicController: _basic,
+                vipController: _vip,
+                premiumController: _premium,
+                workStartController: _workStart,
+                workEndController: _workEnd,
+                onWorkStartTimeTap: _pickWorkStart,
+                onWorkEndTimeTap: _pickWorkEnd,
+                onPickLogo: _pickLogo,
+                onSave: _save,
               ),
             ),
-            SizedBox(height: 16.h),
-
-            // ── زرين: حفظ + إلغاء ──
-            Row(
-              children: [
-                Expanded(
-                  child: AppButton(
-                    onPressed: loading ? () {} : _save,
-                    text: loading ? '...' : 'حفظ البروفايل',
-                    backgroundColor: AppColors.orange,
-                    height: 54.h,
-                    borderRadius: 18.r,
-                    fontSize: 18.sp,
-                  ),
-                ),
-                SizedBox(width: 12.w),
-                Expanded(
-                  child: AppButton(
-                    onPressed: loading
-                        ? () {}
-                        : () {
-                            if (context.canPop()) {
-                              context.pop();
-                            }
-                          },
-                    text: 'إلغاء',
-                    isOutline: true,
-                    backgroundColor: AppColors.carWashTeal,
-                    outlineSurfaceColor: AppColors.white,
-                    textColor: AppColors.carWashTeal,
-                    height: 54.h,
-                    borderRadius: 18.r,
-                    fontSize: 18.sp,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// ── حقل إدخال موحد ──
-class _Field extends StatelessWidget {
-  const _Field({
-    required this.controller,
-    required this.hint,
-    this.enabled = true,
-    this.keyboard,
-    this.maxLines = 1,
-  });
-
-  final TextEditingController controller;
-  final String hint;
-  final bool enabled;
-  final TextInputType? keyboard;
-  final int maxLines;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      enabled: enabled,
-      keyboardType: keyboard,
-      maxLines: maxLines,
-      decoration: InputDecoration(
-        hintText: hint,
-        isDense: true,
-        filled: true,
-        fillColor: Colors.white.withValues(alpha: 0.9),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(12.r)),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12.r),
-          borderSide:
-              const BorderSide(color: AppColors.carWashTeal, width: 1.5),
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

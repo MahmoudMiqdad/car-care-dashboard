@@ -1968,6 +1968,62 @@
   "@profileWasherSaveChanges": {
     "description": "زر حفظ تعديلات ملف المغسلة"
   },
+  "profileWasherCreatePageTitle": "إنشاء بروفايل المغسلة",
+  "@profileWasherCreatePageTitle": {
+    "description": "عنوان شاشة إنشاء ملف المغسلة"
+  },
+  "profileWasherUploadLogo": "رفع الشعار",
+  "@profileWasherUploadLogo": {
+    "description": "تسمية رفع شعار المغسلة"
+  },
+  "profileWasherFieldCity": "المدينة",
+  "@profileWasherFieldCity": {
+    "description": "تسمية حقل المدينة"
+  },
+  "profileWasherHintCity": "ادخل المدينة",
+  "@profileWasherHintCity": {
+    "description": "تلميح حقل المدينة"
+  },
+  "profileWasherFieldStreetAddress": "العنوان",
+  "@profileWasherFieldStreetAddress": {
+    "description": "تسمية حقل العنوان التفصيلي"
+  },
+  "profileWasherHintStreetAddress": "ادخل العنوان",
+  "@profileWasherHintStreetAddress": {
+    "description": "تلميح حقل العنوان"
+  },
+  "profileWasherFieldServicesList": "الخدمات",
+  "@profileWasherFieldServicesList": {
+    "description": "تسمية قائمة الخدمات"
+  },
+  "profileWasherHintServicesList": "افصل بين الخدمات بفاصلة ,",
+  "@profileWasherHintServicesList": {
+    "description": "تلميح قائمة الخدمات"
+  },
+  "profileWasherWorkingHoursTitle": "ساعات العمل",
+  "@profileWasherWorkingHoursTitle": {
+    "description": "عنوان قسم ساعات العمل"
+  },
+  "profileWasherFieldSaturdayHours": "السبت",
+  "@profileWasherFieldSaturdayHours": {
+    "description": "تسمية ساعات عمل يوم السبت"
+  },
+  "profileWasherHintSaturdayHours": "مثال: 11:00-15:00",
+  "@profileWasherHintSaturdayHours": {
+    "description": "تلميح ساعات السبت"
+  },
+  "profileWasherFieldSundayHours": "الأحد",
+  "@profileWasherFieldSundayHours": {
+    "description": "تسمية ساعات عمل يوم الأحد"
+  },
+  "profileWasherHintSundayHours": "مثال: 10:00-16:00",
+  "@profileWasherHintSundayHours": {
+    "description": "تلميح ساعات الأحد"
+  },
+  "profileWasherCreateSave": "حفظ البروفايل",
+  "@profileWasherCreateSave": {
+    "description": "زر حفظ إنشاء ملف المغسلة"
+  },
   "showRatingTotalBookings": "اجمالي الحجوزات",
   "@showRatingTotalBookings": {
     "description": "عنوان قسم إجمالي الحجوزات في شاشة عرض التقييمات"
