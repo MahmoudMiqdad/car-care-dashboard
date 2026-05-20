@@ -4,10 +4,11 @@ import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/image_background.dart';
 import 'package:car_care/core/widgets/loding.dart';
-import 'package:car_care/features/car_washer/profile_washer/presentation/cubit/profile_washer_cubit.dart';
-import 'package:car_care/features/car_washer/profile_washer/presentation/cubit/profile_washer_state.dart';
-import 'package:car_care/features/car_washer/profile_washer/presentation/pages/create_profile_washer_page.dart';
-import 'package:car_care/features/car_washer/profile_washer/presentation/widgets/profile_page/profile_washer_body.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/cubit/profile_washer_cubit.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/cubit/profile_washer_state.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/create_profile_washer_page.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/widgets/profile_page/profile_washer_body.dart';
+
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

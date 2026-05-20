@@ -49,10 +49,13 @@ class Routes {
   static const String ratings = '/ratings';
   static const String show_ratings = '/show_ratings';
   static const String profile_washer = '/profile_washer';
+  static const String create_profile_washer = '/create_profile_washer';
   static const String editProfileWasher = '/edit_profile_washer';
   static const String washerDetails = '/washer_details';
   static const String washerReservation = '/washer_reservation';
   static const String allUserSosRequests = '/allUserSosRequests';
+  static const String carWasherRatings = '/car_washer_ratings';
+  static const String sos = '/sos';
   static const String create_sos = '/Create_sos_page_wrapper';
   static const String sos_details = '/sos_details';
   static const String technician_sos_requests = '/all_technician_sos_requests';

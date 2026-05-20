@@ -829,6 +829,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get editPassword => 'Edit Password';
 
   @override
+  String get savePassword => 'Save Password';
+
+  @override
   String get deleteAccount => 'Delete Account';
 
   @override
@@ -1316,6 +1319,48 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profileWasherSaveChanges => 'Save changes';
+
+  @override
+  String get profileWasherCreatePageTitle => 'Create washer profile';
+
+  @override
+  String get profileWasherUploadLogo => 'Upload logo';
+
+  @override
+  String get profileWasherFieldCity => 'City';
+
+  @override
+  String get profileWasherHintCity => 'Enter city';
+
+  @override
+  String get profileWasherFieldStreetAddress => 'Address';
+
+  @override
+  String get profileWasherHintStreetAddress => 'Enter address';
+
+  @override
+  String get profileWasherFieldServicesList => 'Services';
+
+  @override
+  String get profileWasherHintServicesList => 'Separate services with a comma';
+
+  @override
+  String get profileWasherWorkingHoursTitle => 'Working hours';
+
+  @override
+  String get profileWasherFieldSaturdayHours => 'Saturday';
+
+  @override
+  String get profileWasherHintSaturdayHours => 'e.g. 11:00-15:00';
+
+  @override
+  String get profileWasherFieldSundayHours => 'Sunday';
+
+  @override
+  String get profileWasherHintSundayHours => 'e.g. 10:00-16:00';
+
+  @override
+  String get profileWasherCreateSave => 'Save profile';
 
   @override
   String get showRatingTotalBookings => 'Total bookings';

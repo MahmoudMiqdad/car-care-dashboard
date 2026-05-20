@@ -829,6 +829,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get editPassword => 'تعديل كلمة المرور';
 
   @override
+  String get savePassword => 'حفظ كلمة المرور';
+
+  @override
   String get deleteAccount => 'حذف الحساب';
 
   @override
@@ -1316,6 +1319,48 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get profileWasherSaveChanges => 'حفظ التغييرات';
+
+  @override
+  String get profileWasherCreatePageTitle => 'إنشاء بروفايل المغسلة';
+
+  @override
+  String get profileWasherUploadLogo => 'رفع الشعار';
+
+  @override
+  String get profileWasherFieldCity => 'المدينة';
+
+  @override
+  String get profileWasherHintCity => 'ادخل المدينة';
+
+  @override
+  String get profileWasherFieldStreetAddress => 'العنوان';
+
+  @override
+  String get profileWasherHintStreetAddress => 'ادخل العنوان';
+
+  @override
+  String get profileWasherFieldServicesList => 'الخدمات';
+
+  @override
+  String get profileWasherHintServicesList => 'افصل بين الخدمات بفاصلة ,';
+
+  @override
+  String get profileWasherWorkingHoursTitle => 'ساعات العمل';
+
+  @override
+  String get profileWasherFieldSaturdayHours => 'السبت';
+
+  @override
+  String get profileWasherHintSaturdayHours => 'مثال: 11:00-15:00';
+
+  @override
+  String get profileWasherFieldSundayHours => 'الأحد';
+
+  @override
+  String get profileWasherHintSundayHours => 'مثال: 10:00-16:00';
+
+  @override
+  String get profileWasherCreateSave => 'حفظ البروفايل';
 
   @override
   String get showRatingTotalBookings => 'اجمالي الحجوزات';

@@ -1,14 +1,22 @@
+import 'package:car_care/features/car_washer/car_wash/bookings/domain/entities/bookings_entity.dart';
+import 'package:car_care/features/car_washer/car_wash/bookings/presentation/pages/bookings_page.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/entities/washers_entity.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/pages/washer_details_page.dart';
+import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/pages/washers_page.dart';
+import 'package:car_care/features/car_washer/washers/washers_availability/presentation/pages/availability_page.dart';
+import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_details.dart';
+import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_page.dart';
+import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/edit_profile_washer_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_page.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/pages/user_fuel_orders_page.dart';
-import 'package:car_care/features/userfuel_orders/presentation/pages/userfuel_orders_page.dart';
+
 import 'package:car_care/features/fuel_provider/provider_available_orders/presentation/pages/provider_available_orders_page.dart';
 import 'package:car_care/features/fuel_provider/share_location_fuel/presentation/pages/share_location_fuel_page.dart';
-import 'package:car_care/features/fuel_provider/share_location/presentation/pages/share_location_page.dart';
-import 'package:car_care/features/available_orders/presentation/pages/available_orders_page.dart';
+
 import 'package:car_care/features/fuel_provider/provider_statistics/presentation/pages/provider_statistics_page.dart';
-import 'package:car_care/features/fuel_provider/provider_prices/presentation/pages/provider_prices_page.dart';
+
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/pages/provider_profile_page.dart';
-import 'package:car_care/features/fuel_orders/presentation/pages/fuel_orders_page.dart';
+
 import 'package:car_care/core/widgets/main_shell.dart';
 import 'package:car_care/features/sos/presentation/pages/Create_sos_page_wrapper.dart';
 import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
@@ -21,20 +29,11 @@ import 'package:car_care/features/technician_sos/presentation/widgets/sos_reques
 import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart';
 import 'package:car_care/features/sos/presentation/pages/all_user_sos_requests.dart';
 import 'package:car_care/features/sos/presentation/pages/sos_details_page.dart';
-import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/pages/booking_details_page.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/pages/bookings_page.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/pages/washer_bookings_details.dart';
-import 'package:car_care/features/car_washer/bookings/presentation/pages/washer_bookings_page.dart';
-import 'package:car_care/features/car_washer/profile_washer/presentation/pages/edit_profile_washer_page.dart';
+
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
-import 'package:car_care/features/car_washer/availability/presentation/pages/availability_page.dart';
-import 'package:car_care/features/car_washer/ratings/presentation/pages/ratings_page.dart';
-import 'package:car_care/features/car_washer/statistics/presentation/pages/statistics_page.dart';
-import 'package:car_care/features/car_washer/washers/domain/entities/washers_entity.dart';
-import 'package:car_care/features/car_washer/washers/presentation/pages/washer_details_page.dart';
+
 import 'package:car_care/features/car_washer/washers/presentation/pages/washer_reservation_page.dart';
-import 'package:car_care/features/car_washer/washers/presentation/pages/washers_page.dart';
+
 import 'package:car_care/features/maintenance/user_requests/presentation/pages/show_requests/all_requests_stats_page.dart';
 import 'package:car_care/features/technician/technician_order/presentation/pages/order_details_page.dart';
 import 'package:car_care/features/technician/technician_order/presentation/pages/orders_page.dart';
@@ -66,6 +65,9 @@ import 'package:car_care/features/user_profile/presentation/pages/profile_setup_
 import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../features/car_washer/car_wash/bookings/presentation/pages/booking_details_page.dart';
+import '../../features/car_washer/car_wash/ratings/presentation/pages/ratings_page.dart';
 
 class AppRouter {
   static final GlobalKey<NavigatorState> rootNavigatorKey =
@@ -258,36 +260,20 @@ class AppRouter {
               return const EditProfileWasherPage();
             },
           ),
-              GoRoute(
-        path: Routes.fuel_orders,
-        name: '/fuel_orders',
-        builder: (context, state) => const FuelOrdersPage(),
-      ),
+       
             GoRoute(
         path: Routes.provider_profile,
         name: '/provider_profile',
         builder: (context, state) => const ProviderProfilePage(),
       ),
-            GoRoute(
-        path: Routes.provider_prices,
-        name: '/provider_prices',
-        builder: (context, state) => const ProviderPricesPage(),
-      ),
+    
             GoRoute(
         path: Routes.provider_statistics,
         name: '/provider_statistics',
         builder: (context, state) => const ProviderStatisticsPage(),
       ),
-            GoRoute(
-        path: Routes.available_orders,
-        name: '/available_orders',
-        builder: (context, state) => const AvailableOrdersPage(),
-      ),
-            GoRoute(
-        path: Routes.share_location,
-        name: '/share_location',
-        builder: (context, state) => const ShareLocationPage(),
-      ),
+      
+  
             GoRoute(
         path: Routes.share_location_fuel,
         name: '/share_location_fuel',
@@ -298,11 +284,7 @@ class AppRouter {
         name: '/provider_available_orders',
         builder: (context, state) => const ProviderAvailableOrdersPage(),
       ),
-            GoRoute(
-        path: Routes.userfuel_orders,
-        name: '/userfuel_orders',
-        builder: (context, state) => const UserfuelOrdersPage(),
-      ),
+    
             GoRoute(
         path: Routes.user_fuel_orders,
         name: '/user_fuel_orders',

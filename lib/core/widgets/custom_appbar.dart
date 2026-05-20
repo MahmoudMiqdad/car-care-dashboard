@@ -15,13 +15,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? titleWidget;
   final Widget? leadingWidget;
 
-  /// When true, shows main branding (centered logo; RTL-friendly).
   final bool useMainBranding;
-
   final double? toolbarHeight;
   final double elevation;
 
-  /// When set, used instead of [AppColors.primary] for the title/scaffold app bar.
   final Color? backgroundColor;
 
   const CustomAppBar({

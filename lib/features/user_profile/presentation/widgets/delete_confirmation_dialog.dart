@@ -36,8 +36,18 @@ class _DeleteProfileDialogState extends State<DeleteProfileDialog> {
       child: BlocConsumer<DeleteProfileCubit, DeleteProfileState>(
         listener: (context, state) {
           if (state is DeleteProfileSuccess) {
-        
-            context.go(Routes.signup); 
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('تم حذف الحساب بنجاح'),
+                backgroundColor: Colors.green,
+              ),
+            );
+            final navigator = Navigator.of(context, rootNavigator: true);
+            final router = GoRouter.of(context);
+            Future.delayed(const Duration(milliseconds: 1300), () {
+              navigator.pop();
+              router.go(Routes.signup);
+            });
           } else if (state is DeleteProfileError) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
