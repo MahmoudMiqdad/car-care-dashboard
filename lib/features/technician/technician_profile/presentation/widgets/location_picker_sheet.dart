@@ -1,8 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:car_care/core/theme/app_colors.dart';
-import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_cubit.dart';
-import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_state.dart';
+import 'package:car_care/core/utils/app_snackbar.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
@@ -13,7 +14,7 @@ import 'package:latlong2/latlong.dart';
 class LocationPickerSheet extends StatefulWidget {
   const LocationPickerSheet({super.key});
 
-  /// افتح الـ sheet وارجع الموقع المختار
+
   static Future<LatLng?> show(BuildContext context) {
     return showModalBottomSheet<LatLng>(
       context: context,
@@ -33,7 +34,7 @@ class LocationPickerSheet extends StatefulWidget {
 class _LocationPickerSheetState extends State<LocationPickerSheet> {
   final MapController _mapController = MapController();
 
-  // الموقع الافتراضي - بغداد
+
   LatLng _pickedLocation = const LatLng(33.3152, 44.3661);
   bool _loadingCurrentLocation = false;
 
@@ -43,7 +44,7 @@ class _LocationPickerSheetState extends State<LocationPickerSheet> {
     _goToCurrentLocation();
   }
 
-  // تمركز على موقعه الحالي كنقطة بداية
+ 
   Future<void> _goToCurrentLocation() async {
     setState(() => _loadingCurrentLocation = true);
     try {
@@ -67,7 +68,7 @@ class _LocationPickerSheetState extends State<LocationPickerSheet> {
 
   // إرسال الموقع المختار
   Future<void> _confirmLocation() async {
-    context.read<TechnicianLocationCubit>().updateLocation(
+    context.read<TechnicianLocationCubit>().technicianLocation(
           lat: _pickedLocation.latitude,
           lng: _pickedLocation.longitude,
         );
@@ -78,31 +79,11 @@ class _LocationPickerSheetState extends State<LocationPickerSheet> {
     return BlocListener<TechnicianLocationCubit, TechnicianLocationState>(
       listener: (context, state) {
         if (state is UpdateLocationSuccess) {
-          Navigator.pop(context, _pickedLocation); // أرجع الموقع للصفحة
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: const Row(
-                children: [
-                  Icon(Icons.check_circle, color: Colors.white),
-                  SizedBox(width: 8),
-                  Text('تم تحديث موقع الورشة ✓'),
-                ],
-              ),
-              backgroundColor: Colors.green.shade600,
-              behavior: SnackBarBehavior.floating,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-            ),
-          );
+          Navigator.pop(context, _pickedLocation); 
+        AppSnackBar.success(context, 'تم تحديد موقع الورشة');
         }
         if (state is UpdateLocationError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('خطأ: ${state.message}'),
-              backgroundColor: Colors.red.shade600,
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
+        AppSnackBar.error(context, state.message);
         }
       },
       child: Container(

@@ -3,12 +3,13 @@
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
+import 'package:car_care/core/utils/app_snackbar.dart';
 import 'package:car_care/core/widgets/loding.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_state.dart';
 import 'package:car_care/features/user_profile/presentation/widgets/profile_page/ProfileInfoCard.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_state.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit/technician_profile_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit/technician_profile_state.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,7 +30,7 @@ class TechnicianProfileViewBody extends StatelessWidget {
         }
 
         if (state is TechnicianProfileError) {
-          return Center(child: Text(state.message));
+          AppSnackBar.error(context, state.message);
         }
 
         if (state is TechnicianProfileLoaded) {

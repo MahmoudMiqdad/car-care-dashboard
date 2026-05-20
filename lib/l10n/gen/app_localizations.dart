@@ -115,6 +115,12 @@ abstract class AppLocalizations {
   /// **'CarCare'**
   String get appName;
 
+  /// Shown when there are no SOS requests available for the technician
+  ///
+  /// In en, this message translates to:
+  /// **'No requests available at the moment'**
+  String get noAvailableRequests;
+
   /// Welcome message
   ///
   /// In en, this message translates to:

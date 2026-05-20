@@ -53,11 +53,23 @@ class Routes {
   static const String editProfileWasher = '/edit_profile_washer';
   static const String washerDetails = '/washer_details';
   static const String washerReservation = '/washer_reservation';
+  static const String allUserSosRequests = '/allUserSosRequests';
   static const String carWasherRatings = '/car_washer_ratings';
   static const String sos = '/sos';
   static const String create_sos = '/Create_sos_page_wrapper';
   static const String sos_details = '/sos_details';
-  static const String technician_sos = '/technician_sos';
+  static const String technician_sos_requests = '/all_technician_sos_requests';
   static const String tracking = '/tracking';
   static const String technician_location = '/technician_location';
+  static const String fuel_orders = '/fuel_orders';
+  static const String provider_profile = '/provider_profile';
+  static const String provider_prices = '/provider_prices';
+  static const String provider_statistics = '/provider_statistics';
+  static const String available_orders = '/available_orders';
+  static const String share_location = '/share_location';
+  static const String share_location_fuel = '/share_location_fuel';
+  static const String provider_available_orders = '/provider_available_orders';
+  static const String userfuel_orders = '/userfuel_orders';
+  static const String user_fuel_orders = '/user_fuel_orders';
+  static const String provider_order = '/provider_order';
 }

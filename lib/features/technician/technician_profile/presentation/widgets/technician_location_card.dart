@@ -1,8 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:car_care/core/theme/app_colors.dart';
-import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_cubit.dart';
-import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_state.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_state.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/widgets/location_picker_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

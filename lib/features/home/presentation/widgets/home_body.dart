@@ -51,7 +51,7 @@ class HomeBody extends StatelessWidget {
         context.go(Routes.washers);
         break;
       case 3:
-        context.go(Routes.sos);
+        context.go(Routes.allUserSosRequests);
         break;
       default:
         debugPrint("No route defined for index $index");

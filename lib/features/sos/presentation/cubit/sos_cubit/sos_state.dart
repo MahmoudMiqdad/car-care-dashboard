@@ -11,11 +11,15 @@ class SosCreated extends SosState {
 
   SosCreated(this.sos);
 }
+class SosRequestLoaded extends SosState {
+  final SosEntity sos;
 
+  SosRequestLoaded(this.sos);
+}
 class SosListLoaded extends SosState {
-  final List<SosEntity> list;
+  final List<SosEntity> listSOs;
 
-  SosListLoaded(this.list);
+  SosListLoaded(this.listSOs);
 }
 
 class SosError extends SosState {

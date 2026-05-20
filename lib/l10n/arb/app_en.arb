@@ -16,7 +16,10 @@
   "@appName": {
     "description": "Application name"
   },
-  
+  "noAvailableRequests": "No requests available at the moment",
+"@noAvailableRequests": {
+  "description": "Shown when there are no SOS requests available for the technician"
+},
   "welcome": "Welcome",
   "@welcome": {
     "description": "Welcome message"

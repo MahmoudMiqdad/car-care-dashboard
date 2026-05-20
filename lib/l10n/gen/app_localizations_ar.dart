@@ -21,6 +21,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appName => 'كار كير';
 
   @override
+  String get noAvailableRequests => 'لا يوجد طلبات متاحة حالياً';
+
+  @override
   String get welcome => 'مرحباً';
 
   @override

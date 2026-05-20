@@ -1,7 +1,7 @@
 import 'package:car_care/core/constants/list_province.dart';
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
-import 'package:car_care/core/widgets/const.dart';
+import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/image_background.dart';
 import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_cubit.dart';
 import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_state.dart';
@@ -34,7 +34,7 @@ class _CreateSosPageState extends State<CreateSosPage> {
     super.initState();
     _descriptionController = TextEditingController();
 
-    // تحميل السيارات بدون ما يعمل مشاكل context
+  
     Future.microtask(() {
       context.read<VehicleCubit>().getAllVehicles();
     });
@@ -59,9 +59,9 @@ class _CreateSosPageState extends State<CreateSosPage> {
     state = cubit.state;
 
     if (state is VehicleError) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(state.message)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(state.message)));
       return;
     }
 
@@ -85,21 +85,21 @@ class _CreateSosPageState extends State<CreateSosPage> {
         return Column(
           mainAxisSize: MainAxisSize.min,
           children: vehicles.map((v) {
-             return ListTile(
-  leading: CircleAvatar(
-    radius: 20,
-    backgroundImage: v.image != null && v.image!.isNotEmpty
-        ? NetworkImage(v.image!)
-        : null,
-    child: v.image == null || v.image!.isEmpty
-        ? const Icon(Icons.directions_car, size: 18)
-        : null,
-  ),
+            return ListTile(
+              leading: CircleAvatar(
+                radius: 20,
+                backgroundImage: v.image != null && v.image!.isNotEmpty
+                    ? NetworkImage(v.image!)
+                    : null,
+                child: v.image == null || v.image!.isEmpty
+                    ? const Icon(Icons.directions_car, size: 18)
+                    : null,
+              ),
 
-  title: Text('${v.brand} ${v.model}'),
-  subtitle: Text('${v.year} • ${v.plateNumber}'),
-  onTap: () => Navigator.pop(context, v),
-);
+              title: Text('${v.brand} ${v.model}'),
+              subtitle: Text('${v.year} • ${v.plateNumber}'),
+              onTap: () => Navigator.pop(context, v),
+            );
           }).toList(),
         );
       },
@@ -114,57 +114,58 @@ class _CreateSosPageState extends State<CreateSosPage> {
       });
     }
   }
-Future<void> _pickProvince() async {
-  final choice = await showModalBottomSheet<String>(
-    context: context,
-    builder: (context) {
-    return SafeArea(
-  child: DraggableScrollableSheet(
-    expand: false,
-    builder: (context, scrollController) {
-      return ListView(
-        controller: scrollController,
-        children: kCreateSosProvinceOptions.map((e) {
-          return ListTile(
-            title: Text(e),
-            onTap: () => Navigator.pop(context, e),
-          );
-        }).toList(),
-      );
-    },
-  ),
-);
-    },
-  );
 
-  if (!mounted) return;
+  Future<void> _pickProvince() async {
+    final choice = await showModalBottomSheet<String>(
+      context: context,
+      builder: (context) {
+        return SafeArea(
+          child: DraggableScrollableSheet(
+            expand: false,
+            builder: (context, scrollController) {
+              return ListView(
+                controller: scrollController,
+                children: kCreateSosProvinceOptions.map((e) {
+                  return ListTile(
+                    title: Text(e),
+                    onTap: () => Navigator.pop(context, e),
+                  );
+                }).toList(),
+              );
+            },
+          ),
+        );
+      },
+    );
 
-  if (choice != null) {
-    setState(() => _provinceValue = choice);
+    if (!mounted) return;
+
+    if (choice != null) {
+      setState(() => _provinceValue = choice);
+    }
   }
-}
 
   Future<void> _onSubmit() async {
     FocusScope.of(context).unfocus();
 
     if (_selectedVehicle == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('الرجاء اختيار السيارة')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('الرجاء اختيار السيارة')));
       return;
     }
 
     if (_provinceValue.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('الرجاء اختيار المحافظة')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('الرجاء اختيار المحافظة')));
       return;
     }
 
     if (_descriptionController.text.trim().isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('الرجاء وصف المشكلة')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text('الرجاء وصف المشكلة')));
       return;
     }
 
@@ -179,14 +180,16 @@ Future<void> _pickProvince() async {
           permission == LocationPermission.deniedForever) {
         if (!mounted) return;
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('يرجى تفعيل الموقع')),
-        );
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('يرجى تفعيل الموقع')));
         return;
       }
-
       final position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high,
+        locationSettings: const LocationSettings(
+          accuracy: LocationAccuracy.high,
+          distanceFilter: 10,
+        ),
       );
 
       if (!mounted) return;
@@ -201,9 +204,9 @@ Future<void> _pickProvince() async {
     } catch (e) {
       if (!mounted) return;
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('خطأ بالموقع: $e')),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('خطأ بالموقع: $e')));
     }
   }
 
@@ -230,10 +233,7 @@ Future<void> _pickProvince() async {
 
         if (state is SosError) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              backgroundColor: Colors.red,
-              content: Text(state.message),
-            ),
+            SnackBar(backgroundColor: Colors.red, content: Text(state.message)),
           );
         }
       },

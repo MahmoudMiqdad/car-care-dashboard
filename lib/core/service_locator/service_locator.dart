@@ -54,10 +54,7 @@ import 'package:car_care/features/sos/data/data_sources/sos_remote_data_source.d
 import 'package:car_care/features/sos/data/repositories/sos_repository_impl.dart';
 import 'package:car_care/features/sos/domain/repositories/i_sos_repository.dart';
 import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_cubit.dart';
-import 'package:car_care/features/technician/technician_location/data/data_sources/technician_location_remote_data_source.dart';
-import 'package:car_care/features/technician/technician_location/data/repositories/technician_location_repository_impl.dart';
-import 'package:car_care/features/technician/technician_location/domain/repositories/i_technician_location_repository.dart';
-import 'package:car_care/features/technician/technician_location/presentation/cubit/technician_location_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_cubit.dart';
 import 'package:car_care/features/technician/technician_statistics/data/data_sources/technician_statistics_remote_data_source.dart';
 import 'package:car_care/features/technician/technician_statistics/data/repositories/technician_statistics_repository_impl.dart';
@@ -71,10 +68,15 @@ import 'package:car_care/features/technician/technician_order/presentation/cubit
 import 'package:car_care/features/technician/technician_profile/data/data_sources/technician_profile_remote_data_source.dart';
 import 'package:car_care/features/technician/technician_profile/data/repositories/technician_profile_repo_impl.dart';
 import 'package:car_care/features/technician/technician_profile/domain/repositories/i_technician_profile_repository.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit/technician_profile_cubit.dart';
 import 'package:car_care/features/technician/technician_quotations/data/data_sources/technician_quotations_remote_data_source.dart';
 import 'package:car_care/features/technician/technician_quotations/data/repositories/technician_quotations_repository_impl.dart';
 import 'package:car_care/features/technician/technician_quotations/domain/repositories/i_technician_quotations_repository.dart';
+import 'package:car_care/features/technician_sos/data/data_sources/technician_sos_remote_data_source.dart';
+import 'package:car_care/features/technician_sos/data/repositories/technician_sos_repository_impl.dart';
+import 'package:car_care/features/technician_sos/domain/repositories/i_technician_sos_repository.dart';
+import 'package:car_care/features/technician_sos/presentation/cubit/share_technician_location_cubit/share_technician_location_sos_cubit.dart';
+import 'package:car_care/features/technician_sos/presentation/cubit/technician_sos_cubit/technician_sos_cubit.dart';
 import 'package:car_care/features/user_profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:car_care/features/user_profile/domain/repositories/i_profile_repository.dart';
 import 'package:car_care/features/user_profile/data/repositories/profile_repo_impl.dart';
@@ -213,16 +215,9 @@ Future<void> setupServiceLocator() async {
       ),
     )
     //Technicianlocation 
-        ..registerLazySingleton<TechnicianLocationRemoteDataSource>(
-      () => TechnicianLocationRemoteDataSource(getIt<ApiService>()),
-    )
-    ..registerLazySingleton<ITechnicianLocationRepository>(
-      () => TechnicianLocationRepositoryImpl(
-        getIt<TechnicianLocationRemoteDataSource>(),
-      ),
-    )
+ 
     ..registerFactory<TechnicianLocationCubit>(
-      () => TechnicianLocationCubit(getIt<ITechnicianLocationRepository>()),
+      () => TechnicianLocationCubit(getIt<ITechnicianProfileRepository>()),
     )
     //TechnicianOrder
     ..registerLazySingleton<TechnicianOrderRemoteDataSource>(
@@ -323,6 +318,21 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<SosCubit>(
   () => SosCubit(getIt<ISosRepository>()),
+
+)
+//
+..registerLazySingleton<TechnicianSosRemoteDataSource>(
+  () => TechnicianSosRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<ITechnicianSosRepository>(
+  () => TechnicianSosRepositoryImpl(getIt<TechnicianSosRemoteDataSource>()),
+)
+..registerFactory<TechnicianSosCubit>(
+  () => TechnicianSosCubit(getIt<ITechnicianSosRepository>()),
+
+)
+..registerFactory<ShareTechnicianLocationSosCubit>(
+  () => ShareTechnicianLocationSosCubit(getIt<ITechnicianSosRepository>()),
 
 )
 ..registerLazySingleton<CarWasherStatisticsRemoteDataSource>(

@@ -1,5 +1,7 @@
 import 'dart:async';
-import 'package:pusher_channels_flutter/pusher_channels_flutter.dart';
+import 'dart:convert';
+import 'package:car_care/core/config/env.dart';
+import 'package:web_socket_channel/web_socket_channel.dart';
 
 typedef LocationCallback = void Function(double lat, double lng);
 
@@ -8,63 +10,146 @@ class PusherService {
   factory PusherService() => _instance;
   PusherService._internal();
 
-  final PusherChannelsFlutter _pusher = PusherChannelsFlutter.getInstance();
-  bool _initialized = false;
+  WebSocketChannel? _channel;
+  StreamSubscription? _subscription;
+  final Map<String, LocationCallback> _callbacks = {};
+  final Set<String> _subscribedChannels = {}; // ← منع الاشتراك المزدوج
+  Timer? _pingTimer;
+  bool _connected = false;
 
-  // ─── Initialize مرة وحدة بس ───────────────────────────────────────────────
+  // ─── Connect ──────────────────────────────────────────────────────────────
   Future<void> init() async {
-    if (_initialized) return;
-    await _pusher.init(
-      // ← غير هاي القيم على حسب إعدادات Reverb عندك
-      apiKey: 'your-reverb-app-key',
-      cluster: 'mt1', // مو مهم مع Reverb بس لازم تنحط
-      // wsost: '127.0.0.1', // أو IP السيرفر
-      // wsPort: 8080,
-      // wssPort: 8080,
-      useTLS: false,
-      onError: (message, code, error) {
-        // ignore: avoid_print
-        print('Pusher Error: $message');
+    if (_channel != null) return;
+
+    final wsUrl =
+        'ws://${Env.reverbHost}:${Env.reverbPort}/app/${Env.reverbKey}'
+        '?protocol=7&client=flutter&version=1.0&flash=false';
+
+    print('🔌 Connecting to: $wsUrl');
+
+    _channel = WebSocketChannel.connect(Uri.parse(wsUrl));
+
+    _subscription = _channel!.stream.listen(
+      _onMessage,
+      onError: (e) => print('❌ WS Error: $e'),
+      onDone: () {
+        print('🔌 WS Disconnected - reconnecting...');
+        _channel = null;
+        _connected = false;
+        _subscribedChannels.clear();
+        Future.delayed(const Duration(seconds: 3), () => init());
       },
     );
-    await _pusher.connect();
-    _initialized = true;
+
+    _pingTimer = Timer.periodic(const Duration(seconds: 30), (_) {
+      _send({'event': 'pusher:ping', 'data': {}});
+    });
   }
 
-  // ─── Subscribe على channel الـ SOS لتتبع الفني ───────────────────────────
+  void _onMessage(dynamic message) {
+    try {
+      final decoded = jsonDecode(message as String) as Map<String, dynamic>;
+      final event = decoded['event'] as String?;
+      final channel = decoded['channel'] as String?;
+
+      print('📨 Event: $event | Channel: $channel');
+
+      // ─── لما يتصل، اشترك على كل الـ channels المنتظرة ─────────────────
+      if (event == 'pusher:connection_established') {
+        print('✅ Pusher connected!');
+        _connected = true;
+        for (final ch in _callbacks.keys) {
+          if (!_subscribedChannels.contains(ch)) {
+            _subscribeChannel(ch);
+          }
+        }
+        return;
+      }
+
+      // ─── تحديث موقع الفني ─────────────────────────────────────────────
+      if (event == 'location.updated' && channel != null) {
+        final callback = _callbacks[channel];
+        if (callback == null) return;
+
+        final rawData = decoded['data'];
+        Map<String, dynamic> dataMap;
+
+        if (rawData is String) {
+          dataMap = jsonDecode(rawData) as Map<String, dynamic>;
+        } else if (rawData is Map) {
+          dataMap = Map<String, dynamic>.from(rawData);
+        } else {
+          return;
+        }
+
+        final lat = double.tryParse(dataMap['lat'].toString());
+        final lng = double.tryParse(dataMap['lng'].toString());
+
+        if (lat != null && lng != null) {
+          print('📍 Location: $lat, $lng');
+          callback(lat, lng);
+        }
+      }
+    } catch (e) {
+      print('❌ Parse error: $e');
+    }
+  }
+
+  void _send(Map<String, dynamic> data) {
+    try {
+      _channel?.sink.add(jsonEncode(data));
+    } catch (e) {
+      print('❌ Send error: $e');
+    }
+  }
+
+  void _subscribeChannel(String channelName) {
+    if (_subscribedChannels.contains(channelName)) return; // ← منع التكرار
+    _send({
+      'event': 'pusher:subscribe',
+      'data': {'channel': channelName},
+    });
+    _subscribedChannels.add(channelName);
+    print('📡 Subscribed: $channelName');
+  }
+
+  // ─── Subscribe على SOS ────────────────────────────────────────────────────
   Future<void> subscribeToSosTracking({
     required int sosId,
     required LocationCallback onLocationUpdate,
   }) async {
+    final channelName = 'sos.$sosId';
+    _callbacks[channelName] = onLocationUpdate;
+
     await init();
 
-    final channelName = 'sos.$sosId'; // ← اسم الـ channel من الباك
-
-    await _pusher.subscribe(
-      channelName: channelName,
-      onEvent: (event) {
-        if (event.eventName == 'technician.location.updated') {
-          // الباك يرسل: {"lat": 33.33, "lng": 44.44}
-          final data = event.data;
-          if (data is Map) {
-            final lat = double.tryParse(data['lat'].toString());
-            final lng = double.tryParse(data['lng'].toString());
-            if (lat != null && lng != null) {
-              onLocationUpdate(lat, lng);
-            }
-          }
-        }
-      },
-    );
+    // ← اشترك فقط لو الاتصال موجود فعلاً
+    if (_connected && !_subscribedChannels.contains(channelName)) {
+      _subscribeChannel(channelName);
+    }
+    // إذا مو متصل بعد، الـ connection_established سيشترك تلقائياً
   }
 
-  // ─── Unsubscribe لما نطلع من الشاشة ──────────────────────────────────────
+  // ─── Unsubscribe ──────────────────────────────────────────────────────────
   Future<void> unsubscribeFromSos(int sosId) async {
-    await _pusher.unsubscribe(channelName: 'sos.$sosId');
+    final channelName = 'sos.$sosId';
+    _callbacks.remove(channelName);
+    _subscribedChannels.remove(channelName);
+    _send({
+      'event': 'pusher:unsubscribe',
+      'data': {'channel': channelName},
+    });
+    print('🔕 Unsubscribed: $channelName');
   }
 
+  // ─── Disconnect ───────────────────────────────────────────────────────────
   Future<void> disconnect() async {
-    await _pusher.disconnect();
-    _initialized = false;
+    _pingTimer?.cancel();
+    await _subscription?.cancel();
+    await _channel?.sink.close();
+    _channel = null;
+    _connected = false;
+    _subscribedChannels.clear();
+    _callbacks.clear();
   }
 }
