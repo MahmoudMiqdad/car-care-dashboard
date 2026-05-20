@@ -1,7 +1,7 @@
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-//الصورة الموجود بالشكل المربع مثل سكرينة الاوردر وتفاصيلها 
+
 class AppImageWidget extends StatelessWidget {
   final String path;
   final double? width;

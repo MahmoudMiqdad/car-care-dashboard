@@ -72,4 +72,16 @@ class TechnicianProfileRemoteDataSource {
 
     return formFields;
   }
+   Future<void> technicianLocation({
+    required double lat,
+    required double lng,
+  }) async {
+    await _apiService.post(
+      endPoint: "/technician/location",
+      data: {
+        "latitude": lat,
+        "longitude": lng,
+      },
+    );
+  }
 }

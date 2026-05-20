@@ -21,6 +21,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appName => 'CarCare';
 
   @override
+  String get noAvailableRequests => 'No requests available at the moment';
+
+  @override
   String get welcome => 'Welcome';
 
   @override

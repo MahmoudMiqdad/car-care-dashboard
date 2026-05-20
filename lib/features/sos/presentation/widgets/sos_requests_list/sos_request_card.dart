@@ -3,7 +3,7 @@ import 'package:car_care/core/constants/app_assets.dart';
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
-import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_request_list_dummy_data.dart';
+import 'package:car_care/features/sos/domain/entities/sos_entity.dart';
 import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/request_detail_row.dart';
 import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_request_status_badge.dart';
 import 'package:car_care/l10n.dart';
@@ -14,16 +14,12 @@ import 'package:go_router/go_router.dart';
 class SosRequestCard extends StatelessWidget {
   const SosRequestCard({super.key, required this.item});
 
-  final SosRequestListDummyItem item;
+  final SosEntity item;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final radius = AppConstants.maintenanceRequestCardRadius.r;
-
-    final footerText = item.hoursAgo != null
-        ? l10n.sosRequestCreatedAtHours(item.hoursAgo!)
-        : l10n.sosRequestCreatedAtMinutes(item.minutesAgo!);
 
     return Container(
       decoration: BoxDecoration(
@@ -58,14 +54,15 @@ class SosRequestCard extends StatelessWidget {
                           leading: SosRequestRowAssetIcon(
                             assetPath: AppAssets.editIcon,
                           ),
-                          value: item.id,
+                          value: item.plateNumber.toString(),
                         ),
                         RequestDetailRow(
                           label: l10n.sosRequestVehicleLabel,
                           leading: SosRequestRowAssetIcon(
                             assetPath: AppAssets.sosRequestVehicleRowIcon,
                           ),
-                          value: item.vehicle,
+                          value:
+                              '${item.vehicleBrand ?? ''} ${item.vehicleModel ?? ''}',
                         ),
                         RequestDetailRow(
                           label: l10n.sosRequestShortDescriptionLabel,
@@ -120,7 +117,12 @@ class SosRequestCard extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 AppButton(
-                  onPressed: () => context.push(Routes.sos_details),
+                  onPressed: () {
+                    context.pushNamed(
+                      'sosDetails',
+                      pathParameters: {'id': item.id.toString()},
+                    );
+                  },
                   text: l10n.sosRequestViewDetails,
                   backgroundColor: AppColors.accent,
                   textColor: AppColors.white,
@@ -137,7 +139,7 @@ class SosRequestCard extends StatelessWidget {
             padding: EdgeInsets.symmetric(vertical: 8.h),
             color: AppColors.carWashTeal,
             child: Text(
-              footerText,
+              'created Ago ${item.createdAgo!}',
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: AppColors.white,

@@ -27,4 +27,14 @@ class SosCubit extends Cubit<SosState> {
       (r) => emit(SosListLoaded(r)),
     );
   }
+    Future<void> getSosRequest(int id) async {
+    emit(SosLoading());
+
+    final result = await _repo.getSosRequest( id);
+
+    result.fold(
+      (l) => emit(SosError(l.message)),
+      (r) => emit(SosRequestLoaded(r)),
+    );
+  }
 }

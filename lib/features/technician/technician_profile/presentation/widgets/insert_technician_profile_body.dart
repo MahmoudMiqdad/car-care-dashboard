@@ -3,9 +3,10 @@ import 'dart:io';
 import 'package:car_care/core/constants/app_constants.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
+import 'package:car_care/core/utils/app_snackbar.dart';
 import 'package:car_care/features/auth/presentation/widgets/login/login_text_field.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_state.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit/technician_profile_cubit.dart';
+import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_profile_cubit/technician_profile_state.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/widgets/technician_location_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -47,12 +48,7 @@ class _TechnicianProfileBodyState extends State<InsertTechnicianProfileBody> {
 
     if (images.length + _certificationImages.length > 3) {
       // ignore: use_build_context_synchronously
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('يمكنك اختيار 3 صور كحد أقصى'),
-          backgroundColor: Colors.red,
-        ),
-      );
+      AppSnackBar.error(context, 'يمكنك اختيار 3 صور كحد أقصى');
       return;
     }
 
@@ -80,20 +76,10 @@ class _TechnicianProfileBodyState extends State<InsertTechnicianProfileBody> {
     return BlocConsumer<TechnicianProfileCubit, TechnicianProfileState>(
       listener: (context, state) {
         if (state is TechnicianProfileLoaded) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('تم تحديث الملف الشخصي بنجاح'),
-              backgroundColor: Colors.green,
-            ),
-          );
+       AppSnackBar.success(context, 'تم تحديد موقع الورشة');
         }
         if (state is TechnicianProfileError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(state.message),
-              backgroundColor: Colors.red,
-            ),
-          );
+         AppSnackBar.error(context, state.message);
         }
       },
       builder: (context, state) {

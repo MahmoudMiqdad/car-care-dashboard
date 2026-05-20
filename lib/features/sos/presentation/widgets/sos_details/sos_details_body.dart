@@ -1,6 +1,7 @@
 import 'package:car_care/core/constants/app_constants.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
+import 'package:car_care/features/sos/domain/entities/sos_entity.dart';
 import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_location_card.dart';
 import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_request_card.dart';
 import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_status_banner.dart';
@@ -16,9 +17,9 @@ class SosDetailsBody extends StatelessWidget {
     required this.technicianName,
     required this.description,
     this.onTrackTapped,
-    this.onCancelTapped,
+    this.onCancelTapped, required this.sos,
   });
-
+  final SosEntity sos;
   final String vehicleTitle;
   final String plateNumber;
   final String technicianName;
@@ -47,11 +48,13 @@ class SosDetailsBody extends StatelessWidget {
             SosDetailsRequestCard(
               vehicleTitle: vehicleTitle,
               plateNumber: plateNumber,
-              technicianName: technicianName,
+              technicianName: technicianName,  
               description: description,
             ),
             SizedBox(height: 14.h),
-            SosDetailsLocationCard(onTrackTapped: onTrackTapped),
+            SosDetailsLocationCard( sosId: sos.id!,
+  lat: sos.lat,   // موقع الـ SOS
+  lng: sos.lng,),
             SizedBox(height: 22.h),
             AppButton(
               onPressed: onCancelTapped ?? () {},

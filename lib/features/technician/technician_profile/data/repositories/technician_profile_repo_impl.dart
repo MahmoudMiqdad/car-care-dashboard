@@ -98,4 +98,20 @@ Future<Either<Failure, TechnicianAvailabilityEntity>> changeAvailability(String 
     return const Left(Failure(message: 'حدث خطأ غير متوقع'));
   }
 }
+  @override
+Future<Either<Failure, Unit>> technicianLocation( 
+ 
+     double lat,
+     double lng,
+ 
+  ) async {
+    try {
+      await _remoteDataSource.technicianLocation(lat: lat, lng: lng);
+      return const Right(unit);
+    }on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ غير متوقع'));
+  }
+  }
 }

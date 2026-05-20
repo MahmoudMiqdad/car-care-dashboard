@@ -64,4 +64,12 @@ static String customerCancelBooking(int bookingId) =>
 
   // Statistics
   static const String washerStatistics = '/car_washer/statistics';
+  //sos
+   static const String sos = '/sos';
+  
+//technician sos
+ static const String technicianSosAvailable = '/technician/sos/available';
+ static const String technicianSosRequests = '/technician/sos/requests';
+  static const String  technicianSosStatistics =  '/technician/sos/statistics';
+   static const String technicianSosMyRequests = '/technician/sos/my_requests';
 }

@@ -1,3 +1,4 @@
+import 'package:car_care/core/network/api_endpoints.dart';
 import 'package:car_care/core/network/api_service.dart';
 import 'package:car_care/features/sos/data/models/sos_model.dart';
 import 'package:car_care/features/sos/data/models/tracking_techniciain_model.dart';
@@ -10,7 +11,7 @@ class SosRemoteDataSource {
 
   Future<SosModel> createSos(Map<String, dynamic> data) async {
     final response = await _apiService.post(
-      endPoint: "/sos",
+      endPoint:ApiEndpoints.sos ,
       data: data,
     );
     return SosModel.fromJson(response);
@@ -18,7 +19,7 @@ class SosRemoteDataSource {
 
   Future<List<SosData>> getAllSos() async {
     final response = await _apiService.get(
-      endPoint: "/api/sos",
+      endPoint:ApiEndpoints.sos,
     );
 
     return List.from(response['data'])
@@ -26,9 +27,9 @@ class SosRemoteDataSource {
         .toList();
   }
 
-  Future<SosData> getSos(int id) async {
+  Future<SosData> getSosRequest(int id) async {
     final response = await _apiService.get(
-      endPoint: "/api/sos/$id",
+      endPoint: "${ApiEndpoints.sos}/$id",
     );
 
     return SosData.fromJson(response['data']);
@@ -36,7 +37,7 @@ class SosRemoteDataSource {
 
   Future<void> cancelSos(int id, String reason) async {
     await _apiService.post(
-      endPoint: "/api/sos/$id/cancel",
+      endPoint: "${ApiEndpoints.sos}/$id/cancel",
       data: {
         "cancellation_reason": reason,
       },
@@ -44,7 +45,7 @@ class SosRemoteDataSource {
   }
   Future<TrackingData> trackSos(int id) async {
   final res = await _apiService.get(
-    endPoint: "/api/sos/$id/track",
+    endPoint: "${ApiEndpoints.sos}/$id/track",
   );
 
   return TrackingData.fromJson(res['data']);

@@ -953,7 +953,10 @@
   "@availableCars": {
     "description": "السيارات المتاحة للتأجير"
   },
-  
+  "noAvailableRequests": "لا يوجد طلبات متاحة حالياً",
+"@noAvailableRequests": {
+  "description": "رسالة تظهر عند عدم وجود طلبات SOS متاحة للفني"
+},
   "daily": "يومي",
   "@daily": {
     "description": "يومي"

@@ -1,11 +1,25 @@
+import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_page.dart';
+import 'package:car_care/features/user_fuel_orders/presentation/pages/user_fuel_orders_page.dart';
+import 'package:car_care/features/userfuel_orders/presentation/pages/userfuel_orders_page.dart';
+import 'package:car_care/features/fuel_provider/provider_available_orders/presentation/pages/provider_available_orders_page.dart';
+import 'package:car_care/features/fuel_provider/share_location_fuel/presentation/pages/share_location_fuel_page.dart';
+import 'package:car_care/features/fuel_provider/share_location/presentation/pages/share_location_page.dart';
+import 'package:car_care/features/available_orders/presentation/pages/available_orders_page.dart';
+import 'package:car_care/features/fuel_provider/provider_statistics/presentation/pages/provider_statistics_page.dart';
+import 'package:car_care/features/fuel_provider/provider_prices/presentation/pages/provider_prices_page.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/presentation/pages/provider_profile_page.dart';
+import 'package:car_care/features/fuel_orders/presentation/pages/fuel_orders_page.dart';
+import 'package:car_care/core/widgets/main_shell.dart';
 import 'package:car_care/features/sos/presentation/pages/Create_sos_page_wrapper.dart';
-import 'package:car_care/features/technician/technician_location/presentation/pages/technician_location_page.dart';
 import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
+import 'package:car_care/features/technician_sos/presentation/pages/all_technician_sos_requests.dart';
+import 'package:car_care/features/technician_sos/presentation/pages/sos_details_page.dart';
+import 'package:car_care/features/technician_sos/presentation/technician_sos_request_type.dart';
+import 'package:car_care/features/technician_sos/presentation/widgets/sos_requests_list/technician_sos_requests_list_page.dart';
+import 'package:car_care/features/technician_sos/presentation/widgets/sos_requests_list/technician_sos_map_page.dart';
 import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart';
-import 'package:car_care/features/technician_sos/presentation/pages/technician_sos_page.dart';
-import 'package:car_care/features/sos/presentation/pages/create_sos_page.dart';
-import 'package:car_care/features/sos/presentation/pages/sos_page.dart';
+import 'package:car_care/features/sos/presentation/pages/all_user_sos_requests.dart';
 import 'package:car_care/features/sos/presentation/pages/sos_details_page.dart';
 import 'package:car_care/features/car_washer/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/bookings/presentation/pages/booking_details_page.dart';
@@ -42,7 +56,7 @@ import 'package:car_care/features/vehicle/presentation/pages/add_vehicle_page.da
 import 'package:car_care/features/vehicle/presentation/pages/my_vehicles_page_page.dart';
 import 'package:car_care/features/auth/presentation/pages/login_page.dart';
 import 'package:car_care/core/routing/routes.dart';
-import 'package:car_care/core/widgets/const.dart';
+import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/technician_entry_sheet.dart';
 import 'package:car_care/features/auth/presentation/pages/register_page.dart';
 import 'package:car_care/features/home/presentation/pages/home_page.dart';
@@ -62,7 +76,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.create_sos,
+    initialLocation: Routes.technician_sos_requests,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -117,14 +131,25 @@ class AppRouter {
             builder: (context, state) => const HomePage(),
           ),
           GoRoute(
-            path: Routes.sos,
+            path: Routes.allUserSosRequests,
             name: '/sos',
-            builder: (context, state) => const SosPage(),
+            builder: (context, state) => const AllUserSosRequests(),
           ),
           GoRoute(
-            path: Routes.sos_details,
-            name: '/sos_details',
-            builder: (context, state) => const SosDetailsPage(),
+            path: '/userSosDetailss/:id',
+            name: 'sosDetails',
+            builder: (context, state) {
+              final id = int.parse(state.pathParameters['id']!);
+              return SosDetailsPage(id: id);
+            },
+          ),
+             GoRoute(
+            path: '/technicianSosDetails/:id',
+            name: 'SosTechnicianDetailsPage',
+            builder: (context, state) {
+              final id = int.parse(state.pathParameters['id']!);
+              return SosTechnicianDetailsPage(id: id);
+            },
           ),
           GoRoute(
             path: Routes.notifications,
@@ -206,26 +231,25 @@ class AppRouter {
             name: '/profile_washer',
             builder: (context, state) => const ProfileWasherPage(),
           ),
+// GoRoute(
+//   path: '/sos-list',
+//   builder: (context, state) {
+//     final type = state.extra as SosRequestType;
+
+//     return TechnicianSosRequestsListPage(type: type);
+//   },
+// ),
           GoRoute(
-            path: Routes.sos,
-            name: '/sos',
-            builder: (context, state) => const SosPage(),
-          ),
-          GoRoute(
-            path: Routes.technician_sos,
-            name: '/technician_sos',
-            builder: (context, state) => const TechnicianSosPage(),
+            path: Routes.technician_sos_requests,
+            name: '/all_technician_sos_requests',
+            builder: (context, state) => const AllTechnicianSosRequests(),
           ),
           GoRoute(
             path: Routes.tracking,
             name: '/tracking',
             builder: (context, state) => const TrackingPage(),
           ),
-          GoRoute(
-            path: Routes.technician_location,
-            name: '/technician_location',
-            builder: (context, state) => const TechnicianLocationPage(),
-          ),
+         
 
           GoRoute(
             path: Routes.editProfileWasher,
@@ -234,7 +258,62 @@ class AppRouter {
               return const EditProfileWasherPage();
             },
           ),
-        ],
+              GoRoute(
+        path: Routes.fuel_orders,
+        name: '/fuel_orders',
+        builder: (context, state) => const FuelOrdersPage(),
+      ),
+            GoRoute(
+        path: Routes.provider_profile,
+        name: '/provider_profile',
+        builder: (context, state) => const ProviderProfilePage(),
+      ),
+            GoRoute(
+        path: Routes.provider_prices,
+        name: '/provider_prices',
+        builder: (context, state) => const ProviderPricesPage(),
+      ),
+            GoRoute(
+        path: Routes.provider_statistics,
+        name: '/provider_statistics',
+        builder: (context, state) => const ProviderStatisticsPage(),
+      ),
+            GoRoute(
+        path: Routes.available_orders,
+        name: '/available_orders',
+        builder: (context, state) => const AvailableOrdersPage(),
+      ),
+            GoRoute(
+        path: Routes.share_location,
+        name: '/share_location',
+        builder: (context, state) => const ShareLocationPage(),
+      ),
+            GoRoute(
+        path: Routes.share_location_fuel,
+        name: '/share_location_fuel',
+        builder: (context, state) => const ShareLocationFuelPage(),
+      ),
+            GoRoute(
+        path: Routes.provider_available_orders,
+        name: '/provider_available_orders',
+        builder: (context, state) => const ProviderAvailableOrdersPage(),
+      ),
+            GoRoute(
+        path: Routes.userfuel_orders,
+        name: '/userfuel_orders',
+        builder: (context, state) => const UserfuelOrdersPage(),
+      ),
+            GoRoute(
+        path: Routes.user_fuel_orders,
+        name: '/user_fuel_orders',
+        builder: (context, state) => const UserFuelOrdersPage(),
+      ),
+            GoRoute(
+        path: Routes.provider_order,
+        name: '/provider_order',
+        builder: (context, state) => const ProviderOrderPage(),
+      ),
+      ],
       ),
       GoRoute(
         path: Routes.profile_setup,
@@ -322,13 +401,13 @@ class AppRouter {
         name: '/deleteconfirmationdialog',
         builder: (context, state) => const DeleteProfileDialog(),
       ),
+
       // GoRoute(
       //   path: Routes.ratings,
       //   name: '/ratings',
       //   parentNavigatorKey: rootNavigatorKey,
       //   builder: (context, state) => const RatingsPage(booking: null,),
       // ),
-
       GoRoute(
         path: Routes.statistics,
         builder: (context, state) => const UserStatisticsPage(),
@@ -387,10 +466,23 @@ class AppRouter {
         builder: (context, state) => const TechnicianStatisticsPage(),
       ),
       GoRoute(
+  name: 'TechnicianSosMapPage',
+  path: '/technician/sos/:id/map',
+  builder: (context, state) {
+    final extra = state.extra as Map<String, dynamic>?;
+    return TechnicianSosMapPage(
+      sosId: int.parse(state.pathParameters['id']!),
+      clientLat: extra?['lat'],
+      clientLng: extra?['lng'],
+    );
+  },
+),
+      GoRoute(
         path: Routes.washer_statistics,
         name: '/washer_statistics',
         builder: (context, state) => const CarWasherStatisticsPage(),
       ),
     ],
   );
+  
 }

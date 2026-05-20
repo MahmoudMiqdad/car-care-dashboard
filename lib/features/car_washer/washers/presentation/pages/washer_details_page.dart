@@ -1,4 +1,4 @@
-import 'package:car_care/core/widgets/const.dart';
+import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/image_background.dart';
 import 'package:car_care/features/car_washer/washers/domain/entities/washers_entity.dart';
 import 'package:car_care/features/car_washer/washers/presentation/widgets/washer_details/washer_details_view.dart';
