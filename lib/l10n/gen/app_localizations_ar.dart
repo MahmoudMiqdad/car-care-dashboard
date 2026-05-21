@@ -1405,6 +1405,54 @@ class AppLocalizationsAr extends AppLocalizations {
   String get createSosSampleProblemText => 'ادخل الوصف هنا';
 
   @override
+  String get fuelSosCreateTitle => 'إنشاء طلب وقود طارئ';
+
+  @override
+  String get fuelSosCreateVehicleTitle => 'المركبة';
+
+  @override
+  String get fuelSosCreateVehicleHint => 'اختر المركبة التي تريدها للخدمة';
+
+  @override
+  String get fuelSosCreateFuelTypeTitle => 'نوع الوقود';
+
+  @override
+  String get fuelSosCreateFuelTypeHint => 'اختر نوع الوقود الذي تريده';
+
+  @override
+  String get fuelSosCreateQuantityTitle => 'الكمية';
+
+  @override
+  String get fuelSosCreateQuantityHint => 'أدخل الكمية التي تريد تعبئتها';
+
+  @override
+  String get fuelSosCreateNotesTitle => 'ملاحظات';
+
+  @override
+  String get fuelSosCreateNotesHint => 'أدخل أي ملاحظات تريد إضافتها';
+
+  @override
+  String get fuelSosCreateProvinceTitle => 'المحافظة';
+
+  @override
+  String get fuelSosCreateProvinceHint => 'اختر المحافظة في مكانك الحالي';
+
+  @override
+  String get fuelSosCreateSelectVehicleRequired => 'الرجاء اختيار المركبة';
+
+  @override
+  String get fuelSosCreateSelectFuelTypeRequired => 'الرجاء اختيار نوع الوقود';
+
+  @override
+  String get fuelSosCreateQuantityRequired => 'الرجاء إدخال الكمية';
+
+  @override
+  String get fuelSosCreateSelectProvinceRequired => 'الرجاء اختيار المحافظة';
+
+  @override
+  String get fuelSosCreateNoVehicles => 'لا توجد سيارات';
+
+  @override
   String get sosRequestsListTitle => 'قائمة طلبات النجدة';
 
   @override
@@ -1467,4 +1515,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sosDetailsCancelRequest => 'إلغاء الطلب';
+
+  @override
+  String get fuelOrdersListTitle => 'قائمة طلبات الوقود';
+
+  @override
+  String get fuelOrderDetailsTitle => 'تفاصيل طلب الوقود';
+
+  @override
+  String get fuelOrderDetailsProviderSection => 'بيانات الشركة المزودة للخدمة';
+
+  @override
+  String get cancelReasonDialogTitle => 'Cancel SOS';
+
+  @override
+  String get cancelReasonDialogQuestion => 'ما سبب إلغاء الطلب ؟';
+
+  @override
+  String get cancelReasonDialogHint => 'ادخل هنا سبب إلغاء طلب الوقود ...';
+
+  @override
+  String get cancelReasonDialogBack => 'تراجع';
+
+  @override
+  String get fuelCancelReasonDialogTitle => 'إلغاء الطلب';
 }

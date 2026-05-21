@@ -2095,6 +2095,70 @@
   "@createSosSampleProblemText": {
     "description": "نص أولي أو تلميح لحقل الوصف (لا يتضمن أسماء مركبات أو محافظات)"
   },
+  "fuelSosCreateTitle": "إنشاء طلب وقود طارئ",
+  "@fuelSosCreateTitle": {
+    "description": "عنوان شريط التطبيق لصفحة إنشاء طلب وقود طارئ"
+  },
+  "fuelSosCreateVehicleTitle": "المركبة",
+  "@fuelSosCreateVehicleTitle": {
+    "description": "عنوان حقل اختيار المركبة"
+  },
+  "fuelSosCreateVehicleHint": "اختر المركبة التي تريدها للخدمة",
+  "@fuelSosCreateVehicleHint": {
+    "description": "تلميح حقل اختيار المركبة"
+  },
+  "fuelSosCreateFuelTypeTitle": "نوع الوقود",
+  "@fuelSosCreateFuelTypeTitle": {
+    "description": "عنوان حقل نوع الوقود"
+  },
+  "fuelSosCreateFuelTypeHint": "اختر نوع الوقود الذي تريده",
+  "@fuelSosCreateFuelTypeHint": {
+    "description": "تلميح حقل نوع الوقود"
+  },
+  "fuelSosCreateQuantityTitle": "الكمية",
+  "@fuelSosCreateQuantityTitle": {
+    "description": "عنوان حقل الكمية"
+  },
+  "fuelSosCreateQuantityHint": "أدخل الكمية التي تريد تعبئتها",
+  "@fuelSosCreateQuantityHint": {
+    "description": "تلميح حقل الكمية"
+  },
+  "fuelSosCreateNotesTitle": "ملاحظات",
+  "@fuelSosCreateNotesTitle": {
+    "description": "عنوان حقل الملاحظات"
+  },
+  "fuelSosCreateNotesHint": "أدخل أي ملاحظات تريد إضافتها",
+  "@fuelSosCreateNotesHint": {
+    "description": "تلميح حقل الملاحظات"
+  },
+  "fuelSosCreateProvinceTitle": "المحافظة",
+  "@fuelSosCreateProvinceTitle": {
+    "description": "عنوان حقل المحافظة"
+  },
+  "fuelSosCreateProvinceHint": "اختر المحافظة في مكانك الحالي",
+  "@fuelSosCreateProvinceHint": {
+    "description": "تلميح حقل المحافظة"
+  },
+  "fuelSosCreateSelectVehicleRequired": "الرجاء اختيار المركبة",
+  "@fuelSosCreateSelectVehicleRequired": {
+    "description": "رسالة عند عدم اختيار مركبة"
+  },
+  "fuelSosCreateSelectFuelTypeRequired": "الرجاء اختيار نوع الوقود",
+  "@fuelSosCreateSelectFuelTypeRequired": {
+    "description": "رسالة عند عدم اختيار نوع الوقود"
+  },
+  "fuelSosCreateQuantityRequired": "الرجاء إدخال الكمية",
+  "@fuelSosCreateQuantityRequired": {
+    "description": "رسالة عند عدم إدخال الكمية"
+  },
+  "fuelSosCreateSelectProvinceRequired": "الرجاء اختيار المحافظة",
+  "@fuelSosCreateSelectProvinceRequired": {
+    "description": "رسالة عند عدم اختيار المحافظة"
+  },
+  "fuelSosCreateNoVehicles": "لا توجد سيارات",
+  "@fuelSosCreateNoVehicles": {
+    "description": "رسالة عند عدم وجود مركبات للمستخدم"
+  },
   "sosRequestsListTitle": "قائمة طلبات النجدة",
   "@sosRequestsListTitle": {
     "description": "عنوان شريط التطبيق لقائمة طلبات SOS"
@@ -2184,6 +2248,38 @@
   "sosDetailsCancelRequest": "إلغاء الطلب",
   "@sosDetailsCancelRequest": {
     "description": "زر إلغاء طلب النجدة"
+  },
+  "fuelOrdersListTitle": "قائمة طلبات الوقود",
+  "@fuelOrdersListTitle": {
+    "description": "عنوان شريط التطبيق لقائمة طلبات الوقود"
+  },
+  "fuelOrderDetailsTitle": "تفاصيل طلب الوقود",
+  "@fuelOrderDetailsTitle": {
+    "description": "عنوان شريط التطبيق لتفاصيل طلب الوقود"
+  },
+  "fuelOrderDetailsProviderSection": "بيانات الشركة المزودة للخدمة",
+  "@fuelOrderDetailsProviderSection": {
+    "description": "عنوان قسم بيانات شركة تزويد الوقود"
+  },
+  "cancelReasonDialogTitle": "Cancel SOS",
+  "@cancelReasonDialogTitle": {
+    "description": "عنوان نافذة إلغاء الطلب مع السبب"
+  },
+  "cancelReasonDialogQuestion": "ما سبب إلغاء الطلب ؟",
+  "@cancelReasonDialogQuestion": {
+    "description": "سؤال نافذة إدخال سبب الإلغاء"
+  },
+  "cancelReasonDialogHint": "ادخل هنا سبب إلغاء طلب الوقود ...",
+  "@cancelReasonDialogHint": {
+    "description": "تلميح حقل سبب إلغاء طلب الوقود"
+  },
+  "cancelReasonDialogBack": "تراجع",
+  "@cancelReasonDialogBack": {
+    "description": "زر التراجع في تذييل نافذة الإلغاء"
+  },
+  "fuelCancelReasonDialogTitle": "إلغاء الطلب",
+  "@fuelCancelReasonDialogTitle": {
+    "description": "عنوان نافذة الإلغاء في تفاصيل طلب الوقود"
   }
 }
 

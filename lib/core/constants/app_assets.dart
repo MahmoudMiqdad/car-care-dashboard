@@ -22,6 +22,15 @@ class AppAssets {
   /// Create SOS flow (warning illustration)
   static const String sosWarningRafiki = '$_imagesPath/Warning-rafiki.png';
 
+
+  /// Fuel SOS create flow
+  static const String fuelSosCreateIllustration = '$_imagesPath/5.png';
+  static const String fuelSosCreateVehicleIcon =
+      '$_imagesPath/icons8-car-50.png';
+  static const String fuelSosCreateFuelTypeIcon = '$_imagesPath/5.png';
+  static const String fuelSosCreateQuantityIcon = '$_imagesPath/99.png';
+  static const String fuelSosCreateNotesIcon = '$_imagesPath/icons8-notes-64.png';
+
   /// Price offer / financing illustration (orders flow)
   static const String carFinanceAmico = '$_imagesPath/Carfinance-amico.png';
   static const String calendarIcon = '$_imagesPath/calendar.png';
@@ -54,6 +63,7 @@ class AppAssets {
 
   static const String iconPhoneCall = '$_imagesPath/icons8-call_50.png';
   static const String iconLocationPin = '$_imagesPath/icons8-location-50.png';
+  static const String fuelOrderMoneyIcon = '$_imagesPath/icons8-money-64.png';
   static const String iconTime = '$_imagesPath/icons8-time-50.png';
   static const String iconCheckMark16 = '$_imagesPath/icons8-check-mark-16.png';
   static const String serviceSos = '$_imagesPath/4.png';

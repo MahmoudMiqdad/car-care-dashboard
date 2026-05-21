@@ -70,6 +70,8 @@ class Routes {
   static const String share_location_fuel = '/share_location_fuel';
   static const String provider_available_orders = '/provider_available_orders';
   static const String userfuel_orders = '/userfuel_orders';
+  static const String user_fuel = '/user_fuel';
   static const String user_fuel_orders = '/user_fuel_orders';
+  static const String fuel_order_details = '/fuel_order_details';
   static const String provider_order = '/provider_order';
 }

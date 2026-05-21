@@ -1405,6 +1405,54 @@ class AppLocalizationsEn extends AppLocalizations {
   String get createSosSampleProblemText => 'Enter the description here';
 
   @override
+  String get fuelSosCreateTitle => 'Fuel SOS Create';
+
+  @override
+  String get fuelSosCreateVehicleTitle => 'Vehicle';
+
+  @override
+  String get fuelSosCreateVehicleHint => 'Choose the vehicle you want for the service';
+
+  @override
+  String get fuelSosCreateFuelTypeTitle => 'Fuel type';
+
+  @override
+  String get fuelSosCreateFuelTypeHint => 'Choose the fuel type you want';
+
+  @override
+  String get fuelSosCreateQuantityTitle => 'Quantity';
+
+  @override
+  String get fuelSosCreateQuantityHint => 'Enter the quantity you want to fill';
+
+  @override
+  String get fuelSosCreateNotesTitle => 'Notes';
+
+  @override
+  String get fuelSosCreateNotesHint => 'Enter any notes you want to add';
+
+  @override
+  String get fuelSosCreateProvinceTitle => 'Governorate';
+
+  @override
+  String get fuelSosCreateProvinceHint => 'Choose the governorate at your current location';
+
+  @override
+  String get fuelSosCreateSelectVehicleRequired => 'Please select a vehicle';
+
+  @override
+  String get fuelSosCreateSelectFuelTypeRequired => 'Please select a fuel type';
+
+  @override
+  String get fuelSosCreateQuantityRequired => 'Please enter the quantity';
+
+  @override
+  String get fuelSosCreateSelectProvinceRequired => 'Please select a governorate';
+
+  @override
+  String get fuelSosCreateNoVehicles => 'No vehicles found';
+
+  @override
   String get sosRequestsListTitle => 'SOS Requests List';
 
   @override
@@ -1467,4 +1515,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sosDetailsCancelRequest => 'Cancel request';
+
+  @override
+  String get fuelOrdersListTitle => 'Fuel Orders List';
+
+  @override
+  String get fuelOrderDetailsTitle => 'Fuel Order Details';
+
+  @override
+  String get fuelOrderDetailsProviderSection => 'Service provider details';
+
+  @override
+  String get cancelReasonDialogTitle => 'Cancel SOS';
+
+  @override
+  String get cancelReasonDialogQuestion => 'What is the reason for canceling the order?';
+
+  @override
+  String get cancelReasonDialogHint => 'Enter the reason for canceling the fuel order here...';
+
+  @override
+  String get cancelReasonDialogBack => 'Back';
+
+  @override
+  String get fuelCancelReasonDialogTitle => 'Cancel order';
 }
