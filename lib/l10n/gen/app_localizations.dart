@@ -2851,6 +2851,102 @@ abstract class AppLocalizations {
   /// **'Enter the description here'**
   String get createSosSampleProblemText;
 
+  /// App bar title for fuel SOS create screen
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel SOS Create'**
+  String get fuelSosCreateTitle;
+
+  /// Vehicle picker field title
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle'**
+  String get fuelSosCreateVehicleTitle;
+
+  /// Vehicle picker field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the vehicle you want for the service'**
+  String get fuelSosCreateVehicleHint;
+
+  /// Fuel type picker field title
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel type'**
+  String get fuelSosCreateFuelTypeTitle;
+
+  /// Fuel type picker field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the fuel type you want'**
+  String get fuelSosCreateFuelTypeHint;
+
+  /// Quantity field title
+  ///
+  /// In en, this message translates to:
+  /// **'Quantity'**
+  String get fuelSosCreateQuantityTitle;
+
+  /// Quantity field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the quantity you want to fill'**
+  String get fuelSosCreateQuantityHint;
+
+  /// Notes field title
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get fuelSosCreateNotesTitle;
+
+  /// Notes field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Enter any notes you want to add'**
+  String get fuelSosCreateNotesHint;
+
+  /// Province picker field title
+  ///
+  /// In en, this message translates to:
+  /// **'Governorate'**
+  String get fuelSosCreateProvinceTitle;
+
+  /// Province picker field hint
+  ///
+  /// In en, this message translates to:
+  /// **'Choose the governorate at your current location'**
+  String get fuelSosCreateProvinceHint;
+
+  /// Shown when vehicle is not selected
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a vehicle'**
+  String get fuelSosCreateSelectVehicleRequired;
+
+  /// Shown when fuel type is not selected
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a fuel type'**
+  String get fuelSosCreateSelectFuelTypeRequired;
+
+  /// Shown when quantity is empty
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter the quantity'**
+  String get fuelSosCreateQuantityRequired;
+
+  /// Shown when province is not selected
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a governorate'**
+  String get fuelSosCreateSelectProvinceRequired;
+
+  /// Shown when user has no vehicles
+  ///
+  /// In en, this message translates to:
+  /// **'No vehicles found'**
+  String get fuelSosCreateNoVehicles;
+
   /// App bar title for SOS requests list screen
   ///
   /// In en, this message translates to:
@@ -2970,6 +3066,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel request'**
   String get sosDetailsCancelRequest;
+
+  /// App bar title for the user fuel orders list screen
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Orders List'**
+  String get fuelOrdersListTitle;
+
+  /// App bar title for the fuel order details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Order Details'**
+  String get fuelOrderDetailsTitle;
+
+  /// Section header for the fuel provider card on order details
+  ///
+  /// In en, this message translates to:
+  /// **'Service provider details'**
+  String get fuelOrderDetailsProviderSection;
+
+  /// Header title on the cancel-reason dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel SOS'**
+  String get cancelReasonDialogTitle;
+
+  /// Question above the cancel reason text field
+  ///
+  /// In en, this message translates to:
+  /// **'What is the reason for canceling the order?'**
+  String get cancelReasonDialogQuestion;
+
+  /// Placeholder in the cancel reason text field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the reason for canceling the fuel order here...'**
+  String get cancelReasonDialogHint;
+
+  /// Dismiss action on the cancel-reason dialog footer
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get cancelReasonDialogBack;
+
+  /// Cancel-reason dialog title on fuel order details
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel order'**
+  String get fuelCancelReasonDialogTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -1,3 +1,4 @@
+﻿import 'package:car_care/features/user_fuel/presentation/pages/user_fuel_page.dart';
 import 'package:car_care/features/car_washer/car_wash/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/car_wash/bookings/presentation/pages/bookings_page.dart';
 import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/entities/washers_entity.dart';
@@ -8,32 +9,25 @@ import 'package:car_care/features/car_washer/washers/washers_bookings/presentati
 import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_page.dart';
 import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/edit_profile_washer_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_page.dart';
+import 'package:car_care/features/user_fuel_orders/presentation/pages/fuel_order_details_page.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/pages/user_fuel_orders_page.dart';
-
+import 'package:car_care/features/user_fuel_orders/presentation/widgets/fuel_order_details/fuel_order_details_ui_model.dart';
 import 'package:car_care/features/fuel_provider/provider_available_orders/presentation/pages/provider_available_orders_page.dart';
 import 'package:car_care/features/fuel_provider/share_location_fuel/presentation/pages/share_location_fuel_page.dart';
-
 import 'package:car_care/features/fuel_provider/provider_statistics/presentation/pages/provider_statistics_page.dart';
-
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/pages/provider_profile_page.dart';
-
 import 'package:car_care/core/widgets/main_shell.dart';
 import 'package:car_care/features/sos/presentation/pages/Create_sos_page_wrapper.dart';
 import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
 import 'package:car_care/features/technician_sos/presentation/pages/all_technician_sos_requests.dart';
 import 'package:car_care/features/technician_sos/presentation/pages/sos_details_page.dart';
-import 'package:car_care/features/technician_sos/presentation/technician_sos_request_type.dart';
-import 'package:car_care/features/technician_sos/presentation/widgets/sos_requests_list/technician_sos_requests_list_page.dart';
 import 'package:car_care/features/technician_sos/presentation/widgets/sos_requests_list/technician_sos_map_page.dart';
 import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart';
 import 'package:car_care/features/sos/presentation/pages/all_user_sos_requests.dart';
 import 'package:car_care/features/sos/presentation/pages/sos_details_page.dart';
-
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
-
 import 'package:car_care/features/car_washer/washers/presentation/pages/washer_reservation_page.dart';
-
 import 'package:car_care/features/maintenance/user_requests/presentation/pages/show_requests/all_requests_stats_page.dart';
 import 'package:car_care/features/technician/technician_order/presentation/pages/order_details_page.dart';
 import 'package:car_care/features/technician/technician_order/presentation/pages/orders_page.dart';
@@ -55,7 +49,6 @@ import 'package:car_care/features/vehicle/presentation/pages/add_vehicle_page.da
 import 'package:car_care/features/vehicle/presentation/pages/my_vehicles_page_page.dart';
 import 'package:car_care/features/auth/presentation/pages/login_page.dart';
 import 'package:car_care/core/routing/routes.dart';
-import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/technician_entry_sheet.dart';
 import 'package:car_care/features/auth/presentation/pages/register_page.dart';
 import 'package:car_care/features/home/presentation/pages/home_page.dart';
@@ -65,7 +58,6 @@ import 'package:car_care/features/user_profile/presentation/pages/profile_setup_
 import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import '../../features/car_washer/car_wash/bookings/presentation/pages/booking_details_page.dart';
 import '../../features/car_washer/car_wash/ratings/presentation/pages/ratings_page.dart';
 
@@ -78,7 +70,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.technician_sos_requests,
+    initialLocation: Routes.user_fuel,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -131,6 +123,11 @@ class AppRouter {
             path: Routes.home,
             name: '/home',
             builder: (context, state) => const HomePage(),
+          ),
+          GoRoute(
+            path: Routes.user_fuel,
+            name: '/user_fuel',
+            builder: (context, state) => const UserFuelPage(),
           ),
           GoRoute(
             path: Routes.allUserSosRequests,
@@ -289,6 +286,14 @@ class AppRouter {
         path: Routes.user_fuel_orders,
         name: '/user_fuel_orders',
         builder: (context, state) => const UserFuelOrdersPage(),
+      ),
+            GoRoute(
+        path: Routes.fuel_order_details,
+        name: '/fuel_order_details',
+        builder: (context, state) {
+          final order = state.extra as FuelOrderDetailsUiModel?;
+          return FuelOrderDetailsPage(order: order);
+        },
       ),
             GoRoute(
         path: Routes.provider_order,
@@ -459,11 +464,11 @@ class AppRouter {
     );
   },
 ),
-      GoRoute(
-        path: Routes.washer_statistics,
-        name: '/washer_statistics',
-        builder: (context, state) => const CarWasherStatisticsPage(),
-      ),
+      // GoRoute(
+      //   path: Routes.washer_statistics,
+      //   name: '/washer_statistics',
+      //   builder: (context, state) => const CarWasherStatisticsPage(),
+      // ),
     ],
   );
   
