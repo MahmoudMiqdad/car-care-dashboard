@@ -63,6 +63,8 @@ class Routes {
   static const String technician_location = '/technician_location';
   static const String fuel_orders = '/fuel_orders';
   static const String provider_profile = '/provider_profile';
+  static const String provider_edit_profile = '/provider_edit_profile';
+  static const String provider_create_profile = '/provider_create_profile';
   static const String provider_prices = '/provider_prices';
   static const String provider_statistics = '/provider_statistics';
   static const String available_orders = '/available_orders';
@@ -74,4 +76,5 @@ class Routes {
   static const String user_fuel_orders = '/user_fuel_orders';
   static const String fuel_order_details = '/fuel_order_details';
   static const String provider_order = '/provider_order';
+  static const String provider_order_details = '/provider_order_details';
 }

@@ -3114,6 +3114,258 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Cancel order'**
   String get fuelCancelReasonDialogTitle;
+
+  /// App bar title for the fuel provider profile screen
+  ///
+  /// In en, this message translates to:
+  /// **'Provider Profile'**
+  String get providerProfilePageTitle;
+
+  /// Section title for provider availability toggle
+  ///
+  /// In en, this message translates to:
+  /// **'Work availability'**
+  String get providerProfileAvailabilityTitle;
+
+  /// Availability label when the provider is online
+  ///
+  /// In en, this message translates to:
+  /// **'Available now'**
+  String get providerProfileAvailableNow;
+
+  /// Availability label when the provider is offline
+  ///
+  /// In en, this message translates to:
+  /// **'Not available now'**
+  String get providerProfileNotAvailableNow;
+
+  /// Section title for the provider location card
+  ///
+  /// In en, this message translates to:
+  /// **'Service provider location'**
+  String get providerProfileLocationSectionTitle;
+
+  /// Section title for fuel types and prices row
+  ///
+  /// In en, this message translates to:
+  /// **'Services and prices'**
+  String get providerProfileServicesAndPricesTitle;
+
+  /// Sample provider name for the profile preview UI
+  ///
+  /// In en, this message translates to:
+  /// **'Khaled Al-Khaled'**
+  String get providerProfileSampleName;
+
+  /// Price line on a fuel type card
+  ///
+  /// In en, this message translates to:
+  /// **'price : {price} \$'**
+  String providerProfilePriceLine(String price);
+
+  /// App bar title for the fuel provider edit profile screen
+  ///
+  /// In en, this message translates to:
+  /// **'Edit provider profile'**
+  String get providerEditProfilePageTitle;
+
+  /// Section title for personal info on provider edit profile
+  ///
+  /// In en, this message translates to:
+  /// **'Your profile information'**
+  String get providerEditProfilePersonalInfoTitle;
+
+  /// Label for the provider name field
+  ///
+  /// In en, this message translates to:
+  /// **'Service provider name'**
+  String get providerEditProfileProviderNameLabel;
+
+  /// Hint for the provider name field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the service provider name'**
+  String get providerEditProfileProviderNameHint;
+
+  /// Label for the provider phone field
+  ///
+  /// In en, this message translates to:
+  /// **'Service provider phone'**
+  String get providerEditProfileProviderPhoneLabel;
+
+  /// Hint for the provider phone field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the service provider phone'**
+  String get providerEditProfileProviderPhoneHint;
+
+  /// Label for the governorate picker
+  ///
+  /// In en, this message translates to:
+  /// **'Choose service provider governorate'**
+  String get providerEditProfileGovernorateLabel;
+
+  /// Hint for the governorate picker
+  ///
+  /// In en, this message translates to:
+  /// **'Choose governorate'**
+  String get providerEditProfileGovernorateHint;
+
+  /// Label for the address field
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get providerEditProfileAddressLabel;
+
+  /// Hint for the address field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the full address'**
+  String get providerEditProfileAddressHint;
+
+  /// Note below the address field about location usage
+  ///
+  /// In en, this message translates to:
+  /// **'* Your location will be used as the provider starting point'**
+  String get providerEditProfileLocationNote;
+
+  /// Subtitle on fuel service cards in edit profile
+  ///
+  /// In en, this message translates to:
+  /// **'Activate service and set price'**
+  String get providerEditProfileActivateServiceLine;
+
+  /// Save button on provider edit profile
+  ///
+  /// In en, this message translates to:
+  /// **'Save information'**
+  String get providerEditProfileSaveInfo;
+
+  /// Sample address on provider edit profile preview form
+  ///
+  /// In en, this message translates to:
+  /// **'Abbasiyeen Square - Al-Qusour Square entrance'**
+  String get providerEditProfileSampleAddress;
+
+  /// App bar title for the fuel provider create profile screen
+  ///
+  /// In en, this message translates to:
+  /// **'Create provider profile'**
+  String get providerCreateProfilePageTitle;
+
+  /// Save button on provider create profile
+  ///
+  /// In en, this message translates to:
+  /// **'Create profile'**
+  String get providerCreateProfileSave;
+
+  /// Title of the fuel price entry dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Set price for {fuelType}'**
+  String providerEditProfileSetPriceTitle(String fuelType);
+
+  /// Hint for the price field in the fuel service dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the price'**
+  String get providerEditProfileSetPriceHint;
+
+  /// Validation when confirming without a price
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a price'**
+  String get providerEditProfileSetPriceRequired;
+
+  /// App bar title for the fuel provider available orders list
+  ///
+  /// In en, this message translates to:
+  /// **'Available orders'**
+  String get providerAvailableOrdersTitle;
+
+  /// Fallback text when an order has no notes
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get providerAvailableOrderNoNotes;
+
+  /// App bar title for the fuel provider order details screen
+  ///
+  /// In en, this message translates to:
+  /// **'Provider order details'**
+  String get providerOrderDetailsTitle;
+
+  /// Status banner while the provider has not accepted yet
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for order acceptance'**
+  String get providerOrderDetailsPendingAcceptance;
+
+  /// Section header for customer info on provider order details
+  ///
+  /// In en, this message translates to:
+  /// **'Customer details'**
+  String get providerOrderDetailsCustomerSection;
+
+  /// Primary action to accept the order
+  ///
+  /// In en, this message translates to:
+  /// **'Accept order'**
+  String get providerOrderDetailsAcceptOrder;
+
+  /// Label when location sharing is enabled
+  ///
+  /// In en, this message translates to:
+  /// **'Share location'**
+  String get providerOrderDetailsShareLocationOn;
+
+  /// Label when location sharing is disabled
+  ///
+  /// In en, this message translates to:
+  /// **'Do not share location'**
+  String get providerOrderDetailsShareLocationOff;
+
+  /// Title of the dialog when accepting an order with ETA
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated arrival minutes'**
+  String get providerOrderDetailsEstimatedArrivalDialogTitle;
+
+  /// Label for the ETA minutes field
+  ///
+  /// In en, this message translates to:
+  /// **'Enter duration in minutes'**
+  String get providerOrderDetailsEnterDurationMinutes;
+
+  /// Label for optional notes when accepting an order
+  ///
+  /// In en, this message translates to:
+  /// **'Enter additional notes'**
+  String get providerOrderDetailsEnterAdditionalNotes;
+
+  /// App bar title for the fuel provider my orders list
+  ///
+  /// In en, this message translates to:
+  /// **'My orders'**
+  String get providerMyOrdersTitle;
+
+  /// Section title for order totals on provider statistics
+  ///
+  /// In en, this message translates to:
+  /// **'Total orders'**
+  String get providerStatisticsTotalOrdersTitle;
+
+  /// Section title for profit totals on provider statistics
+  ///
+  /// In en, this message translates to:
+  /// **'Total profits'**
+  String get providerStatisticsTotalProfitsTitle;
+
+  /// Label for total orders count on provider statistics
+  ///
+  /// In en, this message translates to:
+  /// **'All Reserved'**
+  String get providerStatisticsAllOrders;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -2280,6 +2280,184 @@
   "fuelCancelReasonDialogTitle": "إلغاء الطلب",
   "@fuelCancelReasonDialogTitle": {
     "description": "عنوان نافذة الإلغاء في تفاصيل طلب الوقود"
+  },
+  "providerProfilePageTitle": "بروفايل المزود",
+  "@providerProfilePageTitle": {
+    "description": "عنوان شريط التطبيق لصفحة بروفايل مزود الوقود"
+  },
+  "providerProfileAvailabilityTitle": "التوافر للعمل",
+  "@providerProfileAvailabilityTitle": {
+    "description": "عنوان قسم توافر مزود الوقود للعمل"
+  },
+  "providerProfileAvailableNow": "متوفر الآن",
+  "@providerProfileAvailableNow": {
+    "description": "نص حالة التوافر عند التفعيل"
+  },
+  "providerProfileNotAvailableNow": "غير متوفر الآن",
+  "@providerProfileNotAvailableNow": {
+    "description": "نص حالة التوافر عند الإيقاف"
+  },
+  "providerProfileLocationSectionTitle": "موقع مقدم الخدمة",
+  "@providerProfileLocationSectionTitle": {
+    "description": "عنوان قسم موقع مزود الوقود"
+  },
+  "providerProfileServicesAndPricesTitle": "الخدمات و الأسعار",
+  "@providerProfileServicesAndPricesTitle": {
+    "description": "عنوان قسم أنواع الوقود والأسعار"
+  },
+  "providerProfileSampleName": "خالد الخالد",
+  "@providerProfileSampleName": {
+    "description": "اسم تجريبي لعرض بروفايل المزود"
+  },
+  "providerProfilePriceLine": "السعر : {price} $",
+  "@providerProfilePriceLine": {
+    "description": "سطر السعر في بطاقة نوع الوقود",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "providerEditProfilePageTitle": "تعديل بروفايل المزود",
+  "@providerEditProfilePageTitle": {
+    "description": "عنوان شريط التطبيق لصفحة تعديل بروفايل مزود الوقود"
+  },
+  "providerEditProfilePersonalInfoTitle": "معلومات ملفك الشخصي",
+  "@providerEditProfilePersonalInfoTitle": {
+    "description": "عنوان قسم المعلومات الشخصية في تعديل بروفايل المزود"
+  },
+  "providerEditProfileProviderNameLabel": "اسم مقدم الخدمة",
+  "@providerEditProfileProviderNameLabel": {
+    "description": "تسمية حقل اسم مزود الوقود"
+  },
+  "providerEditProfileProviderNameHint": "ادخل اسم مقدم الخدمة",
+  "@providerEditProfileProviderNameHint": {
+    "description": "تلميح حقل اسم مزود الوقود"
+  },
+  "providerEditProfileProviderPhoneLabel": "رقم مقدم الخدمة",
+  "@providerEditProfileProviderPhoneLabel": {
+    "description": "تسمية حقل رقم مزود الوقود"
+  },
+  "providerEditProfileProviderPhoneHint": "ادخل رقم مقدم الخدمة",
+  "@providerEditProfileProviderPhoneHint": {
+    "description": "تلميح حقل رقم مزود الوقود"
+  },
+  "providerEditProfileGovernorateLabel": "اختر محافظة مقدم الخدمة",
+  "@providerEditProfileGovernorateLabel": {
+    "description": "تسمية حقل المحافظة"
+  },
+  "providerEditProfileGovernorateHint": "اختر المحافظة",
+  "@providerEditProfileGovernorateHint": {
+    "description": "تلميح حقل المحافظة"
+  },
+  "providerEditProfileAddressLabel": "العنوان",
+  "@providerEditProfileAddressLabel": {
+    "description": "تسمية حقل العنوان"
+  },
+  "providerEditProfileAddressHint": "ادخل العنوان بالتفصيل",
+  "@providerEditProfileAddressHint": {
+    "description": "تلميح حقل العنوان"
+  },
+  "providerEditProfileLocationNote": "* سيتم استخدام موقعك كنقطة انطلاق للمزود",
+  "@providerEditProfileLocationNote": {
+    "description": "ملاحظة تحت حقل العنوان حول استخدام الموقع"
+  },
+  "providerEditProfileActivateServiceLine": "تفعيل الخدمة و تحديد السعر",
+  "@providerEditProfileActivateServiceLine": {
+    "description": "نص بطاقة تفعيل نوع الوقود في التعديل"
+  },
+  "providerEditProfileSaveInfo": "حفظ المعلومات",
+  "@providerEditProfileSaveInfo": {
+    "description": "زر حفظ بيانات بروفايل المزود"
+  },
+  "providerEditProfileSampleAddress": "ساحة العباسيين - مدخل ساحة القصور",
+  "@providerEditProfileSampleAddress": {
+    "description": "عنوان تجريبي في نموذج تعديل بروفايل المزود"
+  },
+  "providerCreateProfilePageTitle": "إنشاء ملف المزود",
+  "@providerCreateProfilePageTitle": {
+    "description": "عنوان شريط التطبيق لصفحة إنشاء ملف مزود الوقود"
+  },
+  "providerCreateProfileSave": "إنشاء الملف",
+  "@providerCreateProfileSave": {
+    "description": "زر حفظ إنشاء ملف مزود الوقود"
+  },
+  "providerEditProfileSetPriceTitle": "تحديد سعر {fuelType}",
+  "@providerEditProfileSetPriceTitle": {
+    "description": "عنوان نافذة إدخال سعر نوع الوقود",
+    "placeholders": {
+      "fuelType": {
+        "type": "String"
+      }
+    }
+  },
+  "providerEditProfileSetPriceHint": "أدخل السعر",
+  "@providerEditProfileSetPriceHint": {
+    "description": "تلميح حقل السعر في نافذة تفعيل الخدمة"
+  },
+  "providerEditProfileSetPriceRequired": "الرجاء إدخال السعر",
+  "@providerEditProfileSetPriceRequired": {
+    "description": "رسالة عند محاولة التأكيد بدون سعر"
+  },
+  "providerAvailableOrdersTitle": "الطلبات المتاحة",
+  "@providerAvailableOrdersTitle": {
+    "description": "عنوان شريط التطبيق لقائمة طلبات مزود الوقود المتاحة"
+  },
+  "providerAvailableOrderNoNotes": "لا يوجد",
+  "@providerAvailableOrderNoNotes": {
+    "description": "نص افتراضي عند عدم وجود ملاحظات في بطاقة الطلب"
+  },
+  "providerOrderDetailsTitle": "تفاصيل طلب المزود",
+  "@providerOrderDetailsTitle": {
+    "description": "عنوان شريط التطبيق لتفاصيل طلب مزود الوقود"
+  },
+  "providerOrderDetailsPendingAcceptance": "بانتظار قبول الطلب",
+  "@providerOrderDetailsPendingAcceptance": {
+    "description": "شريحة حالة انتظار قبول الطلب"
+  },
+  "providerOrderDetailsCustomerSection": "بيانات العميل",
+  "@providerOrderDetailsCustomerSection": {
+    "description": "عنوان قسم بيانات العميل في تفاصيل الطلب"
+  },
+  "providerOrderDetailsAcceptOrder": "قبول الطلب",
+  "@providerOrderDetailsAcceptOrder": {
+    "description": "زر قبول الطلب في تفاصيل طلب المزود"
+  },
+  "providerOrderDetailsShareLocationOn": "مشاركة الموقع",
+  "@providerOrderDetailsShareLocationOn": {
+    "description": "نص تفعيل مشاركة الموقع"
+  },
+  "providerOrderDetailsShareLocationOff": "عدم مشاركة الموقع",
+  "@providerOrderDetailsShareLocationOff": {
+    "description": "نص إيقاف مشاركة الموقع"
+  },
+  "providerOrderDetailsEstimatedArrivalDialogTitle": "الوقت المتوقع للوصول بالدقائق",
+  "@providerOrderDetailsEstimatedArrivalDialogTitle": {
+    "description": "عنوان حوار إدخال مدة الوصول عند قبول الطلب"
+  },
+  "providerOrderDetailsEnterDurationMinutes": "ادخل المدة بالدقائق",
+  "@providerOrderDetailsEnterDurationMinutes": {
+    "description": "تسمية حقل مدة الوصول بالدقائق"
+  },
+  "providerOrderDetailsEnterAdditionalNotes": "ادخل ملاحظات اضافية",
+  "@providerOrderDetailsEnterAdditionalNotes": {
+    "description": "تسمية حقل الملاحظات الإضافية عند قبول الطلب"
+  },
+  "providerMyOrdersTitle": "طلباتي",
+  "@providerMyOrdersTitle": {
+    "description": "عنوان شريط التطبيق لقائمة طلبات مزود الوقود"
+  },
+  "providerStatisticsTotalOrdersTitle": "اجمالي الطلبات",
+  "@providerStatisticsTotalOrdersTitle": {
+    "description": "عنوان قسم إجمالي الطلبات في إحصائيات مزود الوقود"
+  },
+  "providerStatisticsTotalProfitsTitle": "اجمالي الأرباح",
+  "@providerStatisticsTotalProfitsTitle": {
+    "description": "عنوان قسم إجمالي الأرباح في إحصائيات مزود الوقود"
+  },
+  "providerStatisticsAllOrders": "All Reserved",
+  "@providerStatisticsAllOrders": {
+    "description": "تسمية إجمالي الطلبات في بطاقة الإحصائيات"
   }
 }
 
