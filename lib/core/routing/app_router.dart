@@ -8,6 +8,7 @@ import 'package:car_care/features/car_washer/washers/washers_availability/presen
 import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_details.dart';
 import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_page.dart';
 import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/edit_profile_washer_page.dart';
+import 'package:car_care/features/car_washer/washers/washers_statistics/presentation/pages/statistics_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_details_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order_details/provider_order_details_ui_model.dart';
