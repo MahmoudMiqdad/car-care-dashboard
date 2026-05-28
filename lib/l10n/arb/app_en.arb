@@ -2092,6 +2092,70 @@
   "@createSosSampleProblemText": {
     "description": "Initial or hint text for problem field (not vehicle or province names)"
   },
+  "fuelSosCreateTitle": "Fuel SOS Create",
+  "@fuelSosCreateTitle": {
+    "description": "App bar title for fuel SOS create screen"
+  },
+  "fuelSosCreateVehicleTitle": "Vehicle",
+  "@fuelSosCreateVehicleTitle": {
+    "description": "Vehicle picker field title"
+  },
+  "fuelSosCreateVehicleHint": "Choose the vehicle you want for the service",
+  "@fuelSosCreateVehicleHint": {
+    "description": "Vehicle picker field hint"
+  },
+  "fuelSosCreateFuelTypeTitle": "Fuel type",
+  "@fuelSosCreateFuelTypeTitle": {
+    "description": "Fuel type picker field title"
+  },
+  "fuelSosCreateFuelTypeHint": "Choose the fuel type you want",
+  "@fuelSosCreateFuelTypeHint": {
+    "description": "Fuel type picker field hint"
+  },
+  "fuelSosCreateQuantityTitle": "Quantity",
+  "@fuelSosCreateQuantityTitle": {
+    "description": "Quantity field title"
+  },
+  "fuelSosCreateQuantityHint": "Enter the quantity you want to fill",
+  "@fuelSosCreateQuantityHint": {
+    "description": "Quantity field hint"
+  },
+  "fuelSosCreateNotesTitle": "Notes",
+  "@fuelSosCreateNotesTitle": {
+    "description": "Notes field title"
+  },
+  "fuelSosCreateNotesHint": "Enter any notes you want to add",
+  "@fuelSosCreateNotesHint": {
+    "description": "Notes field hint"
+  },
+  "fuelSosCreateProvinceTitle": "Governorate",
+  "@fuelSosCreateProvinceTitle": {
+    "description": "Province picker field title"
+  },
+  "fuelSosCreateProvinceHint": "Choose the governorate at your current location",
+  "@fuelSosCreateProvinceHint": {
+    "description": "Province picker field hint"
+  },
+  "fuelSosCreateSelectVehicleRequired": "Please select a vehicle",
+  "@fuelSosCreateSelectVehicleRequired": {
+    "description": "Shown when vehicle is not selected"
+  },
+  "fuelSosCreateSelectFuelTypeRequired": "Please select a fuel type",
+  "@fuelSosCreateSelectFuelTypeRequired": {
+    "description": "Shown when fuel type is not selected"
+  },
+  "fuelSosCreateQuantityRequired": "Please enter the quantity",
+  "@fuelSosCreateQuantityRequired": {
+    "description": "Shown when quantity is empty"
+  },
+  "fuelSosCreateSelectProvinceRequired": "Please select a governorate",
+  "@fuelSosCreateSelectProvinceRequired": {
+    "description": "Shown when province is not selected"
+  },
+  "fuelSosCreateNoVehicles": "No vehicles found",
+  "@fuelSosCreateNoVehicles": {
+    "description": "Shown when user has no vehicles"
+  },
   "sosRequestsListTitle": "SOS Requests List",
   "@sosRequestsListTitle": {
     "description": "App bar title for SOS requests list screen"
@@ -2181,6 +2245,216 @@
   "sosDetailsCancelRequest": "Cancel request",
   "@sosDetailsCancelRequest": {
     "description": "Primary destructive button to cancel the SOS request"
+  },
+  "fuelOrdersListTitle": "Fuel Orders List",
+  "@fuelOrdersListTitle": {
+    "description": "App bar title for the user fuel orders list screen"
+  },
+  "fuelOrderDetailsTitle": "Fuel Order Details",
+  "@fuelOrderDetailsTitle": {
+    "description": "App bar title for the fuel order details screen"
+  },
+  "fuelOrderDetailsProviderSection": "Service provider details",
+  "@fuelOrderDetailsProviderSection": {
+    "description": "Section header for the fuel provider card on order details"
+  },
+  "cancelReasonDialogTitle": "Cancel SOS",
+  "@cancelReasonDialogTitle": {
+    "description": "Header title on the cancel-reason dialog"
+  },
+  "cancelReasonDialogQuestion": "What is the reason for canceling the order?",
+  "@cancelReasonDialogQuestion": {
+    "description": "Question above the cancel reason text field"
+  },
+  "cancelReasonDialogHint": "Enter the reason for canceling the fuel order here...",
+  "@cancelReasonDialogHint": {
+    "description": "Placeholder in the cancel reason text field"
+  },
+  "cancelReasonDialogBack": "Back",
+  "@cancelReasonDialogBack": {
+    "description": "Dismiss action on the cancel-reason dialog footer"
+  },
+  "fuelCancelReasonDialogTitle": "Cancel order",
+  "@fuelCancelReasonDialogTitle": {
+    "description": "Cancel-reason dialog title on fuel order details"
+  },
+  "providerProfilePageTitle": "Provider Profile",
+  "@providerProfilePageTitle": {
+    "description": "App bar title for the fuel provider profile screen"
+  },
+  "providerProfileAvailabilityTitle": "Work availability",
+  "@providerProfileAvailabilityTitle": {
+    "description": "Section title for provider availability toggle"
+  },
+  "providerProfileAvailableNow": "Available now",
+  "@providerProfileAvailableNow": {
+    "description": "Availability label when the provider is online"
+  },
+  "providerProfileNotAvailableNow": "Not available now",
+  "@providerProfileNotAvailableNow": {
+    "description": "Availability label when the provider is offline"
+  },
+  "providerProfileLocationSectionTitle": "Service provider location",
+  "@providerProfileLocationSectionTitle": {
+    "description": "Section title for the provider location card"
+  },
+  "providerProfileServicesAndPricesTitle": "Services and prices",
+  "@providerProfileServicesAndPricesTitle": {
+    "description": "Section title for fuel types and prices row"
+  },
+  "providerProfileSampleName": "Khaled Al-Khaled",
+  "@providerProfileSampleName": {
+    "description": "Sample provider name for the profile preview UI"
+  },
+  "providerProfilePriceLine": "price : {price} $",
+  "@providerProfilePriceLine": {
+    "description": "Price line on a fuel type card",
+    "placeholders": {
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "providerEditProfilePageTitle": "Edit provider profile",
+  "@providerEditProfilePageTitle": {
+    "description": "App bar title for the fuel provider edit profile screen"
+  },
+  "providerEditProfilePersonalInfoTitle": "Your profile information",
+  "@providerEditProfilePersonalInfoTitle": {
+    "description": "Section title for personal info on provider edit profile"
+  },
+  "providerEditProfileProviderNameLabel": "Service provider name",
+  "@providerEditProfileProviderNameLabel": {
+    "description": "Label for the provider name field"
+  },
+  "providerEditProfileProviderNameHint": "Enter the service provider name",
+  "@providerEditProfileProviderNameHint": {
+    "description": "Hint for the provider name field"
+  },
+  "providerEditProfileProviderPhoneLabel": "Service provider phone",
+  "@providerEditProfileProviderPhoneLabel": {
+    "description": "Label for the provider phone field"
+  },
+  "providerEditProfileProviderPhoneHint": "Enter the service provider phone",
+  "@providerEditProfileProviderPhoneHint": {
+    "description": "Hint for the provider phone field"
+  },
+  "providerEditProfileGovernorateLabel": "Choose service provider governorate",
+  "@providerEditProfileGovernorateLabel": {
+    "description": "Label for the governorate picker"
+  },
+  "providerEditProfileGovernorateHint": "Choose governorate",
+  "@providerEditProfileGovernorateHint": {
+    "description": "Hint for the governorate picker"
+  },
+  "providerEditProfileAddressLabel": "Address",
+  "@providerEditProfileAddressLabel": {
+    "description": "Label for the address field"
+  },
+  "providerEditProfileAddressHint": "Enter the full address",
+  "@providerEditProfileAddressHint": {
+    "description": "Hint for the address field"
+  },
+  "providerEditProfileLocationNote": "* Your location will be used as the provider starting point",
+  "@providerEditProfileLocationNote": {
+    "description": "Note below the address field about location usage"
+  },
+  "providerEditProfileActivateServiceLine": "Activate service and set price",
+  "@providerEditProfileActivateServiceLine": {
+    "description": "Subtitle on fuel service cards in edit profile"
+  },
+  "providerEditProfileSaveInfo": "Save information",
+  "@providerEditProfileSaveInfo": {
+    "description": "Save button on provider edit profile"
+  },
+  "providerEditProfileSampleAddress": "Abbasiyeen Square - Al-Qusour Square entrance",
+  "@providerEditProfileSampleAddress": {
+    "description": "Sample address on provider edit profile preview form"
+  },
+  "providerCreateProfilePageTitle": "Create provider profile",
+  "@providerCreateProfilePageTitle": {
+    "description": "App bar title for the fuel provider create profile screen"
+  },
+  "providerCreateProfileSave": "Create profile",
+  "@providerCreateProfileSave": {
+    "description": "Save button on provider create profile"
+  },
+  "providerEditProfileSetPriceTitle": "Set price for {fuelType}",
+  "@providerEditProfileSetPriceTitle": {
+    "description": "Title of the fuel price entry dialog",
+    "placeholders": {
+      "fuelType": {
+        "type": "String"
+      }
+    }
+  },
+  "providerEditProfileSetPriceHint": "Enter the price",
+  "@providerEditProfileSetPriceHint": {
+    "description": "Hint for the price field in the fuel service dialog"
+  },
+  "providerEditProfileSetPriceRequired": "Please enter a price",
+  "@providerEditProfileSetPriceRequired": {
+    "description": "Validation when confirming without a price"
+  },
+  "providerAvailableOrdersTitle": "Available orders",
+  "@providerAvailableOrdersTitle": {
+    "description": "App bar title for the fuel provider available orders list"
+  },
+  "providerAvailableOrderNoNotes": "None",
+  "@providerAvailableOrderNoNotes": {
+    "description": "Fallback text when an order has no notes"
+  },
+  "providerOrderDetailsTitle": "Provider order details",
+  "@providerOrderDetailsTitle": {
+    "description": "App bar title for the fuel provider order details screen"
+  },
+  "providerOrderDetailsPendingAcceptance": "Waiting for order acceptance",
+  "@providerOrderDetailsPendingAcceptance": {
+    "description": "Status banner while the provider has not accepted yet"
+  },
+  "providerOrderDetailsCustomerSection": "Customer details",
+  "@providerOrderDetailsCustomerSection": {
+    "description": "Section header for customer info on provider order details"
+  },
+  "providerOrderDetailsAcceptOrder": "Accept order",
+  "@providerOrderDetailsAcceptOrder": {
+    "description": "Primary action to accept the order"
+  },
+  "providerOrderDetailsShareLocationOn": "Share location",
+  "@providerOrderDetailsShareLocationOn": {
+    "description": "Label when location sharing is enabled"
+  },
+  "providerOrderDetailsShareLocationOff": "Do not share location",
+  "@providerOrderDetailsShareLocationOff": {
+    "description": "Label when location sharing is disabled"
+  },
+  "providerOrderDetailsEstimatedArrivalDialogTitle": "Estimated arrival minutes",
+  "@providerOrderDetailsEstimatedArrivalDialogTitle": {
+    "description": "Title of the dialog when accepting an order with ETA"
+  },
+  "providerOrderDetailsEnterDurationMinutes": "Enter duration in minutes",
+  "@providerOrderDetailsEnterDurationMinutes": {
+    "description": "Label for the ETA minutes field"
+  },
+  "providerOrderDetailsEnterAdditionalNotes": "Enter additional notes",
+  "@providerOrderDetailsEnterAdditionalNotes": {
+    "description": "Label for optional notes when accepting an order"
+  },
+  "providerMyOrdersTitle": "My orders",
+  "@providerMyOrdersTitle": {
+    "description": "App bar title for the fuel provider my orders list"
+  },
+  "providerStatisticsTotalOrdersTitle": "Total orders",
+  "@providerStatisticsTotalOrdersTitle": {
+    "description": "Section title for order totals on provider statistics"
+  },
+  "providerStatisticsTotalProfitsTitle": "Total profits",
+  "@providerStatisticsTotalProfitsTitle": {
+    "description": "Section title for profit totals on provider statistics"
+  },
+  "providerStatisticsAllOrders": "All Reserved",
+  "@providerStatisticsAllOrders": {
+    "description": "Label for total orders count on provider statistics"
   }
 }
 

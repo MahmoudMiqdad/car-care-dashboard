@@ -1405,6 +1405,54 @@ class AppLocalizationsAr extends AppLocalizations {
   String get createSosSampleProblemText => 'ادخل الوصف هنا';
 
   @override
+  String get fuelSosCreateTitle => 'إنشاء طلب وقود طارئ';
+
+  @override
+  String get fuelSosCreateVehicleTitle => 'المركبة';
+
+  @override
+  String get fuelSosCreateVehicleHint => 'اختر المركبة التي تريدها للخدمة';
+
+  @override
+  String get fuelSosCreateFuelTypeTitle => 'نوع الوقود';
+
+  @override
+  String get fuelSosCreateFuelTypeHint => 'اختر نوع الوقود الذي تريده';
+
+  @override
+  String get fuelSosCreateQuantityTitle => 'الكمية';
+
+  @override
+  String get fuelSosCreateQuantityHint => 'أدخل الكمية التي تريد تعبئتها';
+
+  @override
+  String get fuelSosCreateNotesTitle => 'ملاحظات';
+
+  @override
+  String get fuelSosCreateNotesHint => 'أدخل أي ملاحظات تريد إضافتها';
+
+  @override
+  String get fuelSosCreateProvinceTitle => 'المحافظة';
+
+  @override
+  String get fuelSosCreateProvinceHint => 'اختر المحافظة في مكانك الحالي';
+
+  @override
+  String get fuelSosCreateSelectVehicleRequired => 'الرجاء اختيار المركبة';
+
+  @override
+  String get fuelSosCreateSelectFuelTypeRequired => 'الرجاء اختيار نوع الوقود';
+
+  @override
+  String get fuelSosCreateQuantityRequired => 'الرجاء إدخال الكمية';
+
+  @override
+  String get fuelSosCreateSelectProvinceRequired => 'الرجاء اختيار المحافظة';
+
+  @override
+  String get fuelSosCreateNoVehicles => 'لا توجد سيارات';
+
+  @override
   String get sosRequestsListTitle => 'قائمة طلبات النجدة';
 
   @override
@@ -1467,4 +1515,158 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get sosDetailsCancelRequest => 'إلغاء الطلب';
+
+  @override
+  String get fuelOrdersListTitle => 'قائمة طلبات الوقود';
+
+  @override
+  String get fuelOrderDetailsTitle => 'تفاصيل طلب الوقود';
+
+  @override
+  String get fuelOrderDetailsProviderSection => 'بيانات الشركة المزودة للخدمة';
+
+  @override
+  String get cancelReasonDialogTitle => 'Cancel SOS';
+
+  @override
+  String get cancelReasonDialogQuestion => 'ما سبب إلغاء الطلب ؟';
+
+  @override
+  String get cancelReasonDialogHint => 'ادخل هنا سبب إلغاء طلب الوقود ...';
+
+  @override
+  String get cancelReasonDialogBack => 'تراجع';
+
+  @override
+  String get fuelCancelReasonDialogTitle => 'إلغاء الطلب';
+
+  @override
+  String get providerProfilePageTitle => 'بروفايل المزود';
+
+  @override
+  String get providerProfileAvailabilityTitle => 'التوافر للعمل';
+
+  @override
+  String get providerProfileAvailableNow => 'متوفر الآن';
+
+  @override
+  String get providerProfileNotAvailableNow => 'غير متوفر الآن';
+
+  @override
+  String get providerProfileLocationSectionTitle => 'موقع مقدم الخدمة';
+
+  @override
+  String get providerProfileServicesAndPricesTitle => 'الخدمات و الأسعار';
+
+  @override
+  String get providerProfileSampleName => 'خالد الخالد';
+
+  @override
+  String providerProfilePriceLine(String price) {
+    return 'السعر : $price \$';
+  }
+
+  @override
+  String get providerEditProfilePageTitle => 'تعديل بروفايل المزود';
+
+  @override
+  String get providerEditProfilePersonalInfoTitle => 'معلومات ملفك الشخصي';
+
+  @override
+  String get providerEditProfileProviderNameLabel => 'اسم مقدم الخدمة';
+
+  @override
+  String get providerEditProfileProviderNameHint => 'ادخل اسم مقدم الخدمة';
+
+  @override
+  String get providerEditProfileProviderPhoneLabel => 'رقم مقدم الخدمة';
+
+  @override
+  String get providerEditProfileProviderPhoneHint => 'ادخل رقم مقدم الخدمة';
+
+  @override
+  String get providerEditProfileGovernorateLabel => 'اختر محافظة مقدم الخدمة';
+
+  @override
+  String get providerEditProfileGovernorateHint => 'اختر المحافظة';
+
+  @override
+  String get providerEditProfileAddressLabel => 'العنوان';
+
+  @override
+  String get providerEditProfileAddressHint => 'ادخل العنوان بالتفصيل';
+
+  @override
+  String get providerEditProfileLocationNote => '* سيتم استخدام موقعك كنقطة انطلاق للمزود';
+
+  @override
+  String get providerEditProfileActivateServiceLine => 'تفعيل الخدمة و تحديد السعر';
+
+  @override
+  String get providerEditProfileSaveInfo => 'حفظ المعلومات';
+
+  @override
+  String get providerEditProfileSampleAddress => 'ساحة العباسيين - مدخل ساحة القصور';
+
+  @override
+  String get providerCreateProfilePageTitle => 'إنشاء ملف المزود';
+
+  @override
+  String get providerCreateProfileSave => 'إنشاء الملف';
+
+  @override
+  String providerEditProfileSetPriceTitle(String fuelType) {
+    return 'تحديد سعر $fuelType';
+  }
+
+  @override
+  String get providerEditProfileSetPriceHint => 'أدخل السعر';
+
+  @override
+  String get providerEditProfileSetPriceRequired => 'الرجاء إدخال السعر';
+
+  @override
+  String get providerAvailableOrdersTitle => 'الطلبات المتاحة';
+
+  @override
+  String get providerAvailableOrderNoNotes => 'لا يوجد';
+
+  @override
+  String get providerOrderDetailsTitle => 'تفاصيل طلب المزود';
+
+  @override
+  String get providerOrderDetailsPendingAcceptance => 'بانتظار قبول الطلب';
+
+  @override
+  String get providerOrderDetailsCustomerSection => 'بيانات العميل';
+
+  @override
+  String get providerOrderDetailsAcceptOrder => 'قبول الطلب';
+
+  @override
+  String get providerOrderDetailsShareLocationOn => 'مشاركة الموقع';
+
+  @override
+  String get providerOrderDetailsShareLocationOff => 'عدم مشاركة الموقع';
+
+  @override
+  String get providerOrderDetailsEstimatedArrivalDialogTitle => 'الوقت المتوقع للوصول بالدقائق';
+
+  @override
+  String get providerOrderDetailsEnterDurationMinutes => 'ادخل المدة بالدقائق';
+
+  @override
+  String get providerOrderDetailsEnterAdditionalNotes => 'ادخل ملاحظات اضافية';
+
+  @override
+  String get providerMyOrdersTitle => 'طلباتي';
+
+  @override
+  String get providerStatisticsTotalOrdersTitle => 'اجمالي الطلبات';
+
+  @override
+  String get providerStatisticsTotalProfitsTitle => 'اجمالي الأرباح';
+
+  @override
+  String get providerStatisticsAllOrders => 'All Reserved';
 }
