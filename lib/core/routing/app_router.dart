@@ -8,13 +8,17 @@ import 'package:car_care/features/car_washer/washers/washers_availability/presen
 import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_details.dart';
 import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_page.dart';
 import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/edit_profile_washer_page.dart';
+import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_details_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_page.dart';
+import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order_details/provider_order_details_ui_model.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/pages/fuel_order_details_page.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/pages/user_fuel_orders_page.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/widgets/fuel_order_details/fuel_order_details_ui_model.dart';
 import 'package:car_care/features/fuel_provider/provider_available_orders/presentation/pages/provider_available_orders_page.dart';
 import 'package:car_care/features/fuel_provider/share_location_fuel/presentation/pages/share_location_fuel_page.dart';
 import 'package:car_care/features/fuel_provider/provider_statistics/presentation/pages/provider_statistics_page.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/presentation/pages/provider_create_profile_page.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/presentation/pages/provider_edit_profile_page.dart';
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/pages/provider_profile_page.dart';
 import 'package:car_care/core/widgets/main_shell.dart';
 import 'package:car_care/features/sos/presentation/pages/Create_sos_page_wrapper.dart';
@@ -70,7 +74,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.user_fuel,
+    initialLocation: Routes.provider_profile,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -263,7 +267,16 @@ class AppRouter {
         name: '/provider_profile',
         builder: (context, state) => const ProviderProfilePage(),
       ),
-    
+            GoRoute(
+        path: Routes.provider_edit_profile,
+        name: '/provider_edit_profile',
+        builder: (context, state) => const ProviderEditProfilePage(),
+      ),
+            GoRoute(
+        path: Routes.provider_create_profile,
+        name: '/provider_create_profile',
+        builder: (context, state) => const ProviderCreateProfilePage(),
+      ),
             GoRoute(
         path: Routes.provider_statistics,
         name: '/provider_statistics',
@@ -299,6 +312,14 @@ class AppRouter {
         path: Routes.provider_order,
         name: '/provider_order',
         builder: (context, state) => const ProviderOrderPage(),
+      ),
+            GoRoute(
+        path: Routes.provider_order_details,
+        name: '/provider_order_details',
+        builder: (context, state) {
+          final order = state.extra as ProviderOrderDetailsUiModel?;
+          return ProviderOrderDetailsPage(order: order);
+        },
       ),
       ],
       ),

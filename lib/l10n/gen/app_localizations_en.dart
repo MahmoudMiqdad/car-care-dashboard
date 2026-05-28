@@ -1539,4 +1539,134 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fuelCancelReasonDialogTitle => 'Cancel order';
+
+  @override
+  String get providerProfilePageTitle => 'Provider Profile';
+
+  @override
+  String get providerProfileAvailabilityTitle => 'Work availability';
+
+  @override
+  String get providerProfileAvailableNow => 'Available now';
+
+  @override
+  String get providerProfileNotAvailableNow => 'Not available now';
+
+  @override
+  String get providerProfileLocationSectionTitle => 'Service provider location';
+
+  @override
+  String get providerProfileServicesAndPricesTitle => 'Services and prices';
+
+  @override
+  String get providerProfileSampleName => 'Khaled Al-Khaled';
+
+  @override
+  String providerProfilePriceLine(String price) {
+    return 'price : $price \$';
+  }
+
+  @override
+  String get providerEditProfilePageTitle => 'Edit provider profile';
+
+  @override
+  String get providerEditProfilePersonalInfoTitle => 'Your profile information';
+
+  @override
+  String get providerEditProfileProviderNameLabel => 'Service provider name';
+
+  @override
+  String get providerEditProfileProviderNameHint => 'Enter the service provider name';
+
+  @override
+  String get providerEditProfileProviderPhoneLabel => 'Service provider phone';
+
+  @override
+  String get providerEditProfileProviderPhoneHint => 'Enter the service provider phone';
+
+  @override
+  String get providerEditProfileGovernorateLabel => 'Choose service provider governorate';
+
+  @override
+  String get providerEditProfileGovernorateHint => 'Choose governorate';
+
+  @override
+  String get providerEditProfileAddressLabel => 'Address';
+
+  @override
+  String get providerEditProfileAddressHint => 'Enter the full address';
+
+  @override
+  String get providerEditProfileLocationNote => '* Your location will be used as the provider starting point';
+
+  @override
+  String get providerEditProfileActivateServiceLine => 'Activate service and set price';
+
+  @override
+  String get providerEditProfileSaveInfo => 'Save information';
+
+  @override
+  String get providerEditProfileSampleAddress => 'Abbasiyeen Square - Al-Qusour Square entrance';
+
+  @override
+  String get providerCreateProfilePageTitle => 'Create provider profile';
+
+  @override
+  String get providerCreateProfileSave => 'Create profile';
+
+  @override
+  String providerEditProfileSetPriceTitle(String fuelType) {
+    return 'Set price for $fuelType';
+  }
+
+  @override
+  String get providerEditProfileSetPriceHint => 'Enter the price';
+
+  @override
+  String get providerEditProfileSetPriceRequired => 'Please enter a price';
+
+  @override
+  String get providerAvailableOrdersTitle => 'Available orders';
+
+  @override
+  String get providerAvailableOrderNoNotes => 'None';
+
+  @override
+  String get providerOrderDetailsTitle => 'Provider order details';
+
+  @override
+  String get providerOrderDetailsPendingAcceptance => 'Waiting for order acceptance';
+
+  @override
+  String get providerOrderDetailsCustomerSection => 'Customer details';
+
+  @override
+  String get providerOrderDetailsAcceptOrder => 'Accept order';
+
+  @override
+  String get providerOrderDetailsShareLocationOn => 'Share location';
+
+  @override
+  String get providerOrderDetailsShareLocationOff => 'Do not share location';
+
+  @override
+  String get providerOrderDetailsEstimatedArrivalDialogTitle => 'Estimated arrival minutes';
+
+  @override
+  String get providerOrderDetailsEnterDurationMinutes => 'Enter duration in minutes';
+
+  @override
+  String get providerOrderDetailsEnterAdditionalNotes => 'Enter additional notes';
+
+  @override
+  String get providerMyOrdersTitle => 'My orders';
+
+  @override
+  String get providerStatisticsTotalOrdersTitle => 'Total orders';
+
+  @override
+  String get providerStatisticsTotalProfitsTitle => 'Total profits';
+
+  @override
+  String get providerStatisticsAllOrders => 'All Reserved';
 }
