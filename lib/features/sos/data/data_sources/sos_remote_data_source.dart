@@ -35,13 +35,13 @@ class SosRemoteDataSource {
     return SosData.fromJson(response['data']);
   }
 
-  Future<void> cancelSos(int id, String reason) async {
-    await _apiService.post(
+  Future<SosModel> cancelSos(int id, String cancellationReason) async {
+     final response = await _apiService.post(
       endPoint: "${ApiEndpoints.sos}/$id/cancel",
       data: {
-        "cancellation_reason": reason,
+        "cancellation_reason": cancellationReason,
       },
-    );
+    );  return SosModel.fromJson(response);
   }
   Future<TrackingData> trackSos(int id) async {
   final res = await _apiService.get(

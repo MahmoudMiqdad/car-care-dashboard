@@ -37,4 +37,14 @@ class SosCubit extends Cubit<SosState> {
       (r) => emit(SosRequestLoaded(r)),
     );
   }
+ Future<void> cancelSos(int id, String cancellationReason) async {
+  emit(SosLoading());
+
+  final result = await _repo.cancelSos(id, cancellationReason);
+
+  result.fold(
+    (l) => emit(SosError(l.message)),
+    (r) => emit(SosCansel(r)), 
+  );
+}
 }

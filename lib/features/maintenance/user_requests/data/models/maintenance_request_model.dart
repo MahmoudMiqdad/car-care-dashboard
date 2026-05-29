@@ -1,52 +1,49 @@
 import 'package:car_care/features/maintenance/user_requests/data/models/quotation_model.dart';
 import 'package:car_care/features/maintenance/user_requests/data/models/request_image_model.dart';
-import 'package:car_care/features/maintenance/user_requests/data/models/user_model.dart';
 import 'package:car_care/features/maintenance/user_requests/data/models/vehicle_model.dart';
 
 class MaintenanceRequestModel {
-  bool? success;
-   final String? message;
-List<MaintenanceRequestdata>? data;
+  final bool? success;
+  final String? message;
+  final List<MaintenanceRequestData> data;
 
   MaintenanceRequestModel({
-
     this.success,
-     this.message,
-    this.data,
+    this.message,
+    required this.data,
   });
 
   factory MaintenanceRequestModel.fromJson(Map<String, dynamic>? json) {
-    if (json == null) return MaintenanceRequestModel();
+    if (json == null) {
+      return MaintenanceRequestModel(data: []);
+    }
 
     return MaintenanceRequestModel(
       success: json["success"],
-        message: json['message'],
-        data: List<MaintenanceRequestdata>.from(json["data"].map((x) => MaintenanceRequestdata.fromJson(x))),
+      message: json["message"],
+      data: json["data"] != null
+          ? List<MaintenanceRequestData>.from(
+              json["data"].map((x) => MaintenanceRequestData.fromJson(x)))
+          : [],
     );
   }
 }
+class MaintenanceRequestData {
+  final int? id;
+  final String? description;
+  final String? priority;
+  final String? priorityText;
+  final String? status;
+  final String? statusText;
+  final VehicleModel? vehicle;
+  final List<RequestImageModel> images;
+  final List<QuotationRequestModel> quotations;
+  final DateTime? preferredDate;
+  final DateTime? createdAt;
+  final String? createdAgo;
+  final bool? canCancel;
 
-class MaintenanceRequestdata {
-  int? id;
-  String? description;
-  String? priority;
-  String? priorityText;
-  String? status;
-  String? statusText;
-  VehicleModel? vehicle;
-  UserModel? user;
-  List<RequestImageModel>? images;
-    final List<QuotationModel>? quotations;
-  bool? hasAcceptedQuotation;
-  DateTime? preferredDate;
-  DateTime? createdAt;
-  String? createdAgo;
-  DateTime? updatedAt;
-  bool? canCancel;
-  bool? canEdit;
-  bool? canAcceptQuotation;
-
-  MaintenanceRequestdata({
+  MaintenanceRequestData({
     this.id,
     this.description,
     this.priority,
@@ -54,23 +51,18 @@ class MaintenanceRequestdata {
     this.status,
     this.statusText,
     this.vehicle,
-    this.user,
-    this.images,
-    this.quotations,
-    this.hasAcceptedQuotation,
+    required this.images,
+    required this.quotations,
     this.preferredDate,
     this.createdAt,
     this.createdAgo,
-    this.updatedAt,
     this.canCancel,
-    this.canEdit,
-    this.canAcceptQuotation,
   });
 
-  factory MaintenanceRequestdata.fromJson(Map<String, dynamic>? json) {
-    if (json == null) return MaintenanceRequestdata();
+  factory MaintenanceRequestData.fromJson(Map<String, dynamic>? json) {
+    if (json == null) return MaintenanceRequestData(images: [], quotations: []);
 
-    return MaintenanceRequestdata(
+    return MaintenanceRequestData(
       id: json["id"],
       description: json["description"],
       priority: json["priority"],
@@ -80,17 +72,14 @@ class MaintenanceRequestdata {
       vehicle: json["vehicle"] != null
           ? VehicleModel.fromJson(json["vehicle"])
           : null,
-      user: json["user"] != null
-          ? UserModel.fromJson(json["user"])
-          : null,
       images: json["images"] != null
           ? List<RequestImageModel>.from(
               json["images"].map((x) => RequestImageModel.fromJson(x)))
           : [],
       quotations: json["quotations"] != null
-          ? List<QuotationModel>.from(json["quotations"])
+          ? List<QuotationRequestModel>.from(
+              json["quotations"].map((x) => QuotationRequestModel.fromJson(x)))
           : [],
-      hasAcceptedQuotation: json["has_accepted_quotation"],
       preferredDate: json["preferred_date"] != null
           ? DateTime.tryParse(json["preferred_date"])
           : null,
@@ -98,12 +87,7 @@ class MaintenanceRequestdata {
           ? DateTime.tryParse(json["created_at"])
           : null,
       createdAgo: json["created_ago"],
-      updatedAt: json["updated_at"] != null
-          ? DateTime.tryParse(json["updated_at"])
-          : null,
       canCancel: json["can_cancel"],
-      canEdit: json["can_edit"],
-      canAcceptQuotation: json["can_accept_quotation"],
     );
   }
 }

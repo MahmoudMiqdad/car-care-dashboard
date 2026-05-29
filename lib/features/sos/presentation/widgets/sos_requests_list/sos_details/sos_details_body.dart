@@ -2,9 +2,9 @@ import 'package:car_care/core/constants/app_constants.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
 import 'package:car_care/features/sos/domain/entities/sos_entity.dart';
-import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_location_card.dart';
-import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_request_card.dart';
-import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_status_banner.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_details_location_card.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_details_request_card.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_details_status_banner.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +17,8 @@ class SosDetailsBody extends StatelessWidget {
     required this.technicianName,
     required this.description,
     this.onTrackTapped,
-    this.onCancelTapped, required this.sos,
+    this.onCancelTapped,
+    required this.sos,
   });
   final SosEntity sos;
   final String vehicleTitle;
@@ -43,21 +44,23 @@ class SosDetailsBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SosDetailsStatusBanner(label: l10n.sosDetailsRequestAccepted),
+            SosDetailsStatusBanner(label: sos.statusText!),
             SizedBox(height: 14.h),
             SosDetailsRequestCard(
               vehicleTitle: vehicleTitle,
               plateNumber: plateNumber,
-              technicianName: technicianName,  
+              technicianName: technicianName,
               description: description,
             ),
             SizedBox(height: 14.h),
-            SosDetailsLocationCard( sosId: sos.id!,
-  lat: sos.lat,   // موقع الـ SOS
-  lng: sos.lng,),
+            SosDetailsLocationCard(
+              sosId: sos.id!,
+              lat: sos.lat, // موقع الـ SOS
+              lng: sos.lng,
+            ),
             SizedBox(height: 22.h),
             AppButton(
-              onPressed: onCancelTapped ?? () {},
+              onPressed: onCancelTapped,
               text: l10n.sosDetailsCancelRequest,
               backgroundColor: AppColors.reservationConfirmOrange,
               textColor: AppColors.white,

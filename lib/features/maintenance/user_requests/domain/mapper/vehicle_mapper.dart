@@ -1,8 +1,7 @@
-import 'package:car_care/features/maintenance/user_requests/domain/entities/user_entity.dart';
-
-import '../entities/vehicle_entity.dart';
 import 'package:car_care/features/maintenance/user_requests/data/models/vehicle_model.dart';
-import 'user_mapper.dart';
+import 'package:car_care/features/maintenance/user_requests/domain/entities/user_entity.dart';
+import 'package:car_care/features/maintenance/user_requests/domain/entities/vehicle_entity.dart';
+import 'package:car_care/features/maintenance/user_requests/domain/mapper/user_mapper.dart';
 
 extension VehicleMapper on VehicleModel {
   VehicleEntity toEntity() {
@@ -18,12 +17,8 @@ extension VehicleMapper on VehicleModel {
       owner: owner?.toEntity() ?? UserEntity(id: 0, name: ''),
       status: status ?? '',
       needsMaintenance: needsMaintenance ?? false,
-      createdAt: createdAt != null
-          ? DateTime.tryParse(createdAt.toString()) ?? DateTime.now()
-          : DateTime.now(),
-      updatedAt: updatedAt != null
-          ? DateTime.tryParse(updatedAt.toString()) ?? DateTime.now()
-          : DateTime.now(),
+      createdAt: createdAt ?? DateTime.now(),
+      updatedAt: updatedAt ?? DateTime.now(),
     );
   }
 }

@@ -1,17 +1,29 @@
-class QuotationEntity {
-  final int id;
-  final String technicianName;
-  final double price;
-  final String status;
-  final String notes;
-  final String createdAt;
+import 'package:car_care/features/maintenance/user_requests/domain/entities/technician_request_entity.dart';
 
-  QuotationEntity({
-    required this.id,
-    required this.technicianName,
-    required this.price,
-    required this.status,
-    required this.notes,
-    required this.createdAt,
+class QuotationRequestEntity {
+  final int? id;
+  final double? price;
+  final String? priceFormatted;
+  final int? estimatedDays;
+  final String? notes;
+  final bool? partsIncluded;
+  final String? status;
+  final String? statusText;
+  final TechnicianRequestEntity? technician;
+  final String? createdAt;
+  final String? createdAgo;
+
+  QuotationRequestEntity({
+    this.id,
+    this.price,
+    this.priceFormatted,
+    this.estimatedDays,
+    this.notes,
+    this.partsIncluded,
+    this.status,
+    this.statusText,
+    this.technician,
+    this.createdAt,
+    this.createdAgo,
   });
 }

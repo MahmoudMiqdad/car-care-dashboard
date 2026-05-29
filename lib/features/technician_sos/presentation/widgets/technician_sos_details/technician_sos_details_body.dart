@@ -1,11 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:car_care/core/constants/app_constants.dart';
-import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
 import 'package:car_care/features/technician_sos/domain/entities/technician_sos_entity.dart';
-import 'package:car_care/features/technician_sos/presentation/cubit/share_technician_location_cubit/share_technician_location_sos_cubit.dart';
 import 'package:car_care/features/technician_sos/presentation/cubit/technician_sos_cubit/technician_sos_cubit.dart';
 import 'package:car_care/features/technician_sos/presentation/cubit/technician_sos_cubit/technician_sos_state.dart';
 import 'package:car_care/features/technician_sos/presentation/widgets/technician_sos_details/technician_sos_details_request_card.dart';

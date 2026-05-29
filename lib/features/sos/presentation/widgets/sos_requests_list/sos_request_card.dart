@@ -105,16 +105,7 @@ class SosRequestCard extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 14.w),
             child: Column(
               children: [
-                AppButton(
-                  onPressed: () {},
-                  text: l10n.sosRequestAccept,
-                  isOutline: true,
-                  backgroundColor: AppColors.carWashTeal,
-                  outlineSurfaceColor: AppColors.white,
-                  textColor: AppColors.carWashTeal,
-                  borderRadius: 24.r,
-                  height: 50.h,
-                ),
+           
                 SizedBox(height: 10.h),
                 AppButton(
                   onPressed: () {

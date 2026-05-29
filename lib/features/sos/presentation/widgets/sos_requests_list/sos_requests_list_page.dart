@@ -55,18 +55,24 @@ class SosRequestsListPage extends StatelessWidget {
                 if (state is SosListLoaded) {
                   final Sos = state.listSOs;
 
-                  return ListView.separated(
-                    padding: EdgeInsets.fromLTRB(
-                      AppConstants.pageHorizontal,
-                      16.h,
-                      AppConstants.pageHorizontal,
-                      16.h,
+                  return RefreshIndicator(
+                      onRefresh: () async {
+                context.read<SosCubit>().getAll();
+              },
+                    
+                    child: ListView.separated(
+                      padding: EdgeInsets.fromLTRB(
+                        AppConstants.pageHorizontal,
+                        16.h,
+                        AppConstants.pageHorizontal,
+                        16.h,
+                      ),
+                      itemCount: Sos.length,
+                      separatorBuilder: (_, _) => SizedBox(height: 16.h),
+                      itemBuilder: (context, index) {
+                        return SosRequestCard(item: Sos[index]);
+                      },
                     ),
-                    itemCount: Sos.length,
-                    separatorBuilder: (_, _) => SizedBox(height: 16.h),
-                    itemBuilder: (context, index) {
-                      return SosRequestCard(item: Sos[index]);
-                    },
                   );
                 }
                 return const SizedBox();
