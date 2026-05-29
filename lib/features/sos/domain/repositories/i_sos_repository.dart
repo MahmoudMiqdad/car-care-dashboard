@@ -12,6 +12,6 @@ abstract class ISosRepository {
 
   Future<Either<Failure, SosEntity>> getSosRequest(int id);
 
-  Future<Either<Failure, Unit>> cancelSos(int id, String reason);
+  Future<Either<Failure, String>> cancelSos(int id, String cancellationReason);
   Future<Either<Failure, TrackingTechnicianEntity>> trackSos(int id);
 }

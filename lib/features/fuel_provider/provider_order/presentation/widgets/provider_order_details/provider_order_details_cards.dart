@@ -1,8 +1,8 @@
 import 'package:car_care/core/constants/app_assets.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order_details/provider_order_details_ui_model.dart';
-import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_info_row.dart';
-import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_section_card.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_details_info_row.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_details_section_card.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';

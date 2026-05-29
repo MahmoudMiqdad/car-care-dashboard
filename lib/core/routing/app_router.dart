@@ -8,7 +8,6 @@ import 'package:car_care/features/car_washer/washers/washers_availability/presen
 import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_details.dart';
 import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_page.dart';
 import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/edit_profile_washer_page.dart';
-import 'package:car_care/features/car_washer/washers/washers_statistics/presentation/pages/statistics_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_details_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order_details/provider_order_details_ui_model.dart';
@@ -42,7 +41,7 @@ import 'package:car_care/features/technician/technician_statistics/presentation/
 import 'package:car_care/features/technician/technician_jobs/presentation/pages/technician_jobs_page.dart';
 import 'package:car_care/features/technician/technician_quotations/presentation/pages/technician_quotations_page.dart';
 import 'package:car_care/features/maintenance/user_rate_job/presentation/pages/rate_job_page.dart';
-import 'package:car_care/features/maintenance/user_requests/presentation/pages/add_requests_page.dart';
+import 'package:car_care/features/maintenance/user_requests/presentation/pages/show_requests/add_requests_page.dart';
 import 'package:car_care/features/maintenance/user_statistics/presentation/pages/statistics_page.dart';
 import 'package:car_care/features/maintenance/user_quotations/presentation/pages/quotations_page.dart';
 import 'package:car_care/features/user_profile/presentation/pages/profile_page.dart';
@@ -75,7 +74,8 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.provider_profile,
+    initialLocation: Routes.allUserSosRequests
+    ,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(

@@ -2,7 +2,7 @@ import 'package:car_care/core/constants/app_constants.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
 import 'package:car_care/core/widgets/cancel_reason_dialog.dart';
-import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_status_banner.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_details_status_banner.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/widgets/fuel_order_details/fuel_order_details_location_card.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/widgets/fuel_order_details/fuel_order_details_order_card.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/widgets/fuel_order_details/fuel_order_details_provider_card.dart';

@@ -28,18 +28,18 @@ class UserCard extends StatelessWidget {
 
   final DataEntity job;
 
-  // تحويل التاريخ لصيغة سهلة للعرض
+
   static String _formatDate(DateTime d) =>
       '${d.year}/${d.month.toString().padLeft(2, '0')}/${d.day.toString().padLeft(2, '0')}';
 
   @override
   Widget build(BuildContext context) {
-    // تحديد الحالة بناءً على job.status
+  
     final bool isWaiting = job.status == 'waiting';
     final bool isCompleted = job.status == 'completed';
     final bool isAccepted = job.status == 'accepted';
 
-    // ألوان الخلفية والحالة
+   
     final Color statusBg = isWaiting
         ? const Color(0xFFD1F0F7)
         : (isCompleted || isAccepted ? const Color(0xFFDFF5E0) : const Color(0xFFFFE5E7));

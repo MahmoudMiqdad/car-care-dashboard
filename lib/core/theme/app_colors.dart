@@ -7,7 +7,7 @@ class AppColors {
   static const Color secondary = Color(0xFFf3f7ec);
   static const Color accent = Color(0xFFe88d67);
 
-  // ☀️ Light Theme Palette
+  //  Light Theme Palette
   static const Color lightPrimary = primary;
   static const Color lightScaffold = Color(0xFFedebe0); // Golden Wheat Light
   static const Color lightSurface = Color(0xFFF5F5F5);
@@ -15,7 +15,7 @@ class AppColors {
   static const Color lightTextSecondary = Color(0xFF3d3a3b);
   static const Color lightBorder = Color(0xFFD0D5DD);
 
-  // 🌑 Dark Theme Palette
+  //  Dark Theme Palette
   static const Color darkPrimary = Color(
     0xFF428177,
   ); // Forest Light for better contrast
@@ -25,7 +25,7 @@ class AppColors {
   static const Color darkTextSecondary = Color(0xFF98A2B3);
   static const Color darkBorder = Color(0xFF344054);
 
-  // 🚩--- (Common Colors) ---
+  // --- (Common Colors) ---
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF232522);
   static const Color error = Color(0xffE25839);

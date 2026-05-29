@@ -68,17 +68,23 @@ class SosRepositoryImpl implements ISosRepository {
   }
   }
 
-  @override
-  Future<Either<Failure, Unit>> cancelSos(int id, String reason) async {
-    try {
-      await _remote.cancelSos(id, reason);
-      return const Right(unit);
-    } on ServerExpcptions catch (e) {
+@override
+Future<Either<Failure, String>> cancelSos(
+  int id,
+  String cancellationReason,
+) async {
+  try {
+    final result = await _remote.cancelSos(id, cancellationReason);
+
+   
+    return Right(result.message!);
+
+  } on ServerExpcptions catch (e) {
     return Left(e.error);
   } catch (_) {
     return const Left(Failure(message: 'حدث خطأ غير متوقع'));
   }
-  }
+}
 
   @override
   Future<Either<Failure, TrackingTechnicianEntity>> trackSos(int id) async {

@@ -43,7 +43,8 @@ class VehicleModel {
       currentKm: json['current_km'],
       image: json['image'],
       imagePath: json['image_path'],
-      owner: json['owner'] != null ? UserModel.fromJson(json['owner']) : null,
+      owner:
+          json['owner'] != null ? UserModel.fromJson(json['owner']) : null,
       status: json['status'],
       needsMaintenance: json['needs_maintenance'],
       createdAt: json['created_at'] != null

@@ -1,6 +1,4 @@
-
-
-import 'package:car_care/features/maintenance/user_requests/domain/entities/user_entity.dart' show UserEntity;
+import 'package:car_care/features/maintenance/user_requests/domain/entities/user_entity.dart';
 
 class VehicleEntity {
   final int id;

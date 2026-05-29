@@ -1,5 +1,5 @@
-import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_section_card.dart';
-import 'package:car_care/features/sos/presentation/widgets/sos_details/sos_details_track_chip.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_details_section_card.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_details_track_chip.dart';
 import 'package:car_care/features/user_fuel_orders/presentation/widgets/fuel_order_details/fuel_order_details_ui_model.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';

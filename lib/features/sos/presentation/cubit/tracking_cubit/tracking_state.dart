@@ -21,7 +21,7 @@ class TrackingLoaded extends TrackingState {
   }
 }
 
-/// ⬇️ جديد: انتظار تعيين فني
+
 class TrackingWaitingTechnician extends TrackingState {}
 
 class TrackingError extends TrackingState {

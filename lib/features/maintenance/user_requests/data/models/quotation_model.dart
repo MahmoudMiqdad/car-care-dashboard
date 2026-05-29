@@ -1,32 +1,47 @@
-import 'package:car_care/features/maintenance/user_quotations/domain/entities/technician_entity.dart';
+import 'package:car_care/features/maintenance/user_requests/data/models/technician_profile_model.dart';
 
-class QuotationModel {
+class QuotationRequestModel {
   final int? id;
-  final String? technicianName;
   final double? price;
-  final String? status;
+  final String? priceFormatted;
+  final int? estimatedDays;
   final String? notes;
+  final bool? partsIncluded;
+  final String? status;
+  final String? statusText;
+  final TechnicianRequestModel? technician;
   final String? createdAt;
+  final String? createdAgo;
 
-  QuotationModel({
+ QuotationRequestModel({
     this.id,
-    this.technicianName,
     this.price,
-    this.status,
+    this.priceFormatted,
+    this.estimatedDays,
     this.notes,
+    this.partsIncluded,
+    this.status,
+    this.statusText,
+    this.technician,
     this.createdAt,
+    this.createdAgo,
   });
 
-  factory QuotationModel.fromJson(Map<String, dynamic> json) {
-    return QuotationModel(
+  factory QuotationRequestModel.fromJson(Map<String, dynamic> json) {
+    return QuotationRequestModel(
       id: json['id'],
-      technicianName: json['technician_name'],
       price: (json['price'] as num?)?.toDouble(),
-      status: json['status'],
+      priceFormatted: json['price_formatted'],
+      estimatedDays: json['estimated_days'],
       notes: json['notes'],
+      partsIncluded: json['parts_included'],
+      status: json['status'],
+      statusText: json['status_text'],
+      technician: json['technician'] != null
+          ? TechnicianRequestModel.fromJson(json['technician'])
+          : null,
       createdAt: json['created_at'],
+      createdAgo: json['created_ago'],
     );
   }
-
-  TechnicianEntity? get technician => null;
 }

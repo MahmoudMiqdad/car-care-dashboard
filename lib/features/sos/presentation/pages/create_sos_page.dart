@@ -215,28 +215,36 @@ class _CreateSosPageState extends State<CreateSosPage> {
     final l10n = context.l10n;
 
     return BlocListener<SosCubit, SosState>(
-      listener: (context, state) {
-        if (state is SosCreated) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              backgroundColor: Colors.green,
-              content: Text('تم إرسال الطلب ✓'),
-            ),
-          );
+     listener: (context, state) {
+  if (state is SosCreated) {
+    final sos = state.sos;
+    final id = sos.id;
 
-          if (context.canPop()) {
-            context.pop();
-          } else {
-            context.go(Routes.home);
-          }
-        }
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        backgroundColor: Colors.green,
+        content: Text('تم إرسال الطلب ✓'),
+      ),
+    );
 
-        if (state is SosError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(backgroundColor: Colors.red, content: Text(state.message)),
-          );
-        }
-      },
+    if (id != null) {
+         context.pushNamed(
+                      'sosDetails',
+                      pathParameters: {'id': id.toString()},
+                    );
+                  
+    }
+  }
+
+  if (state is SosError) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        backgroundColor: Colors.red,
+        content: Text(state.message),
+      ),
+    );
+  }
+},
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(

@@ -1,8 +1,9 @@
 // ignore_for_file: deprecated_member_use
-
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
+import 'package:car_care/core/widgets/Empty_state.dart';
 import 'package:car_care/core/widgets/custom_appbar.dart';
+import 'package:car_care/core/widgets/error_state_widget.dart' hide AppColors;
 import 'package:car_care/core/widgets/image_background.dart';
 import 'package:car_care/core/widgets/loding.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/request_status.dart';
@@ -16,7 +17,6 @@ import 'package:go_router/go_router.dart';
 
 class AllRequestsPage extends StatefulWidget {
   const AllRequestsPage({super.key});
-
   @override
   State<AllRequestsPage> createState() => _AllRequestsPageState();
 }
@@ -35,7 +35,6 @@ class _AllRequestsPageState extends State<AllRequestsPage>
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final cubit = context.read<RequestsCubit>();
       cubit.fetch(RequestStatus.pending);
-
       _tabController.addListener(() {
         if (_tabController.indexIsChanging) return;
 
@@ -53,7 +52,6 @@ class _AllRequestsPageState extends State<AllRequestsPage>
             cubit.fetch(RequestStatus.all);
             break;
         }
-
         setState(() {
           _currentIndex = _tabController.index;
         });
@@ -111,19 +109,22 @@ class _AllRequestsPageState extends State<AllRequestsPage>
         key: ValueKey(_currentIndex),
         builder: (context, state) {
           if (state is RequestsLoading) {
-            return const Center(child:AppLoadingWidget());
+            return const Center(child: AppLoadingWidget());
           }
 
           if (state is RequestsError) {
-            return Center(child: Text(state.message));
-          }
+            return Center(child: Text( state.message),);
+// return ErrorStateWidget(
+//     message: state.message,
+//     onRetry: () => context.read<RequestsCubit>().add(FetchSosEvent()),
+//   );       
+   }
 
           if (state is RequestsLoaded) {
-           final jobs = state.response.data;
-         
+            final jobs = state.response.data;
 
-            if (jobs!.isEmpty) {
-              return const Center(child: Text("لا يوجد طلبات"));
+            if (jobs.isEmpty) {
+              return const EmptyStateWidget();
             }
 
             return AllRequestsTabContent(jobs: jobs);
@@ -150,9 +151,7 @@ class _AllRequestsPageState extends State<AllRequestsPage>
               color: selected ? AppColors.primary : Colors.white,
               borderRadius: BorderRadius.circular(20.r),
               border: Border.all(
-                color: selected
-                    ? AppColors.primary
-                    : AppColors.lightBorder,
+                color: selected ? AppColors.primary : AppColors.lightBorder,
               ),
               boxShadow: [
                 if (selected)
@@ -168,9 +167,7 @@ class _AllRequestsPageState extends State<AllRequestsPage>
               style: TextStyle(
                 fontSize: selected ? 15.sp : 14.sp,
                 fontWeight: FontWeight.w800,
-                color: selected
-                    ? Colors.white
-                    : AppColors.lightTextSecondary,
+                color: selected ? Colors.white : AppColors.lightTextSecondary,
               ),
             ),
           ),

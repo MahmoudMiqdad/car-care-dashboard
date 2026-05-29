@@ -3,6 +3,7 @@
 import 'package:car_care/core/widgets/loding.dart';
 import 'package:car_care/features/sos/presentation/cubit/tracking_cubit/tracking_cubit.dart';
 import 'package:car_care/features/sos/presentation/cubit/tracking_cubit/tracking_state.dart';
+import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_details/sos_waiting_technician_widget.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -109,8 +110,11 @@ class _SosMapWidgetState extends State<SosMapWidget> {
   Widget build(BuildContext context) {
     return BlocBuilder<TrackingCubit, TrackingState>(
       builder: (context, state) {
+          if (state is TrackingWaitingTechnician) {
+      return const WaitingTechnicianWidget();
+    }
         if (state is TrackingLoading) {
-          return const Center(child:  AppLoadingWidget());
+           return const WaitingTechnicianWidget();
         }
       
         if (state is TrackingError) {

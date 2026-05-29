@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:car_care/core/service_locator/service_locator.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_cubit.dart';
 import 'package:car_care/features/technician_sos/presentation/cubit/share_technician_location_cubit/share_technician_location_sos_cubit.dart';
 import 'package:car_care/features/technician_sos/presentation/widgets/technician_sos_details/technician_sos_details_section_card.dart';
 import 'package:car_care/features/technician_sos/presentation/widgets/technician_sos_details/technician_sos_details_track_chip.dart';
