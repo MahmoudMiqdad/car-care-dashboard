@@ -1,9 +1,9 @@
 import 'package:car_care/core/constants/app_constants.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/domain/entities/provider_profile_entity.dart';
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_profile/provider_profile_cards.dart';
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_profile/provider_profile_fuel_section.dart';
-import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_profile/provider_profile_ui_model.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,11 +12,13 @@ class ProviderProfileBody extends StatelessWidget {
   const ProviderProfileBody({
     super.key,
     required this.profile,
+    required this.isAvailable,
     required this.onAvailabilityChanged,
     this.onEditProfile,
   });
 
-  final ProviderProfileUiModel profile;
+  final FuelProviderProfileEntity profile;
+  final bool isAvailable;
   final ValueChanged<bool> onAvailabilityChanged;
   final VoidCallback? onEditProfile;
 
@@ -28,10 +30,8 @@ class ProviderProfileBody extends StatelessWidget {
       bottom: false,
       child: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(
-          AppConstants.pageHorizontal,
-          16.h,
-          AppConstants.pageHorizontal,
-          24.h,
+          AppConstants.pageHorizontal, 16.h,
+          AppConstants.pageHorizontal, 24.h,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -43,7 +43,7 @@ class ProviderProfileBody extends StatelessWidget {
             ),
             SizedBox(height: 8.h),
             ProviderProfileAvailabilityCard(
-              isAvailable: profile.isAvailable,
+              isAvailable: isAvailable,
               onChanged: onAvailabilityChanged,
             ),
             SizedBox(height: 14.h),
@@ -68,4 +68,4 @@ class ProviderProfileBody extends StatelessWidget {
       ),
     );
   }
-}
+} 

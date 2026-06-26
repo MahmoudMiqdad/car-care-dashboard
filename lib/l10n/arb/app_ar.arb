@@ -841,6 +841,10 @@
   "@requestStatus": {
     "description": "حالة الطلب"
   },
+    "fuelProvider": "مزود الوقود",
+  "@fuelProvider": {
+    "description": "مزود  الوقود "
+  },
   
   "rateService": "تقييم المغسلة",
   "@rateService": {

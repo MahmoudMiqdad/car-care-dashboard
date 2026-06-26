@@ -12,7 +12,7 @@ MaintenanceRequestEntity mapMaintenanceRequest(
   return MaintenanceRequestEntity(
     success: model.success,
     message: model.message,
-    data: model.data?.map((item) {
+    data: model.data.map((item) {
           return DataEntity(
             id: item.id,
             description: item.description,
@@ -39,7 +39,6 @@ MaintenanceRequestEntity mapMaintenanceRequest(
             createdAgo: item.createdAgo,
             canCancel: item.canCancel,
           );
-        }).toList() ??
-        [],
+        }).toList(),
   );
 }

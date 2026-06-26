@@ -1,7 +1,11 @@
-// requests_repository_impl.dart
+
 import 'package:car_care/core/domain/entities/base_response_entity.dart';
+import 'package:car_care/core/errors/excptions.dart';
+import 'package:car_care/features/maintenance/user_requests/data/models/maintenance_request_details_model.dart' as model;
 import 'package:car_care/features/maintenance/user_requests/data/models/maintenance_request_model.dart' as model;
+import 'package:car_care/features/maintenance/user_requests/domain/entities/maintenance_request_details_entity.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/entities/maintenance_request_entity.dart';
+import 'package:car_care/features/maintenance/user_requests/domain/mapper/maintenance_request_details_mapper.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/mapper/maintenance_request_mapper.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/repositories/i_requests_repository.dart';
 import 'package:dartz/dartz.dart';
@@ -11,11 +15,9 @@ import 'package:dio/dio.dart';
 
 class RequestsRepositoryImpl implements IRequestsRepository {
   final RequestsRemoteDataSource remoteDataSource;
-
   RequestsRepositoryImpl(this.remoteDataSource);
-
-
   MaintenanceRequestEntity _map(model.MaintenanceRequestModel model) => mapMaintenanceRequest(model);
+ MaintenanceRequestDetailsEntity _mapRequest(model.MaintenanceRequestDetailsModel model) => mapMaintenanceRequestDetails(model);
 
   @override
   Future<Either<Failure, MaintenanceRequestEntity>> getAllMaintenance() async {
@@ -33,24 +35,24 @@ Future<Either<Failure, BaseResponseEntity>> addMaintenanceRequest(
 ) async {
   try {
     final model = await remoteDataSource.addMaintenanceRequest(formData);
-
     return Right(model.toEntity());
-  } catch (e) {
-    return const Left(
-      Failure(message: 'حدث خطأ أثناء إضافة طلب الصيانة'),
-    );
+  }on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ غير متوقع'));
   }
 } 
 
-
   @override
-  Future<Either<Failure, MaintenanceRequestEntity>> showRequest(String id) async {
+  Future<Either<Failure, MaintenanceRequestDetailsEntity>> showRequest(String id) async {
     try {
       final model = await remoteDataSource.showRequest(id);
-      return Right(_map(model));
-    } catch (_) {
-      return const Left(Failure(message: 'حدث خطأ أثناء عرض الطلب'));
-    }
+      return Right(_mapRequest(model));
+    } on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ غير متوقع'));
+  }
   }
 
   @override
@@ -58,9 +60,11 @@ Future<Either<Failure, BaseResponseEntity>> addMaintenanceRequest(
     try {
       final model = await remoteDataSource.updateRequest(id, data);
       return Right(_map(model));
-    } catch (_) {
-      return const Left(Failure(message: 'حدث خطأ أثناء تحديث الطلب'));
-    }
+    } on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ غير متوقع'));
+  }
   }
 
   @override
@@ -68,19 +72,18 @@ Future<Either<Failure, BaseResponseEntity>> addMaintenanceRequest(
     try {
       final model = await remoteDataSource.deletRequest(id);
       return Right(_map(model));
-    } catch (_) {
-      return const Left(Failure(message: 'حدث خطأ أثناء حذف الطلب'));
-    }
+    } on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ غير متوقع'));
+  }
   }
 
   @override
   Future<Either<Failure, MaintenanceRequestEntity>> pendingRequests() async {
     try {
-     
-      final model = await remoteDataSource.pendingRequests();
-      
- 
-      return Right(_map(model));
+          final model = await remoteDataSource.pendingRequests();
+          return Right(_map(model));
     } catch (_) {
       return const Left(Failure(message: 'حدث خطأ أثناء جلب الطلبات المعلقة'));
     }
@@ -109,10 +112,12 @@ Future<Either<Failure, BaseResponseEntity>> addMaintenanceRequest(
   @override
   Future<Either<Failure, MaintenanceRequestEntity>> cancelRequest(String cancellationReason, String id) async {
     try {
-      final model = await remoteDataSource.cancelRequest(id, cancellationReason);
+      final model = await remoteDataSource.cancelRequest(cancellationReason,id );
       return Right(_map(model));
-    } catch (_) {
-      return const Left(Failure(message: 'حدث خطأ أثناء التراجع عن الطلب'));
-    }
+    } on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ غير متوقع'));
+  }
   }
 }

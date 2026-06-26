@@ -1,6 +1,5 @@
 import 'package:car_care/features/maintenance/user_requests/domain/entities/quotation_entity.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/entities/request_image_entity.dart';
-import 'package:car_care/features/maintenance/user_requests/domain/entities/user_entity.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/entities/vehicle_entity.dart';
 
 class MaintenanceRequestEntity {

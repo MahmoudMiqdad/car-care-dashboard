@@ -1,16 +1,13 @@
 import 'package:car_care/core/constants/app_assets.dart';
 import 'package:car_care/core/constants/app_constants.dart';
-import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/buttons/app_button_widget.dart';
-import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order/provider_order_ui_model.dart';
-import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order_details/provider_order_details_ui_model.dart';
+import 'package:car_care/features/fuel_provider/provider_order/domain/entities/provider_order_entity.dart';
 import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/request_detail_row.dart';
 import 'package:car_care/features/sos/presentation/widgets/sos_requests_list/sos_request_status_badge.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class ProviderOrderCard extends StatelessWidget {
   const ProviderOrderCard({
@@ -19,13 +16,15 @@ class ProviderOrderCard extends StatelessWidget {
     this.onViewDetails,
   });
 
-  final ProviderOrderUiModel order;
+  final FuelOrderEntity order;
   final VoidCallback? onViewDetails;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final radius = AppConstants.maintenanceRequestCardRadius.r;
+    final fuelText = '${order.fuelType ?? '-'} - ${order.amount ?? 0} لتر';
+    final dateText = order.scheduledTime ?? order.createdAt ?? '-';
 
     return Container(
       decoration: BoxDecoration(
@@ -60,21 +59,21 @@ class ProviderOrderCard extends StatelessWidget {
                           leading: const SosRequestRowAssetIcon(
                             assetPath: AppAssets.iconLocationPin,
                           ),
-                          value: order.address,
+                          value: order.deliveryAddress ?? '-',
                         ),
                         RequestDetailRow(
                           label: l10n.fuel,
                           leading: const SosRequestRowAssetIcon(
                             assetPath: AppAssets.serviceFuel,
                           ),
-                          value: order.fuel,
+                          value: fuelText,
                         ),
                         RequestDetailRow(
                           label: l10n.price,
                           leading: const SosRequestRowAssetIcon(
                             assetPath: AppAssets.fuelOrderMoneyIcon,
                           ),
-                          value: order.price,
+                          value: order.totalPrice ?? '-',
                         ),
                       ],
                     ),
@@ -87,18 +86,8 @@ class ProviderOrderCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SosRequestStatusBadge(
-                        label: l10n.sosStatusFinished,
-                        style: SosRequestStatusBadgeStyle.outlineOnWhite,
-                      ),
-                      SizedBox(height: 8.h),
-                      SosRequestStatusBadge(
-                        label: l10n.sosStatusInProgress,
+                        label: order.statusText ?? '-',
                         style: SosRequestStatusBadgeStyle.softSuccess,
-                      ),
-                      SizedBox(height: 8.h),
-                      SosRequestStatusBadge(
-                        label: l10n.sosStatusWaiting,
-                        style: SosRequestStatusBadgeStyle.outlineOnWhite,
                       ),
                     ],
                   ),
@@ -109,13 +98,7 @@ class ProviderOrderCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 14.w),
             child: AppButton(
-              onPressed: onViewDetails ??
-                  () {
-                    context.push(
-                      Routes.provider_order_details,
-                      extra: ProviderOrderDetailsUiModel.fromMyOrder(order),
-                    );
-                  },
+              onPressed: onViewDetails ?? () {},
               text: l10n.sosRequestViewDetails,
               backgroundColor: AppColors.orange,
               textColor: AppColors.white,
@@ -130,7 +113,7 @@ class ProviderOrderCard extends StatelessWidget {
             alignment: Alignment.center,
             color: AppColors.carWashTeal,
             child: Text(
-              order.dateTime,
+              dateText,
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: AppColors.white,

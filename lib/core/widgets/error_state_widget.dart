@@ -1,10 +1,6 @@
+import 'package:car_care/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class AppColors {
-  static const Color primary   = Color(0xFF006989);
-  static const Color secondary = Color(0xFFf3f7ec);
-  static const Color accent    = Color(0xFFe88d67);
-}
 
 class ErrorStateWidget extends StatefulWidget {
   final String message;

@@ -1,7 +1,7 @@
+// cancel_request_state.dart
 
 import 'package:car_care/features/maintenance/user_requests/domain/entities/maintenance_request_entity.dart';
 
-/// الحالات الخاصة بإلغاء الطلب
 abstract class CancelRequestState {}
 
 class CancelRequestInitial extends CancelRequestState {}
@@ -16,4 +16,13 @@ class CancelRequestSuccess extends CancelRequestState {
 class CancelRequestError extends CancelRequestState {
   final String message;
   CancelRequestError(this.message);
+}
+class DeleteRequestError extends CancelRequestState {
+  final String message;
+ DeleteRequestError(this.message);
+}
+
+class DeleteRequestSuccess extends CancelRequestState {
+  final MaintenanceRequestEntity request;
+  DeleteRequestSuccess(this.request);
 }

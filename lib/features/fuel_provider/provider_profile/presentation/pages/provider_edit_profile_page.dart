@@ -1,19 +1,27 @@
 import 'package:car_care/core/constants/list_province.dart';
 import 'package:car_care/core/theme/app_colors.dart';
+import 'package:car_care/core/utils/app_snackbar.dart';
 import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/image_background.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/domain/entities/provider_profile_entity.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/presentation/cubit/provider_profile_cubit.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/presentation/cubit/provider_profile_state.dart';
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_edit_profile/provider_edit_profile_body.dart';
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_edit_profile/provider_edit_profile_fuel_section.dart';
-import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_profile/provider_profile_ui_model.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class ProviderEditProfilePage extends StatefulWidget {
-  const ProviderEditProfilePage({super.key});
+  const ProviderEditProfilePage({super.key, this.profile});
+
+  // نستقبل الـ Entity الحالي عشان نملي البيانات
+  final FuelProviderProfileEntity? profile;
 
   @override
-  State<ProviderEditProfilePage> createState() => _ProviderEditProfilePageState();
+  State<ProviderEditProfilePage> createState() =>
+      _ProviderEditProfilePageState();
 }
 
 class _ProviderEditProfilePageState extends State<ProviderEditProfilePage> {
@@ -27,23 +35,19 @@ class _ProviderEditProfilePageState extends State<ProviderEditProfilePage> {
   @override
   void initState() {
     super.initState();
-    _nameController = TextEditingController();
-    _phoneController = TextEditingController();
-    _addressController = TextEditingController();
-    _governorateValue = kCreateSosProvinceOptions.first;
-    _fuelPrices = ProviderProfileUiModel.previewFuelPricesMap();
-  }
+    final p = widget.profile;
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (_nameController.text.isNotEmpty) return;
+    // ملي البيانات من الـ Entity
+    _nameController = TextEditingController(text: p?.companyName ?? '');
+    _phoneController = TextEditingController(text: p?.phone ?? '');
+    _addressController = TextEditingController(text: p?.address ?? '');
+    _governorateValue = p?.city ?? kCreateSosProvinceOptions.first;
 
-    final l10n = context.l10n;
-    _nameController.text = l10n.providerProfileSampleName;
-    _phoneController.text = l10n.profileWasherSamplePhone;
-    _addressController.text = l10n.providerEditProfileSampleAddress;
-    _governorateValue ??= kCreateSosProvinceOptions.first;
+    // حوّل الـ prices من Map<String, double> لـ Map<String, String>
+    _fuelPrices = p?.prices?.map(
+          (k, v) => MapEntry(k, v.toString()),
+        ) ??
+        {};
   }
 
   @override
@@ -57,26 +61,21 @@ class _ProviderEditProfilePageState extends State<ProviderEditProfilePage> {
   Future<void> _pickGovernorate() async {
     final choice = await showModalBottomSheet<String>(
       context: context,
-      builder: (context) {
-        return SafeArea(
-          child: DraggableScrollableSheet(
-            expand: false,
-            builder: (context, scrollController) {
-              return ListView(
-                controller: scrollController,
-                children: kCreateSosProvinceOptions.map((e) {
-                  return ListTile(
-                    title: Text(e),
-                    onTap: () => Navigator.pop(context, e),
-                  );
-                }).toList(),
-              );
-            },
+      builder: (context) => SafeArea(
+        child: DraggableScrollableSheet(
+          expand: false,
+          builder: (_, controller) => ListView(
+            controller: controller,
+            children: kCreateSosProvinceOptions
+                .map((e) => ListTile(
+                      title: Text(e),
+                      onTap: () => Navigator.pop(context, e),
+                    ))
+                .toList(),
           ),
-        );
-      },
+        ),
+      ),
     );
-
     if (!mounted || choice == null) return;
     setState(() => _governorateValue = choice);
   }
@@ -93,7 +92,19 @@ class _ProviderEditProfilePageState extends State<ProviderEditProfilePage> {
 
   void _onSave() {
     FocusScope.of(context).unfocus();
-    context.pop(true);
+
+    // حوّل الـ fuelPrices من String لـ double وابعت للـ API
+    final prices = _fuelPrices.map(
+      (k, v) => MapEntry(k, double.tryParse(v) ?? 0.0),
+    );
+
+    context.read<FuelProviderProfileCubit>().addProfile({
+      'company_name': _nameController.text.trim(),
+      'phone': _phoneController.text.trim(),
+      'city': _governorateValue ?? '',
+      'address': _addressController.text.trim(),
+      'prices': prices,
+    });
   }
 
   @override
@@ -110,17 +121,28 @@ class _ProviderEditProfilePageState extends State<ProviderEditProfilePage> {
           backgroundColor: AppColors.carWashTeal,
           onBackTapped: () => context.pop(),
         ),
-        body: ImageBackground(
-          child: ProviderEditProfileBody(
-            nameController: _nameController,
-            phoneController: _phoneController,
-            addressController: _addressController,
-            governorateValue: _governorateValue,
-            onPickGovernorate: _pickGovernorate,
-            fuelPrices: _fuelPrices,
-            onSave: _onSave,
-            onCancel: () => context.pop(),
-            onFuelTypeTap: _onFuelTypeTap,
+        body: BlocListener<FuelProviderProfileCubit, FuelProviderProfileState>(
+          listener: (context, state) {
+            if (state is FuelProviderProfileLoaded) {
+               AppSnackBar.success(context, "تم حفظ البيانات");
+              context.pop(true);
+            }
+            if (state is FuelProviderProfileError) {
+              AppSnackBar.error(context, state.message);
+            }
+          },
+          child: ImageBackground(
+            child: ProviderEditProfileBody(
+              nameController: _nameController,
+              phoneController: _phoneController,
+              addressController: _addressController,
+              governorateValue: _governorateValue,
+              onPickGovernorate: _pickGovernorate,
+              fuelPrices: _fuelPrices,
+              onSave: _onSave,
+              onCancel: () => context.pop(),
+              onFuelTypeTap: _onFuelTypeTap,
+            ),
           ),
         ),
       ),

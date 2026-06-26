@@ -1,11 +1,14 @@
+
+import 'package:car_care/core/network/api_endpoints.dart';
 import 'package:car_care/core/network/api_service.dart';
+import 'package:car_care/features/fuel_provider/provider_statistics/data/models/fuel_provider_statistics_model.dart';
 
-class ProviderStatisticsRemoteDataSource {
+class FuelProviderStatisticsRemoteDataSource {
+  final ApiService _api;
+  const FuelProviderStatisticsRemoteDataSource(this._api);
 
-  const ProviderStatisticsRemoteDataSource(this._apiService);
-
-  final ApiService _apiService;
-
-  Future<Map<String, dynamic>> providerStatistics(Map<String, dynamic> data) async => _apiService.post(endPoint: 'provider_statistics/provider_statistics', data: data);
-
+  Future<FuelProviderStatisticsModel> getStatistics() async {
+    final res = await _api.get(endPoint: '${ApiEndpoints.fuelProvider}/statistics');
+    return FuelProviderStatisticsModel.fromJson(res);
+  }
 }

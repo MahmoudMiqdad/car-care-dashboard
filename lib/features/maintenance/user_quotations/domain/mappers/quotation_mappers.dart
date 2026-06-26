@@ -37,46 +37,60 @@ QuotationsEntity mapQuotations(QuotationsModel model) {
     );
   }
 
-  AcceptQuotationEntity mapAccept(AcceptQuotationsModel model) {
-    final q = model.data.quotation;
-    final s = model.data.serviceJob;
+ AcceptQuotationEntity mapAccept(AcceptQuotationsModel model) {
+  final q = model.data.quotation;
+  final s = model.data.serviceJob;
 
-    return AcceptQuotationEntity(
-      success: model.success,
-      message: model.message,
-      data: AcceptQuotationDataEntity(
-        quotation: QuotationEntity(
-          id: q.id,
-          price: q.price,
-          priceFormatted: q.priceFormatted,
-          estimatedDays: q.estimatedDays,
-          notes: q.notes,
-          partsIncluded: q.partsIncluded,
-          status: q.status,
-          statusText: q.statusText,
-          createdAt: q.createdAt,
-          createdAgo: q.createdAgo,
-          technician: TechnicianEntity(
-            id: q.technician.id,
-            name: q.technician.name,
-            phone: q.technician.phone,
-            technicianProfile: TechnicianProfileEntity(
-              specialization: q.technician.technicianProfile.specialization,
-              experienceYears: q.technician.technicianProfile.experienceYears,
-            ),
+  return AcceptQuotationEntity(
+    success: model.success,
+    message: model.message,
+    data: AcceptQuotationDataEntity(
+      quotation: QuotationEntity(
+        id: q.id,
+        price: q.price,
+        priceFormatted: q.priceFormatted,
+        estimatedDays: q.estimatedDays,
+        notes: q.notes,
+        partsIncluded: q.partsIncluded,
+        status: q.status,
+        statusText: q.statusText,
+        createdAt: q.createdAt,
+        createdAgo: q.createdAgo,
+        technician: TechnicianEntity(
+          id: q.technician.id,
+          name: q.technician.name,
+          phone: q.technician.phone,
+          technicianProfile: TechnicianProfileEntity(
+            specialization:
+                q.technician.technicianProfile.specialization ?? '',
+            experienceYears:
+                q.technician.technicianProfile.experienceYears ?? 0,
+            currentLocation:
+                q.technician.technicianProfile.currentLocation != null
+                    ? CurrentLocationEntity(
+                        lat: q.technician.technicianProfile.currentLocation!.lat,
+                        lng: q.technician.technicianProfile.currentLocation!.lng,
+                        updatedAt: q
+                            .technician
+                            .technicianProfile
+                            .currentLocation!
+                            .updatedAt,
+                      )
+                    : null,
           ),
         ),
-        serviceJob: ServiceJobEntity(
-          maintenanceRequestId: s.maintenanceRequestId,
-          quotationId: s.quotationId,
-          technicianId: s.technicianId,
-          status: s.status,
-          scheduledDate: s.scheduledDate,
-          notes: s.notes,
-          updatedAt: s.updatedAt,
-          createdAt: s.createdAt,
-          id: s.id,
-        ),
       ),
-    );
-  }
+      serviceJob: ServiceJobEntity(
+        maintenanceRequestId: s.maintenanceRequestId,
+        quotationId: s.quotationId,
+        technicianId: s.technicianId,
+        status: s.status,
+        scheduledDate: s.scheduledDate,
+        notes: s.notes,
+        updatedAt: s.updatedAt,
+        createdAt: s.createdAt,
+        id: s.id,
+      ),
+    ),
+  );
+}

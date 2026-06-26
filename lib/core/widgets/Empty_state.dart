@@ -145,7 +145,7 @@ class _CarPainter extends CustomPainter {
     final secondary = AppColors.secondary;
     final accent    = AppColors.accent;
 
-    // ── Road ──────────────────────────────────────────────────────────
+  
     final roadPaint = Paint()..color = primary.withOpacity(0.10);
     canvas.drawRRect(
       RRect.fromRectAndRadius(
@@ -173,7 +173,6 @@ class _CarPainter extends CustomPainter {
     }
     canvas.restore();
 
-    // ── Car group (floating) ───────────────────────────────────────────
     canvas.save();
     canvas.translate(0, floatOffset);
 
@@ -182,7 +181,7 @@ class _CarPainter extends CustomPainter {
     final carX  = w * 0.10;
     final carW  = w * 0.80;
 
-    // body
+
     final bodyPaint = Paint()..color = primary;
     canvas.drawRRect(
       RRect.fromRectAndRadius(
@@ -192,7 +191,7 @@ class _CarPainter extends CustomPainter {
       bodyPaint,
     );
 
-    // roof
+
     final roofPath = Path()
       ..moveTo(carX + carW * 0.22, carY + carH * 0.35)
       ..quadraticBezierTo(
@@ -205,7 +204,7 @@ class _CarPainter extends CustomPainter {
       ..close();
     canvas.drawPath(roofPath, bodyPaint);
 
-    // windshield
+
     final windPath = Path()
       ..moveTo(carX + carW * 0.26, carY + carH * 0.33)
       ..quadraticBezierTo(
@@ -221,7 +220,7 @@ class _CarPainter extends CustomPainter {
       Paint()..color = secondary.withOpacity(0.85),
     );
 
-    // side window
+
     canvas.drawRRect(
       RRect.fromRectAndRadius(
         Rect.fromLTWH(carX + carW * 0.04, carY + carH * 0.15, carW * 0.18, carH * 0.2),

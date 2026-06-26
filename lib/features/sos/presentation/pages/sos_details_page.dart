@@ -59,7 +59,7 @@ class SosDetailsPage extends StatelessWidget {
 
             child: BlocListener<SosCubit, SosState>(
               listener: (context, state) {
-                /// ✅ نجاح الإلغاء
+       
                 if (state is SosCansel) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(

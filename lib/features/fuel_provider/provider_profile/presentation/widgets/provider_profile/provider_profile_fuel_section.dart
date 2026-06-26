@@ -1,19 +1,22 @@
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/app_typography.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/domain/entities/provider_profile_entity.dart';
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_profile/provider_profile_cards.dart';
-import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_profile/provider_profile_ui_model.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProviderProfileFuelPricesSection extends StatelessWidget {
   const ProviderProfileFuelPricesSection({super.key, required this.profile});
-
-  final ProviderProfileUiModel profile;
+  final FuelProviderProfileEntity profile;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final prices = profile.prices ?? {};
+    final fuelTypes = profile.fuelTypes ?? prices.keys.toList();
+
+    if (fuelTypes.isEmpty) return const SizedBox();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -24,10 +27,13 @@ class ProviderProfileFuelPricesSection extends StatelessWidget {
         SizedBox(height: 8.h),
         Row(
           children: [
-            for (var i = 0; i < profile.fuelPrices.length; i++) ...[
+            for (var i = 0; i < fuelTypes.length; i++) ...[
               if (i > 0) SizedBox(width: 8.w),
               Expanded(
-                child: _FuelPriceCard(fuelPrice: profile.fuelPrices[i]),
+                child: _FuelPriceCard(
+                  fuelType: fuelTypes[i],
+                  price: prices[fuelTypes[i]],
+                ),
               ),
             ],
           ],
@@ -38,14 +44,17 @@ class ProviderProfileFuelPricesSection extends StatelessWidget {
 }
 
 class _FuelPriceCard extends StatelessWidget {
-  const _FuelPriceCard({required this.fuelPrice});
-
-  final ProviderProfileFuelPriceUiModel fuelPrice;
+  const _FuelPriceCard({required this.fuelType, this.price});
+  final String fuelType;
+  final double? price;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final borderColor = AppColors.carWashTeal;
+    final priceText = price != null
+        ? l10n.providerProfilePriceLine(price.toString())
+        : '-';
 
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -59,7 +68,7 @@ class _FuelPriceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
-              fuelPrice.fuelType,
+              fuelType,
               textAlign: TextAlign.center,
               style: AppTypography.bodyMedium.copyWith(
                 color: AppColors.black,
@@ -68,14 +77,11 @@ class _FuelPriceCard extends StatelessWidget {
               ),
             ),
             SizedBox(height: 8.h),
-            Divider(
-              height: 1,
-              thickness: 1,
-              color: borderColor.withValues(alpha: 0.35),
-            ),
+            Divider(height: 1, thickness: 1,
+                color: borderColor.withValues(alpha: 0.35)),
             SizedBox(height: 8.h),
             Text(
-              l10n.providerProfilePriceLine(fuelPrice.price),
+              priceText,
               textAlign: TextAlign.center,
               style: AppTypography.bodySmall.copyWith(
                 color: AppColors.black,

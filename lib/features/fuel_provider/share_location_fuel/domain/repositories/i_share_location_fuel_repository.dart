@@ -1,9 +1,10 @@
-import 'package:dartz/dartz.dart';
 import 'package:car_care/core/errors/filuar.dart';
-import '../entities/share_location_fuel_entity.dart';
+import 'package:dartz/dartz.dart';
 
-abstract class IShareLocationFuelRepository {
-
-  Future<Either<Failure, ShareLocationFuelEntity>> shareLocationFuel(Map<String, dynamic> params);
-
+abstract class IShareFuelProviderLocationRepository {
+  Future<Either<Failure, void>> shareLocation({
+    required int orderId,
+    required double lat,
+    required double lng,
+  });
 }

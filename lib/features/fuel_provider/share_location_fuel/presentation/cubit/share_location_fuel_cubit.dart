@@ -1,10 +1,24 @@
+import 'package:car_care/features/fuel_provider/share_location_fuel/domain/repositories/i_share_location_fuel_repository.dart';
+import 'package:car_care/features/fuel_provider/share_location_fuel/presentation/cubit/share_location_fuel_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'share_location_fuel_state.dart';
 
-class ShareLocationFuelCubit extends Cubit<ShareLocationFuelState> {
+class ShareFuelProviderLocationCubit
+    extends Cubit<ShareFuelProviderLocationState> {
+  final IShareFuelProviderLocationRepository _repo;
 
-  ShareLocationFuelCubit() : super(ShareLocationFuelInitial());
+  ShareFuelProviderLocationCubit(this._repo)
+      : super(ShareFuelProviderLocationInitial());
 
-  // TODO: Add business logic methods here
-
+  Future<void> shareLocation({
+    required int orderId,
+    required double lat,
+    required double lng,
+  }) async {
+    emit(ShareFuelProviderLocationLoading());
+    final res = await _repo.shareLocation(orderId: orderId, lat: lat, lng: lng);
+    res.fold(
+      (l) => emit(ShareFuelProviderLocationError(l.message)),
+      (_) => emit(ShareFuelProviderLocationSuccess()),
+    );
+  }
 }

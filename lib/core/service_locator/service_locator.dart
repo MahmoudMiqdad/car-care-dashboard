@@ -36,6 +36,27 @@ import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/repo
 import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/repositories/i_washers_repository.dart';
 import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/cubit/reservation/car_wash_booking_cubit.dart';
 import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/cubit/washers/washers_cubit.dart';
+import 'package:car_care/features/fuel_provider/provider_order/data/data_sources/provider_order_remote_data_source.dart';
+import 'package:car_care/features/fuel_provider/provider_order/data/repositories/i_provider_order_repository_impl.dart';
+import 'package:car_care/features/fuel_provider/provider_order/domain/repositories/i_provider_order_repository.dart';
+import 'package:car_care/features/fuel_provider/provider_order/presentation/cubit/provider_order_cubit.dart';
+import 'package:car_care/features/fuel_provider/provider_order/presentation/cubit/provider_order_state.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/data/data_sources/provider_profile_remote_data_source.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/data/repositories/i_provider_profile_repository_impl.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/domain/repositories/i_provider_profile_repository.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/presentation/cubit/provider_profile_cubit.dart';
+import 'package:car_care/features/fuel_provider/provider_statistics/data/data_sources/provider_statistics_remote_data_source.dart';
+import 'package:car_care/features/fuel_provider/provider_statistics/data/repositories/i_provider_statistics_repository_impl.dart';
+import 'package:car_care/features/fuel_provider/provider_statistics/domain/repositories/i_provider_statistics_repository.dart';
+import 'package:car_care/features/fuel_provider/provider_statistics/presentation/cubit/provider_statistics_cubit.dart';
+import 'package:car_care/features/fuel_provider/share_location_fuel/data/data_sources/share_location_fuel_remote_data_source.dart';
+import 'package:car_care/features/fuel_provider/share_location_fuel/data/repositories/share_fuel_provider_location_repository_impl.dart';
+import 'package:car_care/features/fuel_provider/share_location_fuel/domain/repositories/i_share_location_fuel_repository.dart';
+import 'package:car_care/features/fuel_provider/share_location_fuel/presentation/cubit/share_location_fuel_cubit.dart';
+import 'package:car_care/features/maintenance/user_quotations/data/data_sources/quotations_remote_data_source.dart';
+import 'package:car_care/features/maintenance/user_quotations/data/repositories/quotation_repo_impl.dart';
+import 'package:car_care/features/maintenance/user_quotations/domain/repositories/i_quotations_repository.dart';
+import 'package:car_care/features/maintenance/user_quotations/presentation/cubit/quotations_cubit.dart';
 import 'package:car_care/features/maintenance/user_requests/data/data_sources/requests_remote_data_source.dart';
 import 'package:car_care/features/maintenance/user_requests/data/repositories/requests_repository.dart_impl.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/repositories/i_requests_repository.dart';
@@ -43,7 +64,6 @@ import 'package:car_care/features/maintenance/user_requests/presentation/cubit/a
 import 'package:car_care/features/maintenance/user_requests/presentation/cubit/add_maintenance_request_cubit/add_maintenance_request_cubit.dart';
 import 'package:car_care/features/maintenance/user_requests/presentation/cubit/cancel_request_cubit/cancel_request_cubit.dart';
 import 'package:car_care/features/maintenance/user_requests/presentation/cubit/show/show_requests_cubit.dart';
-import 'package:car_care/features/maintenance/user_requests/presentation/cubit/delete_request_cubit/delete_request_cubit.dart';
 import 'package:car_care/features/maintenance/user_requests/presentation/cubit/show_request_cubit/show_request_cubit.dart';
 import 'package:car_care/features/maintenance/user_requests/presentation/cubit/update_request_cubit/update_request_cubit.dart';
 import 'package:car_care/features/maintenance/user_statistics/data/data_sources/statistics_remote_data_source.dart';
@@ -77,6 +97,11 @@ import 'package:car_care/features/technician_sos/data/repositories/technician_so
 import 'package:car_care/features/technician_sos/domain/repositories/i_technician_sos_repository.dart';
 import 'package:car_care/features/technician_sos/presentation/cubit/share_technician_location_cubit/share_technician_location_sos_cubit.dart';
 import 'package:car_care/features/technician_sos/presentation/cubit/technician_sos_cubit/technician_sos_cubit.dart';
+import 'package:car_care/features/user_fuel/data/data_sources/user_fuel_remote_data_source.dart';
+import 'package:car_care/features/user_fuel/data/repositories/user_fuel_repository_impl.dart';
+import 'package:car_care/features/user_fuel/domain/repositories/i_user_fuel_repository.dart';
+import 'package:car_care/features/user_fuel/presentation/cubit/user_fuel_cubit/user_fuel_cubit.dart';
+import 'package:car_care/features/user_fuel/presentation/cubit/user_fuel_tracking_cubit/user_fuel_tracking_cubit.dart';
 import 'package:car_care/features/user_profile/data/data_sources/profile_remote_data_source.dart';
 import 'package:car_care/features/user_profile/domain/repositories/i_profile_repository.dart';
 import 'package:car_care/features/user_profile/data/repositories/profile_repo_impl.dart';
@@ -244,9 +269,7 @@ Future<void> setupServiceLocator() async {
     ..registerFactory<AcceptedRequestsCubit>(
       () => AcceptedRequestsCubit(getIt<IRequestsRepository>()),
     )
-    ..registerFactory<DeleteRequestCubit>(
-      () => DeleteRequestCubit(getIt<IRequestsRepository>()),
-    )
+  
     ..registerFactory<CancelRequestCubit>(
       () => CancelRequestCubit(getIt<IRequestsRepository>()),
     )
@@ -279,6 +302,15 @@ Future<void> setupServiceLocator() async {
     )
     ..registerFactory<CarWashBookingCubit>(
       () => CarWashBookingCubit(getIt<ICarWashBookingRepository>()),
+    )
+      ..registerLazySingleton<QuotationsRemoteDataSource>(
+      () => QuotationsRemoteDataSource(getIt<ApiService>()),
+    )
+    ..registerLazySingleton<IQuotationsRepository>(
+      () => QuotationsRepositoryImpl(getIt<QuotationsRemoteDataSource>()),
+    )
+    ..registerFactory<QuotationsCubit>(
+      () => QuotationsCubit(getIt<IQuotationsRepository>()),
     )
     // Bookings
     ..registerLazySingleton<BookingsRemoteDataSource>(
@@ -366,6 +398,58 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<CarWasherRatingsCubit>(
   () => CarWasherRatingsCubit(getIt<ICarWasherRatingsRepository>()),
-);
-
+)
+//FULE
+..registerLazySingleton<FuelProviderOrderRemoteDataSource>(
+  () => FuelProviderOrderRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IFuelProviderOrderRepository>(
+  () => FuelProviderOrderRepositoryImpl(getIt<FuelProviderOrderRemoteDataSource>()),
+)
+..registerFactory<FuelProviderOrderCubit>(
+  () => FuelProviderOrderCubit(getIt<IFuelProviderOrderRepository>()),
+)
+//statisticsFULE
+..registerLazySingleton<FuelProviderStatisticsRemoteDataSource>(
+  () => FuelProviderStatisticsRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IFuelProviderStatisticsRepository>(
+  () => FuelProviderStatisticsRepositoryImpl(getIt<FuelProviderStatisticsRemoteDataSource>()),
+)
+..registerFactory<FuelProviderStatisticsCubit>(
+  () => FuelProviderStatisticsCubit(getIt<IFuelProviderStatisticsRepository>()),
+)
+//FuelProviderProfile
+..registerLazySingleton<FuelProviderProfileRemoteDataSource>(
+  () => FuelProviderProfileRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IFuelProviderProfileRepository>(
+  () => FuelProviderProfileRepositoryImpl(getIt<FuelProviderProfileRemoteDataSource>()),
+)
+..registerFactory<FuelProviderProfileCubit>(
+  () => FuelProviderProfileCubit(getIt<IFuelProviderProfileRepository>()),
+)
+//UserFuel
+..registerLazySingleton<UserFuelRemoteDataSource>(
+  () => UserFuelRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IUserFuelRepository>(
+  () => UserFuelRepositoryImpl(getIt<UserFuelRemoteDataSource>()),
+)
+..registerFactory<UserFuelCubit>(
+  () => UserFuelCubit(getIt<IUserFuelRepository>()),
+  
+)
+..registerFactory<UserFuelTrackingCubit>(
+  () => UserFuelTrackingCubit(getIt<IUserFuelRepository>()),)
+//ShareFuelProviderLocation 
+..registerLazySingleton<ShareFuelProviderLocationRemoteDataSource>(
+  () => ShareFuelProviderLocationRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IShareFuelProviderLocationRepository>(
+  () => ShareFuelProviderLocationRepositoryImpl(getIt<ShareFuelProviderLocationRemoteDataSource>()),
+)
+..registerFactory<ShareFuelProviderLocationCubit>(
+  () => ShareFuelProviderLocationCubit(getIt<IShareFuelProviderLocationRepository>()),
+  );
 }

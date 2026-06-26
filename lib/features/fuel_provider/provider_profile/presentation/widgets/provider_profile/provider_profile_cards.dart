@@ -2,14 +2,13 @@ import 'package:car_care/core/constants/app_assets.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/app_typography.dart';
 import 'package:car_care/core/widgets/app_headline.dart';
-import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_profile/provider_profile_ui_model.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/domain/entities/provider_profile_entity.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProviderProfileSectionTitle extends StatelessWidget {
   const ProviderProfileSectionTitle({super.key, required this.title});
-
   final String title;
 
   @override
@@ -18,7 +17,6 @@ class ProviderProfileSectionTitle extends StatelessWidget {
       alignment: AlignmentDirectional.centerStart,
       child: Text(
         title,
-        textAlign: TextAlign.start,
         style: AppTypography.bodyMedium.copyWith(
           color: AppColors.black,
           fontWeight: FontWeight.w800,
@@ -31,7 +29,6 @@ class ProviderProfileSectionTitle extends StatelessWidget {
 
 class ProviderProfileTealBorderCard extends StatelessWidget {
   const ProviderProfileTealBorderCard({super.key, required this.child});
-
   final Widget child;
 
   @override
@@ -52,15 +49,14 @@ class ProviderProfileTealBorderCard extends StatelessWidget {
 
 class ProviderProfileHeader extends StatelessWidget {
   const ProviderProfileHeader({super.key, required this.profile});
-
-  final ProviderProfileUiModel profile;
+  final FuelProviderProfileEntity profile;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          profile.name,
+          profile.companyName ?? '-',
           textAlign: TextAlign.center,
           style: AppTypography.headlineSmall.copyWith(
             color: AppColors.black,
@@ -70,7 +66,7 @@ class ProviderProfileHeader extends StatelessWidget {
         ),
         SizedBox(height: 6.h),
         Text(
-          profile.phone,
+          profile.phone ?? '-',
           textAlign: TextAlign.center,
           textDirection: TextDirection.ltr,
           style: AppTypography.bodyMedium.copyWith(
@@ -90,14 +86,12 @@ class ProviderProfileAvailabilityCard extends StatelessWidget {
     required this.isAvailable,
     required this.onChanged,
   });
-
   final bool isAvailable;
   final ValueChanged<bool> onChanged;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-
     return ProviderProfileTealBorderCard(
       child: Row(
         children: [
@@ -129,12 +123,14 @@ class ProviderProfileAvailabilityCard extends StatelessWidget {
 
 class ProviderProfileLocationCard extends StatelessWidget {
   const ProviderProfileLocationCard({super.key, required this.profile});
-
-  final ProviderProfileUiModel profile;
+  final FuelProviderProfileEntity profile;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final address = [profile.city, profile.address]
+        .where((e) => e != null && e.isNotEmpty)
+        .join(' - ');
 
     return ProviderProfileTealBorderCard(
       child: Row(
@@ -157,7 +153,7 @@ class ProviderProfileLocationCard extends StatelessWidget {
                   textAlign: TextAlign.right,
                 ),
                 Text(
-                  profile.address,
+                  address.isEmpty ? '-' : address,
                   textAlign: TextAlign.right,
                   style: AppTypography.bodySmall.copyWith(
                     color: AppColors.lightTextSecondary,

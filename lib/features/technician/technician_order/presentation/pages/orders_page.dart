@@ -1,6 +1,7 @@
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
+import 'package:car_care/core/utils/app_snackbar.dart';
 import 'package:car_care/core/widgets/image_background.dart';
 import 'package:car_care/core/widgets/loding.dart';
 import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.dart';
@@ -48,7 +49,7 @@ class _Body extends StatelessWidget {
             }
 
             if (state is AvailableRequestsError) {
-              return Center(child: Text(state.message));
+              AppSnackBar.error(context, state.message);
             }
 
             if (state is AvailableRequestsLoaded) {

@@ -1,6 +1,5 @@
 import 'package:car_care/core/network/api_endpoints.dart';
 import 'package:car_care/core/network/api_service.dart';
-import 'package:car_care/features/technician_sos/data/models/technician_location_model.dart';
 import 'package:car_care/features/technician_sos/data/models/technician_sos_model.dart';
 import 'package:car_care/features/technician_sos/data/models/update_request_status_technician_model.dart';
 

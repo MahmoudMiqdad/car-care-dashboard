@@ -109,6 +109,12 @@ abstract class AppLocalizations {
   /// **'CarCare Services'**
   String get appTitle;
 
+  /// Fuel Provider
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Provider'**
+  String get fuelProvider;
+
   /// Application name
   ///
   /// In en, this message translates to:

@@ -1,9 +1,10 @@
-import 'package:dartz/dartz.dart';
 import 'package:car_care/core/errors/filuar.dart';
-import '../entities/provider_profile_entity.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/domain/entities/provider_profile_entity.dart';
+import 'package:dartz/dartz.dart';
 
-abstract class IProviderProfileRepository {
-
-  Future<Either<Failure, ProviderProfileEntity>> providerProfile(Map<String, dynamic> params);
-
+abstract class IFuelProviderProfileRepository {
+  Future<Either<Failure, FuelProviderProfileEntity>> addProfile(Map<String, dynamic> data);
+  Future<Either<Failure, FuelProviderProfileEntity>> myProfile();
+  Future<Either<Failure, Unit>> updateAvailability(bool isAvailable);
+  Future<Either<Failure, Unit>> updatePrices(Map<String, double> prices);
 }

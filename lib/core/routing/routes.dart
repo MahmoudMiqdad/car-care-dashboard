@@ -2,6 +2,7 @@
 
 class Routes {
   static const String splash = '/';
+  static const String onboarding = '/onboarding_page.dart';
   static const String login = '/login';
   static const String signup = '/signup';
   static const String user_profile = '/user_profile_page.dart';
@@ -19,12 +20,14 @@ class Routes {
   static const String deleteconfirmationdialog = '/delete_confirmation_dialog';
 
   static const String maintenanceHistory = '/maintenanceHistory';
+  static const String quotation_details = '/quotation_details';
   static const String inserttechnicianprofile = '/insert_technician_profile';
   static const String availability = '/availability';
   static const String quotations = '/quotations';
   static const String jobs = '/jobs';
   static const String statistics = '/statistics';
   static const String addRequest = '/add_requests_page.dart';
+   static const String maintenance_request_details = '/maintenance_request_details.dart';
   static const String all_requests = '/all_requests_stats_page';
 
   static const String rate_job = '/rate_job';
@@ -72,9 +75,10 @@ class Routes {
   static const String share_location_fuel = '/share_location_fuel';
   static const String provider_available_orders = '/provider_available_orders';
   static const String userfuel_orders = '/userfuel_orders';
-  static const String user_fuel = '/user_fuel';
+  static const String add_user_fuel = '/fuel_sos_create_page';
   static const String user_fuel_orders = '/user_fuel_orders';
+   static const String fuelorderslist = '/fuel_orders_list_page';
   static const String fuel_order_details = '/fuel_order_details';
   static const String provider_order = '/provider_order';
-  static const String provider_order_details = '/provider_order_details';
+  static const String provider_order_details = '/provider_order_details_page';
 }

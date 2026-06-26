@@ -18,6 +18,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get appTitle => 'خدمات العناية بالسيارات';
 
   @override
+  String get fuelProvider => 'مزود الوقود';
+
+  @override
   String get appName => 'كار كير';
 
   @override

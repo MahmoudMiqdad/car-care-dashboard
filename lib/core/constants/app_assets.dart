@@ -9,6 +9,8 @@ class AppAssets {
   static const String plateNumberIcon = '$_imagesPath/number.png';
   static const String deleteIcon = '$_imagesPath/delete.png';
   static const String editIcon = '$_imagesPath/edit.png';
+  static const String backgroung = '$_imagesPath/BK_.png';
+   static const String backgroung2 = '$_imagesPath/Artboard 9.png';
   static const String maintenanceActionIcon = '$_imagesPath/2.png';
 
   static const String logoImg = '$_imagesPath/logo.png';

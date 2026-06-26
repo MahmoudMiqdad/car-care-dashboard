@@ -25,14 +25,23 @@ class TechnicianSosCubit extends Cubit<TechnicianSosState> {
     );
   }
 
-  Future<void> acceptRequest(int id) async {
-    emit(TechnicianLoading());
-    final res = await _repo.acceptRequest(id);
-    res.fold(
-      (l) => emit(TechnicianError(l.message)),
-      (r) => emit(TechnicianAccepted(r)),
-    );
-  }
+Future<void> acceptRequest(int id) async {
+  emit(TechnicianLoading());
+  final res = await _repo.acceptRequest(id);
+  await res.fold(
+    (l) async => emit(TechnicianError(l.message)),
+    (r) async {
+      emit(TechnicianAccepted(r));
+      // ← بعد القبول جيب الطلب المحدث عشان يرجع الـ state صح
+      await Future.delayed(const Duration(milliseconds: 300));
+      final requestRes = await _repo.getRequest(id);
+      requestRes.fold(
+        (l) => emit(TechnicianError(l.message)),
+        (updated) => emit(TechnicianRequestLoaded(updated)),
+      );
+    },
+  );
+}
 
   Future<void> myRequests() async {
     emit(TechnicianLoading());

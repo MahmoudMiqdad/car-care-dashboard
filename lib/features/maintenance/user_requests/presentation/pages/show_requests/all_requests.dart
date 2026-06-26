@@ -1,9 +1,9 @@
-// ignore_for_file: deprecated_member_use
+
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/Empty_state.dart';
 import 'package:car_care/core/widgets/custom_appbar.dart';
-import 'package:car_care/core/widgets/error_state_widget.dart' hide AppColors;
+import 'package:car_care/core/widgets/floating_add_button.dart';
 import 'package:car_care/core/widgets/image_background.dart';
 import 'package:car_care/core/widgets/loding.dart';
 import 'package:car_care/features/maintenance/user_requests/domain/request_status.dart';
@@ -62,6 +62,13 @@ class _AllRequestsPageState extends State<AllRequestsPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     floatingActionButton: Padding(
+  padding: EdgeInsets.only(bottom: 16.h, left: 16.w),
+  child: FloatingAddButton(
+    onTap: () => context.push(Routes.addRequest),
+  ),
+),
+floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
       appBar: CustomAppBar(
         title: 'All Requests',
         showBackButton: true,
