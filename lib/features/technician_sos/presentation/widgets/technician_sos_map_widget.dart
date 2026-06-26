@@ -17,10 +17,9 @@ final _osrmDio = Dio(BaseOptions(
   receiveTimeout: const Duration(seconds: 10),
 ));
 
-/// ودجت خريطة الفني - يرسل موقعه تلقائياً ويشوف موقع المستخدم
 class TechnicianMapWidget extends StatefulWidget {
   final int sosId;
-  final double? userLat; // موقع المستخدم
+  final double? userLat;
   final double? userLng;
 
   const TechnicianMapWidget({
@@ -37,14 +36,13 @@ class TechnicianMapWidget extends StatefulWidget {
 class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
   final MapController _mapController = MapController();
 
-  LatLng? _myLocation;       // موقع الفني الحالي
+  LatLng? _myLocation;
   List<LatLng> _routePoints = [];
   bool _loadingRoute = false;
   LatLng? _lastRouteFetch;
   bool _isSharing = false;
 
   Timer? _locationTimer;
-  StreamSubscription<Position>? _positionStream;
 
   @override
   void initState() {
@@ -55,7 +53,6 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
   @override
   void dispose() {
     _locationTimer?.cancel();
-    _positionStream?.cancel();
     super.dispose();
   }
 
@@ -64,7 +61,6 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
     if (!permission) return;
 
     setState(() => _isSharing = true);
-
 
     await _sendCurrentLocation();
 
@@ -101,11 +97,9 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
 
       if (mounted) {
         setState(() => _myLocation = myLatLng);
-        // تحرك الكاميرا لموقع الفني
         _mapController.move(myLatLng, _mapController.camera.zoom);
       }
 
-      // ابعت للـ API
       if (mounted) {
         context.read<ShareTechnicianLocationSosCubit>().shareLocation(
               sosId: widget.sosId,
@@ -114,7 +108,6 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
             );
       }
 
-      // حدّث المسار لو عندنا موقع المستخدم
       if (widget.userLat != null && widget.userLng != null) {
         await _fetchRoute(
           myLatLng,
@@ -128,11 +121,8 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
 
   Future<void> _fetchRoute(LatLng from, LatLng to) async {
     if (_lastRouteFetch != null) {
-      final distance = const Distance().as(
-        LengthUnit.Meter,
-        _lastRouteFetch!,
-        from,
-      );
+      final distance =
+          const Distance().as(LengthUnit.Meter, _lastRouteFetch!, from);
       if (distance < 20) return;
     }
 
@@ -182,7 +172,10 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
 
     final points = _routePoints.isNotEmpty
         ? _routePoints
-        : [if (_myLocation != null) _myLocation!, if (userLocation != null) userLocation];
+        : [
+            if (_myLocation != null) _myLocation!,
+            if (userLocation != null) userLocation,
+          ];
 
     if (points.length < 2) return;
 
@@ -193,10 +186,7 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
     }
 
     _mapController.fitCamera(
-      CameraFit.bounds(
-        bounds: bounds,
-        padding: const EdgeInsets.all(50),
-      ),
+      CameraFit.bounds(bounds: bounds, padding: const EdgeInsets.all(50)),
     );
   }
 
@@ -208,7 +198,8 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
 
     final center = _myLocation ?? userLocation ?? const LatLng(33.3, 44.4);
 
-    return BlocListener<ShareTechnicianLocationSosCubit, ShareTechnicianLocationSosState>(
+    return BlocListener<ShareTechnicianLocationSosCubit,
+        ShareTechnicianLocationSosState>(
       listener: (context, state) {
         if (state is ShareLocationError) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -224,17 +215,12 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
         children: [
           FlutterMap(
             mapController: _mapController,
-            options: MapOptions(
-              initialCenter: center,
-              initialZoom: 14,
-            ),
+            options: MapOptions(initialCenter: center, initialZoom: 14),
             children: [
               TileLayer(
                 urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                 userAgentPackageName: 'com.car_care.app',
               ),
-
-              // ─── أقصر طريق من OSRM ───────────────────────────────
               if (_routePoints.length > 1)
                 PolylineLayer(
                   polylines: [
@@ -247,8 +233,6 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
                     ),
                   ],
                 ),
-
-              // ─── خط مستقيم احتياطي ────────────────────────────────
               if (_routePoints.isEmpty &&
                   _myLocation != null &&
                   userLocation != null)
@@ -262,11 +246,8 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
                     ),
                   ],
                 ),
-
-              // ─── الماركرز ─────────────────────────────────────────
               MarkerLayer(
                 markers: [
-                  // موقع المستخدم (أحمر)
                   if (userLocation != null)
                     Marker(
                       point: userLocation,
@@ -274,12 +255,11 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
                       height: 50,
                       child: const _UserMarker(),
                     ),
-                  // موقع الفني (أخضر)
                   if (_myLocation != null)
                     Marker(
                       point: _myLocation!,
-                      width: 60,
-                      height: 60,
+                      width: 50,
+                      height: 50,
                       child: const _TechnicianSelfMarker(),
                     ),
                 ],
@@ -335,48 +315,52 @@ class _TechnicianMapWidgetState extends State<TechnicianMapWidget> {
   }
 }
 
-// ─── User Marker (موقع المستخدم) ─────────────────────────────────────────────
+// ─── User Marker (موقع المستخدم) ──────────────────────────────────────────
 class _UserMarker extends StatelessWidget {
   const _UserMarker();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: Colors.red,
-            shape: BoxShape.circle,
-            border: Border.all(color: Colors.white, width: 2),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.red.withOpacity(0.4),
-                blurRadius: 8,
-                spreadRadius: 2,
-              ),
-            ],
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: Colors.red,
+              shape: BoxShape.circle,
+              border: Border.all(color: Colors.white, width: 2),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.red.withOpacity(0.4),
+                  blurRadius: 8,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            child: const Icon(Icons.person_pin, color: Colors.white, size: 20),
           ),
-          child: const Icon(Icons.person_pin, color: Colors.white, size: 20),
-        ),
-        const SizedBox(height: 2),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-          decoration: BoxDecoration(
-            color: Colors.red,
-            borderRadius: BorderRadius.circular(4),
+          const SizedBox(height: 2),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: const Text(
+              'العميل',
+              style: TextStyle(color: Colors.white, fontSize: 9),
+            ),
           ),
-          child: const Text(
-            'العميل',
-            style: TextStyle(color: Colors.white, fontSize: 9),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
 
-// ─── Technician Self Marker (موقع الفني نفسه) ────────────────────────────────
+// ─── Technician Self Marker (موقع الفني نفسه) ─────────────────────────────
 class _TechnicianSelfMarker extends StatefulWidget {
   const _TechnicianSelfMarker();
 
@@ -411,43 +395,47 @@ class _TechnicianSelfMarkerState extends State<_TechnicianSelfMarker>
   Widget build(BuildContext context) {
     return ScaleTransition(
       scale: _scaleAnim,
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(6),
-            decoration: BoxDecoration(
-              color: AppColors.carWashTeal,
-              shape: BoxShape.circle,
-              border: Border.all(color: Colors.white, width: 2),
-              boxShadow: [
-                BoxShadow(
-                  color: AppColors.carWashTeal.withOpacity(0.5),
-                  blurRadius: 10,
-                  spreadRadius: 3,
-                ),
-              ],
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: AppColors.carWashTeal,
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: 2),
+                boxShadow: [
+                  BoxShadow(
+                    color: AppColors.carWashTeal.withOpacity(0.5),
+                    blurRadius: 10,
+                    spreadRadius: 3,
+                  ),
+                ],
+              ),
+              child: const Icon(Icons.build_circle, color: Colors.white, size: 22),
             ),
-            child: const Icon(Icons.build_circle, color: Colors.white, size: 22),
-          ),
-          const SizedBox(height: 2),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-            decoration: BoxDecoration(
-              color: AppColors.carWashTeal,
-              borderRadius: BorderRadius.circular(4),
+            const SizedBox(height: 2),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+              decoration: BoxDecoration(
+                color: AppColors.carWashTeal,
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: const Text(
+                'أنت',
+                style: TextStyle(color: Colors.white, fontSize: 9),
+              ),
             ),
-            child: const Text(
-              'أنت',
-              style: TextStyle(color: Colors.white, fontSize: 9),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
 
-// ─── Status Card 
+// ─── Status Card ───────────────────────────────────────────────────────────
 class _StatusCard extends StatelessWidget {
   final bool isSharing;
   final bool isLoadingRoute;
@@ -468,7 +456,8 @@ class _StatusCard extends StatelessWidget {
     double totalMeters = 0;
     final dist = Distance();
     for (int i = 0; i < routePoints.length - 1; i++) {
-      totalMeters += dist.as(LengthUnit.Meter, routePoints[i], routePoints[i + 1]);
+      totalMeters +=
+          dist.as(LengthUnit.Meter, routePoints[i], routePoints[i + 1]);
     }
     if (totalMeters < 1000) return '${totalMeters.toStringAsFixed(0)} م';
     return '${(totalMeters / 1000).toStringAsFixed(1)} كم';
@@ -524,8 +513,8 @@ class _StatusCard extends StatelessWidget {
                 ],
               ),
             ),
-            // مؤشر الإرسال
-            BlocBuilder<ShareTechnicianLocationSosCubit, ShareTechnicianLocationSosState>(
+            BlocBuilder<ShareTechnicianLocationSosCubit,
+                ShareTechnicianLocationSosState>(
               builder: (context, state) {
                 if (state is ShareLocationLoading) {
                   return SizedBox(

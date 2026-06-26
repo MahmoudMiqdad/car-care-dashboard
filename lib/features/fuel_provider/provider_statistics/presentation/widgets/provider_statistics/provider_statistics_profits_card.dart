@@ -2,6 +2,7 @@ import 'package:car_care/core/constants/app_assets.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/app_headline.dart';
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/widgets/provider_profile/provider_profile_cards.dart';
+import 'package:car_care/features/fuel_provider/provider_statistics/domain/entities/provider_statistics_entity.dart';
 import 'package:car_care/features/fuel_provider/provider_statistics/presentation/widgets/provider_statistics/provider_statistics_ui_model.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
@@ -11,12 +12,12 @@ import 'package:intl/intl.dart' hide TextDirection;
 class ProviderStatisticsProfitsCard extends StatelessWidget {
   const ProviderStatisticsProfitsCard({super.key, required this.statistics});
 
-  final ProviderStatisticsUiModel statistics;
+  final FuelProviderStatisticsEntity statistics;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    final formattedProfits = NumberFormat('#,###').format(statistics.totalProfits);
+    final formattedProfits = NumberFormat('#,###').format(statistics.totalOrders);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

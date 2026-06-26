@@ -27,7 +27,6 @@ class TechnicianSosRequestCard extends StatelessWidget {
   final TechnicianSosEntity item;
   final bool showAcceptButton;
 
-  // ─── فتح الخريطة مباشرة كـ bottom sheet ──────────────────────────────────
   void _openMap(BuildContext context) {
     showModalBottomSheet(
       context: context,
@@ -162,30 +161,30 @@ class TechnicianSosRequestCard extends StatelessWidget {
               child: Column(
                 children: [
                   // زر القبول - يظهر فقط لـ available
-                  if (showAcceptButton) ...[
-                    BlocBuilder<TechnicianSosCubit, TechnicianSosState>(
-                      builder: (context, state) {
-                        final isLoading = state is TechnicianLoading;
-                        return AppButton(
-                          onPressed: isLoading
-                              ? null
-                              : () => context
-                                  .read<TechnicianSosCubit>()
-                                  .acceptRequest(item.id!),
-                          text: isLoading
-                              ? 'جاري القبول...'
-                              : l10n.sosRequestAccept,
-                          isOutline: true,
-                          backgroundColor: AppColors.carWashTeal,
-                          outlineSurfaceColor: AppColors.white,
-                          textColor: AppColors.carWashTeal,
-                          borderRadius: 24.r,
-                          height: 50.h,
-                        );
-                      },
-                    ),
-                    SizedBox(height: 10.h),
-                  ],
+                  // if (showAcceptButton) ...[
+                  //   BlocBuilder<TechnicianSosCubit, TechnicianSosState>(
+                  //     builder: (context, state) {
+                  //       final isLoading = state is TechnicianLoading;
+                  //       return AppButton(
+                  //         onPressed: isLoading
+                  //             ? null
+                  //             : () => context
+                  //                 .read<TechnicianSosCubit>()
+                  //                 .acceptRequest(item.id!),
+                  //         text: isLoading
+                  //             ? 'جاري القبول...'
+                  //             : l10n.sosRequestAccept,
+                  //         isOutline: true,
+                  //         backgroundColor: AppColors.carWashTeal,
+                  //         outlineSurfaceColor: AppColors.white,
+                  //         textColor: AppColors.carWashTeal,
+                  //         borderRadius: 24.r,
+                  //         height: 50.h,
+                  //       );
+                  //     },
+                  //   ),
+                  //   SizedBox(height: 10.h),
+                  // ],
 
                   // زر التفاصيل
                   AppButton(

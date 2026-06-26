@@ -1,4 +1,22 @@
-﻿import 'package:car_care/features/user_fuel/presentation/pages/user_fuel_page.dart';
+﻿import 'package:car_care/core/service_locator/service_locator.dart';
+import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_available_orders_page_wrapper.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/domain/entities/provider_profile_entity.dart';
+import 'package:car_care/features/fuel_provider/provider_profile/presentation/cubit/provider_profile_cubit.dart';
+import 'package:car_care/features/maintenance/user_quotations/domain/entities/quotation_entity.dart';
+import 'package:car_care/features/maintenance/user_quotations/presentation/cubit/quotations_cubit.dart';
+import 'package:car_care/features/maintenance/user_quotations/presentation/pages/quotation_details_page.dart';
+import 'package:car_care/features/maintenance/user_requests/domain/entities/maintenance_request_details_entity.dart';
+import 'package:car_care/features/maintenance/user_requests/presentation/cubit/cancel_request_cubit/cancel_request_cubit.dart';
+import 'package:car_care/features/maintenance/user_requests/presentation/cubit/show_request_cubit/show_request_cubit.dart';
+import 'package:car_care/features/maintenance/user_requests/presentation/pages/show_requests/maintenance_request_details_page.dart';
+import 'package:car_care/features/onboarding/presentation/pages/onboarding_page.dart';
+import 'package:car_care/features/onboarding/presentation/pages/splash_screen.dart';
+import 'package:car_care/features/technician_sos/presentation/pages/all_technician_sos_requests.dart';
+import 'package:car_care/features/user_fuel/domain/entities/user_fuel_order_entity.dart';
+import 'package:car_care/features/user_fuel/presentation/cubit/user_fuel_cubit/user_fuel_cubit.dart';
+import 'package:car_care/features/user_fuel/presentation/pages/fuel_orders_list_page.dart';
+import 'package:car_care/features/user_fuel/presentation/pages/fuel_sos_create_page.dart';
+
 import 'package:car_care/features/car_washer/car_wash/bookings/domain/entities/bookings_entity.dart';
 import 'package:car_care/features/car_washer/car_wash/bookings/presentation/pages/bookings_page.dart';
 import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/entities/washers_entity.dart';
@@ -9,12 +27,8 @@ import 'package:car_care/features/car_washer/washers/washers_bookings/presentati
 import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_page.dart';
 import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/edit_profile_washer_page.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_details_page.dart';
-import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_order_page.dart';
-import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order_details/provider_order_details_ui_model.dart';
-import 'package:car_care/features/user_fuel_orders/presentation/pages/fuel_order_details_page.dart';
-import 'package:car_care/features/user_fuel_orders/presentation/pages/user_fuel_orders_page.dart';
-import 'package:car_care/features/user_fuel_orders/presentation/widgets/fuel_order_details/fuel_order_details_ui_model.dart';
-import 'package:car_care/features/fuel_provider/provider_available_orders/presentation/pages/provider_available_orders_page.dart';
+import 'package:car_care/features/user_fuel/presentation/pages/fuel_order_details_page.dart';
+import 'package:car_care/features/fuel_provider/provider_order/presentation/pages/provider_available_orders_page.dart';
 import 'package:car_care/features/fuel_provider/share_location_fuel/presentation/pages/share_location_fuel_page.dart';
 import 'package:car_care/features/fuel_provider/provider_statistics/presentation/pages/provider_statistics_page.dart';
 import 'package:car_care/features/fuel_provider/provider_profile/presentation/pages/provider_create_profile_page.dart';
@@ -24,10 +38,8 @@ import 'package:car_care/core/widgets/main_shell.dart';
 import 'package:car_care/features/sos/presentation/pages/Create_sos_page_wrapper.dart';
 import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
-import 'package:car_care/features/technician_sos/presentation/pages/all_technician_sos_requests.dart';
 import 'package:car_care/features/technician_sos/presentation/pages/sos_details_page.dart';
 import 'package:car_care/features/technician_sos/presentation/widgets/sos_requests_list/technician_sos_map_page.dart';
-import 'package:car_care/features/tracking/presentation/pages/tracking_page.dart';
 import 'package:car_care/features/sos/presentation/pages/all_user_sos_requests.dart';
 import 'package:car_care/features/sos/presentation/pages/sos_details_page.dart';
 import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
@@ -44,6 +56,7 @@ import 'package:car_care/features/maintenance/user_rate_job/presentation/pages/r
 import 'package:car_care/features/maintenance/user_requests/presentation/pages/show_requests/add_requests_page.dart';
 import 'package:car_care/features/maintenance/user_statistics/presentation/pages/statistics_page.dart';
 import 'package:car_care/features/maintenance/user_quotations/presentation/pages/quotations_page.dart';
+import 'package:car_care/features/user_fuel/presentation/pages/fuel_sos_create_page_wrapper.dart';
 import 'package:car_care/features/user_profile/presentation/pages/profile_page.dart';
 import 'package:car_care/features/user_profile/presentation/widgets/delete_confirmation_dialog.dart';
 import 'package:car_care/features/vehicle/presentation/pages/maintenance_history_page.dart';
@@ -61,6 +74,7 @@ import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.
 import 'package:car_care/features/user_profile/presentation/pages/profile_setup_page.dart';
 import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/car_washer/car_wash/bookings/presentation/pages/booking_details_page.dart';
 import '../../features/car_washer/car_wash/ratings/presentation/pages/ratings_page.dart';
@@ -74,10 +88,18 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.allUserSosRequests
+    initialLocation: Routes.splash    
     ,
     debugLogDiagnostics: true,
     routes: [
+      GoRoute(
+  path: Routes.splash,
+  builder: (_, __) => const SplashScreen(),
+),
+GoRoute(
+  path: Routes.onboarding,
+  builder: (_, __) => const OnboardingPage(),
+),
       GoRoute(
         path: Routes.login,
         name: '/login',
@@ -129,11 +151,7 @@ class AppRouter {
             name: '/home',
             builder: (context, state) => const HomePage(),
           ),
-          GoRoute(
-            path: Routes.user_fuel,
-            name: '/user_fuel',
-            builder: (context, state) => const UserFuelPage(),
-          ),
+        
           GoRoute(
             path: Routes.allUserSosRequests,
             name: '/sos',
@@ -146,6 +164,11 @@ class AppRouter {
               final id = int.parse(state.pathParameters['id']!);
               return SosDetailsPage(id: id);
             },
+          ),
+               GoRoute(
+            path: Routes.technician_sos_requests,
+            name: '/all_technician_sos_requests',
+            builder: (context, state) => const AllTechnicianSosRequests(),
           ),
              GoRoute(
             path: '/technicianSosDetails/:id',
@@ -235,24 +258,8 @@ class AppRouter {
             name: '/profile_washer',
             builder: (context, state) => const ProfileWasherPage(),
           ),
-// GoRoute(
-//   path: '/sos-list',
-//   builder: (context, state) {
-//     final type = state.extra as SosRequestType;
 
-//     return TechnicianSosRequestsListPage(type: type);
-//   },
-// ),
-          GoRoute(
-            path: Routes.technician_sos_requests,
-            name: '/all_technician_sos_requests',
-            builder: (context, state) => const AllTechnicianSosRequests(),
-          ),
-          GoRoute(
-            path: Routes.tracking,
-            name: '/tracking',
-            builder: (context, state) => const TrackingPage(),
-          ),
+   
          
 
           GoRoute(
@@ -263,21 +270,35 @@ class AppRouter {
             },
           ),
        
-            GoRoute(
-        path: Routes.provider_profile,
-        name: '/provider_profile',
-        builder: (context, state) => const ProviderProfilePage(),
-      ),
-            GoRoute(
-        path: Routes.provider_edit_profile,
-        name: '/provider_edit_profile',
-        builder: (context, state) => const ProviderEditProfilePage(),
-      ),
-            GoRoute(
-        path: Routes.provider_create_profile,
-        name: '/provider_create_profile',
-        builder: (context, state) => const ProviderCreateProfilePage(),
-      ),
+    GoRoute(
+  path: Routes.provider_profile,
+  name: '/provider_profile',
+  builder: (context, state) => BlocProvider(
+   create: (_) => getIt<FuelProviderProfileCubit>(),
+   child: const ProviderProfilePage(),
+  ),
+),
+
+GoRoute(
+  path: Routes.provider_edit_profile,
+  name: '/provider_edit_profile',
+  builder: (context, state) {
+    final profile = state.extra as FuelProviderProfileEntity?;
+    return BlocProvider(
+      create: (_) => getIt<FuelProviderProfileCubit>(),
+      child: ProviderEditProfilePage(profile: profile),
+    );
+  },
+),
+
+GoRoute(
+  path: Routes.provider_create_profile,
+  name: '/provider_create_profile',
+  builder: (context, state) => BlocProvider(
+    create: (_) => getIt<FuelProviderProfileCubit>(),
+    child: const ProviderCreateProfilePage(),
+  ),
+),
             GoRoute(
         path: Routes.provider_statistics,
         name: '/provider_statistics',
@@ -296,32 +317,43 @@ class AppRouter {
         builder: (context, state) => const ProviderAvailableOrdersPage(),
       ),
     
-            GoRoute(
-        path: Routes.user_fuel_orders,
-        name: '/user_fuel_orders',
-        builder: (context, state) => const UserFuelOrdersPage(),
-      ),
-            GoRoute(
-        path: Routes.fuel_order_details,
-        name: '/fuel_order_details',
-        builder: (context, state) {
-          final order = state.extra as FuelOrderDetailsUiModel?;
-          return FuelOrderDetailsPage(order: order);
-        },
-      ),
+ GoRoute(
+  path: Routes.add_user_fuel,
+  builder: (context, state) => const FuelSosCreatePageWrapper(),
+),
+
+GoRoute(
+  path: Routes.fuelorderslist,
+  builder: (context, state) => BlocProvider(
+    create: (_) => getIt<UserFuelCubit>(),
+    child: const FuelOrdersListPage(),
+  ),
+),
+
+GoRoute(
+  path: Routes.fuel_order_details,
+  builder: (context, state) {
+    final order = state.extra as UserFuelOrderEntity;
+    return BlocProvider(
+      create: (_) => getIt<UserFuelCubit>(),
+      child: FuelOrderDetailsPage(order: order),
+    );
+  },
+),
             GoRoute(
         path: Routes.provider_order,
-        name: '/provider_order',
-        builder: (context, state) => const ProviderOrderPage(),
+        name: '/provider_available_orders_page_wrapper',
+        builder: (context, state) => const ProviderOrdersTabsWrapper(),
       ),
-            GoRoute(
-        path: Routes.provider_order_details,
-        name: '/provider_order_details',
-        builder: (context, state) {
-          final order = state.extra as ProviderOrderDetailsUiModel?;
-          return ProviderOrderDetailsPage(order: order);
-        },
-      ),
+     GoRoute(
+  path: '/provider_order_details/:id',
+  name: 'providerOrderDetailsPage',
+  builder: (context, state) {
+    final id = int.parse(state.pathParameters['id']!);
+
+    return ProviderOrderDetailsPage(id: id);
+  },
+),
       ],
       ),
       GoRoute(
@@ -399,12 +431,48 @@ class AppRouter {
         name: '/technician_profile_view_page',
         builder: (context, state) => const TechnicianProfileViewPage(),
       ),
-
+GoRoute(
+  path: Routes.maintenance_request_details,
+  builder: (context, state) {
+    final id = state.extra as int;
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (_) => getIt<ShowRequestCubit>()),
+        BlocProvider(create: (_) => getIt<CancelRequestCubit>()),
+      ],
+      child: MaintenanceRequestDetailsPage(requestId: id),
+    );
+  },
+),
       GoRoute(
-        path: Routes.quotations,
-        name: '/quotations',
-        builder: (context, state) => const QuotationsPage(),
+  path: Routes.quotations,
+  name: '/quotations',
+  builder: (context, state) {
+    final requestId = state.extra as String;
+    return BlocProvider(
+      create: (_) => getIt<QuotationsCubit>(),
+      child: QuotationsPage(requestId: requestId),
+    );
+  },
+),
+GoRoute(
+  path: Routes.quotation_details,
+  name: '/quotation_details',
+  builder: (context, state) {
+    final data = state.extra as Map<String, dynamic>;
+
+    final quotation = data['quotation'] as QuotationEntity;
+    final requestId = data['requestId'] as String;
+
+    return BlocProvider(
+      create: (_) => getIt<QuotationsCubit>(),
+      child: QuotationDetailsPage(
+        quotation: quotation,
+        requestId: requestId,
       ),
+    );
+  },
+),
       GoRoute(
         path: Routes.deleteconfirmationdialog,
         name: '/deleteconfirmationdialog',

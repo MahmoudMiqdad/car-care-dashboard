@@ -1,6 +1,6 @@
 import 'package:car_care/core/constants/app_constants.dart';
+import 'package:car_care/features/fuel_provider/provider_order/domain/entities/provider_order_entity.dart';
 import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order/provider_order_cards.dart';
-import 'package:car_care/features/fuel_provider/provider_order/presentation/widgets/provider_order/provider_order_ui_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,8 +11,8 @@ class ProviderOrderBody extends StatelessWidget {
     this.onViewDetails,
   });
 
-  final List<ProviderOrderUiModel> orders;
-  final void Function(ProviderOrderUiModel order)? onViewDetails;
+  final List<FuelOrderEntity> orders;
+  final void Function(FuelOrderEntity order)? onViewDetails;
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +25,8 @@ class ProviderOrderBody extends StatelessWidget {
           16.h,
         ),
         itemCount: orders.length,
-        separatorBuilder: (context, _) => SizedBox(height: 16.h),
-        itemBuilder: (context, index) {
+        separatorBuilder: (_, __) => SizedBox(height: 16.h),
+        itemBuilder: (_, index) {
           final order = orders[index];
           return ProviderOrderCard(
             order: order,

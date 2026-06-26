@@ -73,4 +73,7 @@ static String customerCancelBooking(int bookingId) =>
  static const String technicianSosRequests = '/technician/sos/requests';
   static const String  technicianSosStatistics =  '/technician/sos/statistics';
    static const String technicianSosMyRequests = '/technician/sos/my_requests';
+   ///fuel_provider
+     static const String fuelProvider = '/fuel_provider';
+       static const String userFuel = '/customer/fuel_orders';
 }

@@ -1,10 +1,13 @@
+import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/image_background.dart';
+import 'package:car_care/features/fuel_provider/provider_statistics/presentation/cubit/provider_statistics_cubit.dart';
 import 'package:car_care/features/fuel_provider/provider_statistics/presentation/widgets/provider_statistics/provider_statistics_body.dart';
 import 'package:car_care/features/fuel_provider/provider_statistics/presentation/widgets/provider_statistics/provider_statistics_ui_model.dart';
 import 'package:car_care/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class ProviderStatisticsPage extends StatelessWidget {
@@ -25,8 +28,10 @@ class ProviderStatisticsPage extends StatelessWidget {
           onBackTapped: () => context.pop(),
         ),
         body: ImageBackground(
-          child: ProviderStatisticsBody(
-            statistics: ProviderStatisticsUiModel.preview,
+          child: BlocProvider(
+            create: (_) => getIt<FuelProviderStatisticsCubit>()..getStatistics()
+            ,
+            child: ProviderStatisticsBody(),
           ),
         ),
       ),

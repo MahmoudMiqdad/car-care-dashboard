@@ -103,26 +103,43 @@ class Technician {
 
 }
 
-class TechnicianProfile {
-    String specialization;
-    int experienceYears;
+class CurrentLocation {
+  final double lat;
+  final double lng;
+  final String updatedAt;
 
-    TechnicianProfile({
-        required this.specialization,
-        required this.experienceYears,
-    });
+  CurrentLocation({
+    required this.lat,
+    required this.lng,
+    required this.updatedAt,
+  });
 
-    factory TechnicianProfile.fromJson(Map<String, dynamic> json) => TechnicianProfile(
-        specialization: json["specialization"],
-        experienceYears: json["experience_years"],
-    );
-
-    Map<String, dynamic> toJson() => {
-        "specialization": specialization,
-        "experience_years": experienceYears,
-    };
+  factory CurrentLocation.fromJson(Map<String, dynamic> json) => CurrentLocation(
+    lat: (json["lat"] as num).toDouble(),
+    lng: (json["lng"] as num).toDouble(),
+    updatedAt: json["updated_at"],
+  );
 }
 
+class TechnicianProfile {
+  String? specialization;
+  int? experienceYears;
+  CurrentLocation? currentLocation;
+
+  TechnicianProfile({
+    this.specialization,
+    this.experienceYears,
+    this.currentLocation,
+  });
+
+  factory TechnicianProfile.fromJson(Map<String, dynamic> json) => TechnicianProfile(
+    specialization: json["specialization"],
+    experienceYears: json["experience_years"],
+    currentLocation: json["current_location"] != null
+        ? CurrentLocation.fromJson(json["current_location"])
+        : null,
+  );
+}
 class ServiceJob {
     int maintenanceRequestId;
     int quotationId;

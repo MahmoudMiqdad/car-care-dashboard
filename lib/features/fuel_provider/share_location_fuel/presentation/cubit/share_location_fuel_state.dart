@@ -1,3 +1,12 @@
-abstract class ShareLocationFuelState {}
+abstract class ShareFuelProviderLocationState {}
 
-class ShareLocationFuelInitial extends ShareLocationFuelState {}
+class ShareFuelProviderLocationInitial extends ShareFuelProviderLocationState {}
+
+class ShareFuelProviderLocationLoading extends ShareFuelProviderLocationState {}
+
+class ShareFuelProviderLocationSuccess extends ShareFuelProviderLocationState {}
+
+class ShareFuelProviderLocationError extends ShareFuelProviderLocationState {
+  final String message;
+  ShareFuelProviderLocationError(this.message);
+}

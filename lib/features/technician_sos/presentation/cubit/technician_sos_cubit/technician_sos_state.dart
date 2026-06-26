@@ -26,8 +26,12 @@ class TechnicianAccepted extends TechnicianSosState {
   TechnicianAccepted(this.request);
 }
 
-// ← جديد: بعد نجاح changeStatus
+
 class TechnicianStatusChanged extends TechnicianSosState {
   final TechnicianSosEntity request;
   TechnicianStatusChanged(this.request);
+}
+class TechnicianNavigateToMap extends TechnicianSosState {
+  final TechnicianSosEntity request;
+  TechnicianNavigateToMap(this.request);
 }

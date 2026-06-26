@@ -1,3 +1,4 @@
+import 'package:car_care/core/errors/excptions.dart';
 import 'package:car_care/features/maintenance/user_statistics/data/data_sources/statistics_remote_data_source.dart';
 import 'package:car_care/features/maintenance/user_statistics/data/models/statistics_model.dart';
 import 'package:car_care/features/maintenance/user_statistics/domain/entities/statistics_entity.dart';
@@ -30,8 +31,10 @@ class StatisticsRepositoryImpl implements IStatisticsRepository {
     try {
       final model = await _remoteDataSource.statistics();
       return Right(_map(model));
-    } catch (e) {
-      return Left(Failure(message: 'حدث خطأ أثناء جلب الإحصائيات'));
-    }
+    } on ServerExpcptions catch (e) {
+    return Left(e.error);
+  } catch (_) {
+    return const Left(Failure(message: 'حدث خطأ أثناء جلب الإحصائيات'));
+  }
   }
 }

@@ -11,6 +11,10 @@
   "@appTitle": {
     "description": "Application title"
   },
+      "fuelProvider": "Fuel Provider",
+  "@fuelProvider": {
+    "description": "Fuel Provider"
+  },
   
   "appName": "CarCare",
   "@appName": {

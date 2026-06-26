@@ -10,7 +10,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
-
 final _osrmDio = Dio(BaseOptions(
   connectTimeout: const Duration(seconds: 10),
   receiveTimeout: const Duration(seconds: 10),
@@ -55,7 +54,7 @@ class _SosMapWidgetState extends State<SosMapWidget> {
         16,
       );
     } catch (e) {
-      print('❌ Location error: $e');
+      debugPrint('❌ Location error: $e');
     }
   }
 
@@ -72,8 +71,7 @@ class _SosMapWidgetState extends State<SosMapWidget> {
     setState(() => _loadingRoute = true);
 
     try {
-      final url =
-          'https://router.project-osrm.org/route/v1/driving/'
+      final url = 'https://router.project-osrm.org/route/v1/driving/'
           '${from.longitude},${from.latitude};'
           '${to.longitude},${to.latitude}'
           '?overview=full&geometries=geojson';
@@ -110,100 +108,48 @@ class _SosMapWidgetState extends State<SosMapWidget> {
   Widget build(BuildContext context) {
     return BlocBuilder<TrackingCubit, TrackingState>(
       builder: (context, state) {
-          if (state is TrackingWaitingTechnician) {
-      return const WaitingTechnicianWidget();
-    }
+        if (state is TrackingWaitingTechnician) {
+          return const WaitingTechnicianWidget();
+        }
+
         if (state is TrackingLoading) {
-           return const WaitingTechnicianWidget();
+          return const Center(child: AppLoadingWidget());
         }
-      
+
         if (state is TrackingError) {
-          return  _buildWaitingView(context);
-          // Center(
-          //   child: Column(
-          //     mainAxisSize: MainAxisSize.min,
-          //     children: [
-          //       const Icon(Icons.error_outline, color: Colors.red, size: 40),
-          //       const SizedBox(height: 8),
-          //       Text(state.message, textAlign: TextAlign.center),
-          //       TextButton(
-          //         onPressed: () =>
-          //             context.read<TrackingCubit>().loadTracking(widget.sosId),
-          //         child: const Text('إعادة المحاولة'),
-          //       ),
-          //     ],
-          //   ),
-          // );
+          return _buildErrorView(context, state.message);
         }
+
         if (state is TrackingLoaded) return _buildMap(state);
+
         return const SizedBox.shrink();
       },
     );
   }
 
-Widget _buildWaitingView(BuildContext context) {
-  return Center(
-    child: Padding(
-      padding: const EdgeInsets.all(32),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Container(
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              color: Colors.orange.shade50,
-              shape: BoxShape.circle,
+  Widget _buildErrorView(BuildContext context, String message) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Icon(Icons.location_off, size: 48, color: Colors.grey),
+            const SizedBox(height: 12),
+            Text(message, textAlign: TextAlign.center),
+            const SizedBox(height: 12),
+            OutlinedButton.icon(
+              onPressed: () =>
+                  context.read<TrackingCubit>().loadTracking(widget.sosId),
+              icon: const Icon(Icons.refresh),
+              label: const Text('إعادة المحاولة'),
             ),
-            child: Icon(
-              Icons.engineering_outlined,
-              size: 44,
-              color: Colors.orange.shade600,
-            ),
-          ),
-
-          const SizedBox(height: 20),
-
-          const Text(
-            'في انتظار قبول الفني',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
-          ),
-
-          const SizedBox(height: 8),
-
-          Text(
-            'سيبدأ التتبع تلقائياً عند قبول أحد الفنيين لطلبك',
-            style: TextStyle(
-              fontSize: 13,
-              color: Colors.grey.shade600,
-              height: 1.5,
-            ),
-            textAlign: TextAlign.center,
-          ),
-
-          const SizedBox(height: 24),
-
-        
-          OutlinedButton.icon(
-            onPressed: () {
-              context.read<TrackingCubit>().loadTracking(widget.sosId);
-            },
-            icon: const Icon(Icons.refresh),
-            label: const Text('إعادة المحاولة'),
-            style: OutlinedButton.styleFrom(
-              foregroundColor: Colors.orange.shade600,
-              side: BorderSide(color: Colors.orange.shade300),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
+
   Widget _buildMap(TrackingLoaded state) {
     final data = state.data;
 
@@ -235,7 +181,8 @@ Widget _buildWaitingView(BuildContext context) {
               PolylineLayer(
                 polylines: [
                   Polyline(
-                    points: data.path!.map((p) => LatLng(p.lat, p.lng)).toList(),
+                    points:
+                        data.path!.map((p) => LatLng(p.lat, p.lng)).toList(),
                     color: Colors.grey.withOpacity(0.4),
                     strokeWidth: 3,
                     pattern: StrokePattern.dashed(segments: [8, 4]),
@@ -254,7 +201,9 @@ Widget _buildWaitingView(BuildContext context) {
                   ),
                 ],
               ),
-            if (_routePoints.isEmpty && techLocation != null && userLocation != null)
+            if (_routePoints.isEmpty &&
+                techLocation != null &&
+                userLocation != null)
               PolylineLayer(
                 polylines: [
                   Polyline(
@@ -277,8 +226,8 @@ Widget _buildWaitingView(BuildContext context) {
                 if (techLocation != null)
                   Marker(
                     point: techLocation,
-                    width: 60,
-                    height: 60,
+                    width: 50,
+                    height: 50,
                     child: const _TechnicianMarker(),
                   ),
               ],
@@ -311,7 +260,6 @@ Widget _buildWaitingView(BuildContext context) {
                   child: Icon(Icons.route, color: Colors.blue.shade700),
                 ),
               const SizedBox(height: 8),
-              // ← يروح لموقع الشخص الحالي (مو الفني)
               FloatingActionButton.small(
                 heroTag: 'my_location',
                 onPressed: _goToMyLocation,
@@ -338,36 +286,52 @@ Widget _buildWaitingView(BuildContext context) {
   }
 }
 
+// ─── User Marker (موقع المستخدم) ──────────────────────────────────────────
 class _UserMarker extends StatelessWidget {
   const _UserMarker();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: Colors.red,
-            shape: BoxShape.circle,
-            border: Border.all(color: Colors.white, width: 2),
-            boxShadow: [
-              BoxShadow(color: Colors.red.withOpacity(0.4), blurRadius: 8, spreadRadius: 2),
-            ],
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: Colors.red,
+              shape: BoxShape.circle,
+              border: Border.all(color: Colors.white, width: 2),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.red.withOpacity(0.4),
+                  blurRadius: 8,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            child: const Icon(Icons.person_pin, color: Colors.white, size: 20),
           ),
-          child: const Icon(Icons.person_pin, color: Colors.white, size: 20),
-        ),
-        const SizedBox(height: 2),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-          decoration: BoxDecoration(color: Colors.red, borderRadius: BorderRadius.circular(4)),
-          child: const Text('أنت', style: TextStyle(color: Colors.white, fontSize: 9)),
-        ),
-      ],
+          const SizedBox(height: 2),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+            decoration: BoxDecoration(
+              color: Colors.red,
+              borderRadius: BorderRadius.circular(4),
+            ),
+            child: const Text(
+              'أنت',
+              style: TextStyle(color: Colors.white, fontSize: 9),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
 
+// ─── Technician Marker (موقع الفني) ───────────────────────────────────────
 class _TechnicianMarker extends StatefulWidget {
   const _TechnicianMarker();
 
@@ -402,35 +366,47 @@ class _TechnicianMarkerState extends State<_TechnicianMarker>
   Widget build(BuildContext context) {
     return ScaleTransition(
       scale: _scaleAnim,
-      child: Column(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(6),
-            decoration: BoxDecoration(
-              color: Colors.blue.shade700,
-              shape: BoxShape.circle,
-              border: Border.all(color: Colors.white, width: 2),
-              boxShadow: [
-                BoxShadow(color: Colors.blue.withOpacity(0.5), blurRadius: 10, spreadRadius: 3),
-              ],
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(6),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade700,
+                shape: BoxShape.circle,
+                border: Border.all(color: Colors.white, width: 2),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.blue.withOpacity(0.5),
+                    blurRadius: 10,
+                    spreadRadius: 3,
+                  ),
+                ],
+              ),
+              child: const Icon(Icons.build_circle, color: Colors.white, size: 22),
             ),
-            child: const Icon(Icons.build_circle, color: Colors.white, size: 22),
-          ),
-          const SizedBox(height: 2),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-            decoration: BoxDecoration(
-              color: Colors.blue.shade700,
-              borderRadius: BorderRadius.circular(4),
+            const SizedBox(height: 2),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade700,
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: const Text(
+                'الفني',
+                style: TextStyle(color: Colors.white, fontSize: 9),
+              ),
             ),
-            child: const Text('الفني', style: TextStyle(color: Colors.white, fontSize: 9)),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
 
+// ─── Status / Info Card ────────────────────────────────────────────────────
 class _TechnicianInfoCard extends StatelessWidget {
   final TrackingLoaded state;
   final List<LatLng> routePoints;
@@ -447,7 +423,8 @@ class _TechnicianInfoCard extends StatelessWidget {
     double totalMeters = 0;
     final dist = Distance();
     for (int i = 0; i < routePoints.length - 1; i++) {
-      totalMeters += dist.as(LengthUnit.Meter, routePoints[i], routePoints[i + 1]);
+      totalMeters +=
+          dist.as(LengthUnit.Meter, routePoints[i], routePoints[i + 1]);
     }
     if (totalMeters < 1000) return '${totalMeters.toStringAsFixed(0)} م';
     return '${(totalMeters / 1000).toStringAsFixed(1)} كم';
@@ -480,10 +457,14 @@ class _TechnicianInfoCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    isLive ? 'الفني في الطريق - تتبع مباشر' : 'انتظار تحديث الموقع...',
+                    isLive
+                        ? 'الفني في الطريق - تتبع مباشر'
+                        : 'انتظار تحديث الموقع...',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isLive ? Colors.green.shade700 : Colors.orange.shade700,
+                      color: isLive
+                          ? Colors.green.shade700
+                          : Colors.orange.shade700,
                       fontSize: 13,
                     ),
                   ),

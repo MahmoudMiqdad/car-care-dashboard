@@ -1,11 +1,21 @@
+import 'package:car_care/core/network/api_endpoints.dart';
 import 'package:car_care/core/network/api_service.dart';
 
-class ShareLocationFuelRemoteDataSource {
+class ShareFuelProviderLocationRemoteDataSource {
+  final ApiService _api;
+  const ShareFuelProviderLocationRemoteDataSource(this._api);
 
-  const ShareLocationFuelRemoteDataSource(this._apiService);
-
-  final ApiService _apiService;
-
-  Future<Map<String, dynamic>> shareLocationFuel(Map<String, dynamic> data) async => _apiService.post(endPoint: 'share_location_fuel/share_location_fuel', data: data);
-
+  Future<void> shareLocation({
+    required int orderId,
+    required double lat,
+    required double lng,
+  }) async {
+    await _api.post(
+      endPoint: '${ApiEndpoints.fuelProvider}/orders/$orderId/location',
+      data: {
+        'latitude': lat,
+        'longitude': lng,
+      },
+    );
+  }
 }

@@ -1,6 +1,7 @@
 import 'package:car_care/core/network/api_endpoints.dart';
 import 'package:car_care/core/network/api_service.dart';
 import 'package:car_care/core/network/model/base_response_model.dart' show BaseResponseModel;
+import 'package:car_care/features/maintenance/user_requests/data/models/maintenance_request_details_model.dart';
 import 'package:car_care/features/maintenance/user_requests/data/models/maintenance_request_model.dart';
 import 'package:dio/dio.dart';
 
@@ -32,25 +33,29 @@ class RequestsRemoteDataSource {
     return BaseResponseModel  .fromJson(response);
   }
   //cancelRequest
-    Future<MaintenanceRequestModel> cancelRequest(
-   String cancellationReason,
-   String id
-  ) async {
-    final response = await _apiService.post(
-      endPoint: '${ApiEndpoints.maintenance}/$id/cancel',
-      data: cancellationReason,
-    );
-    return MaintenanceRequestModel.fromJson(response);
-  }
-
+Future<MaintenanceRequestModel> cancelRequest(
+  String cancellationReason,
+  String id,
+   
+) async {
+  
+  final response = await _apiService.post(
+    endPoint: '${ApiEndpoints.maintenance}/$id/cancel',
+   
+    data: {
+      "cancellation_reason": cancellationReason,
+    },
+  );
+  return MaintenanceRequestModel.fromJson(response);
+}
   /// showRequest
  
-  Future<MaintenanceRequestModel> showRequest(String id) async {
+  Future<MaintenanceRequestDetailsModel> showRequest(String id) async {
     final response = await _apiService.get(
-      endPoint: '${ApiEndpoints.technicianprofile}/$id',
+      endPoint: '${ApiEndpoints.maintenance}/$id',
     );
 
-    return MaintenanceRequestModel.fromJson(response);
+    return MaintenanceRequestDetailsModel.fromJson(response);
   }
 
   /// updateRequest
@@ -68,7 +73,7 @@ class RequestsRemoteDataSource {
   Future<MaintenanceRequestModel> deletRequest(String id) async {
     final response = await _apiService.delete(
       id: id,
-      endPoint: ApiEndpoints.maintenance,
+      endPoint:'${ApiEndpoints.maintenance}/$id',
     );
     return MaintenanceRequestModel.fromJson(response);
   }

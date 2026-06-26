@@ -1,5 +1,4 @@
 import 'package:car_care/features/sos/domain/entities/sos_entity.dart';
-import 'package:dartz/dartz.dart';
 
 abstract class SosState {}
 

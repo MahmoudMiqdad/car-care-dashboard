@@ -13,7 +13,7 @@ class AllTechnicianSosRequests extends StatelessWidget {
     return BlocProvider(
       create: (_) => getIt<TechnicianSosCubit>(),
       child: const TechnicianSosRequestsListPage(
-        type: SosRequestType.available,
+        type: SosRequestType.myRequests,
       ),
     );
   }

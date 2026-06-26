@@ -18,6 +18,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'CarCare Services';
 
   @override
+  String get fuelProvider => 'Fuel Provider';
+
+  @override
   String get appName => 'CarCare';
 
   @override
