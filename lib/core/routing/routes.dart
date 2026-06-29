@@ -81,4 +81,7 @@ class Routes {
   static const String fuel_order_details = '/fuel_order_details';
   static const String provider_order = '/provider_order';
   static const String provider_order_details = '/provider_order_details_page';
+
+  static const String customerProductDetailsPreview =
+      '/spare-parts/customer/product-details-preview';
 }

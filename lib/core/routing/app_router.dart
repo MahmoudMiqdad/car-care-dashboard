@@ -73,6 +73,7 @@ import 'package:car_care/features/home/presentation/pages/notifications_page.dar
 import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.dart';
 import 'package:car_care/features/user_profile/presentation/pages/profile_setup_page.dart';
 import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
+import 'package:car_care/features/spare_parts_store/customer/product_details/presentation/pages/customer_product_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -88,8 +89,8 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.splash    
-    ,
+    initialLocation: Routes.customerProductDetailsPreview,   
+    
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -477,6 +478,11 @@ GoRoute(
         path: Routes.deleteconfirmationdialog,
         name: '/deleteconfirmationdialog',
         builder: (context, state) => const DeleteProfileDialog(),
+      ),
+      GoRoute(
+        path: Routes.customerProductDetailsPreview,
+        name: 'customerProductDetailsPreview',
+        builder: (context, state) => const CustomerProductDetailsPage(),
       ),
 
       // GoRoute(
