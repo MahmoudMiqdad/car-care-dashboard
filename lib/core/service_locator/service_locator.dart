@@ -79,6 +79,12 @@ import 'package:car_care/features/spare_parts_store/customer/products/data/repos
 import 'package:car_care/features/spare_parts_store/customer/products/domain/repositories/i_products_repository.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/all_products/all_products_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/data/data_sources/shops_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/data/repositories/shops_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/domain/repositories/i_shops_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/cubit/shop_details/shop_details_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/cubit/shop_products/shop_products_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/cubit/shops_list/shops_list_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_cubit.dart';
 import 'package:car_care/features/technician/technician_statistics/data/data_sources/technician_statistics_remote_data_source.dart';
@@ -469,5 +475,21 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<AllProductsCubit>(
   () => AllProductsCubit(getIt<IProductsRepository>()),
+)
+//SpareParts Store - Shops
+..registerLazySingleton<ShopsRemoteDataSource>(
+  () => ShopsRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IShopsRepository>(
+  () => ShopsRepositoryImpl(getIt<ShopsRemoteDataSource>()),
+)
+..registerFactory<ShopsListCubit>(
+  () => ShopsListCubit(getIt<IShopsRepository>()),
+)
+..registerFactory<ShopDetailsCubit>(
+  () => ShopDetailsCubit(getIt<IShopsRepository>()),
+)
+..registerFactory<ShopProductsCubit>(
+  () => ShopProductsCubit(getIt<IShopsRepository>()),
   );
 }

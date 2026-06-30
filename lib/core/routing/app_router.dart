@@ -75,6 +75,9 @@ import 'package:car_care/features/user_profile/presentation/pages/profile_setup_
 import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/all_products_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/customer_product_details_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_details_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_products_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shops_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -493,6 +496,27 @@ GoRoute(
         path: Routes.customerAllProducts,
         name: 'customerAllProducts',
         builder: (context, state) => const AllProductsPage(),
+      ),
+      GoRoute(
+        path: Routes.customerShopsList,
+        name: 'customerShopsList',
+        builder: (context, state) => const ShopsListPage(),
+      ),
+      GoRoute(
+        path: '${Routes.customerShopDetails}/:id',
+        name: 'customerShopDetails',
+        builder: (context, state) {
+          final shopId = int.parse(state.pathParameters['id']!);
+          return ShopDetailsPage(shopId: shopId);
+        },
+      ),
+      GoRoute(
+        path: '${Routes.customerShopProducts}/:id',
+        name: 'customerShopProducts',
+        builder: (context, state) {
+          final shopId = int.parse(state.pathParameters['id']!);
+          return ShopProductsPage(shopId: shopId);
+        },
       ),
 
       // GoRoute(

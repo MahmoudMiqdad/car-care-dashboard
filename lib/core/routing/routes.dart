@@ -88,4 +88,12 @@ class Routes {
       '$customerProductDetailsPreview/$productId';
 
   static const String customerAllProducts = '/spare-parts/customer/all-products';
+
+  static const String customerShopsList = '/spare-parts/customer/shops';
+  static const String customerShopDetails = '/spare-parts/customer/shop-details';
+  static String customerShopDetailsPath(int shopId) =>
+      '$customerShopDetails/$shopId';
+  static const String customerShopProducts = '/spare-parts/customer/shop-products';
+  static String customerShopProductsPath(int shopId) =>
+      '$customerShopProducts/$shopId';
 }
