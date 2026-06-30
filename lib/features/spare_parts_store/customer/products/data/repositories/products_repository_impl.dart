@@ -20,4 +20,16 @@ class ProductsRepositoryImpl implements IProductsRepository {
       return const Left(Failure(message: 'حدث خطأ أثناء جلب تفاصيل المنتج'));
     }
   }
+
+  @override
+  Future<Either<Failure, List<ProductEntity>>> getAllProducts() async {
+    try {
+      final items = await _remote.getAllProducts();
+      return Right(items);
+    } on ServerExpcptions catch (e) {
+      return Left(e.error);
+    } catch (_) {
+      return const Left(Failure(message: 'حدث خطأ أثناء جلب المنتجات'));
+    }
+  }
 }

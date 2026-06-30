@@ -77,6 +77,7 @@ import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_cubit.dar
 import 'package:car_care/features/spare_parts_store/customer/products/data/data_sources/products_remote_data_source.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/data/repositories/products_repository_impl.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/domain/repositories/i_products_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/all_products/all_products_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_cubit.dart';
@@ -465,5 +466,8 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<ProductDetailsCubit>(
   () => ProductDetailsCubit(getIt<IProductsRepository>()),
+)
+..registerFactory<AllProductsCubit>(
+  () => AllProductsCubit(getIt<IProductsRepository>()),
   );
 }

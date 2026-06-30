@@ -45,6 +45,24 @@ class ProductModel extends ProductEntity {
     );
   }
 
+  static List<ProductModel> listFromResponse(Map<String, dynamic> response) {
+    final data = response['data'];
+
+    final List<dynamic> items;
+    if (data is List) {
+      items = data;
+    } else if (data is Map && data['data'] is List) {
+      items = data['data'] as List;
+    } else {
+      items = const [];
+    }
+
+    return items
+        .whereType<Map>()
+        .map((e) => ProductModel.fromJson(e.cast<String, dynamic>()))
+        .toList();
+  }
+
   static String? _nestedName(dynamic value) {
     if (value is String) return value.trim().isEmpty ? null : value.trim();
     if (value is Map) return value['name']?.toString();

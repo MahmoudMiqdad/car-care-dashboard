@@ -12,4 +12,11 @@ class ProductsRemoteDataSource {
     );
     return ProductModel.fromJson(response['data'] as Map<String, dynamic>);
   }
+
+  Future<List<ProductModel>> getAllProducts() async {
+    final response = await _apiService.get(
+      endPoint: ApiEndpoints.customerSpareProducts,
+    );
+    return ProductModel.listFromResponse(response);
+  }
 }

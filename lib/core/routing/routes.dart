@@ -86,4 +86,6 @@ class Routes {
       '/spare-parts/customer/product-details-preview';
   static String customerProductDetailsPreviewPath(int productId) =>
       '$customerProductDetailsPreview/$productId';
+
+  static const String customerAllProducts = '/spare-parts/customer/all-products';
 }

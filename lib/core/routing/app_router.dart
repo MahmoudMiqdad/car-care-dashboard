@@ -73,6 +73,7 @@ import 'package:car_care/features/home/presentation/pages/notifications_page.dar
 import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.dart';
 import 'package:car_care/features/user_profile/presentation/pages/profile_setup_page.dart';
 import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/all_products_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/customer_product_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -487,6 +488,11 @@ GoRoute(
           final productId = int.parse(state.pathParameters['id']!);
           return CustomerProductDetailsPage(productId: productId);
         },
+      ),
+      GoRoute(
+        path: Routes.customerAllProducts,
+        name: 'customerAllProducts',
+        builder: (context, state) => const AllProductsPage(),
       ),
 
       // GoRoute(
