@@ -13,6 +13,7 @@ class AddToCartBar extends StatelessWidget {
     required this.totalPrice,
     required this.onQuantityChanged,
     required this.onAddToCart,
+    this.isLoading = false,
   });
 
   final int quantity;
@@ -20,6 +21,7 @@ class AddToCartBar extends StatelessWidget {
   final double totalPrice;
   final ValueChanged<int> onQuantityChanged;
   final VoidCallback onAddToCart;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class AddToCartBar extends StatelessWidget {
             SizedBox(width: 12.w),
             Expanded(
               child: ElevatedButton(
-                onPressed: maxQuantity > 0 ? onAddToCart : null,
+                onPressed: (maxQuantity > 0 && !isLoading) ? onAddToCart : null,
                 style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.accent,
                   foregroundColor: AppColors.white,
@@ -71,10 +73,19 @@ class AddToCartBar extends StatelessWidget {
                   ),
                   elevation: 0,
                 ),
-                child: Text(
-                  'أضف إلى السلة — ${totalPrice.toStringAsFixed(0)} ل.س',
-                  style: AppTypography.labelLarge.copyWith(color: AppColors.white),
-                ),
+                child: isLoading
+                    ? SizedBox(
+                        width: 20.w,
+                        height: 20.w,
+                        child: const CircularProgressIndicator(
+                          strokeWidth: 2,
+                          color: AppColors.white,
+                        ),
+                      )
+                    : Text(
+                        'أضف إلى السلة — ${totalPrice.toStringAsFixed(0)} ل.س',
+                        style: AppTypography.labelLarge.copyWith(color: AppColors.white),
+                      ),
               ),
             ),
           ],

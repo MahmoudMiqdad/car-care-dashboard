@@ -86,4 +86,8 @@ static String customerCancelBooking(int bookingId) =>
   static const String customerShops = '/customer/shops';
   static String customerShopById(int id) => '$customerShops/$id';
   static String customerShopProducts(int id) => '$customerShops/$id/products';
+
+  // spare-parts-store (customer) - cart
+  static const String customerCart = '/customer/cart';
+  static String customerCartItemById(int id) => '$customerCart/$id';
 }

@@ -77,6 +77,11 @@ import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_cubit.dar
 import 'package:car_care/features/spare_parts_store/customer/products/data/data_sources/products_remote_data_source.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/data/repositories/products_repository_impl.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/domain/repositories/i_products_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/data/data_sources/cart_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/data/repositories/cart_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/domain/repositories/i_cart_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/add_to_cart/add_to_cart_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/cart/cart_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/all_products/all_products_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/shops/data/data_sources/shops_remote_data_source.dart';
@@ -491,5 +496,18 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<ShopProductsCubit>(
   () => ShopProductsCubit(getIt<IShopsRepository>()),
+)
+//SpareParts Store - Cart
+..registerLazySingleton<CartRemoteDataSource>(
+  () => CartRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<ICartRepository>(
+  () => CartRepositoryImpl(getIt<CartRemoteDataSource>()),
+)
+..registerFactory<AddToCartCubit>(
+  () => AddToCartCubit(getIt<ICartRepository>()),
+)
+..registerFactory<CartCubit>(
+  () => CartCubit(getIt<ICartRepository>()),
   );
 }

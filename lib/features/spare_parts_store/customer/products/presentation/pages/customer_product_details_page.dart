@@ -1,9 +1,12 @@
 // شاشة تفاصيل المنتج لعميل متجر قطع الغيار، متصلة بـ API الحقيقي عبر productId
 import 'package:car_care/core/service_locator/service_locator.dart';
+import 'package:car_care/core/utils/app_snackbar.dart';
 import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/error_state_widget.dart';
 import 'package:car_care/core/widgets/image_background.dart';
 import 'package:car_care/core/widgets/loding.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/add_to_cart/add_to_cart_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/add_to_cart/add_to_cart_state.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/domain/entities/product_entity.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_state.dart';
@@ -27,6 +30,7 @@ class CustomerProductDetailsPage extends StatefulWidget {
 class _CustomerProductDetailsPageState
     extends State<CustomerProductDetailsPage> {
   late final ProductDetailsCubit _cubit;
+  late final AddToCartCubit _addToCartCubit;
   int _quantity = 1;
 
   @override
@@ -34,11 +38,13 @@ class _CustomerProductDetailsPageState
     super.initState();
     _cubit = getIt<ProductDetailsCubit>()
       ..fetchProductDetails(widget.productId);
+    _addToCartCubit = getIt<AddToCartCubit>();
   }
 
   @override
   void dispose() {
     _cubit.close();
+    _addToCartCubit.close();
     super.dispose();
   }
 
@@ -78,13 +84,30 @@ class _CustomerProductDetailsPageState
                 return const SizedBox.shrink();
               }
               final product = state.product;
-              return AddToCartBar(
-                quantity: _quantity,
-                maxQuantity: product.stockQuantity,
-                totalPrice: product.finalPrice * _quantity,
-                onQuantityChanged: (value) =>
-                    setState(() => _quantity = value),
-                onAddToCart: () {},
+              return BlocConsumer<AddToCartCubit, AddToCartState>(
+                bloc: _addToCartCubit,
+                listener: (context, cartState) {
+                  if (cartState is AddToCartSuccess) {
+                    AppSnackBar.success(context, 'تمت إضافة المنتج إلى السلة');
+                  }
+                  if (cartState is AddToCartError) {
+                    AppSnackBar.error(context, cartState.message);
+                  }
+                },
+                builder: (context, cartState) {
+                  return AddToCartBar(
+                    quantity: _quantity,
+                    maxQuantity: product.stockQuantity,
+                    totalPrice: product.finalPrice * _quantity,
+                    isLoading: cartState is AddToCartLoading,
+                    onQuantityChanged: (value) =>
+                        setState(() => _quantity = value),
+                    onAddToCart: () => _addToCartCubit.addToCart(
+                      productId: product.id,
+                      quantity: _quantity,
+                    ),
+                  );
+                },
               );
             },
           ),

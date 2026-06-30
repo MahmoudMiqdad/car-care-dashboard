@@ -96,4 +96,6 @@ class Routes {
   static const String customerShopProducts = '/spare-parts/customer/shop-products';
   static String customerShopProductsPath(int shopId) =>
       '$customerShopProducts/$shopId';
+
+  static const String customerCart = '/spare-parts/customer/cart';
 }
