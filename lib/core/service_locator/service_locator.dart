@@ -74,6 +74,10 @@ import 'package:car_care/features/sos/data/data_sources/sos_remote_data_source.d
 import 'package:car_care/features/sos/data/repositories/sos_repository_impl.dart';
 import 'package:car_care/features/sos/domain/repositories/i_sos_repository.dart';
 import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/data/data_sources/products_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/data/repositories/products_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/domain/repositories/i_products_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_cubit.dart';
 import 'package:car_care/features/technician/technician_statistics/data/data_sources/technician_statistics_remote_data_source.dart';
@@ -451,5 +455,15 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<ShareFuelProviderLocationCubit>(
   () => ShareFuelProviderLocationCubit(getIt<IShareFuelProviderLocationRepository>()),
+  )
+//SpareParts Store - Products
+..registerLazySingleton<ProductsRemoteDataSource>(
+  () => ProductsRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IProductsRepository>(
+  () => ProductsRepositoryImpl(getIt<ProductsRemoteDataSource>()),
+)
+..registerFactory<ProductDetailsCubit>(
+  () => ProductDetailsCubit(getIt<IProductsRepository>()),
   );
 }

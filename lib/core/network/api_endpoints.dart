@@ -76,4 +76,9 @@ static String customerCancelBooking(int bookingId) =>
    ///fuel_provider
      static const String fuelProvider = '/fuel_provider';
        static const String userFuel = '/customer/fuel_orders';
+
+  // spare-parts-store (customer)
+  static const String customerSpareProducts = '/customer/products';
+  static String customerSpareProductById(int id) =>
+      '$customerSpareProducts/$id';
 }

@@ -1,7 +1,7 @@
 // شريط سفلي ثابت يحتوي على محدد الكمية وزر إضافة المنتج إلى السلة
 import 'package:car_care/core/theme/app_colors.dart';
 import 'package:car_care/core/theme/app_typography.dart';
-import 'package:car_care/features/spare_parts_store/customer/product_details/presentation/widgets/quantity_selector.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/presentation/widgets/quantity_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -63,7 +63,7 @@ class AddToCartBar extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: maxQuantity > 0 ? onAddToCart : null,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: AppColors.primary,
+                  backgroundColor: AppColors.accent,
                   foregroundColor: AppColors.white,
                   padding: EdgeInsets.symmetric(vertical: 14.h),
                   shape: RoundedRectangleBorder(

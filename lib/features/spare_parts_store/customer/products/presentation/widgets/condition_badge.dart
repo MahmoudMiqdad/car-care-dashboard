@@ -11,18 +11,21 @@ class ConditionBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = isNew ? AppColors.success : AppColors.warning;
+    final color = isNew ? AppColors.success : AppColors.accent;
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.12),
+        color: color.withOpacity(0.15),
         border: Border.all(color: color),
         borderRadius: BorderRadius.circular(20.r),
       ),
       child: Text(
         isNew ? 'جديد' : 'مستعمل',
-        style: AppTypography.labelSmall.copyWith(color: color),
+        style: AppTypography.labelSmall.copyWith(
+          color: color,
+          fontWeight: FontWeight.w700,
+        ),
       ),
     );
   }
