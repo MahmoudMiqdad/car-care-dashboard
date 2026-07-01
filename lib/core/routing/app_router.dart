@@ -76,6 +76,7 @@ import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/Upd
 import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/cart/cart_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/cart/presentation/pages/cart_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/checkout/presentation/pages/checkout_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_my_orders_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_order_details_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/all_products_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/customer_product_details_page.dart';
@@ -97,7 +98,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-initialLocation: Routes.splash,    
+    initialLocation: Routes.splash,
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -545,6 +546,11 @@ GoRoute(
           final orderId = int.parse(state.pathParameters['id']!);
           return CustomerOrderDetailsPage(orderId: orderId);
         },
+      ),
+      GoRoute(
+        path: Routes.customerOrders,
+        name: 'customerOrders',
+        builder: (context, state) => const CustomerMyOrdersPage(),
       ),
 
       // GoRoute(

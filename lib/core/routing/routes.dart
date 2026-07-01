@@ -104,4 +104,6 @@ class Routes {
       '/spare-parts/customer/order-details';
   static String customerOrderDetailsPath(int orderId) =>
       '$customerOrderDetails/$orderId';
+
+  static const String customerOrders = '/spare-parts/customer/my-orders';
 }

@@ -7,9 +7,15 @@ class OrderDetailsInitial extends OrderDetailsState {}
 class OrderDetailsLoading extends OrderDetailsState {}
 
 class OrderDetailsLoaded extends OrderDetailsState {
-  OrderDetailsLoaded(this.order);
+  OrderDetailsLoaded(
+    this.order, {
+    this.isCancelling = false,
+    this.cancelError,
+  });
 
   final OrderEntity order;
+  final bool isCancelling;
+  final String? cancelError;
 }
 
 class OrderDetailsError extends OrderDetailsState {

@@ -20,4 +20,31 @@ class CustomerOrdersRepositoryImpl implements ICustomerOrdersRepository {
       return const Left(Failure(message: 'حدث خطأ أثناء جلب تفاصيل الطلب'));
     }
   }
+
+  @override
+  Future<Either<Failure, List<OrderEntity>>> getOrders({String? status}) async {
+    try {
+      final orders = await _remote.getOrders(status: status);
+      return Right(orders);
+    } on ServerExpcptions catch (e) {
+      return Left(e.error);
+    } catch (_) {
+      return const Left(Failure(message: 'حدث خطأ أثناء جلب الطلبات'));
+    }
+  }
+
+  @override
+  Future<Either<Failure, String>> cancelOrder(
+    int orderId,
+    String reason,
+  ) async {
+    try {
+      final message = await _remote.cancelOrder(orderId, reason);
+      return Right(message);
+    } on ServerExpcptions catch (e) {
+      return Left(e.error);
+    } catch (_) {
+      return const Left(Failure(message: 'حدث خطأ أثناء إلغاء الطلب'));
+    }
+  }
 }

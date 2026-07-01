@@ -1,6 +1,8 @@
 // شاشة تفاصيل طلب قطع الغيار لعميل
 import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/theme/app_colors.dart';
+import 'package:car_care/core/utils/app_snackbar.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/presentation/widgets/cancel_order_bottom_sheet.dart';
 import 'package:car_care/core/theme/app_typography.dart';
 import 'package:car_care/core/widgets/custom_appbar.dart';
 import 'package:car_care/core/widgets/error_state_widget.dart';
@@ -81,7 +83,13 @@ class _CustomerOrderDetailsPageState extends State<CustomerOrderDetailsPage> {
           body: ImageBackground(
             child: BlocConsumer<OrderDetailsCubit, OrderDetailsState>(
               listener: (context, state) {
-                if (state is OrderDetailsLoaded) _triggerEntrance();
+                if (state is OrderDetailsLoaded) {
+                  _triggerEntrance();
+                  if (state.cancelError != null) {
+                    AppSnackBar.error(context, state.cancelError!);
+                    _cubit.clearCancelError();
+                  }
+                }
               },
               builder: (context, state) {
                 if (state is OrderDetailsLoading) return const AppLoadingWidget();
@@ -91,7 +99,7 @@ class _CustomerOrderDetailsPageState extends State<CustomerOrderDetailsPage> {
                     onRetry: () => _cubit.fetchOrderDetails(widget.orderId),
                   );
                 }
-                if (state is OrderDetailsLoaded) return _buildLoaded(state.order);
+                if (state is OrderDetailsLoaded) return _buildLoaded(state);
                 return const SizedBox.shrink();
               },
             ),
@@ -101,7 +109,14 @@ class _CustomerOrderDetailsPageState extends State<CustomerOrderDetailsPage> {
     );
   }
 
-  Widget _buildLoaded(OrderEntity order) {
+  Future<void> _handleCancel(int orderId) async {
+    final reason = await CancelOrderBottomSheet.show(context);
+    if (reason == null || !mounted) return;
+    _cubit.cancelOrder(orderId, reason);
+  }
+
+  Widget _buildLoaded(OrderDetailsLoaded state) {
+    final order = state.order;
     return SingleChildScrollView(
       padding: EdgeInsets.fromLTRB(16.w, 16.h, 16.w, 28.h),
       child: Column(
@@ -116,6 +131,16 @@ class _CustomerOrderDetailsPageState extends State<CustomerOrderDetailsPage> {
           _fadeSlide(visible: _s3, child: _DeliveryCard(order: order)),
           SizedBox(height: 12.h),
           _fadeSlide(visible: _s4, child: _TotalCard(totalPrice: order.totalPrice)),
+          if (order.canCancel) ...[
+            SizedBox(height: 16.h),
+            _fadeSlide(
+              visible: _s4,
+              child: _CancelButton(
+                isCancelling: state.isCancelling,
+                onCancel: () => _handleCancel(order.id),
+              ),
+            ),
+          ],
         ],
       ),
     );
@@ -520,6 +545,50 @@ class _DetailRow extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _CancelButton extends StatelessWidget {
+  const _CancelButton({required this.isCancelling, required this.onCancel});
+
+  final bool isCancelling;
+  final VoidCallback onCancel;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: isCancelling
+          ? Center(
+              child: SizedBox(
+                width: 24.sp,
+                height: 24.sp,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  color: AppColors.error,
+                ),
+              ),
+            )
+          : OutlinedButton.icon(
+              onPressed: onCancel,
+              style: OutlinedButton.styleFrom(
+                foregroundColor: AppColors.error,
+                side: BorderSide(color: AppColors.error.withOpacity(0.5)),
+                padding: EdgeInsets.symmetric(vertical: 12.h),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12.r),
+                ),
+              ),
+              icon: Icon(Icons.cancel_outlined, size: 18.sp),
+              label: Text(
+                'إلغاء الطلب',
+                style: AppTypography.labelLarge.copyWith(
+                  color: AppColors.error,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ),
     );
   }
 }

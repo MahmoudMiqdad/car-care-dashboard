@@ -89,6 +89,7 @@ import 'package:car_care/features/spare_parts_store/customer/checkout/presentati
 import 'package:car_care/features/spare_parts_store/customer/orders/data/data_sources/customer_orders_remote_data_source.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/data/repositories/customer_orders_repository_impl.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/domain/repositories/i_customer_orders_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/presentation/cubit/customer_orders/customer_orders_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/presentation/cubit/order_details/order_details_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/all_products/all_products_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
@@ -537,5 +538,8 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<OrderDetailsCubit>(
   () => OrderDetailsCubit(getIt<ICustomerOrdersRepository>()),
+)
+..registerFactory<CustomerOrdersCubit>(
+  () => CustomerOrdersCubit(getIt<ICustomerOrdersRepository>()),
   );
 }

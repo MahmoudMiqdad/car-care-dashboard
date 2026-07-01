@@ -40,6 +40,24 @@ class OrderModel extends OrderEntity {
     );
   }
 
+  static List<OrderModel> listFromResponse(Map<String, dynamic> response) {
+    final data = response['data'];
+
+    final List<dynamic> items;
+    if (data is List) {
+      items = data;
+    } else if (data is Map && data['data'] is List) {
+      items = data['data'] as List;
+    } else {
+      items = const [];
+    }
+
+    return items
+        .whereType<Map>()
+        .map((e) => OrderModel.fromJson(e.cast<String, dynamic>()))
+        .toList();
+  }
+
   static int _toInt(dynamic v, {int fallback = 0}) {
     if (v is int) return v;
     if (v is num) return v.toInt();
