@@ -90,4 +90,8 @@ static String customerCancelBooking(int bookingId) =>
   // spare-parts-store (customer) - cart
   static const String customerCart = '/customer/cart';
   static String customerCartItemById(int id) => '$customerCart/$id';
+
+  // spare-parts-store (customer) - orders / checkout
+  static const String customerOrders = '/customer/orders';
+  static String customerOrderById(int id) => '$customerOrders/$id';
 }

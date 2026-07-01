@@ -73,7 +73,10 @@ import 'package:car_care/features/home/presentation/pages/notifications_page.dar
 import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.dart';
 import 'package:car_care/features/user_profile/presentation/pages/profile_setup_page.dart';
 import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/cart/cart_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/cart/presentation/pages/cart_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/checkout/presentation/pages/checkout_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_order_details_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/all_products_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/customer_product_details_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_details_page.dart';
@@ -94,9 +97,7 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.splash,
-
-    
+initialLocation: Routes.splash,    
     debugLogDiagnostics: true,
     routes: [
       GoRoute(
@@ -523,6 +524,27 @@ GoRoute(
         path: Routes.customerCart,
         name: 'customerCart',
         builder: (context, state) => const CartPage(),
+      ),
+      GoRoute(
+        path: Routes.customerCheckout,
+        name: 'customerCheckout',
+        builder: (context, state) {
+          final extra = state.extra;
+          if (extra is Map<String, dynamic>) {
+            final cartCubit = extra['cartCubit'] as CartCubit?;
+            final total = (extra['total'] as num?)?.toDouble() ?? 0.0;
+            return CheckoutPage(totalPrice: total, cartCubit: cartCubit);
+          }
+          return CheckoutPage(totalPrice: 0);
+        },
+      ),
+      GoRoute(
+        path: '${Routes.customerOrderDetails}/:id',
+        name: 'customerOrderDetails',
+        builder: (context, state) {
+          final orderId = int.parse(state.pathParameters['id']!);
+          return CustomerOrderDetailsPage(orderId: orderId);
+        },
       ),
 
       // GoRoute(

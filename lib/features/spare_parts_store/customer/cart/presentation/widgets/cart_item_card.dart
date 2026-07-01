@@ -187,11 +187,19 @@ class _CartQuantityControls extends StatelessWidget {
                   ),
                 )
               : Center(
-                  child: Text(
-                    '$quantity',
-                    textAlign: TextAlign.center,
-                    style: AppTypography.labelLarge.copyWith(
-                      color: AppColors.lightTextPrimary,
+                  child: AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 160),
+                    transitionBuilder: (child, anim) => ScaleTransition(
+                      scale: anim,
+                      child: FadeTransition(opacity: anim, child: child),
+                    ),
+                    child: Text(
+                      '$quantity',
+                      key: ValueKey(quantity),
+                      textAlign: TextAlign.center,
+                      style: AppTypography.labelLarge.copyWith(
+                        color: AppColors.lightTextPrimary,
+                      ),
                     ),
                   ),
                 ),

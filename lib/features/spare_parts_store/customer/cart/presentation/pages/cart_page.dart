@@ -1,4 +1,5 @@
 // شاشة سلة المشتريات لعميل متجر قطع الغيار
+import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/service_locator/service_locator.dart';
 import 'package:car_care/core/utils/app_snackbar.dart';
 import 'package:car_care/core/widgets/Empty_state.dart';
@@ -13,6 +14,7 @@ import 'package:car_care/features/spare_parts_store/customer/cart/presentation/w
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -88,7 +90,13 @@ class _CartPageState extends State<CartPage> {
                           },
                         ),
                       ),
-                      CartTotalBar(total: state.cart.total),
+                      CartTotalBar(
+                        total: state.cart.total,
+                        onCheckout: () => context.push(
+                          Routes.customerCheckout,
+                          extra: {'cartCubit': _cubit, 'total': state.cart.total},
+                        ),
+                      ),
                     ],
                   );
                 }

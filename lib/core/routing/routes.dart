@@ -98,4 +98,10 @@ class Routes {
       '$customerShopProducts/$shopId';
 
   static const String customerCart = '/spare-parts/customer/cart';
+
+  static const String customerCheckout = '/spare-parts/customer/checkout';
+  static const String customerOrderDetails =
+      '/spare-parts/customer/order-details';
+  static String customerOrderDetailsPath(int orderId) =>
+      '$customerOrderDetails/$orderId';
 }
