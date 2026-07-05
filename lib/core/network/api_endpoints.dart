@@ -95,4 +95,7 @@ static String customerCancelBooking(int bookingId) =>
   static const String customerOrders = '/customer/orders';
   static String customerOrderById(int id) => '$customerOrders/$id';
   static String customerCancelOrder(int id) => '$customerOrders/$id/cancel';
+
+  // spare-parts-store (owner)
+  static const String ownerShopProfile = '/shop/profile';
 }

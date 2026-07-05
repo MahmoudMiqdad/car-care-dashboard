@@ -78,6 +78,7 @@ import 'package:car_care/features/spare_parts_store/customer/cart/presentation/p
 import 'package:car_care/features/spare_parts_store/customer/checkout/presentation/pages/checkout_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_my_orders_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_order_details_page.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/presentation/pages/owner_profile_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/all_products_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/customer_product_details_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_details_page.dart';
@@ -551,6 +552,11 @@ GoRoute(
         path: Routes.customerOrders,
         name: 'customerOrders',
         builder: (context, state) => const CustomerMyOrdersPage(),
+      ),
+      GoRoute(
+        path: Routes.ownerProfile,
+        name: 'ownerProfile',
+        builder: (context, state) => const OwnerProfilePage(),
       ),
 
       // GoRoute(

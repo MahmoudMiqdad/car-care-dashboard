@@ -91,6 +91,10 @@ import 'package:car_care/features/spare_parts_store/customer/orders/data/reposit
 import 'package:car_care/features/spare_parts_store/customer/orders/domain/repositories/i_customer_orders_repository.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/presentation/cubit/customer_orders/customer_orders_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/presentation/cubit/order_details/order_details_cubit.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/data/data_sources/owner_profile_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/data/repositories/owner_profile_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/domain/repositories/i_owner_profile_repository.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/presentation/cubit/owner_profile/owner_profile_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/all_products/all_products_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/shops/data/data_sources/shops_remote_data_source.dart';
@@ -541,5 +545,15 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<CustomerOrdersCubit>(
   () => CustomerOrdersCubit(getIt<ICustomerOrdersRepository>()),
+)
+//SpareParts Store - Owner Profile
+..registerLazySingleton<OwnerProfileRemoteDataSource>(
+  () => OwnerProfileRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IOwnerProfileRepository>(
+  () => OwnerProfileRepositoryImpl(getIt<OwnerProfileRemoteDataSource>()),
+)
+..registerFactory<OwnerProfileCubit>(
+  () => OwnerProfileCubit(getIt<IOwnerProfileRepository>()),
   );
 }

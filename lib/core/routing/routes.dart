@@ -106,4 +106,6 @@ class Routes {
       '$customerOrderDetails/$orderId';
 
   static const String customerOrders = '/spare-parts/customer/my-orders';
+
+  static const String ownerProfile = '/spare-parts/owner/profile';
 }
