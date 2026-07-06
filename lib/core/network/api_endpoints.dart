@@ -98,4 +98,9 @@ static String customerCancelBooking(int bookingId) =>
 
   // spare-parts-store (owner)
   static const String ownerShopProfile = '/shop/profile';
+  static const String ownerOrders = '/shop/orders';
+  static String ownerOrderById(int id) => '$ownerOrders/$id';
+  static String ownerAcceptOrder(int id) => '$ownerOrders/$id/accept';
+  static String ownerRejectOrder(int id) => '$ownerOrders/$id/reject';
+  static String ownerUpdateOrderStatus(int id) => '$ownerOrders/$id/status';
 }

@@ -108,4 +108,9 @@ class Routes {
   static const String customerOrders = '/spare-parts/customer/my-orders';
 
   static const String ownerProfile = '/spare-parts/owner/profile';
+
+  static const String ownerOrders = '/spare-parts/owner/orders';
+  static const String ownerOrderDetails = '/spare-parts/owner/order-details';
+  static String ownerOrderDetailsPath(int orderId) =>
+      '$ownerOrderDetails/$orderId';
 }

@@ -1,0 +1,141 @@
+// كارد طلب يُستخدم داخل شاشة طلبات المتجر.
+import 'package:car_care/core/theme/app_colors.dart';
+import 'package:car_care/core/theme/app_typography.dart';
+import 'package:car_care/features/spare_parts_store/customer/checkout/domain/entities/order_entity.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class OwnerOrderCard extends StatelessWidget {
+  const OwnerOrderCard({
+    super.key,
+    required this.order,
+    required this.onTap,
+  });
+
+  final OrderEntity order;
+  final VoidCallback onTap;
+
+  static Color _statusColor(String status) => switch (status) {
+        'pending' => AppColors.warning,
+        'accepted' => AppColors.info,
+        'processing' => AppColors.info,
+        'out_for_delivery' => AppColors.primary,
+        'delivered' => AppColors.success,
+        'cancelled' => AppColors.error,
+        _ => AppColors.lightTextSecondary,
+      };
+
+  @override
+  Widget build(BuildContext context) {
+    final firstItemName = order.items.isNotEmpty
+        ? order.items.first.product.name
+        : 'لا توجد منتجات';
+    final itemCount = order.items.length;
+    final statusColor = _statusColor(order.status);
+
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(14.r),
+      child: Container(
+        padding: EdgeInsets.all(14.w),
+        decoration: BoxDecoration(
+          color: AppColors.white,
+          borderRadius: BorderRadius.circular(14.r),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.04),
+              blurRadius: 6,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    'طلب رقم #${order.id}',
+                    style: AppTypography.labelLarge.copyWith(
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                Container(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                  decoration: BoxDecoration(
+                    color: statusColor.withOpacity(0.12),
+                    borderRadius: BorderRadius.circular(20.r),
+                    border:
+                        Border.all(color: statusColor.withOpacity(0.3)),
+                  ),
+                  child: Text(
+                    order.statusText,
+                    style: AppTypography.labelSmall.copyWith(
+                      color: statusColor,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            Divider(color: AppColors.lightBorder, height: 1),
+            SizedBox(height: 10.h),
+            Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        firstItemName,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: AppTypography.labelSmall.copyWith(
+                          color: AppColors.lightTextPrimary,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      if (itemCount > 1) ...[
+                        SizedBox(height: 2.h),
+                        Text(
+                          '+${itemCount - 1} منتج آخر',
+                          style: AppTypography.labelSmall.copyWith(
+                            color: AppColors.lightTextSecondary,
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      '${order.totalPrice.toStringAsFixed(0)} ل.س',
+                      style: AppTypography.labelLarge.copyWith(
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.w800,
+                      ),
+                    ),
+                    if (order.createdAt != null)
+                      Text(
+                        order.createdAt!.toLocal().toString().substring(0, 10),
+                        style: AppTypography.labelSmall.copyWith(
+                          color: AppColors.lightTextSecondary,
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

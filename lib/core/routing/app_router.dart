@@ -79,6 +79,8 @@ import 'package:car_care/features/spare_parts_store/customer/checkout/presentati
 import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_my_orders_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_order_details_page.dart';
 import 'package:car_care/features/spare_parts_store/owner/profile/presentation/pages/owner_profile_page.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/presentation/pages/owner_orders_page.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/presentation/pages/owner_order_details_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/all_products_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/customer_product_details_page.dart';
 import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_details_page.dart';
@@ -557,6 +559,19 @@ GoRoute(
         path: Routes.ownerProfile,
         name: 'ownerProfile',
         builder: (context, state) => const OwnerProfilePage(),
+      ),
+      GoRoute(
+        path: Routes.ownerOrders,
+        name: 'ownerOrders',
+        builder: (context, state) => const OwnerOrdersPage(),
+      ),
+      GoRoute(
+        path: '${Routes.ownerOrderDetails}/:id',
+        name: 'ownerOrderDetails',
+        builder: (context, state) {
+          final orderId = int.parse(state.pathParameters['id']!);
+          return OwnerOrderDetailsPage(orderId: orderId);
+        },
       ),
 
       // GoRoute(

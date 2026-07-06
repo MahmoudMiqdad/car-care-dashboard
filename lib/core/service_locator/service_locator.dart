@@ -95,6 +95,11 @@ import 'package:car_care/features/spare_parts_store/owner/profile/data/data_sour
 import 'package:car_care/features/spare_parts_store/owner/profile/data/repositories/owner_profile_repository_impl.dart';
 import 'package:car_care/features/spare_parts_store/owner/profile/domain/repositories/i_owner_profile_repository.dart';
 import 'package:car_care/features/spare_parts_store/owner/profile/presentation/cubit/owner_profile/owner_profile_cubit.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/data/data_sources/owner_orders_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/data/repositories/owner_orders_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/domain/repositories/i_owner_orders_repository.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/presentation/cubit/owner_orders/owner_orders_cubit.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/presentation/cubit/owner_order_details/owner_order_details_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/all_products/all_products_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
 import 'package:car_care/features/spare_parts_store/customer/shops/data/data_sources/shops_remote_data_source.dart';
@@ -555,5 +560,18 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<OwnerProfileCubit>(
   () => OwnerProfileCubit(getIt<IOwnerProfileRepository>()),
+)
+//SpareParts Store - Owner Orders
+..registerLazySingleton<OwnerOrdersRemoteDataSource>(
+  () => OwnerOrdersRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IOwnerOrdersRepository>(
+  () => OwnerOrdersRepositoryImpl(getIt<OwnerOrdersRemoteDataSource>()),
+)
+..registerFactory<OwnerOrdersCubit>(
+  () => OwnerOrdersCubit(getIt<IOwnerOrdersRepository>()),
+)
+..registerFactory<OwnerOrderDetailsCubit>(
+  () => OwnerOrderDetailsCubit(getIt<IOwnerOrdersRepository>()),
   );
 }
