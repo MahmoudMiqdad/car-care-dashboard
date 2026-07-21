@@ -74,6 +74,40 @@ import 'package:car_care/features/sos/data/data_sources/sos_remote_data_source.d
 import 'package:car_care/features/sos/data/repositories/sos_repository_impl.dart';
 import 'package:car_care/features/sos/domain/repositories/i_sos_repository.dart';
 import 'package:car_care/features/sos/presentation/cubit/sos_cubit/sos_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/data/data_sources/products_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/data/repositories/products_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/domain/repositories/i_products_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/data/data_sources/cart_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/data/repositories/cart_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/domain/repositories/i_cart_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/add_to_cart/add_to_cart_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/cart/cart_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/checkout/data/data_sources/checkout_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/customer/checkout/data/repositories/checkout_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/customer/checkout/domain/repositories/i_checkout_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/checkout/presentation/cubit/create_order/create_order_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/data/data_sources/customer_orders_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/data/repositories/customer_orders_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/domain/repositories/i_customer_orders_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/presentation/cubit/customer_orders/customer_orders_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/presentation/cubit/order_details/order_details_cubit.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/data/data_sources/owner_profile_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/data/repositories/owner_profile_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/domain/repositories/i_owner_profile_repository.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/presentation/cubit/owner_profile/owner_profile_cubit.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/data/data_sources/owner_orders_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/data/repositories/owner_orders_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/domain/repositories/i_owner_orders_repository.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/presentation/cubit/owner_orders/owner_orders_cubit.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/presentation/cubit/owner_order_details/owner_order_details_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/all_products/all_products_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/presentation/cubit/product_details/product_details_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/data/data_sources/shops_remote_data_source.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/data/repositories/shops_repository_impl.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/domain/repositories/i_shops_repository.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/cubit/shop_details/shop_details_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/cubit/shop_products/shop_products_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/cubit/shops_list/shops_list_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/cubit/technician_location_cubit.dart';
 import 'package:car_care/features/technician/technician_profile/presentation/cubit/technician_availability_cubit/technician_availability_cubit.dart';
 import 'package:car_care/features/technician/technician_statistics/data/data_sources/technician_statistics_remote_data_source.dart';
@@ -451,5 +485,93 @@ Future<void> setupServiceLocator() async {
 )
 ..registerFactory<ShareFuelProviderLocationCubit>(
   () => ShareFuelProviderLocationCubit(getIt<IShareFuelProviderLocationRepository>()),
+  )
+//SpareParts Store - Products
+..registerLazySingleton<ProductsRemoteDataSource>(
+  () => ProductsRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IProductsRepository>(
+  () => ProductsRepositoryImpl(getIt<ProductsRemoteDataSource>()),
+)
+..registerFactory<ProductDetailsCubit>(
+  () => ProductDetailsCubit(getIt<IProductsRepository>()),
+)
+..registerFactory<AllProductsCubit>(
+  () => AllProductsCubit(getIt<IProductsRepository>()),
+)
+//SpareParts Store - Shops
+..registerLazySingleton<ShopsRemoteDataSource>(
+  () => ShopsRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IShopsRepository>(
+  () => ShopsRepositoryImpl(getIt<ShopsRemoteDataSource>()),
+)
+..registerFactory<ShopsListCubit>(
+  () => ShopsListCubit(getIt<IShopsRepository>()),
+)
+..registerFactory<ShopDetailsCubit>(
+  () => ShopDetailsCubit(getIt<IShopsRepository>()),
+)
+..registerFactory<ShopProductsCubit>(
+  () => ShopProductsCubit(getIt<IShopsRepository>()),
+)
+//SpareParts Store - Cart
+..registerLazySingleton<CartRemoteDataSource>(
+  () => CartRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<ICartRepository>(
+  () => CartRepositoryImpl(getIt<CartRemoteDataSource>()),
+)
+..registerFactory<AddToCartCubit>(
+  () => AddToCartCubit(getIt<ICartRepository>()),
+)
+..registerFactory<CartCubit>(
+  () => CartCubit(getIt<ICartRepository>()),
+)
+//SpareParts Store - Checkout
+..registerLazySingleton<CheckoutRemoteDataSource>(
+  () => CheckoutRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<ICheckoutRepository>(
+  () => CheckoutRepositoryImpl(getIt<CheckoutRemoteDataSource>()),
+)
+..registerFactory<CreateOrderCubit>(
+  () => CreateOrderCubit(getIt<ICheckoutRepository>()),
+)
+//SpareParts Store - Customer Orders
+..registerLazySingleton<CustomerOrdersRemoteDataSource>(
+  () => CustomerOrdersRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<ICustomerOrdersRepository>(
+  () => CustomerOrdersRepositoryImpl(getIt<CustomerOrdersRemoteDataSource>()),
+)
+..registerFactory<OrderDetailsCubit>(
+  () => OrderDetailsCubit(getIt<ICustomerOrdersRepository>()),
+)
+..registerFactory<CustomerOrdersCubit>(
+  () => CustomerOrdersCubit(getIt<ICustomerOrdersRepository>()),
+)
+//SpareParts Store - Owner Profile
+..registerLazySingleton<OwnerProfileRemoteDataSource>(
+  () => OwnerProfileRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IOwnerProfileRepository>(
+  () => OwnerProfileRepositoryImpl(getIt<OwnerProfileRemoteDataSource>()),
+)
+..registerFactory<OwnerProfileCubit>(
+  () => OwnerProfileCubit(getIt<IOwnerProfileRepository>()),
+)
+//SpareParts Store - Owner Orders
+..registerLazySingleton<OwnerOrdersRemoteDataSource>(
+  () => OwnerOrdersRemoteDataSource(getIt<ApiService>()),
+)
+..registerLazySingleton<IOwnerOrdersRepository>(
+  () => OwnerOrdersRepositoryImpl(getIt<OwnerOrdersRemoteDataSource>()),
+)
+..registerFactory<OwnerOrdersCubit>(
+  () => OwnerOrdersCubit(getIt<IOwnerOrdersRepository>()),
+)
+..registerFactory<OwnerOrderDetailsCubit>(
+  () => OwnerOrderDetailsCubit(getIt<IOwnerOrdersRepository>()),
   );
 }

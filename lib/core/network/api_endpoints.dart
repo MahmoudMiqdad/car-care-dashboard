@@ -76,4 +76,31 @@ static String customerCancelBooking(int bookingId) =>
    ///fuel_provider
      static const String fuelProvider = '/fuel_provider';
        static const String userFuel = '/customer/fuel_orders';
+
+  // spare-parts-store (customer)
+  static const String customerSpareProducts = '/customer/products';
+  static String customerSpareProductById(int id) =>
+      '$customerSpareProducts/$id';
+
+  // spare-parts-store (customer) - shops
+  static const String customerShops = '/customer/shops';
+  static String customerShopById(int id) => '$customerShops/$id';
+  static String customerShopProducts(int id) => '$customerShops/$id/products';
+
+  // spare-parts-store (customer) - cart
+  static const String customerCart = '/customer/cart';
+  static String customerCartItemById(int id) => '$customerCart/$id';
+
+  // spare-parts-store (customer) - orders / checkout
+  static const String customerOrders = '/customer/orders';
+  static String customerOrderById(int id) => '$customerOrders/$id';
+  static String customerCancelOrder(int id) => '$customerOrders/$id/cancel';
+
+  // spare-parts-store (owner)
+  static const String ownerShopProfile = '/shop/profile';
+  static const String ownerOrders = '/shop/orders';
+  static String ownerOrderById(int id) => '$ownerOrders/$id';
+  static String ownerAcceptOrder(int id) => '$ownerOrders/$id/accept';
+  static String ownerRejectOrder(int id) => '$ownerOrders/$id/reject';
+  static String ownerUpdateOrderStatus(int id) => '$ownerOrders/$id/status';
 }

@@ -74,6 +74,19 @@ import 'package:car_care/features/home/presentation/pages/notifications_page.dar
 import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.dart';
 import 'package:car_care/features/user_profile/presentation/pages/profile_setup_page.dart';
 import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/cart/cart_cubit.dart';
+import 'package:car_care/features/spare_parts_store/customer/cart/presentation/pages/cart_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/checkout/presentation/pages/checkout_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_my_orders_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_order_details_page.dart';
+import 'package:car_care/features/spare_parts_store/owner/profile/presentation/pages/owner_profile_page.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/presentation/pages/owner_orders_page.dart';
+import 'package:car_care/features/spare_parts_store/owner/orders/presentation/pages/owner_order_details_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/all_products_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/customer_product_details_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_details_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_products_page.dart';
+import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shops_list_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -478,6 +491,89 @@ GoRoute(
         path: Routes.deleteconfirmationdialog,
         name: '/deleteconfirmationdialog',
         builder: (context, state) => const DeleteProfileDialog(),
+      ),
+      GoRoute(
+        path: '${Routes.customerProductDetailsPreview}/:id',
+        name: 'customerProductDetailsPreview',
+        builder: (context, state) {
+          final productId = int.parse(state.pathParameters['id']!);
+          return CustomerProductDetailsPage(productId: productId);
+        },
+      ),
+      GoRoute(
+        path: Routes.customerAllProducts,
+        name: 'customerAllProducts',
+        builder: (context, state) => const AllProductsPage(),
+      ),
+      GoRoute(
+        path: Routes.customerShopsList,
+        name: 'customerShopsList',
+        builder: (context, state) => const ShopsListPage(),
+      ),
+      GoRoute(
+        path: '${Routes.customerShopDetails}/:id',
+        name: 'customerShopDetails',
+        builder: (context, state) {
+          final shopId = int.parse(state.pathParameters['id']!);
+          return ShopDetailsPage(shopId: shopId);
+        },
+      ),
+      GoRoute(
+        path: '${Routes.customerShopProducts}/:id',
+        name: 'customerShopProducts',
+        builder: (context, state) {
+          final shopId = int.parse(state.pathParameters['id']!);
+          return ShopProductsPage(shopId: shopId);
+        },
+      ),
+      GoRoute(
+        path: Routes.customerCart,
+        name: 'customerCart',
+        builder: (context, state) => const CartPage(),
+      ),
+      GoRoute(
+        path: Routes.customerCheckout,
+        name: 'customerCheckout',
+        builder: (context, state) {
+          final extra = state.extra;
+          if (extra is Map<String, dynamic>) {
+            final cartCubit = extra['cartCubit'] as CartCubit?;
+            final total = (extra['total'] as num?)?.toDouble() ?? 0.0;
+            return CheckoutPage(totalPrice: total, cartCubit: cartCubit);
+          }
+          return CheckoutPage(totalPrice: 0);
+        },
+      ),
+      GoRoute(
+        path: '${Routes.customerOrderDetails}/:id',
+        name: 'customerOrderDetails',
+        builder: (context, state) {
+          final orderId = int.parse(state.pathParameters['id']!);
+          return CustomerOrderDetailsPage(orderId: orderId);
+        },
+      ),
+      GoRoute(
+        path: Routes.customerOrders,
+        name: 'customerOrders',
+        builder: (context, state) => const CustomerMyOrdersPage(),
+      ),
+      GoRoute(
+        path: Routes.ownerProfile,
+        name: 'ownerProfile',
+        builder: (context, state) => const OwnerProfilePage(),
+      ),
+      GoRoute(
+        path: Routes.ownerOrders,
+        name: 'ownerOrders',
+        builder: (context, state) => const OwnerOrdersPage(),
+      ),
+      GoRoute(
+        path: '${Routes.ownerOrderDetails}/:id',
+        name: 'ownerOrderDetails',
+        builder: (context, state) {
+          final orderId = int.parse(state.pathParameters['id']!);
+          return OwnerOrderDetailsPage(orderId: orderId);
+        },
       ),
 
       // GoRoute(

@@ -81,4 +81,36 @@ class Routes {
   static const String fuel_order_details = '/fuel_order_details';
   static const String provider_order = '/provider_order';
   static const String provider_order_details = '/provider_order_details_page';
+
+  static const String customerProductDetailsPreview =
+      '/spare-parts/customer/product-details-preview';
+  static String customerProductDetailsPreviewPath(int productId) =>
+      '$customerProductDetailsPreview/$productId';
+
+  static const String customerAllProducts = '/spare-parts/customer/all-products';
+
+  static const String customerShopsList = '/spare-parts/customer/shops';
+  static const String customerShopDetails = '/spare-parts/customer/shop-details';
+  static String customerShopDetailsPath(int shopId) =>
+      '$customerShopDetails/$shopId';
+  static const String customerShopProducts = '/spare-parts/customer/shop-products';
+  static String customerShopProductsPath(int shopId) =>
+      '$customerShopProducts/$shopId';
+
+  static const String customerCart = '/spare-parts/customer/cart';
+
+  static const String customerCheckout = '/spare-parts/customer/checkout';
+  static const String customerOrderDetails =
+      '/spare-parts/customer/order-details';
+  static String customerOrderDetailsPath(int orderId) =>
+      '$customerOrderDetails/$orderId';
+
+  static const String customerOrders = '/spare-parts/customer/my-orders';
+
+  static const String ownerProfile = '/spare-parts/owner/profile';
+
+  static const String ownerOrders = '/spare-parts/owner/orders';
+  static const String ownerOrderDetails = '/spare-parts/owner/order-details';
+  static String ownerOrderDetailsPath(int orderId) =>
+      '$ownerOrderDetails/$orderId';
 }
