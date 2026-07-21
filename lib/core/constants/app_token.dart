@@ -1,4 +1,4 @@
 class AppToken {
 
-static const String token ="1|KqaayvHCevvVr3VdJD1lVu2x9n17OASHWAv5zADb3e192fba";
+static const String token ="7|qDqnPOocU03wuN4jpr1oktyNpqo09rhh2mcq8aNyfafa369b";
 }
