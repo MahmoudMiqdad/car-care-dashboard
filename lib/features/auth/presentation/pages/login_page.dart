@@ -1,5 +1,7 @@
+import 'package:car_care/core/constants/app_assets.dart';
 import 'package:car_care/core/routing/routes.dart';
 import 'package:car_care/core/service_locator/service_locator.dart';
+import 'package:car_care/core/utils/app_snackbar.dart';
 import 'package:car_care/features/auth/domain/repositories/i_auth_repository.dart';
 import 'package:car_care/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:car_care/features/auth/presentation/bloc/auth_event.dart';
@@ -33,20 +35,10 @@ class _LoginPageState extends State<LoginPage> {
         child: BlocConsumer<AuthBloc, AuthState>(
           listener: (context, state) {
             if (state is AuthSuccess) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(strings.loginSuccess),
-                  backgroundColor: Colors.green,
-                ),
-              );
+            AppSnackBar.success(context, strings.loginSuccess);
               GoRouter.of(context).go(Routes.home);
             } else if (state is AuthFailure) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(state.message),
-                  backgroundColor: Colors.red,
-                ),
-              );
+             AppSnackBar.error(context, state.message);
             }
           },
           builder: (context, state) {
@@ -55,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
               body: Stack(
                 fit: StackFit.expand,
                 children: [
-                  Image.asset('assets/images/BK_.png', fit: BoxFit.cover),
+                  Image.asset(AppAssets.backgroung, fit: BoxFit.cover),
                   SafeArea(
                     child: Column(
                       children: [
