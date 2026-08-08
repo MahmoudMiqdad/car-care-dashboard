@@ -586,7 +586,7 @@ Future<InvoiceMarkPaidResult?> showInvoiceMarkPaidDialog(BuildContext context) a
                     initialValue: selectedMethod,
                     decoration: _fieldDecoration,
                     style: _fieldTextStyle.copyWith(color: Colors.black87),
-                    hint: Text(strings.billingPickDate, style: _fieldTextStyle),
+                  
                     items: kPaymentMethods
                         .map((m) => DropdownMenuItem<String>(
                               value: m,
