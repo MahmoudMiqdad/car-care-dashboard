@@ -91,7 +91,7 @@ class _AuthViewState extends State<_AuthView> {
             AppSnackBar.error(context, state.message);
           }
           if (state is AuthAuthenticated) {
-            context.goNamed('adminTechnicians');
+            context.goNamed('adminDashboard');
           }
         },
         builder: (context, state) {
