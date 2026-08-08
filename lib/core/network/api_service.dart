@@ -37,6 +37,20 @@ class ApiService {
 ),
     );
   }
+  /// POST multipart (لرفع صور/ملفات)
+  Future<Map<String, dynamic>> postMultipart({
+    required String endPoint,
+    required FormData formData,
+    void Function(int, int)? onSendProgress,
+  }) async {
+    return _performRequest(
+      () => _dio.post(
+        endPoint,
+        data: formData,
+        onSendProgress: onSendProgress,
+      ),
+    );
+  }
 /// PATCH request
 Future<Map<String, dynamic>> patch({
   required String endPoint,

@@ -12,6 +12,7 @@ enum DbKeys {
   logged,
   local,
   firstOpen,
+    themeMode,
 }
 
 class SecureStorage {
@@ -81,7 +82,8 @@ class SecureStorage {
   Future<void> setUserName(String username) =>
       setValue(DbKeys.username, username);
   Future<String?> getUserName() => getValue(DbKeys.username);
-
+  Future<void> setThemeMode(String mode) => setValue(DbKeys.themeMode, mode);
+  Future<String?> getThemeMode() => getValue(DbKeys.themeMode);
   Future<void> setPassword(String password) =>
       setValue(DbKeys.password, password);
   Future<String?> getPassword() => getValue(DbKeys.password);

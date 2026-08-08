@@ -1,9 +1,9 @@
-// import 'package:dartz/dartz.dart';
-// import 'package:car_care/core/errors/failures.dart';
-// import '../entities/home_entity.dart';
+import 'package:dartz/dartz.dart';
+import 'package:car_care/core/errors/filuar.dart';
+import '../entities/home_entity.dart';
 
-// abstract class IHomeRepository {
+abstract class IHomeRepository {
 
-//   Future<Either<Failure, HomeEntity>> home(Map<String, dynamic> params);
+  Future<Either<Failure, HomeEntity>> home(Map<String, dynamic> params);
 
-// }
+}

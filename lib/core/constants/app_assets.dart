@@ -5,7 +5,7 @@ class AppAssets {
   //images
   static const String splashBackgroundImg =
       '$_imagesPath/splash_background.png';
-
+ static const String logo = '$_imagesPath/logoo.png';
   static const String plateNumberIcon = '$_imagesPath/number.png';
   static const String deleteIcon = '$_imagesPath/delete.png';
   static const String editIcon = '$_imagesPath/edit.png';

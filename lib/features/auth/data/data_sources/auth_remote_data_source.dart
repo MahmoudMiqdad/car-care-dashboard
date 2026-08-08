@@ -1,27 +1,28 @@
 import 'package:car_care/core/network/api_endpoints.dart';
 import 'package:car_care/core/network/api_service.dart';
-import 'package:car_care/features/auth/domain/model/auth_model.dart';
-
+import 'package:car_care/features/auth/data/models/auth_model.dart';
 
 class AuthRemoteDataSource {
-  const AuthRemoteDataSource(this._apiService);
-  final ApiService _apiService;
+  final ApiService _api;
+  const AuthRemoteDataSource(this._api);
 
-  Future<AuthResponseModel> login(Map<String, dynamic> data) async {
-    final response = await _apiService.post(
-      endPoint: ApiEndpoints.login,
-      data: data,
+  Future<AuthLoginModel> login({
+    required String email,
+    required String password,
+  }) async {
+    final res = await _api.post(
+      endPoint: ApiEndpoints.adminLogin,
+      data: {'email': email, 'password': password},
     );
-
-    return AuthResponseModel.fromJson(response);
+    return AuthLoginModel.fromJson(res);
   }
 
-  Future<AuthResponseModel> register(Map<String, dynamic> data) async {
-    final response = await _apiService.post(
-      endPoint: ApiEndpoints.register,
-      data: data,
-    );
+  Future<AdminMeModel> getMe() async {
+    final res = await _api.get(endPoint: ApiEndpoints.adminMe);
+    return AdminMeModel.fromJson(res);
+  }
 
-    return AuthResponseModel.fromJson(response);
+  Future<void> logout() async {
+    await _api.post(endPoint: ApiEndpoints.adminLogout, data: {});
   }
 }

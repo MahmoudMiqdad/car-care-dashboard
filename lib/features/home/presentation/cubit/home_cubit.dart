@@ -5,5 +5,6 @@ class HomeCubit extends Cubit<HomeState> {
 
   HomeCubit() : super(HomeInitial());
 
+  // TODO: Add business logic methods here
 
 }

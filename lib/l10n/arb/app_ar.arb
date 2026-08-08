@@ -1,2467 +1,815 @@
 {
-  "@@locale": "ar",
-  "@@context": "CarCare App - Arabic Translations",
+  "dashboardMenu": "لوحة التحكم",
+  "@dashboardMenu": { "description": "عنصر القائمة: لوحة التحكم" },
+
+  "techniciansMenu": "الفنيين",
+  "@techniciansMenu": { "description": "عنصر القائمة: الفنيين" },
+
+  "ordersMenu": "الطلبات",
+  "@ordersMenu": { "description": "عنصر القائمة: الطلبات" },
+
+  "fuelProvidersMenu": "مزودي الوقود",
+  "@fuelProvidersMenu": { "description": "عنصر القائمة: مزودي الوقود" },
   
-  "counterAppBarTitle": "عداد",
-  "@counterAppBarTitle": {
-    "description": "النص المعروض في شريط التطبيق لصفحة العداد"
+  "dashboardPageTitle": "لوحة التحكم",
+  "@dashboardPageTitle": {
+    "description": "عنوان صفحة لوحة التحكم الرئيسي"
   },
-  
-  "appTitle": "خدمات العناية بالسيارات",
-  "@appTitle": {
-    "description": "عنوان التطبيق"
+
+  "dashboardCompletedOperations": "عمليات مكتملة",
+  "@dashboardCompletedOperations": {
+    "description": "إحصائية عدد العمليات التي تمت بنجاح"
   },
-  
-  "appName": "كار كير",
-  "@appName": {
-    "description": "اسم التطبيق"
+  "dashboardPendingOperations": "عمليات معلقة",
+  "@dashboardPendingOperations": {
+    "description": "إحصائية عدد العمليات المنتظرة أو المعلقة"
   },
-  
-  "welcome": "مرحباً",
-  "@welcome": {
-    "description": "رسالة الترحيب"
+  "dashboardProvidersOverview": "نظرة عامة على مزودي الخدمة",
+  "@dashboardProvidersOverview": {
+    "description": "عنوان قسم إحصاءات مزودي الخدمة"
   },
-  
-  "welcomeBack": "أهلاً بعودتك",
-  "@welcomeBack": {
-    "description": "رسالة الترحيب بالعودة"
+  "dashboardOperationsStatus": "حالة العمليات",
+  "@dashboardOperationsStatus": {
+    "description": "مخطط بياني يوضح حالات العمليات المختلفة"
   },
-  
-  "login": "تسجيل الدخول",
-  "@login": {
-    "description": "زر تسجيل الدخول"
+  "dashboardOperationsOverTime": "العمليات عبر الوقت",
+  "@dashboardOperationsOverTime": {
+    "description": "مخطط بياني يتتبع عدد العمليات لفترة زمنية"
   },
-  
-  "register": "تسجيل حساب",
-  "@register": {
-    "description": "زر تسجيل حساب"
+  "dashboardRevenue": "الإيرادات",
+  "@dashboardRevenue": {
+    "description": "إجمالي المبالغ المالية المحصلة"
   },
-  
-  "logout": "تسجيل الخروج",
-  "@logout": {
-    "description": "زر تسجيل الخروج"
-  },
-  
-  "username": "اسم المستخدم",
-  "@username": {
-    "description": "حقل اسم المستخدم"
-  },
-  
-  "password": "كلمة المرور",
-  "@password": {
-    "description": "حقل كلمة المرور"
-  },
-  
-  "confirmPassword": "تأكيد كلمة المرور",
-  "@confirmPassword": {
-    "description": "حقل تأكيد كلمة المرور"
-  },
-  
-  "phoneNumber": "رقم الهاتف",
-  "@phoneNumber": {
-    "description": "حقل رقم الهاتف"
-  },
-  
-  "fullName": "الاسم الكامل",
-  "@fullName": {
-    "description": "حقل الاسم الكامل"
-  },
-  
-  "email": "البريد الإلكتروني",
-  "@email": {
-    "description": "حقل البريد الإلكتروني"
-  },
-  
-  "submit": "إرسال",
-  "@submit": {
-    "description": "زر الإرسال"
-  },
-  
-  "cancel": "إلغاء",
-  "@cancel": {
-    "description": "زر الإلغاء"
-  },
-  
-  "save": "حفظ",
-  "@save": {
-    "description": "زر الحفظ"
-  },
-  
-  "edit": "تعديل",
-  "@edit": {
-    "description": "زر التعديل"
-  },
-  
-  "delete": "حذف",
-  "@delete": {
-    "description": "زر الحذف"
-  },
-  
-  "close": "إغلاق",
-  "@close": {
-    "description": "زر الإغلاق"
-  },
-  
-  "back": "رجوع",
-  "@back": {
-    "description": "زر الرجوع"
-  },
-  
-  "next": "التالي",
-  "@next": {
-    "description": "زر التالي"
-  },
-  
-  "done": "تم",
-  "@done": {
-    "description": "زر تم"
-  },
-  
-  "retry": "إعادة المحاولة",
-  "@retry": {
-    "description": "زر إعادة المحاولة"
-  },
-  
+ 
+
+
+
+  "usersMenu": "المستخدمين",
+  "@usersMenu": { "description": "عنصر القائمة: المستخدمين" },
+
+  "reportsMenu": "التقارير",
+  "@reportsMenu": { "description": "عنصر القائمة: التقارير" },
+
+  "settingsMenu": "الإعدادات",
+  "@settingsMenu": { "description": "عنصر القائمة: الإعدادات" },
+
+  "adminLabel": "المدير",
+  "@adminLabel": { "description": "اسم يظهر بجانب أفتار المستخدم بأعلى الصفحة" },
+
   "refresh": "تحديث",
-  "@refresh": {
-    "description": "زر التحديث"
-  },
-  
-  "search": "بحث",
-  "@search": {
-    "description": "زر البحث"
-  },
-  
-  "filter": "تصفية",
-  "@filter": {
-    "description": "زر التصفية"
-  },
-  
-  "forgotPassword": "نسيت كلمة المرور؟",
-  "@forgotPassword": {
-    "description": "رابط نسيان كلمة المرور"
-  },
-  
-  "alreadyHaveAccount": "لديك حساب بالفعل؟",
-  "@alreadyHaveAccount": {
-    "description": "نص امتلاك حساب مسبق"
-  },
-  
-  "dontHaveAccount": "ليس لديك حساب؟",
-  "@dontHaveAccount": {
-    "description": "نص عدم امتلاك حساب"
-  },
-  
-  "createAccount": "إنشاء حساب جديد",
-  "@createAccount": {
-    "description": "زر إنشاء حساب جديد"
-  },
-  
-  "otpVerification": "التحقق بالرمز",
-  "@otpVerification": {
-    "description": "عنوان صفحة التحقق بالرمز"
-  },
-  
-  "enterOtp": "أدخل رمز التحقق",
-  "@enterOtp": {
-    "description": "رسالة إدخال رمز التحقق"
-  },
-  
-  "otpSent": "تم إرسال رمز التحقق إلى",
-  "@otpSent": {
-    "description": "رسالة إرسال الرمز"
-  },
-  
-  "resendOtp": "إعادة إرسال الرمز",
-  "@resendOtp": {
-    "description": "زر إعادة إرسال الرمز"
-  },
-  
-  "resendOtpIn": "إعادة الإرسال خلال",
-  "@resendOtpIn": {
-    "description": "رسالة إعادة الإرسال خلال"
-  },
-  
-  "verify": "تحقق",
-  "@verify": {
-    "description": "زر التحقق"
-  },
-  
-  "home": "الرئيسية",
-  "@home": {
-    "description": "الصفحة الرئيسية"
-  },
-  
-  "schedules": "مواعيد الخدمة",
-  "@schedules": {
-    "description": "صفحة المواعيد"
-  },
-  
-  "complaints": "مشاكل السيارات",
-  "@complaints": {
-    "description": "صفحة المشاكل"
-  },
-  
-  "profile": "الملف الشخصي",
-  "@profile": {
-    "description": "صفحة الملف الشخصي"
-  },
-  
-  "mySchedules": "مواعيدي",
-  "@mySchedules": {
-    "description": "مواعيدي"
-  },
-  
-  "upcomingSchedules": "المواعيد القادمة",
-  "@upcomingSchedules": {
-    "description": "المواعيد القادمة"
-  },
-  
-  "nextPumpingSchedule": "موعد الخدمة القادم",
-  "@nextPumpingSchedule": {
-    "description": "موعد الضخ القادم"
-  },
-  
-  "scheduleDetails": "تفاصيل الموعد",
-  "@scheduleDetails": {
-    "description": "تفاصيل الموعد"
-  },
-  
-  "viewAllSchedules": "عرض جميع المواعيد",
-  "@viewAllSchedules": {
-    "description": "زر عرض جميع المواعيد"
-  },
-  
-  "startTime": "وقت البدء",
-  "@startTime": {
-    "description": "وقت البدء"
-  },
-  
-  "endTime": "وقت الانتهاء",
-  "@endTime": {
-    "description": "وقت الانتهاء"
-  },
-  
-  "actualStartTime": "وقت البدء الفعلي",
-  "@actualStartTime": {
-    "description": "وقت البدء الفعلي"
-  },
-  
-  "actualEndTime": "وقت الانتهاء الفعلي",
-  "@actualEndTime": {
-    "description": "وقت الانتهاء الفعلي"
-  },
-  
-  "status": "الحالة",
-  "@status": {
-    "description": "الحالة"
-  },
-  
-  "notes": "ملاحظات",
-  "@notes": {
-    "description": "ملاحظات"
-  },
-  
-  "createdBy": "تم الإنشاء بواسطة",
-  "@createdBy": {
-    "description": "تم الإنشاء بواسطة"
-  },
-  
-  "scheduled": "مجدول",
-  "@scheduled": {
-    "description": "الحالة: مجدول"
-  },
-  
-  "active": "قيد التنفيذ",
-  "@active": {
-    "description": "الحالة: نشط"
-  },
-  
-  "completed": "مكتمل",
-  "@completed": {
-    "description": "الحالة: مكتمل"
-  },
-  
-  "cancelled": "ملغى",
-  "@cancelled": {
-    "description": "الحالة: ملغى"
-  },
-  
-  "startsIn": "يبدأ خلال",
-  "@startsIn": {
-    "description": "يبدأ خلال"
-  },
-  
-  "activeNow": "نشط الآن",
-  "@activeNow": {
-    "description": "نشط الآن"
-  },
-  
-  "endedAgo": "انتهى منذ",
-  "@endedAgo": {
-    "description": "انتهى منذ"
-  },
-  
-  "today": "اليوم",
-  "@today": {
-    "description": "اليوم"
-  },
-  
-  "thisWeek": "هذا الأسبوع",
-  "@thisWeek": {
-    "description": "هذا الأسبوع"
-  },
-  
-  "thisMonth": "هذا الشهر",
-  "@thisMonth": {
-    "description": "هذا الشهر"
-  },
-  
-  "dateRange": "نطاق التاريخ",
-  "@dateRange": {
-    "description": "نطاق التاريخ"
-  },
-  
-  "selectDateRange": "اختر نطاق التاريخ",
-  "@selectDateRange": {
-    "description": "اختر نطاق التاريخ"
-  },
-  
-  "myComplaints": "مشاكلي",
-  "@myComplaints": {
-    "description": "مشاكلي"
-  },
-  
-  "submitComplaint": "الإبلاغ عن مشكلة",
-  "@submitComplaint": {
-    "description": "زر الإبلاغ عن مشكلة"
-  },
-  
-  "complaintDetails": "تفاصيل المشكلة",
-  "@complaintDetails": {
-    "description": "تفاصيل المشكلة"
-  },
-  
-  "complaintTitle": "عنوان المشكلة",
-  "@complaintTitle": {
-    "description": "عنوان المشكلة"
-  },
-  
-  "complaintDescription": "وصف المشكلة",
-  "@complaintDescription": {
-    "description": "وصف المشكلة"
-  },
-  
-  "complaintCategory": "تصنيف المشكلة",
-  "@complaintCategory": {
-    "description": "تصنيف المشكلة"
-  },
-  
-  "selectCategory": "اختر التصنيف",
-  "@selectCategory": {
-    "description": "اختر التصنيف"
-  },
-  
-  "noWater": "مشكلة في المحرك",
-  "@noWater": {
-    "description": "تصنيف المشكلة: مشكلة في المحرك"
-  },
-  
-  "waterQuality": "مشكلة في الإطارات",
-  "@waterQuality": {
-    "description": "تصنيف المشكلة: مشكلة في الإطارات"
-  },
-  
-  "lowPressure": "مشكلة في البطارية",
-  "@lowPressure": {
-    "description": "تصنيف المشكلة: مشكلة في البطارية"
-  },
-  
-  "scheduleIssue": "تأخير في الخدمة",
-  "@scheduleIssue": {
-    "description": "تصنيف المشكلة: تأخير في الخدمة"
-  },
-  
-  "other": "أخرى",
-  "@other": {
-    "description": "تصنيف المشكلة: أخرى"
-  },
-  
-  "pending": "قيد الانتظار",
-  "@pending": {
-    "description": "حالة المشكلة: قيد الانتظار"
-  },
-  
-  "inProgress": "قيد التنفيذ",
-  "@inProgress": {
-    "description": "حالة المشكلة: قيد التنفيذ"
-  },
-  
-  "resolved": "تم الحل",
-  "@resolved": {
-    "description": "حالة المشكلة: تم الحل"
-  },
-  
-  "rejected": "مرفوض",
-  "@rejected": {
-    "description": "حالة المشكلة: مرفوض"
-  },
-  
-  "adminResponse": "رد الخدمة",
-  "@adminResponse": {
-    "description": "رد الخدمة"
-  },
-  
-  "handledBy": "تم التعامل بواسطة",
-  "@handledBy": {
-    "description": "تم التعامل بواسطة"
-  },
-  
-  "handledAt": "تم التعامل في",
-  "@handledAt": {
-    "description": "تم التعامل في"
-  },
-  
-  "createdAt": "تم الإنشاء في",
-  "@createdAt": {
-    "description": "تم الإنشاء في"
-  },
-  
-  "updatedAt": "تم التحديث في",
-  "@updatedAt": {
-    "description": "تم التحديث في"
-  },
-  
-  "complaintSubmitted": "تم الإبلاغ عن المشكلة بنجاح",
-  "@complaintSubmitted": {
-    "description": "رسالة نجاح الإبلاغ عن المشكلة"
-  },
-  
-  "region": "مركز الخدمة",
-  "@region": {
-    "description": "المنطقة"
-  },
-  
-  "unit": "الوحدة",
-  "@unit": {
-    "description": "الوحدة"
-  },
-  
-  "neighborhood": "الحي",
-  "@neighborhood": {
-    "description": "الحي"
-  },
-  
-  "zone": "المنطقة",
-  "@zone": {
-    "description": "المنطقة"
-  },
-  
-  "selectRegion": "اختر مركز الخدمة",
-  "@selectRegion": {
-    "description": "اختر المنطقة"
-  },
-  
-  "selectUnit": "اختر الوحدة",
-  "@selectUnit": {
-    "description": "اختر الوحدة"
-  },
-  
-  "selectNeighborhood": "اختر الحي",
-  "@selectNeighborhood": {
-    "description": "اختر الحي"
-  },
-  
-  "selectZone": "اختر المنطقة",
-  "@selectZone": {
-    "description": "اختر المنطقة"
-  },
-  
-  "location": "الموقع",
-  "@location": {
-    "description": "الموقع"
-  },
-  
-  "selectLocation": "اختر الموقع",
-  "@selectLocation": {
-    "description": "اختر الموقع"
-  },
-  
-  "clearSelection": "مسح الاختيار",
-  "@clearSelection": {
-    "description": "مسح الاختيار"
-  },
-  
-  "myProfile": "ملفي الشخصي",
-  "@myProfile": {
-    "description": "ملفي الشخصي"
-  },
-  
-  "editProfile": "تعديل الملف الشخصي",
-  "@editProfile": {
-    "description": "تعديل الملف الشخصي"
-  },
-  
-  "profileUpdated": "تم تحديث الملف الشخصي بنجاح",
-  "@profileUpdated": {
-    "description": "رسالة نجاح تحديث الملف الشخصي"
-  },
-  
-  "role": "الدور",
-  "@role": {
-    "description": "الدور"
-  },
-  
-  "admin": "مدير",
-  "@admin": {
-    "description": "الدور: مدير"
-  },
-  
-  "operator": "مشغل",
-  "@operator": {
-    "description": "الدور: مشغل"
-  },
-  
-  "citizen": "عميل",
-  "@citizen": {
-    "description": "الدور: عميل"
-  },
-  
-  "defaultLocation": "الموقع الافتراضي",
-  "@defaultLocation": {
-    "description": "الموقع الافتراضي"
-  },
-  
-  "watchedLocation": "الموقع المراقب",
-  "@watchedLocation": {
-    "description": "الموقع المراقب"
-  },
-  
-  "loading": "جاري التحميل...",
-  "@loading": {
-    "description": "رسالة التحميل"
-  },
-  
-  "error": "خطأ",
-  "@error": {
-    "description": "خطأ"
-  },
-  
-  "errorOccurred": "حدث خطأ",
-  "@errorOccurred": {
-    "description": "رسالة حدوث خطأ"
-  },
-  
-  "networkError": "خطأ في الاتصال بالشبكة",
-  "@networkError": {
-    "description": "خطأ الشبكة"
-  },
-  
-  "serverError": "خطأ في الخادم",
-  "@serverError": {
-    "description": "خطأ الخادم"
-  },
-  
-  "noInternetConnection": "لا يوجد اتصال بالإنترنت",
-  "@noInternetConnection": {
-    "description": "لا يوجد اتصال بالإنترنت"
-  },
-  
-  "tryAgain": "حاول مرة أخرى",
-  "@tryAgain": {
-    "description": "حاول مرة أخرى"
-  },
-  
-  "noData": "لا توجد بيانات",
-  "@noData": {
-    "description": "لا توجد بيانات"
-  },
-  
-  "noSchedules": "لا توجد مواعيد",
-  "@noSchedules": {
-    "description": "لا توجد مواعيد"
-  },
-  
-  "noComplaints": "لا توجد مشاكل تم الإبلاغ عنها",
-  "@noComplaints": {
-    "description": "لا توجد مشاكل"
-  },
-  
-  "noSchedulesMessage": "لا توجد مواعيد خدمة في الوقت الحالي",
-  "@noSchedulesMessage": {
-    "description": "رسالة عدم وجود مواعيد"
-  },
-  
-  "noComplaintsMessage": "لم تقم بالإبلاغ عن أي مشاكل بعد",
-  "@noComplaintsMessage": {
-    "description": "رسالة عدم وجود مشاكل"
-  },
-  
-  "pullToRefresh": "اسحب للتحديث",
-  "@pullToRefresh": {
-    "description": "اسحب للتحديث"
-  },
-  
-  "releaseToRefresh": "حرر للتحديث",
-  "@releaseToRefresh": {
-    "description": "حرر للتحديث"
-  },
-  
-  "loadMore": "تحميل المزيد",
-  "@loadMore": {
-    "description": "تحميل المزيد"
-  },
-  
-  "quickActions": "إجراءات سريعة",
-  "@quickActions": {
-    "description": "إجراءات سريعة"
-  },
-  
-  "viewSchedules": "عرض المواعيد",
-  "@viewSchedules": {
-    "description": "عرض المواعيد"
-  },
-  
-  "requiredField": "هذا الحقل مطلوب",
-  "@requiredField": {
-    "description": "رسالة الحقل المطلوب"
-  },
-  
-  "invalidPhoneNumber": "رقم هاتف غير صحيح",
-  "@invalidPhoneNumber": {
-    "description": "رسالة رقم هاتف غير صحيح"
-  },
-  
-  "invalidEmail": "بريد إلكتروني غير صحيح",
-  "@invalidEmail": {
-    "description": "رسالة بريد إلكتروني غير صحيح"
-  },
-  
-  "passwordTooShort": "كلمة المرور قصيرة جداً (الحد الأدنى 6 أحرف)",
-  "@passwordTooShort": {
-    "description": "رسالة كلمة مرور قصيرة"
-  },
-  
-  "passwordsDoNotMatch": "كلمات المرور غير متطابقة",
-  "@passwordsDoNotMatch": {
-    "description": "رسالة كلمات مرور غير متطابقة"
-  },
-  
-  "maxCharacters": "الحد الأقصى {max} حرف",
-  "@maxCharacters": {
-    "description": "رسالة الحد الأقصى للأحرف",
-    "placeholders": {
-      "max": {
-        "type": "int"
-      }
-    }
-  },
-  
-  "charactersRemaining": "باقي {count} حرف",
-  "@charactersRemaining": {
-    "description": "رسالة الأحرف المتبقية",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  
-  "loginSuccess": "تم تسجيل الدخول بنجاح",
-  "@loginSuccess": {
-    "description": "رسالة نجاح تسجيل الدخول"
-  },
-  
-  "registrationSuccess": "تم التسجيل بنجاح",
-  "@registrationSuccess": {
-    "description": "رسالة نجاح التسجيل"
-  },
-  
-  "logoutConfirmation": "هل أنت متأكد من تسجيل الخروج؟",
-  "@logoutConfirmation": {
-    "description": "رسالة تأكيد تسجيل الخروج"
-  },
-  
-  "yes": "نعم",
-  "@yes": {
-    "description": "نعم"
-  },
-  
-  "no": "لا",
-  "@no": {
-    "description": "لا"
-  },
-  
-  "confirm": "تأكيد",
-  "@confirm": {
-    "description": "تأكيد"
-  },
-  
-  "language": "اللغة",
-  "@language": {
-    "description": "اللغة"
-  },
-  
-  "changeLanguage": "تغيير اللغة",
-  "@changeLanguage": {
-    "description": "تغيير اللغة"
-  },
-  
-  "arabic": "العربية",
-  "@arabic": {
-    "description": "اللغة العربية"
-  },
-  
-  "english": "الإنجليزية",
-  "@english": {
-    "description": "اللغة الإنجليزية"
-  },
-  
-  "settings": "الإعدادات",
-  "@settings": {
-    "description": "الإعدادات"
-  },
-  
-  "about": "حول",
-  "@about": {
-    "description": "حول"
-  },
-  
-  "version": "الإصدار",
-  "@version": {
-    "description": "الإصدار"
-  },
-  
-  "contactUs": "اتصل بنا",
-  "@contactUs": {
-    "description": "اتصل بنا"
-  },
-  
-  "appNameAr": "كار كير أكس",
-  "@appNameAr": {
-    "description": "اسم التطبيق بالعربية"
-  },
-  
-  "splashScreen": "شاشة البدء",
-  "@splashScreen": {
-    "description": "شاشة البدء"
-  },
-  
-  "profileSetup": "إعداد الملف الشخصي",
-  "@profileSetup": {
-    "description": "إعداد الملف الشخصي"
-  },
-  
-  "myVehicles": "مركباتي",
-  "@myVehicles": {
-    "description": "مركباتي"
-  },
-  
-  "addVehicle": "إضافة مركبة",
-  "@addVehicle": {
-    "description": "إضافة مركبة"
-  },
-  
-  "editVehicle": "تعديل المركبة",
-  "@editVehicle": {
-    "description": "تعديل المركبة"
-  },
-  
-  "vehicleDetails": "تفاصيل المركبة",
-  "@vehicleDetails": {
-    "description": "تفاصيل المركبة"
-  },
-  
-  "maintenanceHistory": "سجل الصيانة",
-  "@maintenanceHistory": {
-    "description": "سجل الصيانة"
-  },
-  
-  "vinNumber": "رقم الهيكل",
-  "@vinNumber": {
-    "description": "رقم الهيكل"
-  },
-  
-  "plateNumber": "رقم اللوحة",
-  "@plateNumber": {
-    "description": "رقم اللوحة"
-  },
-  
-  "brand": "الماركة",
-  "@brand": {
-    "description": "الماركة"
-  },
-  
-  "model": "الموديل",
-  "@model": {
-    "description": "الموديل"
-  },
-  
-  "year": "السنة",
-  "@year": {
-    "description": "السنة"
-  },
-  
-  "maintenance": "الصيانة",
-  "@maintenance": {
-    "description": "الصيانة"
-  },
-  
-  "maintenanceRequest": "طلب صيانة",
-  "@maintenanceRequest": {
-    "description": "طلب صيانة"
-  },
-  
-  "serviceType": "نوع الخدمة",
-  "@serviceType": {
-    "description": "نوع الخدمة"
-  },
-  
-  "oilChange": "تغيير الزيت",
-  "@oilChange": {
-    "description": "تغيير الزيت"
-  },
-  
-  "inspection": "فحص",
-  "@inspection": {
-    "description": "فحص"
-  },
-  
-  "repair": "إصلاح",
-  "@repair": {
-    "description": "إصلاح"
-  },
-  
-  "technicianOffers": "عروض الفنيين",
-  "@technicianOffers": {
-    "description": "عروض الفنيين"
-  },
-  
-  "requestStatus": "حالة الطلب",
-  "@requestStatus": {
-    "description": "حالة الطلب"
-  },
-    "fuelProvider": "مزود الوقود",
-  "@fuelProvider": {
-    "description": "مزود  الوقود "
-  },
-  
-  "rateService": "تقييم المغسلة",
-  "@rateService": {
-    "description": "تقييم المغسلة"
-  },
-  
-  "emergencySOS": "طوارئ",
-  "@emergencySOS": {
-    "description": "طوارئ"
-  },
-  
-  "sosButton": "زر الطوارئ",
-  "@sosButton": {
-    "description": "زر الطوارئ"
-  },
-  
-  "emergencyStatus": "حالة الطوارئ",
-  "@emergencyStatus": {
-    "description": "حالة الطوارئ"
-  },
-  
-  "carWash": "غسيل السيارات",
-  "@carWash": {
-    "description": "غسيل السيارات"
-  },
-  
-  "bookCarWash": "حجز غسيل",
-  "@bookCarWash": {
-    "description": "حجز غسيل"
-  },
-  
-  "washBookingStatus": "حالة الحجز",
-  "@washBookingStatus": {
-    "description": "حالة حجز الغسيل"
-  },
-  
-  "centerWash": "غسيل في المركز",
-  "@centerWash": {
-    "description": "غسيل في المركز"
-  },
-  
-  "mobileWash": "غسيل متنقل",
-  "@mobileWash": {
-    "description": "غسيل متنقل"
-  },
-  
-  "basicWash": "غسيل أساسي",
-  "@basicWash": {
-    "description": "غسيل أساسي"
-  },
-  
-  "premiumWash": "غسيل مميز",
-  "@premiumWash": {
-    "description": "غسيل مميز"
-  },
-  
-  "fullWash": "غسيل كامل",
-  "@fullWash": {
-    "description": "غسيل كامل"
-  },
-  
+  "@refresh": { "description": "تلميح زر تحديث القائمة" },
 
-  
-  "products": "المنتجات",
-  "@products": {
-    "description": "المنتجات"
-  },
-  
-  "productDetails": "تفاصيل المنتج",
-  "@productDetails": {
-    "description": "تفاصيل المنتج"
-  },
-  
-  "cart": "السلة",
-  "@cart": {
-    "description": "السلة"
-  },
-  
-  "orderStatus": "حالة الطلب",
-  "@orderStatus": {
-    "description": "حالة طلب المنتجات"
-  },
-  
-  "addToCart": "أضف إلى السلة",
-  "@addToCart": {
-    "description": "أضف إلى السلة"
-  },
-  
-  "checkout": "إتمام الشراء",
-  "@checkout": {
-    "description": "إتمام الشراء"
-  },
-  
-  "subtotal": "المجموع الجزئي",
-  "@subtotal": {
-    "description": "المجموع الجزئي"
-  },
-  
-  "total": "الإجمالي",
-  "@total": {
-    "description": "الإجمالي"
-  },
-  
-  "rentX": "تأجير سيارات",
-  "@rentX": {
-    "description": "تأجير سيارات"
-  },
-  
-  "availableCars": "السيارات المتاحة",
-  "@availableCars": {
-    "description": "السيارات المتاحة للتأجير"
-  },
-  "noAvailableRequests": "لا يوجد طلبات متاحة حالياً",
-"@noAvailableRequests": {
-  "description": "رسالة تظهر عند عدم وجود طلبات SOS متاحة للفني"
-},
-  "daily": "يومي",
-  "@daily": {
-    "description": "يومي"
-  },
-  
-  "weekly": "أسبوعي",
-  "@weekly": {
-    "description": "أسبوعي"
-  },
-  
-  "monthly": "شهري",
-  "@monthly": {
-    "description": "شهري"
-  },
-  
-  "rentalPeriod": "فترة التأجير",
-  "@rentalPeriod": {
-    "description": "فترة التأجير"
-  },
-  
-  "startDate": "تاريخ البدء",
-  "@startDate": {
-    "description": "تاريخ البدء"
-  },
-  
-  "endDate": "تاريخ الانتهاء",
-  "@endDate": {
-    "description": "تاريخ الانتهاء"
-  },
-  
-  "bookNow": "احجز الآن",
-  "@bookNow": {
-    "description": "احجز الآن"
-  },
-  
-  "sellX": "بيع سيارات",
-  "@sellX": {
-    "description": "بيع سيارات"
-  },
-  
-  "sellListings": "عروض البيع",
-  "@sellListings": {
-    "description": "عروض البيع"
-  },
-  
-  "myListings": "عروضي",
-  "@myListings": {
-    "description": "عروضي للبيع"
-  },
-  
-  "publishListing": "نشر العرض",
-  "@publishListing": {
-    "description": "نشر العرض"
-  },
-  
-  "contactSeller": "تواصل مع البائع",
-  "@contactSeller": {
-    "description": "تواصل مع البائع"
-  },
-  
-  "fuelX": "توصيل وقود",
-  "@fuelX": {
-    "description": "توصيل وقود"
-  },
-  
-  "fuelRequest": "طلب وقود",
-  "@fuelRequest": {
-    "description": "طلب وقود"
-  },
-  
-  "fuelType": "نوع الوقود",
-  "@fuelType": {
-    "description": "نوع الوقود"
-  },
-  
-  "gasoline91": "بنزين 91",
-  "@gasoline91": {
-    "description": "بنزين 91"
-  },
-  
-  "gasoline95": "بنزين 95",
-  "@gasoline95": {
-    "description": "بنزين 95"
-  },
-  
-  "diesel": "ديزل",
-  "@diesel": {
-    "description": "ديزل"
-  },
-  
-  "quantity": "الكمية",
-  "@quantity": {
-    "description": "الكمية"
-  },
-  
-  "liters": "لتر",
-  "@liters": {
-    "description": "لتر"
-  },
-  
-  "fuelOrderStatus": "حالة طلب الوقود",
-  "@fuelOrderStatus": {
-    "description": "حالة طلب الوقود"
-  },
-  
-  "carOwner": "مالك سيارة",
-  "@carOwner": {
-    "description": "مالك سيارة"
-  },
-  
-  "technician": "فني",
-  "@technician": {
-    "description": "فني"
-  },
-  
-  "accept": "قبول",
-  "@accept": {
-    "description": "قبول"
-  },
-  
-  "reject": "رفض",
-  "@reject": {
-    "description": "رفض"
-  },
-  
-  "proceed": "متابعة",
-  "@proceed": {
-    "description": "متابعة"
-  },
-  
-  "continueButton": "استمرار",
-  "@continueButton": {
-    "description": "استمرار"
-  },
-  
-  "select": "اختر",
-  "@select": {
-    "description": "اختر"
-  },
-  
-  "choose": "اختر",
-  "@choose": {
-    "description": "اختر"
-  },
-  
-  "onTheWay": "في الطريق",
-  "@onTheWay": {
-    "description": "في الطريق"
-  },
-  
-  "arrived": "وصل",
-  "@arrived": {
-    "description": "وصل"
-  },
-  
-  "delivered": "تم التسليم",
-  "@delivered": {
-    "description": "تم التسليم"
-  },
-  
-  "assigned": "تم التكليف",
-  "@assigned": {
-    "description": "تم التكليف"
-  },
-  
-  "requested": "مطلوب",
-  "@requested": {
-    "description": "مطلوب"
-  },
-  
-  "loadingData": "جاري تحميل البيانات...",
-  "@loadingData": {
-    "description": "تحميل البيانات"
-  },
-  
-  "noVehicles": "لا توجد مركبات",
-  "@noVehicles": {
-    "description": "لا توجد مركبات"
-  },
-  
-  "noOffers": "لا توجد عروض",
-  "@noOffers": {
-    "description": "لا توجد عروض"
-  },
-  
-  "noListings": "لا توجد عروض",
-  "@noListings": {
-    "description": "لا توجد عروض"
-  },
-  
-  "success": "نجاح",
-  "@success": {
-    "description": "نجاح"
-  },
-  
-  "failed": "فشل",
-  "@failed": {
-    "description": "فشل"
-  },
-  
-  "currentLocation": "موقعي الحالي",
-  "@currentLocation": {
-    "description": "موقعي الحالي"
-  },
-  
-  "useCurrentLocation": "استخدم موقعي الحالي",
-  "@useCurrentLocation": {
-    "description": "استخدم موقعي الحالي"
-  },
-  
-  "enterAddress": "أدخل العنوان",
-  "@enterAddress": {
-    "description": "أدخل العنوان"
-  },
-  
-  "city": "المدينة",
-  "@city": {
-    "description": "المدينة"
-  },
-  
-  "pickImage": "اختر صورة",
-  "@pickImage": {
-    "description": "اختر صورة"
-  },
-  
-  "camera": "الكاميرا",
-  "@camera": {
-    "description": "الكاميرا"
-  },
-  
-  "gallery": "المعرض",
-  "@gallery": {
-    "description": "المعرض"
-  },
-  
-  "profilePhoto": "صورة الملف الشخصي",
-  "@profilePhoto": {
-    "description": "صورة الملف الشخصي"
-  },
-  
-  "notifications": "الإشعارات",
-  "@notifications": {
-    "description": "الإشعارات"
-  },
-  
-  "more": "المزيد",
-  "@more": {
-    "description": "المزيد"
-  },
-  
-  "searchProducts": "ابحث عن منتجات...",
-  "@searchProducts": {
-    "description": "ابحث عن منتجات"
-  },
-  
-  "searchCars": "ابحث عن سيارات...",
-  "@searchCars": {
-    "description": "ابحث عن سيارات"
-  },
-  
-  "sortBy": "ترتيب حسب",
-  "@sortBy": {
-    "description": "ترتيب حسب"
-  },
-  
-  "priceLowHigh": "السعر: منخفض إلى مرتفع",
-  "@priceLowHigh": {
-    "description": "السعر: منخفض إلى مرتفع"
-  },
-  
-  "priceHighLow": "السعر: مرتفع إلى منخفض",
-  "@priceHighLow": {
-    "description": "السعر: مرتفع إلى منخفض"
-  },
-  
-  "selectDate": "اختر التاريخ",
-  "@selectDate": {
-    "description": "اختر التاريخ"
-  },
-  
-  "selectTime": "اختر الوقت",
-  "@selectTime": {
-    "description": "اختر الوقت"
-  },
-  
-  "timeSlot": "الفترة الزمنية",
-  "@timeSlot": {
-    "description": "الفترة الزمنية"
-  },
-  
-  "now": "الآن",
-  "@now": {
-    "description": "الآن"
-  },
-  
-  "schedule": "جدولة",
-  "@schedule": {
-    "description": "جدولة"
-  },
-  
-  "price": "السعر",
-  "@price": {
-    "description": "السعر"
-  },
-  
-  "cost": "التكلفة",
-  "@cost": {
-    "description": "التكلفة"
-  },
-  
-  "estimatedPrice": "السعر التقديري",
-  "@estimatedPrice": {
-    "description": "السعر التقديري"
-  },
-  
-  "rating": "التقييم",
-  "@rating": {
-    "description": "التقييم"
-  },
-  
-  "stars": "نجوم",
-  "@stars": {
-    "description": "نجوم"
-  },
-  
-  "leaveComment": "اترك تعليقاً",
-  "@leaveComment": {
-    "description": "اترك تعليقاً"
-  },
-  
-  "userType": "نوع المستخدم",
-  "@userType": {
-    "description": "نوع المستخدم"
-  },
-  
-  "userProfile": "ملف المستخدم",
-  "@userProfile": {
-    "description": "ملف المستخدم"
-  },
-  
-  "validationError": "خطأ في التحقق",
-  "@validationError": {
-    "description": "خطأ في التحقق"
-  },
-  
+  "techniciansPageTitle": "إدارة الفنيين",
+  "@techniciansPageTitle": { "description": "عنوان صفحة إدارة الفنيين" },
+
+  "statusAll": "الكل",
+  "@statusAll": { "description": "فلتر: كل الفنيين" },
+
+  "statusPending": "قيد الانتظار",
+  "@statusPending": { "description": "حالة الفني: قيد الانتظار" },
+
+  "statusApproved": "مقبول",
+  "@statusApproved": { "description": "حالة الفني: مقبول" },
+
+  "statusRejected": "مرفوض",
+  "@statusRejected": { "description": "حالة الفني: مرفوض" },
+
+  "statusSuspended": "موقوف",
+  "@statusSuspended": { "description": "حالة الفني: موقوف" },
+
+  "columnTechnician": "الفني",
+  "@columnTechnician": { "description": "عنوان عمود بجدول الفنيين" },
+
+  "columnSpecialization": "التخصص",
+  "@columnSpecialization": { "description": "عنوان عمود بجدول الفنيين" },
+
+  "columnCity": "المدينة",
+  "@columnCity": { "description": "عنوان عمود بجدول الفنيين" },
+
+  "columnExperience": "سنوات الخبرة",
+  "@columnExperience": { "description": "عنوان عمود بجدول الفنيين" },
+
+  "columnHourlyRate": "السعر بالساعة",
+  "@columnHourlyRate": { "description": "عنوان عمود بجدول الفنيين" },
+
+  "columnStatus": "الحالة",
+  "@columnStatus": { "description": "عنوان عمود بجدول الفنيين" },
+
+  "columnActions": "الإجراءات",
+  "@columnActions": { "description": "عنوان عمود بجدول الفنيين" },
+
+  "actionApprove": "قبول",
+  "@actionApprove": { "description": "زر قبول الفني" },
+
+  "actionReject": "رفض",
+  "@actionReject": { "description": "زر رفض الفني" },
+
+  "actionSuspend": "إيقاف",
+  "@actionSuspend": { "description": "زر إيقاف الفني" },
+
+  "actionReactivate": "إعادة تفعيل",
+  "@actionReactivate": { "description": "زر إعادة تفعيل الفني" },
+
+  "actionDetails": "التفاصيل",
+  "@actionDetails": { "description": "زر عرض تفاصيل الفني" },
+
+  "yearsSuffix": "سنة",
+  "@yearsSuffix": { "description": "كلمة سنة، تُلحق بعدد سنوات الخبرة" },
+
+  "rejectDialogTitle": "سبب رفض الفني",
+  "@rejectDialogTitle": { "description": "عنوان نافذة إدخال سبب الرفض" },
+
+  "rejectDialogHint": "اكتب سبب الرفض هون...",
+  "@rejectDialogHint": { "description": "نص توضيحي لحقل سبب الرفض" },
+
+  "cancel": "إلغاء",
+  "@cancel": { "description": "زر إلغاء عام" },
+
+  "confirmReject": "تأكيد الرفض",
+  "@confirmReject": { "description": "زر تأكيد رفض الفني" },
+
+  "technicianDetailsTitle": "بيانات الفني",
+  "@technicianDetailsTitle": { "description": "عنوان بديل لنافذة تفاصيل الفني عند غياب الاسم" },
+
+  "detailsEmail": "البريد الإلكتروني",
+  "@detailsEmail": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "detailsPhone": "الهاتف",
+  "@detailsPhone": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "detailsSpecialization": "التخصص",
+  "@detailsSpecialization": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "detailsCity": "المدينة",
+  "@detailsCity": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "detailsExperience": "سنوات الخبرة",
+  "@detailsExperience": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "detailsHourlyRate": "السعر بالساعة",
+  "@detailsHourlyRate": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "detailsStatus": "الحالة",
+  "@detailsStatus": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "detailsRejectionReason": "سبب الرفض",
+  "@detailsRejectionReason": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "detailsCertifications": "الشهادات",
+  "@detailsCertifications": { "description": "تسمية حقل بنافذة تفاصيل الفني" },
+
+  "close": "إغلاق",
+  "@close": { "description": "زر إغلاق عام" },
+
+  "detailsId": "رقم الفني",
+  "@detailsId": { "description": "تسمية حقل بصفحة تفاصيل الفني" },
+
+  "detailsUserId": "رقم المستخدم",
+  "@detailsUserId": { "description": "تسمية حقل بصفحة تفاصيل الفني" },
+
+  "detailsAvailable": "متاح للعمل",
+  "@detailsAvailable": { "description": "تسمية حقل بصفحة تفاصيل الفني" },
+
+  "detailsYes": "نعم",
+  "@detailsYes": { "description": "قيمة نعم" },
+
+  "detailsNo": "لا",
+  "@detailsNo": { "description": "قيمة لا" },
+
+  "detailsApprovedAt": "تاريخ القبول",
+  "@detailsApprovedAt": { "description": "تسمية حقل بصفحة تفاصيل الفني" },
+
+  "detailsRejectedAt": "تاريخ الرفض",
+  "@detailsRejectedAt": { "description": "تسمية حقل بصفحة تفاصيل الفني" },
+
+  "detailsSuspendedAt": "تاريخ الإيقاف",
+  "@detailsSuspendedAt": { "description": "تسمية حقل بصفحة تفاصيل الفني" },
+
+  "detailsCreatedAt": "تاريخ الإنشاء",
+  "@detailsCreatedAt": { "description": "تسمية حقل بصفحة تفاصيل الفني" },
+
+  "detailsUpdatedAt": "آخر تحديث",
+  "@detailsUpdatedAt": { "description": "تسمية حقل بصفحة تفاصيل الفني" },
+
+  "noCertifications": "لا توجد شهادات مرفوعة",
+  "@noCertifications": { "description": "نص يظهر إذا الفني ما رفع أي شهادات" },
+  
+  "carwashersPageTitle": "مغاسل السيارات",
+  "@carwashersPageTitle": { "description": "عنوان صفحة مغاسل السيارات" },
+
+  "carwasherDetailsTitle": "تفاصيل المغسلة",
+  "@carwasherDetailsTitle": { "description": "عنوان صفحة تفاصيل المغسلة" },
+
+  "fuelProvidersPageTitle": "مزودو الوقود",
+  "@fuelProvidersPageTitle": { "description": "عنوان صفحة مزودي الوقود" },
+
+  "fuelProviderDetailsTitle": "تفاصيل مزود الوقود",
+  "@fuelProviderDetailsTitle": { "description": "عنوان صفحة تفاصيل مزود الوقود" },
+
+  "shopsPageTitle": "المتاجر",
+  "@shopsPageTitle": { "description": "عنوان صفحة المتاجر" },
+
+  "shopDetailsTitle": "تفاصيل المتجر",
+  "@shopDetailsTitle": { "description": "عنوان صفحة تفاصيل المتجر" },
+
+  "columnShop": "المتجر",
+  "@columnShop": { "description": "عنوان عمود اسم المتجر/المغسلة" },
+
+  "columnPhone": "الهاتف",
+  "@columnPhone": { "description": "عنوان عمود رقم الهاتف" },
+
+  "detailsAddress": "العنوان",
+  "@detailsAddress": { "description": "تسمية حقل العنوان" },
+
+  "detailsDescription": "الوصف",
+  "@detailsDescription": { "description": "تسمية حقل الوصف" },
+
+  "detailsRating": "التقييم",
+  "@detailsRating": { "description": "تسمية حقل التقييم" },
+
+  "detailsServices": "الخدمات",
+  "@detailsServices": { "description": "عنوان بطاقة الخدمات" },
+
+  "detailsServicePrices": "أسعار الخدمات",
+  "@detailsServicePrices": { "description": "عنوان أسعار الخدمات" },
+
+  "detailsWorkingHours": "ساعات العمل",
+  "@detailsWorkingHours": { "description": "عنوان ساعات العمل" },
+
+  "detailsFuelTypes": "أنواع الوقود",
+  "@detailsFuelTypes": { "description": "عنوان بطاقة أنواع الوقود" },
+
+  "detailsPrices": "الأسعار",
+  "@detailsPrices": { "description": "عنوان الأسعار" },
+
+  "detailsBusinessTypes": "أنواع النشاط",
+  "@detailsBusinessTypes": { "description": "عنوان أنواع النشاط التجاري" },
+
+  "detailsCarBrands": "ماركات السيارات",
+  "@detailsCarBrands": { "description": "عنوان ماركات السيارات المدعومة" },
+
+  "detailsPartCategories": "تصنيفات القطع",
+  "@detailsPartCategories": { "description": "عنوان تصنيفات قطع الغيار" },
+  "columnCompany": "الشركة",
+"@columnCompany": { "description": "عنوان عمود اسم الشركة" },
+
+"detailsLocation": "الموقع",
+"@detailsLocation": { "description": "تسمية حقل الموقع (خط الطول والعرض)" },
+"carwashersMenu": "مغاسل السيارات",
+"@carwashersMenu": { "description": "عنصر القائمة: مغاسل السيارات" },
+
+"shopsMenu": "المتاجر",
+"@shopsMenu": { "description": "عنصر القائمة: المتاجر" },
+
+  "loginTitle": "تسجيل الدخول",
+  "@loginTitle": { "description": "عنوان صفحة تسجيل الدخول" },
+
+  "loginSubtitle": "سجّل الدخول للوصول إلى لوحة تحكم الأدمن",
+  "@loginSubtitle": { "description": "وصف صفحة تسجيل الدخول" },
+
+  "loginEmailLabel": "البريد الإلكتروني",
+  "@loginEmailLabel": { "description": "تسمية حقل البريد الإلكتروني" },
+
+  "loginPasswordLabel": "كلمة المرور",
+  "@loginPasswordLabel": { "description": "تسمية حقل كلمة المرور" },
+
+  "loginButton": "تسجيل الدخول",
+  "@loginButton": { "description": "نص زر تسجيل الدخول" },
+
+  "loginValidationRequired": "هذا الحقل مطلوب",
+  "@loginValidationRequired": { "description": "رسالة خطأ عند ترك الحقل فارغاً" },
+
+  "loginValidationEmail": "الرجاء إدخال بريد إلكتروني صحيح",
+  "@loginValidationEmail": { "description": "رسالة خطأ عند إدخال بريد إلكتروني غير صحيح" },
+
+  "logoutButton": "تسجيل الخروج",
+  "@logoutButton": { "description": "نص زر تسجيل الخروج بالسايدبار" },
+
+  "logoutConfirmTitle": "تسجيل الخروج",
+  "@logoutConfirmTitle": { "description": "عنوان نافذة تأكيد تسجيل الخروج" },
+
+  "logoutConfirmMessage": "هل أنت متأكد من رغبتك بتسجيل الخروج؟",
+  "@logoutConfirmMessage": { "description": "رسالة تأكيد تسجيل الخروج" },
+
+  "logoutConfirmButton": "تسجيل الخروج",
+  "@logoutConfirmButton": { "description": "نص زر التأكيد داخل نافذة تسجيل الخروج" },
+  "reportsPageTitle": "التقارير",
+  "@reportsPageTitle": { "description": "عنوان صفحة التقارير" },
+
+  "tabOverview": "نظرة عامة",
+  "@tabOverview": { "description": "تبويب نظرة عامة بصفحة التقارير" },
+  "tabProviders": "المزودون",
+  "@tabProviders": { "description": "تبويب المزودون بصفحة التقارير" },
+  "tabFinancial": "المالية",
+  "@tabFinancial": { "description": "تبويب المالية بصفحة التقارير" },
+  "tabBilling": "الفوترة",
+  "@tabBilling": { "description": "تبويب الفوترة بصفحة التقارير" },
+  "tabAdvertisements": "الإعلانات",
+  "@tabAdvertisements": { "description": "تبويب الإعلانات بصفحة التقارير" },
+
+  "reportFilterClear": "مسح",
+  "@reportFilterClear": { "description": "زر مسح فلاتر التقارير" },
+  "reportFilterApply": "تطبيق",
+  "@reportFilterApply": { "description": "زر تطبيق فلاتر التقارير" },
+  "reportFilterAll": "الكل",
+  "@reportFilterAll": { "description": "خيار الكل بقوائم فلاتر التقارير" },
+  "reportRetry": "إعادة المحاولة",
+  "@reportRetry": { "description": "زر إعادة المحاولة عند فشل تحميل تقرير" },
+  "reportDateFrom": "من",
+  "@reportDateFrom": { "description": "تسمية حقل تاريخ البداية بفلتر التقارير" },
+  "reportDateTo": "إلى",
+  "@reportDateTo": { "description": "تسمية حقل تاريخ النهاية بفلتر التقارير" },
+
+  "filterProviderType": "نوع المزود",
+  "@filterProviderType": { "description": "تسمية فلتر نوع المزود" },
+  "filterProviderStatus": "حالة المزود",
+  "@filterProviderStatus": { "description": "تسمية فلتر حالة المزود" },
+  "filterBillingStatus": "حالة الفوترة",
+  "@filterBillingStatus": { "description": "تسمية فلتر/عنوان قسم حالة الفوترة" },
+  "filterInvoiceStatus": "حالة الفاتورة",
+  "@filterInvoiceStatus": { "description": "تسمية فلتر حالة الفاتورة بتبويب الفوترة" },
+  "filterOperationType": "نوع العملية",
+  "@filterOperationType": { "description": "تسمية فلتر نوع العملية" },
+  "filterStatus": "الحالة",
+  "@filterStatus": { "description": "تسمية فلتر الحالة العام" },
+  "filterGroupBy": "التجميع حسب",
+  "@filterGroupBy": { "description": "تسمية فلتر التجميع حسب" },
+  "filterPlacement": "الموضع",
+  "@filterPlacement": { "description": "تسمية فلتر موضع الإعلان" },
+
+  "providerTypeTechnician": "فني",
+  "@providerTypeTechnician": { "description": "نوع مزود: فني" },
+  "providerTypeFuelProvider": "موزع وقود",
+  "@providerTypeFuelProvider": { "description": "نوع مزود: موزع وقود" },
+  "providerTypeCarWasher": "مغسلة",
+  "@providerTypeCarWasher": { "description": "نوع مزود: مغسلة" },
+  "providerTypeShop": "متجر",
+  "@providerTypeShop": { "description": "نوع مزود: متجر" },
+
+  "opStatusCompleted": "مكتمل",
+  "@opStatusCompleted": { "description": "حالة عملية: مكتمل" },
+  "opStatusInProgress": "قيد التنفيذ",
+  "@opStatusInProgress": { "description": "حالة عملية: قيد التنفيذ" },
+  "opStatusCancelled": "ملغى",
+  "@opStatusCancelled": { "description": "حالة عملية: ملغى" },
+  "opStatusPending": "قيد الانتظار",
+  "@opStatusPending": { "description": "حالة عملية: قيد الانتظار" },
+
+  "opTypeTotals": "الإجمالي",
+  "@opTypeTotals": { "description": "نوع عملية: الإجمالي" },
+  "opTypeMaintenance": "صيانة",
+  "@opTypeMaintenance": { "description": "نوع عملية: صيانة" },
+  "opTypeSos": "طلبات الطوارئ",
+  "@opTypeSos": { "description": "نوع عملية: طلب طوارئ" },
+  "opTypeFuel": "وقود",
+  "@opTypeFuel": { "description": "نوع عملية: وقود" },
+  "opTypeCarWash": "غسيل سيارات",
+  "@opTypeCarWash": { "description": "نوع عملية: غسيل سيارات" },
+  "opTypeSpareParts": "قطع غيار",
+  "@opTypeSpareParts": { "description": "نوع عملية: قطع غيار" },
+
+  "groupByDay": "يوم",
+  "@groupByDay": { "description": "تجميع حسب اليوم" },
+  "groupByMonth": "شهر",
+  "@groupByMonth": { "description": "تجميع حسب الشهر" },
+  "groupByYear": "سنة",
+  "@groupByYear": { "description": "تجميع حسب السنة" },
+
+  "providerStatusPending": "قيد الانتظار",
+  "@providerStatusPending": { "description": "حالة مزود: قيد الانتظار" },
+  "providerStatusApproved": "موافق عليه",
+  "@providerStatusApproved": { "description": "حالة مزود: موافق عليه" },
+  "providerStatusRejected": "مرفوض",
+  "@providerStatusRejected": { "description": "حالة مزود: مرفوض" },
+  "providerStatusSuspended": "موقوف",
+  "@providerStatusSuspended": { "description": "حالة مزود: موقوف" },
+
+  "billingStatusNotConfigured": "غير مهيأ",
+  "@billingStatusNotConfigured": { "description": "حالة فوترة: غير مهيأ" },
+  "billingStatusExempt": "معفى",
+  "@billingStatusExempt": { "description": "حالة فوترة: معفى" },
+  "billingStatusFreeTrial": "تجربة مجانية",
+  "@billingStatusFreeTrial": { "description": "حالة فوترة: تجربة مجانية" },
+  "billingStatusActive": "نشط",
+  "@billingStatusActive": { "description": "حالة فوترة: نشط" },
+  "billingStatusInvoiceDue": "مستحق",
+  "@billingStatusInvoiceDue": { "description": "حالة فوترة: مستحق" },
+  "billingStatusOverdue": "متأخر",
+  "@billingStatusOverdue": { "description": "حالة فوترة: متأخر" },
+
+
+  "@adStatusInactive": { "description": "حالة الإعلان: غير نشط" },
+  "adsTotal": "إجمالي الإعلانات",
+  "@adsTotal": { "description": "بطاقة إحصائية: إجمالي الإعلانات" },
+  "adsActive": "نشطة",
+  "@adsActive": { "description": "بطاقة إحصائية: إعلانات نشطة" },
+  "adsInactive": "غير نشطة",
+  "@adsInactive": { "description": "بطاقة إحصائية: إعلانات غير نشطة" },
+  "adsExpired": "منتهية",
+  "@adsExpired": { "description": "بطاقة إحصائية: إعلانات منتهية" },
+  "adsScheduled": "مجدولة",
+  "@adsScheduled": { "description": "بطاقة إحصائية: إعلانات مجدولة" },
+  "adsByPlacementTitle": "حسب الموضع",
+  "@adsByPlacementTitle": { "description": "عنوان قسم الإعلانات حسب الموضع" },
+  "adsLatestTitle": "أحدث الإعلانات",
+  "@adsLatestTitle": { "description": "عنوان قسم أحدث الإعلانات" },
+  "adsEmpty": "لا توجد إعلانات",
+  "@adsEmpty": { "description": "نص عند عدم وجود إعلانات" },
+
+  "billingInvoicesCount": "عدد الفواتير",
+  "@billingInvoicesCount": { "description": "بطاقة إحصائية: عدد الفواتير" },
+  "billingDraft": "مسودة",
+  "@billingDraft": { "description": "بطاقة إحصائية: فواتير مسودة" },
+  "billingIssued": "صادرة",
+  "@billingIssued": { "description": "بطاقة إحصائية: فواتير صادرة" },
+  "billingOverdueCount": "متأخرة",
+  "@billingOverdueCount": { "description": "بطاقة إحصائية: فواتير متأخرة" },
+  "billingPaidCount": "مدفوعة",
+  "@billingPaidCount": { "description": "بطاقة إحصائية: فواتير مدفوعة" },
+  "billingCancelled": "ملغاة",
+  "invoiceActionExportPdf": "تصدير PDF",
+  "@billingCancelled": { "description": "بطاقة إحصائية: فواتير ملغاة" },
+  "billingFinancialTotalsTitle": "الإجماليات المالية",
+  "@billingFinancialTotalsTitle": { "description": "عنوان قسم الإجماليات المالية بتبويب الفوترة" },
+  "billingPaidTotal": "إجمالي المدفوع",
+  "@billingPaidTotal": { "description": "بطاقة إحصائية: إجمالي المدفوع" },
+  "billingUnpaidTotal": "إجمالي غير المدفوع",
+  "@billingUnpaidTotal": { "description": "بطاقة إحصائية: إجمالي غير المدفوع" },
+  "billingOverdueTotal": "إجمالي المتأخر",
+  "@billingOverdueTotal": { "description": "بطاقة إحصائية: إجمالي المتأخر" },
+  "billingAvgInvoice": "متوسط قيمة الفاتورة",
+  "@billingAvgInvoice": { "description": "بطاقة إحصائية: متوسط قيمة الفاتورة" },
+  "billingProvidersOverdue": "مزودون متأخرون",
+  "@billingProvidersOverdue": { "description": "بطاقة إحصائية: عدد المزودين المتأخرين بالسداد" },
+  "billingLatestInvoicesTitle": "أحدث الفواتير",
+  "@billingLatestInvoicesTitle": { "description": "عنوان قسم أحدث الفواتير" },
+  "billingEmpty": "لا توجد فواتير",
+  "@billingEmpty": { "description": "نص عند عدم وجود فواتير" },
+  "billingStatusLabel": "حالة",
+  "@billingStatusLabel": { "description": "تسمية حالة الفاتورة ضمن سطر الفاتورة" },
+  "billingIssuedAtLabel": "صدرت",
+  "@billingIssuedAtLabel": { "description": "تسمية تاريخ إصدار الفاتورة ضمن سطر الفاتورة" },
+
+  "financialGrossRevenueTitle": "الإيرادات الإجمالية",
+  "@financialGrossRevenueTitle": { "description": "عنوان قسم الإيرادات الإجمالية" },
+  "financialBillingSummaryTitle": "ملخص الفوترة",
+  "@financialBillingSummaryTitle": { "description": "عنوان قسم ملخص الفوترة بتبويب المالية" },
+  "financialIssuedTotal": "إجمالي الصادر",
+  "@financialIssuedTotal": { "description": "بطاقة إحصائية: إجمالي الصادر" },
+  "financialPaid": "المدفوع",
+  "@financialPaid": { "description": "بطاقة إحصائية: المدفوع" },
+  "financialUnpaid": "غير المدفوع",
+  "@financialUnpaid": { "description": "بطاقة إحصائية: غير المدفوع" },
+  "financialOverdue": "المتأخر",
+  "@financialOverdue": { "description": "بطاقة إحصائية: المتأخر" },
+  "financialCommissions": "العمولات",
+  "@financialCommissions": { "description": "بطاقة إحصائية: العمولات" },
+  "financialSubscriptions": "الاشتراكات",
+  "@financialSubscriptions": { "description": "بطاقة إحصائية: الاشتراكات" },
+
+  "operationsTitle": "العمليات",
+  "@operationsTitle": { "description": "عنوان قسم/تبويب العمليات" },
+  "operationsGroupedTitle": "العمليات (مجمعة حسب {group})",
+  "@operationsGroupedTitle": {
+    "description": "عنوان قسم العمليات عند التجميع حسب فترة معينة",
+    "placeholders": { "group": { "type": "String" } }
+  },
+  "operationsEmpty": "لا توجد بيانات",
+  "@operationsEmpty": { "description": "نص عند عدم وجود بيانات عمليات" },
+
+  "overviewTotalUsers": "إجمالي المستخدمين",
+  "@overviewTotalUsers": { "description": "بطاقة إحصائية: إجمالي المستخدمين" },
+  "overviewTotalCustomers": "إجمالي العملاء",
+  "@overviewTotalCustomers": { "description": "بطاقة إحصائية: إجمالي العملاء" },
+  "overviewTotalProviders": "إجمالي المزودين",
+  "@overviewTotalProviders": { "description": "بطاقة إحصائية: إجمالي المزودين" },
+  "overviewProvidersByTypeStatusTitle": "المزودون حسب النوع والحالة",
+  "@overviewProvidersByTypeStatusTitle": { "description": "عنوان قسم المزودين حسب النوع والحالة" },
+  "overviewOperationsSummaryTitle": "ملخص العمليات",
+  "@overviewOperationsSummaryTitle": { "description": "عنوان قسم ملخص العمليات بنظرة عامة" },
+  "overviewRevenueSummaryTitle": "ملخص الإيرادات",
+  "@overviewRevenueSummaryTitle": { "description": "عنوان قسم ملخص الإيرادات بنظرة عامة" },
+    "service": "الخدمة",
+  "@service": { "description": "عنوان أو نص يرمز للخدمة في التطبيق" },
+
+  "dashboard": "لوحة التحكم",
+  "@dashboard": { "description": "عنوان شاشة لوحة التحكم الرئيسية" },
+
+  "general": "عام",
+  "@general": { "description": "تبويب أو إعدادات عامة داخل التطبيق" },
+
+
+  "providersPendingApproval": "بانتظار الموافقة",
+  "@providersPendingApproval": { "description": "بطاقة إحصائية: مزودون بانتظار الموافقة" },
+  "providersOverdueBilling": "فواتير متأخرة",
+  "@providersOverdueBilling": { "description": "بطاقة إحصائية: مزودون لديهم فواتير متأخرة" },
+  "providersBillingNotConfigured": "فوترة غير مهيأة",
+  "@providersBillingNotConfigured": { "description": "بطاقة إحصائية: مزودون بفوترة غير مهيأة" },
+  "providersCountByTypeTitle": "عدد المزودين حسب النوع",
+  "@providersCountByTypeTitle": { "description": "عنوان قسم عدد المزودين حسب النوع" },
+  "providersStatusByTypeTitle": "الحالة حسب النوع",
+  "@providersStatusByTypeTitle": { "description": "عنوان قسم حالة المزودين حسب النوع" },
+  "providersTopByCompletedTitle": "أفضل المزودين حسب العمليات المكتملة",
+  "@providersTopByCompletedTitle": { "description": "عنوان قسم أفضل المزودين حسب عدد العمليات المكتملة" },
+    "adRankingExplanation": "الترتيب يبدأ من 1، فمثلاً 1 يعني هاد أول إعلان بيظهر",
+  "@adRankingExplanation": { "description": "شرح للمستخدم يوضح أن الترتيب يبدأ من الرقم 1 للإعلان الأول" },
+
+  "providersCompletedOpsLine": "{name} (#{id}) — {count} عملية مكتملة",
+  "@providersCompletedOpsLine": {
+    "description": "سطر يعرض اسم المزود ورقمه وعدد عملياته المكتملة",
+    "placeholders": {
+      "name": { "type": "String" },
+      "id": { "type": "String" },
+      "count": { "type": "String" }
+    }
+
+
+  },
+    "isActive": "نشط",
+  "@isActive": { "description": "حالة تشير إلى أن الحساب أو السيرفر نشط حالياً" },
+  "billingType": "نوع الفوترة",
+  "@billingType": { "description": "طريقة أو نوع دفع الفواتير" },
+
+    "back": "رجوع",
+  "@back": { "description": "زر الرجوع للخطوة السابقة" },
+
+    "billingDetailsTitle": "تفاصيل الفوترة",
+  "@billingDetailsTitle": { "description": "عنوان قسم تفاصيل الفوترة" },
+
+  "billingTypeCommission": "نوع الفوترة: عمولة",
+  "@billingTypeCommission": { "description": "خيار يحدد أن نوع الفوترة يعتمد على العمولة" },
+
+  "billingTypeMonthly": "فوترة شهرية",
+  "@billingTypeMonthly": { "description": "خيار يحدد أن الفوترة تتم بشكل شهري" },
+
+    "billingSettingsPageTitle": "إعدادات الفوترة",
+  "@billingSettingsPageTitle": { "description": "عنوان صفحة إعدادات الفوترة" },
+
+  "billingCreateNew": "فاتورة جديد",
+  "@billingCreateNew": { "description": "زر لإنشاء إعداد فوترة جديد" },
+
+  "billingSettingLinkButton": "إعداد الفوترة",
+  "@billingSettingLinkButton": { "description": "زر رابط للانتقال إلى إعداد الفوترة" },
+
+  "billingColumnProvider": "المزوّد",
+  "@billingColumnProvider": { "description": "عنوان عمود المزوّد في جدول الفوترة" },
+
+  "billingColumnType": "نوع الفوترة",
+  "@billingColumnType": { "description": "عنوان عمود نوع الفوترة في الجدول" },
+
+  "billingColumnMonthlyFee": "الاشتراك الشهري",
+  "@billingColumnMonthlyFee": { "description": "عنوان عمود قيمة الاشتراك الشهري" },
+
+  "billingColumnCommission": "نسبة العمولة",
+  "@billingColumnCommission": { "description": "عنوان عمود نسبة العمولة في الجدول" },
+
+  "billingColumnStartsAt": "تاريخ البدء",
+  "@billingColumnStartsAt": { "description": "عنوان عمود تاريخ بدء التفعيل" },
+
+
+  "billingStatusInactive": "غير فعّال",
+  "@billingStatusInactive": { "description": "حالة الإعداد: غير نشط أو معطل" },
+
+  "billingDeleteTitle": "حذف إعداد الفوترة",
+  "@billingDeleteTitle": { "description": "عنوان نافذة تأكيد حذف إعداد الفوترة" },
+
+  "billingDeleteMessage": "هل أنت متأكد من حذف هذا الإعداد؟",
+  "@billingDeleteMessage": { "description": "رسالة تأكيد للمستخدم قبل إتمام عملية الحذف" },
+ "invoicesPageTitle": "فواتير مزوّدي الخدمة",
+"invoiceDetailsTitle": "تفاصيل الفاتورة",
+
+"invoiceStatusAll": "الكل",
+"invoiceStatusDraft": "مسودة",
+"invoiceStatusIssued": "صادرة",
+"invoiceStatusPaid": "مدفوعة",
+"invoiceStatusOverdue": "متأخرة",
+"invoiceStatusCancelled": "ملغاة",
+
+"columnInvoiceNumber": "رقم الفاتورة",
+"columnProvider": "المزوّد",
+"columnPeriod": "الفترة",
+"columnTotalAmount": "الإجمالي",
+"columnDueAt": "تاريخ الاستحقاق",
+
+"invoiceFieldInvoiceNumber": "رقم الفاتورة",
+"invoiceFieldProviderType": "نوع المزوّد",
+"invoiceFieldProviderId": "معرّف المزوّد",
+"invoiceFieldPeriodStart": "بداية الفترة",
+"invoiceFieldPeriodEnd": "نهاية الفترة",
+"invoiceFieldIssuedAt": "تاريخ الإصدار",
+"invoiceFieldDueAt": "تاريخ الاستحقاق",
+"invoiceFieldSubtotal": "المجموع الفرعي",
+"invoiceFieldCommissionTotal": "إجمالي العمولة",
+"invoiceFieldSubscriptionTotal": "إجمالي الاشتراك",
+"invoiceFieldTotalAmount": "المبلغ الإجمالي",
+"invoiceFieldStatus": "الحالة",
+"invoiceFieldIsOverdue": "متأخرة",
+"invoiceFieldPaymentMethod": "طريقة الدفع",
+"invoiceFieldPaymentReference": "مرجع الدفع",
+"invoiceFieldPaidAt": "تاريخ الدفع",
+"invoiceFieldNotes": "ملاحظات",
+"invoiceFieldItems": "بنود الفاتورة",
+
+  "paymentMethodCash": "نقداً",
+  "@paymentMethodCash": {
+    "description": "خيار الدفع الكاش أو النقدي"
+  },
+  "paymentMethodBankTransfer": "تحويل بنكي",
+  "@paymentMethodBankTransfer": {
+    "description": "خيار الدفع عبر الحوالات البنكية"
+  },
+  "paymentMethodSyriatelCash": "سيرياتيل كاش",
+  "@paymentMethodSyriatelCash": {
+    "description": "خيار الدفع الإلكتروني عبر خدمة سيرياتيل كاش"
+  },
+  "paymentMethodOther": "أخرى",
+  "@paymentMethodOther": {
+    "description": "خيار لطرق الدفع الأخرى غير المدرجة"
+  }
+,
+"invoiceActionIssue": "إصدار",
+"invoiceActionMarkPaid": "تأكيد الدفع",
+"invoiceActionCancel": "إلغاء الفاتورة",
+"invoiceActionGenerate": "توليد الفواتير",
+"invoiceActionGenerateForProvider": "توليد فاتورة لمزوّد",
+
+"invoiceGenerateDialogTitle": "توليد الفواتير",
+"invoiceMarkPaidDialogTitle": "تأكيد الدفع",
+"invoiceCancelDialogTitle": "إلغاء الفاتورة",
+"invoiceCancelDialogMessage": "هل أنت متأكد من إلغاء هذه الفاتورة؟",
+
+  "paymentMethodShamCash": "شام كاش",
+  "@paymentMethodShamCash": {
+    "description": "خيار الدفع الإلكتروني عبر خدمة شام كاش"
+  },
+
+  "billingTypeSubscriptionPlusCommission": "اشتراك + عمولة",
+  "@billingTypeSubscriptionPlusCommission": {
+    "description": "نوع الفوترة الذي يجمع بين رسوم الاشتراك الثابتة ونسبة العمولات"
+  },
+  "billingTypeExempt": "معفى",
+  "@billingTypeExempt": {
+    "description": "نوع الفوترة للحسابات أو العمليات المعفاة من الرسوم"
+  },
+  "billingFieldExemptMethod": "طريقة الإعفاء",
+  "@billingFieldExemptMethod": {
+    "description": "اسم الحقل المخصص لتحديد طريقة أو سبب الإعفاء المالي"
+  }
+,
+
+
+"invoiceGenerateResultTitle": "نتيجة التوليد",
+"invoiceGeneratedCount": "تم التوليد",
+"invoiceSkippedCount": "تم التخطي",
+"invoiceSkippedReasonAlreadyExists": "الفاتورة موجودة مسبقاً",
+"invoiceSkippedReasonWithinFreeTrial": "ضمن فترة التجربة المجانية",
+
+"noInvoices": "لا توجد فواتير",
+"invoiceViewInvoices": "عرض الفواتير",
+  "confirmDelete": "حذف",
+  "@confirmDelete": { "description": "زر التأكيد النهائي لعملية الحذف" },
+
+  "billingFormTitleCreate": "إنشاء إعداد فوترة",
+  "@billingFormTitleCreate": { "description": "عنوان نموذج إنشاء إعداد فوترة جديد" },
+
+  "billingFormTitleEdit": "تعديل إعداد الفوترة",
+  "@billingFormTitleEdit": { "description": "عنوان نموذج تعديل إعداد فوترة حالي" },
+
+  "billingFieldProviderType": "نوع المزوّد",
+  "@billingFieldProviderType": { "description": "اسم حقل إدخال نوع المزوّد" },
+
+  "billingFieldProviderId": "معرّف المزوّد",
+  "@billingFieldProviderId": { "description": "اسم حقل إدخال رقم أو معرف المزوّد" },
+
+  "billingFieldBillingType": "نوع الفوترة",
+  "@billingFieldBillingType": { "description": "اسم حقل اختيار نوع الفوترة" },
+
+  "billingFieldMonthlyFee": "الاشتراك الشهري",
+  "@billingFieldMonthlyFee": { "description": "اسم حقل إدخال قيمة الاشتراك الشهري" },
+
+  "billingFieldCommissionPercent": "نسبة العمولة %",
+  "@billingFieldCommissionPercent": { "description": "اسم حقل إدخال نسبة العمولة المئوية" },
+
+  "billingFieldFreeTrialDays": "أيام التجربة المجانية",
+  "@billingFieldFreeTrialDays": { "description": "اسم حقل إدخال عدد أيام الفترة التجريبية" },
+
+  "billingFieldPaymentDueDays": "مهلة الدفع (أيام)",
+  "@billingFieldPaymentDueDays": { "description": "اسم حقل إدخال عدد أيام مهلة الدفع المتاحة" },
+
+  "billingFieldStartsAt": "تاريخ البدء",
+  "@billingFieldStartsAt": { "description": "اسم حقل اختيار تاريخ بدء الفوترة" },
+
+  "billingFieldIsActive": "فعّال؟",
+  "@billingFieldIsActive": { "description": "اسم مفتاح التبديل لتحديد ما إذا كان الحساب نشطاً" },
+
+  "billingFieldNotes": "ملاحظات",
+  "@billingFieldNotes": { "description": "اسم حقل كتابة الملاحظات الإضافية" },
+
+  "billingPickDate": "اختر التاريخ",
+  "@billingPickDate": { "description": "نص يظهر للمستخدم لفتح منتقي التاريخ" },
+
   "fieldRequired": "هذا الحقل مطلوب",
-  "@fieldRequired": {
-    "description": "حقل مطلوب"
-  },
-  
-  "invalidInput": "إدخال غير صحيح",
-  "@invalidInput": {
-    "description": "إدخال غير صحيح"
-  },
-  
-  "optional": "اختياري",
-  "@optional": {
-    "description": "اختياري"
-  },
-  
-  "required": "مطلوب",
-  "@required": {
-    "description": "مطلوب"
-  },
-  
-  "description": "الوصف",
-  "@description": {
-    "description": "الوصف"
-  },
-  
-  "problemDetails": "تفاصيل المشكلة",
-  "@problemDetails": {
-    "description": "تفاصيل المشكلة"
-  },
-  
-  "attachPhotos": "إرفاق صور",
-  "@attachPhotos": {
-    "description": "إرفاق صور"
-  },
-  
-  "summary": "ملخص",
-  "@summary": {
-    "description": "ملخص"
-  },
-  
-  "orderSummary": "ملخص الطلب",
-  "@orderSummary": {
-    "description": "ملخص الطلب"
-  },
-  
-  "bookingSummary": "ملخص الحجز",
-  "@bookingSummary": {
-    "description": "ملخص الحجز"
-  },
-    "readygSummary": "هل أنت مستعد للعودة إلى الطريق؟",
-  "@readygSummary": {
-    "description": "هل أنت مستعد للعودة إلى الطريق؟"
-  },
-"editPassword": "تعديل كلمة المرور",
-"@editPassword": {
-"description": "تعديل كلمة المرور"
-},
-"savePassword": "حفظ كلمة المرور",
-"@savePassword": {
-"description": "حفظ كلمة المرور"
-},
-"deleteAccount": "حذف الحساب",
-"@deleteAccount": {
-"description": "حذف الحساب"
-},
+  "@fieldRequired": { "description": "رسالة الخطأ التي تظهر عند ترك حقل إجباري فارغاً" },
 
-"creating": "جاري الإنشاء...",
-"@creating": {
-"description": "جاري الإنشاء..."
-},
+  "save": "حفظ",
+  "@save": { "description": "زر حفظ البيانات المدخلة في النموذج" },
 
-"enterFirstName": "أدخل الاسم الأول",
-"@enterFirstName": {
-"description": "أدخل الاسم الأول"
-},
-"enterEmail": "أدخل البريد الإلكتروني",
-"@enterEmail": {
-"description": "أدخل البريد الإلكتروني"
-},
-"enterPassword": "أدخل كلمة المرور",
-"@enterPassword": {
-"description": "أدخل كلمة المرور"
-},
-"passwordMinLength": "كلمة المرور يجب أن تكون 6 أحرف على الأقل",
-"@passwordMinLength": {
-"description": "كلمة المرور يجب أن تكون 6 أحرف على الأقل"
-},
-"reEnterPassword": "أعد إدخال كلمة المرور",
-"@reEnterPassword": {
-"description": "أعد إدخال كلمة المرور"
-},
-"addVehicleImage": "أضف صورة المركبة",
-"@addVehicleImage": {
-"description": "أضف صورة المركبة"
-},
-"tapToSelectImage": "اضغط لاختيار صورة",
-"@tapToSelectImage": {
-"description": "اضغط لاختيار صورة"
-},
-"selectVehicleImage": "الرجاء اختيار صورة للمركبة",
-"@selectVehicleImage": {
-"description": "الرجاء اختيار صورة للمركبة"
-},
-"fillAllFields": "الرجاء تعبئة جميع الحقول",
-"@fillAllFields": {
-"description": "الرجاء تعبئة جميع الحقول"
-},
-"vehicleAddedSuccess": "تمت إضافة المركبة بنجاح",
-"@vehicleAddedSuccess": {
-"description": "تمت إضافة المركبة بنجاح"
-},
-"odometer": "عداد الكيلومترات",
-"@odometer": {
-"description": "عداد الكيلومترات"
-},
-"licensePlateNumberFull": "رقم لوحة السيارة",
-"@licensePlateNumberFull": {
-"description": "رقم لوحة السيارة"
-},
-"serviceRecords": "سجلات الخدمات",
-"@serviceRecords": {
-"description": "سجلات الخدمات"
-},
-"fuelRecords": "سجل الوقود",
-"@fuelRecords": {
-"description": "سجل الوقود"
-},
-"plate": "اللوحة",
-"@plate": {
-"description": "اللوحة"
-},
-"currentPassword": "كلمة المرور الحالية",
-"@currentPassword": {
-"description": "كلمة المرور الحالية"
-},
-"newPassword": "كلمة المرور الجديدة",
-"@newPassword": {
-"description": "كلمة المرور الجديدة"
-},
+  "actionEdit": "تعديل",
+  "@actionEdit": { "description": "نص إجراء التعديل" },
 
-"createYourAccount": "إنشاء حسابك",
-"@createYourAccount": {
-"description": "إنشاء حسابك"
-},
-"carReadyMessage": "نحن هنا للحفاظ على سيارتك بأفضل حالة، هل أنت مستعد؟",
-"@carReadyMessage": {
-"description": "رسالة ترحيبية للمستخدم"
-},
+  "actionDelete": "حذف",
+  "@actionDelete": { "description": "نص إجراء الحذف العام" },
 
-
-
-"sos": "نجدة",
-"@sos": {
-"description": "زر الطوارئ"
-},
-"marketplace": "المتجر",
-"@marketplace": {
-"description": "المتجر"
-},
-"fuel": "الوقود",
-"@fuel": {
-"description": "الوقود"
-},
-
-"notification": "الإشعارات",
-"@notification": {
-"description": "الإشعارات"
-},
-"messages": "الرسائل",
-"@messages": {
-"description": "الرسائل"
-},
-"changedpasswordsuccessfully": "تم تغيير كلمة السر بنجاح",
-"@changedpasswordsuccessfully": {
-"description": "تم تغيير كلمة السر بنجاح"
-},
-  "enterphone": "أدخل رقم الهاتف ",
-  "@enterphone": {
-    "description": "ادخل رقم الهاتف "
+  "advertisementsMenu": "الإعلانات",
+"advertisementsPageTitle": "الإعلانات",
+"advertisementDetailsTitle": "تفاصيل الإعلان",
+"adColumnImage": "الصورة",
+"adColumnTitle": "العنوان",
+"adColumnPlacement": "الموقع",
+"adColumnPeriod": "الفترة",
+"adColumnStatus": "الحالة",
+"adColumnSortOrder": "الترتيب",
+"adColumnActions": "الإجراءات",
+"adStatusActive": "مفعل",
+"adStatusInactive": "غير مفعل",
+"adFilterAll": "الكل",
+"adFilterHome": "الرئيسية",
+"adActionActivate": "تفعيل",
+"adActionDeactivate": "إلغاء التفعيل",
+"adActionEdit": "تعديل",
+"adActionDelete": "حذف",
+"adCreateNew": "إعلان جديد",
+"adFormTitleLabel": "العنوان",
+"adFormPlacementLabel": "الموقع",
+"adFormLinkLabel": "رابط الإعلان",
+"adFormStartsLabel": "تاريخ البداية",
+"adFormEndsLabel": "تاريخ النهاية",
+"adFormSortOrderLabel": "ترتيب الظهور",
+"adFormActiveLabel": "مفعل",
+"adFormImageLabel": "الصورة",
+"adFormImageHint": "jpeg/jpg/png/webp، الحد الأقصى 2 ميجابايت",
+"adFormChooseImage": "اختيار صورة",
+"adFormChangeImage": "تغيير الصورة",
+"adFormSave": "حفظ",
+"adFormRequiredField": "هذا الحقل مطلوب",
+"adFormImageRequired": "يرجى اختيار صورة",
+"adDeleteConfirmTitle": "حذف الإعلان",
+"adDeleteConfirmMessage": "هل أنت متأكد من حذف هذا الإعلان؟",
+"adCreatedSuccess": "تم إنشاء الإعلان بنجاح",
+"adUpdatedSuccess": "تم تحديث الإعلان بنجاح",
+"adDeletedSuccess": "تم حذف الإعلان بنجاح",
+"adActivatedSuccess": "تم تفعيل الإعلان",
+"adDeactivatedSuccess": "تم إلغاء تفعيل الإعلان",
+"noAdvertisements": "لا يوجد إعلانات",
+  
+  "dashboardTotalUsers": "إجمالي المستخدمين",
+"dashboardTotalCustomers": "إجمالي العملاء",
+"dashboardOperationsTitle": "العمليات",
+"dashboardRevenueTitle": "الإيرادات",
+"dashboardTotalRevenue": "إجمالي الإيرادات",
+"dashboardMaintenance": "الصيانة",
+"dashboardSos": "طلبات SOS",
+"dashboardFuelOrders": "طلبات الوقود",
+"dashboardCarwashBookings": "حجوزات الغسيل",
+"dashboardSpareParts": "قطع الغيار",
+"dashboardPeriodWeek": "أسبوع",
+"dashboardPeriodMonth": "شهر",
+"dashboardPeriodYear": "سنة",
+"dashboardNoData": "لا توجد بيانات لهذه الفترة"
+,
+  "settingsPageTitle": "الإعدادات",
+  "@settingsPageTitle": {
+    "description": "عنوان صفحة الإعدادات الرئيسي"
   },
-  "thepasswordsdonotmatch": "كلمتا المرور غير متطابقتين",
-  "@thepasswordsdonotmatch": {
-    "description": "كلمتا المرور غير متطابقتين"
+  "settingsLanguageSection": "اللغة",
+  "@settingsLanguageSection": {
+    "description": "عنوان قسم تغيير لغة التطبيق"
   },
-  "activeorders": "الطلبات النشطة ",
-  "@activeorders": {
-    "description":"الطلبات النشطة "
+  "settingsThemeSection": "المظهر",
+  "@settingsThemeSection": {
+    "description": "عنوان قسم تغيير مظهر أو ثيم التطبيق"
   },
-  "saveandfollow": "حفظ و متابعة",
-  "@saveandfollow": {
-    "description":"حفظ و متابعة"
+  "settingsLanguageArabic": "العربية",
+  "@settingsLanguageArabic": {
+    "description": "خيار اختيار اللغة العربية"
   },
-  "savevehicle": "حفظ المركبة ",
-  "@Save Vehicle": {
-    "description":"حفظ المركبة"
-
+  "settingsLanguageEnglish": "الإنجليزية",
+  "@settingsLanguageEnglish": {
+    "description": "خيار اختيار اللغة الإنجليزية"
   },
-  "parts": "قطع الغيار ",
-  "@parts": {
-    "description":"قطع الغيار"
-
+  "settingsThemeLight": "فاتح",
+  "@settingsThemeLight": {
+    "description": "خيار تفعيل المظهر الفاتح"
+  },
+  "settingsThemeDark": "داكن",
+  "@settingsThemeDark": {
+    "description": "خيار تفعيل المظهر الداكن"
+  },
+  "settingsThemeSystem": "حسب النظام",
+  "@settingsThemeSystem": {
+    "description": "خيار جعل المظهر يتبع إعدادات نظام الجهاز"
   }
-  ,
-  
-  "details": "التفاصيل",
-  "@details": {
-    "description":"التفاصيل"
-
-  },
- "saveChanges": "حفظ التعديلات",
-"@saveChanges": {
-  "description": "زر لحفظ التعديلات"
-},
-
-"owner": "المالك",
-"@owner": {
-  "description": "عنوان المالك في صفحة تفاصيل المركبة"
-},
-
-
-"km": "كم",
-"@km": {
-  "description": "وحدة قياس الكيلومترات"
-},
 
 
 
-"maintenanceRecord": "سجل الصيانة",
-"@maintenanceRecord": {
-  "description": "عنوان سجل الصيانة"
-},
-
-"fuelRecord": "سجل الوقود",
-"@fuelRecord": {
-  "description": "عنوان سجل الوقود"
-},
-
-"alertsRecord": "سجل التنبيهات",
-"@alertsRecord": {
-  "description": "عنوان سجل التنبيهات"
-},
-
-
-"deleteVehicle": "حذف المركبة",
-"@deleteVehicle": {
-  "description": "زر لحذف مركبة كاملة"
-},
-
-"updateVehicle": "تحديث مركبة",
-"@updateVehicle": {
-  "description": "زر أو عنوان لتحديث بيانات المركبة"
-},
-
-"vehicleUpdatedSuccessfully": "تم تحديث المركبة بنجاح",
-"@vehicleUpdatedSuccessfully": {
-  "description": "رسالة تظهر بعد تحديث بيانات المركبة بنجاح"
-},
-
-"saving": "جارٍ الحفظ...",
-"@saving": {
-  "description": "نص يظهر أثناء حفظ البيانات"
-},
-
-"confirmDeleteTitle": "تأكيد الحذف",
-"@confirmDeleteTitle": {
-  "description": "عنوان نافذة تأكيد الحذف"
-},
-
-"confirmDeleteMessage": "هل أنت متأكد من حذف هذه المركبة؟هذا الإجراء لا يمكن التراجع عنه.",
-"@confirmDeleteMessage": {
-  "description": "رسالة تحذير قبل حذف المركبة"
-},
-
-"noCarsYet": "لا توجد سيارات حتى الآن",
-"@noCarsYet": {
-  "description": "رسالة تظهر عندما لا توجد سيارات مضافة"
-},
-
-"updateCarsList": "تحديث قائمة السيارات...",
-"@updateCarsList": {
-  "description": "نص يظهر عند تحديث أو تحميل قائمة السيارات"
-},
-
-"statistics": "الإحصائيات",
-"@statistics": { "description": "عنوان صفحة الإحصائيات" },
-
-"totalJobs": "إجمالي الأعمال",
-"@totalJobs": { "description": "عدد الأعمال الكلي" },
-
-"assignedJobs": "المعيّنة",
-"@assignedJobs": { "description": "عدد الأعمال المعيّنة" },
-
-"inProgressJobs": "قيد التنفيذ",
-"@inProgressJobs": { "description": "عدد الأعمال قيد التنفيذ" },
-
-"completedJobs": "المكتملة",
-"@completedJobs": { "description": "عدد الأعمال المكتملة" },
-
-"totalQuotations": "إجمالي العروض",
-"@totalQuotations": { "description": "عدد عروض الأسعار الكلي" },
-
-"pendingQuotations": "العروض المعلّقة",
-"@pendingQuotations": { "description": "عدد عروض الأسعار المعلقة" },
-
-"acceptedQuotations": "العروض المقبولة",
-"@acceptedQuotations": { "description": "عدد عروض الأسعار المقبولة" },
-
-"totalRatings": "عدد التقييمات",
-"@totalRatings": { "description": "عدد التقييمات الكلي" },
-
-"deleteProfile": "حذف الحساب",
-"@deleteProfile": {"description":"عنوان حوار حذف الحساب"},
-
-"confirmDeleteProfileTitle": "تأكيد الحذف",
-"@confirmDeleteProfileTitle": {"description":"زر تأكيد الحذف"},
-
-"confirmDeleteProfileMessage": "هل أنت متأكد من حذف الحساب؟\nهذا الإجراء لا يمكن التراجع عنه.",
-"@confirmDeleteProfileMessage": {"description":"رسالة تحذير قبل حذف الحساب"},
-
-"profileDeletedSuccessfully": "تم حذف الحساب بنجاح",
-"@profileDeletedSuccessfully": {"description":"رسالة بعد حذف الحساب بنجاح"},
-"enterPhone": "الرجاء إدخال رقم الهاتف",
-"@enterPhone": {
-  "description": "رسالة تظهر عند ترك حقل الهاتف فارغاً"
-},
-"invalidPhone": "رقم الهاتف غير صالح",
-"@invalidPhone": {
-  "description": "رسالة تظهر عندما يكون رقم الهاتف غير صحيح أو غير مكتمل"
-},
-  "readySummary": "هل أنت مستعد للعودة إلى الطريق؟",
-  "@readySummary": {
-    "description": "هل أنت مستعد للعودة إلى الطريق؟"
-  },
-
-  "enterAsTechnician": "الدخول كفني",
-  "@enterAsTechnician": {
-    "description": "الانتقال إلى بروفايل الفني من تبويب المزيد"
-  },
-
-  "washersPageTitle": "مغاسل السيارات",
-  "@washersPageTitle": {
-    "description": "عنوان شريط التطبيق لقائمة المغاسل"
-  },
-  "washersByCity": "حسب المدينة",
-  "@washersByCity": {
-    "description": "تصفية المغاسل حسب المدينة"
-  },
-  "washersBookAppointment": "حجز موعد",
-  "@washersBookAppointment": {
-    "description": "زر حجز موعد لغسيل السيارة"
-  },
-  "washersViewDetails": "عرض التفاصيل",
-  "@washersViewDetails": {
-    "description": "زر فتح تفاصيل المغسلة"
-  },
-  "washersCityWithName": "المدينة : {cityName}",
-  "@washersCityWithName": {
-    "description": "سطر عرض المدينة للمغسلة",
-    "placeholders": {
-      "cityName": { "type": "String" }
-    }
-  },
-  "washersRatingsWithCount": "التقييمات : {count}",
-  "@washersRatingsWithCount": {
-    "description": "عدد التقييمات",
-    "placeholders": {
-      "count": { "type": "int" }
-    }
-  },
-  "washerTierBasic": "BASIC",
-  "@washerTierBasic": { "description": "تصنيف الخدمة: أساسي" },
-  "washerTierVip": "VIP",
-  "@washerTierVip": { "description": "تصنيف VIP" },
-  "washerTierPremium": "PREMIUM",
-  "@washerTierPremium": { "description": "تصنيف مميز" },
-  "washerDetailsTitle": "تفاصيل المغسلة",
-  "@washerDetailsTitle": { "description": "عنوان شريط تفاصيل المغسلة" },
-  "washerOpenTime": "الفتح : {time}",
-  "@washerOpenTime": {
-    "description": "وقت افتتاح المغسلة",
-    "placeholders": { "time": { "type": "String" } }
-  },
-  "washerCloseTime": "الإغلاق : {time}",
-  "@washerCloseTime": {
-    "description": "وقت إغلاق المغسلة",
-    "placeholders": { "time": { "type": "String" } }
-  },
-  "washerSectionCityAndAddress": "المدينة و العنوان",
-  "@washerSectionCityAndAddress": { "description": "عنوان قسم الموقع" },
-  "washerSectionServicesAndPrices": "الخدمات و الأسعار",
-  "@washerSectionServicesAndPrices": { "description": "عنوان قسم الباقات" },
-  "washerSectionCustomerReviews": "تقييم العملاء",
-  "@washerSectionCustomerReviews": { "description": "عنوان قسم التقييمات" },
-  "washerServiceExterior": "خارجي",
-  "@washerServiceExterior": { "description": "خدمة غسيل خارجي" },
-  "washerServiceInterior": "داخلي",
-  "@washerServiceInterior": { "description": "خدمة غسيل داخلي" },
-  "washerServiceEngine": "محرك",
-  "@washerServiceEngine": { "description": "غسيل المحرك" },
-  "washerPackagePrice": "السعر : {amount} $",
-  "@washerPackagePrice": {
-    "description": "سعر الباقة بالدولار",
-    "placeholders": { "amount": { "type": "int" } }
-  },
-  "washerReservationTitle": "الحجز",
-  "@washerReservationTitle": { "description": "عنوان شريط شاشة حجز المغسلة" },
-  "washerReservationFieldDate": "التاريخ",
-  "washerReservationFieldTime": "الوقت",
-  "washerReservationFieldVehicleLabel": "ادخل نوع مركبتك",
-  "washerReservationFieldVehicleHint": "ادخل هنا نوع مركبتك",
-  "washerReservationFieldNotesLabel": "ملاحظات",
-  "washerReservationFieldNotesHint": "اضف اي ملاحظات تريدها",
-  "washerReservationChooseService": "اختر الخدمة المناسبة",
-  "washerReservationConfirm": "تأكيد حجز",
-  "washerReservationCancel": "إلغاء الحجز",
-  "washerReservationPickDate": "اختر التاريخ",
-  "washerReservationPickTime": "اختر الوقت",
-  "washerReservationServicePremium": "Premium",
-  "washerReservationServiceVip": "Vip",
-  "washerReservationServiceBasic": "Basic",
-  "bookingsPageTitle": "حجوزاتي",
-  "@bookingsPageTitle": {
-    "description": "عنوان شريط شاشة الحجوزات"
-  },
-  "bookingsFilterByStatus": "حسب الحالة",
-  "@bookingsFilterByStatus": {
-    "description": "عنوان فلتر الحجوزات"
-  },
-  "bookingStatusProgress": "قيد التنفيذ",
-  "@bookingStatusProgress": {
-    "description": "حالة الحجز: قيد التنفيذ"
-  },
-  "bookingStatusAccepted": "مقبول",
-  "@bookingStatusAccepted": {
-    "description": "حالة الحجز: مقبول"
-  },
-  "bookingStatusPinding": "انتظار",
-  "@bookingStatusPinding": {
-    "description": "حالة الحجز: انتظار"
-  },
-  "bookingsWasherName": "مغسل المقداد",
-  "@bookingsWasherName": {
-    "description": "اسم المغسلة في بطاقة الحجز"
-  },
-  "bookingsServiceLabel": "الخدمة ",
-  "@bookingsServiceLabel": {
-    "description": "عنوان سطر الخدمة في بطاقة الحجز"
-  },
-  "bookingsServiceVip": "Vip",
-  "@bookingsServiceVip": {
-    "description": "اسم باقة VIP في بطاقة الحجز"
-  },
-  "bookingsDateTimeLabel": "الموعد",
-  "@bookingsDateTimeLabel": {
-    "description": "عنوان سطر الموعد في بطاقة الحجز"
-  },
-  "bookingsAtLabel": "الساعة",
-  "@bookingsAtLabel": {
-    "description": "كلمة الربط بين التاريخ والوقت"
-  },
-  "bookingsPriceLabel": "السعر",
-  "@bookingsPriceLabel": {
-    "description": "عنوان سطر السعر في بطاقة الحجز"
-  },
-  "bookingsMenuShowDetails": "عرض تفاصيل",
-  "@bookingsMenuShowDetails": {
-    "description": "إجراء قائمة: عرض تفاصيل"
-  },
-  "washerBookingViewDetails": "عرض التفاصيل",
-  "@washerBookingViewDetails": {
-    "description": "زر بطاقة الحجز عند المغسل: عرض التفاصيل"
-  },
-  "washerBookingAccept": "قبول",
-  "@washerBookingAccept": {
-    "description": "إجراء سريع في بطاقة الحجز للمغسل"
-  },
-  "washerBookingReject": "رفض",
-  "@washerBookingReject": {
-    "description": "إجراء سريع في بطاقة الحجز للمغسل"
-  },
-  "washerBookingStartExecution": "بدأ التنفيذ",
-  "@washerBookingStartExecution": {
-    "description": "إجراء سريع في بطاقة الحجز للمغسل"
-  },
-  "washerBookingCompleted": "اكتمل",
-  "@washerBookingCompleted": {
-    "description": "إجراء سريع في بطاقة الحجز للمغسل"
-  },
-  "washerBookingCustomerNameLabel": "اسم العميل :",
-  "@washerBookingCustomerNameLabel": {
-    "description": "عنوان سطر في بطاقة الحجز للمغسل"
-  },
-  "washerBookingRequestedServiceLabel": "الخدمة المطلوبة :",
-  "@washerBookingRequestedServiceLabel": {
-    "description": "عنوان سطر في بطاقة الحجز للمغسل"
-  },
-  "washerBookingAppointmentLabel": "الموعد :",
-  "@washerBookingAppointmentLabel": {
-    "description": "عنوان سطر في بطاقة الحجز للمغسل"
-  },
-  "bookingsMenuCancelBooking": "إلغاء الحجز",
-  "@bookingsMenuCancelBooking": {
-    "description": "إجراء قائمة: إلغاء الحجز"
-  },
-  "bookingsMenuRateService": "تقييم الخدمة",
-  "@bookingsMenuRateService": {
-    "description": "إجراء قائمة: تقييم الخدمة"
-  },
-  "bookingDetailsPageTitle": "تفاصيل الحجوزات",
-  "@bookingDetailsPageTitle": {
-    "description": "عنوان شريط شاشة تفاصيل الحجز"
-  },
-  "bookingDetailsServiceSectionTitle": "تفاصيل عن الخدمة",
-  "@bookingDetailsServiceSectionTitle": {
-    "description": "عنوان القسم الأول في شاشة تفاصيل الحجز"
-  },
-  "bookingDetailsAppointmentSectionTitle": "تفاصيل عن الموعد",
-  "@bookingDetailsAppointmentSectionTitle": {
-    "description": "عنوان قسم الموعد في شاشة تفاصيل الحجز"
-  },
-  "bookingDetailsUserNotesSectionTitle": "ملاحظات المستخدم",
-  "@bookingDetailsUserNotesSectionTitle": {
-    "description": "عنوان قسم ملاحظات المستخدم في شاشة تفاصيل الحجز"
-  },
-  "bookingDetailsWasherNameLabel": "اسم المغسل",
-  "@bookingDetailsWasherNameLabel": {
-    "description": "عنوان سطر اسم المغسل في الكارد الأول بتفاصيل الحجز"
-  },
-  "bookingDetailsOrderDateLabel": "تاريخ الطلب",
-  "@bookingDetailsOrderDateLabel": {
-    "description": "عنوان سطر تاريخ الطلب في كارد الموعد"
-  },
-  "bookingDetailsVehicleLabel": "المركبة",
-  "@bookingDetailsVehicleLabel": {
-    "description": "عنوان سطر المركبة في كارد الموعد"
-  },
-  "ratingsServiceInfoSectionTitle": "معلومات عن الخدمة",
-  "@ratingsServiceInfoSectionTitle": {
-    "description": "عنوان القسم الأول في شاشة تقييم المغسلة"
-  },
-  "ratingsYourRatingQuestion": "ما تقييمك للخدمة",
-  "@ratingsYourRatingQuestion": {
-    "description": "سؤال قبل نجوم التقييم"
-  },
-  "ratingsTellUsExperienceTitle": "أخبرنا عن تجربتك",
-  "@ratingsTellUsExperienceTitle": {
-    "description": "عنوان فوق حقل نص التعليق"
-  },
-  "ratingsCommentExperienceHint": "اترك لنا تعليقاً عن تجربتك",
-  "@ratingsCommentExperienceHint": {
-    "description": "نص التلميح داخل حقل التعليق"
-  },
-  "ratingsSendRating": "إرسال التقييم",
-  "@ratingsSendRating": {
-    "description": "زر إرسال تقييم المغسلة"
-  },
-  "profileWasherPageTitle": "ملف المنظّف",
-  "@profileWasherPageTitle": {
-    "description": "عنوان شريط شاشة ملف المغسلة (المالك)"
-  },
-  "profileWasherEditProfile": "تعديل الملف",
-  "@profileWasherEditProfile": {
-    "description": "زر التعديل في شاشة ملف المغسلة"
-  },
-  "profileWasherSampleShopName": "مغسل المحبة",
-  "@profileWasherSampleShopName": {
-    "description": "اسم تجريبي للمغسلة حتى توفر بيانات من الخادم"
-  },
-  "profileWasherRatingsCountLine": "{count} تقييمات",
-  "@profileWasherRatingsCountLine": {
-    "description": "عدد التقييمات أسفل النجوم في ملف المنظّف",
-    "placeholders": { "count": { "type": "int" } }
-  },
-  "profileWasherSampleFullAddress": "دمشق - ساحة العباسيين - مدخل ساحة القصور",
-  "@profileWasherSampleFullAddress": {
-    "description": "عنوان تجريبي حتى توفر بيانات من الخادم"
-  },
-  "profileWasherSamplePhone": "0987654321",
-  "@profileWasherSamplePhone": {
-    "description": "رقم هاتف تجريبي على بطاقة ملف المنظّف"
-  },
-  "profileWasherAboutTitle": "عن المغسلة",
-  "@profileWasherAboutTitle": {
-    "description": "عنوان قسم الوصف النصفي في ملف المنظّف"
-  },
-  "profileWasherDescriptionSample": "في مغسل المحبة نوفّر لكم غسيلاً احترافياً للسيارات بمنتجات آمنة وصديقة للبيئة، مع فريق يهتم بتفاصيل السيارة من الخارج إلى الداخل. نسعى لخدمتكم يوماً بعد يوم بأسعار واضحة ووقت انتظار مريح، لتشعرون أن سيارتكم في عناية ناس بتحب الشغل النظيف.",
-  "@profileWasherDescriptionSample": {
-    "description": "وصف تجريبي قصير للمغسلة حتى توفر البيانات من الخادم"
-  },
-  "profileWasherEditPageTitle": "تعديل ملف المنظّف",
-  "@profileWasherEditPageTitle": {
-    "description": "عنوان شريط شاشة تعديل ملف المغسلة"
-  },
-  "profileWasherFieldWasherName": "اسم المغسل",
-  "@profileWasherFieldWasherName": {
-    "description": "تسمية حقل اسم المغسل في التعديل"
-  },
-  "profileWasherHintWasherName": "ادخل اسم المغسل",
-  "@profileWasherHintWasherName": {
-    "description": "تلميح حقل اسم المغسل"
-  },
-  "profileWasherFieldPhone": "رقم الهاتف",
-  "@profileWasherFieldPhone": {
-    "description": "تسمية حقل الهاتف في تعديل الملف"
-  },
-  "profileWasherHintPhone": "ادخل رقم الهاتف للتواصل",
-  "@profileWasherHintPhone": {
-    "description": "تلميح حقل الهاتف"
-  },
-  "profileWasherFieldAddress": "المدينة والعنوان",
-  "@profileWasherFieldAddress": {
-    "description": "تسمية حقل العنوان"
-  },
-  "profileWasherHintAddress": "ادخل عنوان المغسل بالتفصيل",
-  "@profileWasherHintAddress": {
-    "description": "تلميح حقل العنوان"
-  },
-  "profileWasherFieldWorkStart": "بداية العمل",
-  "@profileWasherFieldWorkStart": {
-    "description": "تسمية وقت بداية العمل"
-  },
-  "profileWasherHintWorkStart": "ادخل وقت بداية العمل",
-  "@profileWasherHintWorkStart": {
-    "description": "تلميح وقت البداية"
-  },
-  "profileWasherFieldWorkEnd": "نهاية العمل",
-  "@profileWasherFieldWorkEnd": {
-    "description": "تسمية وقت نهاية العمل"
-  },
-  "profileWasherHintWorkEnd": "ادخل وقت نهاية العمل",
-  "@profileWasherHintWorkEnd": {
-    "description": "تلميح وقت النهاية"
-  },
-  "profileWasherChooseServicesTitle": "اختر الخدمات التي تقدمها",
-  "@profileWasherChooseServicesTitle": {
-    "description": "عنوان قسم الخدمات في التعديل"
-  },
-  "profileWasherFieldDescription": "الوصف",
-  "@profileWasherFieldDescription": {
-    "description": "تسمية حقل وصف المغسلة"
-  },
-  "profileWasherHintDescription": "ادخل وصف المغسلة",
-  "@profileWasherHintDescription": {
-    "description": "تلميح حقل الوصف"
-  },
-  "profileWasherTierBasic": "Basic",
-  "@profileWasherTierBasic": {
-    "description": "اسم الباقة الأساسية"
-  },
-  "profileWasherTierVip": "Vip",
-  "@profileWasherTierVip": {
-    "description": "اسم باقة VIP"
-  },
-  "profileWasherTierPremium": "Premium",
-  "@profileWasherTierPremium": {
-    "description": "اسم الباقة المميزة"
-  },
-  "profileWasherFieldPrice": "السعر",
-  "@profileWasherFieldPrice": {
-    "description": "تسمية حقل السعر تحت الباقة"
-  },
-  "profileWasherHintPrice": "ادخل السعر",
-  "@profileWasherHintPrice": {
-    "description": "تلميح حقل السعر"
-  },
-  "profileWasherSaveChanges": "حفظ التغييرات",
-  "@profileWasherSaveChanges": {
-    "description": "زر حفظ تعديلات ملف المغسلة"
-  },
-  "profileWasherCreatePageTitle": "إنشاء بروفايل المغسلة",
-  "@profileWasherCreatePageTitle": {
-    "description": "عنوان شاشة إنشاء ملف المغسلة"
-  },
-  "profileWasherUploadLogo": "رفع الشعار",
-  "@profileWasherUploadLogo": {
-    "description": "تسمية رفع شعار المغسلة"
-  },
-  "profileWasherFieldCity": "المدينة",
-  "@profileWasherFieldCity": {
-    "description": "تسمية حقل المدينة"
-  },
-  "profileWasherHintCity": "ادخل المدينة",
-  "@profileWasherHintCity": {
-    "description": "تلميح حقل المدينة"
-  },
-  "profileWasherFieldStreetAddress": "العنوان",
-  "@profileWasherFieldStreetAddress": {
-    "description": "تسمية حقل العنوان التفصيلي"
-  },
-  "profileWasherHintStreetAddress": "ادخل العنوان",
-  "@profileWasherHintStreetAddress": {
-    "description": "تلميح حقل العنوان"
-  },
-  "profileWasherFieldServicesList": "الخدمات",
-  "@profileWasherFieldServicesList": {
-    "description": "تسمية قائمة الخدمات"
-  },
-  "profileWasherHintServicesList": "افصل بين الخدمات بفاصلة ,",
-  "@profileWasherHintServicesList": {
-    "description": "تلميح قائمة الخدمات"
-  },
-  "profileWasherWorkingHoursTitle": "ساعات العمل",
-  "@profileWasherWorkingHoursTitle": {
-    "description": "عنوان قسم ساعات العمل"
-  },
-  "profileWasherFieldSaturdayHours": "السبت",
-  "@profileWasherFieldSaturdayHours": {
-    "description": "تسمية ساعات عمل يوم السبت"
-  },
-  "profileWasherHintSaturdayHours": "مثال: 11:00-15:00",
-  "@profileWasherHintSaturdayHours": {
-    "description": "تلميح ساعات السبت"
-  },
-  "profileWasherFieldSundayHours": "الأحد",
-  "@profileWasherFieldSundayHours": {
-    "description": "تسمية ساعات عمل يوم الأحد"
-  },
-  "profileWasherHintSundayHours": "مثال: 10:00-16:00",
-  "@profileWasherHintSundayHours": {
-    "description": "تلميح ساعات الأحد"
-  },
-  "profileWasherCreateSave": "حفظ البروفايل",
-  "@profileWasherCreateSave": {
-    "description": "زر حفظ إنشاء ملف المغسلة"
-  },
-  "showRatingTotalBookings": "اجمالي الحجوزات",
-  "@showRatingTotalBookings": {
-    "description": "عنوان قسم إجمالي الحجوزات في شاشة عرض التقييمات"
-  },
-  "showRatingAllReserved": "إجمالي الحجوزات",
-  "@showRatingAllReserved": {
-    "description": "إجمالي الحجوزات المحجوزة"
-  },
- "bookingStatusPending": "قيد الانتظار",
-"@bookingStatusPending": {
-  "description": "حالة الحجز عندما يكون في انتظار المراجعة"
-},
-
-"bookingStatusAccepted": "تم القبول",
-"@bookingStatusAccepted": {
-  "description": "حالة الحجز عندما يتم قبوله من قبل المغسلة"
-},
-
-"bookingStatusProgress": "قيد التنفيذ",
-"@bookingStatusProgress": {
-  "description": "حالة الحجز عندما يبدأ العمل على السيارة"
-},
-
-"bookingStatusCompleted": "مكتمل",
-"@bookingStatusCompleted": {
-  "description": "حالة الحجز بعد انتهاء الخدمة بنجاح"
-},
-
-"bookingStatusCanceled": "ملغي",
-"@bookingStatusCanceled": {
-  "description": "حالة الحجز عندما يتم إلغاؤه"
-},
-  "showRatingAverageRatings": "متوسط التقييمات",
-  "@showRatingAverageRatings": {
-    "description": "عنوان قسم متوسط التقييمات"
-  },
-  "showRatingUsersComments": "تعليقات المستخدمين",
-  "@showRatingUsersComments": {
-    "description": "عنوان قسم تعليقات المستخدمين"
-  },
-  "createSosTitle": "إنشاء طلب نجدة",
-  "@createSosTitle": {
-    "description": "عنوان شريط التطبيق لصفحة إنشاء طلب نجدة"
-  },
-  "createSosChooseVehicle": "اختر المركبة",
-  "@createSosChooseVehicle": {
-    "description": "عنوان قائمة اختيار المركبة"
-  },
-  "createSosChooseProvince": "اختر المحافظة",
-  "@createSosChooseProvince": {
-    "description": "عنوان قائمة اختيار المحافظة"
-  },
-  "createSosLocationAutoHint": "* سيتم إرسال موقعك الحالي تلقائياً",
-  "@createSosLocationAutoHint": {
-    "description": "نص توضيحي تحت حقل المحافظة"
-  },
-  "createSosProblemDescription": "أدخل وصفاً للمشكلة",
-  "@createSosProblemDescription": {
-    "description": "عنوان حقل وصف المشكلة"
-  },
-  "createSosSendRequest": "إرسال الطلب",
-  "@createSosSendRequest": {
-    "description": "زر إرسال طلب النجدة"
-  },
-  "createSosSampleProblemText": "ادخل الوصف هنا",
-  "@createSosSampleProblemText": {
-    "description": "نص أولي أو تلميح لحقل الوصف (لا يتضمن أسماء مركبات أو محافظات)"
-  },
-  "fuelSosCreateTitle": "إنشاء طلب وقود طارئ",
-  "@fuelSosCreateTitle": {
-    "description": "عنوان شريط التطبيق لصفحة إنشاء طلب وقود طارئ"
-  },
-  "fuelSosCreateVehicleTitle": "المركبة",
-  "@fuelSosCreateVehicleTitle": {
-    "description": "عنوان حقل اختيار المركبة"
-  },
-  "fuelSosCreateVehicleHint": "اختر المركبة التي تريدها للخدمة",
-  "@fuelSosCreateVehicleHint": {
-    "description": "تلميح حقل اختيار المركبة"
-  },
-  "fuelSosCreateFuelTypeTitle": "نوع الوقود",
-  "@fuelSosCreateFuelTypeTitle": {
-    "description": "عنوان حقل نوع الوقود"
-  },
-  "fuelSosCreateFuelTypeHint": "اختر نوع الوقود الذي تريده",
-  "@fuelSosCreateFuelTypeHint": {
-    "description": "تلميح حقل نوع الوقود"
-  },
-  "fuelSosCreateQuantityTitle": "الكمية",
-  "@fuelSosCreateQuantityTitle": {
-    "description": "عنوان حقل الكمية"
-  },
-  "fuelSosCreateQuantityHint": "أدخل الكمية التي تريد تعبئتها",
-  "@fuelSosCreateQuantityHint": {
-    "description": "تلميح حقل الكمية"
-  },
-  "fuelSosCreateNotesTitle": "ملاحظات",
-  "@fuelSosCreateNotesTitle": {
-    "description": "عنوان حقل الملاحظات"
-  },
-  "fuelSosCreateNotesHint": "أدخل أي ملاحظات تريد إضافتها",
-  "@fuelSosCreateNotesHint": {
-    "description": "تلميح حقل الملاحظات"
-  },
-  "fuelSosCreateProvinceTitle": "المحافظة",
-  "@fuelSosCreateProvinceTitle": {
-    "description": "عنوان حقل المحافظة"
-  },
-  "fuelSosCreateProvinceHint": "اختر المحافظة في مكانك الحالي",
-  "@fuelSosCreateProvinceHint": {
-    "description": "تلميح حقل المحافظة"
-  },
-  "fuelSosCreateSelectVehicleRequired": "الرجاء اختيار المركبة",
-  "@fuelSosCreateSelectVehicleRequired": {
-    "description": "رسالة عند عدم اختيار مركبة"
-  },
-  "fuelSosCreateSelectFuelTypeRequired": "الرجاء اختيار نوع الوقود",
-  "@fuelSosCreateSelectFuelTypeRequired": {
-    "description": "رسالة عند عدم اختيار نوع الوقود"
-  },
-  "fuelSosCreateQuantityRequired": "الرجاء إدخال الكمية",
-  "@fuelSosCreateQuantityRequired": {
-    "description": "رسالة عند عدم إدخال الكمية"
-  },
-  "fuelSosCreateSelectProvinceRequired": "الرجاء اختيار المحافظة",
-  "@fuelSosCreateSelectProvinceRequired": {
-    "description": "رسالة عند عدم اختيار المحافظة"
-  },
-  "fuelSosCreateNoVehicles": "لا توجد سيارات",
-  "@fuelSosCreateNoVehicles": {
-    "description": "رسالة عند عدم وجود مركبات للمستخدم"
-  },
-  "sosRequestsListTitle": "قائمة طلبات النجدة",
-  "@sosRequestsListTitle": {
-    "description": "عنوان شريط التطبيق لقائمة طلبات SOS"
-  },
-  "sosRequestIdLabel": "رقم المعرف",
-  "@sosRequestIdLabel": {
-    "description": "عنوان قبل رقم الطلب (القيمة لا تُترجم)"
-  },
-  "sosRequestVehicleLabel": "المركبة",
-  "@sosRequestVehicleLabel": {
-    "description": "عنوان قبل اسم المركبة (القيمة لا تُترجم)"
-  },
-  "sosRequestShortDescriptionLabel": "وصف مختصر",
-  "@sosRequestShortDescriptionLabel": {
-    "description": "عنوان الوصف المختصر (نص الوصف لا يُترجم)"
-  },
-  "sosStatusFinished": "منتهية",
-  "@sosStatusFinished": {
-    "description": "شارة حالة الطلب: منتهية"
-  },
-  "sosStatusInProgress": "قيد التنفيذ",
-  "@sosStatusInProgress": {
-    "description": "شارة حالة الطلب: قيد التنفيذ"
-  },
-  "sosStatusWaiting": "انتظار",
-  "@sosStatusWaiting": {
-    "description": "شارة حالة الطلب: في الانتظار"
-  },
-  "sosRequestAccept": "قبول",
-  "@sosRequestAccept": {
-    "description": "زر قبول طلب النجدة"
-  },
-  "sosRequestViewDetails": "عرض التفاصيل",
-  "@sosRequestViewDetails": {
-    "description": "زر عرض تفاصيل طلب النجدة"
-  },
-  "sosRequestCreatedAtHours": "تم الإنشاء منذ {hours} ساعة",
-  "@sosRequestCreatedAtHours": {
-    "description": "تذييل البطاقة بالوقت النسبي بالساعات",
-    "placeholders": {
-      "hours": {
-        "type": "int"
-      }
-    }
-  },
-  "sosRequestCreatedAtMinutes": "تم الإنشاء منذ {minutes} دقيقة",
-  "@sosRequestCreatedAtMinutes": {
-    "description": "تذييل البطاقة بالوقت النسبي بالدقائق",
-    "placeholders": {
-      "minutes": {
-        "type": "int"
-      }
-    }
-  },
-  "sosDetailsTitle": "تفاصيل النجدة",
-  "@sosDetailsTitle": {
-    "description": "عنوان شريط التطبيق لشاشة تفاصيل طلب النجدة"
-  },
-  "sosDetailsRequestAccepted": "تم قبول الطلب",
-  "@sosDetailsRequestAccepted": {
-    "description": "شريط الحالة العلوي عند قبول طلب النجدة"
-  },
-  "sosDetailsRequestData": "بيانات الطلب",
-  "@sosDetailsRequestData": {
-    "description": "عنوان بطاقة بيانات الطلب في شاشة تفاصيل النجدة"
-  },
-  "sosDetailsPlateNumberLabel": "رقم اللوحة",
-  "@sosDetailsPlateNumberLabel": {
-    "description": "عنوان قبل قيمة رقم اللوحة (القيمة لا تُترجم)"
-  },
-  "sosDetailsTechnicianLabel": "الفني",
-  "@sosDetailsTechnicianLabel": {
-    "description": "عنوان قبل اسم الفني (القيمة لا تُترجم)"
-  },
-  "sosDetailsDescriptionLabel": "وصف",
-  "@sosDetailsDescriptionLabel": {
-    "description": "عنوان قبل نص وصف الطلب (القيمة لا تُترجم)"
-  },
-  "sosDetailsCurrentLocation": "الموقع الحالي",
-  "@sosDetailsCurrentLocation": {
-    "description": "عنوان بطاقة الموقع في شاشة تفاصيل النجدة"
-  },
-  "sosDetailsTrack": "تتبع",
-  "@sosDetailsTrack": {
-    "description": "تسمية شريحة التتبع فوق خريطة تفاصيل النجدة"
-  },
-  "sosDetailsCancelRequest": "إلغاء الطلب",
-  "@sosDetailsCancelRequest": {
-    "description": "زر إلغاء طلب النجدة"
-  },
-  "fuelOrdersListTitle": "قائمة طلبات الوقود",
-  "@fuelOrdersListTitle": {
-    "description": "عنوان شريط التطبيق لقائمة طلبات الوقود"
-  },
-  "fuelOrderDetailsTitle": "تفاصيل طلب الوقود",
-  "@fuelOrderDetailsTitle": {
-    "description": "عنوان شريط التطبيق لتفاصيل طلب الوقود"
-  },
-  "fuelOrderDetailsProviderSection": "بيانات الشركة المزودة للخدمة",
-  "@fuelOrderDetailsProviderSection": {
-    "description": "عنوان قسم بيانات شركة تزويد الوقود"
-  },
-  "cancelReasonDialogTitle": "Cancel SOS",
-  "@cancelReasonDialogTitle": {
-    "description": "عنوان نافذة إلغاء الطلب مع السبب"
-  },
-  "cancelReasonDialogQuestion": "ما سبب إلغاء الطلب ؟",
-  "@cancelReasonDialogQuestion": {
-    "description": "سؤال نافذة إدخال سبب الإلغاء"
-  },
-  "cancelReasonDialogHint": "ادخل هنا سبب إلغاء طلب الوقود ...",
-  "@cancelReasonDialogHint": {
-    "description": "تلميح حقل سبب إلغاء طلب الوقود"
-  },
-  "cancelReasonDialogBack": "تراجع",
-  "@cancelReasonDialogBack": {
-    "description": "زر التراجع في تذييل نافذة الإلغاء"
-  },
-  "fuelCancelReasonDialogTitle": "إلغاء الطلب",
-  "@fuelCancelReasonDialogTitle": {
-    "description": "عنوان نافذة الإلغاء في تفاصيل طلب الوقود"
-  },
-  "providerProfilePageTitle": "بروفايل المزود",
-  "@providerProfilePageTitle": {
-    "description": "عنوان شريط التطبيق لصفحة بروفايل مزود الوقود"
-  },
-  "providerProfileAvailabilityTitle": "التوافر للعمل",
-  "@providerProfileAvailabilityTitle": {
-    "description": "عنوان قسم توافر مزود الوقود للعمل"
-  },
-  "providerProfileAvailableNow": "متوفر الآن",
-  "@providerProfileAvailableNow": {
-    "description": "نص حالة التوافر عند التفعيل"
-  },
-  "providerProfileNotAvailableNow": "غير متوفر الآن",
-  "@providerProfileNotAvailableNow": {
-    "description": "نص حالة التوافر عند الإيقاف"
-  },
-  "providerProfileLocationSectionTitle": "موقع مقدم الخدمة",
-  "@providerProfileLocationSectionTitle": {
-    "description": "عنوان قسم موقع مزود الوقود"
-  },
-  "providerProfileServicesAndPricesTitle": "الخدمات و الأسعار",
-  "@providerProfileServicesAndPricesTitle": {
-    "description": "عنوان قسم أنواع الوقود والأسعار"
-  },
-  "providerProfileSampleName": "خالد الخالد",
-  "@providerProfileSampleName": {
-    "description": "اسم تجريبي لعرض بروفايل المزود"
-  },
-  "providerProfilePriceLine": "السعر : {price} $",
-  "@providerProfilePriceLine": {
-    "description": "سطر السعر في بطاقة نوع الوقود",
-    "placeholders": {
-      "price": {
-        "type": "String"
-      }
-    }
-  },
-  "providerEditProfilePageTitle": "تعديل بروفايل المزود",
-  "@providerEditProfilePageTitle": {
-    "description": "عنوان شريط التطبيق لصفحة تعديل بروفايل مزود الوقود"
-  },
-  "providerEditProfilePersonalInfoTitle": "معلومات ملفك الشخصي",
-  "@providerEditProfilePersonalInfoTitle": {
-    "description": "عنوان قسم المعلومات الشخصية في تعديل بروفايل المزود"
-  },
-  "providerEditProfileProviderNameLabel": "اسم مقدم الخدمة",
-  "@providerEditProfileProviderNameLabel": {
-    "description": "تسمية حقل اسم مزود الوقود"
-  },
-  "providerEditProfileProviderNameHint": "ادخل اسم مقدم الخدمة",
-  "@providerEditProfileProviderNameHint": {
-    "description": "تلميح حقل اسم مزود الوقود"
-  },
-  "providerEditProfileProviderPhoneLabel": "رقم مقدم الخدمة",
-  "@providerEditProfileProviderPhoneLabel": {
-    "description": "تسمية حقل رقم مزود الوقود"
-  },
-  "providerEditProfileProviderPhoneHint": "ادخل رقم مقدم الخدمة",
-  "@providerEditProfileProviderPhoneHint": {
-    "description": "تلميح حقل رقم مزود الوقود"
-  },
-  "providerEditProfileGovernorateLabel": "اختر محافظة مقدم الخدمة",
-  "@providerEditProfileGovernorateLabel": {
-    "description": "تسمية حقل المحافظة"
-  },
-  "providerEditProfileGovernorateHint": "اختر المحافظة",
-  "@providerEditProfileGovernorateHint": {
-    "description": "تلميح حقل المحافظة"
-  },
-  "providerEditProfileAddressLabel": "العنوان",
-  "@providerEditProfileAddressLabel": {
-    "description": "تسمية حقل العنوان"
-  },
-  "providerEditProfileAddressHint": "ادخل العنوان بالتفصيل",
-  "@providerEditProfileAddressHint": {
-    "description": "تلميح حقل العنوان"
-  },
-  "providerEditProfileLocationNote": "* سيتم استخدام موقعك كنقطة انطلاق للمزود",
-  "@providerEditProfileLocationNote": {
-    "description": "ملاحظة تحت حقل العنوان حول استخدام الموقع"
-  },
-  "providerEditProfileActivateServiceLine": "تفعيل الخدمة و تحديد السعر",
-  "@providerEditProfileActivateServiceLine": {
-    "description": "نص بطاقة تفعيل نوع الوقود في التعديل"
-  },
-  "providerEditProfileSaveInfo": "حفظ المعلومات",
-  "@providerEditProfileSaveInfo": {
-    "description": "زر حفظ بيانات بروفايل المزود"
-  },
-  "providerEditProfileSampleAddress": "ساحة العباسيين - مدخل ساحة القصور",
-  "@providerEditProfileSampleAddress": {
-    "description": "عنوان تجريبي في نموذج تعديل بروفايل المزود"
-  },
-  "providerCreateProfilePageTitle": "إنشاء ملف المزود",
-  "@providerCreateProfilePageTitle": {
-    "description": "عنوان شريط التطبيق لصفحة إنشاء ملف مزود الوقود"
-  },
-  "providerCreateProfileSave": "إنشاء الملف",
-  "@providerCreateProfileSave": {
-    "description": "زر حفظ إنشاء ملف مزود الوقود"
-  },
-  "providerEditProfileSetPriceTitle": "تحديد سعر {fuelType}",
-  "@providerEditProfileSetPriceTitle": {
-    "description": "عنوان نافذة إدخال سعر نوع الوقود",
-    "placeholders": {
-      "fuelType": {
-        "type": "String"
-      }
-    }
-  },
-  "providerEditProfileSetPriceHint": "أدخل السعر",
-  "@providerEditProfileSetPriceHint": {
-    "description": "تلميح حقل السعر في نافذة تفعيل الخدمة"
-  },
-  "providerEditProfileSetPriceRequired": "الرجاء إدخال السعر",
-  "@providerEditProfileSetPriceRequired": {
-    "description": "رسالة عند محاولة التأكيد بدون سعر"
-  },
-  "providerAvailableOrdersTitle": "الطلبات المتاحة",
-  "@providerAvailableOrdersTitle": {
-    "description": "عنوان شريط التطبيق لقائمة طلبات مزود الوقود المتاحة"
-  },
-  "providerAvailableOrderNoNotes": "لا يوجد",
-  "@providerAvailableOrderNoNotes": {
-    "description": "نص افتراضي عند عدم وجود ملاحظات في بطاقة الطلب"
-  },
-  "providerOrderDetailsTitle": "تفاصيل طلب المزود",
-  "@providerOrderDetailsTitle": {
-    "description": "عنوان شريط التطبيق لتفاصيل طلب مزود الوقود"
-  },
-  "providerOrderDetailsPendingAcceptance": "بانتظار قبول الطلب",
-  "@providerOrderDetailsPendingAcceptance": {
-    "description": "شريحة حالة انتظار قبول الطلب"
-  },
-  "providerOrderDetailsCustomerSection": "بيانات العميل",
-  "@providerOrderDetailsCustomerSection": {
-    "description": "عنوان قسم بيانات العميل في تفاصيل الطلب"
-  },
-  "providerOrderDetailsAcceptOrder": "قبول الطلب",
-  "@providerOrderDetailsAcceptOrder": {
-    "description": "زر قبول الطلب في تفاصيل طلب المزود"
-  },
-  "providerOrderDetailsShareLocationOn": "مشاركة الموقع",
-  "@providerOrderDetailsShareLocationOn": {
-    "description": "نص تفعيل مشاركة الموقع"
-  },
-  "providerOrderDetailsShareLocationOff": "عدم مشاركة الموقع",
-  "@providerOrderDetailsShareLocationOff": {
-    "description": "نص إيقاف مشاركة الموقع"
-  },
-  "providerOrderDetailsEstimatedArrivalDialogTitle": "الوقت المتوقع للوصول بالدقائق",
-  "@providerOrderDetailsEstimatedArrivalDialogTitle": {
-    "description": "عنوان حوار إدخال مدة الوصول عند قبول الطلب"
-  },
-  "providerOrderDetailsEnterDurationMinutes": "ادخل المدة بالدقائق",
-  "@providerOrderDetailsEnterDurationMinutes": {
-    "description": "تسمية حقل مدة الوصول بالدقائق"
-  },
-  "providerOrderDetailsEnterAdditionalNotes": "ادخل ملاحظات اضافية",
-  "@providerOrderDetailsEnterAdditionalNotes": {
-    "description": "تسمية حقل الملاحظات الإضافية عند قبول الطلب"
-  },
-  "providerMyOrdersTitle": "طلباتي",
-  "@providerMyOrdersTitle": {
-    "description": "عنوان شريط التطبيق لقائمة طلبات مزود الوقود"
-  },
-  "providerStatisticsTotalOrdersTitle": "اجمالي الطلبات",
-  "@providerStatisticsTotalOrdersTitle": {
-    "description": "عنوان قسم إجمالي الطلبات في إحصائيات مزود الوقود"
-  },
-  "providerStatisticsTotalProfitsTitle": "اجمالي الأرباح",
-  "@providerStatisticsTotalProfitsTitle": {
-    "description": "عنوان قسم إجمالي الأرباح في إحصائيات مزود الوقود"
-  },
-  "providerStatisticsAllOrders": "All Reserved",
-  "@providerStatisticsAllOrders": {
-    "description": "تسمية إجمالي الطلبات في بطاقة الإحصائيات"
-  }
 }
-

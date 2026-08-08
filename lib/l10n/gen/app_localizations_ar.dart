@@ -12,1664 +12,1023 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get counterAppBarTitle => 'عداد';
+  String get dashboardMenu => 'لوحة التحكم';
 
   @override
-  String get appTitle => 'خدمات العناية بالسيارات';
+  String get techniciansMenu => 'الفنيين';
 
   @override
-  String get fuelProvider => 'مزود الوقود';
+  String get ordersMenu => 'الطلبات';
 
   @override
-  String get appName => 'كار كير';
+  String get fuelProvidersMenu => 'مزودي الوقود';
 
   @override
-  String get noAvailableRequests => 'لا يوجد طلبات متاحة حالياً';
+  String get usersMenu => 'المستخدمين';
 
   @override
-  String get welcome => 'مرحباً';
+  String get reportsMenu => 'التقارير';
 
   @override
-  String get welcomeBack => 'أهلاً بعودتك';
+  String get settingsMenu => 'الإعدادات';
 
   @override
-  String get login => 'تسجيل الدخول';
-
-  @override
-  String get register => 'تسجيل حساب';
-
-  @override
-  String get logout => 'تسجيل الخروج';
-
-  @override
-  String get username => 'اسم المستخدم';
-
-  @override
-  String get password => 'كلمة المرور';
-
-  @override
-  String get confirmPassword => 'تأكيد كلمة المرور';
-
-  @override
-  String get phoneNumber => 'رقم الهاتف';
-
-  @override
-  String get fullName => 'الاسم الكامل';
-
-  @override
-  String get email => 'البريد الإلكتروني';
-
-  @override
-  String get submit => 'إرسال';
-
-  @override
-  String get cancel => 'إلغاء';
-
-  @override
-  String get save => 'حفظ';
-
-  @override
-  String get edit => 'تعديل';
-
-  @override
-  String get delete => 'حذف';
-
-  @override
-  String get close => 'إغلاق';
-
-  @override
-  String get back => 'رجوع';
-
-  @override
-  String get next => 'التالي';
-
-  @override
-  String get done => 'تم';
-
-  @override
-  String get retry => 'إعادة المحاولة';
+  String get adminLabel => 'المدير';
 
   @override
   String get refresh => 'تحديث';
 
   @override
-  String get search => 'بحث';
+  String get techniciansPageTitle => 'إدارة الفنيين';
 
   @override
-  String get filter => 'تصفية';
+  String get statusAll => 'الكل';
 
   @override
-  String get forgotPassword => 'نسيت كلمة المرور؟';
+  String get statusPending => 'قيد الانتظار';
 
   @override
-  String get alreadyHaveAccount => 'لديك حساب بالفعل؟';
+  String get statusApproved => 'مقبول';
 
   @override
-  String get dontHaveAccount => 'ليس لديك حساب؟';
+  String get statusRejected => 'مرفوض';
 
   @override
-  String get createAccount => 'إنشاء حساب جديد';
+  String get statusSuspended => 'موقوف';
 
   @override
-  String get otpVerification => 'التحقق بالرمز';
+  String get columnTechnician => 'الفني';
 
   @override
-  String get enterOtp => 'أدخل رمز التحقق';
+  String get columnSpecialization => 'التخصص';
 
   @override
-  String get otpSent => 'تم إرسال رمز التحقق إلى';
+  String get columnCity => 'المدينة';
 
   @override
-  String get resendOtp => 'إعادة إرسال الرمز';
+  String get columnExperience => 'سنوات الخبرة';
 
   @override
-  String get resendOtpIn => 'إعادة الإرسال خلال';
+  String get columnHourlyRate => 'السعر بالساعة';
 
   @override
-  String get verify => 'تحقق';
+  String get columnStatus => 'الحالة';
 
   @override
-  String get home => 'الرئيسية';
+  String get columnActions => 'الإجراءات';
 
   @override
-  String get schedules => 'مواعيد الخدمة';
+  String get actionApprove => 'قبول';
 
   @override
-  String get complaints => 'مشاكل السيارات';
+  String get actionReject => 'رفض';
 
   @override
-  String get profile => 'الملف الشخصي';
+  String get actionSuspend => 'إيقاف';
 
   @override
-  String get mySchedules => 'مواعيدي';
+  String get actionReactivate => 'إعادة تفعيل';
 
   @override
-  String get upcomingSchedules => 'المواعيد القادمة';
+  String get actionDetails => 'التفاصيل';
 
   @override
-  String get nextPumpingSchedule => 'موعد الخدمة القادم';
+  String get yearsSuffix => 'سنة';
 
   @override
-  String get scheduleDetails => 'تفاصيل الموعد';
+  String get rejectDialogTitle => 'سبب رفض الفني';
 
   @override
-  String get viewAllSchedules => 'عرض جميع المواعيد';
+  String get rejectDialogHint => 'اكتب سبب الرفض هون...';
 
   @override
-  String get startTime => 'وقت البدء';
+  String get cancel => 'إلغاء';
 
   @override
-  String get endTime => 'وقت الانتهاء';
+  String get confirmReject => 'تأكيد الرفض';
 
   @override
-  String get actualStartTime => 'وقت البدء الفعلي';
+  String get technicianDetailsTitle => 'بيانات الفني';
 
   @override
-  String get actualEndTime => 'وقت الانتهاء الفعلي';
+  String get detailsEmail => 'البريد الإلكتروني';
 
   @override
-  String get status => 'الحالة';
+  String get detailsPhone => 'الهاتف';
 
   @override
-  String get notes => 'ملاحظات';
+  String get detailsSpecialization => 'التخصص';
 
   @override
-  String get createdBy => 'تم الإنشاء بواسطة';
+  String get detailsCity => 'المدينة';
 
   @override
-  String get scheduled => 'مجدول';
+  String get detailsExperience => 'سنوات الخبرة';
 
   @override
-  String get active => 'قيد التنفيذ';
+  String get detailsHourlyRate => 'السعر بالساعة';
 
   @override
-  String get completed => 'مكتمل';
+  String get detailsStatus => 'الحالة';
 
   @override
-  String get cancelled => 'ملغى';
+  String get detailsRejectionReason => 'سبب الرفض';
 
   @override
-  String get startsIn => 'يبدأ خلال';
+  String get detailsCertifications => 'الشهادات';
 
   @override
-  String get activeNow => 'نشط الآن';
+  String get close => 'إغلاق';
 
   @override
-  String get endedAgo => 'انتهى منذ';
+  String get detailsId => 'رقم الفني';
 
   @override
-  String get today => 'اليوم';
+  String get detailsUserId => 'رقم المستخدم';
 
   @override
-  String get thisWeek => 'هذا الأسبوع';
+  String get detailsAvailable => 'متاح للعمل';
 
   @override
-  String get thisMonth => 'هذا الشهر';
+  String get detailsYes => 'نعم';
 
   @override
-  String get dateRange => 'نطاق التاريخ';
+  String get detailsNo => 'لا';
 
   @override
-  String get selectDateRange => 'اختر نطاق التاريخ';
+  String get detailsApprovedAt => 'تاريخ القبول';
 
   @override
-  String get myComplaints => 'مشاكلي';
+  String get detailsRejectedAt => 'تاريخ الرفض';
 
   @override
-  String get submitComplaint => 'الإبلاغ عن مشكلة';
+  String get detailsSuspendedAt => 'تاريخ الإيقاف';
 
   @override
-  String get complaintDetails => 'تفاصيل المشكلة';
+  String get detailsCreatedAt => 'تاريخ الإنشاء';
 
   @override
-  String get complaintTitle => 'عنوان المشكلة';
+  String get detailsUpdatedAt => 'آخر تحديث';
 
   @override
-  String get complaintDescription => 'وصف المشكلة';
+  String get noCertifications => 'لا توجد شهادات مرفوعة';
 
   @override
-  String get complaintCategory => 'تصنيف المشكلة';
+  String get carwashersPageTitle => 'مغاسل السيارات';
 
   @override
-  String get selectCategory => 'اختر التصنيف';
+  String get carwasherDetailsTitle => 'تفاصيل المغسلة';
 
   @override
-  String get noWater => 'مشكلة في المحرك';
+  String get fuelProvidersPageTitle => 'مزودو الوقود';
 
   @override
-  String get waterQuality => 'مشكلة في الإطارات';
+  String get fuelProviderDetailsTitle => 'تفاصيل مزود الوقود';
 
   @override
-  String get lowPressure => 'مشكلة في البطارية';
+  String get shopsPageTitle => 'المتاجر';
 
   @override
-  String get scheduleIssue => 'تأخير في الخدمة';
+  String get shopDetailsTitle => 'تفاصيل المتجر';
 
   @override
-  String get other => 'أخرى';
+  String get columnShop => 'المتجر';
 
   @override
-  String get pending => 'قيد الانتظار';
+  String get columnPhone => 'الهاتف';
 
   @override
-  String get inProgress => 'قيد التنفيذ';
+  String get detailsAddress => 'العنوان';
 
   @override
-  String get resolved => 'تم الحل';
+  String get detailsDescription => 'الوصف';
 
   @override
-  String get rejected => 'مرفوض';
+  String get detailsRating => 'التقييم';
 
   @override
-  String get adminResponse => 'رد الخدمة';
+  String get detailsServices => 'الخدمات';
 
   @override
-  String get handledBy => 'تم التعامل بواسطة';
+  String get detailsServicePrices => 'أسعار الخدمات';
 
   @override
-  String get handledAt => 'تم التعامل في';
+  String get detailsWorkingHours => 'ساعات العمل';
 
   @override
-  String get createdAt => 'تم الإنشاء في';
+  String get detailsFuelTypes => 'أنواع الوقود';
 
   @override
-  String get updatedAt => 'تم التحديث في';
+  String get detailsPrices => 'الأسعار';
 
   @override
-  String get complaintSubmitted => 'تم الإبلاغ عن المشكلة بنجاح';
+  String get detailsBusinessTypes => 'أنواع النشاط';
 
   @override
-  String get region => 'مركز الخدمة';
+  String get detailsCarBrands => 'ماركات السيارات';
 
   @override
-  String get unit => 'الوحدة';
+  String get detailsPartCategories => 'تصنيفات القطع';
 
   @override
-  String get neighborhood => 'الحي';
+  String get columnCompany => 'الشركة';
 
   @override
-  String get zone => 'المنطقة';
+  String get dashboardPageTitle => 'لوحة التحكم';
 
   @override
-  String get selectRegion => 'اختر مركز الخدمة';
+  String get dashboardTotalUsers => 'إجمالي المستخدمين';
 
   @override
-  String get selectUnit => 'اختر الوحدة';
+  String get dashboardTotalCustomers => 'إجمالي العملاء';
 
   @override
-  String get selectNeighborhood => 'اختر الحي';
+  String get dashboardCompletedOperations => 'عمليات مكتملة';
 
   @override
-  String get selectZone => 'اختر المنطقة';
+  String get dashboardPendingOperations => 'عمليات معلقة';
 
   @override
-  String get location => 'الموقع';
+  String get dashboardProvidersOverview => 'نظرة عامة على مزودي الخدمة';
 
   @override
-  String get selectLocation => 'اختر الموقع';
+  String get dashboardOperationsStatus => 'حالة العمليات';
 
   @override
-  String get clearSelection => 'مسح الاختيار';
+  String get dashboardOperationsOverTime => 'العمليات عبر الوقت';
 
   @override
-  String get myProfile => 'ملفي الشخصي';
+  String get dashboardRevenue => 'الإيرادات';
 
   @override
-  String get editProfile => 'تعديل الملف الشخصي';
+  String get dashboardPeriodWeek => 'أسبوع';
 
   @override
-  String get profileUpdated => 'تم تحديث الملف الشخصي بنجاح';
+  String get dashboardPeriodMonth => 'شهر';
 
   @override
-  String get role => 'الدور';
+  String get dashboardPeriodYear => 'سنة';
 
   @override
-  String get admin => 'مدير';
+  String get detailsLocation => 'الموقع';
 
   @override
-  String get operator => 'مشغل';
+  String get carwashersMenu => 'مغاسل السيارات';
 
   @override
-  String get citizen => 'عميل';
+  String get shopsMenu => 'المتاجر';
 
   @override
-  String get defaultLocation => 'الموقع الافتراضي';
+  String get loginTitle => 'تسجيل الدخول';
 
   @override
-  String get watchedLocation => 'الموقع المراقب';
+  String get loginSubtitle => 'سجّل الدخول للوصول إلى لوحة تحكم الأدمن';
 
   @override
-  String get loading => 'جاري التحميل...';
+  String get loginEmailLabel => 'البريد الإلكتروني';
 
   @override
-  String get error => 'خطأ';
+  String get loginPasswordLabel => 'كلمة المرور';
 
   @override
-  String get errorOccurred => 'حدث خطأ';
+  String get loginButton => 'تسجيل الدخول';
 
   @override
-  String get networkError => 'خطأ في الاتصال بالشبكة';
+  String get loginValidationRequired => 'هذا الحقل مطلوب';
 
   @override
-  String get serverError => 'خطأ في الخادم';
+  String get loginValidationEmail => 'الرجاء إدخال بريد إلكتروني صحيح';
 
   @override
-  String get noInternetConnection => 'لا يوجد اتصال بالإنترنت';
+  String get logoutButton => 'تسجيل الخروج';
 
   @override
-  String get tryAgain => 'حاول مرة أخرى';
+  String get logoutConfirmTitle => 'تسجيل الخروج';
 
   @override
-  String get noData => 'لا توجد بيانات';
+  String get logoutConfirmMessage => 'هل أنت متأكد من رغبتك بتسجيل الخروج؟';
 
   @override
-  String get noSchedules => 'لا توجد مواعيد';
+  String get logoutConfirmButton => 'تسجيل الخروج';
 
   @override
-  String get noComplaints => 'لا توجد مشاكل تم الإبلاغ عنها';
+  String get reportsPageTitle => 'التقارير';
 
   @override
-  String get noSchedulesMessage => 'لا توجد مواعيد خدمة في الوقت الحالي';
+  String get tabOverview => 'نظرة عامة';
 
   @override
-  String get noComplaintsMessage => 'لم تقم بالإبلاغ عن أي مشاكل بعد';
+  String get tabProviders => 'المزودون';
 
   @override
-  String get pullToRefresh => 'اسحب للتحديث';
+  String get tabFinancial => 'المالية';
 
   @override
-  String get releaseToRefresh => 'حرر للتحديث';
+  String get tabBilling => 'الفوترة';
 
   @override
-  String get loadMore => 'تحميل المزيد';
+  String get tabAdvertisements => 'الإعلانات';
 
   @override
-  String get quickActions => 'إجراءات سريعة';
+  String get reportFilterClear => 'مسح';
 
   @override
-  String get viewSchedules => 'عرض المواعيد';
+  String get reportFilterApply => 'تطبيق';
 
   @override
-  String get requiredField => 'هذا الحقل مطلوب';
+  String get reportFilterAll => 'الكل';
 
   @override
-  String get invalidPhoneNumber => 'رقم هاتف غير صحيح';
+  String get reportRetry => 'إعادة المحاولة';
 
   @override
-  String get invalidEmail => 'بريد إلكتروني غير صحيح';
+  String get reportDateFrom => 'من';
 
   @override
-  String get passwordTooShort => 'كلمة المرور قصيرة جداً (الحد الأدنى 6 أحرف)';
+  String get reportDateTo => 'إلى';
 
   @override
-  String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
+  String get filterProviderType => 'نوع المزود';
 
   @override
-  String maxCharacters(int max) {
-    return 'الحد الأقصى $max حرف';
+  String get filterProviderStatus => 'حالة المزود';
+
+  @override
+  String get filterBillingStatus => 'حالة الفوترة';
+
+  @override
+  String get filterInvoiceStatus => 'حالة الفاتورة';
+
+  @override
+  String get filterOperationType => 'نوع العملية';
+
+  @override
+  String get filterStatus => 'الحالة';
+
+  @override
+  String get filterGroupBy => 'التجميع حسب';
+
+  @override
+  String get filterPlacement => 'الموضع';
+
+  @override
+  String get providerTypeTechnician => 'فني';
+
+  @override
+  String get providerTypeFuelProvider => 'موزع وقود';
+
+  @override
+  String get providerTypeCarWasher => 'مغسلة';
+
+  @override
+  String get providerTypeShop => 'متجر';
+
+  @override
+  String get opStatusCompleted => 'مكتمل';
+
+  @override
+  String get opStatusInProgress => 'قيد التنفيذ';
+
+  @override
+  String get opStatusCancelled => 'ملغى';
+
+  @override
+  String get opStatusPending => 'قيد الانتظار';
+
+  @override
+  String get opTypeTotals => 'الإجمالي';
+
+  @override
+  String get opTypeMaintenance => 'صيانة';
+
+  @override
+  String get opTypeSos => 'طلبات الطوارئ';
+
+  @override
+  String get opTypeFuel => 'وقود';
+
+  @override
+  String get opTypeCarWash => 'غسيل سيارات';
+
+  @override
+  String get opTypeSpareParts => 'قطع غيار';
+
+  @override
+  String get groupByDay => 'يوم';
+
+  @override
+  String get groupByMonth => 'شهر';
+
+  @override
+  String get groupByYear => 'سنة';
+
+  @override
+  String get providerStatusPending => 'قيد الانتظار';
+
+  @override
+  String get providerStatusApproved => 'موافق عليه';
+
+  @override
+  String get providerStatusRejected => 'مرفوض';
+
+  @override
+  String get providerStatusSuspended => 'موقوف';
+
+  @override
+  String get back => 'رجوع';
+
+  @override
+  String get invoiceActionExportPdf => 'تصدير PDF';
+
+  @override
+  String get isActive => 'نشط';
+
+  @override
+  String get billingType => 'نوع الفوترة';
+
+  @override
+  String get invoicesPageTitle => 'فواتير مزوّدي الخدمة';
+
+  @override
+  String get invoiceDetailsTitle => 'تفاصيل الفاتورة';
+
+  @override
+  String get invoiceStatusAll => 'الكل';
+
+  @override
+  String get invoiceStatusDraft => 'مسودة';
+
+  @override
+  String get invoiceStatusIssued => 'صادرة';
+
+  @override
+  String get invoiceStatusPaid => 'مدفوعة';
+
+  @override
+  String get invoiceStatusOverdue => 'متأخرة';
+
+  @override
+  String get invoiceStatusCancelled => 'ملغاة';
+
+  @override
+  String get columnInvoiceNumber => 'رقم الفاتورة';
+
+  @override
+  String get columnProvider => 'المزوّد';
+
+  @override
+  String get columnPeriod => 'الفترة';
+
+  @override
+  String get columnTotalAmount => 'الإجمالي';
+
+  @override
+  String get columnDueAt => 'تاريخ الاستحقاق';
+
+  @override
+  String get invoiceFieldInvoiceNumber => 'رقم الفاتورة';
+
+  @override
+  String get invoiceFieldProviderType => 'نوع المزوّد';
+
+  @override
+  String get invoiceFieldProviderId => 'معرّف المزوّد';
+
+  @override
+  String get invoiceFieldPeriodStart => 'بداية الفترة';
+
+  @override
+  String get invoiceFieldPeriodEnd => 'نهاية الفترة';
+
+  @override
+  String get invoiceFieldIssuedAt => 'تاريخ الإصدار';
+
+  @override
+  String get invoiceFieldDueAt => 'تاريخ الاستحقاق';
+
+  @override
+  String get invoiceFieldSubtotal => 'المجموع الفرعي';
+
+  @override
+  String get invoiceFieldCommissionTotal => 'إجمالي العمولة';
+
+  @override
+  String get invoiceFieldSubscriptionTotal => 'إجمالي الاشتراك';
+
+  @override
+  String get invoiceFieldTotalAmount => 'المبلغ الإجمالي';
+
+  @override
+  String get invoiceFieldStatus => 'الحالة';
+
+  @override
+  String get invoiceFieldIsOverdue => 'متأخرة';
+
+  @override
+  String get invoiceFieldPaymentMethod => 'طريقة الدفع';
+
+  @override
+  String get invoiceFieldPaymentReference => 'مرجع الدفع';
+
+  @override
+  String get invoiceFieldPaidAt => 'تاريخ الدفع';
+
+  @override
+  String get invoiceFieldNotes => 'ملاحظات';
+
+  @override
+  String get invoiceFieldItems => 'بنود الفاتورة';
+
+  @override
+  String get invoiceActionIssue => 'إصدار';
+
+  @override
+  String get invoiceActionMarkPaid => 'تأكيد الدفع';
+
+  @override
+  String get invoiceActionCancel => 'إلغاء الفاتورة';
+
+  @override
+  String get invoiceActionGenerate => 'توليد الفواتير';
+
+  @override
+  String get invoiceActionGenerateForProvider => 'توليد فاتورة لمزوّد';
+
+  @override
+  String get invoiceGenerateDialogTitle => 'توليد الفواتير';
+
+  @override
+  String get invoiceMarkPaidDialogTitle => 'تأكيد الدفع';
+
+  @override
+  String get invoiceCancelDialogTitle => 'إلغاء الفاتورة';
+
+  @override
+  String get invoiceCancelDialogMessage => 'هل أنت متأكد من إلغاء هذه الفاتورة؟';
+
+  @override
+  String get invoiceGenerateResultTitle => 'نتيجة التوليد';
+
+  @override
+  String get invoiceGeneratedCount => 'تم التوليد';
+
+  @override
+  String get invoiceSkippedCount => 'تم التخطي';
+
+  @override
+  String get invoiceSkippedReasonAlreadyExists => 'الفاتورة موجودة مسبقاً';
+
+  @override
+  String get invoiceSkippedReasonWithinFreeTrial => 'ضمن فترة التجربة المجانية';
+
+  @override
+  String get noInvoices => 'لا توجد فواتير';
+
+  @override
+  String get invoiceViewInvoices => 'عرض الفواتير';
+
+  @override
+  String get billingStatusNotConfigured => 'غير مهيأ';
+
+  @override
+  String get billingStatusExempt => 'معفى';
+
+  @override
+  String get billingStatusFreeTrial => 'تجربة مجانية';
+
+  @override
+  String get billingStatusInvoiceDue => 'مستحق';
+
+  @override
+  String get billingStatusOverdue => 'متأخر';
+
+  @override
+  String get adStatusActive => 'مفعل';
+
+  @override
+  String get adStatusInactive => 'غير مفعل';
+
+  @override
+  String get adsTotal => 'إجمالي الإعلانات';
+
+  @override
+  String get adsActive => 'نشطة';
+
+  @override
+  String get adsInactive => 'غير نشطة';
+
+  @override
+  String get adsExpired => 'منتهية';
+
+  @override
+  String get adsScheduled => 'مجدولة';
+
+  @override
+  String get adsByPlacementTitle => 'حسب الموضع';
+
+  @override
+  String get adsLatestTitle => 'أحدث الإعلانات';
+
+  @override
+  String get adsEmpty => 'لا توجد إعلانات';
+
+  @override
+  String get billingInvoicesCount => 'عدد الفواتير';
+
+  @override
+  String get billingDraft => 'مسودة';
+
+  @override
+  String get billingIssued => 'صادرة';
+
+  @override
+  String get billingOverdueCount => 'متأخرة';
+
+  @override
+  String get billingPaidCount => 'مدفوعة';
+
+  @override
+  String get billingCancelled => 'ملغاة';
+
+  @override
+  String get billingFinancialTotalsTitle => 'الإجماليات المالية';
+
+  @override
+  String get billingPaidTotal => 'إجمالي المدفوع';
+
+  @override
+  String get billingUnpaidTotal => 'إجمالي غير المدفوع';
+
+  @override
+  String get billingOverdueTotal => 'إجمالي المتأخر';
+
+  @override
+  String get billingAvgInvoice => 'متوسط قيمة الفاتورة';
+
+  @override
+  String get billingProvidersOverdue => 'مزودون متأخرون';
+
+  @override
+  String get billingLatestInvoicesTitle => 'أحدث الفواتير';
+
+  @override
+  String get billingEmpty => 'لا توجد فواتير';
+
+  @override
+  String get billingStatusLabel => 'حالة';
+
+  @override
+  String get billingIssuedAtLabel => 'صدرت';
+
+  @override
+  String get financialGrossRevenueTitle => 'الإيرادات الإجمالية';
+
+  @override
+  String get financialBillingSummaryTitle => 'ملخص الفوترة';
+
+  @override
+  String get financialIssuedTotal => 'إجمالي الصادر';
+
+  @override
+  String get financialPaid => 'المدفوع';
+
+  @override
+  String get financialUnpaid => 'غير المدفوع';
+
+  @override
+  String get financialOverdue => 'المتأخر';
+
+  @override
+  String get financialCommissions => 'العمولات';
+
+  @override
+  String get financialSubscriptions => 'الاشتراكات';
+
+  @override
+  String get operationsTitle => 'العمليات';
+
+  @override
+  String operationsGroupedTitle(String group) {
+    return 'العمليات (مجمعة حسب $group)';
   }
 
   @override
-  String charactersRemaining(int count) {
-    return 'باقي $count حرف';
+  String get operationsEmpty => 'لا توجد بيانات';
+
+  @override
+  String get overviewTotalUsers => 'إجمالي المستخدمين';
+
+  @override
+  String get overviewTotalCustomers => 'إجمالي العملاء';
+
+  @override
+  String get overviewTotalProviders => 'إجمالي المزودين';
+
+  @override
+  String get overviewProvidersByTypeStatusTitle => 'المزودون حسب النوع والحالة';
+
+  @override
+  String get overviewOperationsSummaryTitle => 'ملخص العمليات';
+
+  @override
+  String get overviewRevenueSummaryTitle => 'ملخص الإيرادات';
+
+  @override
+  String get providersPendingApproval => 'بانتظار الموافقة';
+
+  @override
+  String get providersOverdueBilling => 'فواتير متأخرة';
+
+  @override
+  String get providersBillingNotConfigured => 'فوترة غير مهيأة';
+
+  @override
+  String get providersCountByTypeTitle => 'عدد المزودين حسب النوع';
+
+  @override
+  String get providersStatusByTypeTitle => 'الحالة حسب النوع';
+
+  @override
+  String get providersTopByCompletedTitle => 'أفضل المزودين حسب العمليات المكتملة';
+
+  @override
+  String providersCompletedOpsLine(String name, String id, String count) {
+    return '$name (#$id) — $count عملية مكتملة';
   }
 
   @override
-  String get loginSuccess => 'تم تسجيل الدخول بنجاح';
+  String get advertisementsMenu => 'الإعلانات';
 
   @override
-  String get registrationSuccess => 'تم التسجيل بنجاح';
+  String get advertisementsPageTitle => 'الإعلانات';
 
   @override
-  String get logoutConfirmation => 'هل أنت متأكد من تسجيل الخروج؟';
+  String get advertisementDetailsTitle => 'تفاصيل الإعلان';
 
   @override
-  String get yes => 'نعم';
+  String get adColumnImage => 'الصورة';
 
   @override
-  String get no => 'لا';
+  String get adColumnTitle => 'العنوان';
 
   @override
-  String get confirm => 'تأكيد';
+  String get adColumnPlacement => 'الموقع';
 
   @override
-  String get language => 'اللغة';
+  String get adColumnPeriod => 'الفترة';
 
   @override
-  String get changeLanguage => 'تغيير اللغة';
+  String get adColumnStatus => 'الحالة';
 
   @override
-  String get arabic => 'العربية';
+  String get adColumnSortOrder => 'الترتيب';
 
   @override
-  String get english => 'الإنجليزية';
+  String get adColumnActions => 'الإجراءات';
 
   @override
-  String get settings => 'الإعدادات';
+  String get adFilterAll => 'الكل';
 
   @override
-  String get about => 'حول';
+  String get adFilterHome => 'الرئيسية';
 
   @override
-  String get version => 'الإصدار';
+  String get adActionActivate => 'تفعيل';
 
   @override
-  String get contactUs => 'اتصل بنا';
+  String get adActionDeactivate => 'إلغاء التفعيل';
 
   @override
-  String get appNameAr => 'كار كير أكس';
+  String get adActionEdit => 'تعديل';
 
   @override
-  String get splashScreen => 'شاشة البدء';
+  String get adActionDelete => 'حذف';
 
   @override
-  String get profileSetup => 'إعداد الملف الشخصي';
+  String get adCreateNew => 'إعلان جديد';
 
   @override
-  String get myVehicles => 'مركباتي';
+  String get adFormTitleLabel => 'العنوان';
 
   @override
-  String get addVehicle => 'إضافة مركبة';
+  String get adFormPlacementLabel => 'الموقع';
 
   @override
-  String get editVehicle => 'تعديل المركبة';
+  String get adFormLinkLabel => 'رابط الإعلان';
 
   @override
-  String get vehicleDetails => 'تفاصيل المركبة';
+  String get adFormStartsLabel => 'تاريخ البداية';
 
   @override
-  String get maintenanceHistory => 'سجل الصيانة';
+  String get adFormEndsLabel => 'تاريخ النهاية';
 
   @override
-  String get vinNumber => 'رقم الهيكل';
+  String get adFormSortOrderLabel => 'ترتيب الظهور';
 
   @override
-  String get plateNumber => 'رقم اللوحة';
+  String get adFormActiveLabel => 'مفعل';
 
   @override
-  String get brand => 'الماركة';
+  String get adFormImageLabel => 'الصورة';
 
   @override
-  String get model => 'الموديل';
+  String get adFormImageHint => 'jpeg/jpg/png/webp، الحد الأقصى 2 ميجابايت';
 
   @override
-  String get year => 'السنة';
+  String get adFormChooseImage => 'اختيار صورة';
 
   @override
-  String get maintenance => 'الصيانة';
+  String get adFormChangeImage => 'تغيير الصورة';
 
   @override
-  String get maintenanceRequest => 'طلب صيانة';
+  String get adFormSave => 'حفظ';
 
   @override
-  String get serviceType => 'نوع الخدمة';
+  String get adFormRequiredField => 'هذا الحقل مطلوب';
 
   @override
-  String get oilChange => 'تغيير الزيت';
+  String get adFormImageRequired => 'يرجى اختيار صورة';
 
   @override
-  String get inspection => 'فحص';
+  String get adDeleteConfirmTitle => 'حذف الإعلان';
 
   @override
-  String get repair => 'إصلاح';
+  String get adDeleteConfirmMessage => 'هل أنت متأكد من حذف هذا الإعلان؟';
 
   @override
-  String get technicianOffers => 'عروض الفنيين';
+  String get adCreatedSuccess => 'تم إنشاء الإعلان بنجاح';
 
   @override
-  String get requestStatus => 'حالة الطلب';
+  String get adUpdatedSuccess => 'تم تحديث الإعلان بنجاح';
 
   @override
-  String get rateService => 'تقييم المغسلة';
+  String get adDeletedSuccess => 'تم حذف الإعلان بنجاح';
 
   @override
-  String get emergencySOS => 'طوارئ';
+  String get adActivatedSuccess => 'تم تفعيل الإعلان';
 
   @override
-  String get sosButton => 'زر الطوارئ';
+  String get adDeactivatedSuccess => 'تم إلغاء تفعيل الإعلان';
 
   @override
-  String get emergencyStatus => 'حالة الطوارئ';
+  String get noAdvertisements => 'لا يوجد إعلانات';
 
   @override
-  String get carWash => 'غسيل السيارات';
+  String get adRankingExplanation => 'الترتيب يبدأ من 1، فمثلاً 1 يعني هاد أول إعلان بيظهر';
 
   @override
-  String get bookCarWash => 'حجز غسيل';
+  String get billingSettingsPageTitle => 'إعدادات الفوترة';
 
   @override
-  String get washBookingStatus => 'حالة الحجز';
+  String get billingCreateNew => 'فاتورة جديد';
 
   @override
-  String get centerWash => 'غسيل في المركز';
+  String get billingSettingLinkButton => 'إعداد الفوترة';
 
   @override
-  String get mobileWash => 'غسيل متنقل';
+  String get billingColumnProvider => 'المزوّد';
 
   @override
-  String get basicWash => 'غسيل أساسي';
+  String get billingColumnType => 'نوع الفوترة';
 
   @override
-  String get premiumWash => 'غسيل مميز';
+  String get billingColumnMonthlyFee => 'الاشتراك الشهري';
 
   @override
-  String get fullWash => 'غسيل كامل';
+  String get billingColumnCommission => 'نسبة العمولة';
 
   @override
-  String get marketplace => 'المتجر';
+  String get billingColumnStartsAt => 'تاريخ البدء';
 
   @override
-  String get products => 'المنتجات';
+  String get billingStatusActive => 'نشط';
 
   @override
-  String get productDetails => 'تفاصيل المنتج';
+  String get billingStatusInactive => 'غير فعّال';
 
   @override
-  String get cart => 'السلة';
+  String get billingDeleteTitle => 'حذف إعداد الفوترة';
 
   @override
-  String get orderStatus => 'حالة الطلب';
+  String get billingDeleteMessage => 'هل أنت متأكد من حذف هذا الإعداد؟';
 
   @override
-  String get addToCart => 'أضف إلى السلة';
+  String get confirmDelete => 'حذف';
 
   @override
-  String get checkout => 'إتمام الشراء';
+  String get billingFormTitleCreate => 'إنشاء إعداد فوترة';
 
   @override
-  String get subtotal => 'المجموع الجزئي';
+  String get billingFormTitleEdit => 'تعديل إعداد الفوترة';
 
   @override
-  String get total => 'الإجمالي';
+  String get billingFieldProviderType => 'نوع المزوّد';
 
   @override
-  String get rentX => 'تأجير سيارات';
+  String get billingFieldProviderId => 'معرّف المزوّد';
 
   @override
-  String get availableCars => 'السيارات المتاحة';
+  String get billingFieldBillingType => 'نوع الفوترة';
 
   @override
-  String get daily => 'يومي';
+  String get billingFieldMonthlyFee => 'الاشتراك الشهري';
 
   @override
-  String get weekly => 'أسبوعي';
+  String get billingFieldCommissionPercent => 'نسبة العمولة %';
 
   @override
-  String get monthly => 'شهري';
+  String get billingFieldFreeTrialDays => 'أيام التجربة المجانية';
 
   @override
-  String get rentalPeriod => 'فترة التأجير';
+  String get billingFieldPaymentDueDays => 'مهلة الدفع (أيام)';
 
   @override
-  String get startDate => 'تاريخ البدء';
+  String get billingFieldStartsAt => 'تاريخ البدء';
 
   @override
-  String get endDate => 'تاريخ الانتهاء';
+  String get billingDetailsTitle => 'تفاصيل الفوترة';
 
   @override
-  String get bookNow => 'احجز الآن';
+  String get billingTypeSubscriptionPlusCommission => 'اشتراك + عمولة';
 
   @override
-  String get sellX => 'بيع سيارات';
+  String get billingTypeExempt => 'معفى';
 
   @override
-  String get sellListings => 'عروض البيع';
+  String get billingFieldExemptMethod => 'طريقة الإعفاء';
 
   @override
-  String get myListings => 'عروضي';
+  String get billingTypeCommission => 'نوع الفوترة: عمولة';
 
   @override
-  String get publishListing => 'نشر العرض';
+  String get billingTypeMonthly => 'فوترة شهرية';
 
   @override
-  String get contactSeller => 'تواصل مع البائع';
+  String get billingFieldIsActive => 'فعّال؟';
 
   @override
-  String get fuelX => 'توصيل وقود';
+  String get billingFieldNotes => 'ملاحظات';
 
   @override
-  String get fuelRequest => 'طلب وقود';
-
-  @override
-  String get fuelType => 'نوع الوقود';
-
-  @override
-  String get gasoline91 => 'بنزين 91';
-
-  @override
-  String get gasoline95 => 'بنزين 95';
-
-  @override
-  String get diesel => 'ديزل';
-
-  @override
-  String get quantity => 'الكمية';
-
-  @override
-  String get liters => 'لتر';
-
-  @override
-  String get fuelOrderStatus => 'حالة طلب الوقود';
-
-  @override
-  String get carOwner => 'مالك سيارة';
-
-  @override
-  String get technician => 'فني';
-
-  @override
-  String get accept => 'قبول';
-
-  @override
-  String get reject => 'رفض';
-
-  @override
-  String get proceed => 'متابعة';
-
-  @override
-  String get continueButton => 'استمرار';
-
-  @override
-  String get select => 'اختر';
-
-  @override
-  String get choose => 'اختر';
-
-  @override
-  String get onTheWay => 'في الطريق';
-
-  @override
-  String get arrived => 'وصل';
-
-  @override
-  String get delivered => 'تم التسليم';
-
-  @override
-  String get assigned => 'تم التكليف';
-
-  @override
-  String get requested => 'مطلوب';
-
-  @override
-  String get loadingData => 'جاري تحميل البيانات...';
-
-  @override
-  String get noVehicles => 'لا توجد مركبات';
-
-  @override
-  String get noOffers => 'لا توجد عروض';
-
-  @override
-  String get noListings => 'لا توجد عروض';
-
-  @override
-  String get success => 'نجاح';
-
-  @override
-  String get failed => 'فشل';
-
-  @override
-  String get currentLocation => 'موقعي الحالي';
-
-  @override
-  String get useCurrentLocation => 'استخدم موقعي الحالي';
-
-  @override
-  String get enterAddress => 'أدخل العنوان';
-
-  @override
-  String get city => 'المدينة';
-
-  @override
-  String get pickImage => 'اختر صورة';
-
-  @override
-  String get camera => 'الكاميرا';
-
-  @override
-  String get gallery => 'المعرض';
-
-  @override
-  String get profilePhoto => 'صورة الملف الشخصي';
-
-  @override
-  String get notifications => 'الإشعارات';
-
-  @override
-  String get more => 'المزيد';
-
-  @override
-  String get searchProducts => 'ابحث عن منتجات...';
-
-  @override
-  String get searchCars => 'ابحث عن سيارات...';
-
-  @override
-  String get sortBy => 'ترتيب حسب';
-
-  @override
-  String get priceLowHigh => 'السعر: منخفض إلى مرتفع';
-
-  @override
-  String get priceHighLow => 'السعر: مرتفع إلى منخفض';
-
-  @override
-  String get selectDate => 'اختر التاريخ';
-
-  @override
-  String get selectTime => 'اختر الوقت';
-
-  @override
-  String get timeSlot => 'الفترة الزمنية';
-
-  @override
-  String get now => 'الآن';
-
-  @override
-  String get schedule => 'جدولة';
-
-  @override
-  String get price => 'السعر';
-
-  @override
-  String get cost => 'التكلفة';
-
-  @override
-  String get estimatedPrice => 'السعر التقديري';
-
-  @override
-  String get rating => 'التقييم';
-
-  @override
-  String get stars => 'نجوم';
-
-  @override
-  String get leaveComment => 'اترك تعليقاً';
-
-  @override
-  String get userType => 'نوع المستخدم';
-
-  @override
-  String get userProfile => 'ملف المستخدم';
-
-  @override
-  String get validationError => 'خطأ في التحقق';
+  String get billingPickDate => 'اختر التاريخ';
 
   @override
   String get fieldRequired => 'هذا الحقل مطلوب';
 
   @override
-  String get invalidInput => 'إدخال غير صحيح';
+  String get save => 'حفظ';
 
   @override
-  String get optional => 'اختياري';
+  String get actionEdit => 'تعديل';
 
   @override
-  String get required => 'مطلوب';
+  String get actionDelete => 'حذف';
 
   @override
-  String get description => 'الوصف';
+  String get service => 'الخدمة';
 
   @override
-  String get problemDetails => 'تفاصيل المشكلة';
+  String get dashboard => 'لوحة التحكم';
 
   @override
-  String get attachPhotos => 'إرفاق صور';
+  String get general => 'عام';
 
   @override
-  String get summary => 'ملخص';
+  String get paymentMethodCash => 'نقداً';
 
   @override
-  String get orderSummary => 'ملخص الطلب';
+  String get paymentMethodBankTransfer => 'تحويل بنكي';
 
   @override
-  String get bookingSummary => 'ملخص الحجز';
+  String get paymentMethodShamCash => 'شام كاش';
 
   @override
-  String get readySummary => 'هل أنت مستعد للعودة إلى الطريق؟';
+  String get paymentMethodSyriatelCash => 'سيرياتيل كاش';
 
   @override
-  String get editPassword => 'تعديل كلمة المرور';
+  String get paymentMethodOther => 'أخرى';
 
   @override
-  String get savePassword => 'حفظ كلمة المرور';
+  String get settingsPageTitle => 'الإعدادات';
 
   @override
-  String get deleteAccount => 'حذف الحساب';
+  String get settingsLanguageSection => 'اللغة';
 
   @override
-  String get creating => 'جاري الإنشاء...';
+  String get settingsThemeSection => 'المظهر';
 
   @override
-  String get enterFirstName => 'أدخل الاسم الأول';
+  String get settingsLanguageArabic => 'العربية';
 
   @override
-  String get enterEmail => 'أدخل البريد الإلكتروني';
+  String get settingsLanguageEnglish => 'الإنجليزية';
 
   @override
-  String get enterPassword => 'أدخل كلمة المرور';
+  String get settingsThemeLight => 'فاتح';
 
   @override
-  String get passwordMinLength => 'كلمة المرور يجب أن تكون 6 أحرف على الأقل';
+  String get settingsThemeDark => 'داكن';
 
   @override
-  String get reEnterPassword => 'أعد إدخال كلمة المرور';
-
-  @override
-  String get addVehicleImage => 'أضف صورة المركبة';
-
-  @override
-  String get tapToSelectImage => 'اضغط لاختيار صورة';
-
-  @override
-  String get selectVehicleImage => 'الرجاء اختيار صورة للمركبة';
-
-  @override
-  String get fillAllFields => 'الرجاء تعبئة جميع الحقول';
-
-  @override
-  String get vehicleAddedSuccess => 'تمت إضافة المركبة بنجاح';
-
-  @override
-  String get odometer => 'عداد الكيلومترات';
-
-  @override
-  String get licensePlateNumberFull => 'رقم لوحة السيارة';
-
-  @override
-  String get serviceRecords => 'سجلات الخدمات';
-
-  @override
-  String get fuelRecords => 'سجل الوقود';
-
-  @override
-  String get plate => 'اللوحة';
-
-  @override
-  String get currentPassword => 'كلمة المرور الحالية';
-
-  @override
-  String get newPassword => 'كلمة المرور الجديدة';
-
-  @override
-  String get createYourAccount => 'إنشاء حسابك';
-
-  @override
-  String get carReadyMessage => 'نحن هنا للحفاظ على سيارتك بأفضل حالة، هل أنت مستعد؟';
-
-  @override
-  String get sos => 'نجدة';
-
-  @override
-  String get fuel => 'الوقود';
-
-  @override
-  String get notification => 'الإشعارات';
-
-  @override
-  String get messages => 'الرسائل';
-
-  @override
-  String get changedpasswordsuccessfully => 'تم تغيير كلمة السر بنجاح';
-
-  @override
-  String get enterphone => 'أدخل رقم الهاتف ';
-
-  @override
-  String get thepasswordsdonotmatch => 'كلمتا المرور غير متطابقتين';
-
-  @override
-  String get activeorders => 'الطلبات النشطة ';
-
-  @override
-  String get saveandfollow => 'حفظ و متابعة';
-
-  @override
-  String get savevehicle => 'حفظ المركبة ';
-
-  @override
-  String get parts => 'قطع الغيار ';
-
-  @override
-  String get details => 'التفاصيل';
-
-  @override
-  String get updateCarsList => 'تحديث قائمة السيارات...';
-
-  @override
-  String get noCarsYet => 'لا توجد سيارات حتى الآن';
-
-  @override
-  String get vehicleUpdatedSuccessfully => 'تم تحديث المركبة بنجاح';
-
-  @override
-  String get saveChanges => 'حفظ التعديلات';
-
-  @override
-  String get saving => 'جارٍ الحفظ...';
-
-  @override
-  String get updateVehicle => 'تحديث مركبة';
-
-  @override
-  String get deleteVehicle => 'حذف المركبة';
-
-  @override
-  String get confirmDeleteTitle => 'تأكيد الحذف';
-
-  @override
-  String get confirmDeleteMessage => 'هل أنت متأكد من حذف هذه المركبة؟هذا الإجراء لا يمكن التراجع عنه.';
-
-  @override
-  String get owner => 'المالك';
-
-  @override
-  String get km => 'كم';
-
-  @override
-  String get maintenanceRecord => 'سجل الصيانة';
-
-  @override
-  String get fuelRecord => 'سجل الوقود';
-
-  @override
-  String get alertsRecord => 'سجل التنبيهات';
-
-  @override
-  String get statistics => 'الإحصائيات';
-
-  @override
-  String get totalJobs => 'إجمالي الأعمال';
-
-  @override
-  String get assignedJobs => 'المعيّنة';
-
-  @override
-  String get inProgressJobs => 'قيد التنفيذ';
-
-  @override
-  String get completedJobs => 'المكتملة';
-
-  @override
-  String get totalQuotations => 'إجمالي العروض';
-
-  @override
-  String get pendingQuotations => 'العروض المعلّقة';
-
-  @override
-  String get acceptedQuotations => 'العروض المقبولة';
-
-  @override
-  String get totalRatings => 'عدد التقييمات';
-
-  @override
-  String get deleteProfile => 'حذف الحساب';
-
-  @override
-  String get confirmDeleteProfileTitle => 'تأكيد الحذف';
-
-  @override
-  String get confirmDeleteProfileMessage => 'هل أنت متأكد من حذف الحساب؟\nهذا الإجراء لا يمكن التراجع عنه.';
-
-  @override
-  String get profileDeletedSuccessfully => 'تم حذف الحساب بنجاح';
-
-  @override
-  String get enterPhone => 'الرجاء إدخال رقم الهاتف';
-
-  @override
-  String get invalidPhone => 'رقم الهاتف غير صالح';
-
-  @override
-  String get enterAsTechnician => 'الدخول كفني';
-
-  @override
-  String get washersPageTitle => 'مغاسل السيارات';
-
-  @override
-  String get washersByCity => 'حسب المدينة';
-
-  @override
-  String get washersBookAppointment => 'حجز موعد';
-
-  @override
-  String get washersViewDetails => 'عرض التفاصيل';
-
-  @override
-  String washersCityWithName(String cityName) {
-    return 'المدينة : $cityName';
-  }
-
-  @override
-  String washersRatingsWithCount(int count) {
-    return 'التقييمات : $count';
-  }
-
-  @override
-  String get washerTierBasic => 'BASIC';
-
-  @override
-  String get washerTierVip => 'VIP';
-
-  @override
-  String get washerTierPremium => 'PREMIUM';
-
-  @override
-  String get washerDetailsTitle => 'تفاصيل المغسلة';
-
-  @override
-  String washerOpenTime(String time) {
-    return 'الفتح : $time';
-  }
-
-  @override
-  String washerCloseTime(String time) {
-    return 'الإغلاق : $time';
-  }
-
-  @override
-  String get washerSectionCityAndAddress => 'المدينة و العنوان';
-
-  @override
-  String get washerSectionServicesAndPrices => 'الخدمات و الأسعار';
-
-  @override
-  String get washerSectionCustomerReviews => 'تقييم العملاء';
-
-  @override
-  String get washerServiceExterior => 'خارجي';
-
-  @override
-  String get washerServiceInterior => 'داخلي';
-
-  @override
-  String get washerServiceEngine => 'محرك';
-
-  @override
-  String washerPackagePrice(int amount) {
-    return 'السعر : $amount \$';
-  }
-
-  @override
-  String get washerReservationTitle => 'الحجز';
-
-  @override
-  String get washerReservationFieldDate => 'التاريخ';
-
-  @override
-  String get washerReservationFieldTime => 'الوقت';
-
-  @override
-  String get washerReservationFieldVehicleLabel => 'ادخل نوع مركبتك';
-
-  @override
-  String get washerReservationFieldVehicleHint => 'ادخل هنا نوع مركبتك';
-
-  @override
-  String get washerReservationFieldNotesLabel => 'ملاحظات';
-
-  @override
-  String get washerReservationFieldNotesHint => 'اضف اي ملاحظات تريدها';
-
-  @override
-  String get washerReservationChooseService => 'اختر الخدمة المناسبة';
-
-  @override
-  String get washerReservationConfirm => 'تأكيد حجز';
-
-  @override
-  String get washerReservationCancel => 'إلغاء الحجز';
-
-  @override
-  String get washerReservationPickDate => 'اختر التاريخ';
-
-  @override
-  String get washerReservationPickTime => 'اختر الوقت';
-
-  @override
-  String get washerReservationServicePremium => 'Premium';
-
-  @override
-  String get washerReservationServiceVip => 'Vip';
-
-  @override
-  String get washerReservationServiceBasic => 'Basic';
-
-  @override
-  String get bookingsPageTitle => 'حجوزاتي';
-
-  @override
-  String get bookingsFilterByStatus => 'حسب الحالة';
-
-  @override
-  String get bookingStatusProgress => 'قيد التنفيذ';
-
-  @override
-  String get bookingStatusAccepted => 'تم القبول';
-
-  @override
-  String get bookingStatusPinding => 'انتظار';
-
-  @override
-  String get bookingsWasherName => 'مغسل المقداد';
-
-  @override
-  String get bookingsServiceLabel => 'الخدمة ';
-
-  @override
-  String get bookingsServiceVip => 'Vip';
-
-  @override
-  String get bookingsDateTimeLabel => 'الموعد';
-
-  @override
-  String get bookingsAtLabel => 'الساعة';
-
-  @override
-  String get bookingsPriceLabel => 'السعر';
-
-  @override
-  String get bookingsMenuShowDetails => 'عرض تفاصيل';
-
-  @override
-  String get washerBookingViewDetails => 'عرض التفاصيل';
-
-  @override
-  String get washerBookingAccept => 'قبول';
-
-  @override
-  String get washerBookingReject => 'رفض';
-
-  @override
-  String get washerBookingStartExecution => 'بدأ التنفيذ';
-
-  @override
-  String get washerBookingCompleted => 'اكتمل';
-
-  @override
-  String get washerBookingCustomerNameLabel => 'اسم العميل :';
-
-  @override
-  String get washerBookingRequestedServiceLabel => 'الخدمة المطلوبة :';
-
-  @override
-  String get washerBookingAppointmentLabel => 'الموعد :';
-
-  @override
-  String get bookingsMenuCancelBooking => 'إلغاء الحجز';
-
-  @override
-  String get bookingsMenuRateService => 'تقييم الخدمة';
-
-  @override
-  String get bookingDetailsPageTitle => 'تفاصيل الحجوزات';
-
-  @override
-  String get bookingDetailsServiceSectionTitle => 'تفاصيل عن الخدمة';
-
-  @override
-  String get bookingDetailsAppointmentSectionTitle => 'تفاصيل عن الموعد';
-
-  @override
-  String get bookingDetailsUserNotesSectionTitle => 'ملاحظات المستخدم';
-
-  @override
-  String get bookingDetailsWasherNameLabel => 'اسم المغسل';
-
-  @override
-  String get bookingDetailsOrderDateLabel => 'تاريخ الطلب';
-
-  @override
-  String get bookingDetailsVehicleLabel => 'المركبة';
-
-  @override
-  String get ratingsServiceInfoSectionTitle => 'معلومات عن الخدمة';
-
-  @override
-  String get ratingsYourRatingQuestion => 'ما تقييمك للخدمة';
-
-  @override
-  String get ratingsTellUsExperienceTitle => 'أخبرنا عن تجربتك';
-
-  @override
-  String get ratingsCommentExperienceHint => 'اترك لنا تعليقاً عن تجربتك';
-
-  @override
-  String get ratingsSendRating => 'إرسال التقييم';
-
-  @override
-  String get profileWasherPageTitle => 'ملف المنظّف';
-
-  @override
-  String get profileWasherEditProfile => 'تعديل الملف';
-
-  @override
-  String get profileWasherSampleShopName => 'مغسل المحبة';
-
-  @override
-  String profileWasherRatingsCountLine(int count) {
-    return '$count تقييمات';
-  }
-
-  @override
-  String get profileWasherSampleFullAddress => 'دمشق - ساحة العباسيين - مدخل ساحة القصور';
-
-  @override
-  String get profileWasherSamplePhone => '0987654321';
-
-  @override
-  String get profileWasherAboutTitle => 'عن المغسلة';
-
-  @override
-  String get profileWasherDescriptionSample => 'في مغسل المحبة نوفّر لكم غسيلاً احترافياً للسيارات بمنتجات آمنة وصديقة للبيئة، مع فريق يهتم بتفاصيل السيارة من الخارج إلى الداخل. نسعى لخدمتكم يوماً بعد يوم بأسعار واضحة ووقت انتظار مريح، لتشعرون أن سيارتكم في عناية ناس بتحب الشغل النظيف.';
-
-  @override
-  String get profileWasherEditPageTitle => 'تعديل ملف المنظّف';
-
-  @override
-  String get profileWasherFieldWasherName => 'اسم المغسل';
-
-  @override
-  String get profileWasherHintWasherName => 'ادخل اسم المغسل';
-
-  @override
-  String get profileWasherFieldPhone => 'رقم الهاتف';
-
-  @override
-  String get profileWasherHintPhone => 'ادخل رقم الهاتف للتواصل';
-
-  @override
-  String get profileWasherFieldAddress => 'المدينة والعنوان';
-
-  @override
-  String get profileWasherHintAddress => 'ادخل عنوان المغسل بالتفصيل';
-
-  @override
-  String get profileWasherFieldWorkStart => 'بداية العمل';
-
-  @override
-  String get profileWasherHintWorkStart => 'ادخل وقت بداية العمل';
-
-  @override
-  String get profileWasherFieldWorkEnd => 'نهاية العمل';
-
-  @override
-  String get profileWasherHintWorkEnd => 'ادخل وقت نهاية العمل';
-
-  @override
-  String get profileWasherChooseServicesTitle => 'اختر الخدمات التي تقدمها';
-
-  @override
-  String get profileWasherFieldDescription => 'الوصف';
-
-  @override
-  String get profileWasherHintDescription => 'ادخل وصف المغسلة';
-
-  @override
-  String get profileWasherTierBasic => 'Basic';
-
-  @override
-  String get profileWasherTierVip => 'Vip';
-
-  @override
-  String get profileWasherTierPremium => 'Premium';
-
-  @override
-  String get profileWasherFieldPrice => 'السعر';
-
-  @override
-  String get profileWasherHintPrice => 'ادخل السعر';
-
-  @override
-  String get profileWasherSaveChanges => 'حفظ التغييرات';
-
-  @override
-  String get profileWasherCreatePageTitle => 'إنشاء بروفايل المغسلة';
-
-  @override
-  String get profileWasherUploadLogo => 'رفع الشعار';
-
-  @override
-  String get profileWasherFieldCity => 'المدينة';
-
-  @override
-  String get profileWasherHintCity => 'ادخل المدينة';
-
-  @override
-  String get profileWasherFieldStreetAddress => 'العنوان';
-
-  @override
-  String get profileWasherHintStreetAddress => 'ادخل العنوان';
-
-  @override
-  String get profileWasherFieldServicesList => 'الخدمات';
-
-  @override
-  String get profileWasherHintServicesList => 'افصل بين الخدمات بفاصلة ,';
-
-  @override
-  String get profileWasherWorkingHoursTitle => 'ساعات العمل';
-
-  @override
-  String get profileWasherFieldSaturdayHours => 'السبت';
-
-  @override
-  String get profileWasherHintSaturdayHours => 'مثال: 11:00-15:00';
-
-  @override
-  String get profileWasherFieldSundayHours => 'الأحد';
-
-  @override
-  String get profileWasherHintSundayHours => 'مثال: 10:00-16:00';
-
-  @override
-  String get profileWasherCreateSave => 'حفظ البروفايل';
-
-  @override
-  String get showRatingTotalBookings => 'اجمالي الحجوزات';
-
-  @override
-  String get showRatingAllReserved => 'إجمالي الحجوزات';
-
-  @override
-  String get bookingStatusPending => 'قيد الانتظار';
-
-  @override
-  String get bookingStatusCompleted => 'مكتمل';
-
-  @override
-  String get bookingStatusCanceled => 'ملغي';
-
-  @override
-  String get showRatingAverageRatings => 'متوسط التقييمات';
-
-  @override
-  String get showRatingUsersComments => 'تعليقات المستخدمين';
-
-  @override
-  String get createSosTitle => 'إنشاء طلب نجدة';
-
-  @override
-  String get createSosChooseVehicle => 'اختر المركبة';
-
-  @override
-  String get createSosChooseProvince => 'اختر المحافظة';
-
-  @override
-  String get createSosLocationAutoHint => '* سيتم إرسال موقعك الحالي تلقائياً';
-
-  @override
-  String get createSosProblemDescription => 'أدخل وصفاً للمشكلة';
-
-  @override
-  String get createSosSendRequest => 'إرسال الطلب';
-
-  @override
-  String get createSosSampleProblemText => 'ادخل الوصف هنا';
-
-  @override
-  String get fuelSosCreateTitle => 'إنشاء طلب وقود طارئ';
-
-  @override
-  String get fuelSosCreateVehicleTitle => 'المركبة';
-
-  @override
-  String get fuelSosCreateVehicleHint => 'اختر المركبة التي تريدها للخدمة';
-
-  @override
-  String get fuelSosCreateFuelTypeTitle => 'نوع الوقود';
-
-  @override
-  String get fuelSosCreateFuelTypeHint => 'اختر نوع الوقود الذي تريده';
-
-  @override
-  String get fuelSosCreateQuantityTitle => 'الكمية';
-
-  @override
-  String get fuelSosCreateQuantityHint => 'أدخل الكمية التي تريد تعبئتها';
-
-  @override
-  String get fuelSosCreateNotesTitle => 'ملاحظات';
-
-  @override
-  String get fuelSosCreateNotesHint => 'أدخل أي ملاحظات تريد إضافتها';
-
-  @override
-  String get fuelSosCreateProvinceTitle => 'المحافظة';
-
-  @override
-  String get fuelSosCreateProvinceHint => 'اختر المحافظة في مكانك الحالي';
-
-  @override
-  String get fuelSosCreateSelectVehicleRequired => 'الرجاء اختيار المركبة';
-
-  @override
-  String get fuelSosCreateSelectFuelTypeRequired => 'الرجاء اختيار نوع الوقود';
-
-  @override
-  String get fuelSosCreateQuantityRequired => 'الرجاء إدخال الكمية';
-
-  @override
-  String get fuelSosCreateSelectProvinceRequired => 'الرجاء اختيار المحافظة';
-
-  @override
-  String get fuelSosCreateNoVehicles => 'لا توجد سيارات';
-
-  @override
-  String get sosRequestsListTitle => 'قائمة طلبات النجدة';
-
-  @override
-  String get sosRequestIdLabel => 'رقم المعرف';
-
-  @override
-  String get sosRequestVehicleLabel => 'المركبة';
-
-  @override
-  String get sosRequestShortDescriptionLabel => 'وصف مختصر';
-
-  @override
-  String get sosStatusFinished => 'منتهية';
-
-  @override
-  String get sosStatusInProgress => 'قيد التنفيذ';
-
-  @override
-  String get sosStatusWaiting => 'انتظار';
-
-  @override
-  String get sosRequestAccept => 'قبول';
-
-  @override
-  String get sosRequestViewDetails => 'عرض التفاصيل';
-
-  @override
-  String sosRequestCreatedAtHours(int hours) {
-    return 'تم الإنشاء منذ $hours ساعة';
-  }
-
-  @override
-  String sosRequestCreatedAtMinutes(int minutes) {
-    return 'تم الإنشاء منذ $minutes دقيقة';
-  }
-
-  @override
-  String get sosDetailsTitle => 'تفاصيل النجدة';
-
-  @override
-  String get sosDetailsRequestAccepted => 'تم قبول الطلب';
-
-  @override
-  String get sosDetailsRequestData => 'بيانات الطلب';
-
-  @override
-  String get sosDetailsPlateNumberLabel => 'رقم اللوحة';
-
-  @override
-  String get sosDetailsTechnicianLabel => 'الفني';
-
-  @override
-  String get sosDetailsDescriptionLabel => 'وصف';
-
-  @override
-  String get sosDetailsCurrentLocation => 'الموقع الحالي';
-
-  @override
-  String get sosDetailsTrack => 'تتبع';
-
-  @override
-  String get sosDetailsCancelRequest => 'إلغاء الطلب';
-
-  @override
-  String get fuelOrdersListTitle => 'قائمة طلبات الوقود';
-
-  @override
-  String get fuelOrderDetailsTitle => 'تفاصيل طلب الوقود';
-
-  @override
-  String get fuelOrderDetailsProviderSection => 'بيانات الشركة المزودة للخدمة';
-
-  @override
-  String get cancelReasonDialogTitle => 'Cancel SOS';
-
-  @override
-  String get cancelReasonDialogQuestion => 'ما سبب إلغاء الطلب ؟';
-
-  @override
-  String get cancelReasonDialogHint => 'ادخل هنا سبب إلغاء طلب الوقود ...';
-
-  @override
-  String get cancelReasonDialogBack => 'تراجع';
-
-  @override
-  String get fuelCancelReasonDialogTitle => 'إلغاء الطلب';
-
-  @override
-  String get providerProfilePageTitle => 'بروفايل المزود';
-
-  @override
-  String get providerProfileAvailabilityTitle => 'التوافر للعمل';
-
-  @override
-  String get providerProfileAvailableNow => 'متوفر الآن';
-
-  @override
-  String get providerProfileNotAvailableNow => 'غير متوفر الآن';
-
-  @override
-  String get providerProfileLocationSectionTitle => 'موقع مقدم الخدمة';
-
-  @override
-  String get providerProfileServicesAndPricesTitle => 'الخدمات و الأسعار';
-
-  @override
-  String get providerProfileSampleName => 'خالد الخالد';
-
-  @override
-  String providerProfilePriceLine(String price) {
-    return 'السعر : $price \$';
-  }
-
-  @override
-  String get providerEditProfilePageTitle => 'تعديل بروفايل المزود';
-
-  @override
-  String get providerEditProfilePersonalInfoTitle => 'معلومات ملفك الشخصي';
-
-  @override
-  String get providerEditProfileProviderNameLabel => 'اسم مقدم الخدمة';
-
-  @override
-  String get providerEditProfileProviderNameHint => 'ادخل اسم مقدم الخدمة';
-
-  @override
-  String get providerEditProfileProviderPhoneLabel => 'رقم مقدم الخدمة';
-
-  @override
-  String get providerEditProfileProviderPhoneHint => 'ادخل رقم مقدم الخدمة';
-
-  @override
-  String get providerEditProfileGovernorateLabel => 'اختر محافظة مقدم الخدمة';
-
-  @override
-  String get providerEditProfileGovernorateHint => 'اختر المحافظة';
-
-  @override
-  String get providerEditProfileAddressLabel => 'العنوان';
-
-  @override
-  String get providerEditProfileAddressHint => 'ادخل العنوان بالتفصيل';
-
-  @override
-  String get providerEditProfileLocationNote => '* سيتم استخدام موقعك كنقطة انطلاق للمزود';
-
-  @override
-  String get providerEditProfileActivateServiceLine => 'تفعيل الخدمة و تحديد السعر';
-
-  @override
-  String get providerEditProfileSaveInfo => 'حفظ المعلومات';
-
-  @override
-  String get providerEditProfileSampleAddress => 'ساحة العباسيين - مدخل ساحة القصور';
-
-  @override
-  String get providerCreateProfilePageTitle => 'إنشاء ملف المزود';
-
-  @override
-  String get providerCreateProfileSave => 'إنشاء الملف';
-
-  @override
-  String providerEditProfileSetPriceTitle(String fuelType) {
-    return 'تحديد سعر $fuelType';
-  }
-
-  @override
-  String get providerEditProfileSetPriceHint => 'أدخل السعر';
-
-  @override
-  String get providerEditProfileSetPriceRequired => 'الرجاء إدخال السعر';
-
-  @override
-  String get providerAvailableOrdersTitle => 'الطلبات المتاحة';
-
-  @override
-  String get providerAvailableOrderNoNotes => 'لا يوجد';
-
-  @override
-  String get providerOrderDetailsTitle => 'تفاصيل طلب المزود';
-
-  @override
-  String get providerOrderDetailsPendingAcceptance => 'بانتظار قبول الطلب';
-
-  @override
-  String get providerOrderDetailsCustomerSection => 'بيانات العميل';
-
-  @override
-  String get providerOrderDetailsAcceptOrder => 'قبول الطلب';
-
-  @override
-  String get providerOrderDetailsShareLocationOn => 'مشاركة الموقع';
-
-  @override
-  String get providerOrderDetailsShareLocationOff => 'عدم مشاركة الموقع';
-
-  @override
-  String get providerOrderDetailsEstimatedArrivalDialogTitle => 'الوقت المتوقع للوصول بالدقائق';
-
-  @override
-  String get providerOrderDetailsEnterDurationMinutes => 'ادخل المدة بالدقائق';
-
-  @override
-  String get providerOrderDetailsEnterAdditionalNotes => 'ادخل ملاحظات اضافية';
-
-  @override
-  String get providerMyOrdersTitle => 'طلباتي';
-
-  @override
-  String get providerStatisticsTotalOrdersTitle => 'اجمالي الطلبات';
-
-  @override
-  String get providerStatisticsTotalProfitsTitle => 'اجمالي الأرباح';
-
-  @override
-  String get providerStatisticsAllOrders => 'All Reserved';
+  String get settingsThemeSystem => 'حسب النظام';
 }

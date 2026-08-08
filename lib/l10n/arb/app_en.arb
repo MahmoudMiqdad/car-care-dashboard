@@ -1,2466 +1,909 @@
 {
-  "@@locale": "en",
-  "@@context": "CarCare App - English Translations",
-  
-  "counterAppBarTitle": "Counter",
-  "@counterAppBarTitle": {
-    "description": "Text shown in the AppBar of the Counter Page"
-  },
-  
-  "appTitle": "CarCare Services",
-  "@appTitle": {
-    "description": "Application title"
-  },
-      "fuelProvider": "Fuel Provider",
-  "@fuelProvider": {
-    "description": "Fuel Provider"
-  },
-  
-  "appName": "CarCare",
-  "@appName": {
-    "description": "Application name"
-  },
-  "noAvailableRequests": "No requests available at the moment",
-"@noAvailableRequests": {
-  "description": "Shown when there are no SOS requests available for the technician"
-},
-  "welcome": "Welcome",
-  "@welcome": {
-    "description": "Welcome message"
-  },
-  
-  "welcomeBack": "Welcome Back",
-  "@welcomeBack": {
-    "description": "Welcome back message"
-  },
-  
-  "login": "Login",
-  "@login": {
-    "description": "Login button"
-  },
-  
-  "register": "Register",
-  "@register": {
-    "description": "Register button"
-  },
-  
-  "logout": "Logout",
-  "@logout": {
-    "description": "Logout button"
-  },
-  
-  "username": "Username",
-  "@username": {
-    "description": "Username field"
-  },
-  
-  "password": "Password",
-  "@password": {
-    "description": "Password field"
-  },
-  
-  "confirmPassword": "Confirm Password",
-  "@confirmPassword": {
-    "description": "Confirm password field"
-  },
-  
-  "phoneNumber": "Phone Number",
-  "@phoneNumber": {
-    "description": "Phone number field"
-  },
-  
-  "fullName": "Full Name",
-  "@fullName": {
-    "description": "Full name field"
-  },
-  
-  "email": "Email",
-  "@email": {
-    "description": "Email field"
-  },
-  
-  "submit": "Submit",
-  "@submit": {
-    "description": "Submit button"
-  },
-  
-  "cancel": "Cancel",
-  "@cancel": {
-    "description": "Cancel button"
-  },
-  
-  "save": "Save",
-  "@save": {
-    "description": "Save button"
-  },
-  
-  "edit": "Edit",
-  "@edit": {
-    "description": "Edit button"
-  },
-  
-  "delete": "Delete",
-  "@delete": {
-    "description": "Delete button"
-  },
-  
-  "close": "Close",
-  "@close": {
-    "description": "Close button"
-  },
-  
-  "back": "Back",
-  "@back": {
-    "description": "Back button"
-  },
-  
-  "next": "Next",
-  "@next": {
-    "description": "Next button"
-  },
-  
-  "done": "Done",
-  "@done": {
-    "description": "Done button"
-  },
-  
-  "retry": "Retry",
-  "@retry": {
-    "description": "Retry button"
-  },
-  
+  "dashboardMenu": "Dashboard",
+  "@dashboardMenu": { "description": "Menu item: Dashboard" },
+
+  "techniciansMenu": "Technicians",
+  "@techniciansMenu": { "description": "Menu item: Technicians" },
+
+  "ordersMenu": "Orders",
+  "@ordersMenu": { "description": "Menu item: Orders" },
+
+  "fuelProvidersMenu": "Fuel Providers",
+  "@fuelProvidersMenu": { "description": "Menu item: Fuel Providers" },
+
+  "usersMenu": "Users",
+  "@usersMenu": { "description": "Menu item: Users" },
+
+  "reportsMenu": "Reports",
+  "@reportsMenu": { "description": "Menu item: Reports" },
+
+  "settingsMenu": "Settings",
+  "@settingsMenu": { "description": "Menu item: Settings" },
+
+  "adminLabel": "Admin",
+  "@adminLabel": { "description": "Label shown next to the user avatar at the top bar" },
+
   "refresh": "Refresh",
-  "@refresh": {
-    "description": "Refresh button"
-  },
-  
-  "search": "Search",
-  "@search": {
-    "description": "Search button"
-  },
-  
-  "filter": "Filter",
-  "@filter": {
-    "description": "Filter button"
-  },
-  
-  "forgotPassword": "Forgot Password?",
-  "@forgotPassword": {
-    "description": "Forgot password link"
-  },
-  
-  "alreadyHaveAccount": "Already have an account?",
-  "@alreadyHaveAccount": {
-    "description": "Already have account text"
-  },
-  
-  "dontHaveAccount": "Don't have an account?",
-  "@dontHaveAccount": {
-    "description": "Don't have account text"
-  },
-  
-  "createAccount": "Create New Account",
-  "@createAccount": {
-    "description": "Create new account button"
-  },
-  
-  "otpVerification": "OTP Verification",
-  "@otpVerification": {
-    "description": "OTP verification page title"
-  },
-  
-  "enterOtp": "Enter Verification Code",
-  "@enterOtp": {
-    "description": "Enter verification code message"
-  },
-  
-  "otpSent": "Verification code sent to",
-  "@otpSent": {
-    "description": "OTP sent message"
-  },
-  
-  "resendOtp": "Resend Code",
-  "@resendOtp": {
-    "description": "Resend code button"
-  },
-  
-  "resendOtpIn": "Resend in",
-  "@resendOtpIn": {
-    "description": "Resend in message"
-  },
-  
-  "verify": "Verify",
-  "@verify": {
-    "description": "Verify button"
-  },
-  
-  "home": "Home",
-  "@home": {
-    "description": "Home page"
-  },
-  
-  "schedules": "Service Appointments",
-  "@schedules": {
-    "description": "Schedules page"
-  },
-  
-  "complaints": "Car Issues",
-  "@complaints": {
-    "description": "Complaints page"
-  },
-  
-  "profile": "Profile",
-  "@profile": {
-    "description": "Profile page"
-  },
-  
-  "mySchedules": "My Appointments",
-  "@mySchedules": {
-    "description": "My schedules"
-  },
-  
-  "upcomingSchedules": "Upcoming Appointments",
-  "@upcomingSchedules": {
-    "description": "Upcoming schedules"
-  },
-  
-  "nextPumpingSchedule": "Next Service Appointment",
-  "@nextPumpingSchedule": {
-    "description": "Next pumping schedule"
-  },
-  
-  "scheduleDetails": "Appointment Details",
-  "@scheduleDetails": {
-    "description": "Schedule details"
-  },
-  
-  "viewAllSchedules": "View All Appointments",
-  "@viewAllSchedules": {
-    "description": "View all schedules button"
-  },
-  
-  "startTime": "Start Time",
-  "@startTime": {
-    "description": "Start time"
-  },
-  
-  "endTime": "End Time",
-  "@endTime": {
-    "description": "End time"
-  },
-  
-  "actualStartTime": "Actual Start Time",
-  "@actualStartTime": {
-    "description": "Actual start time"
-  },
-  
-  "actualEndTime": "Actual End Time",
-  "@actualEndTime": {
-    "description": "Actual end time"
-  },
-  
-  "status": "Status",
-  "@status": {
-    "description": "Status"
-  },
-  
-  "notes": "Notes",
-  "@notes": {
-    "description": "Notes"
-  },
-  
-  "createdBy": "Created By",
-  "@createdBy": {
-    "description": "Created by"
-  },
-  
-  "scheduled": "Scheduled",
-  "@scheduled": {
-    "description": "Status: Scheduled"
-  },
-  
-  "active": "In Progress",
-  "@active": {
-    "description": "Status: Active"
-  },
-  
-  "completed": "Completed",
-  "@completed": {
-    "description": "Status: Completed"
-  },
-  
-  "cancelled": "Cancelled",
-  "@cancelled": {
-    "description": "Status: Cancelled"
-  },
-  
-  "startsIn": "Starts in",
-  "@startsIn": {
-    "description": "Starts in"
-  },
-  
-  "activeNow": "Active Now",
-  "@activeNow": {
-    "description": "Active now"
-  },
-  
-  "endedAgo": "Ended",
-  "@endedAgo": {
-    "description": "Ended ago"
-  },
-  
-  "today": "Today",
-  "@today": {
-    "description": "Today"
-  },
-  
-  "thisWeek": "This Week",
-  "@thisWeek": {
-    "description": "This week"
-  },
-  
-  "thisMonth": "This Month",
-  "@thisMonth": {
-    "description": "This month"
-  },
-  
-  "dateRange": "Date Range",
-  "@dateRange": {
-    "description": "Date range"
-  },
-  
-  "selectDateRange": "Select Date Range",
-  "@selectDateRange": {
-    "description": "Select date range"
-  },
-  
-  "myComplaints": "My Car Issues",
-  "@myComplaints": {
-    "description": "My complaints"
-  },
-  
-  "submitComplaint": "Report Issue",
-  "@submitComplaint": {
-    "description": "Submit complaint button"
-  },
-  
-  "complaintDetails": "Issue Details",
-  "@complaintDetails": {
-    "description": "Complaint details"
-  },
-  
-  "complaintTitle": "Issue Title",
-  "@complaintTitle": {
-    "description": "Complaint title"
-  },
-  
-  "complaintDescription": "Issue Description",
-  "@complaintDescription": {
-    "description": "Complaint description"
-  },
-  
-  "complaintCategory": "Issue Category",
-  "@complaintCategory": {
-    "description": "Complaint category"
-  },
-  
-  "selectCategory": "Select Category",
-  "@selectCategory": {
-    "description": "Select category"
-  },
-  
-  "noWater": "Engine Issue",
-  "@noWater": {
-    "description": "Complaint category: Engine Issue"
-  },
-  
-  "waterQuality": "Tire Issue",
-  "@waterQuality": {
-    "description": "Complaint category: Tire Issue"
-  },
-  
-  "lowPressure": "Battery Issue",
-  "@lowPressure": {
-    "description": "Complaint category: Battery Issue"
-  },
-  
-  "scheduleIssue": "Service Delay",
-  "@scheduleIssue": {
-    "description": "Complaint category: Service Delay"
-  },
-  
-  "other": "Other",
-  "@other": {
-    "description": "Complaint category: Other"
-  },
-  
-  "pending": "Pending",
-  "@pending": {
-    "description": "Complaint status: Pending"
-  },
-  
-  "inProgress": "In Progress",
-  "@inProgress": {
-    "description": "Complaint status: In progress"
-  },
-  
-  "resolved": "Resolved",
-  "@resolved": {
-    "description": "Complaint status: Resolved"
-  },
-  
-  "rejected": "Rejected",
-  "@rejected": {
-    "description": "Complaint status: Rejected"
-  },
-  
-  "adminResponse": "Service Response",
-  "@adminResponse": {
-    "description": "Admin response"
-  },
-  
-  "handledBy": "Handled By",
-  "@handledBy": {
-    "description": "Handled by"
-  },
-  
-  "handledAt": "Handled At",
-  "@handledAt": {
-    "description": "Handled at"
-  },
-  
-  "createdAt": "Created At",
-  "@createdAt": {
-    "description": "Created at"
-  },
-  
-  "updatedAt": "Updated At",
-  "@updatedAt": {
-    "description": "Updated at"
-  },
-  
-  "complaintSubmitted": "Issue Reported Successfully",
-  "@complaintSubmitted": {
-    "description": "Complaint submitted success message"
-  },
-  
-  "region": "Service Center",
-  "@region": {
-    "description": "Region"
-  },
-  
-  "unit": "Unit",
-  "@unit": {
-    "description": "Unit"
-  },
-  
-  "neighborhood": "Neighborhood",
-  "@neighborhood": {
-    "description": "Neighborhood"
-  },
-  
-  "zone": "Zone",
-  "@zone": {
-    "description": "Zone"
-  },
-  
-  "selectRegion": "Select Service Center",
-  "@selectRegion": {
-    "description": "Select region"
-  },
-  
-  "selectUnit": "Select Unit",
-  "@selectUnit": {
-    "description": "Select unit"
-  },
-  
-  "selectNeighborhood": "Select Neighborhood",
-  "@selectNeighborhood": {
-    "description": "Select neighborhood"
-  },
-  
-  "selectZone": "Select Zone",
-  "@selectZone": {
-    "description": "Select zone"
-  },
-  
-  "location": "Location",
-  "@location": {
-    "description": "Location"
-  },
-  
-  "selectLocation": "Select Location",
-  "@selectLocation": {
-    "description": "Select location"
-  },
-  
-  "clearSelection": "Clear Selection",
-  "@clearSelection": {
-    "description": "Clear selection"
-  },
-  
-  "myProfile": "My Profile",
-  "@myProfile": {
-    "description": "My profile"
-  },
-  
-  "editProfile": "Edit Profile",
-  "@editProfile": {
-    "description": "Edit profile"
-  },
-  
-  "profileUpdated": "Profile Updated Successfully",
-  "@profileUpdated": {
-    "description": "Profile updated success message"
-  },
-  
-  "role": "Role",
-  "@role": {
-    "description": "Role"
-  },
-  
-  "admin": "Admin",
-  "@admin": {
-    "description": "Role: Admin"
-  },
-  
-  "operator": "Operator",
-  "@operator": {
-    "description": "Role: Operator"
-  },
-  
-  "citizen": "Customer",
-  "@citizen": {
-    "description": "Role: Customer"
-  },
-  
-  "defaultLocation": "Default Location",
-  "@defaultLocation": {
-    "description": "Default location"
-  },
-  
-  "watchedLocation": "Watched Location",
-  "@watchedLocation": {
-    "description": "Watched location"
-  },
-  
-  "loading": "Loading...",
-  "@loading": {
-    "description": "Loading message"
-  },
-  
-  "error": "Error",
-  "@error": {
-    "description": "Error"
-  },
-  
-  "errorOccurred": "An Error Occurred",
-  "@errorOccurred": {
-    "description": "Error occurred message"
-  },
-  
-  "networkError": "Network Connection Error",
-  "@networkError": {
-    "description": "Network error"
-  },
-  
-  "serverError": "Server Error",
-  "@serverError": {
-    "description": "Server error"
-  },
-  
-  "noInternetConnection": "No Internet Connection",
-  "@noInternetConnection": {
-    "description": "No internet connection"
-  },
-  
-  "tryAgain": "Try Again",
-  "@tryAgain": {
-    "description": "Try again"
-  },
-  
-  "noData": "No Data",
-  "@noData": {
-    "description": "No data"
-  },
-  
-  "noSchedules": "No Appointments",
-  "@noSchedules": {
-    "description": "No schedules"
-  },
-  
-  "noComplaints": "No Reported Issues",
-  "@noComplaints": {
-    "description": "No complaints"
-  },
-  
-  "noSchedulesMessage": "No service appointments at the moment",
-  "@noSchedulesMessage": {
-    "description": "No schedules message"
-  },
-  
-  "noComplaintsMessage": "You haven't reported any issues yet",
-  "@noComplaintsMessage": {
-    "description": "No complaints message"
-  },
-  
-  "pullToRefresh": "Pull to Refresh",
-  "@pullToRefresh": {
-    "description": "Pull to refresh"
-  },
-  
-  "releaseToRefresh": "Release to Refresh",
-  "@releaseToRefresh": {
-    "description": "Release to refresh"
-  },
-  
-  "loadMore": "Load More",
-  "@loadMore": {
-    "description": "Load more"
-  },
-  
-  "quickActions": "Quick Actions",
-  "@quickActions": {
-    "description": "Quick actions"
-  },
-  
-  "viewSchedules": "View Appointments",
-  "@viewSchedules": {
-    "description": "View schedules"
-  },
-  
-  "requiredField": "This field is required",
-  "@requiredField": {
-    "description": "Required field message"
-  },
-  
-  "invalidPhoneNumber": "Invalid phone number",
-  "@invalidPhoneNumber": {
-    "description": "Invalid phone number message"
-  },
-  
-  "invalidEmail": "Invalid email address",
-  "@invalidEmail": {
-    "description": "Invalid email message"
-  },
-  
-  "passwordTooShort": "Password too short (minimum 6 characters)",
-  "@passwordTooShort": {
-    "description": "Password too short message"
-  },
-  
-  "passwordsDoNotMatch": "Passwords do not match",
-  "@passwordsDoNotMatch": {
-    "description": "Passwords do not match message"
-  },
-  
-  "maxCharacters": "Maximum {max} characters",
-  "@maxCharacters": {
-    "description": "Maximum characters message",
+  "@refresh": { "description": "Tooltip for the refresh list button" },
+
+  "techniciansPageTitle": "Technicians Management",
+  "@techniciansPageTitle": { "description": "Title of the technicians management page" },
+
+  "statusAll": "All",
+  "@statusAll": { "description": "Filter: all technicians" },
+
+  "statusPending": "Pending",
+  "@statusPending": { "description": "Technician status: pending" },
+
+  "statusApproved": "Approved",
+  "@statusApproved": { "description": "Technician status: approved" },
+
+  "statusRejected": "Rejected",
+  "@statusRejected": { "description": "Technician status: rejected" },
+
+  "statusSuspended": "Suspended",
+  "@statusSuspended": { "description": "Technician status: suspended" },
+
+  "columnTechnician": "Technician",
+  "@columnTechnician": { "description": "Technicians table column header" },
+
+  "columnSpecialization": "Specialization",
+  "@columnSpecialization": { "description": "Technicians table column header" },
+
+  "columnCity": "City",
+  "@columnCity": { "description": "Technicians table column header" },
+
+  "columnExperience": "Experience",
+  "@columnExperience": { "description": "Technicians table column header" },
+
+  "columnHourlyRate": "Hourly Rate",
+  "@columnHourlyRate": { "description": "Technicians table column header" },
+
+  "columnStatus": "Status",
+  "@columnStatus": { "description": "Technicians table column header" },
+
+  "columnActions": "Actions",
+  "@columnActions": { "description": "Technicians table column header" },
+
+  "actionApprove": "Approve",
+  "@actionApprove": { "description": "Approve technician button" },
+
+  "actionReject": "Reject",
+  "@actionReject": { "description": "Reject technician button" },
+
+  "actionSuspend": "Suspend",
+  "@actionSuspend": { "description": "Suspend technician button" },
+
+  "actionReactivate": "Reactivate",
+  "@actionReactivate": { "description": "Reactivate technician button" },
+
+  "actionDetails": "Details",
+  "@actionDetails": { "description": "View technician details button" },
+
+  "yearsSuffix": "yrs",
+  "@yearsSuffix": { "description": "Word appended after the years of experience number" },
+
+  "rejectDialogTitle": "Reject Technician",
+  "@rejectDialogTitle": { "description": "Title of the rejection reason dialog" },
+
+  "rejectDialogHint": "Type the rejection reason here...",
+  "@rejectDialogHint": { "description": "Hint text for the rejection reason field" },
+
+  "cancel": "Cancel",
+  "@cancel": { "description": "Generic cancel button" },
+
+  "confirmReject": "Confirm Reject",
+  "@confirmReject": { "description": "Confirm rejecting the technician" },
+
+  "technicianDetailsTitle": "Technician Details",
+  "@technicianDetailsTitle": { "description": "Fallback title for technician details dialog when name is missing" },
+
+  "detailsEmail": "Email",
+  "@detailsEmail": { "description": "Field label in technician details dialog" },
+
+  "detailsPhone": "Phone",
+  "@detailsPhone": { "description": "Field label in technician details dialog" },
+
+  "detailsSpecialization": "Specialization",
+  "@detailsSpecialization": { "description": "Field label in technician details dialog" },
+
+  "detailsCity": "City",
+  "@detailsCity": { "description": "Field label in technician details dialog" },
+
+  "detailsExperience": "Experience",
+  "@detailsExperience": { "description": "Field label in technician details dialog" },
+
+  "detailsHourlyRate": "Hourly Rate",
+  "@detailsHourlyRate": { "description": "Field label in technician details dialog" },
+
+  "detailsStatus": "Status",
+  "@detailsStatus": { "description": "Field label in technician details dialog" },
+
+  "detailsRejectionReason": "Rejection Reason",
+  "@detailsRejectionReason": { "description": "Field label in technician details dialog" },
+
+  "detailsCertifications": "Certifications",
+  "@detailsCertifications": { "description": "Field label in technician details dialog" },
+
+  "close": "Close",
+  "@close": { "description": "Generic close button" },
+
+  "detailsId": "Technician ID",
+  "@detailsId": { "description": "Field label in technician details page" },
+
+  "detailsUserId": "User ID",
+  "@detailsUserId": { "description": "Field label in technician details page" },
+
+  "detailsAvailable": "Available",
+  "@detailsAvailable": { "description": "Field label in technician details page" },
+
+  "detailsYes": "Yes",
+  "@detailsYes": { "description": "Yes value" },
+
+  "detailsNo": "No",
+  "@detailsNo": { "description": "No value" },
+
+  "detailsApprovedAt": "Approved At",
+  "@detailsApprovedAt": { "description": "Field label in technician details page" },
+
+  "detailsRejectedAt": "Rejected At",
+  "@detailsRejectedAt": { "description": "Field label in technician details page" },
+
+  "detailsSuspendedAt": "Suspended At",
+  "@detailsSuspendedAt": { "description": "Field label in technician details page" },
+
+  "detailsCreatedAt": "Created At",
+  "@detailsCreatedAt": { "description": "Field label in technician details page" },
+
+  "detailsUpdatedAt": "Updated At",
+  "@detailsUpdatedAt": { "description": "Field label in technician details page" },
+
+  "noCertifications": "No certifications uploaded",
+  "@noCertifications": { "description": "Shown when the technician has no uploaded certifications" },
+  
+  "carwashersPageTitle": "Car Washers",
+  "@carwashersPageTitle": { "description": "Car washers list page title" },
+
+  "carwasherDetailsTitle": "Car Washer Details",
+  "@carwasherDetailsTitle": { "description": "Car washer details page title" },
+
+  "fuelProvidersPageTitle": "Fuel Providers",
+  "@fuelProvidersPageTitle": { "description": "Fuel providers list page title" },
+
+  "fuelProviderDetailsTitle": "Fuel Provider Details",
+  "@fuelProviderDetailsTitle": { "description": "Fuel provider details page title" },
+
+  "shopsPageTitle": "Shops",
+  "@shopsPageTitle": { "description": "Shops list page title" },
+
+  "shopDetailsTitle": "Shop Details",
+  "@shopDetailsTitle": { "description": "Shop details page title" },
+
+  "columnShop": "Shop",
+  "@columnShop": { "description": "Column header for shop/washer name" },
+
+  "columnPhone": "Phone",
+  "@columnPhone": { "description": "Column header for phone number" },
+
+  "detailsAddress": "Address",
+  "@detailsAddress": { "description": "Label for address field" },
+
+  "detailsDescription": "Description",
+  "@detailsDescription": { "description": "Label for description field" },
+
+  "detailsRating": "Rating",
+  "@detailsRating": { "description": "Label for rating field" },
+
+  "detailsServices": "Services",
+  "@detailsServices": { "description": "Services card title" },
+
+  "detailsServicePrices": "Service Prices",
+  "@detailsServicePrices": { "description": "Service prices title" },
+
+  "detailsWorkingHours": "Working Hours",
+  "@detailsWorkingHours": { "description": "Working hours title" },
+
+  "detailsFuelTypes": "Fuel Types",
+  "@detailsFuelTypes": { "description": "Fuel types card title" },
+
+  "detailsPrices": "Prices",
+  "@detailsPrices": { "description": "Prices title" },
+
+  "detailsBusinessTypes": "Business Types",
+  "@detailsBusinessTypes": { "description": "Business types title" },
+
+  "detailsCarBrands": "Car Brands",
+  "@detailsCarBrands": { "description": "Supported car brands title" },
+
+  "detailsPartCategories": "Part Categories",
+  "@detailsPartCategories": { "description": "Part categories title" },
+"columnCompany": "Company",
+"@columnCompany": { "description": "Column header for company name" },
+
+  "dashboardPageTitle": "Dashboard",
+  "@dashboardPageTitle": {
+    "description": "Main title for the dashboard page"
+  },
+  "dashboardTotalUsers": "Total Users",
+  "@dashboardTotalUsers": {
+    "description": "Card showing the total number of users"
+  },
+  "dashboardTotalCustomers": "Total Customers",
+  "@dashboardTotalCustomers": {
+    "description": "Card showing the total number of customers"
+  },
+  "dashboardCompletedOperations": "Completed Operations",
+  "@dashboardCompletedOperations": {
+    "description": "Statistic for successfully completed operations"
+  },
+  "dashboardPendingOperations": "Pending Operations",
+  "@dashboardPendingOperations": {
+    "description": "Statistic for operations that are waiting or pending"
+  },
+  "dashboardProvidersOverview": "Providers Overview",
+  "@dashboardProvidersOverview": {
+    "description": "Header for the service providers statistics section"
+  },
+  "dashboardOperationsStatus": "Operations Status",
+  "@dashboardOperationsStatus": {
+    "description": "Chart title showing the status distribution of operations"
+  },
+  "dashboardOperationsOverTime": "Operations Over Time",
+  "@dashboardOperationsOverTime": {
+    "description": "Chart title tracking operations across a time period"
+  },
+  "dashboardRevenue": "Revenue",
+  "@dashboardRevenue": {
+    "description": "Total financial earnings"
+  },
+  "dashboardPeriodWeek": "Week",
+  "@dashboardPeriodWeek": {
+    "description": "Time filter to display data for a full week"
+  },
+  "dashboardPeriodMonth": "Month",
+  "@dashboardPeriodMonth": {
+    "description": "Time filter to display data for a full month"
+  },
+  "dashboardPeriodYear": "Year",
+  "@dashboardPeriodYear": {
+    "description": "Time filter to display data for a full year"
+  },
+
+
+
+"detailsLocation": "Location",
+"@detailsLocation": { "description": "Label for latitude/longitude field" },
+"carwashersMenu": "Car Washers",
+"@carwashersMenu": { "description": "Menu item: Car Washers" },
+
+"shopsMenu": "Shops",
+"@shopsMenu": { "description": "Menu item: Shops" },
+
+  "loginTitle": "Login",
+  "@loginTitle": { "description": "Login page title" },
+
+  "loginSubtitle": "Sign in to access the admin dashboard",
+  "@loginSubtitle": { "description": "Login page subtitle" },
+
+  "loginEmailLabel": "Email",
+  "@loginEmailLabel": { "description": "Email field label" },
+
+  "loginPasswordLabel": "Password",
+  "@loginPasswordLabel": { "description": "Password field label" },
+
+  "loginButton": "Login",
+  "@loginButton": { "description": "Login button text" },
+
+  "loginValidationRequired": "This field is required",
+  "@loginValidationRequired": { "description": "Validation error for empty field" },
+
+  "loginValidationEmail": "Please enter a valid email",
+  "@loginValidationEmail": { "description": "Validation error for invalid email" },
+
+  "logoutButton": "Logout",
+  "@logoutButton": { "description": "Logout button text in sidebar" },
+
+  "logoutConfirmTitle": "Logout",
+  "@logoutConfirmTitle": { "description": "Logout confirmation dialog title" },
+
+  "logoutConfirmMessage": "Are you sure you want to logout?",
+  "@logoutConfirmMessage": { "description": "Logout confirmation message" },
+
+  "logoutConfirmButton": "Logout",
+  "@logoutConfirmButton": { "description": "Confirm button text inside logout dialog" },
+  
+  "reportsPageTitle": "Reports",
+  "@reportsPageTitle": { "description": "Reports page title" },
+
+  "tabOverview": "Overview",
+  "@tabOverview": { "description": "Overview tab in the reports page" },
+  "tabProviders": "Providers",
+  "@tabProviders": { "description": "Providers tab in the reports page" },
+  "tabFinancial": "Financial",
+  "@tabFinancial": { "description": "Financial tab in the reports page" },
+  "tabBilling": "Billing",
+  "@tabBilling": { "description": "Billing tab in the reports page" },
+  "tabAdvertisements": "Advertisements",
+  "@tabAdvertisements": { "description": "Advertisements tab in the reports page" },
+
+  "reportFilterClear": "Clear",
+  "@reportFilterClear": { "description": "Clear filters button in reports" },
+  "reportFilterApply": "Apply",
+  "@reportFilterApply": { "description": "Apply filters button in reports" },
+  "reportFilterAll": "All",
+  "@reportFilterAll": { "description": "All option in report filter dropdowns" },
+  "reportRetry": "Retry",
+  "@reportRetry": { "description": "Retry button when a report fails to load" },
+  "reportDateFrom": "From",
+  "@reportDateFrom": { "description": "From date field label in report filters" },
+  "reportDateTo": "To",
+  "@reportDateTo": { "description": "To date field label in report filters" },
+
+  "filterProviderType": "Provider Type",
+  "@filterProviderType": { "description": "Provider type filter label" },
+  "filterProviderStatus": "Provider Status",
+  "@filterProviderStatus": { "description": "Provider status filter label" },
+  "filterBillingStatus": "Billing Status",
+  "@filterBillingStatus": { "description": "Billing status filter/section label" },
+  "filterInvoiceStatus": "Invoice Status",
+  "@filterInvoiceStatus": { "description": "Invoice status filter label in the billing tab" },
+  "filterOperationType": "Operation Type",
+  "@filterOperationType": { "description": "Operation type filter label" },
+  "filterStatus": "Status",
+  "@filterStatus": { "description": "Generic status filter label" },
+  "filterGroupBy": "Group By",
+  "@filterGroupBy": { "description": "Group by filter label" },
+  "filterPlacement": "Placement",
+  "@filterPlacement": { "description": "Ad placement filter label" },
+
+  "providerTypeTechnician": "Technician",
+  "@providerTypeTechnician": { "description": "Provider type: technician" },
+  "providerTypeFuelProvider": "Fuel Provider",
+  "@providerTypeFuelProvider": { "description": "Provider type: fuel provider" },
+  "providerTypeCarWasher": "Car Washer",
+  "@providerTypeCarWasher": { "description": "Provider type: car washer" },
+  "providerTypeShop": "Shop",
+  "@providerTypeShop": { "description": "Provider type: shop" },
+
+  "opStatusCompleted": "Completed",
+  "@opStatusCompleted": { "description": "Operation status: completed" },
+  "opStatusInProgress": "In Progress",
+  "@opStatusInProgress": { "description": "Operation status: in progress" },
+  "opStatusCancelled": "Cancelled",
+  "@opStatusCancelled": { "description": "Operation status: cancelled" },
+  "opStatusPending": "Pending",
+  "@opStatusPending": { "description": "Operation status: pending" },
+
+  "opTypeTotals": "Total",
+  "@opTypeTotals": { "description": "Operation type: total" },
+  "opTypeMaintenance": "Maintenance",
+  "@opTypeMaintenance": { "description": "Operation type: maintenance" },
+  "opTypeSos": "SOS",
+  "@opTypeSos": { "description": "Operation type: SOS" },
+  "opTypeFuel": "Fuel",
+  "@opTypeFuel": { "description": "Operation type: fuel" },
+  "opTypeCarWash": "Car Wash",
+  "@opTypeCarWash": { "description": "Operation type: car wash" },
+  "opTypeSpareParts": "Spare Parts",
+  "@opTypeSpareParts": { "description": "Operation type: spare parts" },
+
+  "groupByDay": "Day",
+  "@groupByDay": { "description": "Group by day" },
+  "groupByMonth": "Month",
+  "@groupByMonth": { "description": "Group by month" },
+  "groupByYear": "Year",
+  "@groupByYear": { "description": "Group by year" },
+
+  "providerStatusPending": "Pending",
+  "@providerStatusPending": { "description": "Provider status: pending" },
+  "providerStatusApproved": "Approved",
+  "@providerStatusApproved": { "description": "Provider status: approved" },
+  "providerStatusRejected": "Rejected",
+  "@providerStatusRejected": { "description": "Provider status: rejected" },
+  "providerStatusSuspended": "Suspended",
+  "@providerStatusSuspended": { "description": "Provider status: suspended" },
+    "back": "Back",
+  "@back": { "description": "Button to go back to the previous step" },
+  "invoiceActionExportPdf": "Export PDF",
+"@invoiceActionExportPdf": { "description": "Button: export invoice as PDF" },
+
+  "isActive": "Active",
+  "@isActive": { "description": "Status indicating that the account or server is currently active" },
+  "billingType": "Billing Type",
+  "@billingType": { "description": "The method or type of billing applied" }
+ ,
+
+"invoicesPageTitle": "Provider Invoices",
+"@invoicesPageTitle": { "description": "Invoices list page title" },
+
+"invoiceDetailsTitle": "Invoice Details",
+"@invoiceDetailsTitle": { "description": "Invoice details page title" },
+
+"invoiceStatusAll": "All",
+"@invoiceStatusAll": { "description": "Invoice status filter: all" },
+"invoiceStatusDraft": "Draft",
+"@invoiceStatusDraft": { "description": "Invoice status: draft" },
+"invoiceStatusIssued": "Issued",
+"@invoiceStatusIssued": { "description": "Invoice status: issued" },
+"invoiceStatusPaid": "Paid",
+"@invoiceStatusPaid": { "description": "Invoice status: paid" },
+"invoiceStatusOverdue": "Overdue",
+"@invoiceStatusOverdue": { "description": "Invoice status: overdue" },
+"invoiceStatusCancelled": "Cancelled",
+"@invoiceStatusCancelled": { "description": "Invoice status: cancelled" },
+
+"columnInvoiceNumber": "Invoice #",
+"@columnInvoiceNumber": { "description": "Table column: invoice number" },
+"columnProvider": "Provider",
+"@columnProvider": { "description": "Table column: provider" },
+"columnPeriod": "Period",
+"@columnPeriod": { "description": "Table column: period" },
+"columnTotalAmount": "Total",
+"@columnTotalAmount": { "description": "Table column: total amount" },
+"columnDueAt": "Due At",
+"@columnDueAt": { "description": "Table column: due date" },
+
+"invoiceFieldInvoiceNumber": "Invoice Number",
+"@invoiceFieldInvoiceNumber": { "description": "Invoice field: invoice number" },
+"invoiceFieldProviderType": "Provider Type",
+"@invoiceFieldProviderType": { "description": "Invoice field: provider type" },
+"invoiceFieldProviderId": "Provider ID",
+"@invoiceFieldProviderId": { "description": "Invoice field: provider id" },
+"invoiceFieldPeriodStart": "Period Start",
+"@invoiceFieldPeriodStart": { "description": "Invoice field: period start" },
+"invoiceFieldPeriodEnd": "Period End",
+"@invoiceFieldPeriodEnd": { "description": "Invoice field: period end" },
+"invoiceFieldIssuedAt": "Issued At",
+"@invoiceFieldIssuedAt": { "description": "Invoice field: issued at" },
+"invoiceFieldDueAt": "Due At",
+"@invoiceFieldDueAt": { "description": "Invoice field: due at" },
+"invoiceFieldSubtotal": "Subtotal",
+"@invoiceFieldSubtotal": { "description": "Invoice field: subtotal" },
+"invoiceFieldCommissionTotal": "Commission Total",
+"@invoiceFieldCommissionTotal": { "description": "Invoice field: commission total" },
+"invoiceFieldSubscriptionTotal": "Subscription Total",
+"@invoiceFieldSubscriptionTotal": { "description": "Invoice field: subscription total" },
+"invoiceFieldTotalAmount": "Total Amount",
+"@invoiceFieldTotalAmount": { "description": "Invoice field: total amount" },
+"invoiceFieldStatus": "Status",
+"@invoiceFieldStatus": { "description": "Invoice field: status" },
+"invoiceFieldIsOverdue": "Overdue",
+"@invoiceFieldIsOverdue": { "description": "Invoice field: is overdue" },
+"invoiceFieldPaymentMethod": "Payment Method",
+"@invoiceFieldPaymentMethod": { "description": "Invoice field: external payment method" },
+"invoiceFieldPaymentReference": "Payment Reference",
+"@invoiceFieldPaymentReference": { "description": "Invoice field: external payment reference" },
+"invoiceFieldPaidAt": "Paid At",
+"@invoiceFieldPaidAt": { "description": "Invoice field: paid at" },
+"invoiceFieldNotes": "Notes",
+"@invoiceFieldNotes": { "description": "Invoice field: notes" },
+"invoiceFieldItems": "Items",
+"@invoiceFieldItems": { "description": "Invoice items section title" },
+
+"invoiceActionIssue": "Issue",
+"@invoiceActionIssue": { "description": "Action button: issue invoice" },
+"invoiceActionMarkPaid": "Mark as Paid",
+"@invoiceActionMarkPaid": { "description": "Action button: mark invoice as paid" },
+"invoiceActionCancel": "Cancel Invoice",
+"@invoiceActionCancel": { "description": "Action button: cancel invoice" },
+"invoiceActionGenerate": "Generate Invoices",
+"@invoiceActionGenerate": { "description": "Action button: generate invoices" },
+"invoiceActionGenerateForProvider": "Generate for Provider",
+"@invoiceActionGenerateForProvider": { "description": "Action button: generate invoice for a single provider" },
+
+"invoiceGenerateDialogTitle": "Generate Invoices",
+"@invoiceGenerateDialogTitle": { "description": "Generate invoices dialog title" },
+"invoiceMarkPaidDialogTitle": "Confirm Payment",
+"@invoiceMarkPaidDialogTitle": { "description": "Mark invoice paid dialog title" },
+"invoiceCancelDialogTitle": "Cancel Invoice",
+"@invoiceCancelDialogTitle": { "description": "Cancel invoice confirmation dialog title" },
+"invoiceCancelDialogMessage": "Are you sure you want to cancel this invoice?",
+"@invoiceCancelDialogMessage": { "description": "Cancel invoice confirmation message" },
+
+"invoiceGenerateResultTitle": "Generation Result",
+"@invoiceGenerateResultTitle": { "description": "Generate invoices result title" },
+"invoiceGeneratedCount": "Generated",
+"@invoiceGeneratedCount": { "description": "Generated invoices count label" },
+"invoiceSkippedCount": "Skipped",
+"@invoiceSkippedCount": { "description": "Skipped invoices count label" },
+"invoiceSkippedReasonAlreadyExists": "Invoice already exists",
+"@invoiceSkippedReasonAlreadyExists": { "description": "Skip reason: already_exists" },
+"invoiceSkippedReasonWithinFreeTrial": "Within free trial period",
+"@invoiceSkippedReasonWithinFreeTrial": { "description": "Skip reason: within_free_trial" },
+
+"noInvoices": "No invoices found",
+"@noInvoices": { "description": "Empty state for invoices list" },
+"invoiceViewInvoices": "View Invoices",
+"@invoiceViewInvoices": { "description": "Button: navigate from billing setting to that provider's invoices" },
+  "billingStatusNotConfigured": "Not Configured",
+  "@billingStatusNotConfigured": { "description": "Billing status: not configured" },
+  "billingStatusExempt": "Exempt",
+  "@billingStatusExempt": { "description": "Billing status: exempt" },
+  "billingStatusFreeTrial": "Free Trial",
+  "@billingStatusFreeTrial": { "description": "Billing status: free trial" },
+ 
+  "billingStatusInvoiceDue": "Invoice Due",
+  "@billingStatusInvoiceDue": { "description": "Billing status: invoice due" },
+  "billingStatusOverdue": "Overdue",
+  "@billingStatusOverdue": { "description": "Billing status: overdue" },
+
+  "adStatusActive": "Active",
+  "@adStatusActive": { "description": "Advertisement status: active" },
+  "adStatusInactive": "Inactive",
+  "@adStatusInactive": { "description": "Advertisement status: inactive" },
+  "adsTotal": "Total Ads",
+  "@adsTotal": { "description": "Stat card: total ads" },
+  "adsActive": "Active",
+  "@adsActive": { "description": "Stat card: active ads" },
+  "adsInactive": "Inactive",
+  "@adsInactive": { "description": "Stat card: inactive ads" },
+  "adsExpired": "Expired",
+  "@adsExpired": { "description": "Stat card: expired ads" },
+  "adsScheduled": "Scheduled",
+  "@adsScheduled": { "description": "Stat card: scheduled ads" },
+  "adsByPlacementTitle": "By Placement",
+  "@adsByPlacementTitle": { "description": "Section title: ads by placement" },
+  "adsLatestTitle": "Latest Ads",
+  "@adsLatestTitle": { "description": "Section title: latest ads" },
+  "adsEmpty": "No ads found",
+  "@adsEmpty": { "description": "Empty state text when there are no ads" },
+
+  "billingInvoicesCount": "Invoices Count",
+  "@billingInvoicesCount": { "description": "Stat card: invoices count" },
+  "billingDraft": "Draft",
+  "@billingDraft": { "description": "Stat card: draft invoices" },
+  "billingIssued": "Issued",
+  "@billingIssued": { "description": "Stat card: issued invoices" },
+  "billingOverdueCount": "Overdue",
+  "@billingOverdueCount": { "description": "Stat card: overdue invoices" },
+  "billingPaidCount": "Paid",
+  "@billingPaidCount": { "description": "Stat card: paid invoices" },
+  "billingCancelled": "Cancelled",
+  "@billingCancelled": { "description": "Stat card: cancelled invoices" },
+  "billingFinancialTotalsTitle": "Financial Totals",
+  "@billingFinancialTotalsTitle": { "description": "Section title: financial totals in the billing tab" },
+  "billingPaidTotal": "Total Paid",
+  "@billingPaidTotal": { "description": "Stat card: total paid" },
+  "billingUnpaidTotal": "Total Unpaid",
+  "@billingUnpaidTotal": { "description": "Stat card: total unpaid" },
+  "billingOverdueTotal": "Total Overdue",
+  "@billingOverdueTotal": { "description": "Stat card: total overdue" },
+  "billingAvgInvoice": "Average Invoice Amount",
+  "@billingAvgInvoice": { "description": "Stat card: average invoice amount" },
+  "billingProvidersOverdue": "Providers with Overdue Bills",
+  "@billingProvidersOverdue": { "description": "Stat card: count of providers with overdue billing" },
+  "billingLatestInvoicesTitle": "Latest Invoices",
+  "@billingLatestInvoicesTitle": { "description": "Section title: latest invoices" },
+  "billingEmpty": "No invoices found",
+  "@billingEmpty": { "description": "Empty state text when there are no invoices" },
+  "billingStatusLabel": "Status",
+  "@billingStatusLabel": { "description": "Invoice status label within an invoice row" },
+  "billingIssuedAtLabel": "Issued",
+  "@billingIssuedAtLabel": { "description": "Invoice issued-at label within an invoice row" },
+
+  "financialGrossRevenueTitle": "Gross Revenue",
+  "@financialGrossRevenueTitle": { "description": "Section title: gross revenue" },
+  "financialBillingSummaryTitle": "Billing Summary",
+  "@financialBillingSummaryTitle": { "description": "Section title: billing summary in the financial tab" },
+  "financialIssuedTotal": "Issued Total",
+  "@financialIssuedTotal": { "description": "Stat card: issued total" },
+  "financialPaid": "Paid",
+  "@financialPaid": { "description": "Stat card: paid" },
+  "financialUnpaid": "Unpaid",
+  "@financialUnpaid": { "description": "Stat card: unpaid" },
+  "financialOverdue": "Overdue",
+  "@financialOverdue": { "description": "Stat card: overdue" },
+  "financialCommissions": "Commissions",
+  "@financialCommissions": { "description": "Stat card: commissions" },
+  "financialSubscriptions": "Subscriptions",
+  "@financialSubscriptions": { "description": "Stat card: subscriptions" },
+
+  "operationsTitle": "Operations",
+  "@operationsTitle": { "description": "Section/tab title: operations" },
+  "operationsGroupedTitle": "Operations (grouped by {group})",
+  "@operationsGroupedTitle": {
+    "description": "Section title for operations when grouped by a period",
+    "placeholders": { "group": { "type": "String" } }
+  },
+  "operationsEmpty": "No data found",
+  "@operationsEmpty": { "description": "Empty state text when there is no operations data" },
+
+  "overviewTotalUsers": "Total Users",
+  "@overviewTotalUsers": { "description": "Stat card: total users" },
+  "overviewTotalCustomers": "Total Customers",
+  "@overviewTotalCustomers": { "description": "Stat card: total customers" },
+  "overviewTotalProviders": "Total Providers",
+  "@overviewTotalProviders": { "description": "Stat card: total providers" },
+  "overviewProvidersByTypeStatusTitle": "Providers by Type & Status",
+  "@overviewProvidersByTypeStatusTitle": { "description": "Section title: providers by type and status" },
+  "overviewOperationsSummaryTitle": "Operations Summary",
+  "@overviewOperationsSummaryTitle": { "description": "Section title: operations summary in overview" },
+  "overviewRevenueSummaryTitle": "Revenue Summary",
+  "@overviewRevenueSummaryTitle": { "description": "Section title: revenue summary in overview" },
+
+  "providersPendingApproval": "Pending Approval",
+  "@providersPendingApproval": { "description": "Stat card: providers pending approval" },
+  "providersOverdueBilling": "Overdue Invoices",
+  "@providersOverdueBilling": { "description": "Stat card: providers with overdue invoices" },
+  "providersBillingNotConfigured": "Billing Not Configured",
+  "@providersBillingNotConfigured": { "description": "Stat card: providers with billing not configured" },
+  "providersCountByTypeTitle": "Provider Count by Type",
+  "@providersCountByTypeTitle": { "description": "Section title: provider count by type" },
+  "providersStatusByTypeTitle": "Status by Type",
+  "@providersStatusByTypeTitle": { "description": "Section title: provider status by type" },
+  "providersTopByCompletedTitle": "Top Providers by Completed Operations",
+  "@providersTopByCompletedTitle": { "description": "Section title: top providers by completed operations" },
+  "providersCompletedOpsLine": "{name} (#{id}) — {count} completed operations",
+  "@providersCompletedOpsLine": {
+    "description": "Line showing a provider's name, id and completed operations count",
     "placeholders": {
-      "max": {
-        "type": "int"
-      }
+      "name": { "type": "String" },
+      "id": { "type": "String" },
+      "count": { "type": "String" }
     }
-  },
-  
-  "charactersRemaining": "{count} characters remaining",
-  "@charactersRemaining": {
-    "description": "Characters remaining message",
-    "placeholders": {
-      "count": {
-        "type": "int"
-      }
-    }
-  },
-  
-  "loginSuccess": "Login Successful",
-  "@loginSuccess": {
-    "description": "Login success message"
-  },
-  
-  "registrationSuccess": "Registration Successful",
-  "@registrationSuccess": {
-    "description": "Registration success message"
-  },
-  
-  "logoutConfirmation": "Are you sure you want to logout?",
-  "@logoutConfirmation": {
-    "description": "Logout confirmation message"
-  },
-  
-  "yes": "Yes",
-  "@yes": {
-    "description": "Yes"
-  },
-  
-  "no": "No",
-  "@no": {
-    "description": "No"
-  },
-  
-  "confirm": "Confirm",
-  "@confirm": {
-    "description": "Confirm"
-  },
-  
-  "language": "Language",
-  "@language": {
-    "description": "Language"
-  },
-  
-  "changeLanguage": "Change Language",
-  "@changeLanguage": {
-    "description": "Change language"
-  },
-  
-  "arabic": "العربية",
-  "@arabic": {
-    "description": "Arabic language"
-  },
-  
-  "english": "English",
-  "@english": {
-    "description": "English language"
-  },
-  
-  "settings": "Settings",
-  "@settings": {
-    "description": "Settings"
-  },
-  
-  "about": "About",
-  "@about": {
-    "description": "About"
-  },
-  
-  "version": "Version",
-  "@version": {
-    "description": "Version"
-  },
-  
-  "contactUs": "Contact Us",
-  "@contactUs": {
-    "description": "Contact us"
-  },
-  
-  "appNameAr": "CarCareX",
-  "@appNameAr": {
-    "description": "Application name in Arabic"
-  },
-  
-  "splashScreen": "Splash Screen",
-  "@splashScreen": {
-    "description": "Splash screen"
-  },
-  
-  "profileSetup": "Profile Setup",
-  "@profileSetup": {
-    "description": "Profile setup"
-  },
-  
-  "myVehicles": "My Vehicles",
-  "@myVehicles": {
-    "description": "My vehicles"
-  },
-  
-  "addVehicle": "Add Vehicle",
-  "@addVehicle": {
-    "description": "Add vehicle"
-  },
-  
-  "editVehicle": "Edit Vehicle",
-  "@editVehicle": {
-    "description": "Edit vehicle"
-  },
-  
-  "vehicleDetails": "Vehicle Details",
-  "@vehicleDetails": {
-    "description": "Vehicle details"
-  },
-  
-  "maintenanceHistory": "Maintenance History",
-  "@maintenanceHistory": {
-    "description": "Maintenance history"
-  },
-  
-  "vinNumber": "VIN Number",
-  "@vinNumber": {
-    "description": "VIN number"
-  },
-  
-  "plateNumber": "Plate Number",
-  "@plateNumber": {
-    "description": "Plate number"
-  },
-  
-  "brand": "Brand",
-  "@brand": {
-    "description": "Brand"
-  },
-  
-  "model": "Model",
-  "@model": {
-    "description": "Model"
-  },
-  
-  "year": "Year",
-  "@year": {
-    "description": "Year"
-  },
-  
-  "maintenance": "Maintenance",
-  "@maintenance": {
-    "description": "Maintenance"
-  },
-  
-  "maintenanceRequest": "Maintenance Request",
-  "@maintenanceRequest": {
-    "description": "Maintenance request"
-  },
-  
-  "serviceType": "Service Type",
-  "@serviceType": {
-    "description": "Service type"
-  },
-  
-  "oilChange": "Oil Change",
-  "@oilChange": {
-    "description": "Oil change"
-  },
-  
-  "inspection": "Inspection",
-  "@inspection": {
-    "description": "Inspection"
-  },
-  
-  "repair": "Repair",
-  "@repair": {
-    "description": "Repair"
-  },
-  
-  "technicianOffers": "Technician Offers",
-  "@technicianOffers": {
-    "description": "Technician offers"
-  },
-  
-  "requestStatus": "Request Status",
-  "@requestStatus": {
-    "description": "Request status"
-  },
-  
-  "rateService": "Rate Service",
-  "@rateService": {
-    "description": "Rate service"
-  },
-  
-  "emergencySOS": "Emergency SOS",
-  "@emergencySOS": {
-    "description": "Emergency SOS"
-  },
-  
-  "sosButton": "SOS Button",
-  "@sosButton": {
-    "description": "SOS button"
-  },
-  
-  "emergencyStatus": "Emergency Status",
-  "@emergencyStatus": {
-    "description": "Emergency status"
-  },
-  
-  "carWash": "Car Wash",
-  "@carWash": {
-    "description": "Car wash"
-  },
-  
-  "bookCarWash": "Book Car Wash",
-  "@bookCarWash": {
-    "description": "Book car wash"
-  },
-  
-  "washBookingStatus": "Booking Status",
-  "@washBookingStatus": {
-    "description": "Wash booking status"
-  },
-  
-  "centerWash": "Center Wash",
-  "@centerWash": {
-    "description": "Center wash"
-  },
-  
-  "mobileWash": "Mobile Wash",
-  "@mobileWash": {
-    "description": "Mobile wash"
-  },
-  
-  "basicWash": "Basic Wash",
-  "@basicWash": {
-    "description": "Basic wash"
-  },
-  
-  "premiumWash": "Premium Wash",
-  "@premiumWash": {
-    "description": "Premium wash"
-  },
-  
-  "fullWash": "Full Wash",
-  "@fullWash": {
-    "description": "Full wash"
-  },
-  
-  "marketplace": "Marketplace",
-  "@marketplace": {
-    "description": "Marketplace"
-  },
-  
-  "products": "Products",
-  "@products": {
-    "description": "Products"
-  },
-  
-  "productDetails": "Product Details",
-  "@productDetails": {
-    "description": "Product details"
-  },
-  
-  "cart": "Cart",
-  "@cart": {
-    "description": "Cart"
-  },
-  
-  "orderStatus": "Order Status",
-  "@orderStatus": {
-    "description": "Order status"
-  },
-  
-  "addToCart": "Add to Cart",
-  "@addToCart": {
-    "description": "Add to cart"
-  },
-  
-  "checkout": "Checkout",
-  "@checkout": {
-    "description": "Checkout"
-  },
-  
-  "subtotal": "Subtotal",
-  "@subtotal": {
-    "description": "Subtotal"
-  },
-  
-  "total": "Total",
-  "@total": {
-    "description": "Total"
-  },
-  
-  "rentX": "Rent Cars",
-  "@rentX": {
-    "description": "Rent cars"
-  },
-  
-  "availableCars": "Available Cars",
-  "@availableCars": {
-    "description": "Available cars"
-  },
-  
-  "daily": "Daily",
-  "@daily": {
-    "description": "Daily"
-  },
-  
-  "weekly": "Weekly",
-  "@weekly": {
-    "description": "Weekly"
-  },
-  
-  "monthly": "Monthly",
-  "@monthly": {
-    "description": "Monthly"
-  },
-  
-  "rentalPeriod": "Rental Period",
-  "@rentalPeriod": {
-    "description": "Rental period"
-  },
-  
-  "startDate": "Start Date",
-  "@startDate": {
-    "description": "Start date"
-  },
-  
-  "endDate": "End Date",
-  "@endDate": {
-    "description": "End date"
-  },
-  
-  "bookNow": "Book Now",
-  "@bookNow": {
-    "description": "Book now"
-  },
-  
-  "sellX": "Sell Cars",
-  "@sellX": {
-    "description": "Sell cars"
-  },
-  
-  "sellListings": "Sell Listings",
-  "@sellListings": {
-    "description": "Sell listings"
-  },
-  
-  "myListings": "My Listings",
-  "@myListings": {
-    "description": "My listings"
-  },
-  
-  "publishListing": "Publish Listing",
-  "@publishListing": {
-    "description": "Publish listing"
-  },
-  
-  "contactSeller": "Contact Seller",
-  "@contactSeller": {
-    "description": "Contact seller"
-  },
-  
-  "fuelX": "Fuel Delivery",
-  "@fuelX": {
-    "description": "Fuel delivery"
-  },
-  
-  "fuelRequest": "Fuel Request",
-  "@fuelRequest": {
-    "description": "Fuel request"
-  },
-  
-  "fuelType": "Fuel Type",
-  "@fuelType": {
-    "description": "Fuel type"
-  },
-  
-  "gasoline91": "Gasoline 91",
-  "@gasoline91": {
-    "description": "Gasoline 91"
-  },
-  
-  "gasoline95": "Gasoline 95",
-  "@gasoline95": {
-    "description": "Gasoline 95"
-  },
-  
-  "diesel": "Diesel",
-  "@diesel": {
-    "description": "Diesel"
-  },
-  
-  "quantity": "Quantity",
-  "@quantity": {
-    "description": "Quantity"
-  },
-  
-  "liters": "Liters",
-  "@liters": {
-    "description": "Liters"
-  },
-  
-  "fuelOrderStatus": "Fuel Order Status",
-  "@fuelOrderStatus": {
-    "description": "Fuel order status"
-  },
-  
-  "carOwner": "Car Owner",
-  "@carOwner": {
-    "description": "Car owner"
-  },
-  
-  "technician": "Technician",
-  "@technician": {
-    "description": "Technician"
-  },
-  
-  "accept": "Accept",
-  "@accept": {
-    "description": "Accept"
-  },
-  
-  "reject": "Reject",
-  "@reject": {
-    "description": "Reject"
-  },
-  
-  "proceed": "Proceed",
-  "@proceed": {
-    "description": "Proceed"
-  },
-  
-  "continueButton": "Continue",
-  "@continueButton": {
-    "description": "Continue"
-  },
-  
-  "select": "Select",
-  "@select": {
-    "description": "Select"
-  },
-  
-  "choose": "Choose",
-  "@choose": {
-    "description": "Choose"
-  },
-  
-  "onTheWay": "On The Way",
-  "@onTheWay": {
-    "description": "On the way"
-  },
-  
-  "arrived": "Arrived",
-  "@arrived": {
-    "description": "Arrived"
-  },
-  
-  "delivered": "Delivered",
-  "@delivered": {
-    "description": "Delivered"
-  },
-  
-  "assigned": "Assigned",
-  "@assigned": {
-    "description": "Assigned"
-  },
-  
-  "requested": "Requested",
-  "@requested": {
-    "description": "Requested"
-  },
-  
-  "loadingData": "Loading data...",
-  "@loadingData": {
-    "description": "Loading data"
-  },
-  
-  "noVehicles": "No Vehicles",
-  "@noVehicles": {
-    "description": "No vehicles"
-  },
-  
-  "noOffers": "No Offers",
-  "@noOffers": {
-    "description": "No offers"
-  },
-  
-  "noListings": "No Listings",
-  "@noListings": {
-    "description": "No listings"
-  },
-  
-  "success": "Success",
-  "@success": {
-    "description": "Success"
-  },
-  
-  "failed": "Failed",
-  "@failed": {
-    "description": "Failed"
-  },
-  
-  "currentLocation": "Current Location",
-  "@currentLocation": {
-    "description": "Current location"
-  },
-  
-  "useCurrentLocation": "Use My Current Location",
-  "@useCurrentLocation": {
-    "description": "Use my current location"
-  },
-  
-  "enterAddress": "Enter Address",
-  "@enterAddress": {
-    "description": "Enter address"
-  },
-  
-  "city": "City",
-  "@city": {
-    "description": "City"
-  },
-  
-  "pickImage": "Pick Image",
-  "@pickImage": {
-    "description": "Pick image"
-  },
-  
-  "camera": "Camera",
-  "@camera": {
-    "description": "Camera"
-  },
-  
-  "gallery": "Gallery",
-  "@gallery": {
-    "description": "Gallery"
-  },
-  
-  "profilePhoto": "Profile Photo",
-  "@profilePhoto": {
-    "description": "Profile photo"
-  },
-  
-  "notifications": "Notifications",
-  "@notifications": {
-    "description": "Notifications"
-  },
-  
-  "more": "More",
-  "@more": {
-    "description": "More"
-  },
-  
-  "searchProducts": "Search products...",
-  "@searchProducts": {
-    "description": "Search products"
-  },
-  
-  "searchCars": "Search cars...",
-  "@searchCars": {
-    "description": "Search cars"
-  },
-  
-  "sortBy": "Sort By",
-  "@sortBy": {
-    "description": "Sort by"
-  },
-  
-  "priceLowHigh": "Price: Low to High",
-  "@priceLowHigh": {
-    "description": "Price: Low to High"
-  },
-  
-  "priceHighLow": "Price: High to Low",
-  "@priceHighLow": {
-    "description": "Price: High to Low"
-  },
-  
-  "selectDate": "Select Date",
-  "@selectDate": {
-    "description": "Select date"
-  },
-  
-  "selectTime": "Select Time",
-  "@selectTime": {
-    "description": "Select time"
-  },
-  
-  "timeSlot": "Time Slot",
-  "@timeSlot": {
-    "description": "Time slot"
-  },
-  
-  "now": "Now",
-  "@now": {
-    "description": "Now"
-  },
-  
-  "schedule": "Schedule",
-  "@schedule": {
-    "description": "Schedule"
-  },
-  
-  "price": "Price",
-  "@price": {
-    "description": "Price"
-  },
-  
-  "cost": "Cost",
-  "@cost": {
-    "description": "Cost"
-  },
-  
-  "estimatedPrice": "Estimated Price",
-  "@estimatedPrice": {
-    "description": "Estimated price"
-  },
-  
-  "rating": "Rating",
-  "@rating": {
-    "description": "Rating"
-  },
-  
-  "stars": "Stars",
-  "@stars": {
-    "description": "Stars"
-  },
-  
-  "leaveComment": "Leave Comment",
-  "@leaveComment": {
-    "description": "Leave comment"
-  },
-  
-  "userType": "User Type",
-  "@userType": {
-    "description": "User type"
-  },
-  
-  "userProfile": "User Profile",
-  "@userProfile": {
-    "description": "User profile"
-  },
-  
-  "validationError": "Validation Error",
-  "@validationError": {
-    "description": "Validation error"
-  },
-  
-  "fieldRequired": "This field is required",
-  "@fieldRequired": {
-    "description": "Field required"
-  },
-  
-  "invalidInput": "Invalid Input",
-  "@invalidInput": {
-    "description": "Invalid input"
-  },
-  
-  "optional": "Optional",
-  "@optional": {
-    "description": "Optional"
-  },
-  
-  "required": "Required",
-  "@required": {
-    "description": "Required"
-  },
-  
-  "description": "Description",
-  "@description": {
-    "description": "Description"
-  },
-  
-  "problemDetails": "Problem Details",
-  "@problemDetails": {
-    "description": "Problem details"
-  },
-  
-  "attachPhotos": "Attach Photos",
-  "@attachPhotos": {
-    "description": "Attach photos"
-  },
-  
-  "summary": "Summary",
-  "@summary": {
-    "description": "Summary"
-  },
-  
-  "orderSummary": "Order Summary",
-  "@orderSummary": {
-    "description": "Order summary"
-  },
-  
-  "bookingSummary": "Booking Summary",
-  "@bookingSummary": {
-    "description": "Booking summary"
-  },
-   
-  "readySummary": "Ready to get back on the road?",
-  "@readySummary": {
-    "description": "Ready to get back on the road?"
-  },
-"editPassword": "Edit Password",
-"@editPassword": {
-"description": "Edit Password"
-},
-"savePassword": "Save Password",
-"@savePassword": {
-"description": "Save Password"
-},
-"deleteAccount": "Delete Account",
-"@deleteAccount": {
-"description": "Delete Account"
-},
+  },"advertisementsMenu": "Advertisements",
+"@advertisementsMenu": { "description": "Sidebar menu: Advertisements" },
+"advertisementsPageTitle": "Advertisements",
+"@advertisementsPageTitle": { "description": "Page title: advertisements list" },
+"advertisementDetailsTitle": "Advertisement Details",
+"@advertisementDetailsTitle": { "description": "Page title: advertisement details/edit" },
+"adColumnImage": "Image",
+"@adColumnImage": { "description": "Column: image" },
+"adColumnTitle": "Title",
+"@adColumnTitle": { "description": "Column: title" },
+"adColumnPlacement": "Placement",
+"@adColumnPlacement": { "description": "Column: placement" },
+"adColumnPeriod": "Period",
+"@adColumnPeriod": { "description": "Column: starts/ends period" },
+"adColumnStatus": "Status",
+"@adColumnStatus": { "description": "Column: status" },
+"adColumnSortOrder": "Order",
+"@adColumnSortOrder": { "description": "Column: sort order" },
+"adColumnActions": "Actions",
+"@adColumnActions": { "description": "Column: actions" },
 
-"creating": "Creating...",
-"@creating": {
-"description": "Creating..."
-},
+"adFilterAll": "All",
+"@adFilterAll": { "description": "Filter chip: all placements" },
+"adFilterHome": "Home",
+"@adFilterHome": { "description": "Filter chip: home placement" },
+"adActionActivate": "Activate",
+"@adActionActivate": { "description": "Action: activate ad" },
+"adActionDeactivate": "Deactivate",
+"@adActionDeactivate": { "description": "Action: deactivate ad" },
+"adActionEdit": "Edit",
+"@adActionEdit": { "description": "Action: edit ad" },
+"adActionDelete": "Delete",
+"@adActionDelete": { "description": "Action: delete ad" },
+"adCreateNew": "New Advertisement",
+"@adCreateNew": { "description": "Button: create new advertisement" },
+"adFormTitleLabel": "Title",
+"@adFormTitleLabel": { "description": "Form field: title" },
+"adFormPlacementLabel": "Placement",
+"@adFormPlacementLabel": { "description": "Form field: placement" },
+"adFormLinkLabel": "Link URL",
+"@adFormLinkLabel": { "description": "Form field: link url" },
+"adFormStartsLabel": "Starts At",
+"@adFormStartsLabel": { "description": "Form field: starts at" },
+"adFormEndsLabel": "Ends At",
+"@adFormEndsLabel": { "description": "Form field: ends at" },
+"adFormSortOrderLabel": "Sort Order",
+"@adFormSortOrderLabel": { "description": "Form field: sort order" },
+"adFormActiveLabel": "Active",
+"@adFormActiveLabel": { "description": "Form field: is active" },
+"adFormImageLabel": "Image",
+"@adFormImageLabel": { "description": "Form field: image" },
+"adFormImageHint": "jpeg/jpg/png/webp, max 2MB",
+"@adFormImageHint": { "description": "Hint: image upload constraints" },
+"adFormChooseImage": "Choose Image",
+"@adFormChooseImage": { "description": "Button: choose image" },
+"adFormChangeImage": "Change Image",
+"@adFormChangeImage": { "description": "Button: change image" },
+"adFormSave": "Save",
+"@adFormSave": { "description": "Button: save advertisement" },
+"adFormRequiredField": "This field is required",
+"@adFormRequiredField": { "description": "Validation: required field" },
+"adFormImageRequired": "Please select an image",
+"@adFormImageRequired": { "description": "Validation: image required" },
+"adDeleteConfirmTitle": "Delete Advertisement",
+"@adDeleteConfirmTitle": { "description": "Dialog title: delete confirm" },
+"adDeleteConfirmMessage": "Are you sure you want to delete this advertisement?",
+"@adDeleteConfirmMessage": { "description": "Dialog message: delete confirm" },
+"adCreatedSuccess": "Advertisement created successfully",
+"@adCreatedSuccess": { "description": "Snackbar: create success" },
+"adUpdatedSuccess": "Advertisement updated successfully",
+"@adUpdatedSuccess": { "description": "Snackbar: update success" },
+"adDeletedSuccess": "Advertisement deleted successfully",
+"@adDeletedSuccess": { "description": "Snackbar: delete success" },
+"adActivatedSuccess": "Advertisement activated",
+"@adActivatedSuccess": { "description": "Snackbar: activate success" },
+"adDeactivatedSuccess": "Advertisement deactivated",
+"@adDeactivatedSuccess": { "description": "Snackbar: deactivate success" },
+"noAdvertisements": "No advertisements found",
+"@noAdvertisements": { "description": "Empty state: no advertisements" },
+  "adRankingExplanation": "The ranking starts from 1, for example, 1 means this is the first advertisement to appear",
+  "@adRankingExplanation": { "description": "Explanation for the user showing that ranking starts from number 1 for the first ad" },
+    "billingSettingsPageTitle": "Billing Settings",
+  "@billingSettingsPageTitle": { "description": "Title of the billing settings page" },
 
-"enterFirstName": "Enter first name",
-"@enterFirstName": {
-"description": "Enter first name"
-},
-"enterEmail": "Enter email",
-"@enterEmail": {
-"description": "Enter email"
-},
-"enterPassword": "Enter password",
-"@enterPassword": {
-"description": "Enter password"
-},
-"passwordMinLength": "Password must be at least 6 characters",
-"@passwordMinLength": {
-"description": "Password must be at least 6 characters"
-},
-"reEnterPassword": "Re-enter password",
-"@reEnterPassword": {
-"description": "Re-enter password"
-},
-"addVehicleImage": "Add vehicle image",
-"@addVehicleImage": {
-"description": "Add vehicle image"
-},
-"tapToSelectImage": "Tap to select image",
-"@tapToSelectImage": {
-"description": "Tap to select image"
-},
-"selectVehicleImage": "Please select a vehicle image",
-"@selectVehicleImage": {
-"description": "Please select a vehicle image"
-},
-"fillAllFields": "Please fill in all fields",
-"@fillAllFields": {
-"description": "Please fill in all fields"
-},
-"vehicleAddedSuccess": "Vehicle added successfully",
-"@vehicleAddedSuccess": {
-"description": "Vehicle added successfully"
-},
-"odometer": "Odometer",
-"@odometer": {
-"description": "Odometer"
-},
-"licensePlateNumberFull": "License plate number",
-"@licensePlateNumberFull": {
-"description": "License plate number"
-},
-"serviceRecords": "Service records",
-"@serviceRecords": {
-"description": "Service records"
-},
-"fuelRecords": "Fuel records",
-"@fuelRecords": {
-"description": "Fuel records"
-},
-"plate": "Plate",
-"@plate": {
-"description": "Plate"
-},
-"currentPassword": "Current password",
-"@currentPassword": {
-"description": "Current password"
-},
-"newPassword": "New password",
-"@newPassword": {
-"description": "New password"
-},
+  "billingCreateNew": "New Setting",
+  "@billingCreateNew": { "description": "Button to create a new billing configuration" },
 
-"createYourAccount": "Create Your Account",
-"@createYourAccount": {
-"description": "Create Your Account"
-},
-"carReadyMessage": "We’re here to keep your car in top shape. Are you ready?",
-"@carReadyMessage": {
-"description": "Welcome message"
-},
+  "billingSettingLinkButton": "Billing Setup",
+  "@billingSettingLinkButton": { "description": "Link button to navigate to billing setup" },
 
+  "billingColumnProvider": "Provider",
+  "@billingColumnProvider": { "description": "Column header for provider in the billing table" },
 
+  "billingColumnType": "Billing Type",
+  "@billingColumnType": { "description": "Column header for billing type in the table" },
 
-"sos": "SOS",
-"@sos": {
-"description": "Emergency button"
-},
+  "billingColumnMonthlyFee": "Monthly Subscription",
+  "@billingColumnMonthlyFee": { "description": "Column header for the monthly subscription fee" },
 
-"fuel": "Fuel",
-"@fuel": {
-"description": "Fuel"
-},
+  "billingColumnCommission": "Commission Rate",
+  "@billingColumnCommission": { "description": "Column header for the commission percentage" },
 
-"notification": "Notifications",
-"@notification": {
-"description": "Notifications"
-},
-"messages": "Messages",
-"@messages": {
-"description": "Messages"
-},
-"changedpasswordsuccessfully": "The password has been successfully changed.",
-"@changedpasswordsuccessfully": {
-"description": "The password has been successfully changed."
-},
+  "billingColumnStartsAt": "Start Date",
+  "@billingColumnStartsAt": { "description": "Column header for the activation start date" },
 
-  "enterphone": "Enter Phone",
-  "@enterphone": {
-    "description": "Enter Phone"
+  "billingStatusActive": "Active",
+  "@billingStatusActive": { "description": "Status indicating the setting is currently active" },
+
+  "billingStatusInactive": "Inactive",
+  "@billingStatusInactive": { "description": "Status indicating the setting is currently disabled" },
+
+  "billingDeleteTitle": "Delete Billing Setting",
+  "@billingDeleteTitle": { "description": "Title of the confirmation dialog for deleting a billing setting" },
+
+  "billingDeleteMessage": "Are you sure you want to delete this setting?",
+  "@billingDeleteMessage": { "description": "Confirmation message shown before completing deletion" },
+
+  "confirmDelete": "Delete",
+  "@confirmDelete": { "description": "Final confirmation button to execute deletion" },
+
+  "billingFormTitleCreate": "Create Billing Setting",
+  "@billingFormTitleCreate": { "description": "Title of the form for creating a new billing setup" },
+
+  "billingFormTitleEdit": "Edit Billing Setting",
+  "@billingFormTitleEdit": { "description": "Title of the form for modifying an existing billing setup" },
+
+  "billingFieldProviderType": "Provider Type",
+  "@billingFieldProviderType": { "description": "Label for the provider type input field" },
+
+  "billingFieldProviderId": "Provider ID",
+  "@billingFieldProviderId": { "description": "Label for the provider ID input field" },
+
+  "billingFieldBillingType": "Billing Type",
+  "@billingFieldBillingType": { "description": "Label for the billing type selection field" },
+
+  "billingFieldMonthlyFee": "Monthly Subscription",
+  "@billingFieldMonthlyFee": { "description": "Label for the monthly subscription fee input field" },
+
+  "billingFieldCommissionPercent": "Commission Rate %",
+  "@billingFieldCommissionPercent": { "description": "Label for the commission percentage input field" },
+
+  "billingFieldFreeTrialDays": "Free Trial Days",
+  "@billingFieldFreeTrialDays": { "description": "Label for the number of free trial days field" },
+
+  "billingFieldPaymentDueDays": "Payment Due (Days)",
+  "@billingFieldPaymentDueDays": { "description": "Label for the payment terms/grace period in days field" },
+
+  "billingFieldStartsAt": "Start Date",
+  "@billingFieldStartsAt": { "description": "Label for selecting the billing start date" },
+  "billingDetailsTitle": "Billing Details",
+  "@billingDetailsTitle": { "description": "Title for the billing details section" },
+
+  "billingTypeSubscriptionPlusCommission": "Subscription + Commission",
+  "@billingTypeSubscriptionPlusCommission": {
+    "description": "Billing type combining a fixed subscription fee and a commission percentage"
   },
-  "thepasswordsdonotmatch":" The passwords do not match.",
-  "@thepasswordsdonotmatch": {
-    "description": "The passwords do not match."
+  "billingTypeExempt": "Exempt",
+  "@billingTypeExempt": {
+    "description": "Billing type for accounts or operations exempt from fees"
   },
-  
-  "activeorders": "Active Orders ",
-  "@activeorders": {
-    "description":"Active Orders"
-  },
-  "saveandfollow": "Save and follow",
-  "@saveandfollow": {
-    "description":"Save and follow"
-  },
-  "savevehicle": "Save Vehicle",
-  "@Save Vehicle": {
-    "description":"Save Vehicle"
-
-  },
-  "parts": "Spare Parts",
-  "@parts": {
-    "description":"Spare Parts"
-
-  }  ,
-  
-  "details": " عرض التفاصيل",
-  "@details": {
-    "description":"عرض التفاصيل"
-
-  },
-  "updateCarsList": "Updating car list...",
-"@updateCarsList": {
-  "description": "Text shown while updating or loading the cars list"
-},
-"noCarsYet": "No cars yet",
-"@noCarsYet": {
-  "description": "Message shown when there are no cars added"
-},
-"vehicleUpdatedSuccessfully": "Vehicle updated successfully",
-"@vehicleUpdatedSuccessfully": {
-  "description": "Message shown after successfully updating a vehicle"
-},
-"saveChanges": "Save changes",
-"@saveChanges": {
-  "description": "Button to save changes"
-},
-
-"saving": "Saving...",
-"@saving": {
-  "description": "Text shown while saving data"
-},
-
-"updateVehicle": "Update Vehicle",
-"@updateVehicle": {
-  "description": "Title or button for updating a vehicle"
-},
-
-"deleteVehicle": "Delete Vehicle",
-"@deleteVehicle": {
-  "description": "Button to delete a vehicle"
-},
-
-"confirmDeleteTitle": "Confirm Deletion",
-"@confirmDeleteTitle": {
-  "description": "Title of delete confirmation dialog"
-},
-
-"confirmDeleteMessage": "Are you sure you want to delete this vehicle?\nThis action cannot be undone.",
-"@confirmDeleteMessage": {
-  "description": "Warning message before deleting a vehicle"
-}
+  "billingFieldExemptMethod": "Exempt Method",
+  "@billingFieldExemptMethod": {
+    "description": "Field label for specifying the method or reason for financial exemption"
+  }
 ,
-"owner": "Owner",
-"@owner": {
-  "description": "Owner label in vehicle details page"
-},
+
+  "billingTypeCommission": "Billing Type: Commission",
+  "@billingTypeCommission": { "description": "Option indicating that the billing is commission-based" },
+
+  "billingTypeMonthly": "Monthly Billing",
+  "@billingTypeMonthly": { "description": "Option indicating that the billing occurs on a monthly basis" },
+
+  "billingFieldIsActive": "Active?",
+  "@billingFieldIsActive": { "description": "Label for the switch determining if the record is active" },
+
+  "billingFieldNotes": "Notes",
+  "@billingFieldNotes": { "description": "Label for the additional notes input field" },
+
+  "billingPickDate": "Pick Date",
+  "@billingPickDate": { "description": "Text prompting the user to open the date picker" },
+
+  "fieldRequired": "This field is required",
+  "@fieldRequired": { "description": "Validation error message for mandatory fields left blank" },
+
+  "save": "Save",
+  "@save": { "description": "Button to save form data" },
+
+  "actionEdit": "Edit",
+  "@actionEdit": { "description": "General text for edit action" },
+
+  "actionDelete": "Delete",
+  "@actionDelete": { "description": "General text for delete action" },
 
 
+  "service": "الخدمة",
+  "@service": { "description": "عنوان أو نص يرمز للخدمة في التطبيق" },
 
-"km": "km",
-"@km": {
-  "description": "Unit for kilometers"
-},
+  "dashboard": "لوحة التحكم",
+  "@dashboard": { "description": "عنوان شاشة لوحة التحكم الرئيسية" },
 
+  "general": "عام",
+  "@general": { "description": "تبويب أو إعدادات عامة داخل التطبيق" }
 
-
-"maintenanceRecord": "Maintenance Record",
-"@maintenanceRecord": {
-  "description": "Title of maintenance record"
-},
-
-"fuelRecord": "Fuel Record",
-"@fuelRecord": {
-  "description": "Title of fuel record"
-},
-
-"alertsRecord": "Alerts Record",
-"@alertsRecord": {
-  "description": "Title of alerts record"
-},
-
-"statistics": "Statistics",
-"@statistics": { "description": "Statistics page title" },
-
-"totalJobs": "Total jobs",
-"@totalJobs": { "description": "Total jobs count" },
-
-"assignedJobs": "Assigned",
-"@assignedJobs": { "description": "Assigned jobs count" },
-
-"inProgressJobs": "In progress",
-"@inProgressJobs": { "description": "In progress jobs count" },
-
-"completedJobs": "Completed",
-"@completedJobs": { "description": "Completed jobs count" },
-
-"totalQuotations": "Total quotations",
-"@totalQuotations": { "description": "Total quotations count" },
-
-"pendingQuotations": "Pending quotations",
-"@pendingQuotations": { "description": "Pending quotations count" },
-
-"acceptedQuotations": "Accepted quotations",
-"@acceptedQuotations": { "description": "Accepted quotations count" },
-
-"totalRatings": "Total ratings",
-"@totalRatings": { "description": "Total ratings count" },
-
-"deleteProfile": "Delete Profile",
-"@deleteProfile": {"description":"Title of delete profile dialog"},
-
-"confirmDeleteProfileTitle": "Confirm Deletion",
-"@confirmDeleteProfileTitle": {"description":"Delete confirmation button"},
-
-"confirmDeleteProfileMessage": "Are you sure you want to delete your account?\nThis action cannot be undone.",
-"@confirmDeleteProfileMessage": {"description":"Warning message before deleting profile"},
-
-
-"profileDeletedSuccessfully": "Profile deleted successfully",
-"@profileDeletedSuccessfully": {"description":"Message shown after successful deletion"},
-"enterPhone": "Please enter phone number",
-"@enterPhone": {
-  "description": "Message shown when the phone field is left empty"
-},
-
-"invalidPhone": "Invalid phone number",
-"@invalidPhone": {
-  "description": "Message shown when the phone number is incorrect or incomplete"
-},
-
-"enterAsTechnician": "Enter as technician",
-"@enterAsTechnician": {
-  "description": "Action to open the technician profile flow from the More tab"
-},
-
-"washersPageTitle": "Car washes",
-"@washersPageTitle": {
-  "description": "App bar title for the car wash directory list"
-},
-"washersByCity": "By city",
-"@washersByCity": {
-  "description": "Car wash list filter: choose by city"
-},
-"washersBookAppointment": "Book an appointment",
-"@washersBookAppointment": {
-  "description": "Button to book a car wash appointment"
-},
-"washersViewDetails": "View details",
-"@washersViewDetails": {
-  "description": "Button to open car wash details"
-},
-"washersCityWithName": "City: {cityName}",
-"@washersCityWithName": {
-  "description": "Line showing the city of a car wash",
-  "placeholders": {
-    "cityName": { "type": "String" }
+ ,
+  "paymentMethodCash": "Cash",
+  "@paymentMethodCash": {
+    "description": "Option for cash payment"
+  },
+  "paymentMethodBankTransfer": "Bank Transfer",
+  "@paymentMethodBankTransfer": {
+    "description": "Option for bank transfer payment"
+  },
+  
+  "paymentMethodShamCash": "Sham Cash",
+  "@paymentMethodShamCash": {
+    "description": "Option for Sham Cash electronic payment"
   }
-},
-"washersRatingsWithCount": "Ratings: {count}",
-"@washersRatingsWithCount": {
-  "description": "Line showing how many ratings a car wash has",
-  "placeholders": {
-    "count": { "type": "int" }
+,
+
+  "paymentMethodSyriatelCash": "Syriatel Cash",
+  "@paymentMethodSyriatelCash": {
+    "description": "Option for Syriatel Cash electronic payment"
+  },
+  "paymentMethodOther": "Other",
+  "@paymentMethodOther": {
+    "description": "Option for other unlisted payment methods"
   }
-},
-"washerTierBasic": "BASIC",
-"@washerTierBasic": { "description": "Service tier label: basic" },
-"washerTierVip": "VIP",
-"@washerTierVip": { "description": "Service tier label: VIP" },
-"washerTierPremium": "PREMIUM",
-  "@washerTierPremium": { "description": "Service tier label: premium" },
-  "washerDetailsTitle": "Car wash details",
-  "@washerDetailsTitle": { "description": "App bar: washer details screen" },
-  "washerOpenTime": "Open: {time}",
-  "@washerOpenTime": {
-    "description": "Opening time label for a car wash",
-    "placeholders": { "time": { "type": "String" } }
-  },
-  "washerCloseTime": "Close: {time}",
-  "@washerCloseTime": {
-    "description": "Closing time label for a car wash",
-    "placeholders": { "time": { "type": "String" } }
-  },
-  "washerSectionCityAndAddress": "City and address",
-  "@washerSectionCityAndAddress": { "description": "Header for location block" },
-  "washerSectionServicesAndPrices": "Services and prices",
-  "@washerSectionServicesAndPrices": { "description": "Header for packages section" },
-  "washerSectionCustomerReviews": "Customer reviews",
-  "@washerSectionCustomerReviews": { "description": "Header for reviews" },
-  "washerServiceExterior": "Exterior",
-  "@washerServiceExterior": { "description": "Car wash service: exterior" },
-  "washerServiceInterior": "Interior",
-  "@washerServiceInterior": { "description": "Car wash service: interior" },
-  "washerServiceEngine": "Engine",
-  "@washerServiceEngine": { "description": "Car wash service: engine bay" },
-  "washerPackagePrice": "price: {amount} $",
-  "@washerPackagePrice": {
-    "description": "Package price in USD",
-    "placeholders": { "amount": { "type": "int" } }
-  },
-  "washerReservationTitle": "Reservation",
-  "@washerReservationTitle": { "description": "App bar: car wash booking screen" },
-  "washerReservationFieldDate": "Date",
-  "washerReservationFieldTime": "Time",
-  "washerReservationFieldVehicleLabel": "Enter your vehicle type",
-  "washerReservationFieldVehicleHint": "Type your vehicle here",
-  "washerReservationFieldNotesLabel": "Notes",
-  "washerReservationFieldNotesHint": "Add any notes you want",
-  "washerReservationChooseService": "Choose the right service",
-  "washerReservationConfirm": "Confirm reservation",
-  "washerReservationCancel": "Cancel reservation",
-  "washerReservationPickDate": "Pick a date",
-  "washerReservationPickTime": "Pick a time",
-  "washerReservationServicePremium": "Premium",
-  "washerReservationServiceVip": "Vip",
-  "washerReservationServiceBasic": "Basic",
-  "bookingsPageTitle": "My Reserved",
-  "@bookingsPageTitle": {
-    "description": "App bar title for bookings page"
-  },
-  "bookingsFilterByStatus": "By status",
-  "@bookingsFilterByStatus": {
-    "description": "Bookings filter label"
-  },
-  "bookingStatusProgress": "progress",
-  "@bookingStatusProgress": {
-    "description": "Booking status chip: progress"
-  },
-  "bookingStatusAccepted": "accepted",
-  "@bookingStatusAccepted": {
-    "description": "Booking status chip: accepted"
-  },
-  "bookingStatusPinding": "pinding",
-  "@bookingStatusPinding": {
-    "description": "Booking status chip: pinding"
-  },
-  "bookingsWasherName": "Al-Miqdad Car Wash",
-  "@bookingsWasherName": {
-    "description": "Washer name on booking card"
-  },
-  "bookingsServiceLabel": "Requested service",
-  "@bookingsServiceLabel": {
-    "description": "Service row label on booking card"
-  },
-  "bookingsServiceVip": "Vip",
-  "@bookingsServiceVip": {
-    "description": "Vip service tier label on booking card"
-  },
-  "bookingsDateTimeLabel": "Date",
-  "@bookingsDateTimeLabel": {
-    "description": "Date row label on booking card"
-  },
-  "bookingsAtLabel": "at",
-  "@bookingsAtLabel": {
-    "description": "Connector between date and time"
-  },
-  "bookingsPriceLabel": "Price",
-  "@bookingsPriceLabel": {
-    "description": "Price row label on booking card"
-  },
-  "bookingsMenuShowDetails": "Show details",
-  "@bookingsMenuShowDetails": {
-    "description": "Menu action for showing booking details"
-  },
-  "washerBookingViewDetails": "View details",
-  "@washerBookingViewDetails": {
-    "description": "Washer booking card: full-width CTA"
-  },
-  "washerBookingAccept": "Accept",
-  "@washerBookingAccept": {
-    "description": "Washer booking card: quick action"
-  },
-  "washerBookingReject": "Reject",
-  "@washerBookingReject": {
-    "description": "Washer booking card: quick action"
-  },
-  "washerBookingStartExecution": "Start execution",
-  "@washerBookingStartExecution": {
-    "description": "Washer booking card: quick action"
-  },
-  "washerBookingCompleted": "Completed",
-  "@washerBookingCompleted": {
-    "description": "Washer booking card: quick action"
-  },
-  "washerBookingCustomerNameLabel": "Customer name:",
-  "@washerBookingCustomerNameLabel": {
-    "description": "Washer booking card: info row label"
-  },
-  "washerBookingRequestedServiceLabel": "Requested service:",
-  "@washerBookingRequestedServiceLabel": {
-    "description": "Washer booking card: info row label"
-  },
-  "washerBookingAppointmentLabel": "Appointment:",
-  "@washerBookingAppointmentLabel": {
-    "description": "Washer booking card: info row label"
-  },
-  "bookingsMenuCancelBooking": "Cancel booking",
-  "@bookingsMenuCancelBooking": {
-    "description": "Menu action for cancelling booking"
-  },
-  "bookingsMenuRateService": "Rate service",
-  "@bookingsMenuRateService": {
-    "description": "Menu action for rating service"
-  },
-  "bookingDetailsPageTitle": "Booking details",
-  "@bookingDetailsPageTitle": {
-    "description": "App bar title for booking details screen"
-  },
-  "bookingDetailsServiceSectionTitle": "Service details",
-  "@bookingDetailsServiceSectionTitle": {
-    "description": "First section title on booking details screen"
-  },
-  "bookingDetailsAppointmentSectionTitle": "Appointment details",
-  "@bookingDetailsAppointmentSectionTitle": {
-    "description": "Appointment section title on booking details screen"
-  },
-  "bookingDetailsUserNotesSectionTitle": "User notes",
-  "@bookingDetailsUserNotesSectionTitle": {
-    "description": "User notes section title on booking details screen"
-  },
-  "bookingDetailsWasherNameLabel": "Car wash name",
-  "@bookingDetailsWasherNameLabel": {
-    "description": "Washer name row label in first card on booking details screen"
-  },
-  "bookingDetailsOrderDateLabel": "Order date",
-  "@bookingDetailsOrderDateLabel": {
-    "description": "Order date row label in appointment card"
-  },
-  "bookingDetailsVehicleLabel": "Vehicle",
-  "@bookingDetailsVehicleLabel": {
-    "description": "Vehicle row label in appointment card"
-  },
-  "ratingsServiceInfoSectionTitle": "Service information",
-  "@ratingsServiceInfoSectionTitle": {
-    "description": "First section title on car wash rating screen"
-  },
-  "ratingsYourRatingQuestion": "What is your rating for this service?",
-  "@ratingsYourRatingQuestion": {
-    "description": "Question prompt above star rating row"
-  },
-  "ratingsTellUsExperienceTitle": "Tell us about your experience",
-  "@ratingsTellUsExperienceTitle": {
-    "description": "Label above rating comment field"
-  },
-  "ratingsCommentExperienceHint": "Leave us a comment about your experience",
-  "@ratingsCommentExperienceHint": {
-    "description": "Hint text inside rating comment field"
-  },
-  "ratingsSendRating": "Send rating",
-  "@ratingsSendRating": {
-    "description": "Submit rating button label"
-  },
-  "profileWasherPageTitle": "Washer Profile",
-  "@profileWasherPageTitle": {
-    "description": "App bar title for washer owner profile screen"
-  },
-  "profileWasherEditProfile": "Edit profile",
-  "@profileWasherEditProfile": {
-    "description": "Primary button on washer profile screen"
-  },
-  "profileWasherSampleShopName": "Mahaba Car Wash",
-  "@profileWasherSampleShopName": {
-    "description": "Placeholder shop name until API data exists"
-  },
-  "profileWasherRatingsCountLine": "{count} ratings",
-  "@profileWasherRatingsCountLine": {
-    "description": "Rating count subtitle under stars on washer profile",
-    "placeholders": { "count": { "type": "int" } }
-  },
-  "profileWasherSampleFullAddress": "Damascus - Abbasiyyin Square - Entrance to Al-Qusour Square",
-  "@profileWasherSampleFullAddress": {
-    "description": "Placeholder full address until API data exists"
-  },
-  "profileWasherSamplePhone": "0987654321",
-  "@profileWasherSamplePhone": {
-    "description": "Placeholder phone displayed on washer profile card"
-  },
-  "profileWasherAboutTitle": "About the wash",
-  "@profileWasherAboutTitle": {
-    "description": "Section title for washer description on profile screen"
-  },
-  "profileWasherDescriptionSample": "At Mahaba Car Wash we deliver professional cleaning with safe, eco-friendly products and a crew that cares about every detail, inside and out. We strive to serve you day after day with clear pricing and a comfortable wait—because your car deserves spotless care from people who love doing the job right.",
-  "@profileWasherDescriptionSample": {
-    "description": "Placeholder washer description until API provides copy"
-  },
-  "profileWasherEditPageTitle": "Edit washer profile",
-  "@profileWasherEditPageTitle": {
-    "description": "App bar title for edit washer profile screen"
-  },
-  "profileWasherFieldWasherName": "Washer name",
-  "@profileWasherFieldWasherName": {
-    "description": "Label for wash name field on edit profile"
-  },
-  "profileWasherHintWasherName": "Enter wash name",
-  "@profileWasherHintWasherName": {
-    "description": "Hint for wash name field"
-  },
-  "profileWasherFieldPhone": "Phone number",
-  "@profileWasherFieldPhone": {
-    "description": "Label for phone field on edit washer profile"
-  },
-  "profileWasherHintPhone": "Enter contact phone number",
-  "@profileWasherHintPhone": {
-    "description": "Hint for phone field"
-  },
-  "profileWasherFieldAddress": "City and address",
-  "@profileWasherFieldAddress": {
-    "description": "Label for address field"
-  },
-  "profileWasherHintAddress": "Enter full wash address",
-  "@profileWasherHintAddress": {
-    "description": "Hint for address field"
-  },
-  "profileWasherFieldWorkStart": "Opening time",
-  "@profileWasherFieldWorkStart": {
-    "description": "Label for work start time"
-  },
-  "profileWasherHintWorkStart": "Enter opening time",
-  "@profileWasherHintWorkStart": {
-    "description": "Hint for opening time"
-  },
-  "profileWasherFieldWorkEnd": "Closing time",
-  "@profileWasherFieldWorkEnd": {
-    "description": "Label for work end time"
-  },
-  "profileWasherHintWorkEnd": "Enter closing time",
-  "@profileWasherHintWorkEnd": {
-    "description": "Hint for closing time"
-  },
-  "profileWasherChooseServicesTitle": "Choose the services you offer",
-  "@profileWasherChooseServicesTitle": {
-    "description": "Section title on edit washer profile"
-  },
-  "profileWasherFieldDescription": "Description",
-  "@profileWasherFieldDescription": {
-    "description": "Label for description field"
-  },
-  "profileWasherHintDescription": "Enter wash description",
-  "@profileWasherHintDescription": {
-    "description": "Hint for description field"
-  },
-  "profileWasherTierBasic": "Basic",
-  "@profileWasherTierBasic": {
-    "description": "Basic tier name"
-  },
-  "profileWasherTierVip": "Vip",
-  "@profileWasherTierVip": {
-    "description": "VIP tier name"
-  },
-  "profileWasherTierPremium": "Premium",
-  "@profileWasherTierPremium": {
-    "description": "Premium tier name"
-  },
-  "profileWasherFieldPrice": "Price",
-  "@profileWasherFieldPrice": {
-    "description": "Price field label under tier"
-  },
-  "profileWasherHintPrice": "Enter price",
-  "@profileWasherHintPrice": {
-    "description": "Hint for tier price field"
-  },
-  "profileWasherSaveChanges": "Save changes",
-  "@profileWasherSaveChanges": {
-    "description": "Primary save button on edit washer profile"
-  },
-  "profileWasherCreatePageTitle": "Create washer profile",
-  "@profileWasherCreatePageTitle": {
-    "description": "Create washer profile screen title"
-  },
-  "profileWasherUploadLogo": "Upload logo",
-  "@profileWasherUploadLogo": {
-    "description": "Washer logo upload label"
-  },
-  "profileWasherFieldCity": "City",
-  "@profileWasherFieldCity": {
-    "description": "City field label"
-  },
-  "profileWasherHintCity": "Enter city",
-  "@profileWasherHintCity": {
-    "description": "City field hint"
-  },
-  "profileWasherFieldStreetAddress": "Address",
-  "@profileWasherFieldStreetAddress": {
-    "description": "Street address field label"
-  },
-  "profileWasherHintStreetAddress": "Enter address",
-  "@profileWasherHintStreetAddress": {
-    "description": "Street address field hint"
-  },
-  "profileWasherFieldServicesList": "Services",
-  "@profileWasherFieldServicesList": {
-    "description": "Services list field label"
-  },
-  "profileWasherHintServicesList": "Separate services with a comma",
-  "@profileWasherHintServicesList": {
-    "description": "Services list field hint"
-  },
-  "profileWasherWorkingHoursTitle": "Working hours",
-  "@profileWasherWorkingHoursTitle": {
-    "description": "Working hours section title"
-  },
-  "profileWasherFieldSaturdayHours": "Saturday",
-  "@profileWasherFieldSaturdayHours": {
-    "description": "Saturday hours field label"
-  },
-  "profileWasherHintSaturdayHours": "e.g. 11:00-15:00",
-  "@profileWasherHintSaturdayHours": {
-    "description": "Saturday hours field hint"
-  },
-  "profileWasherFieldSundayHours": "Sunday",
-  "@profileWasherFieldSundayHours": {
-    "description": "Sunday hours field label"
-  },
-  "profileWasherHintSundayHours": "e.g. 10:00-16:00",
-  "@profileWasherHintSundayHours": {
-    "description": "Sunday hours field hint"
-  },
-  "profileWasherCreateSave": "Save profile",
-  "@profileWasherCreateSave": {
-    "description": "Create washer profile save button"
-  },
-  "showRatingTotalBookings": "Total bookings",
-  "@showRatingTotalBookings": {
-    "description": "Title of total bookings section on ratings screen"
-  },
-  "showRatingAllReserved": "All Reserved",
-  "@showRatingAllReserved": {
-    "description": "All reserved count label on ratings screen"
-  },
- "bookingStatusPending": "Pending",
-"@bookingStatusPending": {
-  "description": "Status label for a booking waiting for review"
-},
+,
 
-"bookingStatusAccepted": "Accepted",
-"@bookingStatusAccepted": {
-  "description": "Status label when a booking is accepted by the washer"
-},
-
-"bookingStatusProgress": "In Progress",
-"@bookingStatusProgress": {
-  "description": "Status label when the service has started"
-},
-
-"bookingStatusCompleted": "Completed",
-"@bookingStatusCompleted": {
-  "description": "Status label when the service is finished"
-},
-
-"bookingStatusCanceled": "Canceled",
-"@bookingStatusCanceled": {
-  "description": "Status label when a booking is canceled"
-},
-  "showRatingAverageRatings": "Average ratings",
-  "@showRatingAverageRatings": {
-    "description": "Title of average ratings section"
-  },
-  "showRatingUsersComments": "Users comments",
-  "@showRatingUsersComments": {
-    "description": "Title of users comments section"
-  },
-  "createSosTitle": "Create SOS",
-  "@createSosTitle": {
-    "description": "App bar title for create SOS screen"
-  },
-  "createSosChooseVehicle": "Choose the vehicle",
-  "@createSosChooseVehicle": {
-    "description": "Label for vehicle dropdown on create SOS"
-  },
-  "createSosChooseProvince": "Choose the province",
-  "@createSosChooseProvince": {
-    "description": "Label for province dropdown on create SOS"
-  },
-  "createSosLocationAutoHint": "* Your current location will be sent automatically",
-  "@createSosLocationAutoHint": {
-    "description": "Hint under province field on create SOS"
-  },
-  "createSosProblemDescription": "Enter a description of the problem",
-  "@createSosProblemDescription": {
-    "description": "Title for problem description field on create SOS (two lines: heading and hint)"
-  },
-  "createSosSendRequest": "Send request",
-  "@createSosSendRequest": {
-    "description": "Primary submit button on create SOS"
-  },
-  "createSosSampleProblemText": "Enter the description here",
-  "@createSosSampleProblemText": {
-    "description": "Initial or hint text for problem field (not vehicle or province names)"
-  },
-  "fuelSosCreateTitle": "Fuel SOS Create",
-  "@fuelSosCreateTitle": {
-    "description": "App bar title for fuel SOS create screen"
-  },
-  "fuelSosCreateVehicleTitle": "Vehicle",
-  "@fuelSosCreateVehicleTitle": {
-    "description": "Vehicle picker field title"
-  },
-  "fuelSosCreateVehicleHint": "Choose the vehicle you want for the service",
-  "@fuelSosCreateVehicleHint": {
-    "description": "Vehicle picker field hint"
-  },
-  "fuelSosCreateFuelTypeTitle": "Fuel type",
-  "@fuelSosCreateFuelTypeTitle": {
-    "description": "Fuel type picker field title"
-  },
-  "fuelSosCreateFuelTypeHint": "Choose the fuel type you want",
-  "@fuelSosCreateFuelTypeHint": {
-    "description": "Fuel type picker field hint"
-  },
-  "fuelSosCreateQuantityTitle": "Quantity",
-  "@fuelSosCreateQuantityTitle": {
-    "description": "Quantity field title"
-  },
-  "fuelSosCreateQuantityHint": "Enter the quantity you want to fill",
-  "@fuelSosCreateQuantityHint": {
-    "description": "Quantity field hint"
-  },
-  "fuelSosCreateNotesTitle": "Notes",
-  "@fuelSosCreateNotesTitle": {
-    "description": "Notes field title"
-  },
-  "fuelSosCreateNotesHint": "Enter any notes you want to add",
-  "@fuelSosCreateNotesHint": {
-    "description": "Notes field hint"
-  },
-  "fuelSosCreateProvinceTitle": "Governorate",
-  "@fuelSosCreateProvinceTitle": {
-    "description": "Province picker field title"
-  },
-  "fuelSosCreateProvinceHint": "Choose the governorate at your current location",
-  "@fuelSosCreateProvinceHint": {
-    "description": "Province picker field hint"
-  },
-  "fuelSosCreateSelectVehicleRequired": "Please select a vehicle",
-  "@fuelSosCreateSelectVehicleRequired": {
-    "description": "Shown when vehicle is not selected"
-  },
-  "fuelSosCreateSelectFuelTypeRequired": "Please select a fuel type",
-  "@fuelSosCreateSelectFuelTypeRequired": {
-    "description": "Shown when fuel type is not selected"
-  },
-  "fuelSosCreateQuantityRequired": "Please enter the quantity",
-  "@fuelSosCreateQuantityRequired": {
-    "description": "Shown when quantity is empty"
-  },
-  "fuelSosCreateSelectProvinceRequired": "Please select a governorate",
-  "@fuelSosCreateSelectProvinceRequired": {
-    "description": "Shown when province is not selected"
-  },
-  "fuelSosCreateNoVehicles": "No vehicles found",
-  "@fuelSosCreateNoVehicles": {
-    "description": "Shown when user has no vehicles"
-  },
-  "sosRequestsListTitle": "SOS Requests List",
-  "@sosRequestsListTitle": {
-    "description": "App bar title for SOS requests list screen"
-  },
-  "sosRequestIdLabel": "ID Number",
-  "@sosRequestIdLabel": {
-    "description": "Label before SOS request id (value is not translated)"
-  },
-  "sosRequestVehicleLabel": "Vehicle",
-  "@sosRequestVehicleLabel": {
-    "description": "Label before vehicle name (value is not translated)"
-  },
-  "sosRequestShortDescriptionLabel": "Short description",
-  "@sosRequestShortDescriptionLabel": {
-    "description": "Label for short problem description (body text is not translated)"
-  },
-  "sosStatusFinished": "Finished",
-  "@sosStatusFinished": {
-    "description": "SOS request status badge: finished"
-  },
-  "sosStatusInProgress": "In progress",
-  "@sosStatusInProgress": {
-    "description": "SOS request status badge: in progress"
-  },
-  "sosStatusWaiting": "Waiting",
-  "@sosStatusWaiting": {
-    "description": "SOS request status badge: waiting"
-  },
-  "sosRequestAccept": "Accept",
-  "@sosRequestAccept": {
-    "description": "Outlined accept button on SOS request card"
-  },
-  "sosRequestViewDetails": "View details",
-  "@sosRequestViewDetails": {
-    "description": "Primary button to open SOS request details"
-  },
-  "sosRequestCreatedAtHours": "Created {hours} hours ago",
-  "@sosRequestCreatedAtHours": {
-    "description": "SOS card footer relative time in hours",
-    "placeholders": {
-      "hours": {
-        "type": "int"
-      }
-    }
-  },
-  "sosRequestCreatedAtMinutes": "Created {minutes} min ago",
-  "@sosRequestCreatedAtMinutes": {
-    "description": "SOS card footer relative time in minutes",
-    "placeholders": {
-      "minutes": {
-        "type": "int"
-      }
-    }
-  },
-  "sosDetailsTitle": "SOS Details",
-  "@sosDetailsTitle": {
-    "description": "App bar title for SOS request details screen"
-  },
-  "sosDetailsRequestAccepted": "Request accepted",
-  "@sosDetailsRequestAccepted": {
-    "description": "Top status banner shown when the SOS request has been accepted"
-  },
-  "sosDetailsRequestData": "Request data",
-  "@sosDetailsRequestData": {
-    "description": "Header label for the request data card on the SOS details screen"
-  },
-  "sosDetailsPlateNumberLabel": "Plate number",
-  "@sosDetailsPlateNumberLabel": {
-    "description": "Label before the plate number value (value is not translated)"
-  },
-  "sosDetailsTechnicianLabel": "Technician",
-  "@sosDetailsTechnicianLabel": {
-    "description": "Label before the technician name (value is not translated)"
-  },
-  "sosDetailsDescriptionLabel": "Description",
-  "@sosDetailsDescriptionLabel": {
-    "description": "Label before the request description text (value is not translated)"
-  },
-  "sosDetailsCurrentLocation": "Current location",
-  "@sosDetailsCurrentLocation": {
-    "description": "Header label for the location card on the SOS details screen"
-  },
-  "sosDetailsTrack": "Track",
-  "@sosDetailsTrack": {
-    "description": "Label of the track chip on top of the SOS details map"
-  },
-  "sosDetailsCancelRequest": "Cancel request",
-  "@sosDetailsCancelRequest": {
-    "description": "Primary destructive button to cancel the SOS request"
-  },
-  "fuelOrdersListTitle": "Fuel Orders List",
-  "@fuelOrdersListTitle": {
-    "description": "App bar title for the user fuel orders list screen"
-  },
-  "fuelOrderDetailsTitle": "Fuel Order Details",
-  "@fuelOrderDetailsTitle": {
-    "description": "App bar title for the fuel order details screen"
-  },
-  "fuelOrderDetailsProviderSection": "Service provider details",
-  "@fuelOrderDetailsProviderSection": {
-    "description": "Section header for the fuel provider card on order details"
-  },
-  "cancelReasonDialogTitle": "Cancel SOS",
-  "@cancelReasonDialogTitle": {
-    "description": "Header title on the cancel-reason dialog"
-  },
-  "cancelReasonDialogQuestion": "What is the reason for canceling the order?",
-  "@cancelReasonDialogQuestion": {
-    "description": "Question above the cancel reason text field"
-  },
-  "cancelReasonDialogHint": "Enter the reason for canceling the fuel order here...",
-  "@cancelReasonDialogHint": {
-    "description": "Placeholder in the cancel reason text field"
-  },
-  "cancelReasonDialogBack": "Back",
-  "@cancelReasonDialogBack": {
-    "description": "Dismiss action on the cancel-reason dialog footer"
-  },
-  "fuelCancelReasonDialogTitle": "Cancel order",
-  "@fuelCancelReasonDialogTitle": {
-    "description": "Cancel-reason dialog title on fuel order details"
-  },
-  "providerProfilePageTitle": "Provider Profile",
-  "@providerProfilePageTitle": {
-    "description": "App bar title for the fuel provider profile screen"
-  },
-  "providerProfileAvailabilityTitle": "Work availability",
-  "@providerProfileAvailabilityTitle": {
-    "description": "Section title for provider availability toggle"
-  },
-  "providerProfileAvailableNow": "Available now",
-  "@providerProfileAvailableNow": {
-    "description": "Availability label when the provider is online"
-  },
-  "providerProfileNotAvailableNow": "Not available now",
-  "@providerProfileNotAvailableNow": {
-    "description": "Availability label when the provider is offline"
-  },
-  "providerProfileLocationSectionTitle": "Service provider location",
-  "@providerProfileLocationSectionTitle": {
-    "description": "Section title for the provider location card"
-  },
-  "providerProfileServicesAndPricesTitle": "Services and prices",
-  "@providerProfileServicesAndPricesTitle": {
-    "description": "Section title for fuel types and prices row"
-  },
-  "providerProfileSampleName": "Khaled Al-Khaled",
-  "@providerProfileSampleName": {
-    "description": "Sample provider name for the profile preview UI"
-  },
-  "providerProfilePriceLine": "price : {price} $",
-  "@providerProfilePriceLine": {
-    "description": "Price line on a fuel type card",
-    "placeholders": {
-      "price": {
-        "type": "String"
-      }
-    }
-  },
-  "providerEditProfilePageTitle": "Edit provider profile",
-  "@providerEditProfilePageTitle": {
-    "description": "App bar title for the fuel provider edit profile screen"
-  },
-  "providerEditProfilePersonalInfoTitle": "Your profile information",
-  "@providerEditProfilePersonalInfoTitle": {
-    "description": "Section title for personal info on provider edit profile"
-  },
-  "providerEditProfileProviderNameLabel": "Service provider name",
-  "@providerEditProfileProviderNameLabel": {
-    "description": "Label for the provider name field"
-  },
-  "providerEditProfileProviderNameHint": "Enter the service provider name",
-  "@providerEditProfileProviderNameHint": {
-    "description": "Hint for the provider name field"
-  },
-  "providerEditProfileProviderPhoneLabel": "Service provider phone",
-  "@providerEditProfileProviderPhoneLabel": {
-    "description": "Label for the provider phone field"
-  },
-  "providerEditProfileProviderPhoneHint": "Enter the service provider phone",
-  "@providerEditProfileProviderPhoneHint": {
-    "description": "Hint for the provider phone field"
-  },
-  "providerEditProfileGovernorateLabel": "Choose service provider governorate",
-  "@providerEditProfileGovernorateLabel": {
-    "description": "Label for the governorate picker"
-  },
-  "providerEditProfileGovernorateHint": "Choose governorate",
-  "@providerEditProfileGovernorateHint": {
-    "description": "Hint for the governorate picker"
-  },
-  "providerEditProfileAddressLabel": "Address",
-  "@providerEditProfileAddressLabel": {
-    "description": "Label for the address field"
-  },
-  "providerEditProfileAddressHint": "Enter the full address",
-  "@providerEditProfileAddressHint": {
-    "description": "Hint for the address field"
-  },
-  "providerEditProfileLocationNote": "* Your location will be used as the provider starting point",
-  "@providerEditProfileLocationNote": {
-    "description": "Note below the address field about location usage"
-  },
-  "providerEditProfileActivateServiceLine": "Activate service and set price",
-  "@providerEditProfileActivateServiceLine": {
-    "description": "Subtitle on fuel service cards in edit profile"
-  },
-  "providerEditProfileSaveInfo": "Save information",
-  "@providerEditProfileSaveInfo": {
-    "description": "Save button on provider edit profile"
-  },
-  "providerEditProfileSampleAddress": "Abbasiyeen Square - Al-Qusour Square entrance",
-  "@providerEditProfileSampleAddress": {
-    "description": "Sample address on provider edit profile preview form"
-  },
-  "providerCreateProfilePageTitle": "Create provider profile",
-  "@providerCreateProfilePageTitle": {
-    "description": "App bar title for the fuel provider create profile screen"
-  },
-  "providerCreateProfileSave": "Create profile",
-  "@providerCreateProfileSave": {
-    "description": "Save button on provider create profile"
-  },
-  "providerEditProfileSetPriceTitle": "Set price for {fuelType}",
-  "@providerEditProfileSetPriceTitle": {
-    "description": "Title of the fuel price entry dialog",
-    "placeholders": {
-      "fuelType": {
-        "type": "String"
-      }
-    }
-  },
-  "providerEditProfileSetPriceHint": "Enter the price",
-  "@providerEditProfileSetPriceHint": {
-    "description": "Hint for the price field in the fuel service dialog"
-  },
-  "providerEditProfileSetPriceRequired": "Please enter a price",
-  "@providerEditProfileSetPriceRequired": {
-    "description": "Validation when confirming without a price"
-  },
-  "providerAvailableOrdersTitle": "Available orders",
-  "@providerAvailableOrdersTitle": {
-    "description": "App bar title for the fuel provider available orders list"
-  },
-  "providerAvailableOrderNoNotes": "None",
-  "@providerAvailableOrderNoNotes": {
-    "description": "Fallback text when an order has no notes"
-  },
-  "providerOrderDetailsTitle": "Provider order details",
-  "@providerOrderDetailsTitle": {
-    "description": "App bar title for the fuel provider order details screen"
-  },
-  "providerOrderDetailsPendingAcceptance": "Waiting for order acceptance",
-  "@providerOrderDetailsPendingAcceptance": {
-    "description": "Status banner while the provider has not accepted yet"
-  },
-  "providerOrderDetailsCustomerSection": "Customer details",
-  "@providerOrderDetailsCustomerSection": {
-    "description": "Section header for customer info on provider order details"
-  },
-  "providerOrderDetailsAcceptOrder": "Accept order",
-  "@providerOrderDetailsAcceptOrder": {
-    "description": "Primary action to accept the order"
-  },
-  "providerOrderDetailsShareLocationOn": "Share location",
-  "@providerOrderDetailsShareLocationOn": {
-    "description": "Label when location sharing is enabled"
-  },
-  "providerOrderDetailsShareLocationOff": "Do not share location",
-  "@providerOrderDetailsShareLocationOff": {
-    "description": "Label when location sharing is disabled"
-  },
-  "providerOrderDetailsEstimatedArrivalDialogTitle": "Estimated arrival minutes",
-  "@providerOrderDetailsEstimatedArrivalDialogTitle": {
-    "description": "Title of the dialog when accepting an order with ETA"
-  },
-  "providerOrderDetailsEnterDurationMinutes": "Enter duration in minutes",
-  "@providerOrderDetailsEnterDurationMinutes": {
-    "description": "Label for the ETA minutes field"
-  },
-  "providerOrderDetailsEnterAdditionalNotes": "Enter additional notes",
-  "@providerOrderDetailsEnterAdditionalNotes": {
-    "description": "Label for optional notes when accepting an order"
-  },
-  "providerMyOrdersTitle": "My orders",
-  "@providerMyOrdersTitle": {
-    "description": "App bar title for the fuel provider my orders list"
-  },
-  "providerStatisticsTotalOrdersTitle": "Total orders",
-  "@providerStatisticsTotalOrdersTitle": {
-    "description": "Section title for order totals on provider statistics"
-  },
-  "providerStatisticsTotalProfitsTitle": "Total profits",
-  "@providerStatisticsTotalProfitsTitle": {
-    "description": "Section title for profit totals on provider statistics"
-  },
-  "providerStatisticsAllOrders": "All Reserved",
-  "@providerStatisticsAllOrders": {
-    "description": "Label for total orders count on provider statistics"
+  "settingsPageTitle": "Settings",
+  "@settingsPageTitle": {
+    "description": "Main title for the settings page"
+  },
+  "settingsLanguageSection": "Language",
+  "@settingsLanguageSection": {
+    "description": "Header for the application language selection section"
+  },
+  "settingsThemeSection": "Appearance",
+  "@settingsThemeSection": {
+    "description": "Header for the application theme or appearance section"
+  },
+  "settingsLanguageArabic": "Arabic",
+  "@settingsLanguageArabic": {
+    "description": "Option to select Arabic language"
+  },
+  "settingsLanguageEnglish": "English",
+  "@settingsLanguageEnglish": {
+    "description": "Option to select English language"
+  },
+  "settingsThemeLight": "Light",
+  "@settingsThemeLight": {
+    "description": "Option to enable light mode"
+  },
+  "settingsThemeDark": "Dark",
+  "@settingsThemeDark": {
+    "description": "Option to enable dark mode"
+  },
+  "settingsThemeSystem": "System",
+  "@settingsThemeSystem": {
+    "description": "Option to make the theme follow the device system settings"
   }
+
+
+
+
 }
-
-
-

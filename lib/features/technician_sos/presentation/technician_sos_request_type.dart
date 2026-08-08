@@ -1,4 +1,0 @@
-enum SosRequestType {
-  available,
-  myRequests,
-}

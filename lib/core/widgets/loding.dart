@@ -59,8 +59,8 @@ class _AppLoadingWidgetState extends State<AppLoadingWidget>
         mainAxisSize: MainAxisSize.min,
         children: [
           SizedBox(
-            width: 100.w,
-            height: 100.w,
+            width: 30.w,
+            height: 30.w,
             child: AnimatedBuilder(
               animation: Listenable.merge([_gearCtrl, _wrenchCtrl, _ringCtrl]),
               builder: (_, __) => CustomPaint(
@@ -76,7 +76,7 @@ class _AppLoadingWidgetState extends State<AppLoadingWidget>
           Text(
             'جارٍ التحميل...',
             style: TextStyle(
-              fontSize: 13.sp,
+              fontSize: 5.sp,
               color: Colors.grey.shade500,
               letterSpacing: 0.3,
             ),

@@ -12,1664 +12,1023 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get counterAppBarTitle => 'Counter';
+  String get dashboardMenu => 'Dashboard';
 
   @override
-  String get appTitle => 'CarCare Services';
+  String get techniciansMenu => 'Technicians';
 
   @override
-  String get fuelProvider => 'Fuel Provider';
+  String get ordersMenu => 'Orders';
 
   @override
-  String get appName => 'CarCare';
+  String get fuelProvidersMenu => 'Fuel Providers';
 
   @override
-  String get noAvailableRequests => 'No requests available at the moment';
+  String get usersMenu => 'Users';
 
   @override
-  String get welcome => 'Welcome';
+  String get reportsMenu => 'Reports';
 
   @override
-  String get welcomeBack => 'Welcome Back';
+  String get settingsMenu => 'Settings';
 
   @override
-  String get login => 'Login';
-
-  @override
-  String get register => 'Register';
-
-  @override
-  String get logout => 'Logout';
-
-  @override
-  String get username => 'Username';
-
-  @override
-  String get password => 'Password';
-
-  @override
-  String get confirmPassword => 'Confirm Password';
-
-  @override
-  String get phoneNumber => 'Phone Number';
-
-  @override
-  String get fullName => 'Full Name';
-
-  @override
-  String get email => 'Email';
-
-  @override
-  String get submit => 'Submit';
-
-  @override
-  String get cancel => 'Cancel';
-
-  @override
-  String get save => 'Save';
-
-  @override
-  String get edit => 'Edit';
-
-  @override
-  String get delete => 'Delete';
-
-  @override
-  String get close => 'Close';
-
-  @override
-  String get back => 'Back';
-
-  @override
-  String get next => 'Next';
-
-  @override
-  String get done => 'Done';
-
-  @override
-  String get retry => 'Retry';
+  String get adminLabel => 'Admin';
 
   @override
   String get refresh => 'Refresh';
 
   @override
-  String get search => 'Search';
+  String get techniciansPageTitle => 'Technicians Management';
 
   @override
-  String get filter => 'Filter';
+  String get statusAll => 'All';
 
   @override
-  String get forgotPassword => 'Forgot Password?';
+  String get statusPending => 'Pending';
 
   @override
-  String get alreadyHaveAccount => 'Already have an account?';
+  String get statusApproved => 'Approved';
 
   @override
-  String get dontHaveAccount => 'Don\'t have an account?';
+  String get statusRejected => 'Rejected';
 
   @override
-  String get createAccount => 'Create New Account';
+  String get statusSuspended => 'Suspended';
 
   @override
-  String get otpVerification => 'OTP Verification';
+  String get columnTechnician => 'Technician';
 
   @override
-  String get enterOtp => 'Enter Verification Code';
+  String get columnSpecialization => 'Specialization';
 
   @override
-  String get otpSent => 'Verification code sent to';
+  String get columnCity => 'City';
 
   @override
-  String get resendOtp => 'Resend Code';
+  String get columnExperience => 'Experience';
 
   @override
-  String get resendOtpIn => 'Resend in';
+  String get columnHourlyRate => 'Hourly Rate';
 
   @override
-  String get verify => 'Verify';
+  String get columnStatus => 'Status';
 
   @override
-  String get home => 'Home';
+  String get columnActions => 'Actions';
 
   @override
-  String get schedules => 'Service Appointments';
+  String get actionApprove => 'Approve';
 
   @override
-  String get complaints => 'Car Issues';
+  String get actionReject => 'Reject';
 
   @override
-  String get profile => 'Profile';
+  String get actionSuspend => 'Suspend';
 
   @override
-  String get mySchedules => 'My Appointments';
+  String get actionReactivate => 'Reactivate';
 
   @override
-  String get upcomingSchedules => 'Upcoming Appointments';
+  String get actionDetails => 'Details';
 
   @override
-  String get nextPumpingSchedule => 'Next Service Appointment';
+  String get yearsSuffix => 'yrs';
 
   @override
-  String get scheduleDetails => 'Appointment Details';
+  String get rejectDialogTitle => 'Reject Technician';
 
   @override
-  String get viewAllSchedules => 'View All Appointments';
+  String get rejectDialogHint => 'Type the rejection reason here...';
 
   @override
-  String get startTime => 'Start Time';
+  String get cancel => 'Cancel';
 
   @override
-  String get endTime => 'End Time';
+  String get confirmReject => 'Confirm Reject';
 
   @override
-  String get actualStartTime => 'Actual Start Time';
+  String get technicianDetailsTitle => 'Technician Details';
 
   @override
-  String get actualEndTime => 'Actual End Time';
+  String get detailsEmail => 'Email';
 
   @override
-  String get status => 'Status';
+  String get detailsPhone => 'Phone';
 
   @override
-  String get notes => 'Notes';
+  String get detailsSpecialization => 'Specialization';
 
   @override
-  String get createdBy => 'Created By';
+  String get detailsCity => 'City';
 
   @override
-  String get scheduled => 'Scheduled';
+  String get detailsExperience => 'Experience';
 
   @override
-  String get active => 'In Progress';
+  String get detailsHourlyRate => 'Hourly Rate';
 
   @override
-  String get completed => 'Completed';
+  String get detailsStatus => 'Status';
 
   @override
-  String get cancelled => 'Cancelled';
+  String get detailsRejectionReason => 'Rejection Reason';
 
   @override
-  String get startsIn => 'Starts in';
+  String get detailsCertifications => 'Certifications';
 
   @override
-  String get activeNow => 'Active Now';
+  String get close => 'Close';
 
   @override
-  String get endedAgo => 'Ended';
+  String get detailsId => 'Technician ID';
 
   @override
-  String get today => 'Today';
+  String get detailsUserId => 'User ID';
 
   @override
-  String get thisWeek => 'This Week';
+  String get detailsAvailable => 'Available';
 
   @override
-  String get thisMonth => 'This Month';
+  String get detailsYes => 'Yes';
 
   @override
-  String get dateRange => 'Date Range';
+  String get detailsNo => 'No';
 
   @override
-  String get selectDateRange => 'Select Date Range';
+  String get detailsApprovedAt => 'Approved At';
 
   @override
-  String get myComplaints => 'My Car Issues';
+  String get detailsRejectedAt => 'Rejected At';
 
   @override
-  String get submitComplaint => 'Report Issue';
+  String get detailsSuspendedAt => 'Suspended At';
 
   @override
-  String get complaintDetails => 'Issue Details';
+  String get detailsCreatedAt => 'Created At';
 
   @override
-  String get complaintTitle => 'Issue Title';
+  String get detailsUpdatedAt => 'Updated At';
 
   @override
-  String get complaintDescription => 'Issue Description';
+  String get noCertifications => 'No certifications uploaded';
 
   @override
-  String get complaintCategory => 'Issue Category';
+  String get carwashersPageTitle => 'Car Washers';
 
   @override
-  String get selectCategory => 'Select Category';
+  String get carwasherDetailsTitle => 'Car Washer Details';
 
   @override
-  String get noWater => 'Engine Issue';
+  String get fuelProvidersPageTitle => 'Fuel Providers';
 
   @override
-  String get waterQuality => 'Tire Issue';
+  String get fuelProviderDetailsTitle => 'Fuel Provider Details';
 
   @override
-  String get lowPressure => 'Battery Issue';
+  String get shopsPageTitle => 'Shops';
 
   @override
-  String get scheduleIssue => 'Service Delay';
+  String get shopDetailsTitle => 'Shop Details';
 
   @override
-  String get other => 'Other';
+  String get columnShop => 'Shop';
 
   @override
-  String get pending => 'Pending';
+  String get columnPhone => 'Phone';
 
   @override
-  String get inProgress => 'In Progress';
+  String get detailsAddress => 'Address';
 
   @override
-  String get resolved => 'Resolved';
+  String get detailsDescription => 'Description';
 
   @override
-  String get rejected => 'Rejected';
+  String get detailsRating => 'Rating';
 
   @override
-  String get adminResponse => 'Service Response';
+  String get detailsServices => 'Services';
 
   @override
-  String get handledBy => 'Handled By';
+  String get detailsServicePrices => 'Service Prices';
 
   @override
-  String get handledAt => 'Handled At';
+  String get detailsWorkingHours => 'Working Hours';
 
   @override
-  String get createdAt => 'Created At';
+  String get detailsFuelTypes => 'Fuel Types';
 
   @override
-  String get updatedAt => 'Updated At';
+  String get detailsPrices => 'Prices';
 
   @override
-  String get complaintSubmitted => 'Issue Reported Successfully';
+  String get detailsBusinessTypes => 'Business Types';
 
   @override
-  String get region => 'Service Center';
+  String get detailsCarBrands => 'Car Brands';
 
   @override
-  String get unit => 'Unit';
+  String get detailsPartCategories => 'Part Categories';
 
   @override
-  String get neighborhood => 'Neighborhood';
+  String get columnCompany => 'Company';
 
   @override
-  String get zone => 'Zone';
+  String get dashboardPageTitle => 'Dashboard';
 
   @override
-  String get selectRegion => 'Select Service Center';
+  String get dashboardTotalUsers => 'Total Users';
 
   @override
-  String get selectUnit => 'Select Unit';
+  String get dashboardTotalCustomers => 'Total Customers';
 
   @override
-  String get selectNeighborhood => 'Select Neighborhood';
+  String get dashboardCompletedOperations => 'Completed Operations';
 
   @override
-  String get selectZone => 'Select Zone';
+  String get dashboardPendingOperations => 'Pending Operations';
 
   @override
-  String get location => 'Location';
+  String get dashboardProvidersOverview => 'Providers Overview';
 
   @override
-  String get selectLocation => 'Select Location';
+  String get dashboardOperationsStatus => 'Operations Status';
 
   @override
-  String get clearSelection => 'Clear Selection';
+  String get dashboardOperationsOverTime => 'Operations Over Time';
 
   @override
-  String get myProfile => 'My Profile';
+  String get dashboardRevenue => 'Revenue';
 
   @override
-  String get editProfile => 'Edit Profile';
+  String get dashboardPeriodWeek => 'Week';
 
   @override
-  String get profileUpdated => 'Profile Updated Successfully';
+  String get dashboardPeriodMonth => 'Month';
 
   @override
-  String get role => 'Role';
+  String get dashboardPeriodYear => 'Year';
 
   @override
-  String get admin => 'Admin';
+  String get detailsLocation => 'Location';
 
   @override
-  String get operator => 'Operator';
+  String get carwashersMenu => 'Car Washers';
 
   @override
-  String get citizen => 'Customer';
+  String get shopsMenu => 'Shops';
 
   @override
-  String get defaultLocation => 'Default Location';
+  String get loginTitle => 'Login';
 
   @override
-  String get watchedLocation => 'Watched Location';
+  String get loginSubtitle => 'Sign in to access the admin dashboard';
 
   @override
-  String get loading => 'Loading...';
+  String get loginEmailLabel => 'Email';
 
   @override
-  String get error => 'Error';
+  String get loginPasswordLabel => 'Password';
 
   @override
-  String get errorOccurred => 'An Error Occurred';
+  String get loginButton => 'Login';
 
   @override
-  String get networkError => 'Network Connection Error';
+  String get loginValidationRequired => 'This field is required';
 
   @override
-  String get serverError => 'Server Error';
+  String get loginValidationEmail => 'Please enter a valid email';
 
   @override
-  String get noInternetConnection => 'No Internet Connection';
+  String get logoutButton => 'Logout';
 
   @override
-  String get tryAgain => 'Try Again';
+  String get logoutConfirmTitle => 'Logout';
 
   @override
-  String get noData => 'No Data';
+  String get logoutConfirmMessage => 'Are you sure you want to logout?';
 
   @override
-  String get noSchedules => 'No Appointments';
+  String get logoutConfirmButton => 'Logout';
 
   @override
-  String get noComplaints => 'No Reported Issues';
+  String get reportsPageTitle => 'Reports';
 
   @override
-  String get noSchedulesMessage => 'No service appointments at the moment';
+  String get tabOverview => 'Overview';
 
   @override
-  String get noComplaintsMessage => 'You haven\'t reported any issues yet';
+  String get tabProviders => 'Providers';
 
   @override
-  String get pullToRefresh => 'Pull to Refresh';
+  String get tabFinancial => 'Financial';
 
   @override
-  String get releaseToRefresh => 'Release to Refresh';
+  String get tabBilling => 'Billing';
 
   @override
-  String get loadMore => 'Load More';
+  String get tabAdvertisements => 'Advertisements';
 
   @override
-  String get quickActions => 'Quick Actions';
+  String get reportFilterClear => 'Clear';
 
   @override
-  String get viewSchedules => 'View Appointments';
+  String get reportFilterApply => 'Apply';
 
   @override
-  String get requiredField => 'This field is required';
+  String get reportFilterAll => 'All';
 
   @override
-  String get invalidPhoneNumber => 'Invalid phone number';
+  String get reportRetry => 'Retry';
 
   @override
-  String get invalidEmail => 'Invalid email address';
+  String get reportDateFrom => 'From';
 
   @override
-  String get passwordTooShort => 'Password too short (minimum 6 characters)';
+  String get reportDateTo => 'To';
 
   @override
-  String get passwordsDoNotMatch => 'Passwords do not match';
+  String get filterProviderType => 'Provider Type';
 
   @override
-  String maxCharacters(int max) {
-    return 'Maximum $max characters';
+  String get filterProviderStatus => 'Provider Status';
+
+  @override
+  String get filterBillingStatus => 'Billing Status';
+
+  @override
+  String get filterInvoiceStatus => 'Invoice Status';
+
+  @override
+  String get filterOperationType => 'Operation Type';
+
+  @override
+  String get filterStatus => 'Status';
+
+  @override
+  String get filterGroupBy => 'Group By';
+
+  @override
+  String get filterPlacement => 'Placement';
+
+  @override
+  String get providerTypeTechnician => 'Technician';
+
+  @override
+  String get providerTypeFuelProvider => 'Fuel Provider';
+
+  @override
+  String get providerTypeCarWasher => 'Car Washer';
+
+  @override
+  String get providerTypeShop => 'Shop';
+
+  @override
+  String get opStatusCompleted => 'Completed';
+
+  @override
+  String get opStatusInProgress => 'In Progress';
+
+  @override
+  String get opStatusCancelled => 'Cancelled';
+
+  @override
+  String get opStatusPending => 'Pending';
+
+  @override
+  String get opTypeTotals => 'Total';
+
+  @override
+  String get opTypeMaintenance => 'Maintenance';
+
+  @override
+  String get opTypeSos => 'SOS';
+
+  @override
+  String get opTypeFuel => 'Fuel';
+
+  @override
+  String get opTypeCarWash => 'Car Wash';
+
+  @override
+  String get opTypeSpareParts => 'Spare Parts';
+
+  @override
+  String get groupByDay => 'Day';
+
+  @override
+  String get groupByMonth => 'Month';
+
+  @override
+  String get groupByYear => 'Year';
+
+  @override
+  String get providerStatusPending => 'Pending';
+
+  @override
+  String get providerStatusApproved => 'Approved';
+
+  @override
+  String get providerStatusRejected => 'Rejected';
+
+  @override
+  String get providerStatusSuspended => 'Suspended';
+
+  @override
+  String get back => 'Back';
+
+  @override
+  String get invoiceActionExportPdf => 'Export PDF';
+
+  @override
+  String get isActive => 'Active';
+
+  @override
+  String get billingType => 'Billing Type';
+
+  @override
+  String get invoicesPageTitle => 'Provider Invoices';
+
+  @override
+  String get invoiceDetailsTitle => 'Invoice Details';
+
+  @override
+  String get invoiceStatusAll => 'All';
+
+  @override
+  String get invoiceStatusDraft => 'Draft';
+
+  @override
+  String get invoiceStatusIssued => 'Issued';
+
+  @override
+  String get invoiceStatusPaid => 'Paid';
+
+  @override
+  String get invoiceStatusOverdue => 'Overdue';
+
+  @override
+  String get invoiceStatusCancelled => 'Cancelled';
+
+  @override
+  String get columnInvoiceNumber => 'Invoice #';
+
+  @override
+  String get columnProvider => 'Provider';
+
+  @override
+  String get columnPeriod => 'Period';
+
+  @override
+  String get columnTotalAmount => 'Total';
+
+  @override
+  String get columnDueAt => 'Due At';
+
+  @override
+  String get invoiceFieldInvoiceNumber => 'Invoice Number';
+
+  @override
+  String get invoiceFieldProviderType => 'Provider Type';
+
+  @override
+  String get invoiceFieldProviderId => 'Provider ID';
+
+  @override
+  String get invoiceFieldPeriodStart => 'Period Start';
+
+  @override
+  String get invoiceFieldPeriodEnd => 'Period End';
+
+  @override
+  String get invoiceFieldIssuedAt => 'Issued At';
+
+  @override
+  String get invoiceFieldDueAt => 'Due At';
+
+  @override
+  String get invoiceFieldSubtotal => 'Subtotal';
+
+  @override
+  String get invoiceFieldCommissionTotal => 'Commission Total';
+
+  @override
+  String get invoiceFieldSubscriptionTotal => 'Subscription Total';
+
+  @override
+  String get invoiceFieldTotalAmount => 'Total Amount';
+
+  @override
+  String get invoiceFieldStatus => 'Status';
+
+  @override
+  String get invoiceFieldIsOverdue => 'Overdue';
+
+  @override
+  String get invoiceFieldPaymentMethod => 'Payment Method';
+
+  @override
+  String get invoiceFieldPaymentReference => 'Payment Reference';
+
+  @override
+  String get invoiceFieldPaidAt => 'Paid At';
+
+  @override
+  String get invoiceFieldNotes => 'Notes';
+
+  @override
+  String get invoiceFieldItems => 'Items';
+
+  @override
+  String get invoiceActionIssue => 'Issue';
+
+  @override
+  String get invoiceActionMarkPaid => 'Mark as Paid';
+
+  @override
+  String get invoiceActionCancel => 'Cancel Invoice';
+
+  @override
+  String get invoiceActionGenerate => 'Generate Invoices';
+
+  @override
+  String get invoiceActionGenerateForProvider => 'Generate for Provider';
+
+  @override
+  String get invoiceGenerateDialogTitle => 'Generate Invoices';
+
+  @override
+  String get invoiceMarkPaidDialogTitle => 'Confirm Payment';
+
+  @override
+  String get invoiceCancelDialogTitle => 'Cancel Invoice';
+
+  @override
+  String get invoiceCancelDialogMessage => 'Are you sure you want to cancel this invoice?';
+
+  @override
+  String get invoiceGenerateResultTitle => 'Generation Result';
+
+  @override
+  String get invoiceGeneratedCount => 'Generated';
+
+  @override
+  String get invoiceSkippedCount => 'Skipped';
+
+  @override
+  String get invoiceSkippedReasonAlreadyExists => 'Invoice already exists';
+
+  @override
+  String get invoiceSkippedReasonWithinFreeTrial => 'Within free trial period';
+
+  @override
+  String get noInvoices => 'No invoices found';
+
+  @override
+  String get invoiceViewInvoices => 'View Invoices';
+
+  @override
+  String get billingStatusNotConfigured => 'Not Configured';
+
+  @override
+  String get billingStatusExempt => 'Exempt';
+
+  @override
+  String get billingStatusFreeTrial => 'Free Trial';
+
+  @override
+  String get billingStatusInvoiceDue => 'Invoice Due';
+
+  @override
+  String get billingStatusOverdue => 'Overdue';
+
+  @override
+  String get adStatusActive => 'Active';
+
+  @override
+  String get adStatusInactive => 'Inactive';
+
+  @override
+  String get adsTotal => 'Total Ads';
+
+  @override
+  String get adsActive => 'Active';
+
+  @override
+  String get adsInactive => 'Inactive';
+
+  @override
+  String get adsExpired => 'Expired';
+
+  @override
+  String get adsScheduled => 'Scheduled';
+
+  @override
+  String get adsByPlacementTitle => 'By Placement';
+
+  @override
+  String get adsLatestTitle => 'Latest Ads';
+
+  @override
+  String get adsEmpty => 'No ads found';
+
+  @override
+  String get billingInvoicesCount => 'Invoices Count';
+
+  @override
+  String get billingDraft => 'Draft';
+
+  @override
+  String get billingIssued => 'Issued';
+
+  @override
+  String get billingOverdueCount => 'Overdue';
+
+  @override
+  String get billingPaidCount => 'Paid';
+
+  @override
+  String get billingCancelled => 'Cancelled';
+
+  @override
+  String get billingFinancialTotalsTitle => 'Financial Totals';
+
+  @override
+  String get billingPaidTotal => 'Total Paid';
+
+  @override
+  String get billingUnpaidTotal => 'Total Unpaid';
+
+  @override
+  String get billingOverdueTotal => 'Total Overdue';
+
+  @override
+  String get billingAvgInvoice => 'Average Invoice Amount';
+
+  @override
+  String get billingProvidersOverdue => 'Providers with Overdue Bills';
+
+  @override
+  String get billingLatestInvoicesTitle => 'Latest Invoices';
+
+  @override
+  String get billingEmpty => 'No invoices found';
+
+  @override
+  String get billingStatusLabel => 'Status';
+
+  @override
+  String get billingIssuedAtLabel => 'Issued';
+
+  @override
+  String get financialGrossRevenueTitle => 'Gross Revenue';
+
+  @override
+  String get financialBillingSummaryTitle => 'Billing Summary';
+
+  @override
+  String get financialIssuedTotal => 'Issued Total';
+
+  @override
+  String get financialPaid => 'Paid';
+
+  @override
+  String get financialUnpaid => 'Unpaid';
+
+  @override
+  String get financialOverdue => 'Overdue';
+
+  @override
+  String get financialCommissions => 'Commissions';
+
+  @override
+  String get financialSubscriptions => 'Subscriptions';
+
+  @override
+  String get operationsTitle => 'Operations';
+
+  @override
+  String operationsGroupedTitle(String group) {
+    return 'Operations (grouped by $group)';
   }
 
   @override
-  String charactersRemaining(int count) {
-    return '$count characters remaining';
+  String get operationsEmpty => 'No data found';
+
+  @override
+  String get overviewTotalUsers => 'Total Users';
+
+  @override
+  String get overviewTotalCustomers => 'Total Customers';
+
+  @override
+  String get overviewTotalProviders => 'Total Providers';
+
+  @override
+  String get overviewProvidersByTypeStatusTitle => 'Providers by Type & Status';
+
+  @override
+  String get overviewOperationsSummaryTitle => 'Operations Summary';
+
+  @override
+  String get overviewRevenueSummaryTitle => 'Revenue Summary';
+
+  @override
+  String get providersPendingApproval => 'Pending Approval';
+
+  @override
+  String get providersOverdueBilling => 'Overdue Invoices';
+
+  @override
+  String get providersBillingNotConfigured => 'Billing Not Configured';
+
+  @override
+  String get providersCountByTypeTitle => 'Provider Count by Type';
+
+  @override
+  String get providersStatusByTypeTitle => 'Status by Type';
+
+  @override
+  String get providersTopByCompletedTitle => 'Top Providers by Completed Operations';
+
+  @override
+  String providersCompletedOpsLine(String name, String id, String count) {
+    return '$name (#$id) — $count completed operations';
   }
 
   @override
-  String get loginSuccess => 'Login Successful';
+  String get advertisementsMenu => 'Advertisements';
 
   @override
-  String get registrationSuccess => 'Registration Successful';
+  String get advertisementsPageTitle => 'Advertisements';
 
   @override
-  String get logoutConfirmation => 'Are you sure you want to logout?';
+  String get advertisementDetailsTitle => 'Advertisement Details';
 
   @override
-  String get yes => 'Yes';
+  String get adColumnImage => 'Image';
 
   @override
-  String get no => 'No';
+  String get adColumnTitle => 'Title';
 
   @override
-  String get confirm => 'Confirm';
+  String get adColumnPlacement => 'Placement';
 
   @override
-  String get language => 'Language';
+  String get adColumnPeriod => 'Period';
 
   @override
-  String get changeLanguage => 'Change Language';
+  String get adColumnStatus => 'Status';
 
   @override
-  String get arabic => 'العربية';
+  String get adColumnSortOrder => 'Order';
 
   @override
-  String get english => 'English';
+  String get adColumnActions => 'Actions';
 
   @override
-  String get settings => 'Settings';
+  String get adFilterAll => 'All';
 
   @override
-  String get about => 'About';
+  String get adFilterHome => 'Home';
 
   @override
-  String get version => 'Version';
+  String get adActionActivate => 'Activate';
 
   @override
-  String get contactUs => 'Contact Us';
+  String get adActionDeactivate => 'Deactivate';
 
   @override
-  String get appNameAr => 'CarCareX';
+  String get adActionEdit => 'Edit';
 
   @override
-  String get splashScreen => 'Splash Screen';
+  String get adActionDelete => 'Delete';
 
   @override
-  String get profileSetup => 'Profile Setup';
+  String get adCreateNew => 'New Advertisement';
 
   @override
-  String get myVehicles => 'My Vehicles';
+  String get adFormTitleLabel => 'Title';
 
   @override
-  String get addVehicle => 'Add Vehicle';
+  String get adFormPlacementLabel => 'Placement';
 
   @override
-  String get editVehicle => 'Edit Vehicle';
+  String get adFormLinkLabel => 'Link URL';
 
   @override
-  String get vehicleDetails => 'Vehicle Details';
+  String get adFormStartsLabel => 'Starts At';
 
   @override
-  String get maintenanceHistory => 'Maintenance History';
+  String get adFormEndsLabel => 'Ends At';
 
   @override
-  String get vinNumber => 'VIN Number';
+  String get adFormSortOrderLabel => 'Sort Order';
 
   @override
-  String get plateNumber => 'Plate Number';
+  String get adFormActiveLabel => 'Active';
 
   @override
-  String get brand => 'Brand';
+  String get adFormImageLabel => 'Image';
 
   @override
-  String get model => 'Model';
+  String get adFormImageHint => 'jpeg/jpg/png/webp, max 2MB';
 
   @override
-  String get year => 'Year';
+  String get adFormChooseImage => 'Choose Image';
 
   @override
-  String get maintenance => 'Maintenance';
+  String get adFormChangeImage => 'Change Image';
 
   @override
-  String get maintenanceRequest => 'Maintenance Request';
+  String get adFormSave => 'Save';
 
   @override
-  String get serviceType => 'Service Type';
+  String get adFormRequiredField => 'This field is required';
 
   @override
-  String get oilChange => 'Oil Change';
+  String get adFormImageRequired => 'Please select an image';
 
   @override
-  String get inspection => 'Inspection';
+  String get adDeleteConfirmTitle => 'Delete Advertisement';
 
   @override
-  String get repair => 'Repair';
+  String get adDeleteConfirmMessage => 'Are you sure you want to delete this advertisement?';
 
   @override
-  String get technicianOffers => 'Technician Offers';
+  String get adCreatedSuccess => 'Advertisement created successfully';
 
   @override
-  String get requestStatus => 'Request Status';
+  String get adUpdatedSuccess => 'Advertisement updated successfully';
 
   @override
-  String get rateService => 'Rate Service';
+  String get adDeletedSuccess => 'Advertisement deleted successfully';
 
   @override
-  String get emergencySOS => 'Emergency SOS';
+  String get adActivatedSuccess => 'Advertisement activated';
 
   @override
-  String get sosButton => 'SOS Button';
+  String get adDeactivatedSuccess => 'Advertisement deactivated';
 
   @override
-  String get emergencyStatus => 'Emergency Status';
+  String get noAdvertisements => 'No advertisements found';
 
   @override
-  String get carWash => 'Car Wash';
+  String get adRankingExplanation => 'The ranking starts from 1, for example, 1 means this is the first advertisement to appear';
 
   @override
-  String get bookCarWash => 'Book Car Wash';
+  String get billingSettingsPageTitle => 'Billing Settings';
 
   @override
-  String get washBookingStatus => 'Booking Status';
+  String get billingCreateNew => 'New Setting';
 
   @override
-  String get centerWash => 'Center Wash';
+  String get billingSettingLinkButton => 'Billing Setup';
 
   @override
-  String get mobileWash => 'Mobile Wash';
+  String get billingColumnProvider => 'Provider';
 
   @override
-  String get basicWash => 'Basic Wash';
+  String get billingColumnType => 'Billing Type';
 
   @override
-  String get premiumWash => 'Premium Wash';
+  String get billingColumnMonthlyFee => 'Monthly Subscription';
 
   @override
-  String get fullWash => 'Full Wash';
+  String get billingColumnCommission => 'Commission Rate';
 
   @override
-  String get marketplace => 'Marketplace';
+  String get billingColumnStartsAt => 'Start Date';
 
   @override
-  String get products => 'Products';
+  String get billingStatusActive => 'Active';
 
   @override
-  String get productDetails => 'Product Details';
+  String get billingStatusInactive => 'Inactive';
 
   @override
-  String get cart => 'Cart';
+  String get billingDeleteTitle => 'Delete Billing Setting';
 
   @override
-  String get orderStatus => 'Order Status';
+  String get billingDeleteMessage => 'Are you sure you want to delete this setting?';
 
   @override
-  String get addToCart => 'Add to Cart';
+  String get confirmDelete => 'Delete';
 
   @override
-  String get checkout => 'Checkout';
+  String get billingFormTitleCreate => 'Create Billing Setting';
 
   @override
-  String get subtotal => 'Subtotal';
+  String get billingFormTitleEdit => 'Edit Billing Setting';
 
   @override
-  String get total => 'Total';
+  String get billingFieldProviderType => 'Provider Type';
 
   @override
-  String get rentX => 'Rent Cars';
+  String get billingFieldProviderId => 'Provider ID';
 
   @override
-  String get availableCars => 'Available Cars';
+  String get billingFieldBillingType => 'Billing Type';
 
   @override
-  String get daily => 'Daily';
+  String get billingFieldMonthlyFee => 'Monthly Subscription';
 
   @override
-  String get weekly => 'Weekly';
+  String get billingFieldCommissionPercent => 'Commission Rate %';
 
   @override
-  String get monthly => 'Monthly';
+  String get billingFieldFreeTrialDays => 'Free Trial Days';
 
   @override
-  String get rentalPeriod => 'Rental Period';
+  String get billingFieldPaymentDueDays => 'Payment Due (Days)';
 
   @override
-  String get startDate => 'Start Date';
+  String get billingFieldStartsAt => 'Start Date';
 
   @override
-  String get endDate => 'End Date';
+  String get billingDetailsTitle => 'Billing Details';
 
   @override
-  String get bookNow => 'Book Now';
+  String get billingTypeSubscriptionPlusCommission => 'Subscription + Commission';
 
   @override
-  String get sellX => 'Sell Cars';
+  String get billingTypeExempt => 'Exempt';
 
   @override
-  String get sellListings => 'Sell Listings';
+  String get billingFieldExemptMethod => 'Exempt Method';
 
   @override
-  String get myListings => 'My Listings';
+  String get billingTypeCommission => 'Billing Type: Commission';
 
   @override
-  String get publishListing => 'Publish Listing';
+  String get billingTypeMonthly => 'Monthly Billing';
 
   @override
-  String get contactSeller => 'Contact Seller';
+  String get billingFieldIsActive => 'Active?';
 
   @override
-  String get fuelX => 'Fuel Delivery';
+  String get billingFieldNotes => 'Notes';
 
   @override
-  String get fuelRequest => 'Fuel Request';
-
-  @override
-  String get fuelType => 'Fuel Type';
-
-  @override
-  String get gasoline91 => 'Gasoline 91';
-
-  @override
-  String get gasoline95 => 'Gasoline 95';
-
-  @override
-  String get diesel => 'Diesel';
-
-  @override
-  String get quantity => 'Quantity';
-
-  @override
-  String get liters => 'Liters';
-
-  @override
-  String get fuelOrderStatus => 'Fuel Order Status';
-
-  @override
-  String get carOwner => 'Car Owner';
-
-  @override
-  String get technician => 'Technician';
-
-  @override
-  String get accept => 'Accept';
-
-  @override
-  String get reject => 'Reject';
-
-  @override
-  String get proceed => 'Proceed';
-
-  @override
-  String get continueButton => 'Continue';
-
-  @override
-  String get select => 'Select';
-
-  @override
-  String get choose => 'Choose';
-
-  @override
-  String get onTheWay => 'On The Way';
-
-  @override
-  String get arrived => 'Arrived';
-
-  @override
-  String get delivered => 'Delivered';
-
-  @override
-  String get assigned => 'Assigned';
-
-  @override
-  String get requested => 'Requested';
-
-  @override
-  String get loadingData => 'Loading data...';
-
-  @override
-  String get noVehicles => 'No Vehicles';
-
-  @override
-  String get noOffers => 'No Offers';
-
-  @override
-  String get noListings => 'No Listings';
-
-  @override
-  String get success => 'Success';
-
-  @override
-  String get failed => 'Failed';
-
-  @override
-  String get currentLocation => 'Current Location';
-
-  @override
-  String get useCurrentLocation => 'Use My Current Location';
-
-  @override
-  String get enterAddress => 'Enter Address';
-
-  @override
-  String get city => 'City';
-
-  @override
-  String get pickImage => 'Pick Image';
-
-  @override
-  String get camera => 'Camera';
-
-  @override
-  String get gallery => 'Gallery';
-
-  @override
-  String get profilePhoto => 'Profile Photo';
-
-  @override
-  String get notifications => 'Notifications';
-
-  @override
-  String get more => 'More';
-
-  @override
-  String get searchProducts => 'Search products...';
-
-  @override
-  String get searchCars => 'Search cars...';
-
-  @override
-  String get sortBy => 'Sort By';
-
-  @override
-  String get priceLowHigh => 'Price: Low to High';
-
-  @override
-  String get priceHighLow => 'Price: High to Low';
-
-  @override
-  String get selectDate => 'Select Date';
-
-  @override
-  String get selectTime => 'Select Time';
-
-  @override
-  String get timeSlot => 'Time Slot';
-
-  @override
-  String get now => 'Now';
-
-  @override
-  String get schedule => 'Schedule';
-
-  @override
-  String get price => 'Price';
-
-  @override
-  String get cost => 'Cost';
-
-  @override
-  String get estimatedPrice => 'Estimated Price';
-
-  @override
-  String get rating => 'Rating';
-
-  @override
-  String get stars => 'Stars';
-
-  @override
-  String get leaveComment => 'Leave Comment';
-
-  @override
-  String get userType => 'User Type';
-
-  @override
-  String get userProfile => 'User Profile';
-
-  @override
-  String get validationError => 'Validation Error';
+  String get billingPickDate => 'Pick Date';
 
   @override
   String get fieldRequired => 'This field is required';
 
   @override
-  String get invalidInput => 'Invalid Input';
+  String get save => 'Save';
 
   @override
-  String get optional => 'Optional';
+  String get actionEdit => 'Edit';
 
   @override
-  String get required => 'Required';
+  String get actionDelete => 'Delete';
 
   @override
-  String get description => 'Description';
+  String get service => 'الخدمة';
 
   @override
-  String get problemDetails => 'Problem Details';
+  String get dashboard => 'لوحة التحكم';
 
   @override
-  String get attachPhotos => 'Attach Photos';
+  String get general => 'عام';
 
   @override
-  String get summary => 'Summary';
+  String get paymentMethodCash => 'Cash';
 
   @override
-  String get orderSummary => 'Order Summary';
+  String get paymentMethodBankTransfer => 'Bank Transfer';
 
   @override
-  String get bookingSummary => 'Booking Summary';
+  String get paymentMethodShamCash => 'Sham Cash';
 
   @override
-  String get readySummary => 'Ready to get back on the road?';
+  String get paymentMethodSyriatelCash => 'Syriatel Cash';
 
   @override
-  String get editPassword => 'Edit Password';
+  String get paymentMethodOther => 'Other';
 
   @override
-  String get savePassword => 'Save Password';
+  String get settingsPageTitle => 'Settings';
 
   @override
-  String get deleteAccount => 'Delete Account';
+  String get settingsLanguageSection => 'Language';
 
   @override
-  String get creating => 'Creating...';
+  String get settingsThemeSection => 'Appearance';
 
   @override
-  String get enterFirstName => 'Enter first name';
+  String get settingsLanguageArabic => 'Arabic';
 
   @override
-  String get enterEmail => 'Enter email';
+  String get settingsLanguageEnglish => 'English';
 
   @override
-  String get enterPassword => 'Enter password';
+  String get settingsThemeLight => 'Light';
 
   @override
-  String get passwordMinLength => 'Password must be at least 6 characters';
+  String get settingsThemeDark => 'Dark';
 
   @override
-  String get reEnterPassword => 'Re-enter password';
-
-  @override
-  String get addVehicleImage => 'Add vehicle image';
-
-  @override
-  String get tapToSelectImage => 'Tap to select image';
-
-  @override
-  String get selectVehicleImage => 'Please select a vehicle image';
-
-  @override
-  String get fillAllFields => 'Please fill in all fields';
-
-  @override
-  String get vehicleAddedSuccess => 'Vehicle added successfully';
-
-  @override
-  String get odometer => 'Odometer';
-
-  @override
-  String get licensePlateNumberFull => 'License plate number';
-
-  @override
-  String get serviceRecords => 'Service records';
-
-  @override
-  String get fuelRecords => 'Fuel records';
-
-  @override
-  String get plate => 'Plate';
-
-  @override
-  String get currentPassword => 'Current password';
-
-  @override
-  String get newPassword => 'New password';
-
-  @override
-  String get createYourAccount => 'Create Your Account';
-
-  @override
-  String get carReadyMessage => 'We’re here to keep your car in top shape. Are you ready?';
-
-  @override
-  String get sos => 'SOS';
-
-  @override
-  String get fuel => 'Fuel';
-
-  @override
-  String get notification => 'Notifications';
-
-  @override
-  String get messages => 'Messages';
-
-  @override
-  String get changedpasswordsuccessfully => 'The password has been successfully changed.';
-
-  @override
-  String get enterphone => 'Enter Phone';
-
-  @override
-  String get thepasswordsdonotmatch => ' The passwords do not match.';
-
-  @override
-  String get activeorders => 'Active Orders ';
-
-  @override
-  String get saveandfollow => 'Save and follow';
-
-  @override
-  String get savevehicle => 'Save Vehicle';
-
-  @override
-  String get parts => 'Spare Parts';
-
-  @override
-  String get details => ' عرض التفاصيل';
-
-  @override
-  String get updateCarsList => 'Updating car list...';
-
-  @override
-  String get noCarsYet => 'No cars yet';
-
-  @override
-  String get vehicleUpdatedSuccessfully => 'Vehicle updated successfully';
-
-  @override
-  String get saveChanges => 'Save changes';
-
-  @override
-  String get saving => 'Saving...';
-
-  @override
-  String get updateVehicle => 'Update Vehicle';
-
-  @override
-  String get deleteVehicle => 'Delete Vehicle';
-
-  @override
-  String get confirmDeleteTitle => 'Confirm Deletion';
-
-  @override
-  String get confirmDeleteMessage => 'Are you sure you want to delete this vehicle?\nThis action cannot be undone.';
-
-  @override
-  String get owner => 'Owner';
-
-  @override
-  String get km => 'km';
-
-  @override
-  String get maintenanceRecord => 'Maintenance Record';
-
-  @override
-  String get fuelRecord => 'Fuel Record';
-
-  @override
-  String get alertsRecord => 'Alerts Record';
-
-  @override
-  String get statistics => 'Statistics';
-
-  @override
-  String get totalJobs => 'Total jobs';
-
-  @override
-  String get assignedJobs => 'Assigned';
-
-  @override
-  String get inProgressJobs => 'In progress';
-
-  @override
-  String get completedJobs => 'Completed';
-
-  @override
-  String get totalQuotations => 'Total quotations';
-
-  @override
-  String get pendingQuotations => 'Pending quotations';
-
-  @override
-  String get acceptedQuotations => 'Accepted quotations';
-
-  @override
-  String get totalRatings => 'Total ratings';
-
-  @override
-  String get deleteProfile => 'Delete Profile';
-
-  @override
-  String get confirmDeleteProfileTitle => 'Confirm Deletion';
-
-  @override
-  String get confirmDeleteProfileMessage => 'Are you sure you want to delete your account?\nThis action cannot be undone.';
-
-  @override
-  String get profileDeletedSuccessfully => 'Profile deleted successfully';
-
-  @override
-  String get enterPhone => 'Please enter phone number';
-
-  @override
-  String get invalidPhone => 'Invalid phone number';
-
-  @override
-  String get enterAsTechnician => 'Enter as technician';
-
-  @override
-  String get washersPageTitle => 'Car washes';
-
-  @override
-  String get washersByCity => 'By city';
-
-  @override
-  String get washersBookAppointment => 'Book an appointment';
-
-  @override
-  String get washersViewDetails => 'View details';
-
-  @override
-  String washersCityWithName(String cityName) {
-    return 'City: $cityName';
-  }
-
-  @override
-  String washersRatingsWithCount(int count) {
-    return 'Ratings: $count';
-  }
-
-  @override
-  String get washerTierBasic => 'BASIC';
-
-  @override
-  String get washerTierVip => 'VIP';
-
-  @override
-  String get washerTierPremium => 'PREMIUM';
-
-  @override
-  String get washerDetailsTitle => 'Car wash details';
-
-  @override
-  String washerOpenTime(String time) {
-    return 'Open: $time';
-  }
-
-  @override
-  String washerCloseTime(String time) {
-    return 'Close: $time';
-  }
-
-  @override
-  String get washerSectionCityAndAddress => 'City and address';
-
-  @override
-  String get washerSectionServicesAndPrices => 'Services and prices';
-
-  @override
-  String get washerSectionCustomerReviews => 'Customer reviews';
-
-  @override
-  String get washerServiceExterior => 'Exterior';
-
-  @override
-  String get washerServiceInterior => 'Interior';
-
-  @override
-  String get washerServiceEngine => 'Engine';
-
-  @override
-  String washerPackagePrice(int amount) {
-    return 'price: $amount \$';
-  }
-
-  @override
-  String get washerReservationTitle => 'Reservation';
-
-  @override
-  String get washerReservationFieldDate => 'Date';
-
-  @override
-  String get washerReservationFieldTime => 'Time';
-
-  @override
-  String get washerReservationFieldVehicleLabel => 'Enter your vehicle type';
-
-  @override
-  String get washerReservationFieldVehicleHint => 'Type your vehicle here';
-
-  @override
-  String get washerReservationFieldNotesLabel => 'Notes';
-
-  @override
-  String get washerReservationFieldNotesHint => 'Add any notes you want';
-
-  @override
-  String get washerReservationChooseService => 'Choose the right service';
-
-  @override
-  String get washerReservationConfirm => 'Confirm reservation';
-
-  @override
-  String get washerReservationCancel => 'Cancel reservation';
-
-  @override
-  String get washerReservationPickDate => 'Pick a date';
-
-  @override
-  String get washerReservationPickTime => 'Pick a time';
-
-  @override
-  String get washerReservationServicePremium => 'Premium';
-
-  @override
-  String get washerReservationServiceVip => 'Vip';
-
-  @override
-  String get washerReservationServiceBasic => 'Basic';
-
-  @override
-  String get bookingsPageTitle => 'My Reserved';
-
-  @override
-  String get bookingsFilterByStatus => 'By status';
-
-  @override
-  String get bookingStatusProgress => 'In Progress';
-
-  @override
-  String get bookingStatusAccepted => 'Accepted';
-
-  @override
-  String get bookingStatusPinding => 'pinding';
-
-  @override
-  String get bookingsWasherName => 'Al-Miqdad Car Wash';
-
-  @override
-  String get bookingsServiceLabel => 'Requested service';
-
-  @override
-  String get bookingsServiceVip => 'Vip';
-
-  @override
-  String get bookingsDateTimeLabel => 'Date';
-
-  @override
-  String get bookingsAtLabel => 'at';
-
-  @override
-  String get bookingsPriceLabel => 'Price';
-
-  @override
-  String get bookingsMenuShowDetails => 'Show details';
-
-  @override
-  String get washerBookingViewDetails => 'View details';
-
-  @override
-  String get washerBookingAccept => 'Accept';
-
-  @override
-  String get washerBookingReject => 'Reject';
-
-  @override
-  String get washerBookingStartExecution => 'Start execution';
-
-  @override
-  String get washerBookingCompleted => 'Completed';
-
-  @override
-  String get washerBookingCustomerNameLabel => 'Customer name:';
-
-  @override
-  String get washerBookingRequestedServiceLabel => 'Requested service:';
-
-  @override
-  String get washerBookingAppointmentLabel => 'Appointment:';
-
-  @override
-  String get bookingsMenuCancelBooking => 'Cancel booking';
-
-  @override
-  String get bookingsMenuRateService => 'Rate service';
-
-  @override
-  String get bookingDetailsPageTitle => 'Booking details';
-
-  @override
-  String get bookingDetailsServiceSectionTitle => 'Service details';
-
-  @override
-  String get bookingDetailsAppointmentSectionTitle => 'Appointment details';
-
-  @override
-  String get bookingDetailsUserNotesSectionTitle => 'User notes';
-
-  @override
-  String get bookingDetailsWasherNameLabel => 'Car wash name';
-
-  @override
-  String get bookingDetailsOrderDateLabel => 'Order date';
-
-  @override
-  String get bookingDetailsVehicleLabel => 'Vehicle';
-
-  @override
-  String get ratingsServiceInfoSectionTitle => 'Service information';
-
-  @override
-  String get ratingsYourRatingQuestion => 'What is your rating for this service?';
-
-  @override
-  String get ratingsTellUsExperienceTitle => 'Tell us about your experience';
-
-  @override
-  String get ratingsCommentExperienceHint => 'Leave us a comment about your experience';
-
-  @override
-  String get ratingsSendRating => 'Send rating';
-
-  @override
-  String get profileWasherPageTitle => 'Washer Profile';
-
-  @override
-  String get profileWasherEditProfile => 'Edit profile';
-
-  @override
-  String get profileWasherSampleShopName => 'Mahaba Car Wash';
-
-  @override
-  String profileWasherRatingsCountLine(int count) {
-    return '$count ratings';
-  }
-
-  @override
-  String get profileWasherSampleFullAddress => 'Damascus - Abbasiyyin Square - Entrance to Al-Qusour Square';
-
-  @override
-  String get profileWasherSamplePhone => '0987654321';
-
-  @override
-  String get profileWasherAboutTitle => 'About the wash';
-
-  @override
-  String get profileWasherDescriptionSample => 'At Mahaba Car Wash we deliver professional cleaning with safe, eco-friendly products and a crew that cares about every detail, inside and out. We strive to serve you day after day with clear pricing and a comfortable wait—because your car deserves spotless care from people who love doing the job right.';
-
-  @override
-  String get profileWasherEditPageTitle => 'Edit washer profile';
-
-  @override
-  String get profileWasherFieldWasherName => 'Washer name';
-
-  @override
-  String get profileWasherHintWasherName => 'Enter wash name';
-
-  @override
-  String get profileWasherFieldPhone => 'Phone number';
-
-  @override
-  String get profileWasherHintPhone => 'Enter contact phone number';
-
-  @override
-  String get profileWasherFieldAddress => 'City and address';
-
-  @override
-  String get profileWasherHintAddress => 'Enter full wash address';
-
-  @override
-  String get profileWasherFieldWorkStart => 'Opening time';
-
-  @override
-  String get profileWasherHintWorkStart => 'Enter opening time';
-
-  @override
-  String get profileWasherFieldWorkEnd => 'Closing time';
-
-  @override
-  String get profileWasherHintWorkEnd => 'Enter closing time';
-
-  @override
-  String get profileWasherChooseServicesTitle => 'Choose the services you offer';
-
-  @override
-  String get profileWasherFieldDescription => 'Description';
-
-  @override
-  String get profileWasherHintDescription => 'Enter wash description';
-
-  @override
-  String get profileWasherTierBasic => 'Basic';
-
-  @override
-  String get profileWasherTierVip => 'Vip';
-
-  @override
-  String get profileWasherTierPremium => 'Premium';
-
-  @override
-  String get profileWasherFieldPrice => 'Price';
-
-  @override
-  String get profileWasherHintPrice => 'Enter price';
-
-  @override
-  String get profileWasherSaveChanges => 'Save changes';
-
-  @override
-  String get profileWasherCreatePageTitle => 'Create washer profile';
-
-  @override
-  String get profileWasherUploadLogo => 'Upload logo';
-
-  @override
-  String get profileWasherFieldCity => 'City';
-
-  @override
-  String get profileWasherHintCity => 'Enter city';
-
-  @override
-  String get profileWasherFieldStreetAddress => 'Address';
-
-  @override
-  String get profileWasherHintStreetAddress => 'Enter address';
-
-  @override
-  String get profileWasherFieldServicesList => 'Services';
-
-  @override
-  String get profileWasherHintServicesList => 'Separate services with a comma';
-
-  @override
-  String get profileWasherWorkingHoursTitle => 'Working hours';
-
-  @override
-  String get profileWasherFieldSaturdayHours => 'Saturday';
-
-  @override
-  String get profileWasherHintSaturdayHours => 'e.g. 11:00-15:00';
-
-  @override
-  String get profileWasherFieldSundayHours => 'Sunday';
-
-  @override
-  String get profileWasherHintSundayHours => 'e.g. 10:00-16:00';
-
-  @override
-  String get profileWasherCreateSave => 'Save profile';
-
-  @override
-  String get showRatingTotalBookings => 'Total bookings';
-
-  @override
-  String get showRatingAllReserved => 'All Reserved';
-
-  @override
-  String get bookingStatusPending => 'Pending';
-
-  @override
-  String get bookingStatusCompleted => 'Completed';
-
-  @override
-  String get bookingStatusCanceled => 'Canceled';
-
-  @override
-  String get showRatingAverageRatings => 'Average ratings';
-
-  @override
-  String get showRatingUsersComments => 'Users comments';
-
-  @override
-  String get createSosTitle => 'Create SOS';
-
-  @override
-  String get createSosChooseVehicle => 'Choose the vehicle';
-
-  @override
-  String get createSosChooseProvince => 'Choose the province';
-
-  @override
-  String get createSosLocationAutoHint => '* Your current location will be sent automatically';
-
-  @override
-  String get createSosProblemDescription => 'Enter a description of the problem';
-
-  @override
-  String get createSosSendRequest => 'Send request';
-
-  @override
-  String get createSosSampleProblemText => 'Enter the description here';
-
-  @override
-  String get fuelSosCreateTitle => 'Fuel SOS Create';
-
-  @override
-  String get fuelSosCreateVehicleTitle => 'Vehicle';
-
-  @override
-  String get fuelSosCreateVehicleHint => 'Choose the vehicle you want for the service';
-
-  @override
-  String get fuelSosCreateFuelTypeTitle => 'Fuel type';
-
-  @override
-  String get fuelSosCreateFuelTypeHint => 'Choose the fuel type you want';
-
-  @override
-  String get fuelSosCreateQuantityTitle => 'Quantity';
-
-  @override
-  String get fuelSosCreateQuantityHint => 'Enter the quantity you want to fill';
-
-  @override
-  String get fuelSosCreateNotesTitle => 'Notes';
-
-  @override
-  String get fuelSosCreateNotesHint => 'Enter any notes you want to add';
-
-  @override
-  String get fuelSosCreateProvinceTitle => 'Governorate';
-
-  @override
-  String get fuelSosCreateProvinceHint => 'Choose the governorate at your current location';
-
-  @override
-  String get fuelSosCreateSelectVehicleRequired => 'Please select a vehicle';
-
-  @override
-  String get fuelSosCreateSelectFuelTypeRequired => 'Please select a fuel type';
-
-  @override
-  String get fuelSosCreateQuantityRequired => 'Please enter the quantity';
-
-  @override
-  String get fuelSosCreateSelectProvinceRequired => 'Please select a governorate';
-
-  @override
-  String get fuelSosCreateNoVehicles => 'No vehicles found';
-
-  @override
-  String get sosRequestsListTitle => 'SOS Requests List';
-
-  @override
-  String get sosRequestIdLabel => 'ID Number';
-
-  @override
-  String get sosRequestVehicleLabel => 'Vehicle';
-
-  @override
-  String get sosRequestShortDescriptionLabel => 'Short description';
-
-  @override
-  String get sosStatusFinished => 'Finished';
-
-  @override
-  String get sosStatusInProgress => 'In progress';
-
-  @override
-  String get sosStatusWaiting => 'Waiting';
-
-  @override
-  String get sosRequestAccept => 'Accept';
-
-  @override
-  String get sosRequestViewDetails => 'View details';
-
-  @override
-  String sosRequestCreatedAtHours(int hours) {
-    return 'Created $hours hours ago';
-  }
-
-  @override
-  String sosRequestCreatedAtMinutes(int minutes) {
-    return 'Created $minutes min ago';
-  }
-
-  @override
-  String get sosDetailsTitle => 'SOS Details';
-
-  @override
-  String get sosDetailsRequestAccepted => 'Request accepted';
-
-  @override
-  String get sosDetailsRequestData => 'Request data';
-
-  @override
-  String get sosDetailsPlateNumberLabel => 'Plate number';
-
-  @override
-  String get sosDetailsTechnicianLabel => 'Technician';
-
-  @override
-  String get sosDetailsDescriptionLabel => 'Description';
-
-  @override
-  String get sosDetailsCurrentLocation => 'Current location';
-
-  @override
-  String get sosDetailsTrack => 'Track';
-
-  @override
-  String get sosDetailsCancelRequest => 'Cancel request';
-
-  @override
-  String get fuelOrdersListTitle => 'Fuel Orders List';
-
-  @override
-  String get fuelOrderDetailsTitle => 'Fuel Order Details';
-
-  @override
-  String get fuelOrderDetailsProviderSection => 'Service provider details';
-
-  @override
-  String get cancelReasonDialogTitle => 'Cancel SOS';
-
-  @override
-  String get cancelReasonDialogQuestion => 'What is the reason for canceling the order?';
-
-  @override
-  String get cancelReasonDialogHint => 'Enter the reason for canceling the fuel order here...';
-
-  @override
-  String get cancelReasonDialogBack => 'Back';
-
-  @override
-  String get fuelCancelReasonDialogTitle => 'Cancel order';
-
-  @override
-  String get providerProfilePageTitle => 'Provider Profile';
-
-  @override
-  String get providerProfileAvailabilityTitle => 'Work availability';
-
-  @override
-  String get providerProfileAvailableNow => 'Available now';
-
-  @override
-  String get providerProfileNotAvailableNow => 'Not available now';
-
-  @override
-  String get providerProfileLocationSectionTitle => 'Service provider location';
-
-  @override
-  String get providerProfileServicesAndPricesTitle => 'Services and prices';
-
-  @override
-  String get providerProfileSampleName => 'Khaled Al-Khaled';
-
-  @override
-  String providerProfilePriceLine(String price) {
-    return 'price : $price \$';
-  }
-
-  @override
-  String get providerEditProfilePageTitle => 'Edit provider profile';
-
-  @override
-  String get providerEditProfilePersonalInfoTitle => 'Your profile information';
-
-  @override
-  String get providerEditProfileProviderNameLabel => 'Service provider name';
-
-  @override
-  String get providerEditProfileProviderNameHint => 'Enter the service provider name';
-
-  @override
-  String get providerEditProfileProviderPhoneLabel => 'Service provider phone';
-
-  @override
-  String get providerEditProfileProviderPhoneHint => 'Enter the service provider phone';
-
-  @override
-  String get providerEditProfileGovernorateLabel => 'Choose service provider governorate';
-
-  @override
-  String get providerEditProfileGovernorateHint => 'Choose governorate';
-
-  @override
-  String get providerEditProfileAddressLabel => 'Address';
-
-  @override
-  String get providerEditProfileAddressHint => 'Enter the full address';
-
-  @override
-  String get providerEditProfileLocationNote => '* Your location will be used as the provider starting point';
-
-  @override
-  String get providerEditProfileActivateServiceLine => 'Activate service and set price';
-
-  @override
-  String get providerEditProfileSaveInfo => 'Save information';
-
-  @override
-  String get providerEditProfileSampleAddress => 'Abbasiyeen Square - Al-Qusour Square entrance';
-
-  @override
-  String get providerCreateProfilePageTitle => 'Create provider profile';
-
-  @override
-  String get providerCreateProfileSave => 'Create profile';
-
-  @override
-  String providerEditProfileSetPriceTitle(String fuelType) {
-    return 'Set price for $fuelType';
-  }
-
-  @override
-  String get providerEditProfileSetPriceHint => 'Enter the price';
-
-  @override
-  String get providerEditProfileSetPriceRequired => 'Please enter a price';
-
-  @override
-  String get providerAvailableOrdersTitle => 'Available orders';
-
-  @override
-  String get providerAvailableOrderNoNotes => 'None';
-
-  @override
-  String get providerOrderDetailsTitle => 'Provider order details';
-
-  @override
-  String get providerOrderDetailsPendingAcceptance => 'Waiting for order acceptance';
-
-  @override
-  String get providerOrderDetailsCustomerSection => 'Customer details';
-
-  @override
-  String get providerOrderDetailsAcceptOrder => 'Accept order';
-
-  @override
-  String get providerOrderDetailsShareLocationOn => 'Share location';
-
-  @override
-  String get providerOrderDetailsShareLocationOff => 'Do not share location';
-
-  @override
-  String get providerOrderDetailsEstimatedArrivalDialogTitle => 'Estimated arrival minutes';
-
-  @override
-  String get providerOrderDetailsEnterDurationMinutes => 'Enter duration in minutes';
-
-  @override
-  String get providerOrderDetailsEnterAdditionalNotes => 'Enter additional notes';
-
-  @override
-  String get providerMyOrdersTitle => 'My orders';
-
-  @override
-  String get providerStatisticsTotalOrdersTitle => 'Total orders';
-
-  @override
-  String get providerStatisticsTotalProfitsTitle => 'Total profits';
-
-  @override
-  String get providerStatisticsAllOrders => 'All Reserved';
+  String get settingsThemeSystem => 'System';
 }

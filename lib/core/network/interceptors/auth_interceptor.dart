@@ -1,11 +1,9 @@
 import 'dart:async';
-import 'package:car_care/core/constants/app_token.dart';
 import 'package:car_care/core/local_storage/secure_storage.dart';
 import 'package:car_care/core/network/api_client.dart';
 import 'package:car_care/core/network/api_endpoints.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-
 
 class AuthInterceptor extends Interceptor {
   AuthInterceptor({
@@ -27,7 +25,9 @@ class AuthInterceptor extends Interceptor {
 
   void _completeOnce(String? token) {
     final c = _refreshCompleter;
-    if (c != null && !c.isCompleted) c.complete(token);
+    if (c != null && !c.isCompleted) {
+      c.complete(token);
+    }
   }
 
   bool _isAuthEndpoint(String path) {
@@ -48,8 +48,8 @@ class AuthInterceptor extends Interceptor {
   ) async {
     try {
       if (!_isAuthEndpoint(options.path)) {
-         final token = await _secureStorage.getToken() ?? '';
-  //  final token= AppToken.token;
+        // final token = AppToken.token;
+  final token = await _secureStorage.getToken() ?? '';
         if (kDebugMode) {
           debugPrint(
             "Auth Token: ${token.isNotEmpty ? 'Present' : 'Missing'}",
@@ -61,10 +61,10 @@ class AuthInterceptor extends Interceptor {
         }
       }
 
-      handler.next(options);
+      return handler.next(options);
     } catch (e) {
       if (kDebugMode) debugPrint('Error in onRequest: $e');
-      handler.next(options);
+      return handler.next(options);
     }
   }
 
@@ -73,24 +73,26 @@ class AuthInterceptor extends Interceptor {
     DioException err,
     ErrorInterceptorHandler handler,
   ) async {
+    // مش 401 → مرر الخطأ
     if (err.response?.statusCode != 401) {
       return handler.next(err);
     }
 
-    //logout if the refresh faild
+    // إذا refresh نفسه فشل → logout
     if (err.requestOptions.path.contains(_refreshPath)) {
       await _secureStorage.deleteAll();
       return handler.next(err);
     }
 
     final refreshToken = await _secureStorage.getRefreshToken();
+
     if (refreshToken == null || refreshToken.isEmpty) {
       await _secureStorage.deleteAll();
       return handler.next(err);
     }
 
     try {
-      // start the refresh
+      // أول request يعمل refresh
       if (!_isRefreshing) {
         _isRefreshing = true;
         _refreshCompleter = Completer<String?>();
@@ -105,24 +107,38 @@ class AuthInterceptor extends Interceptor {
           return handler.next(err);
         }
 
-        final retry = await _retryRequest(err.requestOptions, newAccessToken);
+        final retry = await _retryRequest(
+          err.requestOptions,
+          newAccessToken,
+        );
+
+        // 🔥 أهم سطر: نوقف السلسلة ونرجع response جديد
         return handler.resolve(retry);
       }
 
-      // if one request start refresh all the other request wait (refresh call just one time)
-      final newAccessToken = await _refreshCompleter?.future;
-      if (newAccessToken == null) return handler.next(err);
+      // باقي الطلبات تنتظر
+      final newAccessToken = await _refreshCompleter!.future;
 
-      final retry = await _retryRequest(err.requestOptions, newAccessToken);
+      if (newAccessToken == null) {
+        return handler.next(err);
+      }
+
+      final retry = await _retryRequest(
+        err.requestOptions,
+        newAccessToken,
+      );
+
       return handler.resolve(retry);
     } catch (e) {
       if (kDebugMode) debugPrint('Error during token refresh: $e');
+
       _completeOnce(null);
       _isRefreshing = false;
+
       await _secureStorage.deleteAll();
       return handler.next(err);
     } finally {
-      if (_isRefreshing == false) {
+      if (!_isRefreshing) {
         _refreshCompleter = null;
       }
     }
@@ -141,6 +157,7 @@ class AuthInterceptor extends Interceptor {
     );
 
     if (response.statusCode != 200 || response.data is! Map) return null;
+
     final data = response.data as Map<String, dynamic>;
 
     final accessToken =
@@ -149,11 +166,13 @@ class AuthInterceptor extends Interceptor {
         (data['token'] as String?);
 
     final newRefreshToken =
-        (data['refreshToken'] as String?) ?? (data['refresh_token'] as String?);
+        (data['refreshToken'] as String?) ??
+        (data['refresh_token'] as String?);
 
     if (accessToken == null || accessToken.isEmpty) return null;
 
     await _secureStorage.setToken(accessToken);
+
     if (newRefreshToken != null && newRefreshToken.isNotEmpty) {
       await _secureStorage.setRefreshToken(newRefreshToken);
     }
@@ -173,8 +192,7 @@ class AuthInterceptor extends Interceptor {
         method: requestOptions.method,
         headers: {
           ...requestOptions.headers,
-           'Authorization': 'Bearer $accessToken',
-            
+          'Authorization': 'Bearer $accessToken',
         },
       ),
       cancelToken: requestOptions.cancelToken,

@@ -97,3281 +97,2039 @@ abstract class AppLocalizations {
     Locale('en')
   ];
 
-  /// Text shown in the AppBar of the Counter Page
+  /// Menu item: Dashboard
   ///
   /// In en, this message translates to:
-  /// **'Counter'**
-  String get counterAppBarTitle;
+  /// **'Dashboard'**
+  String get dashboardMenu;
 
-  /// Application title
+  /// Menu item: Technicians
   ///
   /// In en, this message translates to:
-  /// **'CarCare Services'**
-  String get appTitle;
+  /// **'Technicians'**
+  String get techniciansMenu;
 
-  /// Fuel Provider
+  /// Menu item: Orders
   ///
   /// In en, this message translates to:
-  /// **'Fuel Provider'**
-  String get fuelProvider;
+  /// **'Orders'**
+  String get ordersMenu;
 
-  /// Application name
+  /// Menu item: Fuel Providers
   ///
   /// In en, this message translates to:
-  /// **'CarCare'**
-  String get appName;
+  /// **'Fuel Providers'**
+  String get fuelProvidersMenu;
 
-  /// Shown when there are no SOS requests available for the technician
+  /// Menu item: Users
   ///
   /// In en, this message translates to:
-  /// **'No requests available at the moment'**
-  String get noAvailableRequests;
+  /// **'Users'**
+  String get usersMenu;
 
-  /// Welcome message
+  /// Menu item: Reports
   ///
   /// In en, this message translates to:
-  /// **'Welcome'**
-  String get welcome;
+  /// **'Reports'**
+  String get reportsMenu;
 
-  /// Welcome back message
+  /// Menu item: Settings
   ///
   /// In en, this message translates to:
-  /// **'Welcome Back'**
-  String get welcomeBack;
+  /// **'Settings'**
+  String get settingsMenu;
 
-  /// Login button
+  /// Label shown next to the user avatar at the top bar
   ///
   /// In en, this message translates to:
-  /// **'Login'**
-  String get login;
+  /// **'Admin'**
+  String get adminLabel;
 
-  /// Register button
-  ///
-  /// In en, this message translates to:
-  /// **'Register'**
-  String get register;
-
-  /// Logout button
-  ///
-  /// In en, this message translates to:
-  /// **'Logout'**
-  String get logout;
-
-  /// Username field
-  ///
-  /// In en, this message translates to:
-  /// **'Username'**
-  String get username;
-
-  /// Password field
-  ///
-  /// In en, this message translates to:
-  /// **'Password'**
-  String get password;
-
-  /// Confirm password field
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm Password'**
-  String get confirmPassword;
-
-  /// Phone number field
-  ///
-  /// In en, this message translates to:
-  /// **'Phone Number'**
-  String get phoneNumber;
-
-  /// Full name field
-  ///
-  /// In en, this message translates to:
-  /// **'Full Name'**
-  String get fullName;
-
-  /// Email field
-  ///
-  /// In en, this message translates to:
-  /// **'Email'**
-  String get email;
-
-  /// Submit button
-  ///
-  /// In en, this message translates to:
-  /// **'Submit'**
-  String get submit;
-
-  /// Cancel button
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel'**
-  String get cancel;
-
-  /// Save button
-  ///
-  /// In en, this message translates to:
-  /// **'Save'**
-  String get save;
-
-  /// Edit button
-  ///
-  /// In en, this message translates to:
-  /// **'Edit'**
-  String get edit;
-
-  /// Delete button
-  ///
-  /// In en, this message translates to:
-  /// **'Delete'**
-  String get delete;
-
-  /// Close button
-  ///
-  /// In en, this message translates to:
-  /// **'Close'**
-  String get close;
-
-  /// Back button
-  ///
-  /// In en, this message translates to:
-  /// **'Back'**
-  String get back;
-
-  /// Next button
-  ///
-  /// In en, this message translates to:
-  /// **'Next'**
-  String get next;
-
-  /// Done button
-  ///
-  /// In en, this message translates to:
-  /// **'Done'**
-  String get done;
-
-  /// Retry button
-  ///
-  /// In en, this message translates to:
-  /// **'Retry'**
-  String get retry;
-
-  /// Refresh button
+  /// Tooltip for the refresh list button
   ///
   /// In en, this message translates to:
   /// **'Refresh'**
   String get refresh;
 
-  /// Search button
+  /// Title of the technicians management page
   ///
   /// In en, this message translates to:
-  /// **'Search'**
-  String get search;
+  /// **'Technicians Management'**
+  String get techniciansPageTitle;
 
-  /// Filter button
+  /// Filter: all technicians
   ///
   /// In en, this message translates to:
-  /// **'Filter'**
-  String get filter;
+  /// **'All'**
+  String get statusAll;
 
-  /// Forgot password link
-  ///
-  /// In en, this message translates to:
-  /// **'Forgot Password?'**
-  String get forgotPassword;
-
-  /// Already have account text
-  ///
-  /// In en, this message translates to:
-  /// **'Already have an account?'**
-  String get alreadyHaveAccount;
-
-  /// Don't have account text
-  ///
-  /// In en, this message translates to:
-  /// **'Don\'t have an account?'**
-  String get dontHaveAccount;
-
-  /// Create new account button
-  ///
-  /// In en, this message translates to:
-  /// **'Create New Account'**
-  String get createAccount;
-
-  /// OTP verification page title
-  ///
-  /// In en, this message translates to:
-  /// **'OTP Verification'**
-  String get otpVerification;
-
-  /// Enter verification code message
-  ///
-  /// In en, this message translates to:
-  /// **'Enter Verification Code'**
-  String get enterOtp;
-
-  /// OTP sent message
-  ///
-  /// In en, this message translates to:
-  /// **'Verification code sent to'**
-  String get otpSent;
-
-  /// Resend code button
-  ///
-  /// In en, this message translates to:
-  /// **'Resend Code'**
-  String get resendOtp;
-
-  /// Resend in message
-  ///
-  /// In en, this message translates to:
-  /// **'Resend in'**
-  String get resendOtpIn;
-
-  /// Verify button
-  ///
-  /// In en, this message translates to:
-  /// **'Verify'**
-  String get verify;
-
-  /// Home page
-  ///
-  /// In en, this message translates to:
-  /// **'Home'**
-  String get home;
-
-  /// Schedules page
-  ///
-  /// In en, this message translates to:
-  /// **'Service Appointments'**
-  String get schedules;
-
-  /// Complaints page
-  ///
-  /// In en, this message translates to:
-  /// **'Car Issues'**
-  String get complaints;
-
-  /// Profile page
-  ///
-  /// In en, this message translates to:
-  /// **'Profile'**
-  String get profile;
-
-  /// My schedules
-  ///
-  /// In en, this message translates to:
-  /// **'My Appointments'**
-  String get mySchedules;
-
-  /// Upcoming schedules
-  ///
-  /// In en, this message translates to:
-  /// **'Upcoming Appointments'**
-  String get upcomingSchedules;
-
-  /// Next pumping schedule
-  ///
-  /// In en, this message translates to:
-  /// **'Next Service Appointment'**
-  String get nextPumpingSchedule;
-
-  /// Schedule details
-  ///
-  /// In en, this message translates to:
-  /// **'Appointment Details'**
-  String get scheduleDetails;
-
-  /// View all schedules button
-  ///
-  /// In en, this message translates to:
-  /// **'View All Appointments'**
-  String get viewAllSchedules;
-
-  /// Start time
-  ///
-  /// In en, this message translates to:
-  /// **'Start Time'**
-  String get startTime;
-
-  /// End time
-  ///
-  /// In en, this message translates to:
-  /// **'End Time'**
-  String get endTime;
-
-  /// Actual start time
-  ///
-  /// In en, this message translates to:
-  /// **'Actual Start Time'**
-  String get actualStartTime;
-
-  /// Actual end time
-  ///
-  /// In en, this message translates to:
-  /// **'Actual End Time'**
-  String get actualEndTime;
-
-  /// Status
-  ///
-  /// In en, this message translates to:
-  /// **'Status'**
-  String get status;
-
-  /// Notes
-  ///
-  /// In en, this message translates to:
-  /// **'Notes'**
-  String get notes;
-
-  /// Created by
-  ///
-  /// In en, this message translates to:
-  /// **'Created By'**
-  String get createdBy;
-
-  /// Status: Scheduled
-  ///
-  /// In en, this message translates to:
-  /// **'Scheduled'**
-  String get scheduled;
-
-  /// Status: Active
-  ///
-  /// In en, this message translates to:
-  /// **'In Progress'**
-  String get active;
-
-  /// Status: Completed
-  ///
-  /// In en, this message translates to:
-  /// **'Completed'**
-  String get completed;
-
-  /// Status: Cancelled
-  ///
-  /// In en, this message translates to:
-  /// **'Cancelled'**
-  String get cancelled;
-
-  /// Starts in
-  ///
-  /// In en, this message translates to:
-  /// **'Starts in'**
-  String get startsIn;
-
-  /// Active now
-  ///
-  /// In en, this message translates to:
-  /// **'Active Now'**
-  String get activeNow;
-
-  /// Ended ago
-  ///
-  /// In en, this message translates to:
-  /// **'Ended'**
-  String get endedAgo;
-
-  /// Today
-  ///
-  /// In en, this message translates to:
-  /// **'Today'**
-  String get today;
-
-  /// This week
-  ///
-  /// In en, this message translates to:
-  /// **'This Week'**
-  String get thisWeek;
-
-  /// This month
-  ///
-  /// In en, this message translates to:
-  /// **'This Month'**
-  String get thisMonth;
-
-  /// Date range
-  ///
-  /// In en, this message translates to:
-  /// **'Date Range'**
-  String get dateRange;
-
-  /// Select date range
-  ///
-  /// In en, this message translates to:
-  /// **'Select Date Range'**
-  String get selectDateRange;
-
-  /// My complaints
-  ///
-  /// In en, this message translates to:
-  /// **'My Car Issues'**
-  String get myComplaints;
-
-  /// Submit complaint button
-  ///
-  /// In en, this message translates to:
-  /// **'Report Issue'**
-  String get submitComplaint;
-
-  /// Complaint details
-  ///
-  /// In en, this message translates to:
-  /// **'Issue Details'**
-  String get complaintDetails;
-
-  /// Complaint title
-  ///
-  /// In en, this message translates to:
-  /// **'Issue Title'**
-  String get complaintTitle;
-
-  /// Complaint description
-  ///
-  /// In en, this message translates to:
-  /// **'Issue Description'**
-  String get complaintDescription;
-
-  /// Complaint category
-  ///
-  /// In en, this message translates to:
-  /// **'Issue Category'**
-  String get complaintCategory;
-
-  /// Select category
-  ///
-  /// In en, this message translates to:
-  /// **'Select Category'**
-  String get selectCategory;
-
-  /// Complaint category: Engine Issue
-  ///
-  /// In en, this message translates to:
-  /// **'Engine Issue'**
-  String get noWater;
-
-  /// Complaint category: Tire Issue
-  ///
-  /// In en, this message translates to:
-  /// **'Tire Issue'**
-  String get waterQuality;
-
-  /// Complaint category: Battery Issue
-  ///
-  /// In en, this message translates to:
-  /// **'Battery Issue'**
-  String get lowPressure;
-
-  /// Complaint category: Service Delay
-  ///
-  /// In en, this message translates to:
-  /// **'Service Delay'**
-  String get scheduleIssue;
-
-  /// Complaint category: Other
-  ///
-  /// In en, this message translates to:
-  /// **'Other'**
-  String get other;
-
-  /// Complaint status: Pending
+  /// Technician status: pending
   ///
   /// In en, this message translates to:
   /// **'Pending'**
-  String get pending;
+  String get statusPending;
 
-  /// Complaint status: In progress
+  /// Technician status: approved
   ///
   /// In en, this message translates to:
-  /// **'In Progress'**
-  String get inProgress;
+  /// **'Approved'**
+  String get statusApproved;
 
-  /// Complaint status: Resolved
-  ///
-  /// In en, this message translates to:
-  /// **'Resolved'**
-  String get resolved;
-
-  /// Complaint status: Rejected
+  /// Technician status: rejected
   ///
   /// In en, this message translates to:
   /// **'Rejected'**
-  String get rejected;
+  String get statusRejected;
 
-  /// Admin response
+  /// Technician status: suspended
   ///
   /// In en, this message translates to:
-  /// **'Service Response'**
-  String get adminResponse;
+  /// **'Suspended'**
+  String get statusSuspended;
 
-  /// Handled by
-  ///
-  /// In en, this message translates to:
-  /// **'Handled By'**
-  String get handledBy;
-
-  /// Handled at
-  ///
-  /// In en, this message translates to:
-  /// **'Handled At'**
-  String get handledAt;
-
-  /// Created at
-  ///
-  /// In en, this message translates to:
-  /// **'Created At'**
-  String get createdAt;
-
-  /// Updated at
-  ///
-  /// In en, this message translates to:
-  /// **'Updated At'**
-  String get updatedAt;
-
-  /// Complaint submitted success message
-  ///
-  /// In en, this message translates to:
-  /// **'Issue Reported Successfully'**
-  String get complaintSubmitted;
-
-  /// Region
-  ///
-  /// In en, this message translates to:
-  /// **'Service Center'**
-  String get region;
-
-  /// Unit
-  ///
-  /// In en, this message translates to:
-  /// **'Unit'**
-  String get unit;
-
-  /// Neighborhood
-  ///
-  /// In en, this message translates to:
-  /// **'Neighborhood'**
-  String get neighborhood;
-
-  /// Zone
-  ///
-  /// In en, this message translates to:
-  /// **'Zone'**
-  String get zone;
-
-  /// Select region
-  ///
-  /// In en, this message translates to:
-  /// **'Select Service Center'**
-  String get selectRegion;
-
-  /// Select unit
-  ///
-  /// In en, this message translates to:
-  /// **'Select Unit'**
-  String get selectUnit;
-
-  /// Select neighborhood
-  ///
-  /// In en, this message translates to:
-  /// **'Select Neighborhood'**
-  String get selectNeighborhood;
-
-  /// Select zone
-  ///
-  /// In en, this message translates to:
-  /// **'Select Zone'**
-  String get selectZone;
-
-  /// Location
-  ///
-  /// In en, this message translates to:
-  /// **'Location'**
-  String get location;
-
-  /// Select location
-  ///
-  /// In en, this message translates to:
-  /// **'Select Location'**
-  String get selectLocation;
-
-  /// Clear selection
-  ///
-  /// In en, this message translates to:
-  /// **'Clear Selection'**
-  String get clearSelection;
-
-  /// My profile
-  ///
-  /// In en, this message translates to:
-  /// **'My Profile'**
-  String get myProfile;
-
-  /// Edit profile
-  ///
-  /// In en, this message translates to:
-  /// **'Edit Profile'**
-  String get editProfile;
-
-  /// Profile updated success message
-  ///
-  /// In en, this message translates to:
-  /// **'Profile Updated Successfully'**
-  String get profileUpdated;
-
-  /// Role
-  ///
-  /// In en, this message translates to:
-  /// **'Role'**
-  String get role;
-
-  /// Role: Admin
-  ///
-  /// In en, this message translates to:
-  /// **'Admin'**
-  String get admin;
-
-  /// Role: Operator
-  ///
-  /// In en, this message translates to:
-  /// **'Operator'**
-  String get operator;
-
-  /// Role: Customer
-  ///
-  /// In en, this message translates to:
-  /// **'Customer'**
-  String get citizen;
-
-  /// Default location
-  ///
-  /// In en, this message translates to:
-  /// **'Default Location'**
-  String get defaultLocation;
-
-  /// Watched location
-  ///
-  /// In en, this message translates to:
-  /// **'Watched Location'**
-  String get watchedLocation;
-
-  /// Loading message
-  ///
-  /// In en, this message translates to:
-  /// **'Loading...'**
-  String get loading;
-
-  /// Error
-  ///
-  /// In en, this message translates to:
-  /// **'Error'**
-  String get error;
-
-  /// Error occurred message
-  ///
-  /// In en, this message translates to:
-  /// **'An Error Occurred'**
-  String get errorOccurred;
-
-  /// Network error
-  ///
-  /// In en, this message translates to:
-  /// **'Network Connection Error'**
-  String get networkError;
-
-  /// Server error
-  ///
-  /// In en, this message translates to:
-  /// **'Server Error'**
-  String get serverError;
-
-  /// No internet connection
-  ///
-  /// In en, this message translates to:
-  /// **'No Internet Connection'**
-  String get noInternetConnection;
-
-  /// Try again
-  ///
-  /// In en, this message translates to:
-  /// **'Try Again'**
-  String get tryAgain;
-
-  /// No data
-  ///
-  /// In en, this message translates to:
-  /// **'No Data'**
-  String get noData;
-
-  /// No schedules
-  ///
-  /// In en, this message translates to:
-  /// **'No Appointments'**
-  String get noSchedules;
-
-  /// No complaints
-  ///
-  /// In en, this message translates to:
-  /// **'No Reported Issues'**
-  String get noComplaints;
-
-  /// No schedules message
-  ///
-  /// In en, this message translates to:
-  /// **'No service appointments at the moment'**
-  String get noSchedulesMessage;
-
-  /// No complaints message
-  ///
-  /// In en, this message translates to:
-  /// **'You haven\'t reported any issues yet'**
-  String get noComplaintsMessage;
-
-  /// Pull to refresh
-  ///
-  /// In en, this message translates to:
-  /// **'Pull to Refresh'**
-  String get pullToRefresh;
-
-  /// Release to refresh
-  ///
-  /// In en, this message translates to:
-  /// **'Release to Refresh'**
-  String get releaseToRefresh;
-
-  /// Load more
-  ///
-  /// In en, this message translates to:
-  /// **'Load More'**
-  String get loadMore;
-
-  /// Quick actions
-  ///
-  /// In en, this message translates to:
-  /// **'Quick Actions'**
-  String get quickActions;
-
-  /// View schedules
-  ///
-  /// In en, this message translates to:
-  /// **'View Appointments'**
-  String get viewSchedules;
-
-  /// Required field message
-  ///
-  /// In en, this message translates to:
-  /// **'This field is required'**
-  String get requiredField;
-
-  /// Invalid phone number message
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid phone number'**
-  String get invalidPhoneNumber;
-
-  /// Invalid email message
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid email address'**
-  String get invalidEmail;
-
-  /// Password too short message
-  ///
-  /// In en, this message translates to:
-  /// **'Password too short (minimum 6 characters)'**
-  String get passwordTooShort;
-
-  /// Passwords do not match message
-  ///
-  /// In en, this message translates to:
-  /// **'Passwords do not match'**
-  String get passwordsDoNotMatch;
-
-  /// Maximum characters message
-  ///
-  /// In en, this message translates to:
-  /// **'Maximum {max} characters'**
-  String maxCharacters(int max);
-
-  /// Characters remaining message
-  ///
-  /// In en, this message translates to:
-  /// **'{count} characters remaining'**
-  String charactersRemaining(int count);
-
-  /// Login success message
-  ///
-  /// In en, this message translates to:
-  /// **'Login Successful'**
-  String get loginSuccess;
-
-  /// Registration success message
-  ///
-  /// In en, this message translates to:
-  /// **'Registration Successful'**
-  String get registrationSuccess;
-
-  /// Logout confirmation message
-  ///
-  /// In en, this message translates to:
-  /// **'Are you sure you want to logout?'**
-  String get logoutConfirmation;
-
-  /// Yes
-  ///
-  /// In en, this message translates to:
-  /// **'Yes'**
-  String get yes;
-
-  /// No
-  ///
-  /// In en, this message translates to:
-  /// **'No'**
-  String get no;
-
-  /// Confirm
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm'**
-  String get confirm;
-
-  /// Language
-  ///
-  /// In en, this message translates to:
-  /// **'Language'**
-  String get language;
-
-  /// Change language
-  ///
-  /// In en, this message translates to:
-  /// **'Change Language'**
-  String get changeLanguage;
-
-  /// Arabic language
-  ///
-  /// In en, this message translates to:
-  /// **'العربية'**
-  String get arabic;
-
-  /// English language
-  ///
-  /// In en, this message translates to:
-  /// **'English'**
-  String get english;
-
-  /// Settings
-  ///
-  /// In en, this message translates to:
-  /// **'Settings'**
-  String get settings;
-
-  /// About
-  ///
-  /// In en, this message translates to:
-  /// **'About'**
-  String get about;
-
-  /// Version
-  ///
-  /// In en, this message translates to:
-  /// **'Version'**
-  String get version;
-
-  /// Contact us
-  ///
-  /// In en, this message translates to:
-  /// **'Contact Us'**
-  String get contactUs;
-
-  /// Application name in Arabic
-  ///
-  /// In en, this message translates to:
-  /// **'CarCareX'**
-  String get appNameAr;
-
-  /// Splash screen
-  ///
-  /// In en, this message translates to:
-  /// **'Splash Screen'**
-  String get splashScreen;
-
-  /// Profile setup
-  ///
-  /// In en, this message translates to:
-  /// **'Profile Setup'**
-  String get profileSetup;
-
-  /// My vehicles
-  ///
-  /// In en, this message translates to:
-  /// **'My Vehicles'**
-  String get myVehicles;
-
-  /// Add vehicle
-  ///
-  /// In en, this message translates to:
-  /// **'Add Vehicle'**
-  String get addVehicle;
-
-  /// Edit vehicle
-  ///
-  /// In en, this message translates to:
-  /// **'Edit Vehicle'**
-  String get editVehicle;
-
-  /// Vehicle details
-  ///
-  /// In en, this message translates to:
-  /// **'Vehicle Details'**
-  String get vehicleDetails;
-
-  /// Maintenance history
-  ///
-  /// In en, this message translates to:
-  /// **'Maintenance History'**
-  String get maintenanceHistory;
-
-  /// VIN number
-  ///
-  /// In en, this message translates to:
-  /// **'VIN Number'**
-  String get vinNumber;
-
-  /// Plate number
-  ///
-  /// In en, this message translates to:
-  /// **'Plate Number'**
-  String get plateNumber;
-
-  /// Brand
-  ///
-  /// In en, this message translates to:
-  /// **'Brand'**
-  String get brand;
-
-  /// Model
-  ///
-  /// In en, this message translates to:
-  /// **'Model'**
-  String get model;
-
-  /// Year
-  ///
-  /// In en, this message translates to:
-  /// **'Year'**
-  String get year;
-
-  /// Maintenance
-  ///
-  /// In en, this message translates to:
-  /// **'Maintenance'**
-  String get maintenance;
-
-  /// Maintenance request
-  ///
-  /// In en, this message translates to:
-  /// **'Maintenance Request'**
-  String get maintenanceRequest;
-
-  /// Service type
-  ///
-  /// In en, this message translates to:
-  /// **'Service Type'**
-  String get serviceType;
-
-  /// Oil change
-  ///
-  /// In en, this message translates to:
-  /// **'Oil Change'**
-  String get oilChange;
-
-  /// Inspection
-  ///
-  /// In en, this message translates to:
-  /// **'Inspection'**
-  String get inspection;
-
-  /// Repair
-  ///
-  /// In en, this message translates to:
-  /// **'Repair'**
-  String get repair;
-
-  /// Technician offers
-  ///
-  /// In en, this message translates to:
-  /// **'Technician Offers'**
-  String get technicianOffers;
-
-  /// Request status
-  ///
-  /// In en, this message translates to:
-  /// **'Request Status'**
-  String get requestStatus;
-
-  /// Rate service
-  ///
-  /// In en, this message translates to:
-  /// **'Rate Service'**
-  String get rateService;
-
-  /// Emergency SOS
-  ///
-  /// In en, this message translates to:
-  /// **'Emergency SOS'**
-  String get emergencySOS;
-
-  /// SOS button
-  ///
-  /// In en, this message translates to:
-  /// **'SOS Button'**
-  String get sosButton;
-
-  /// Emergency status
-  ///
-  /// In en, this message translates to:
-  /// **'Emergency Status'**
-  String get emergencyStatus;
-
-  /// Car wash
-  ///
-  /// In en, this message translates to:
-  /// **'Car Wash'**
-  String get carWash;
-
-  /// Book car wash
-  ///
-  /// In en, this message translates to:
-  /// **'Book Car Wash'**
-  String get bookCarWash;
-
-  /// Wash booking status
-  ///
-  /// In en, this message translates to:
-  /// **'Booking Status'**
-  String get washBookingStatus;
-
-  /// Center wash
-  ///
-  /// In en, this message translates to:
-  /// **'Center Wash'**
-  String get centerWash;
-
-  /// Mobile wash
-  ///
-  /// In en, this message translates to:
-  /// **'Mobile Wash'**
-  String get mobileWash;
-
-  /// Basic wash
-  ///
-  /// In en, this message translates to:
-  /// **'Basic Wash'**
-  String get basicWash;
-
-  /// Premium wash
-  ///
-  /// In en, this message translates to:
-  /// **'Premium Wash'**
-  String get premiumWash;
-
-  /// Full wash
-  ///
-  /// In en, this message translates to:
-  /// **'Full Wash'**
-  String get fullWash;
-
-  /// Marketplace
-  ///
-  /// In en, this message translates to:
-  /// **'Marketplace'**
-  String get marketplace;
-
-  /// Products
-  ///
-  /// In en, this message translates to:
-  /// **'Products'**
-  String get products;
-
-  /// Product details
-  ///
-  /// In en, this message translates to:
-  /// **'Product Details'**
-  String get productDetails;
-
-  /// Cart
-  ///
-  /// In en, this message translates to:
-  /// **'Cart'**
-  String get cart;
-
-  /// Order status
-  ///
-  /// In en, this message translates to:
-  /// **'Order Status'**
-  String get orderStatus;
-
-  /// Add to cart
-  ///
-  /// In en, this message translates to:
-  /// **'Add to Cart'**
-  String get addToCart;
-
-  /// Checkout
-  ///
-  /// In en, this message translates to:
-  /// **'Checkout'**
-  String get checkout;
-
-  /// Subtotal
-  ///
-  /// In en, this message translates to:
-  /// **'Subtotal'**
-  String get subtotal;
-
-  /// Total
-  ///
-  /// In en, this message translates to:
-  /// **'Total'**
-  String get total;
-
-  /// Rent cars
-  ///
-  /// In en, this message translates to:
-  /// **'Rent Cars'**
-  String get rentX;
-
-  /// Available cars
-  ///
-  /// In en, this message translates to:
-  /// **'Available Cars'**
-  String get availableCars;
-
-  /// Daily
-  ///
-  /// In en, this message translates to:
-  /// **'Daily'**
-  String get daily;
-
-  /// Weekly
-  ///
-  /// In en, this message translates to:
-  /// **'Weekly'**
-  String get weekly;
-
-  /// Monthly
-  ///
-  /// In en, this message translates to:
-  /// **'Monthly'**
-  String get monthly;
-
-  /// Rental period
-  ///
-  /// In en, this message translates to:
-  /// **'Rental Period'**
-  String get rentalPeriod;
-
-  /// Start date
-  ///
-  /// In en, this message translates to:
-  /// **'Start Date'**
-  String get startDate;
-
-  /// End date
-  ///
-  /// In en, this message translates to:
-  /// **'End Date'**
-  String get endDate;
-
-  /// Book now
-  ///
-  /// In en, this message translates to:
-  /// **'Book Now'**
-  String get bookNow;
-
-  /// Sell cars
-  ///
-  /// In en, this message translates to:
-  /// **'Sell Cars'**
-  String get sellX;
-
-  /// Sell listings
-  ///
-  /// In en, this message translates to:
-  /// **'Sell Listings'**
-  String get sellListings;
-
-  /// My listings
-  ///
-  /// In en, this message translates to:
-  /// **'My Listings'**
-  String get myListings;
-
-  /// Publish listing
-  ///
-  /// In en, this message translates to:
-  /// **'Publish Listing'**
-  String get publishListing;
-
-  /// Contact seller
-  ///
-  /// In en, this message translates to:
-  /// **'Contact Seller'**
-  String get contactSeller;
-
-  /// Fuel delivery
-  ///
-  /// In en, this message translates to:
-  /// **'Fuel Delivery'**
-  String get fuelX;
-
-  /// Fuel request
-  ///
-  /// In en, this message translates to:
-  /// **'Fuel Request'**
-  String get fuelRequest;
-
-  /// Fuel type
-  ///
-  /// In en, this message translates to:
-  /// **'Fuel Type'**
-  String get fuelType;
-
-  /// Gasoline 91
-  ///
-  /// In en, this message translates to:
-  /// **'Gasoline 91'**
-  String get gasoline91;
-
-  /// Gasoline 95
-  ///
-  /// In en, this message translates to:
-  /// **'Gasoline 95'**
-  String get gasoline95;
-
-  /// Diesel
-  ///
-  /// In en, this message translates to:
-  /// **'Diesel'**
-  String get diesel;
-
-  /// Quantity
-  ///
-  /// In en, this message translates to:
-  /// **'Quantity'**
-  String get quantity;
-
-  /// Liters
-  ///
-  /// In en, this message translates to:
-  /// **'Liters'**
-  String get liters;
-
-  /// Fuel order status
-  ///
-  /// In en, this message translates to:
-  /// **'Fuel Order Status'**
-  String get fuelOrderStatus;
-
-  /// Car owner
-  ///
-  /// In en, this message translates to:
-  /// **'Car Owner'**
-  String get carOwner;
-
-  /// Technician
+  /// Technicians table column header
   ///
   /// In en, this message translates to:
   /// **'Technician'**
-  String get technician;
+  String get columnTechnician;
 
-  /// Accept
+  /// Technicians table column header
   ///
   /// In en, this message translates to:
-  /// **'Accept'**
-  String get accept;
+  /// **'Specialization'**
+  String get columnSpecialization;
 
-  /// Reject
-  ///
-  /// In en, this message translates to:
-  /// **'Reject'**
-  String get reject;
-
-  /// Proceed
-  ///
-  /// In en, this message translates to:
-  /// **'Proceed'**
-  String get proceed;
-
-  /// Continue
-  ///
-  /// In en, this message translates to:
-  /// **'Continue'**
-  String get continueButton;
-
-  /// Select
-  ///
-  /// In en, this message translates to:
-  /// **'Select'**
-  String get select;
-
-  /// Choose
-  ///
-  /// In en, this message translates to:
-  /// **'Choose'**
-  String get choose;
-
-  /// On the way
-  ///
-  /// In en, this message translates to:
-  /// **'On The Way'**
-  String get onTheWay;
-
-  /// Arrived
-  ///
-  /// In en, this message translates to:
-  /// **'Arrived'**
-  String get arrived;
-
-  /// Delivered
-  ///
-  /// In en, this message translates to:
-  /// **'Delivered'**
-  String get delivered;
-
-  /// Assigned
-  ///
-  /// In en, this message translates to:
-  /// **'Assigned'**
-  String get assigned;
-
-  /// Requested
-  ///
-  /// In en, this message translates to:
-  /// **'Requested'**
-  String get requested;
-
-  /// Loading data
-  ///
-  /// In en, this message translates to:
-  /// **'Loading data...'**
-  String get loadingData;
-
-  /// No vehicles
-  ///
-  /// In en, this message translates to:
-  /// **'No Vehicles'**
-  String get noVehicles;
-
-  /// No offers
-  ///
-  /// In en, this message translates to:
-  /// **'No Offers'**
-  String get noOffers;
-
-  /// No listings
-  ///
-  /// In en, this message translates to:
-  /// **'No Listings'**
-  String get noListings;
-
-  /// Success
-  ///
-  /// In en, this message translates to:
-  /// **'Success'**
-  String get success;
-
-  /// Failed
-  ///
-  /// In en, this message translates to:
-  /// **'Failed'**
-  String get failed;
-
-  /// Current location
-  ///
-  /// In en, this message translates to:
-  /// **'Current Location'**
-  String get currentLocation;
-
-  /// Use my current location
-  ///
-  /// In en, this message translates to:
-  /// **'Use My Current Location'**
-  String get useCurrentLocation;
-
-  /// Enter address
-  ///
-  /// In en, this message translates to:
-  /// **'Enter Address'**
-  String get enterAddress;
-
-  /// City
+  /// Technicians table column header
   ///
   /// In en, this message translates to:
   /// **'City'**
-  String get city;
+  String get columnCity;
 
-  /// Pick image
+  /// Technicians table column header
   ///
   /// In en, this message translates to:
-  /// **'Pick Image'**
-  String get pickImage;
+  /// **'Experience'**
+  String get columnExperience;
 
-  /// Camera
+  /// Technicians table column header
   ///
   /// In en, this message translates to:
-  /// **'Camera'**
-  String get camera;
+  /// **'Hourly Rate'**
+  String get columnHourlyRate;
 
-  /// Gallery
+  /// Technicians table column header
   ///
   /// In en, this message translates to:
-  /// **'Gallery'**
-  String get gallery;
+  /// **'Status'**
+  String get columnStatus;
 
-  /// Profile photo
+  /// Technicians table column header
   ///
   /// In en, this message translates to:
-  /// **'Profile Photo'**
-  String get profilePhoto;
+  /// **'Actions'**
+  String get columnActions;
 
-  /// Notifications
+  /// Approve technician button
   ///
   /// In en, this message translates to:
-  /// **'Notifications'**
-  String get notifications;
+  /// **'Approve'**
+  String get actionApprove;
 
-  /// More
-  ///
-  /// In en, this message translates to:
-  /// **'More'**
-  String get more;
-
-  /// Search products
-  ///
-  /// In en, this message translates to:
-  /// **'Search products...'**
-  String get searchProducts;
-
-  /// Search cars
-  ///
-  /// In en, this message translates to:
-  /// **'Search cars...'**
-  String get searchCars;
-
-  /// Sort by
-  ///
-  /// In en, this message translates to:
-  /// **'Sort By'**
-  String get sortBy;
-
-  /// Price: Low to High
-  ///
-  /// In en, this message translates to:
-  /// **'Price: Low to High'**
-  String get priceLowHigh;
-
-  /// Price: High to Low
-  ///
-  /// In en, this message translates to:
-  /// **'Price: High to Low'**
-  String get priceHighLow;
-
-  /// Select date
-  ///
-  /// In en, this message translates to:
-  /// **'Select Date'**
-  String get selectDate;
-
-  /// Select time
-  ///
-  /// In en, this message translates to:
-  /// **'Select Time'**
-  String get selectTime;
-
-  /// Time slot
-  ///
-  /// In en, this message translates to:
-  /// **'Time Slot'**
-  String get timeSlot;
-
-  /// Now
-  ///
-  /// In en, this message translates to:
-  /// **'Now'**
-  String get now;
-
-  /// Schedule
-  ///
-  /// In en, this message translates to:
-  /// **'Schedule'**
-  String get schedule;
-
-  /// Price
-  ///
-  /// In en, this message translates to:
-  /// **'Price'**
-  String get price;
-
-  /// Cost
-  ///
-  /// In en, this message translates to:
-  /// **'Cost'**
-  String get cost;
-
-  /// Estimated price
-  ///
-  /// In en, this message translates to:
-  /// **'Estimated Price'**
-  String get estimatedPrice;
-
-  /// Rating
-  ///
-  /// In en, this message translates to:
-  /// **'Rating'**
-  String get rating;
-
-  /// Stars
-  ///
-  /// In en, this message translates to:
-  /// **'Stars'**
-  String get stars;
-
-  /// Leave comment
-  ///
-  /// In en, this message translates to:
-  /// **'Leave Comment'**
-  String get leaveComment;
-
-  /// User type
-  ///
-  /// In en, this message translates to:
-  /// **'User Type'**
-  String get userType;
-
-  /// User profile
-  ///
-  /// In en, this message translates to:
-  /// **'User Profile'**
-  String get userProfile;
-
-  /// Validation error
-  ///
-  /// In en, this message translates to:
-  /// **'Validation Error'**
-  String get validationError;
-
-  /// Field required
-  ///
-  /// In en, this message translates to:
-  /// **'This field is required'**
-  String get fieldRequired;
-
-  /// Invalid input
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid Input'**
-  String get invalidInput;
-
-  /// Optional
-  ///
-  /// In en, this message translates to:
-  /// **'Optional'**
-  String get optional;
-
-  /// Required
-  ///
-  /// In en, this message translates to:
-  /// **'Required'**
-  String get required;
-
-  /// Description
-  ///
-  /// In en, this message translates to:
-  /// **'Description'**
-  String get description;
-
-  /// Problem details
-  ///
-  /// In en, this message translates to:
-  /// **'Problem Details'**
-  String get problemDetails;
-
-  /// Attach photos
-  ///
-  /// In en, this message translates to:
-  /// **'Attach Photos'**
-  String get attachPhotos;
-
-  /// Summary
-  ///
-  /// In en, this message translates to:
-  /// **'Summary'**
-  String get summary;
-
-  /// Order summary
-  ///
-  /// In en, this message translates to:
-  /// **'Order Summary'**
-  String get orderSummary;
-
-  /// Booking summary
-  ///
-  /// In en, this message translates to:
-  /// **'Booking Summary'**
-  String get bookingSummary;
-
-  /// Ready to get back on the road?
-  ///
-  /// In en, this message translates to:
-  /// **'Ready to get back on the road?'**
-  String get readySummary;
-
-  /// Edit Password
-  ///
-  /// In en, this message translates to:
-  /// **'Edit Password'**
-  String get editPassword;
-
-  /// Save Password
-  ///
-  /// In en, this message translates to:
-  /// **'Save Password'**
-  String get savePassword;
-
-  /// Delete Account
-  ///
-  /// In en, this message translates to:
-  /// **'Delete Account'**
-  String get deleteAccount;
-
-  /// Creating...
-  ///
-  /// In en, this message translates to:
-  /// **'Creating...'**
-  String get creating;
-
-  /// Enter first name
-  ///
-  /// In en, this message translates to:
-  /// **'Enter first name'**
-  String get enterFirstName;
-
-  /// Enter email
-  ///
-  /// In en, this message translates to:
-  /// **'Enter email'**
-  String get enterEmail;
-
-  /// Enter password
-  ///
-  /// In en, this message translates to:
-  /// **'Enter password'**
-  String get enterPassword;
-
-  /// Password must be at least 6 characters
-  ///
-  /// In en, this message translates to:
-  /// **'Password must be at least 6 characters'**
-  String get passwordMinLength;
-
-  /// Re-enter password
-  ///
-  /// In en, this message translates to:
-  /// **'Re-enter password'**
-  String get reEnterPassword;
-
-  /// Add vehicle image
-  ///
-  /// In en, this message translates to:
-  /// **'Add vehicle image'**
-  String get addVehicleImage;
-
-  /// Tap to select image
-  ///
-  /// In en, this message translates to:
-  /// **'Tap to select image'**
-  String get tapToSelectImage;
-
-  /// Please select a vehicle image
-  ///
-  /// In en, this message translates to:
-  /// **'Please select a vehicle image'**
-  String get selectVehicleImage;
-
-  /// Please fill in all fields
-  ///
-  /// In en, this message translates to:
-  /// **'Please fill in all fields'**
-  String get fillAllFields;
-
-  /// Vehicle added successfully
-  ///
-  /// In en, this message translates to:
-  /// **'Vehicle added successfully'**
-  String get vehicleAddedSuccess;
-
-  /// Odometer
-  ///
-  /// In en, this message translates to:
-  /// **'Odometer'**
-  String get odometer;
-
-  /// License plate number
-  ///
-  /// In en, this message translates to:
-  /// **'License plate number'**
-  String get licensePlateNumberFull;
-
-  /// Service records
-  ///
-  /// In en, this message translates to:
-  /// **'Service records'**
-  String get serviceRecords;
-
-  /// Fuel records
-  ///
-  /// In en, this message translates to:
-  /// **'Fuel records'**
-  String get fuelRecords;
-
-  /// Plate
-  ///
-  /// In en, this message translates to:
-  /// **'Plate'**
-  String get plate;
-
-  /// Current password
-  ///
-  /// In en, this message translates to:
-  /// **'Current password'**
-  String get currentPassword;
-
-  /// New password
-  ///
-  /// In en, this message translates to:
-  /// **'New password'**
-  String get newPassword;
-
-  /// Create Your Account
-  ///
-  /// In en, this message translates to:
-  /// **'Create Your Account'**
-  String get createYourAccount;
-
-  /// Welcome message
-  ///
-  /// In en, this message translates to:
-  /// **'We’re here to keep your car in top shape. Are you ready?'**
-  String get carReadyMessage;
-
-  /// Emergency button
-  ///
-  /// In en, this message translates to:
-  /// **'SOS'**
-  String get sos;
-
-  /// Fuel
-  ///
-  /// In en, this message translates to:
-  /// **'Fuel'**
-  String get fuel;
-
-  /// Notifications
-  ///
-  /// In en, this message translates to:
-  /// **'Notifications'**
-  String get notification;
-
-  /// Messages
-  ///
-  /// In en, this message translates to:
-  /// **'Messages'**
-  String get messages;
-
-  /// The password has been successfully changed.
-  ///
-  /// In en, this message translates to:
-  /// **'The password has been successfully changed.'**
-  String get changedpasswordsuccessfully;
-
-  /// Enter Phone
-  ///
-  /// In en, this message translates to:
-  /// **'Enter Phone'**
-  String get enterphone;
-
-  /// The passwords do not match.
-  ///
-  /// In en, this message translates to:
-  /// **' The passwords do not match.'**
-  String get thepasswordsdonotmatch;
-
-  /// Active Orders
-  ///
-  /// In en, this message translates to:
-  /// **'Active Orders '**
-  String get activeorders;
-
-  /// Save and follow
-  ///
-  /// In en, this message translates to:
-  /// **'Save and follow'**
-  String get saveandfollow;
-
-  /// No description provided for @savevehicle.
-  ///
-  /// In en, this message translates to:
-  /// **'Save Vehicle'**
-  String get savevehicle;
-
-  /// Spare Parts
-  ///
-  /// In en, this message translates to:
-  /// **'Spare Parts'**
-  String get parts;
-
-  /// عرض التفاصيل
-  ///
-  /// In en, this message translates to:
-  /// **' عرض التفاصيل'**
-  String get details;
-
-  /// Text shown while updating or loading the cars list
-  ///
-  /// In en, this message translates to:
-  /// **'Updating car list...'**
-  String get updateCarsList;
-
-  /// Message shown when there are no cars added
-  ///
-  /// In en, this message translates to:
-  /// **'No cars yet'**
-  String get noCarsYet;
-
-  /// Message shown after successfully updating a vehicle
-  ///
-  /// In en, this message translates to:
-  /// **'Vehicle updated successfully'**
-  String get vehicleUpdatedSuccessfully;
-
-  /// Button to save changes
-  ///
-  /// In en, this message translates to:
-  /// **'Save changes'**
-  String get saveChanges;
-
-  /// Text shown while saving data
-  ///
-  /// In en, this message translates to:
-  /// **'Saving...'**
-  String get saving;
-
-  /// Title or button for updating a vehicle
-  ///
-  /// In en, this message translates to:
-  /// **'Update Vehicle'**
-  String get updateVehicle;
-
-  /// Button to delete a vehicle
-  ///
-  /// In en, this message translates to:
-  /// **'Delete Vehicle'**
-  String get deleteVehicle;
-
-  /// Title of delete confirmation dialog
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm Deletion'**
-  String get confirmDeleteTitle;
-
-  /// Warning message before deleting a vehicle
-  ///
-  /// In en, this message translates to:
-  /// **'Are you sure you want to delete this vehicle?\nThis action cannot be undone.'**
-  String get confirmDeleteMessage;
-
-  /// Owner label in vehicle details page
-  ///
-  /// In en, this message translates to:
-  /// **'Owner'**
-  String get owner;
-
-  /// Unit for kilometers
-  ///
-  /// In en, this message translates to:
-  /// **'km'**
-  String get km;
-
-  /// Title of maintenance record
-  ///
-  /// In en, this message translates to:
-  /// **'Maintenance Record'**
-  String get maintenanceRecord;
-
-  /// Title of fuel record
-  ///
-  /// In en, this message translates to:
-  /// **'Fuel Record'**
-  String get fuelRecord;
-
-  /// Title of alerts record
-  ///
-  /// In en, this message translates to:
-  /// **'Alerts Record'**
-  String get alertsRecord;
-
-  /// Statistics page title
-  ///
-  /// In en, this message translates to:
-  /// **'Statistics'**
-  String get statistics;
-
-  /// Total jobs count
-  ///
-  /// In en, this message translates to:
-  /// **'Total jobs'**
-  String get totalJobs;
-
-  /// Assigned jobs count
-  ///
-  /// In en, this message translates to:
-  /// **'Assigned'**
-  String get assignedJobs;
-
-  /// In progress jobs count
-  ///
-  /// In en, this message translates to:
-  /// **'In progress'**
-  String get inProgressJobs;
-
-  /// Completed jobs count
-  ///
-  /// In en, this message translates to:
-  /// **'Completed'**
-  String get completedJobs;
-
-  /// Total quotations count
-  ///
-  /// In en, this message translates to:
-  /// **'Total quotations'**
-  String get totalQuotations;
-
-  /// Pending quotations count
-  ///
-  /// In en, this message translates to:
-  /// **'Pending quotations'**
-  String get pendingQuotations;
-
-  /// Accepted quotations count
-  ///
-  /// In en, this message translates to:
-  /// **'Accepted quotations'**
-  String get acceptedQuotations;
-
-  /// Total ratings count
-  ///
-  /// In en, this message translates to:
-  /// **'Total ratings'**
-  String get totalRatings;
-
-  /// Title of delete profile dialog
-  ///
-  /// In en, this message translates to:
-  /// **'Delete Profile'**
-  String get deleteProfile;
-
-  /// Delete confirmation button
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm Deletion'**
-  String get confirmDeleteProfileTitle;
-
-  /// Warning message before deleting profile
-  ///
-  /// In en, this message translates to:
-  /// **'Are you sure you want to delete your account?\nThis action cannot be undone.'**
-  String get confirmDeleteProfileMessage;
-
-  /// Message shown after successful deletion
-  ///
-  /// In en, this message translates to:
-  /// **'Profile deleted successfully'**
-  String get profileDeletedSuccessfully;
-
-  /// Message shown when the phone field is left empty
-  ///
-  /// In en, this message translates to:
-  /// **'Please enter phone number'**
-  String get enterPhone;
-
-  /// Message shown when the phone number is incorrect or incomplete
-  ///
-  /// In en, this message translates to:
-  /// **'Invalid phone number'**
-  String get invalidPhone;
-
-  /// Action to open the technician profile flow from the More tab
-  ///
-  /// In en, this message translates to:
-  /// **'Enter as technician'**
-  String get enterAsTechnician;
-
-  /// App bar title for the car wash directory list
-  ///
-  /// In en, this message translates to:
-  /// **'Car washes'**
-  String get washersPageTitle;
-
-  /// Car wash list filter: choose by city
-  ///
-  /// In en, this message translates to:
-  /// **'By city'**
-  String get washersByCity;
-
-  /// Button to book a car wash appointment
-  ///
-  /// In en, this message translates to:
-  /// **'Book an appointment'**
-  String get washersBookAppointment;
-
-  /// Button to open car wash details
-  ///
-  /// In en, this message translates to:
-  /// **'View details'**
-  String get washersViewDetails;
-
-  /// Line showing the city of a car wash
-  ///
-  /// In en, this message translates to:
-  /// **'City: {cityName}'**
-  String washersCityWithName(String cityName);
-
-  /// Line showing how many ratings a car wash has
-  ///
-  /// In en, this message translates to:
-  /// **'Ratings: {count}'**
-  String washersRatingsWithCount(int count);
-
-  /// Service tier label: basic
-  ///
-  /// In en, this message translates to:
-  /// **'BASIC'**
-  String get washerTierBasic;
-
-  /// Service tier label: VIP
-  ///
-  /// In en, this message translates to:
-  /// **'VIP'**
-  String get washerTierVip;
-
-  /// Service tier label: premium
-  ///
-  /// In en, this message translates to:
-  /// **'PREMIUM'**
-  String get washerTierPremium;
-
-  /// App bar: washer details screen
-  ///
-  /// In en, this message translates to:
-  /// **'Car wash details'**
-  String get washerDetailsTitle;
-
-  /// Opening time label for a car wash
-  ///
-  /// In en, this message translates to:
-  /// **'Open: {time}'**
-  String washerOpenTime(String time);
-
-  /// Closing time label for a car wash
-  ///
-  /// In en, this message translates to:
-  /// **'Close: {time}'**
-  String washerCloseTime(String time);
-
-  /// Header for location block
-  ///
-  /// In en, this message translates to:
-  /// **'City and address'**
-  String get washerSectionCityAndAddress;
-
-  /// Header for packages section
-  ///
-  /// In en, this message translates to:
-  /// **'Services and prices'**
-  String get washerSectionServicesAndPrices;
-
-  /// Header for reviews
-  ///
-  /// In en, this message translates to:
-  /// **'Customer reviews'**
-  String get washerSectionCustomerReviews;
-
-  /// Car wash service: exterior
-  ///
-  /// In en, this message translates to:
-  /// **'Exterior'**
-  String get washerServiceExterior;
-
-  /// Car wash service: interior
-  ///
-  /// In en, this message translates to:
-  /// **'Interior'**
-  String get washerServiceInterior;
-
-  /// Car wash service: engine bay
-  ///
-  /// In en, this message translates to:
-  /// **'Engine'**
-  String get washerServiceEngine;
-
-  /// Package price in USD
-  ///
-  /// In en, this message translates to:
-  /// **'price: {amount} \$'**
-  String washerPackagePrice(int amount);
-
-  /// App bar: car wash booking screen
-  ///
-  /// In en, this message translates to:
-  /// **'Reservation'**
-  String get washerReservationTitle;
-
-  /// No description provided for @washerReservationFieldDate.
-  ///
-  /// In en, this message translates to:
-  /// **'Date'**
-  String get washerReservationFieldDate;
-
-  /// No description provided for @washerReservationFieldTime.
-  ///
-  /// In en, this message translates to:
-  /// **'Time'**
-  String get washerReservationFieldTime;
-
-  /// No description provided for @washerReservationFieldVehicleLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Enter your vehicle type'**
-  String get washerReservationFieldVehicleLabel;
-
-  /// No description provided for @washerReservationFieldVehicleHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Type your vehicle here'**
-  String get washerReservationFieldVehicleHint;
-
-  /// No description provided for @washerReservationFieldNotesLabel.
-  ///
-  /// In en, this message translates to:
-  /// **'Notes'**
-  String get washerReservationFieldNotesLabel;
-
-  /// No description provided for @washerReservationFieldNotesHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Add any notes you want'**
-  String get washerReservationFieldNotesHint;
-
-  /// No description provided for @washerReservationChooseService.
-  ///
-  /// In en, this message translates to:
-  /// **'Choose the right service'**
-  String get washerReservationChooseService;
-
-  /// No description provided for @washerReservationConfirm.
-  ///
-  /// In en, this message translates to:
-  /// **'Confirm reservation'**
-  String get washerReservationConfirm;
-
-  /// No description provided for @washerReservationCancel.
-  ///
-  /// In en, this message translates to:
-  /// **'Cancel reservation'**
-  String get washerReservationCancel;
-
-  /// No description provided for @washerReservationPickDate.
-  ///
-  /// In en, this message translates to:
-  /// **'Pick a date'**
-  String get washerReservationPickDate;
-
-  /// No description provided for @washerReservationPickTime.
-  ///
-  /// In en, this message translates to:
-  /// **'Pick a time'**
-  String get washerReservationPickTime;
-
-  /// No description provided for @washerReservationServicePremium.
-  ///
-  /// In en, this message translates to:
-  /// **'Premium'**
-  String get washerReservationServicePremium;
-
-  /// No description provided for @washerReservationServiceVip.
-  ///
-  /// In en, this message translates to:
-  /// **'Vip'**
-  String get washerReservationServiceVip;
-
-  /// No description provided for @washerReservationServiceBasic.
-  ///
-  /// In en, this message translates to:
-  /// **'Basic'**
-  String get washerReservationServiceBasic;
-
-  /// App bar title for bookings page
-  ///
-  /// In en, this message translates to:
-  /// **'My Reserved'**
-  String get bookingsPageTitle;
-
-  /// Bookings filter label
-  ///
-  /// In en, this message translates to:
-  /// **'By status'**
-  String get bookingsFilterByStatus;
-
-  /// Status label when the service has started
-  ///
-  /// In en, this message translates to:
-  /// **'In Progress'**
-  String get bookingStatusProgress;
-
-  /// Status label when a booking is accepted by the washer
-  ///
-  /// In en, this message translates to:
-  /// **'Accepted'**
-  String get bookingStatusAccepted;
-
-  /// Booking status chip: pinding
-  ///
-  /// In en, this message translates to:
-  /// **'pinding'**
-  String get bookingStatusPinding;
-
-  /// Washer name on booking card
-  ///
-  /// In en, this message translates to:
-  /// **'Al-Miqdad Car Wash'**
-  String get bookingsWasherName;
-
-  /// Service row label on booking card
-  ///
-  /// In en, this message translates to:
-  /// **'Requested service'**
-  String get bookingsServiceLabel;
-
-  /// Vip service tier label on booking card
-  ///
-  /// In en, this message translates to:
-  /// **'Vip'**
-  String get bookingsServiceVip;
-
-  /// Date row label on booking card
-  ///
-  /// In en, this message translates to:
-  /// **'Date'**
-  String get bookingsDateTimeLabel;
-
-  /// Connector between date and time
-  ///
-  /// In en, this message translates to:
-  /// **'at'**
-  String get bookingsAtLabel;
-
-  /// Price row label on booking card
-  ///
-  /// In en, this message translates to:
-  /// **'Price'**
-  String get bookingsPriceLabel;
-
-  /// Menu action for showing booking details
-  ///
-  /// In en, this message translates to:
-  /// **'Show details'**
-  String get bookingsMenuShowDetails;
-
-  /// Washer booking card: full-width CTA
-  ///
-  /// In en, this message translates to:
-  /// **'View details'**
-  String get washerBookingViewDetails;
-
-  /// Washer booking card: quick action
-  ///
-  /// In en, this message translates to:
-  /// **'Accept'**
-  String get washerBookingAccept;
-
-  /// Washer booking card: quick action
+  /// Reject technician button
   ///
   /// In en, this message translates to:
   /// **'Reject'**
-  String get washerBookingReject;
+  String get actionReject;
 
-  /// Washer booking card: quick action
+  /// Suspend technician button
   ///
   /// In en, this message translates to:
-  /// **'Start execution'**
-  String get washerBookingStartExecution;
+  /// **'Suspend'**
+  String get actionSuspend;
 
-  /// Washer booking card: quick action
+  /// Reactivate technician button
   ///
   /// In en, this message translates to:
-  /// **'Completed'**
-  String get washerBookingCompleted;
+  /// **'Reactivate'**
+  String get actionReactivate;
 
-  /// Washer booking card: info row label
+  /// View technician details button
   ///
   /// In en, this message translates to:
-  /// **'Customer name:'**
-  String get washerBookingCustomerNameLabel;
+  /// **'Details'**
+  String get actionDetails;
 
-  /// Washer booking card: info row label
+  /// Word appended after the years of experience number
   ///
   /// In en, this message translates to:
-  /// **'Requested service:'**
-  String get washerBookingRequestedServiceLabel;
+  /// **'yrs'**
+  String get yearsSuffix;
 
-  /// Washer booking card: info row label
+  /// Title of the rejection reason dialog
   ///
   /// In en, this message translates to:
-  /// **'Appointment:'**
-  String get washerBookingAppointmentLabel;
+  /// **'Reject Technician'**
+  String get rejectDialogTitle;
 
-  /// Menu action for cancelling booking
+  /// Hint text for the rejection reason field
   ///
   /// In en, this message translates to:
-  /// **'Cancel booking'**
-  String get bookingsMenuCancelBooking;
+  /// **'Type the rejection reason here...'**
+  String get rejectDialogHint;
 
-  /// Menu action for rating service
+  /// Generic cancel button
   ///
   /// In en, this message translates to:
-  /// **'Rate service'**
-  String get bookingsMenuRateService;
+  /// **'Cancel'**
+  String get cancel;
 
-  /// App bar title for booking details screen
+  /// Confirm rejecting the technician
   ///
   /// In en, this message translates to:
-  /// **'Booking details'**
-  String get bookingDetailsPageTitle;
+  /// **'Confirm Reject'**
+  String get confirmReject;
 
-  /// First section title on booking details screen
+  /// Fallback title for technician details dialog when name is missing
   ///
   /// In en, this message translates to:
-  /// **'Service details'**
-  String get bookingDetailsServiceSectionTitle;
+  /// **'Technician Details'**
+  String get technicianDetailsTitle;
 
-  /// Appointment section title on booking details screen
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'Appointment details'**
-  String get bookingDetailsAppointmentSectionTitle;
+  /// **'Email'**
+  String get detailsEmail;
 
-  /// User notes section title on booking details screen
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'User notes'**
-  String get bookingDetailsUserNotesSectionTitle;
+  /// **'Phone'**
+  String get detailsPhone;
 
-  /// Washer name row label in first card on booking details screen
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'Car wash name'**
-  String get bookingDetailsWasherNameLabel;
+  /// **'Specialization'**
+  String get detailsSpecialization;
 
-  /// Order date row label in appointment card
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'Order date'**
-  String get bookingDetailsOrderDateLabel;
+  /// **'City'**
+  String get detailsCity;
 
-  /// Vehicle row label in appointment card
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'Vehicle'**
-  String get bookingDetailsVehicleLabel;
+  /// **'Experience'**
+  String get detailsExperience;
 
-  /// First section title on car wash rating screen
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'Service information'**
-  String get ratingsServiceInfoSectionTitle;
+  /// **'Hourly Rate'**
+  String get detailsHourlyRate;
 
-  /// Question prompt above star rating row
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'What is your rating for this service?'**
-  String get ratingsYourRatingQuestion;
+  /// **'Status'**
+  String get detailsStatus;
 
-  /// Label above rating comment field
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'Tell us about your experience'**
-  String get ratingsTellUsExperienceTitle;
+  /// **'Rejection Reason'**
+  String get detailsRejectionReason;
 
-  /// Hint text inside rating comment field
+  /// Field label in technician details dialog
   ///
   /// In en, this message translates to:
-  /// **'Leave us a comment about your experience'**
-  String get ratingsCommentExperienceHint;
+  /// **'Certifications'**
+  String get detailsCertifications;
 
-  /// Submit rating button label
+  /// Generic close button
   ///
   /// In en, this message translates to:
-  /// **'Send rating'**
-  String get ratingsSendRating;
+  /// **'Close'**
+  String get close;
 
-  /// App bar title for washer owner profile screen
+  /// Field label in technician details page
   ///
   /// In en, this message translates to:
-  /// **'Washer Profile'**
-  String get profileWasherPageTitle;
+  /// **'Technician ID'**
+  String get detailsId;
 
-  /// Primary button on washer profile screen
+  /// Field label in technician details page
   ///
   /// In en, this message translates to:
-  /// **'Edit profile'**
-  String get profileWasherEditProfile;
+  /// **'User ID'**
+  String get detailsUserId;
 
-  /// Placeholder shop name until API data exists
+  /// Field label in technician details page
   ///
   /// In en, this message translates to:
-  /// **'Mahaba Car Wash'**
-  String get profileWasherSampleShopName;
+  /// **'Available'**
+  String get detailsAvailable;
 
-  /// Rating count subtitle under stars on washer profile
+  /// Yes value
   ///
   /// In en, this message translates to:
-  /// **'{count} ratings'**
-  String profileWasherRatingsCountLine(int count);
+  /// **'Yes'**
+  String get detailsYes;
 
-  /// Placeholder full address until API data exists
+  /// No value
   ///
   /// In en, this message translates to:
-  /// **'Damascus - Abbasiyyin Square - Entrance to Al-Qusour Square'**
-  String get profileWasherSampleFullAddress;
+  /// **'No'**
+  String get detailsNo;
 
-  /// Placeholder phone displayed on washer profile card
+  /// Field label in technician details page
   ///
   /// In en, this message translates to:
-  /// **'0987654321'**
-  String get profileWasherSamplePhone;
+  /// **'Approved At'**
+  String get detailsApprovedAt;
 
-  /// Section title for washer description on profile screen
+  /// Field label in technician details page
   ///
   /// In en, this message translates to:
-  /// **'About the wash'**
-  String get profileWasherAboutTitle;
+  /// **'Rejected At'**
+  String get detailsRejectedAt;
 
-  /// Placeholder washer description until API provides copy
+  /// Field label in technician details page
   ///
   /// In en, this message translates to:
-  /// **'At Mahaba Car Wash we deliver professional cleaning with safe, eco-friendly products and a crew that cares about every detail, inside and out. We strive to serve you day after day with clear pricing and a comfortable wait—because your car deserves spotless care from people who love doing the job right.'**
-  String get profileWasherDescriptionSample;
+  /// **'Suspended At'**
+  String get detailsSuspendedAt;
 
-  /// App bar title for edit washer profile screen
+  /// Field label in technician details page
   ///
   /// In en, this message translates to:
-  /// **'Edit washer profile'**
-  String get profileWasherEditPageTitle;
+  /// **'Created At'**
+  String get detailsCreatedAt;
 
-  /// Label for wash name field on edit profile
+  /// Field label in technician details page
   ///
   /// In en, this message translates to:
-  /// **'Washer name'**
-  String get profileWasherFieldWasherName;
+  /// **'Updated At'**
+  String get detailsUpdatedAt;
 
-  /// Hint for wash name field
+  /// Shown when the technician has no uploaded certifications
   ///
   /// In en, this message translates to:
-  /// **'Enter wash name'**
-  String get profileWasherHintWasherName;
+  /// **'No certifications uploaded'**
+  String get noCertifications;
 
-  /// Label for phone field on edit washer profile
+  /// Car washers list page title
   ///
   /// In en, this message translates to:
-  /// **'Phone number'**
-  String get profileWasherFieldPhone;
+  /// **'Car Washers'**
+  String get carwashersPageTitle;
 
-  /// Hint for phone field
+  /// Car washer details page title
   ///
   /// In en, this message translates to:
-  /// **'Enter contact phone number'**
-  String get profileWasherHintPhone;
+  /// **'Car Washer Details'**
+  String get carwasherDetailsTitle;
+
+  /// Fuel providers list page title
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Providers'**
+  String get fuelProvidersPageTitle;
+
+  /// Fuel provider details page title
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel Provider Details'**
+  String get fuelProviderDetailsTitle;
+
+  /// Shops list page title
+  ///
+  /// In en, this message translates to:
+  /// **'Shops'**
+  String get shopsPageTitle;
+
+  /// Shop details page title
+  ///
+  /// In en, this message translates to:
+  /// **'Shop Details'**
+  String get shopDetailsTitle;
+
+  /// Column header for shop/washer name
+  ///
+  /// In en, this message translates to:
+  /// **'Shop'**
+  String get columnShop;
+
+  /// Column header for phone number
+  ///
+  /// In en, this message translates to:
+  /// **'Phone'**
+  String get columnPhone;
 
   /// Label for address field
   ///
   /// In en, this message translates to:
-  /// **'City and address'**
-  String get profileWasherFieldAddress;
-
-  /// Hint for address field
-  ///
-  /// In en, this message translates to:
-  /// **'Enter full wash address'**
-  String get profileWasherHintAddress;
-
-  /// Label for work start time
-  ///
-  /// In en, this message translates to:
-  /// **'Opening time'**
-  String get profileWasherFieldWorkStart;
-
-  /// Hint for opening time
-  ///
-  /// In en, this message translates to:
-  /// **'Enter opening time'**
-  String get profileWasherHintWorkStart;
-
-  /// Label for work end time
-  ///
-  /// In en, this message translates to:
-  /// **'Closing time'**
-  String get profileWasherFieldWorkEnd;
-
-  /// Hint for closing time
-  ///
-  /// In en, this message translates to:
-  /// **'Enter closing time'**
-  String get profileWasherHintWorkEnd;
-
-  /// Section title on edit washer profile
-  ///
-  /// In en, this message translates to:
-  /// **'Choose the services you offer'**
-  String get profileWasherChooseServicesTitle;
+  /// **'Address'**
+  String get detailsAddress;
 
   /// Label for description field
   ///
   /// In en, this message translates to:
   /// **'Description'**
-  String get profileWasherFieldDescription;
+  String get detailsDescription;
 
-  /// Hint for description field
+  /// Label for rating field
   ///
   /// In en, this message translates to:
-  /// **'Enter wash description'**
-  String get profileWasherHintDescription;
+  /// **'Rating'**
+  String get detailsRating;
 
-  /// Basic tier name
-  ///
-  /// In en, this message translates to:
-  /// **'Basic'**
-  String get profileWasherTierBasic;
-
-  /// VIP tier name
-  ///
-  /// In en, this message translates to:
-  /// **'Vip'**
-  String get profileWasherTierVip;
-
-  /// Premium tier name
-  ///
-  /// In en, this message translates to:
-  /// **'Premium'**
-  String get profileWasherTierPremium;
-
-  /// Price field label under tier
-  ///
-  /// In en, this message translates to:
-  /// **'Price'**
-  String get profileWasherFieldPrice;
-
-  /// Hint for tier price field
-  ///
-  /// In en, this message translates to:
-  /// **'Enter price'**
-  String get profileWasherHintPrice;
-
-  /// Primary save button on edit washer profile
-  ///
-  /// In en, this message translates to:
-  /// **'Save changes'**
-  String get profileWasherSaveChanges;
-
-  /// Create washer profile screen title
-  ///
-  /// In en, this message translates to:
-  /// **'Create washer profile'**
-  String get profileWasherCreatePageTitle;
-
-  /// Washer logo upload label
-  ///
-  /// In en, this message translates to:
-  /// **'Upload logo'**
-  String get profileWasherUploadLogo;
-
-  /// City field label
-  ///
-  /// In en, this message translates to:
-  /// **'City'**
-  String get profileWasherFieldCity;
-
-  /// City field hint
-  ///
-  /// In en, this message translates to:
-  /// **'Enter city'**
-  String get profileWasherHintCity;
-
-  /// Street address field label
-  ///
-  /// In en, this message translates to:
-  /// **'Address'**
-  String get profileWasherFieldStreetAddress;
-
-  /// Street address field hint
-  ///
-  /// In en, this message translates to:
-  /// **'Enter address'**
-  String get profileWasherHintStreetAddress;
-
-  /// Services list field label
+  /// Services card title
   ///
   /// In en, this message translates to:
   /// **'Services'**
-  String get profileWasherFieldServicesList;
+  String get detailsServices;
 
-  /// Services list field hint
+  /// Service prices title
   ///
   /// In en, this message translates to:
-  /// **'Separate services with a comma'**
-  String get profileWasherHintServicesList;
+  /// **'Service Prices'**
+  String get detailsServicePrices;
 
-  /// Working hours section title
+  /// Working hours title
   ///
   /// In en, this message translates to:
-  /// **'Working hours'**
-  String get profileWasherWorkingHoursTitle;
+  /// **'Working Hours'**
+  String get detailsWorkingHours;
 
-  /// Saturday hours field label
+  /// Fuel types card title
   ///
   /// In en, this message translates to:
-  /// **'Saturday'**
-  String get profileWasherFieldSaturdayHours;
+  /// **'Fuel Types'**
+  String get detailsFuelTypes;
 
-  /// Saturday hours field hint
+  /// Prices title
   ///
   /// In en, this message translates to:
-  /// **'e.g. 11:00-15:00'**
-  String get profileWasherHintSaturdayHours;
+  /// **'Prices'**
+  String get detailsPrices;
 
-  /// Sunday hours field label
+  /// Business types title
   ///
   /// In en, this message translates to:
-  /// **'Sunday'**
-  String get profileWasherFieldSundayHours;
+  /// **'Business Types'**
+  String get detailsBusinessTypes;
 
-  /// Sunday hours field hint
+  /// Supported car brands title
   ///
   /// In en, this message translates to:
-  /// **'e.g. 10:00-16:00'**
-  String get profileWasherHintSundayHours;
+  /// **'Car Brands'**
+  String get detailsCarBrands;
 
-  /// Create washer profile save button
+  /// Part categories title
   ///
   /// In en, this message translates to:
-  /// **'Save profile'**
-  String get profileWasherCreateSave;
+  /// **'Part Categories'**
+  String get detailsPartCategories;
 
-  /// Title of total bookings section on ratings screen
+  /// Column header for company name
   ///
   /// In en, this message translates to:
-  /// **'Total bookings'**
-  String get showRatingTotalBookings;
+  /// **'Company'**
+  String get columnCompany;
 
-  /// All reserved count label on ratings screen
+  /// Main title for the dashboard page
   ///
   /// In en, this message translates to:
-  /// **'All Reserved'**
-  String get showRatingAllReserved;
+  /// **'Dashboard'**
+  String get dashboardPageTitle;
 
-  /// Status label for a booking waiting for review
+  /// Card showing the total number of users
   ///
   /// In en, this message translates to:
-  /// **'Pending'**
-  String get bookingStatusPending;
+  /// **'Total Users'**
+  String get dashboardTotalUsers;
 
-  /// Status label when the service is finished
+  /// Card showing the total number of customers
   ///
   /// In en, this message translates to:
-  /// **'Completed'**
-  String get bookingStatusCompleted;
+  /// **'Total Customers'**
+  String get dashboardTotalCustomers;
 
-  /// Status label when a booking is canceled
+  /// Statistic for successfully completed operations
   ///
   /// In en, this message translates to:
-  /// **'Canceled'**
-  String get bookingStatusCanceled;
+  /// **'Completed Operations'**
+  String get dashboardCompletedOperations;
 
-  /// Title of average ratings section
+  /// Statistic for operations that are waiting or pending
   ///
   /// In en, this message translates to:
-  /// **'Average ratings'**
-  String get showRatingAverageRatings;
+  /// **'Pending Operations'**
+  String get dashboardPendingOperations;
 
-  /// Title of users comments section
+  /// Header for the service providers statistics section
   ///
   /// In en, this message translates to:
-  /// **'Users comments'**
-  String get showRatingUsersComments;
+  /// **'Providers Overview'**
+  String get dashboardProvidersOverview;
 
-  /// App bar title for create SOS screen
+  /// Chart title showing the status distribution of operations
   ///
   /// In en, this message translates to:
-  /// **'Create SOS'**
-  String get createSosTitle;
+  /// **'Operations Status'**
+  String get dashboardOperationsStatus;
 
-  /// Label for vehicle dropdown on create SOS
+  /// Chart title tracking operations across a time period
   ///
   /// In en, this message translates to:
-  /// **'Choose the vehicle'**
-  String get createSosChooseVehicle;
+  /// **'Operations Over Time'**
+  String get dashboardOperationsOverTime;
 
-  /// Label for province dropdown on create SOS
+  /// Total financial earnings
   ///
   /// In en, this message translates to:
-  /// **'Choose the province'**
-  String get createSosChooseProvince;
+  /// **'Revenue'**
+  String get dashboardRevenue;
 
-  /// Hint under province field on create SOS
+  /// Time filter to display data for a full week
   ///
   /// In en, this message translates to:
-  /// **'* Your current location will be sent automatically'**
-  String get createSosLocationAutoHint;
+  /// **'Week'**
+  String get dashboardPeriodWeek;
 
-  /// Title for problem description field on create SOS (two lines: heading and hint)
+  /// Time filter to display data for a full month
   ///
   /// In en, this message translates to:
-  /// **'Enter a description of the problem'**
-  String get createSosProblemDescription;
+  /// **'Month'**
+  String get dashboardPeriodMonth;
 
-  /// Primary submit button on create SOS
+  /// Time filter to display data for a full year
   ///
   /// In en, this message translates to:
-  /// **'Send request'**
-  String get createSosSendRequest;
+  /// **'Year'**
+  String get dashboardPeriodYear;
 
-  /// Initial or hint text for problem field (not vehicle or province names)
+  /// Label for latitude/longitude field
   ///
   /// In en, this message translates to:
-  /// **'Enter the description here'**
-  String get createSosSampleProblemText;
+  /// **'Location'**
+  String get detailsLocation;
 
-  /// App bar title for fuel SOS create screen
+  /// Menu item: Car Washers
   ///
   /// In en, this message translates to:
-  /// **'Fuel SOS Create'**
-  String get fuelSosCreateTitle;
+  /// **'Car Washers'**
+  String get carwashersMenu;
 
-  /// Vehicle picker field title
+  /// Menu item: Shops
   ///
   /// In en, this message translates to:
-  /// **'Vehicle'**
-  String get fuelSosCreateVehicleTitle;
+  /// **'Shops'**
+  String get shopsMenu;
 
-  /// Vehicle picker field hint
+  /// Login page title
   ///
   /// In en, this message translates to:
-  /// **'Choose the vehicle you want for the service'**
-  String get fuelSosCreateVehicleHint;
+  /// **'Login'**
+  String get loginTitle;
 
-  /// Fuel type picker field title
+  /// Login page subtitle
   ///
   /// In en, this message translates to:
-  /// **'Fuel type'**
-  String get fuelSosCreateFuelTypeTitle;
+  /// **'Sign in to access the admin dashboard'**
+  String get loginSubtitle;
 
-  /// Fuel type picker field hint
+  /// Email field label
   ///
   /// In en, this message translates to:
-  /// **'Choose the fuel type you want'**
-  String get fuelSosCreateFuelTypeHint;
+  /// **'Email'**
+  String get loginEmailLabel;
 
-  /// Quantity field title
+  /// Password field label
   ///
   /// In en, this message translates to:
-  /// **'Quantity'**
-  String get fuelSosCreateQuantityTitle;
+  /// **'Password'**
+  String get loginPasswordLabel;
 
-  /// Quantity field hint
+  /// Login button text
   ///
   /// In en, this message translates to:
-  /// **'Enter the quantity you want to fill'**
-  String get fuelSosCreateQuantityHint;
+  /// **'Login'**
+  String get loginButton;
 
-  /// Notes field title
+  /// Validation error for empty field
   ///
   /// In en, this message translates to:
-  /// **'Notes'**
-  String get fuelSosCreateNotesTitle;
+  /// **'This field is required'**
+  String get loginValidationRequired;
 
-  /// Notes field hint
+  /// Validation error for invalid email
   ///
   /// In en, this message translates to:
-  /// **'Enter any notes you want to add'**
-  String get fuelSosCreateNotesHint;
+  /// **'Please enter a valid email'**
+  String get loginValidationEmail;
 
-  /// Province picker field title
+  /// Logout button text in sidebar
   ///
   /// In en, this message translates to:
-  /// **'Governorate'**
-  String get fuelSosCreateProvinceTitle;
+  /// **'Logout'**
+  String get logoutButton;
 
-  /// Province picker field hint
+  /// Logout confirmation dialog title
   ///
   /// In en, this message translates to:
-  /// **'Choose the governorate at your current location'**
-  String get fuelSosCreateProvinceHint;
+  /// **'Logout'**
+  String get logoutConfirmTitle;
 
-  /// Shown when vehicle is not selected
+  /// Logout confirmation message
   ///
   /// In en, this message translates to:
-  /// **'Please select a vehicle'**
-  String get fuelSosCreateSelectVehicleRequired;
+  /// **'Are you sure you want to logout?'**
+  String get logoutConfirmMessage;
 
-  /// Shown when fuel type is not selected
+  /// Confirm button text inside logout dialog
   ///
   /// In en, this message translates to:
-  /// **'Please select a fuel type'**
-  String get fuelSosCreateSelectFuelTypeRequired;
+  /// **'Logout'**
+  String get logoutConfirmButton;
 
-  /// Shown when quantity is empty
+  /// Reports page title
   ///
   /// In en, this message translates to:
-  /// **'Please enter the quantity'**
-  String get fuelSosCreateQuantityRequired;
+  /// **'Reports'**
+  String get reportsPageTitle;
 
-  /// Shown when province is not selected
+  /// Overview tab in the reports page
   ///
   /// In en, this message translates to:
-  /// **'Please select a governorate'**
-  String get fuelSosCreateSelectProvinceRequired;
+  /// **'Overview'**
+  String get tabOverview;
 
-  /// Shown when user has no vehicles
+  /// Providers tab in the reports page
   ///
   /// In en, this message translates to:
-  /// **'No vehicles found'**
-  String get fuelSosCreateNoVehicles;
+  /// **'Providers'**
+  String get tabProviders;
 
-  /// App bar title for SOS requests list screen
+  /// Financial tab in the reports page
   ///
   /// In en, this message translates to:
-  /// **'SOS Requests List'**
-  String get sosRequestsListTitle;
+  /// **'Financial'**
+  String get tabFinancial;
 
-  /// Label before SOS request id (value is not translated)
+  /// Billing tab in the reports page
   ///
   /// In en, this message translates to:
-  /// **'ID Number'**
-  String get sosRequestIdLabel;
+  /// **'Billing'**
+  String get tabBilling;
 
-  /// Label before vehicle name (value is not translated)
+  /// Advertisements tab in the reports page
   ///
   /// In en, this message translates to:
-  /// **'Vehicle'**
-  String get sosRequestVehicleLabel;
+  /// **'Advertisements'**
+  String get tabAdvertisements;
 
-  /// Label for short problem description (body text is not translated)
+  /// Clear filters button in reports
   ///
   /// In en, this message translates to:
-  /// **'Short description'**
-  String get sosRequestShortDescriptionLabel;
+  /// **'Clear'**
+  String get reportFilterClear;
 
-  /// SOS request status badge: finished
+  /// Apply filters button in reports
   ///
   /// In en, this message translates to:
-  /// **'Finished'**
-  String get sosStatusFinished;
+  /// **'Apply'**
+  String get reportFilterApply;
 
-  /// SOS request status badge: in progress
+  /// All option in report filter dropdowns
   ///
   /// In en, this message translates to:
-  /// **'In progress'**
-  String get sosStatusInProgress;
+  /// **'All'**
+  String get reportFilterAll;
 
-  /// SOS request status badge: waiting
+  /// Retry button when a report fails to load
   ///
   /// In en, this message translates to:
-  /// **'Waiting'**
-  String get sosStatusWaiting;
+  /// **'Retry'**
+  String get reportRetry;
 
-  /// Outlined accept button on SOS request card
+  /// From date field label in report filters
   ///
   /// In en, this message translates to:
-  /// **'Accept'**
-  String get sosRequestAccept;
+  /// **'From'**
+  String get reportDateFrom;
 
-  /// Primary button to open SOS request details
+  /// To date field label in report filters
   ///
   /// In en, this message translates to:
-  /// **'View details'**
-  String get sosRequestViewDetails;
+  /// **'To'**
+  String get reportDateTo;
 
-  /// SOS card footer relative time in hours
+  /// Provider type filter label
   ///
   /// In en, this message translates to:
-  /// **'Created {hours} hours ago'**
-  String sosRequestCreatedAtHours(int hours);
+  /// **'Provider Type'**
+  String get filterProviderType;
 
-  /// SOS card footer relative time in minutes
+  /// Provider status filter label
   ///
   /// In en, this message translates to:
-  /// **'Created {minutes} min ago'**
-  String sosRequestCreatedAtMinutes(int minutes);
+  /// **'Provider Status'**
+  String get filterProviderStatus;
 
-  /// App bar title for SOS request details screen
+  /// Billing status filter/section label
   ///
   /// In en, this message translates to:
-  /// **'SOS Details'**
-  String get sosDetailsTitle;
+  /// **'Billing Status'**
+  String get filterBillingStatus;
 
-  /// Top status banner shown when the SOS request has been accepted
+  /// Invoice status filter label in the billing tab
   ///
   /// In en, this message translates to:
-  /// **'Request accepted'**
-  String get sosDetailsRequestAccepted;
+  /// **'Invoice Status'**
+  String get filterInvoiceStatus;
 
-  /// Header label for the request data card on the SOS details screen
+  /// Operation type filter label
   ///
   /// In en, this message translates to:
-  /// **'Request data'**
-  String get sosDetailsRequestData;
+  /// **'Operation Type'**
+  String get filterOperationType;
 
-  /// Label before the plate number value (value is not translated)
+  /// Generic status filter label
   ///
   /// In en, this message translates to:
-  /// **'Plate number'**
-  String get sosDetailsPlateNumberLabel;
+  /// **'Status'**
+  String get filterStatus;
 
-  /// Label before the technician name (value is not translated)
+  /// Group by filter label
+  ///
+  /// In en, this message translates to:
+  /// **'Group By'**
+  String get filterGroupBy;
+
+  /// Ad placement filter label
+  ///
+  /// In en, this message translates to:
+  /// **'Placement'**
+  String get filterPlacement;
+
+  /// Provider type: technician
   ///
   /// In en, this message translates to:
   /// **'Technician'**
-  String get sosDetailsTechnicianLabel;
+  String get providerTypeTechnician;
 
-  /// Label before the request description text (value is not translated)
+  /// Provider type: fuel provider
   ///
   /// In en, this message translates to:
-  /// **'Description'**
-  String get sosDetailsDescriptionLabel;
+  /// **'Fuel Provider'**
+  String get providerTypeFuelProvider;
 
-  /// Header label for the location card on the SOS details screen
+  /// Provider type: car washer
   ///
   /// In en, this message translates to:
-  /// **'Current location'**
-  String get sosDetailsCurrentLocation;
+  /// **'Car Washer'**
+  String get providerTypeCarWasher;
 
-  /// Label of the track chip on top of the SOS details map
+  /// Provider type: shop
   ///
   /// In en, this message translates to:
-  /// **'Track'**
-  String get sosDetailsTrack;
+  /// **'Shop'**
+  String get providerTypeShop;
 
-  /// Primary destructive button to cancel the SOS request
+  /// Operation status: completed
   ///
   /// In en, this message translates to:
-  /// **'Cancel request'**
-  String get sosDetailsCancelRequest;
+  /// **'Completed'**
+  String get opStatusCompleted;
 
-  /// App bar title for the user fuel orders list screen
+  /// Operation status: in progress
   ///
   /// In en, this message translates to:
-  /// **'Fuel Orders List'**
-  String get fuelOrdersListTitle;
+  /// **'In Progress'**
+  String get opStatusInProgress;
 
-  /// App bar title for the fuel order details screen
+  /// Operation status: cancelled
   ///
   /// In en, this message translates to:
-  /// **'Fuel Order Details'**
-  String get fuelOrderDetailsTitle;
+  /// **'Cancelled'**
+  String get opStatusCancelled;
 
-  /// Section header for the fuel provider card on order details
+  /// Operation status: pending
   ///
   /// In en, this message translates to:
-  /// **'Service provider details'**
-  String get fuelOrderDetailsProviderSection;
+  /// **'Pending'**
+  String get opStatusPending;
 
-  /// Header title on the cancel-reason dialog
+  /// Operation type: total
   ///
   /// In en, this message translates to:
-  /// **'Cancel SOS'**
-  String get cancelReasonDialogTitle;
+  /// **'Total'**
+  String get opTypeTotals;
 
-  /// Question above the cancel reason text field
+  /// Operation type: maintenance
   ///
   /// In en, this message translates to:
-  /// **'What is the reason for canceling the order?'**
-  String get cancelReasonDialogQuestion;
+  /// **'Maintenance'**
+  String get opTypeMaintenance;
 
-  /// Placeholder in the cancel reason text field
+  /// Operation type: SOS
   ///
   /// In en, this message translates to:
-  /// **'Enter the reason for canceling the fuel order here...'**
-  String get cancelReasonDialogHint;
+  /// **'SOS'**
+  String get opTypeSos;
 
-  /// Dismiss action on the cancel-reason dialog footer
+  /// Operation type: fuel
+  ///
+  /// In en, this message translates to:
+  /// **'Fuel'**
+  String get opTypeFuel;
+
+  /// Operation type: car wash
+  ///
+  /// In en, this message translates to:
+  /// **'Car Wash'**
+  String get opTypeCarWash;
+
+  /// Operation type: spare parts
+  ///
+  /// In en, this message translates to:
+  /// **'Spare Parts'**
+  String get opTypeSpareParts;
+
+  /// Group by day
+  ///
+  /// In en, this message translates to:
+  /// **'Day'**
+  String get groupByDay;
+
+  /// Group by month
+  ///
+  /// In en, this message translates to:
+  /// **'Month'**
+  String get groupByMonth;
+
+  /// Group by year
+  ///
+  /// In en, this message translates to:
+  /// **'Year'**
+  String get groupByYear;
+
+  /// Provider status: pending
+  ///
+  /// In en, this message translates to:
+  /// **'Pending'**
+  String get providerStatusPending;
+
+  /// Provider status: approved
+  ///
+  /// In en, this message translates to:
+  /// **'Approved'**
+  String get providerStatusApproved;
+
+  /// Provider status: rejected
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get providerStatusRejected;
+
+  /// Provider status: suspended
+  ///
+  /// In en, this message translates to:
+  /// **'Suspended'**
+  String get providerStatusSuspended;
+
+  /// Button to go back to the previous step
   ///
   /// In en, this message translates to:
   /// **'Back'**
-  String get cancelReasonDialogBack;
+  String get back;
 
-  /// Cancel-reason dialog title on fuel order details
+  /// Button: export invoice as PDF
   ///
   /// In en, this message translates to:
-  /// **'Cancel order'**
-  String get fuelCancelReasonDialogTitle;
+  /// **'Export PDF'**
+  String get invoiceActionExportPdf;
 
-  /// App bar title for the fuel provider profile screen
+  /// Status indicating that the account or server is currently active
   ///
   /// In en, this message translates to:
-  /// **'Provider Profile'**
-  String get providerProfilePageTitle;
+  /// **'Active'**
+  String get isActive;
 
-  /// Section title for provider availability toggle
+  /// The method or type of billing applied
   ///
   /// In en, this message translates to:
-  /// **'Work availability'**
-  String get providerProfileAvailabilityTitle;
+  /// **'Billing Type'**
+  String get billingType;
 
-  /// Availability label when the provider is online
+  /// Invoices list page title
   ///
   /// In en, this message translates to:
-  /// **'Available now'**
-  String get providerProfileAvailableNow;
+  /// **'Provider Invoices'**
+  String get invoicesPageTitle;
 
-  /// Availability label when the provider is offline
+  /// Invoice details page title
   ///
   /// In en, this message translates to:
-  /// **'Not available now'**
-  String get providerProfileNotAvailableNow;
+  /// **'Invoice Details'**
+  String get invoiceDetailsTitle;
 
-  /// Section title for the provider location card
+  /// Invoice status filter: all
   ///
   /// In en, this message translates to:
-  /// **'Service provider location'**
-  String get providerProfileLocationSectionTitle;
+  /// **'All'**
+  String get invoiceStatusAll;
 
-  /// Section title for fuel types and prices row
+  /// Invoice status: draft
   ///
   /// In en, this message translates to:
-  /// **'Services and prices'**
-  String get providerProfileServicesAndPricesTitle;
+  /// **'Draft'**
+  String get invoiceStatusDraft;
 
-  /// Sample provider name for the profile preview UI
+  /// Invoice status: issued
   ///
   /// In en, this message translates to:
-  /// **'Khaled Al-Khaled'**
-  String get providerProfileSampleName;
+  /// **'Issued'**
+  String get invoiceStatusIssued;
 
-  /// Price line on a fuel type card
+  /// Invoice status: paid
   ///
   /// In en, this message translates to:
-  /// **'price : {price} \$'**
-  String providerProfilePriceLine(String price);
+  /// **'Paid'**
+  String get invoiceStatusPaid;
 
-  /// App bar title for the fuel provider edit profile screen
+  /// Invoice status: overdue
   ///
   /// In en, this message translates to:
-  /// **'Edit provider profile'**
-  String get providerEditProfilePageTitle;
+  /// **'Overdue'**
+  String get invoiceStatusOverdue;
 
-  /// Section title for personal info on provider edit profile
+  /// Invoice status: cancelled
   ///
   /// In en, this message translates to:
-  /// **'Your profile information'**
-  String get providerEditProfilePersonalInfoTitle;
+  /// **'Cancelled'**
+  String get invoiceStatusCancelled;
 
-  /// Label for the provider name field
+  /// Table column: invoice number
   ///
   /// In en, this message translates to:
-  /// **'Service provider name'**
-  String get providerEditProfileProviderNameLabel;
+  /// **'Invoice #'**
+  String get columnInvoiceNumber;
 
-  /// Hint for the provider name field
+  /// Table column: provider
   ///
   /// In en, this message translates to:
-  /// **'Enter the service provider name'**
-  String get providerEditProfileProviderNameHint;
+  /// **'Provider'**
+  String get columnProvider;
 
-  /// Label for the provider phone field
+  /// Table column: period
   ///
   /// In en, this message translates to:
-  /// **'Service provider phone'**
-  String get providerEditProfileProviderPhoneLabel;
+  /// **'Period'**
+  String get columnPeriod;
 
-  /// Hint for the provider phone field
+  /// Table column: total amount
   ///
   /// In en, this message translates to:
-  /// **'Enter the service provider phone'**
-  String get providerEditProfileProviderPhoneHint;
+  /// **'Total'**
+  String get columnTotalAmount;
 
-  /// Label for the governorate picker
+  /// Table column: due date
   ///
   /// In en, this message translates to:
-  /// **'Choose service provider governorate'**
-  String get providerEditProfileGovernorateLabel;
+  /// **'Due At'**
+  String get columnDueAt;
 
-  /// Hint for the governorate picker
+  /// Invoice field: invoice number
   ///
   /// In en, this message translates to:
-  /// **'Choose governorate'**
-  String get providerEditProfileGovernorateHint;
+  /// **'Invoice Number'**
+  String get invoiceFieldInvoiceNumber;
 
-  /// Label for the address field
+  /// Invoice field: provider type
   ///
   /// In en, this message translates to:
-  /// **'Address'**
-  String get providerEditProfileAddressLabel;
+  /// **'Provider Type'**
+  String get invoiceFieldProviderType;
 
-  /// Hint for the address field
+  /// Invoice field: provider id
   ///
   /// In en, this message translates to:
-  /// **'Enter the full address'**
-  String get providerEditProfileAddressHint;
+  /// **'Provider ID'**
+  String get invoiceFieldProviderId;
 
-  /// Note below the address field about location usage
+  /// Invoice field: period start
   ///
   /// In en, this message translates to:
-  /// **'* Your location will be used as the provider starting point'**
-  String get providerEditProfileLocationNote;
+  /// **'Period Start'**
+  String get invoiceFieldPeriodStart;
 
-  /// Subtitle on fuel service cards in edit profile
+  /// Invoice field: period end
   ///
   /// In en, this message translates to:
-  /// **'Activate service and set price'**
-  String get providerEditProfileActivateServiceLine;
+  /// **'Period End'**
+  String get invoiceFieldPeriodEnd;
 
-  /// Save button on provider edit profile
+  /// Invoice field: issued at
   ///
   /// In en, this message translates to:
-  /// **'Save information'**
-  String get providerEditProfileSaveInfo;
+  /// **'Issued At'**
+  String get invoiceFieldIssuedAt;
 
-  /// Sample address on provider edit profile preview form
+  /// Invoice field: due at
   ///
   /// In en, this message translates to:
-  /// **'Abbasiyeen Square - Al-Qusour Square entrance'**
-  String get providerEditProfileSampleAddress;
+  /// **'Due At'**
+  String get invoiceFieldDueAt;
 
-  /// App bar title for the fuel provider create profile screen
+  /// Invoice field: subtotal
   ///
   /// In en, this message translates to:
-  /// **'Create provider profile'**
-  String get providerCreateProfilePageTitle;
+  /// **'Subtotal'**
+  String get invoiceFieldSubtotal;
 
-  /// Save button on provider create profile
+  /// Invoice field: commission total
   ///
   /// In en, this message translates to:
-  /// **'Create profile'**
-  String get providerCreateProfileSave;
+  /// **'Commission Total'**
+  String get invoiceFieldCommissionTotal;
 
-  /// Title of the fuel price entry dialog
+  /// Invoice field: subscription total
   ///
   /// In en, this message translates to:
-  /// **'Set price for {fuelType}'**
-  String providerEditProfileSetPriceTitle(String fuelType);
+  /// **'Subscription Total'**
+  String get invoiceFieldSubscriptionTotal;
 
-  /// Hint for the price field in the fuel service dialog
+  /// Invoice field: total amount
   ///
   /// In en, this message translates to:
-  /// **'Enter the price'**
-  String get providerEditProfileSetPriceHint;
+  /// **'Total Amount'**
+  String get invoiceFieldTotalAmount;
 
-  /// Validation when confirming without a price
+  /// Invoice field: status
   ///
   /// In en, this message translates to:
-  /// **'Please enter a price'**
-  String get providerEditProfileSetPriceRequired;
+  /// **'Status'**
+  String get invoiceFieldStatus;
 
-  /// App bar title for the fuel provider available orders list
+  /// Invoice field: is overdue
   ///
   /// In en, this message translates to:
-  /// **'Available orders'**
-  String get providerAvailableOrdersTitle;
+  /// **'Overdue'**
+  String get invoiceFieldIsOverdue;
 
-  /// Fallback text when an order has no notes
+  /// Invoice field: external payment method
   ///
   /// In en, this message translates to:
-  /// **'None'**
-  String get providerAvailableOrderNoNotes;
+  /// **'Payment Method'**
+  String get invoiceFieldPaymentMethod;
 
-  /// App bar title for the fuel provider order details screen
+  /// Invoice field: external payment reference
   ///
   /// In en, this message translates to:
-  /// **'Provider order details'**
-  String get providerOrderDetailsTitle;
+  /// **'Payment Reference'**
+  String get invoiceFieldPaymentReference;
 
-  /// Status banner while the provider has not accepted yet
+  /// Invoice field: paid at
   ///
   /// In en, this message translates to:
-  /// **'Waiting for order acceptance'**
-  String get providerOrderDetailsPendingAcceptance;
+  /// **'Paid At'**
+  String get invoiceFieldPaidAt;
 
-  /// Section header for customer info on provider order details
+  /// Invoice field: notes
   ///
   /// In en, this message translates to:
-  /// **'Customer details'**
-  String get providerOrderDetailsCustomerSection;
+  /// **'Notes'**
+  String get invoiceFieldNotes;
 
-  /// Primary action to accept the order
+  /// Invoice items section title
   ///
   /// In en, this message translates to:
-  /// **'Accept order'**
-  String get providerOrderDetailsAcceptOrder;
+  /// **'Items'**
+  String get invoiceFieldItems;
 
-  /// Label when location sharing is enabled
+  /// Action button: issue invoice
   ///
   /// In en, this message translates to:
-  /// **'Share location'**
-  String get providerOrderDetailsShareLocationOn;
+  /// **'Issue'**
+  String get invoiceActionIssue;
 
-  /// Label when location sharing is disabled
+  /// Action button: mark invoice as paid
   ///
   /// In en, this message translates to:
-  /// **'Do not share location'**
-  String get providerOrderDetailsShareLocationOff;
+  /// **'Mark as Paid'**
+  String get invoiceActionMarkPaid;
 
-  /// Title of the dialog when accepting an order with ETA
+  /// Action button: cancel invoice
   ///
   /// In en, this message translates to:
-  /// **'Estimated arrival minutes'**
-  String get providerOrderDetailsEstimatedArrivalDialogTitle;
+  /// **'Cancel Invoice'**
+  String get invoiceActionCancel;
 
-  /// Label for the ETA minutes field
+  /// Action button: generate invoices
   ///
   /// In en, this message translates to:
-  /// **'Enter duration in minutes'**
-  String get providerOrderDetailsEnterDurationMinutes;
+  /// **'Generate Invoices'**
+  String get invoiceActionGenerate;
 
-  /// Label for optional notes when accepting an order
+  /// Action button: generate invoice for a single provider
   ///
   /// In en, this message translates to:
-  /// **'Enter additional notes'**
-  String get providerOrderDetailsEnterAdditionalNotes;
+  /// **'Generate for Provider'**
+  String get invoiceActionGenerateForProvider;
 
-  /// App bar title for the fuel provider my orders list
+  /// Generate invoices dialog title
   ///
   /// In en, this message translates to:
-  /// **'My orders'**
-  String get providerMyOrdersTitle;
+  /// **'Generate Invoices'**
+  String get invoiceGenerateDialogTitle;
 
-  /// Section title for order totals on provider statistics
+  /// Mark invoice paid dialog title
   ///
   /// In en, this message translates to:
-  /// **'Total orders'**
-  String get providerStatisticsTotalOrdersTitle;
+  /// **'Confirm Payment'**
+  String get invoiceMarkPaidDialogTitle;
 
-  /// Section title for profit totals on provider statistics
+  /// Cancel invoice confirmation dialog title
   ///
   /// In en, this message translates to:
-  /// **'Total profits'**
-  String get providerStatisticsTotalProfitsTitle;
+  /// **'Cancel Invoice'**
+  String get invoiceCancelDialogTitle;
 
-  /// Label for total orders count on provider statistics
+  /// Cancel invoice confirmation message
   ///
   /// In en, this message translates to:
-  /// **'All Reserved'**
-  String get providerStatisticsAllOrders;
+  /// **'Are you sure you want to cancel this invoice?'**
+  String get invoiceCancelDialogMessage;
+
+  /// Generate invoices result title
+  ///
+  /// In en, this message translates to:
+  /// **'Generation Result'**
+  String get invoiceGenerateResultTitle;
+
+  /// Generated invoices count label
+  ///
+  /// In en, this message translates to:
+  /// **'Generated'**
+  String get invoiceGeneratedCount;
+
+  /// Skipped invoices count label
+  ///
+  /// In en, this message translates to:
+  /// **'Skipped'**
+  String get invoiceSkippedCount;
+
+  /// Skip reason: already_exists
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice already exists'**
+  String get invoiceSkippedReasonAlreadyExists;
+
+  /// Skip reason: within_free_trial
+  ///
+  /// In en, this message translates to:
+  /// **'Within free trial period'**
+  String get invoiceSkippedReasonWithinFreeTrial;
+
+  /// Empty state for invoices list
+  ///
+  /// In en, this message translates to:
+  /// **'No invoices found'**
+  String get noInvoices;
+
+  /// Button: navigate from billing setting to that provider's invoices
+  ///
+  /// In en, this message translates to:
+  /// **'View Invoices'**
+  String get invoiceViewInvoices;
+
+  /// Billing status: not configured
+  ///
+  /// In en, this message translates to:
+  /// **'Not Configured'**
+  String get billingStatusNotConfigured;
+
+  /// Billing status: exempt
+  ///
+  /// In en, this message translates to:
+  /// **'Exempt'**
+  String get billingStatusExempt;
+
+  /// Billing status: free trial
+  ///
+  /// In en, this message translates to:
+  /// **'Free Trial'**
+  String get billingStatusFreeTrial;
+
+  /// Billing status: invoice due
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice Due'**
+  String get billingStatusInvoiceDue;
+
+  /// Billing status: overdue
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get billingStatusOverdue;
+
+  /// Advertisement status: active
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get adStatusActive;
+
+  /// Advertisement status: inactive
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive'**
+  String get adStatusInactive;
+
+  /// Stat card: total ads
+  ///
+  /// In en, this message translates to:
+  /// **'Total Ads'**
+  String get adsTotal;
+
+  /// Stat card: active ads
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get adsActive;
+
+  /// Stat card: inactive ads
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive'**
+  String get adsInactive;
+
+  /// Stat card: expired ads
+  ///
+  /// In en, this message translates to:
+  /// **'Expired'**
+  String get adsExpired;
+
+  /// Stat card: scheduled ads
+  ///
+  /// In en, this message translates to:
+  /// **'Scheduled'**
+  String get adsScheduled;
+
+  /// Section title: ads by placement
+  ///
+  /// In en, this message translates to:
+  /// **'By Placement'**
+  String get adsByPlacementTitle;
+
+  /// Section title: latest ads
+  ///
+  /// In en, this message translates to:
+  /// **'Latest Ads'**
+  String get adsLatestTitle;
+
+  /// Empty state text when there are no ads
+  ///
+  /// In en, this message translates to:
+  /// **'No ads found'**
+  String get adsEmpty;
+
+  /// Stat card: invoices count
+  ///
+  /// In en, this message translates to:
+  /// **'Invoices Count'**
+  String get billingInvoicesCount;
+
+  /// Stat card: draft invoices
+  ///
+  /// In en, this message translates to:
+  /// **'Draft'**
+  String get billingDraft;
+
+  /// Stat card: issued invoices
+  ///
+  /// In en, this message translates to:
+  /// **'Issued'**
+  String get billingIssued;
+
+  /// Stat card: overdue invoices
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get billingOverdueCount;
+
+  /// Stat card: paid invoices
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get billingPaidCount;
+
+  /// Stat card: cancelled invoices
+  ///
+  /// In en, this message translates to:
+  /// **'Cancelled'**
+  String get billingCancelled;
+
+  /// Section title: financial totals in the billing tab
+  ///
+  /// In en, this message translates to:
+  /// **'Financial Totals'**
+  String get billingFinancialTotalsTitle;
+
+  /// Stat card: total paid
+  ///
+  /// In en, this message translates to:
+  /// **'Total Paid'**
+  String get billingPaidTotal;
+
+  /// Stat card: total unpaid
+  ///
+  /// In en, this message translates to:
+  /// **'Total Unpaid'**
+  String get billingUnpaidTotal;
+
+  /// Stat card: total overdue
+  ///
+  /// In en, this message translates to:
+  /// **'Total Overdue'**
+  String get billingOverdueTotal;
+
+  /// Stat card: average invoice amount
+  ///
+  /// In en, this message translates to:
+  /// **'Average Invoice Amount'**
+  String get billingAvgInvoice;
+
+  /// Stat card: count of providers with overdue billing
+  ///
+  /// In en, this message translates to:
+  /// **'Providers with Overdue Bills'**
+  String get billingProvidersOverdue;
+
+  /// Section title: latest invoices
+  ///
+  /// In en, this message translates to:
+  /// **'Latest Invoices'**
+  String get billingLatestInvoicesTitle;
+
+  /// Empty state text when there are no invoices
+  ///
+  /// In en, this message translates to:
+  /// **'No invoices found'**
+  String get billingEmpty;
+
+  /// Invoice status label within an invoice row
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get billingStatusLabel;
+
+  /// Invoice issued-at label within an invoice row
+  ///
+  /// In en, this message translates to:
+  /// **'Issued'**
+  String get billingIssuedAtLabel;
+
+  /// Section title: gross revenue
+  ///
+  /// In en, this message translates to:
+  /// **'Gross Revenue'**
+  String get financialGrossRevenueTitle;
+
+  /// Section title: billing summary in the financial tab
+  ///
+  /// In en, this message translates to:
+  /// **'Billing Summary'**
+  String get financialBillingSummaryTitle;
+
+  /// Stat card: issued total
+  ///
+  /// In en, this message translates to:
+  /// **'Issued Total'**
+  String get financialIssuedTotal;
+
+  /// Stat card: paid
+  ///
+  /// In en, this message translates to:
+  /// **'Paid'**
+  String get financialPaid;
+
+  /// Stat card: unpaid
+  ///
+  /// In en, this message translates to:
+  /// **'Unpaid'**
+  String get financialUnpaid;
+
+  /// Stat card: overdue
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue'**
+  String get financialOverdue;
+
+  /// Stat card: commissions
+  ///
+  /// In en, this message translates to:
+  /// **'Commissions'**
+  String get financialCommissions;
+
+  /// Stat card: subscriptions
+  ///
+  /// In en, this message translates to:
+  /// **'Subscriptions'**
+  String get financialSubscriptions;
+
+  /// Section/tab title: operations
+  ///
+  /// In en, this message translates to:
+  /// **'Operations'**
+  String get operationsTitle;
+
+  /// Section title for operations when grouped by a period
+  ///
+  /// In en, this message translates to:
+  /// **'Operations (grouped by {group})'**
+  String operationsGroupedTitle(String group);
+
+  /// Empty state text when there is no operations data
+  ///
+  /// In en, this message translates to:
+  /// **'No data found'**
+  String get operationsEmpty;
+
+  /// Stat card: total users
+  ///
+  /// In en, this message translates to:
+  /// **'Total Users'**
+  String get overviewTotalUsers;
+
+  /// Stat card: total customers
+  ///
+  /// In en, this message translates to:
+  /// **'Total Customers'**
+  String get overviewTotalCustomers;
+
+  /// Stat card: total providers
+  ///
+  /// In en, this message translates to:
+  /// **'Total Providers'**
+  String get overviewTotalProviders;
+
+  /// Section title: providers by type and status
+  ///
+  /// In en, this message translates to:
+  /// **'Providers by Type & Status'**
+  String get overviewProvidersByTypeStatusTitle;
+
+  /// Section title: operations summary in overview
+  ///
+  /// In en, this message translates to:
+  /// **'Operations Summary'**
+  String get overviewOperationsSummaryTitle;
+
+  /// Section title: revenue summary in overview
+  ///
+  /// In en, this message translates to:
+  /// **'Revenue Summary'**
+  String get overviewRevenueSummaryTitle;
+
+  /// Stat card: providers pending approval
+  ///
+  /// In en, this message translates to:
+  /// **'Pending Approval'**
+  String get providersPendingApproval;
+
+  /// Stat card: providers with overdue invoices
+  ///
+  /// In en, this message translates to:
+  /// **'Overdue Invoices'**
+  String get providersOverdueBilling;
+
+  /// Stat card: providers with billing not configured
+  ///
+  /// In en, this message translates to:
+  /// **'Billing Not Configured'**
+  String get providersBillingNotConfigured;
+
+  /// Section title: provider count by type
+  ///
+  /// In en, this message translates to:
+  /// **'Provider Count by Type'**
+  String get providersCountByTypeTitle;
+
+  /// Section title: provider status by type
+  ///
+  /// In en, this message translates to:
+  /// **'Status by Type'**
+  String get providersStatusByTypeTitle;
+
+  /// Section title: top providers by completed operations
+  ///
+  /// In en, this message translates to:
+  /// **'Top Providers by Completed Operations'**
+  String get providersTopByCompletedTitle;
+
+  /// Line showing a provider's name, id and completed operations count
+  ///
+  /// In en, this message translates to:
+  /// **'{name} (#{id}) — {count} completed operations'**
+  String providersCompletedOpsLine(String name, String id, String count);
+
+  /// Sidebar menu: Advertisements
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisements'**
+  String get advertisementsMenu;
+
+  /// Page title: advertisements list
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisements'**
+  String get advertisementsPageTitle;
+
+  /// Page title: advertisement details/edit
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement Details'**
+  String get advertisementDetailsTitle;
+
+  /// Column: image
+  ///
+  /// In en, this message translates to:
+  /// **'Image'**
+  String get adColumnImage;
+
+  /// Column: title
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get adColumnTitle;
+
+  /// Column: placement
+  ///
+  /// In en, this message translates to:
+  /// **'Placement'**
+  String get adColumnPlacement;
+
+  /// Column: starts/ends period
+  ///
+  /// In en, this message translates to:
+  /// **'Period'**
+  String get adColumnPeriod;
+
+  /// Column: status
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get adColumnStatus;
+
+  /// Column: sort order
+  ///
+  /// In en, this message translates to:
+  /// **'Order'**
+  String get adColumnSortOrder;
+
+  /// Column: actions
+  ///
+  /// In en, this message translates to:
+  /// **'Actions'**
+  String get adColumnActions;
+
+  /// Filter chip: all placements
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get adFilterAll;
+
+  /// Filter chip: home placement
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get adFilterHome;
+
+  /// Action: activate ad
+  ///
+  /// In en, this message translates to:
+  /// **'Activate'**
+  String get adActionActivate;
+
+  /// Action: deactivate ad
+  ///
+  /// In en, this message translates to:
+  /// **'Deactivate'**
+  String get adActionDeactivate;
+
+  /// Action: edit ad
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get adActionEdit;
+
+  /// Action: delete ad
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get adActionDelete;
+
+  /// Button: create new advertisement
+  ///
+  /// In en, this message translates to:
+  /// **'New Advertisement'**
+  String get adCreateNew;
+
+  /// Form field: title
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get adFormTitleLabel;
+
+  /// Form field: placement
+  ///
+  /// In en, this message translates to:
+  /// **'Placement'**
+  String get adFormPlacementLabel;
+
+  /// Form field: link url
+  ///
+  /// In en, this message translates to:
+  /// **'Link URL'**
+  String get adFormLinkLabel;
+
+  /// Form field: starts at
+  ///
+  /// In en, this message translates to:
+  /// **'Starts At'**
+  String get adFormStartsLabel;
+
+  /// Form field: ends at
+  ///
+  /// In en, this message translates to:
+  /// **'Ends At'**
+  String get adFormEndsLabel;
+
+  /// Form field: sort order
+  ///
+  /// In en, this message translates to:
+  /// **'Sort Order'**
+  String get adFormSortOrderLabel;
+
+  /// Form field: is active
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get adFormActiveLabel;
+
+  /// Form field: image
+  ///
+  /// In en, this message translates to:
+  /// **'Image'**
+  String get adFormImageLabel;
+
+  /// Hint: image upload constraints
+  ///
+  /// In en, this message translates to:
+  /// **'jpeg/jpg/png/webp, max 2MB'**
+  String get adFormImageHint;
+
+  /// Button: choose image
+  ///
+  /// In en, this message translates to:
+  /// **'Choose Image'**
+  String get adFormChooseImage;
+
+  /// Button: change image
+  ///
+  /// In en, this message translates to:
+  /// **'Change Image'**
+  String get adFormChangeImage;
+
+  /// Button: save advertisement
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get adFormSave;
+
+  /// Validation: required field
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get adFormRequiredField;
+
+  /// Validation: image required
+  ///
+  /// In en, this message translates to:
+  /// **'Please select an image'**
+  String get adFormImageRequired;
+
+  /// Dialog title: delete confirm
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Advertisement'**
+  String get adDeleteConfirmTitle;
+
+  /// Dialog message: delete confirm
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this advertisement?'**
+  String get adDeleteConfirmMessage;
+
+  /// Snackbar: create success
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement created successfully'**
+  String get adCreatedSuccess;
+
+  /// Snackbar: update success
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement updated successfully'**
+  String get adUpdatedSuccess;
+
+  /// Snackbar: delete success
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement deleted successfully'**
+  String get adDeletedSuccess;
+
+  /// Snackbar: activate success
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement activated'**
+  String get adActivatedSuccess;
+
+  /// Snackbar: deactivate success
+  ///
+  /// In en, this message translates to:
+  /// **'Advertisement deactivated'**
+  String get adDeactivatedSuccess;
+
+  /// Empty state: no advertisements
+  ///
+  /// In en, this message translates to:
+  /// **'No advertisements found'**
+  String get noAdvertisements;
+
+  /// Explanation for the user showing that ranking starts from number 1 for the first ad
+  ///
+  /// In en, this message translates to:
+  /// **'The ranking starts from 1, for example, 1 means this is the first advertisement to appear'**
+  String get adRankingExplanation;
+
+  /// Title of the billing settings page
+  ///
+  /// In en, this message translates to:
+  /// **'Billing Settings'**
+  String get billingSettingsPageTitle;
+
+  /// Button to create a new billing configuration
+  ///
+  /// In en, this message translates to:
+  /// **'New Setting'**
+  String get billingCreateNew;
+
+  /// Link button to navigate to billing setup
+  ///
+  /// In en, this message translates to:
+  /// **'Billing Setup'**
+  String get billingSettingLinkButton;
+
+  /// Column header for provider in the billing table
+  ///
+  /// In en, this message translates to:
+  /// **'Provider'**
+  String get billingColumnProvider;
+
+  /// Column header for billing type in the table
+  ///
+  /// In en, this message translates to:
+  /// **'Billing Type'**
+  String get billingColumnType;
+
+  /// Column header for the monthly subscription fee
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Subscription'**
+  String get billingColumnMonthlyFee;
+
+  /// Column header for the commission percentage
+  ///
+  /// In en, this message translates to:
+  /// **'Commission Rate'**
+  String get billingColumnCommission;
+
+  /// Column header for the activation start date
+  ///
+  /// In en, this message translates to:
+  /// **'Start Date'**
+  String get billingColumnStartsAt;
+
+  /// Status indicating the setting is currently active
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get billingStatusActive;
+
+  /// Status indicating the setting is currently disabled
+  ///
+  /// In en, this message translates to:
+  /// **'Inactive'**
+  String get billingStatusInactive;
+
+  /// Title of the confirmation dialog for deleting a billing setting
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Billing Setting'**
+  String get billingDeleteTitle;
+
+  /// Confirmation message shown before completing deletion
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this setting?'**
+  String get billingDeleteMessage;
+
+  /// Final confirmation button to execute deletion
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get confirmDelete;
+
+  /// Title of the form for creating a new billing setup
+  ///
+  /// In en, this message translates to:
+  /// **'Create Billing Setting'**
+  String get billingFormTitleCreate;
+
+  /// Title of the form for modifying an existing billing setup
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Billing Setting'**
+  String get billingFormTitleEdit;
+
+  /// Label for the provider type input field
+  ///
+  /// In en, this message translates to:
+  /// **'Provider Type'**
+  String get billingFieldProviderType;
+
+  /// Label for the provider ID input field
+  ///
+  /// In en, this message translates to:
+  /// **'Provider ID'**
+  String get billingFieldProviderId;
+
+  /// Label for the billing type selection field
+  ///
+  /// In en, this message translates to:
+  /// **'Billing Type'**
+  String get billingFieldBillingType;
+
+  /// Label for the monthly subscription fee input field
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Subscription'**
+  String get billingFieldMonthlyFee;
+
+  /// Label for the commission percentage input field
+  ///
+  /// In en, this message translates to:
+  /// **'Commission Rate %'**
+  String get billingFieldCommissionPercent;
+
+  /// Label for the number of free trial days field
+  ///
+  /// In en, this message translates to:
+  /// **'Free Trial Days'**
+  String get billingFieldFreeTrialDays;
+
+  /// Label for the payment terms/grace period in days field
+  ///
+  /// In en, this message translates to:
+  /// **'Payment Due (Days)'**
+  String get billingFieldPaymentDueDays;
+
+  /// Label for selecting the billing start date
+  ///
+  /// In en, this message translates to:
+  /// **'Start Date'**
+  String get billingFieldStartsAt;
+
+  /// Title for the billing details section
+  ///
+  /// In en, this message translates to:
+  /// **'Billing Details'**
+  String get billingDetailsTitle;
+
+  /// Billing type combining a fixed subscription fee and a commission percentage
+  ///
+  /// In en, this message translates to:
+  /// **'Subscription + Commission'**
+  String get billingTypeSubscriptionPlusCommission;
+
+  /// Billing type for accounts or operations exempt from fees
+  ///
+  /// In en, this message translates to:
+  /// **'Exempt'**
+  String get billingTypeExempt;
+
+  /// Field label for specifying the method or reason for financial exemption
+  ///
+  /// In en, this message translates to:
+  /// **'Exempt Method'**
+  String get billingFieldExemptMethod;
+
+  /// Option indicating that the billing is commission-based
+  ///
+  /// In en, this message translates to:
+  /// **'Billing Type: Commission'**
+  String get billingTypeCommission;
+
+  /// Option indicating that the billing occurs on a monthly basis
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly Billing'**
+  String get billingTypeMonthly;
+
+  /// Label for the switch determining if the record is active
+  ///
+  /// In en, this message translates to:
+  /// **'Active?'**
+  String get billingFieldIsActive;
+
+  /// Label for the additional notes input field
+  ///
+  /// In en, this message translates to:
+  /// **'Notes'**
+  String get billingFieldNotes;
+
+  /// Text prompting the user to open the date picker
+  ///
+  /// In en, this message translates to:
+  /// **'Pick Date'**
+  String get billingPickDate;
+
+  /// Validation error message for mandatory fields left blank
+  ///
+  /// In en, this message translates to:
+  /// **'This field is required'**
+  String get fieldRequired;
+
+  /// Button to save form data
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get save;
+
+  /// General text for edit action
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get actionEdit;
+
+  /// General text for delete action
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get actionDelete;
+
+  /// عنوان أو نص يرمز للخدمة في التطبيق
+  ///
+  /// In en, this message translates to:
+  /// **'الخدمة'**
+  String get service;
+
+  /// عنوان شاشة لوحة التحكم الرئيسية
+  ///
+  /// In en, this message translates to:
+  /// **'لوحة التحكم'**
+  String get dashboard;
+
+  /// تبويب أو إعدادات عامة داخل التطبيق
+  ///
+  /// In en, this message translates to:
+  /// **'عام'**
+  String get general;
+
+  /// Option for cash payment
+  ///
+  /// In en, this message translates to:
+  /// **'Cash'**
+  String get paymentMethodCash;
+
+  /// Option for bank transfer payment
+  ///
+  /// In en, this message translates to:
+  /// **'Bank Transfer'**
+  String get paymentMethodBankTransfer;
+
+  /// Option for Sham Cash electronic payment
+  ///
+  /// In en, this message translates to:
+  /// **'Sham Cash'**
+  String get paymentMethodShamCash;
+
+  /// Option for Syriatel Cash electronic payment
+  ///
+  /// In en, this message translates to:
+  /// **'Syriatel Cash'**
+  String get paymentMethodSyriatelCash;
+
+  /// Option for other unlisted payment methods
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get paymentMethodOther;
+
+  /// Main title for the settings page
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsPageTitle;
+
+  /// Header for the application language selection section
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settingsLanguageSection;
+
+  /// Header for the application theme or appearance section
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get settingsThemeSection;
+
+  /// Option to select Arabic language
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic'**
+  String get settingsLanguageArabic;
+
+  /// Option to select English language
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get settingsLanguageEnglish;
+
+  /// Option to enable light mode
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get settingsThemeLight;
+
+  /// Option to enable dark mode
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get settingsThemeDark;
+
+  /// Option to make the theme follow the device system settings
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get settingsThemeSystem;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

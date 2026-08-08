@@ -1,97 +1,41 @@
-﻿import 'package:car_care/core/service_locator/service_locator.dart';
-import 'package:car_care/features/car_washer/washers/washers_statistics/presentation/pages/statistics_page.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_order/presentation/pages/provider_available_orders_page_wrapper.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_profile/domain/entities/provider_profile_entity.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_profile/presentation/cubit/provider_profile_cubit.dart';
-import 'package:car_care/features/maintenance/user_quotations/domain/entities/quotation_entity.dart';
-import 'package:car_care/features/maintenance/user_quotations/presentation/cubit/quotations_cubit.dart';
-import 'package:car_care/features/maintenance/user_quotations/presentation/pages/quotation_details_page.dart';
-import 'package:car_care/features/maintenance/user_requests/domain/entities/maintenance_request_details_entity.dart';
-import 'package:car_care/features/maintenance/user_requests/presentation/cubit/cancel_request_cubit/cancel_request_cubit.dart';
-import 'package:car_care/features/maintenance/user_requests/presentation/cubit/show_request_cubit/show_request_cubit.dart';
-import 'package:car_care/features/maintenance/user_requests/presentation/pages/maintenance_request_details_page.dart';
-import 'package:car_care/features/onboarding/presentation/pages/onboarding_page.dart';
-import 'package:car_care/features/onboarding/presentation/pages/splash_screen.dart';
-import 'package:car_care/features/technician_sos/presentation/pages/all_technician_sos_requests.dart';
-import 'package:car_care/features/user_fuel/domain/entities/user_fuel_order_entity.dart';
-import 'package:car_care/features/user_fuel/presentation/cubit/user_fuel_cubit/user_fuel_cubit.dart';
-import 'package:car_care/features/user_fuel/presentation/pages/fuel_orders_list_page.dart';
-import 'package:car_care/features/user_fuel/presentation/pages/fuel_sos_create_page.dart';
-
-import 'package:car_care/features/car_washer/car_wash/bookings/domain/entities/bookings_entity.dart';
-import 'package:car_care/features/car_washer/car_wash/bookings/presentation/pages/bookings_page.dart';
-import 'package:car_care/features/car_washer/car_wash/washers_browse/domain/entities/washers_entity.dart';
-import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/pages/washer_details_page.dart';
-import 'package:car_care/features/car_washer/car_wash/washers_browse/presentation/pages/washers_page.dart';
-import 'package:car_care/features/car_washer/washers/washers_availability/presentation/pages/availability_page.dart';
-import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_details.dart';
-import 'package:car_care/features/car_washer/washers/washers_bookings/presentation/pages/washer_bookings_page.dart';
-import 'package:car_care/features/car_washer/washers/washers_profile/presentation/pages/edit_profile_washer_page.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_order/presentation/pages/provider_order_details_page.dart';
-import 'package:car_care/features/user_fuel/presentation/pages/fuel_order_details_page.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_order/presentation/pages/provider_available_orders_page.dart';
-import 'package:car_care/features/fuel_provider/share_location_fuel/presentation/pages/share_location_fuel_page.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_statistics/presentation/pages/provider_statistics_page.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_profile/presentation/pages/provider_create_profile_page.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_profile/presentation/pages/provider_edit_profile_page.dart';
-import 'package:car_care/features/fuel_provider/fuel_provider_profile/presentation/pages/provider_profile_page.dart';
-import 'package:car_care/core/widgets/main_shell.dart';
-import 'package:car_care/features/sos/presentation/pages/Create_sos_page_wrapper.dart';
-import 'package:car_care/features/technician/technician_profile/domain/entities/technician_profile_entity.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/pages/insert_technician_profile/insert_technician_profile.dart';
-import 'package:car_care/features/technician_sos/presentation/pages/sos_details_page.dart';
-import 'package:car_care/features/technician_sos/presentation/widgets/sos_requests_list/technician_sos_map_page.dart';
-import 'package:car_care/features/sos/presentation/pages/all_user_sos_requests.dart';
-import 'package:car_care/features/sos/presentation/pages/sos_details_page.dart';
-import 'package:car_care/features/car_washer/profile_washer/presentation/pages/profile_washer_page.dart';
-import 'package:car_care/features/car_washer/washers/presentation/pages/washer_reservation_page.dart';
-import 'package:car_care/features/maintenance/user_requests/presentation/pages/all_requests_stats_page.dart';
-import 'package:car_care/features/technician/technician_order/presentation/pages/order_details_page.dart';
-import 'package:car_care/features/technician/technician_order/presentation/pages/orders_page.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/pages/tetechnician_profile_view/technician_profile_view_page.dart';
-import 'package:car_care/features/technician/technician_profile/presentation/pages/update_technician_profile/update_technician_profile.dart';
-import 'package:car_care/features/technician/technician_statistics/presentation/pages/technician_statistics_page.dart';
-import 'package:car_care/features/technician/technician_jobs/presentation/pages/technician_jobs_page.dart';
-import 'package:car_care/features/technician/technician_quotations/presentation/pages/technician_quotations_page.dart';
-import 'package:car_care/features/maintenance/user_rate_job/presentation/pages/rate_job_page.dart';
-import 'package:car_care/features/maintenance/user_requests/presentation/pages/add_requests_page.dart';
-import 'package:car_care/features/maintenance/user_statistics/presentation/pages/statistics_page.dart';
-import 'package:car_care/features/maintenance/user_quotations/presentation/pages/quotations_page.dart';
-import 'package:car_care/features/user_fuel/presentation/pages/fuel_sos_create_page_wrapper.dart';
-import 'package:car_care/features/user_profile/presentation/pages/profile_page.dart';
-import 'package:car_care/features/user_profile/presentation/widgets/delete_confirmation_dialog.dart';
-import 'package:car_care/features/vehicle/presentation/pages/maintenance_history_page.dart';
-import 'package:car_care/features/user_profile/presentation/pages/change_password_page.dart';
-import 'package:car_care/features/vehicle/presentation/pages/vehicle_details_page.dart';
-import 'package:car_care/features/vehicle/presentation/pages/add_vehicle_page.dart';
-import 'package:car_care/features/vehicle/presentation/pages/my_vehicles_page_page.dart';
-import 'package:car_care/features/auth/presentation/pages/login_page.dart';
-import 'package:car_care/core/routing/routes.dart';
-import 'package:car_care/core/widgets/technician_entry_sheet.dart';
-import 'package:car_care/features/auth/presentation/pages/register_page.dart';
-import 'package:car_care/features/home/presentation/pages/home_page.dart';
-import 'package:car_care/features/home/presentation/pages/notifications_page.dart';
-import 'package:car_care/features/home/presentation/widgets/home_bottom_nav_bar.dart';
-import 'package:car_care/features/user_profile/presentation/pages/profile_setup_page.dart';
-import 'package:car_care/features/vehicle/presentation/widgets/UpdateVehicle/UpdateVehiclePage.dart';
-import 'package:car_care/features/spare_parts_store/customer/cart/presentation/cubit/cart/cart_cubit.dart';
-import 'package:car_care/features/spare_parts_store/customer/cart/presentation/pages/cart_page.dart';
-import 'package:car_care/features/spare_parts_store/customer/checkout/presentation/pages/checkout_page.dart';
-import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_my_orders_page.dart';
-import 'package:car_care/features/spare_parts_store/customer/orders/presentation/pages/customer_order_details_page.dart';
-import 'package:car_care/features/spare_parts_store/owner/profile/presentation/pages/owner_profile_page.dart';
-import 'package:car_care/features/spare_parts_store/owner/orders/presentation/pages/owner_orders_page.dart';
-import 'package:car_care/features/spare_parts_store/owner/orders/presentation/pages/owner_order_details_page.dart';
-import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/all_products_page.dart';
-import 'package:car_care/features/spare_parts_store/customer/products/presentation/pages/customer_product_details_page.dart';
-import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_details_page.dart';
-import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shop_products_page.dart';
-import 'package:car_care/features/spare_parts_store/customer/shops/presentation/pages/shops_list_page.dart';
+import 'package:car_care/core/widgets/settings_page_web.dart';
+import 'package:car_care/features/dashboard/presentation/pages/dashboard_page.dart';
+import 'package:car_care/features/invoice/presentation/pages/invoice_details_page_web.dart';
+import 'package:car_care/features/invoice/presentation/pages/invoice_page.dart';
+import 'package:car_care/features/billing/presentation/pages/billing_setting_edit_page_web.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import '../../features/car_washer/car_wash/bookings/presentation/pages/booking_details_page.dart';
-import '../../features/car_washer/car_wash/ratings/presentation/pages/ratings_page.dart';
+
+// Core
+import 'package:car_care/core/routing/routes.dart';
+
+// Features - Auth & Home
+import 'package:car_care/features/auth/presentation/pages/auth_page.dart';
+import 'package:car_care/features/home/presentation/pages/home_page.dart';
+
+// Features - Advertisement
+import 'package:car_care/features/advertisement/presentation/pages/advertisement_details_page_web.dart';
+import 'package:car_care/features/advertisement/presentation/pages/advertisement_form_page_web.dart';
+import 'package:car_care/features/advertisement/presentation/pages/advertisement_page.dart'; // تأكد أن الكلاس اسمه AdvertisementsPageWeb داخل هذا الملف
+
+// Features - Billing
+import 'package:car_care/features/billing/presentation/pages/billing_setting_form_page_web.dart';
+import 'package:car_care/features/billing/presentation/pages/billing_settings_page_web.dart';
+
+import 'package:car_care/features/billing/presentation/pages/billing_setting_details_page_web.dart'; 
+
+// Features - Management
+import 'package:car_care/features/carwasher_management/presentation/pages/carwasher_details_page_web.dart';
+import 'package:car_care/features/carwasher_management/presentation/pages/carwasher_management_page.dart';
+import 'package:car_care/features/fuel_provider_management/presentation/pages/fuel_provider_details_page_web.dart';
+import 'package:car_care/features/fuel_provider_management/presentation/pages/fuel_provider_management_page.dart';
+import 'package:car_care/features/shop_management/presentation/pages/shop_details_page_web.dart';
+import 'package:car_care/features/shop_management/presentation/pages/shop_management_page.dart';
+import 'package:car_care/features/technician_management/presentation/pages/technician_details_page_web.dart';
+import 'package:car_care/features/technician_management/presentation/pages/technicians_page.dart'; // تأكد أن الكلاس اسمه TechniciansPageWeb داخل هذا الملف
+
+// Features - Reports
+import 'package:car_care/features/reports/presentation/pages/reports_page.dart';
 
 class AppRouter {
   static final GlobalKey<NavigatorState> rootNavigatorKey =
@@ -102,561 +46,204 @@ class AppRouter {
 
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
-    initialLocation: Routes.login
-    ,
+    initialLocation: Routes.auth,
     debugLogDiagnostics: true,
     routes: [
+      // Auth
       GoRoute(
-  path: Routes.splash,
-  builder: (_, _) => const SplashScreen(),
-),
-GoRoute(
-  path: Routes.onboarding,
-  builder: (_, _) => const OnboardingPage(),
-),
-      GoRoute(
-        path: Routes.login,
-        name: '/login',
-        builder: (context, state) => const LoginPage(),
-      ),
-      GoRoute(
-        path: Routes.signup,
-        name: '/signup',
-        builder: (context, state) => const RegisterPage(),
-      ),
-      ShellRoute(
-        navigatorKey: shellNavigatorKey,
-        builder: (context, state, child) {
-          final location = state.matchedLocation;
-          final bottomNavIndex = switch (location) {
-            Routes.notifications => 1,
-            Routes.all_requests => 2,
-            Routes.home => 0,
-            _ => -1,
-          };
-          return MainAppShell(
-            bottomNavigationBar: HomeBottomNavBar(
-              activeIndex: bottomNavIndex,
-              onItemSelected: (index) {
-                switch (index) {
-                  case 0:
-                    context.go(Routes.home);
-                    break;
-                  case 1:
-                    context.go(Routes.notifications);
-                    break;
-                  case 2:
-                    context.go(Routes.all_requests);
-                    break;
-                  case 3:
-                    showTechnicianEntrySheet(context);
-                    break;
-                  default:
-                    break;
-                }
-              },
-            ),
-            child: child,
-          );
-        },
-        routes: [
-          GoRoute(
-            path: Routes.home,
-            name: '/home',
-            builder: (context, state) => const HomePage(),
-          ),
-        
-          GoRoute(
-            path: Routes.allUserSosRequests,
-            name: '/sos',
-            builder: (context, state) => const AllUserSosRequests(),
-          ),
-          GoRoute(
-            path: '/userSosDetailss/:id',
-            name: 'sosDetails',
-            builder: (context, state) {
-              final id = int.parse(state.pathParameters['id']!);
-              return SosDetailsPage(id: id);
-            },
-          ),
-               GoRoute(
-            path: Routes.technician_sos_requests,
-            name: '/all_technician_sos_requests',
-            builder: (context, state) => const AllTechnicianSosRequests(),
-          ),
-             GoRoute(
-            path: '/technicianSosDetails/:id',
-            name: 'SosTechnicianDetailsPage',
-            builder: (context, state) {
-              final id = int.parse(state.pathParameters['id']!);
-              return SosTechnicianDetailsPage(id: id);
-            },
-          ),
-          GoRoute(
-            path: Routes.notifications,
-            name: '/notifications',
-            builder: (context, state) => const NotificationsPage(),
-          ),
-          GoRoute(
-            path: Routes.all_requests,
-            name: '/all_requests_stats_page',
-            builder: (context, state) => const AllRequestsStatsPage(),
-          ),
-          GoRoute(
-            path: Routes.washers,
-            name: '/washers',
-            builder: (context, state) => const WashersPage(),
-          ),
-          GoRoute(
-            path: Routes.washerDetails,
-            name: 'washerDetails',
-            builder: (context, state) {
-              final washer = state.extra as WasherEntity;
-              return WasherDetailsPage(washer: washer);
-            },
-          ),
-
-          GoRoute(
-            path: Routes.washerReservation,
-            name: 'washerReservation',
-            builder: (context, state) {
-              final extra = state.extra;
-              final washer = extra is WasherEntity ? extra : null;
-              if (washer == null) return const SizedBox.shrink();
-              return WasherReservationPage(washer: washer);
-            },
-          ),
-          GoRoute(
-            path: Routes.bookings,
-            name: '/bookings',
-            builder: (context, state) => const CustomerBookingsPage(),
-          ),
-          GoRoute(
-            path: Routes.washerBookings,
-            name: '/washer_bookings',
-            builder: (context, state) => const WasherBookingsPage(),
-          ),
-          GoRoute(
-            path: Routes.washerBookingsDetails,
-            name: 'washerBookingsDetails',
-            builder: (context, state) {
-              final extra = state.extra;
-              if (extra is BookingsEntity) {
-                return WasherBookingsDetails(booking: extra);
-              }
-              return const SizedBox.shrink();
-            },
-          ),
-          GoRoute(
-            path: Routes.bookingDetails,
-            builder: (context, state) {
-              final booking = state.extra as BookingsEntity;
-              return BookingDetailsPage(booking: booking);
-            },
-          ),
-          GoRoute(
-            path: Routes.ratings,
-            name: 'ratings',
-            builder: (context, state) {
-              final booking = state.extra as BookingsEntity;
-              return RatingsPage(booking: booking);
-            },
-          ),
-          GoRoute(
-            path: Routes.availability,
-            name: '/availability',
-            builder: (context, state) => const AvailabilityPage(),
-          ),
-          GoRoute(
-            path: Routes.profile_washer,
-            name: '/profile_washer',
-            builder: (context, state) => const ProfileWasherPage(),
-          ),
-
-   
-         
-
-          GoRoute(
-            path: Routes.editProfileWasher,
-            name: 'editProfileWasher',
-            builder: (context, state) {
-              return const EditProfileWasherPage();
-            },
-          ),
-       
-    GoRoute(
-  path: Routes.provider_profile,
-  name: '/provider_profile',
-  builder: (context, state) => BlocProvider(
-   create: (_) => getIt<FuelProviderProfileCubit>(),
-   child: const ProviderProfilePage(),
-  ),
-),
-
-GoRoute(
-  path: Routes.provider_edit_profile,
-  name: '/provider_edit_profile',
-  builder: (context, state) {
-    final profile = state.extra as FuelProviderProfileEntity?;
-    return BlocProvider(
-      create: (_) => getIt<FuelProviderProfileCubit>(),
-      child: ProviderEditProfilePage(profile: profile),
-    );
-  },
-),
-
-GoRoute(
-  path: Routes.provider_create_profile,
-  name: '/provider_create_profile',
-  builder: (context, state) => BlocProvider(
-    create: (_) => getIt<FuelProviderProfileCubit>(),
-    child: const ProviderCreateProfilePage(),
-  ),
-),
-            GoRoute(
-        path: Routes.provider_statistics,
-        name: '/provider_statistics',
-        builder: (context, state) => const ProviderStatisticsPage(),
-      ),
-      
-  
-            GoRoute(
-        path: Routes.share_location_fuel,
-        name: '/share_location_fuel',
-        builder: (context, state) => const ShareLocationFuelPage(),
-      ),
-            GoRoute(
-        path: Routes.provider_available_orders,
-        name: '/provider_available_orders',
-        builder: (context, state) => const ProviderAvailableOrdersPage(),
-      ),
-    
- GoRoute(
-  path: Routes.add_user_fuel,
-  builder: (context, state) => const FuelSosCreatePageWrapper(),
-),
-
-GoRoute(
-  path: Routes.fuelorderslist,
-  builder: (context, state) => BlocProvider(
-    create: (_) => getIt<UserFuelCubit>(),
-    child: const FuelOrdersListPage(),
-  ),
-),
-
-GoRoute(
-  path: Routes.fuel_order_details,
-  builder: (context, state) {
-    final order = state.extra as UserFuelOrderEntity;
-    return BlocProvider(
-      create: (_) => getIt<UserFuelCubit>(),
-      child: FuelOrderDetailsPage(order: order),
-    );
-  },
-),
-            GoRoute(
-        path: Routes.provider_order,
-        name: '/provider_available_orders_page_wrapper',
-        builder: (context, state) => const ProviderOrdersTabsWrapper(),
-      ),
-     GoRoute(
-  path: '/provider_order_details/:id',
-  name: 'providerOrderDetailsPage',
-  builder: (context, state) {
-    final id = int.parse(state.pathParameters['id']!);
-
-    return ProviderOrderDetailsPage(id: id);
-  },
-),
-      ],
-      ),
-      GoRoute(
-        path: Routes.profile_setup,
-        name: '/profile_setup',
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) => ProfileSetupPage(),
-      ),
-      GoRoute(
-        path: Routes.user_profile,
-        name: '/user_profile_page.dart',
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) => ProfilePage(),
-      ),
-      GoRoute(
-        path: Routes.changepasswordpage,
-        name: '/change_password',
-        parentNavigatorKey: rootNavigatorKey,
-        builder: (context, state) => const ChangePasswordPage(),
-      ),
-      GoRoute(
-        path: Routes.my_vehicles_page,
-        name: '/my_vehicles_page',
-        builder: (context, state) => const MyVehiclesPagePage(),
-      ),
-      GoRoute(
-        path: Routes.add_vehicle,
-        name: '/add_vehicle',
-        builder: (context, state) => const AddVehiclePage(),
-      ),
-      GoRoute(
-        path: Routes.vehicle_details,
-        name: '/vehicle_details',
-        builder: (context, state) {
-          final vehicleId = state.extra as int;
-          return VehicleDetailsPage(vehicleId: vehicleId);
-        },
-      ),
-      GoRoute(
-        path: Routes.maintenanceHistory,
-        name: 'maintenanceHistory',
-        builder: (context, state) {
-          final vehicleId = state.extra as int? ?? 0;
-          return MaintenanceHistoryPage(vehicleId: vehicleId);
-        },
+        path: Routes.auth,
+        name: '/auth',
+        builder: (context, state) => const AuthPage(),
       ),
 
+      // Home
       GoRoute(
-        path: Routes.updateVehicle,
-        name: Routes.updateVehicle,
-        builder: (context, state) {
-          final vehicleId = state.extra as int;
-          return UpdateVehiclePage(vehicleId: vehicleId);
-        },
+        path: Routes.home,
+        name: '/home',
+        builder: (context, state) => const HomePage(),
+      ),
+
+      // Reports
+      GoRoute(
+        path: Routes.adminReports,
+        name: 'adminReports',
+        builder: (context, state) => const ReportsPage(),
+      ),
+
+      // Technicians
+      GoRoute(
+        path: Routes.adminTechnicians,
+        name: 'adminTechnicians',
+        builder: (context, state) => const TechniciansPageWeb(),
       ),
       GoRoute(
-        path: Routes.inserttechnicianprofile,
-        name: '/insert_technician_profile',
-        builder: (context, state) => const InsertTechnicianProfile(),
+        path: '/admin/technicians/:id',
+        name: 'adminTechnicianDetails',
+        builder: (context, state) => TechnicianDetailsPageWeb(
+          technicianId: int.parse(state.pathParameters['id']!),
+        ),
+      ),
+
+      // Carwashers
+      GoRoute(
+        path: Routes.carwasher_management,
+        name: 'adminCarwashers',
+        builder: (context, state) => const CarwasherManagementPage(),
       ),
       GoRoute(
-        path: Routes.create_sos,
-        name: '/Create_sos_page_wrapper',
-        builder: (context, state) => const CreateSosPageWrapper(),
+        path: '/admin/carwashers/:id',
+        name: 'adminCarwasherDetails',
+        builder: (context, state) => CarwasherDetailsPageWeb(
+          carwasherId: int.parse(state.pathParameters['id']!),
+        ),
+      ),
+
+      // Fuel Providers
+      GoRoute(
+        path: Routes.fuel_provider_management,
+        name: 'adminFuelProviders',
+        builder: (context, state) => const FuelProviderManagementPage(),
       ),
       GoRoute(
-        path: Routes.updateTechnicianProfile,
-        name: '/update_technician_profile',
-        builder: (context, state) => TechnicianProfileEditPage(
-          initialData: state.extra as TechnicianDataEntity?,
+        path: '/admin/fuel-providers/:id',
+        name: 'adminFuelProviderDetails',
+        builder: (context, state) => FuelProviderDetailsPageWeb(
+          fuelProviderId: int.parse(state.pathParameters['id']!),
+        ),
+      ),
+
+      // Shops
+      GoRoute(
+        path: Routes.shop_management,
+        name: 'adminShops',
+        builder: (context, state) => const ShopManagementPage(),
+      ),
+      GoRoute(
+        path: '/admin/shops/:id',
+        name: 'adminShopDetails',
+        builder: (context, state) => ShopDetailsPageWeb(
+          shopId: int.parse(state.pathParameters['id']!),
+        ),
+      ),
+
+      // Advertisements
+      GoRoute(
+        path: Routes.adminAdvertisements,
+        name: 'adminAdvertisements',
+        builder: (context, state) => const AdvertisementsPageWeb(),
+      ),
+      GoRoute(
+        path: '${Routes.adminAdvertisements}/create',
+        name: 'adminAdvertisementCreate',
+        builder: (context, state) => const AdvertisementFormPageWeb(),
+      ),
+      GoRoute(
+        path: '${Routes.adminAdvertisements}/:id/edit',
+        name: 'adminAdvertisementEdit',
+        builder: (context, state) => AdvertisementFormPageWeb(
+          advertisementId: int.parse(state.pathParameters['id']!),
         ),
       ),
       GoRoute(
-        path: Routes.technicianProfileViewBody,
-        name: '/technician_profile_view_page',
-        builder: (context, state) => const TechnicianProfileViewPage(),
+        path: '${Routes.adminAdvertisements}/:id',
+        name: 'adminAdvertisementDetails',
+        builder: (context, state) => AdvertisementDetailsPageWeb(
+          advertisementId: int.parse(state.pathParameters['id']!),
+        ),
       ),
-GoRoute(
-  path: Routes.maintenance_request_details,
-  builder: (context, state) {
-    final id = state.extra as int;
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => getIt<ShowRequestCubit>()),
-        BlocProvider(create: (_) => getIt<CancelRequestCubit>()),
+
+      // Billing Settings (تم دمج التكرار هنا والاعتماد على الـ Query Parameters)
+      GoRoute(
+        path: Routes.adminBillingSettings,
+        name: 'adminBillingSettings',
+        builder: (context, state) {
+          final customerName = state.uri.queryParameters['customer_name'];
+          final customerAddress = state.uri.queryParameters['customer_address'];
+          final customerPhone = state.uri.queryParameters['customer_phone'];
+          final providerType = state.uri.queryParameters['provider_type'];
+          final providerIdStr = state.uri.queryParameters['provider_id'];
+          return BillingSettingsPageWeb(
+            initialProviderType: providerType,
+            initialProviderId: providerIdStr != null ? int.tryParse(providerIdStr) : null,
+            customerName: customerName,
+            customerAddress: customerAddress,
+            customerPhone: customerPhone,
+          );
+        },
+      ),
+      GoRoute(
+        path: '${Routes.adminBillingSettings}/details',
+        name: 'adminBillingSettingDetails',
+        builder: (context, state) {
+          final idStr = state.uri.queryParameters['id']!;
+          return BillingSettingDetailsPageWeb(billingSettingId: int.parse(idStr));
+        },
+      ),
+      GoRoute(
+        path: '${Routes.adminBillingSettings}/form',
+        name: 'adminBillingSettingForm',
+        builder: (context, state) {
+          final idStr = state.uri.queryParameters['id'];
+          final providerType = state.uri.queryParameters['provider_type'];
+          final providerIdStr = state.uri.queryParameters['provider_id'];
+          return BillingSettingFormPageWeb(
+            providerType: providerType,
+            providerId: providerIdStr != null ? int.tryParse(providerIdStr) : null,
+          );
+        },
+      ),
+      GoRoute(
+        name: 'adminBillingSettingEdit',
+        path: '/admin/billing-settings/:id/edit',
+        builder: (context, state) => BillingSettingEditPageWeb(
+          billingSettingId: int.parse(state.pathParameters['id']!),
+        ),
+      ),
+      GoRoute(
+        path: '/admin/billing/invoices',
+        name: 'adminInvoices',
+        builder: (context, state) {
+          final providerType = state.uri.queryParameters['provider_type'];
+          final providerIdStr = state.uri.queryParameters['provider_id'];
+          final status = state.uri.queryParameters['status'];
+          final customerName = state.uri.queryParameters['customer_name'];
+          final customerAddress = state.uri.queryParameters['customer_address'];
+          final customerPhone = state.uri.queryParameters['customer_phone'];
+          return InvoicesPageWeb(
+            customerName: customerName,
+            customerAddress: customerAddress,
+            customerPhone: customerPhone,
+            initialProviderType: providerType,
+            initialProviderId: providerIdStr != null ? int.tryParse(providerIdStr) : null,
+            initialStatus: status ?? 'all',
+          );
+        },
+      ),
+      GoRoute(
+        path: '/admin/billing/invoices/:id',
+        name: 'adminInvoiceDetails',
+        builder: (context, state) {
+          final customerName = state.uri.queryParameters['customer_name'];
+          final customerAddress = state.uri.queryParameters['customer_address'];
+          final customerPhone = state.uri.queryParameters['customer_phone'];
+          return InvoiceDetailsPageWeb(
+            invoiceId: int.parse(state.pathParameters['id']!),
+            customerName: customerName,
+            customerAddress: customerAddress,
+            customerPhone: customerPhone,
+          );
+        },
+      ),
+    GoRoute(
+  path: '/admin/dashboard',
+  name: 'adminDashboard',
+  builder: (context, state) => const DashboardPageWeb(),
+),
+ GoRoute(
+  path: '/admin/Settings',
+  name: 'adminSettings',
+  builder: (context, state) => const SettingsPageWeb(),
+),
       ],
-      child: MaintenanceRequestDetailsPage(requestId: id),
-    );
-  },
-),
-      GoRoute(
-  path: Routes.quotations,
-  name: '/quotations',
-  builder: (context, state) {
-    final requestId = state.extra as String;
-    return BlocProvider(
-      create: (_) => getIt<QuotationsCubit>(),
-      child: QuotationsPage(requestId: requestId),
-    );
-  },
-),
-GoRoute(
-  path: Routes.quotation_details,
-  name: '/quotation_details',
-  builder: (context, state) {
-    final data = state.extra as Map<String, dynamic>;
-
-    final quotation = data['quotation'] as QuotationEntity;
-    final requestId = data['requestId'] as String;
-
-    return BlocProvider(
-      create: (_) => getIt<QuotationsCubit>(),
-      child: QuotationDetailsPage(
-        quotation: quotation,
-        requestId: requestId,
-      ),
-    );
-  },
-),
-      GoRoute(
-        path: Routes.deleteconfirmationdialog,
-        name: '/deleteconfirmationdialog',
-        builder: (context, state) => const DeleteProfileDialog(),
-      ),
-      GoRoute(
-        path: '${Routes.customerProductDetailsPreview}/:id',
-        name: 'customerProductDetailsPreview',
-        builder: (context, state) {
-          final productId = int.parse(state.pathParameters['id']!);
-          return CustomerProductDetailsPage(productId: productId);
-        },
-      ),
-      GoRoute(
-        path: Routes.customerAllProducts,
-        name: 'customerAllProducts',
-        builder: (context, state) => const AllProductsPage(),
-      ),
-      GoRoute(
-        path: Routes.customerShopsList,
-        name: 'customerShopsList',
-        builder: (context, state) => const ShopsListPage(),
-      ),
-      GoRoute(
-        path: '${Routes.customerShopDetails}/:id',
-        name: 'customerShopDetails',
-        builder: (context, state) {
-          final shopId = int.parse(state.pathParameters['id']!);
-          return ShopDetailsPage(shopId: shopId);
-        },
-      ),
-      GoRoute(
-        path: '${Routes.customerShopProducts}/:id',
-        name: 'customerShopProducts',
-        builder: (context, state) {
-          final shopId = int.parse(state.pathParameters['id']!);
-          return ShopProductsPage(shopId: shopId);
-        },
-      ),
-      GoRoute(
-        path: Routes.customerCart,
-        name: 'customerCart',
-        builder: (context, state) => const CartPage(),
-      ),
-      GoRoute(
-        path: Routes.customerCheckout,
-        name: 'customerCheckout',
-        builder: (context, state) {
-          final extra = state.extra;
-          if (extra is Map<String, dynamic>) {
-            final cartCubit = extra['cartCubit'] as CartCubit?;
-            final total = (extra['total'] as num?)?.toDouble() ?? 0.0;
-            return CheckoutPage(totalPrice: total, cartCubit: cartCubit);
-          }
-          return CheckoutPage(totalPrice: 0);
-        },
-      ),
-      GoRoute(
-        path: '${Routes.customerOrderDetails}/:id',
-        name: 'customerOrderDetails',
-        builder: (context, state) {
-          final orderId = int.parse(state.pathParameters['id']!);
-          return CustomerOrderDetailsPage(orderId: orderId);
-        },
-      ),
-      GoRoute(
-        path: Routes.customerOrders,
-        name: 'customerOrders',
-        builder: (context, state) => const CustomerMyOrdersPage(),
-      ),
-      GoRoute(
-        path: Routes.ownerProfile,
-        name: 'ownerProfile',
-        builder: (context, state) => const OwnerProfilePage(),
-      ),
-      GoRoute(
-        path: Routes.ownerOrders,
-        name: 'ownerOrders',
-        builder: (context, state) => const OwnerOrdersPage(),
-      ),
-      GoRoute(
-        path: '${Routes.ownerOrderDetails}/:id',
-        name: 'ownerOrderDetails',
-        builder: (context, state) {
-          final orderId = int.parse(state.pathParameters['id']!);
-          return OwnerOrderDetailsPage(orderId: orderId);
-        },
-      ),
-
-      // GoRoute(
-      //   path: Routes.ratings,
-      //   name: '/ratings',
-      //   parentNavigatorKey: rootNavigatorKey,
-      //   builder: (context, state) => const RatingsPage(booking: null,),
-      // ),
-      GoRoute(
-        path: Routes.statistics,
-        builder: (context, state) => const UserStatisticsPage(),
-      ),
-      GoRoute(
-        path: Routes.addRequest,
-        name: '/add_requests_page.dart',
-
-        builder: (context, state) {
-          final extra = state.extra;
-          final vehicleId = extra is String ? extra : null;
-          return AddRequestsPage(vehicleId: vehicleId ?? '');
-        },
-      ),
-      GoRoute(
-        path: Routes.orders,
-        name: '/orders_page',
-        builder: (context, state) => const TechnicianOrderPage(),
-      ),
-
-      GoRoute(
-        path: Routes.orderdetails,
-        name: '/order_details_page',
-        builder: (context, state) {
-          final extra = state.extra;
-          final id = extra is String ? extra : null;
-
-          return TechnicianOrderDetailsPage(orderId: id ?? '');
-        },
-      ),
-
-      GoRoute(
-        path: Routes.technician_quotations,
-        name: '/technician_quotations',
-        builder: (context, state) {
-          final extra = state.extra;
-          final id = extra is String ? extra : null;
-
-          return TechnicianQuotationsPage(requestId: id ?? '');
-        },
-      ),
-
-      GoRoute(
-        path: Routes.rate_job,
-        name: '/rate_job',
-        builder: (context, state) => const RateJobPage(),
-      ),
-      GoRoute(
-        path: Routes.technician_jobs,
-        name: '/technician_jobs',
-        builder: (context, state) => const TechnicianJobsPage(),
-      ),
-      GoRoute(
-        path: Routes.technician_statistics,
-        name: '/technician_statistics',
-        builder: (context, state) => const TechnicianStatisticsPage(),
-      ),
-      GoRoute(
-  name: 'TechnicianSosMapPage',
-  path: '/technician/sos/:id/map',
-  builder: (context, state) {
-    final extra = state.extra as Map<String, dynamic>?;
-    return TechnicianSosMapPage(
-      sosId: int.parse(state.pathParameters['id']!),
-      clientLat: extra?['lat'],
-      clientLng: extra?['lng'],
-    );
-  },
-),
-      GoRoute(
-        path: Routes.washer_statistics,
-        name: '/washer_statistics',
-        builder: (context, state) => const CarWasherStatisticsPage(),
-      ),
-    ],
   );
-  
 }
